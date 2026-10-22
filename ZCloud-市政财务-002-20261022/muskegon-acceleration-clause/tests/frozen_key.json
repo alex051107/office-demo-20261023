@@ -1,0 +1,301 @@
+{
+  "task_id": "MUNIFIN/muskegon-acceleration-clause",
+  "sheet": "Results",
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "Plan A principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 42200.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "abs": 0.011,
+      "rel": 0
+    },
+    {
+      "criterion_id": "R02",
+      "label": "Plan B principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 55200.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "abs": 0.011,
+      "rel": 0
+    },
+    {
+      "criterion_id": "R03",
+      "label": "Plan C principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 50500.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "abs": 0.011,
+      "rel": 0
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "S01",
+      "kind": "header",
+      "sheet": "Results",
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "weight": 1,
+      "dimension": "structure_organization",
+      "description": "Results fixed interface and row labels"
+    },
+    {
+      "criterion_id": "S02",
+      "kind": "results_units",
+      "weight": 2,
+      "dimension": "professional_standard",
+      "description": "USD units on Results"
+    },
+    {
+      "criterion_id": "S03",
+      "kind": "header",
+      "sheet": "Detail",
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "weight": 1,
+      "dimension": "structure_organization",
+      "description": "Detail interface"
+    },
+    {
+      "criterion_id": "P01",
+      "kind": "error_cells",
+      "weight": -5,
+      "dimension": "consistency_file_ops",
+      "description": "Excel error outside scored cells"
+    },
+    {
+      "criterion_id": "P02",
+      "kind": "unsupported_records",
+      "sheet": "Detail",
+      "weight": -5,
+      "dimension": "instruction_following",
+      "description": "Unsupported plan record"
+    }
+  ],
+  "alternative_sets": [],
+  "scorer_version": 2,
+  "scorer_entrypoint": "tests/score_output.py",
+  "formula_policy": "static_ok",
+  "tables": [
+    {
+      "criterion_id": "D01",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "A",
+          "value": 42200.0
+        }
+      ],
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "description": "Detail plan A final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "V01",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "A",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": 1,
+      "dimension": "factuality",
+      "description": "Detail plan A original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "D02",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "B",
+          "value": 55200.0
+        }
+      ],
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "description": "Detail plan B final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "V02",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "B",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": 1,
+      "dimension": "factuality",
+      "description": "Detail plan B original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "D03",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "C",
+          "value": 50500.0
+        }
+      ],
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "description": "Detail plan C final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "V03",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "C",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": 1,
+      "dimension": "factuality",
+      "description": "Detail plan C original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    }
+  ],
+  "interfaces": {
+    "Results": {
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "key": [
+        "label"
+      ],
+      "expected_keys": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ]
+    },
+    "Detail": {
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "key": [
+        "plan"
+      ],
+      "expected_keys": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ]
+    }
+  },
+  "aggregation": {
+    "ordinary": "clip((positive earned minus penalties)/100,0,1)",
+    "cap_enabled": false
+  }
+}

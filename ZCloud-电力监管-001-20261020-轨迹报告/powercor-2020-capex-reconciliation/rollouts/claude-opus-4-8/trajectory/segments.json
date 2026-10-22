@@ -1,0 +1,29 @@
+{
+  "segment_count": 1,
+  "segments": [
+    {
+      "run_id": "claude-opus-4-8_20261020T001601",
+      "events": "events.jsonl",
+      "terminal": {
+        "completed": true,
+        "subtype": "success",
+        "is_error": false,
+        "num_turns": 8
+      }
+    }
+  ],
+  "context_resume_claimed": false,
+  "usage": {
+    "input_tokens": 596374,
+    "output_tokens": 34241
+  },
+  "successful_requests": 15,
+  "request_errors": 0,
+  "source_run": "claude-opus-4-8_20261020T001601",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

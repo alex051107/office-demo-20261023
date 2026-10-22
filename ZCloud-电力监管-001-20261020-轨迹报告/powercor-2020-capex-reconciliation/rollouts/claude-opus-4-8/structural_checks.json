@@ -1,0 +1,30 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-22",
+  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
+  "candidate_sha256": "6bdf0598cb332812e5de518729ad142c75c0da3734ab2830638ba40205f46cb1",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Calculation",
+      "state": "visible",
+      "rows": 13,
+      "columns": 7,
+      "nonempty_cells": 80,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 2,
+  "historical_score": 0.0,
+  "not_a_new_judgement": true
+}

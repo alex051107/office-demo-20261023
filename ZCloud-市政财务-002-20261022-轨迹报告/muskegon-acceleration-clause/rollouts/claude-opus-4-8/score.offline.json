@@ -1,0 +1,186 @@
+{
+  "status": "SCORED",
+  "score": 0,
+  "verdicts": {
+    "R01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "R02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Results!B3"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "R03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Results!B4"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 16,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "D01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Detail!C2"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "V01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": 1,
+      "dimension": "factuality",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "D02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Detail!C3"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "V02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": 1,
+      "dimension": "factuality",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "D03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Detail!C4"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 15,
+      "dimension": "data_accuracy",
+      "status": "not_met"
+    },
+    "V03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": 1,
+      "dimension": "factuality",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "S01": {
+      "credit": 0,
+      "evidence": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "weight": 1,
+      "dimension": "structure_organization",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "S02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4"
+        }
+      ],
+      "weight": 2,
+      "dimension": "professional_standard",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "S03": {
+      "credit": 0,
+      "evidence": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "weight": 1,
+      "dimension": "structure_organization",
+      "status": "not_triggered",
+      "original_compliance_credit": 1
+    },
+    "P01": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -5,
+      "dimension": "consistency_file_ops",
+      "status": "clear"
+    },
+    "P02": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -5,
+      "dimension": "instruction_following",
+      "status": "clear"
+    }
+  }
+}

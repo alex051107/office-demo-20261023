@@ -1,0 +1,318 @@
+{
+  "task_id": "MUNIFIN/muskegon-acceleration-clause",
+  "sheet": "Results",
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "Plan A principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 42200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "abs": 0.011,
+      "rel": 0,
+      "negate": false
+    },
+    {
+      "criterion_id": "R02",
+      "label": "Plan B principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 55200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "abs": 0.011,
+      "rel": 0,
+      "negate": false
+    },
+    {
+      "criterion_id": "R03",
+      "label": "Plan C principal balance",
+      "unit": "USD",
+      "type": "number",
+      "gold": 50500.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "abs": 0.011,
+      "rel": 0,
+      "negate": false
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "S01",
+      "kind": "header",
+      "sheet": "Results",
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "S02",
+      "kind": "results_units",
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "S03",
+      "kind": "header",
+      "sheet": "Detail",
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "description": "缺失或错误时扣分；正确不加分：Detail interface",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "P01",
+      "kind": "error_cells",
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "description": "Excel error outside scored cells",
+      "negate": true
+    },
+    {
+      "criterion_id": "P02",
+      "kind": "unsupported_records",
+      "sheet": "Detail",
+      "weight": -7,
+      "dimension": "指令遵循",
+      "description": "Unsupported plan record",
+      "negate": true
+    }
+  ],
+  "alternative_sets": [],
+  "scorer_version": 2,
+  "scorer_entrypoint": "tests/score_output.py",
+  "formula_policy": "static_ok",
+  "tables": [
+    {
+      "criterion_id": "D01",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "A",
+          "value": 42200.0
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "description": "Detail plan A final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "negate": false
+    },
+    {
+      "criterion_id": "V01",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "A",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "D02",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "B",
+          "value": 55200.0
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "description": "Detail plan B final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "negate": false
+    },
+    {
+      "criterion_id": "V02",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "B",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "D03",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "value": {
+          "type": "number",
+          "abs": 0.011,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "plan": "C",
+          "value": 50500.0
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "description": "Detail plan C final value",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "negate": false
+    },
+    {
+      "criterion_id": "V03",
+      "sheet": "Detail",
+      "key": [
+        "plan"
+      ],
+      "value_columns": {
+        "date": {
+          "type": "string"
+        }
+      },
+      "gold": [
+        {
+          "plan": "C",
+          "date": "2007-12-31"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "s3_transform": "violation_complement",
+      "negate": true
+    }
+  ],
+  "interfaces": {
+    "Results": {
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "key": [
+        "label"
+      ],
+      "expected_keys": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ]
+    },
+    "Detail": {
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "key": [
+        "plan"
+      ],
+      "expected_keys": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ]
+    }
+  },
+  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)"
+}

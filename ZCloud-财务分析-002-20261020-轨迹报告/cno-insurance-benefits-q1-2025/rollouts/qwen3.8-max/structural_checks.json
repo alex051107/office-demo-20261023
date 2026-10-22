@@ -1,0 +1,68 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-22",
+  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
+  "candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 3,
+      "columns": 4,
+      "nonempty_cells": 12,
+      "formula_cells": [
+        "B2",
+        "B3"
+      ],
+      "error_cells": []
+    },
+    {
+      "name": "Analysis",
+      "state": "visible",
+      "rows": 3,
+      "columns": 6,
+      "nonempty_cells": 18,
+      "formula_cells": [
+        "C2",
+        "C3"
+      ],
+      "error_cells": []
+    },
+    {
+      "name": "Summary",
+      "state": "visible",
+      "rows": 3,
+      "columns": 2,
+      "nonempty_cells": 6,
+      "formula_cells": [
+        "B2",
+        "B3"
+      ],
+      "error_cells": []
+    },
+    {
+      "name": "Source_Data",
+      "state": "visible",
+      "rows": 5,
+      "columns": 6,
+      "nonempty_cells": 30,
+      "formula_cells": [
+        "B4"
+      ],
+      "error_cells": []
+    },
+    {
+      "name": "Notes",
+      "state": "visible",
+      "rows": 9,
+      "columns": 2,
+      "nonempty_cells": 18,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 5,
+  "historical_score": 0.0,
+  "not_a_new_judgement": true
+}

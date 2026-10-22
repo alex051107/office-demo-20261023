@@ -1,0 +1,16 @@
+{
+  "source": "original run receipt",
+  "this_conversion_paid_calls": 0,
+  "usage": {
+    "input_tokens": 4608165,
+    "cached_input_tokens": 4390400,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 93404,
+    "reasoning_output_tokens": 72386
+  },
+  "historical_cost": {
+    "requests": 56,
+    "minutes": 51.19,
+    "session_cost": null
+  }
+}

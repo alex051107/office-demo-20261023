@@ -1,0 +1,55 @@
+{
+  "format": "xlsx",
+  "check_type": "current_offline_export_inspection",
+  "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Detail",
+      "state": "visible",
+      "rows": 4,
+      "columns": 3,
+      "nonempty_cells": 12,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Calc",
+      "state": "visible",
+      "rows": 7,
+      "columns": 16,
+      "nonempty_cells": 68,
+      "formula_cells": [
+        "D2",
+        "H2",
+        "K2",
+        "M2",
+        "O2",
+        "D3",
+        "H3",
+        "K3",
+        "M3",
+        "O3",
+        "D4",
+        "H4",
+        "K4",
+        "M4",
+        "O4"
+      ],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 3,
+  "historical_score": 0.07,
+  "programmatic_score": 0,
+  "not_a_new_judgement": true
+}

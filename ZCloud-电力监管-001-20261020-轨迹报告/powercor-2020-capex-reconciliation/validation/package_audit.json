@@ -1,0 +1,7 @@
+{
+  "status": "PASS_LAYOUT_INTEGRITY",
+  "scope": "目录、相对引用、清单及文件完整性",
+  "pass_at_8": null,
+  "source_authenticity": "PASS_CURRENT_INPUT_IDENTITY",
+  "source_pair_audit_sha256": "6177dbc58558af830b8340a561099e8b3c7e09cd4842baceab408c6bc6c944fe"
+}

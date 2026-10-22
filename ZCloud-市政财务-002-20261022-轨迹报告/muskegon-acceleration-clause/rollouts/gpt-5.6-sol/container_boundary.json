@@ -1,0 +1,37 @@
+{
+  "runtime": "docker",
+  "image_id": "sha256:f6e2e1c918ee89f6906837c69c45cc2cdd2cf0026cddf69873bdb5979b84adb9",
+  "mounts": [
+    {
+      "destination": "/app/input",
+      "writable": false
+    },
+    {
+      "destination": "/app/output",
+      "writable": true
+    },
+    {
+      "destination": "/app/role/SYSTEM.md",
+      "writable": false
+    }
+  ],
+  "cpus": "2",
+  "memory": "4g",
+  "network_mode": "bridge",
+  "network_note": "default Docker bridge; the model is reached through a host proxy at host.docker.internal",
+  "privileged": false,
+  "user": null,
+  "cap_drop": [],
+  "root_read_only": false,
+  "secrets_passed_as": [
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL"
+  ],
+  "source_run": "gpt-5.6-sol_20261018T180813",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

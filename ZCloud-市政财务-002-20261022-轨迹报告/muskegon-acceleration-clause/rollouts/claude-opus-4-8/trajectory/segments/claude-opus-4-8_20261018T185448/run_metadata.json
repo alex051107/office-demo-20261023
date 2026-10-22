@@ -1,0 +1,122 @@
+{
+  "model_id": "claude-opus-4-8",
+  "agent_lane": "claude",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-18T22:54:54+00:00",
+  "ended": "2026-10-18T22:56:00+00:00",
+  "minutes": 1.1,
+  "harness": "Claude Code",
+  "returned_model_counts": {
+    "claude-opus-4-8": 5
+  },
+  "substitute_requests": 0,
+  "terminal_event": {
+    "is_error": false,
+    "duration_api_ms": 64389,
+    "num_turns": 7,
+    "stop_reason": "end_turn",
+    "session_id": "ff6947cd-434e-4d3c-b2e0-d70d3fbd1d8e",
+    "total_cost_usd": 0.38564200000000004,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 37652,
+      "cache_read_input_tokens": 130234,
+      "output_tokens": 3406,
+      "output_tokens_details": {
+        "thinking_tokens": 2369
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 37652
+      },
+      "inference_geo": "not_available",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-4-8": {
+        "inputTokens": 10,
+        "outputTokens": 3406,
+        "cacheReadInputTokens": 130234,
+        "cacheCreationInputTokens": 37652,
+        "webSearchRequests": 0,
+        "costUSD": 0.38564200000000004,
+        "contextWindow": 200000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-opus-4-8",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`/app/output/answer.xlsx` is saved and verified. Here's a summary of what's in it:\n\n**Results sheet** (rows 2–4):\n\n| label | value | unit |\n|---|---|---|\n| Plan A principal balance | 13,100.00 | USD |\n| Plan B principal balance | 17,850.00 | USD |\n| Plan C principal balance | 16,850.00 | USD |\n\n**Detail sheet** — all three plans share termination date `2007-12-31` (from the Plans record), with the same USD values.\n\n**Source chain:** The three balance figures come directly from the Finance forecast table (`Records_Finance_forecast.png`), which in turn is sourced from the Agreement.pdf page 2 staff two-year payment illustration. The Plans record (`Records_Plans.png`) confirms the termination date of 2007-12-31 for all three plans, with zero contract amendments and zero other principal outstanding.",
+    "ttft_ms": 9722,
+    "ttft_stream_ms": 9720,
+    "time_to_request_ms": 56,
+    "type": "result",
+    "duration_ms": 64672,
+    "uuid": "447b22bc-e8fa-4ca5-bf51-104201de235b",
+    "queued_turn_count": 0
+  },
+  "event_count": 24,
+  "non_json_lines": [],
+  "historical_non_json_line_numbers": [],
+  "trajectory_format": "Claude Code-jsonl-diagnostics-separated",
+  "source_log_sha256": "e6129f80657730219e74f824908ce4d78bfbbb887d4e0e9c1fd3b6ec5999a24c",
+  "exported_log_sha256": "1813a211d5539a4a3a42adb308b00a8c542120be4563f5c17b6932d8d8b31b44",
+  "candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+  "source_candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+  "source_run": "claude-opus-4-8_20261018T185448",
+  "source_instruction_sha256": "73d1c1441bd6734f46043d2988b9a813c3e48f397ba084b0d7a1337f4e7ba392",
+  "exported_instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
+  "source_wording_note": "外发版已登记的Results标题和说明句改写；实测绑定此前冻结题面。",
+  "redaction_matches": {
+    "path_replacement": 0,
+    "internal_identifier_replacement": 0,
+    "secret_value_redaction": 0
+  },
+  "original_terminal_preserved": true,
+  "paid_calls_this_session": 0,
+  "this_export_paid_calls": 0,
+  "missing_artifacts": [
+    "付费裁判未跑"
+  ],
+  "searched_sources": [
+    "对应答卷SHA256匹配的既有screening运行目录"
+  ]
+}

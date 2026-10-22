@@ -1,0 +1,6 @@
+{
+  "source": "原始事件流 events.jsonl",
+  "event_lines": 53,
+  "non_json_lines": [],
+  "note": "原始日志全部是JSON事件，没有需要分离的诊断行。"
+}

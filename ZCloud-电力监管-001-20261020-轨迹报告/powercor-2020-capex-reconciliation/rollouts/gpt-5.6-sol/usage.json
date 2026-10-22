@@ -1,0 +1,17 @@
+{
+  "source": "original historical receipt",
+  "this_conversion_paid_calls": 0,
+  "usage": {
+    "input_tokens": 170109,
+    "cached_input_tokens": 121252,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2581,
+    "reasoning_output_tokens": 770
+  },
+  "historical_cost": {
+    "metered_usd": 0.565288,
+    "gateway_usd": 0.565288,
+    "requests": 7,
+    "minutes": 1.69
+  }
+}

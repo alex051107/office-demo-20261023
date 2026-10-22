@@ -1,0 +1,44 @@
+{
+  "format": "xlsx",
+  "reviewed_at": "2026-10-22",
+  "renderer": "LibreOffice 26.2.5.2 / calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "6bdf0598cb332812e5de518729ad142c75c0da3734ab2830638ba40205f46cb1",
+  "scope": "每张工作表逐页预览；只在临时渲染副本设置打印范围、A3横向、单页缩放，其余工作表隐藏，原答卷字节不变。",
+  "worksheet_count": 2,
+  "render_count": 2,
+  "renders": [
+    {
+      "sheet": "Calculation",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png"
+    },
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png"
+    }
+  ],
+  "render_status": "COMPLETED",
+  "visual_inspection_status": "COMPLETED_WITH_LAYOUT_FINDINGS",
+  "visual_findings": [
+    {
+      "sheet": "Calculation",
+      "finding": "部分较长列标题换行后显示不完整；主要数值可见。"
+    },
+    {
+      "sheet": "Results",
+      "finding": "右侧source_note长文本截断。"
+    }
+  ],
+  "historical_scores_changed": false,
+  "ppt_checks": {
+    "status": "NOT_APPLICABLE",
+    "reason": "xlsx工作表不是幻灯片；不检查PPT页数、母版或放映。"
+  },
+  "inspection_method": "人工逐工作表查看本次LibreOffice/Poppler预览的去空白拼图；未调用视觉模型、未OCR，未重新评定业务正确性。",
+  "inspection_coverage": [
+    "Calculation",
+    "Results"
+  ],
+  "layout_finding_handling": "保留原答卷及其排版。文字截断只作为实际视觉发现披露；完整单元格内容另可在工作簿和source_extracts中查看，不改变历史分数。"
+}

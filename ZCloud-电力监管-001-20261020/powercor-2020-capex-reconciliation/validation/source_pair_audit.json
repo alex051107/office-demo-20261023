@@ -1,0 +1,33 @@
+{
+  "schema_version": "office-demo-source-pair-audit-v1",
+  "checked_at": "2026-10-22T14:57:09.246518-04:00",
+  "status": "PASS_CURRENT_INPUT_IDENTITY",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_note": "AER公开监管模型及配电滚动模型手册。工作簿为公开材料的静态输入区改编，包含既有登记的数值变更；手册保持原字节。不是官方原件的原样复现，也不是已收到的客户原始query。",
+  "live_source_reverified": false,
+  "original_customer_query_available": false,
+  "files": [
+    {
+      "path": "environment/input_files/Distribution_handbook.pdf",
+      "bytes": 4143458,
+      "sha256": "401882d13d2d2b4c81b11d3ead1c284f31f69953c4d77b8ad9ca3647ce238c81",
+      "kind": "original",
+      "source_url": "https://www.aer.gov.au/industry/registers/resources/models/electricity-roll-forward-models-transmission-and-distribution-2020-amendment",
+      "source_file": "Distribution_handbook.pdf",
+      "source_manifest_sha256": "401882d13d2d2b4c81b11d3ead1c284f31f69953c4d77b8ad9ca3647ce238c81",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Powercor_RFM_inputs.xlsx",
+      "bytes": 15592,
+      "sha256": "928075d8ee6ec4b1cd8c310c41a8a9ff893f6130b2859c928986e58c22c2b6ed",
+      "kind": "derived",
+      "source_url": "https://www.aer.gov.au/industry/registers/determinations/powercor-determination-2026-31/final-decision",
+      "source_file": "Powercor_RFM_inputs.xlsx",
+      "source_manifest_sha256": "928075d8ee6ec4b1cd8c310c41a8a9ff893f6130b2859c928986e58c22c2b6ed",
+      "manifest_match": true,
+      "source_bytes_match": true
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "task_id": "UTL/powercor-2020-capex-reconciliation",
+  "sheet": "Results",
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "2020 network net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": 13.690108344179448,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 32,
+      "dimension": "data_accuracy"
+    },
+    {
+      "criterion_id": "R02",
+      "label": "2020 non-network net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": -11.546100406081113,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 32,
+      "dimension": "data_accuracy"
+    },
+    {
+      "criterion_id": "R03",
+      "label": "2020 total net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": 1.1431857863294523,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 34,
+      "dimension": "data_accuracy"
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "S01",
+      "kind": "results_header",
+      "description": "Requested Results header",
+      "dimension": "structure_organization",
+      "weight": 1
+    },
+    {
+      "criterion_id": "S02",
+      "kind": "results_units",
+      "description": "Requested nominal AUD million unit",
+      "dimension": "professional_standard",
+      "weight": 1
+    },
+    {
+      "criterion_id": "P01",
+      "kind": "error_cells",
+      "description": "Deduct for Excel error cells outside result cells already assessed",
+      "dimension": "consistency_file_ops",
+      "weight": -5
+    }
+  ],
+  "alternative_sets": []
+}

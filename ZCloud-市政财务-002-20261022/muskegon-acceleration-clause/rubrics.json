@@ -1,0 +1,357 @@
+{
+  "case_id": "muskegon-acceleration-clause",
+  "rubric_version": "office-demo-s3-20261020",
+  "pass_threshold": 0.7,
+  "normalization": {
+    "allowed_weights": [
+      10,
+      7,
+      3,
+      -3,
+      -7,
+      -10
+    ],
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+    "binary": [
+      0,
+      1
+    ],
+    "gradient": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ]
+  },
+  "items": [
+    {
+      "id": "R01",
+      "description": "Plan A principal balance",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 10,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Plan A principal balance",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "R02",
+      "description": "Plan B principal balance",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 10,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Plan B principal balance",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "R03",
+      "description": "Plan C principal balance",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 10,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Plan C principal balance",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "D01",
+      "description": "Detail plan A final value",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 7,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Detail plan A final value",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "V01",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "D02",
+      "description": "Detail plan B final value",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 7,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Detail plan B final value",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "V02",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "D03",
+      "description": "Detail plan C final value",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 7,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足判据：Detail plan C final value",
+        "0": "未满足。"
+      }
+    },
+    {
+      "id": "V03",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "S01",
+      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "S02",
+      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：USD units on Results",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "S03",
+      "description": "缺失或错误时扣分；正确不加分：Detail interface",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：缺失或错误时扣分；正确不加分：Detail interface",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "P01",
+      "description": "Excel error outside scored cells",
+      "dimension": "操作与交付安全",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发违规：Excel error outside scored cells",
+        "0": "未违规。"
+      }
+    },
+    {
+      "id": "P02",
+      "description": "Unsupported plan record",
+      "dimension": "指令遵循",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "gradient",
+      "weight": -7,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "levels": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      },
+      "score_domain": "continuous [0,1]; levels are anchors, no quantization",
+      "anchors": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      }
+    },
+    {
+      "id": "L01",
+      "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    },
+    {
+      "id": "L02",
+      "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    },
+    {
+      "id": "L03",
+      "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    }
+  ],
+  "metadata": {
+    "scoring": {
+      "s_max": 51,
+      "negative_total": -37,
+      "negative_total_absolute": 37,
+      "programmatic_negative_total": -28,
+      "llm_negative_total": -9,
+      "decision_date": "2026-10-22",
+      "rule": "业务Results核心结果10、原表格业务结果7；格式/抄录仅违规扣3，既有额外记录负项上限7；冻结零权重保持零权重，不新增重复奖励。",
+      "positive_count": 6,
+      "programmatic_count": 14,
+      "llm_count": 3,
+      "programmatic_positive_share": 1.0,
+      "llm_positive_share": 0.0,
+      "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+      "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
+      "llm_status": "NOT_RUN",
+      "negative_weight_total_abs": 37,
+      "negative_hit_semantics": "负项score为违规程度；SDK保存value=1-违规程度且negate=true，固定finalize还原扣分。"
+    },
+    "format_migration": {
+      "criteria_content_changed": false,
+      "weights_changed": true,
+      "anchors_changed": true,
+      "scores_rejudged": false,
+      "changes": [
+        "按已授权demo统一规则映射权重；原冻结键和原分保留",
+        "补样例字段；锚点只重述已有判据"
+      ],
+      "historical_rubric_sha256": "f1ef11727d56179d60c460477e1b32e9026dbd25140de9962e49667e4a1a0146"
+    },
+    "scoring_revision": {
+      "date": "2026-10-22",
+      "reason": "现行demo：格式只扣分；冻结包只读",
+      "removed_criterion_ids": [],
+      "duplicate_positive_rewards_removed": true,
+      "new_business_criteria": false,
+      "rejudge_required": true,
+      "remaining_criteria_changed": false,
+      "remaining_weights_changed": true
+    }
+  },
+  "scope_note": "Offline programmatic verification only; LLM negative criteria retained but not executed.",
+  "run_id": "office-demo-add-three-20261022-offline",
+  "source_authenticity": "public_source_business_adaptation",
+  "golden_threshold": 0.85,
+  "three_model_average_threshold": 0.7,
+  "scoring_note": "保留冻结业务判定；格式/抄录合规不加分，仅违规扣分。历史冻结分另列，不伪装为新口径分。付费裁判未跑。"
+}

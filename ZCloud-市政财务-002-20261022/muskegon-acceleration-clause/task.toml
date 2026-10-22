@@ -1,0 +1,90 @@
+schema_version = "1.4"
+artifacts = ["/app/output/answer.xlsx"]
+
+[task]
+name = "MUNIFIN/muskegon-acceleration-clause"
+description = "场馆合同本金核算"
+track = "C"
+version = "office-demo-20261022"
+keywords = ["office-document", "xlsx", "市政财务"]
+
+[metadata]
+difficulty_tier = "not_certified_pass_at_8"
+sector = "Public administration"
+occupation = "Accountant"
+est_minutes = 60
+multimodal = true
+web_search_required = false
+skills = ["Contract interpretation", "Cash settlement", "Workbook construction"]
+name = "muskegon-acceleration-clause"
+business = "musk_accel"
+domain = "市政财务"
+topic = "office-document"
+task_id = "MUNIFIN/muskegon-acceleration-clause"
+track = "C"
+export_ready = true
+author_organization = "ZCloud"
+tags = ["office-document", "xlsx", "public-source-adaptation"]
+domain_l2 = "市政财务"
+domain_l3 = "场馆合同本金核算"
+domain_l4 = "合同加速条款与本金余额"
+environment_template = "environment/Dockerfile"
+environment_template_status = "custom_dockerfile_path_pending_platform_acceptance"
+task_complexity = "unclassified"
+task_complexity_status = "not_assessed"
+task_complexity_basis = "本单未认证任务复杂度；不从低分推定等级。"
+task_complexity_note = "只导出冻结内容，不重新造题。"
+capabilities = "给定材料抽取、跨材料口径核对、业务计算、Excel交付自检"
+difficulty = "not_certified_pass_at_8"
+source_note = "Muskegon公开合同节选及既有编制记录；记录转为PDF和同页PNG，并非全部是市政府原件。沿用冻结输入，不是客户原始query。"
+tools = "PDF/Excel/图像读取与Excel离线渲染"
+tool_set = ["filesystem", "shell", "python"]
+expected_tool_dependencies = ["filesystem", "shell", "python"]
+weakness_tag = ["材料口径", "业务计算", "证据追溯"]
+skill_set = []
+expected_skill_dependencies = []
+required_tools = ["PDF reader", "Excel reader", "Excel editor", "Office headless renderer"]
+domain_knowledge_dependency = "合同加速条款与本金余额"
+evaluated_capabilities = ["给定材料抽取", "跨材料口径核对", "业务计算", "Excel交付自检"]
+three_model_average_threshold = 0.7
+reference_answer_threshold = 0.85
+vl_dependency = "是"
+format_adapter = "rewardkit_with_optional_harbor_adapter"
+image = "sha256:f6e2e1c918ee89f6906837c69c45cc2cdd2cf0026cddf69873bdb5979b84adb9"
+image_tag = "excel-benchmark-runtime:20260912-arm64"
+
+[[metadata.deliverables]]
+path = "answer.xlsx"
+required = true
+desc = "题面要求的可编辑Excel"
+
+[agent]
+timeout_sec = 5400
+
+[environment]
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+allow_internet = false
+workdir = "/app"
+os = ""
+network_mode = ""
+storage_mb = 0
+
+[verifier]
+timeout_sec = 18000
+user = "root"
+
+[verifier.env]
+LITELLM_DROP_PARAMS = "${LITELLM_DROP_PARAMS:-true}"
+JUDGE_MODEL = "${JUDGE_MODEL:-qwen3.7-plus}"
+JUDGE_PROVIDER = "${JUDGE_PROVIDER:-anthropic}"
+JUDGE_API_PROTOCOL = "${JUDGE_API_PROTOCOL:-anthropic}"
+JUDGE_API_KEY = "${JUDGE_API_KEY}"
+JUDGE_BASE_URL = "${JUDGE_BASE_URL}"
+EVAL_API_KEY = "${EVAL_API_KEY:-}"
+EVAL_API_BASE = "${EVAL_API_BASE:-}"
+
+[solution]
+
+[solution.env]

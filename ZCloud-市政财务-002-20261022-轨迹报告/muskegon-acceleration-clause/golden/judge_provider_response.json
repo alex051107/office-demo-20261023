@@ -1,0 +1,12 @@
+{
+  "status": "RAW_PROVIDER_RESPONSE_NOT_RETAINED",
+  "provider_response": null,
+  "note": "付费裁判未跑；没有上游响应。",
+  "this_export_paid_calls": 0,
+  "existing_judge_model": "qwen3.7-plus",
+  "evidence": {
+    "normalized_judge": "judge.json",
+    "sdk_reward_details": "reward-details.json",
+    "reward_receipt": "reward.json"
+  }
+}

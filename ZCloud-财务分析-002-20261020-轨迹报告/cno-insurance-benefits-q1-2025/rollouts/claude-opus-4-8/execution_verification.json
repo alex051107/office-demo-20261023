@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "隔离容器与求解流程；不是业务质量或难度验收",
+  "target_model": "claude-opus-4-8",
+  "returned_model_counts": {
+    "claude-opus-4-8": 12
+  },
+  "provider_reported_models": [
+    "claude-opus-4-8"
+  ],
+  "provider_success_requests": 12,
+  "provider_requests_total": 12,
+  "substitute_requests": 0,
+  "usage": {
+    "input_tokens": 618809,
+    "output_tokens": 12590
+  },
+  "session": {
+    "started": "2026-10-20T12:51:43+00:00",
+    "ended": "2026-10-20T12:59:40+00:00",
+    "minutes": 7.96,
+    "returncode": 0,
+    "status": "SESSION_EXITED_OK"
+  },
+  "checks": {
+    "artifacts_present": true,
+    "docker_isolation_verified": true,
+    "upstream_requests_present": true,
+    "requested_model_pinned": true,
+    "upstream_reported_model_matches": true,
+    "frozen_instruction_sha256": "cfe47782bcf393f60fcf5351cf4c0fad0b3dbb4ed5837ad26899d7e314731205"
+  },
+  "source_run": "claude-opus-4-8_20261020T085136",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

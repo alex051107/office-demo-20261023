@@ -1,0 +1,99 @@
+{
+  "schema_version": "office-demo-source-pair-audit-v1",
+  "checked_at": "2026-10-22T17:52:41.241303-04:00",
+  "status": "PASS_CURRENT_INPUT_IDENTITY",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_note": "Muskegon公开合同节选及既有编制记录；记录转为PDF和同页PNG，并非全部是市政府原件。沿用冻结输入，不是客户原始query。",
+  "live_source_reverified": false,
+  "original_customer_query_available": false,
+  "files": [
+    {
+      "path": "environment/input_files/Agreement.pdf",
+      "bytes": 317417,
+      "sha256": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Agreement.pdf",
+      "source_manifest_sha256": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records.pdf",
+      "bytes": 248666,
+      "sha256": "712f78dffb01ede2e0246df882f00cd1132dfa7a46178d8f12e273f26bfd2979",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records.pdf",
+      "source_manifest_sha256": "712f78dffb01ede2e0246df882f00cd1132dfa7a46178d8f12e273f26bfd2979",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Broker_payments.png",
+      "bytes": 45594,
+      "sha256": "a235fb93980d851886aa9bf8d8f3ab8597846e3e703b4baf8c7bb8145082faa9",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Broker_payments.png",
+      "source_manifest_sha256": "a235fb93980d851886aa9bf8d8f3ab8597846e3e703b4baf8c7bb8145082faa9",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Finance_forecast.png",
+      "bytes": 23628,
+      "sha256": "b25d2b6911afa5d30f55632cc59af20e0506b2b3fece7da4f28a78d23c60156c",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Finance_forecast.png",
+      "source_manifest_sha256": "b25d2b6911afa5d30f55632cc59af20e0506b2b3fece7da4f28a78d23c60156c",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Other_payments.png",
+      "bytes": 55363,
+      "sha256": "2b8f67a11d766f13014d93d34e431135b6f1ef257067e97121d532c20fef09a7",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Other_payments.png",
+      "source_manifest_sha256": "2b8f67a11d766f13014d93d34e431135b6f1ef257067e97121d532c20fef09a7",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Plans.png",
+      "bytes": 25340,
+      "sha256": "b2c60dba14a1a2434c3c10af9c3e0a079c4e4ff8aba7a5e1f63cd7234ad8f507",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Plans.png",
+      "source_manifest_sha256": "b2c60dba14a1a2434c3c10af9c3e0a079c4e4ff8aba7a5e1f63cd7234ad8f507",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Sources.png",
+      "bytes": 28048,
+      "sha256": "8647329c046c0a1d1910fc5a8ba569b80ba7fbd3105b56104eabacd293c636c9",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Sources.png",
+      "source_manifest_sha256": "8647329c046c0a1d1910fc5a8ba569b80ba7fbd3105b56104eabacd293c636c9",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/Records_Sponsorships.png",
+      "bytes": 55337,
+      "sha256": "d6957e760c59497a27cd82ed2ea3e62b55ffe04644933cbb9ca8531530231ed0",
+      "kind": "derived",
+      "source_url": "https://muskegon-mi.gov/documents/pdf/2641.pdf",
+      "source_file": "Records_Sponsorships.png",
+      "source_manifest_sha256": "d6957e760c59497a27cd82ed2ea3e62b55ffe04644933cbb9ca8531530231ed0",
+      "manifest_match": true,
+      "source_bytes_match": true
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "model_id": "gpt-5.6-sol",
+  "agent_lane": "codex",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-20T10:47:15+00:00",
+  "ended": "2026-10-20T10:48:56+00:00",
+  "minutes": 1.68,
+  "returned_model_counts": {
+    "gpt-5.6-sol": 7
+  },
+  "total_requests": 7,
+  "substitute_requests": 0,
+  "harness": "Codex CLI",
+  "harness_difference_note": "Sol使用Codex CLI；Opus使用Claude Code。导出JSONL将非JSON诊断另存export_diagnostics.json，历史原件保留在归档；未添加求解事件。",
+  "terminal_event": {
+    "type": "turn.completed",
+    "usage": {
+      "input_tokens": 170109,
+      "cached_input_tokens": 121252,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2581,
+      "reasoning_output_tokens": 770
+    }
+  },
+  "event_count": 21,
+  "non_json_lines": [],
+  "trajectory_format": "codex-cli-jsonl-diagnostics-separated",
+  "source_log_sha256": "9cc12fd665be39dfa61d5e839d9ac8f27bd4e96848ef2f2a00831c268245f328",
+  "exported_log_sha256": "2048d010963459e7578efdcd30a8f1911ede2f63a902e7731786e2c28d6e8477",
+  "candidate_sha256": "ce5bea3d6237fc387f212ca0a4d338f4046c0c8e90e01a342576a3ec157b9927",
+  "source_candidate_sha256": "ce5bea3d6237fc387f212ca0a4d338f4046c0c8e90e01a342576a3ec157b9927",
+  "redaction_matches": {
+    "path_replacement": 0,
+    "internal_identifier_replacement": 0,
+    "secret_value_redaction": 0
+  },
+  "original_terminal_preserved": true,
+  "path_placeholders": [
+    "<RUN_ROOT>",
+    "<CASE_ROOT>",
+    "<HOME>",
+    "<HOST_PATH>"
+  ],
+  "evaluation": {
+    "judge": "judge.json",
+    "reward": 0.0,
+    "judge_model": "qwen3.7-plus",
+    "criteria_counted": 9,
+    "status": "COMPLETED",
+    "source_run": "gpt-5.6-sol_r1"
+  },
+  "candidate_label": "gpt-5.6-sol",
+  "judge_model": "qwen3.7-plus",
+  "current_export_rubric_sha256": "6cd1319536c1e789ff75943b86a8fef8d413272fc9ebb27509ae11ccbe054b03",
+  "historical_judge_rubric_sha256": "0a65180fae81d9f567ae15f76595053c5d07476401fb8326521f8cc3c308e6c2",
+  "score_preserved": 0.0,
+  "this_export_paid_calls": 0,
+  "historical_prompt_available": false,
+  "historical_provider_response_available": false,
+  "missing_artifacts": [
+    "历史完整judge请求",
+    "上游原始judge响应",
+    "container_boundary.json",
+    "execution_verification.json",
+    "gateway_config.json",
+    "trajectory/provider_requests.jsonl",
+    "分段请求原件、额外检查笔记及错误尝试原件未留存"
+  ],
+  "searched_sources": [
+    "既有rollout目录",
+    "既有_judge_runs的reward-details及graded目录",
+    "既有_history归档"
+  ],
+  "evidence_note": "只导出既有回执；缺失的容器、网关及请求证据不由运行器名或成功状态推定。",
+  "jsonl_normalization": {
+    "non_json_lines_separated": 1,
+    "original_preserved_in_history": true,
+    "historical_solver_events_added": false
+  },
+  "historical_non_json_line_numbers": [
+    1
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source": "original historical receipt",
+  "this_conversion_paid_calls": 0,
+  "usage": {
+    "input_tokens": 16,
+    "cache_creation_input_tokens": 97837,
+    "cache_read_input_tokens": 292729,
+    "output_tokens": 24128,
+    "output_tokens_details": {
+      "thinking_tokens": 22138
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 97837
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "historical_cost": {
+    "metered_usd": 2.059702,
+    "gateway_usd": null,
+    "requests": 15,
+    "minutes": 10.8
+  }
+}

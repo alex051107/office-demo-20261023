@@ -1,0 +1,17 @@
+{
+  "source_line_numbers": [
+    1,
+    33
+  ],
+  "lines": [
+    {
+      "line": 1,
+      "text": "Reading additional input from stdin..."
+    },
+    {
+      "line": 33,
+      "text": "2026-10-18T22:10:04.187726Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to read /tmp/workbook_builder.py: No such file or directory (os error 2)"
+    }
+  ],
+  "note": "从真实日志分离的非JSON诊断；不是新增求解事件。"
+}

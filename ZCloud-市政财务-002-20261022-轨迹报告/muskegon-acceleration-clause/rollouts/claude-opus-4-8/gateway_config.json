@@ -1,0 +1,24 @@
+{
+  "base_url": "http://<gateway-host>:3000",
+  "protocol": "anthropic-messages",
+  "models": [
+    "claude-opus-4-8"
+  ],
+  "harness": "Claude Code CLI",
+  "harness_version": "2.1.251",
+  "effort": "high",
+  "max_output_tokens": 64000,
+  "max_api_requests": null,
+  "upstream_timeout_seconds": null,
+  "not_recorded": [
+    "max_api_requests",
+    "upstream_timeout_seconds"
+  ],
+  "source_run": "claude-opus-4-8_20261018T185448",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

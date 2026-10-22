@@ -1,0 +1,10 @@
+{
+  "count": 6,
+  "reason_categories": [
+    "网关超时",
+    "连接中断"
+  ],
+  "included_in_statistics": false,
+  "count_as_zero": false,
+  "note": "按既定排除口径汇总；原因类别不表示每场均失败，不参与均分或一致性。"
+}

@@ -1,0 +1,5 @@
+{"type": "archived_judge_result_reference", "run_id": "golden_r1", "judge": "../judge_runs/golden_r1/judge.json", "historical_score": 1.0, "exported_at": "2026-10-22", "historical_solver_event": false}
+{"type": "archived_judge_result_reference", "run_id": "golden_r2", "judge": "../judge_runs/golden_r2/judge.json", "historical_score": 1.0, "exported_at": "2026-10-22", "historical_solver_event": false}
+{"type": "archived_judge_result_reference", "run_id": "golden_r3", "judge": "../judge_runs/golden_r3/judge.json", "historical_score": 1.0, "exported_at": "2026-10-22", "historical_solver_event": false}
+{"type": "archived_judge_result_reference", "run_id": "golden_r4", "judge": "../judge_runs/golden_r4/judge.json", "historical_score": 1.0, "exported_at": "2026-10-22", "historical_solver_event": false}
+{"type": "archived_judge_result_reference", "run_id": "golden_r5", "judge": "../judge_runs/golden_r5/judge.json", "historical_score": 1.0, "exported_at": "2026-10-22", "historical_solver_event": false}

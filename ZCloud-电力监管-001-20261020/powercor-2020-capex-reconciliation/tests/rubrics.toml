@@ -1,0 +1,34 @@
+[judge]
+judge = "claude-code"
+prompt_template = "prompt.md"
+timeout = 7200
+mode = "batched"
+weight = 1.0
+
+
+[[criterion]]
+id = "L01"
+name = "L01"
+description = "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。"
+type = "binary"
+weight = 3
+negate = true
+
+[[criterion]]
+id = "L02"
+name = "L02"
+description = "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。"
+type = "binary"
+weight = 3
+negate = true
+
+[[criterion]]
+id = "L03"
+name = "L03"
+description = "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。"
+type = "binary"
+weight = 3
+negate = true
+
+[scoring]
+aggregation = "weighted_mean"

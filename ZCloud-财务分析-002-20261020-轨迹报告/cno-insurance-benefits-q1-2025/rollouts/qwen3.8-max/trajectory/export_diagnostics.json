@@ -1,0 +1,14 @@
+{
+  "source": "原events.jsonl（agent.log）",
+  "non_json_lines": [
+    {
+      "line": 1,
+      "text": "Reading additional input from stdin..."
+    },
+    {
+      "line": 160,
+      "text": "2026-10-22T20:13:35.900747Z ERROR codex_core::tools::router: error=exec_command failed for `/bin/bash -lc 'cd /app/work && rm -rf recalc && mkdir -p recalc && timeout 300 soffice --headless --norestore --convert-to xlsx:\"Calc MS Excel 2007 XML\" --outdir /app/work/recalc /app/output/answer.xlsx 2>&1 | tail -3; ls -la /app/work/recalc'`: CreateProcess { message: \"Rejected(\\\"`/bin/bash -lc 'cd /app/work && rm -rf recalc && mkdir -p recalc && timeout 300 soffice --headless --norestore --convert-to xlsx:\\\\\\\"Calc MS Excel 2007 XML\\\\\\\" --outdir /app/work/recalc /app/output/answer.xlsx 2>&1 | tail -3; ls -la /app/work/recalc'` rejected: rm -f style commands are not permitted. Use a safer approach\\\")\" }"
+    }
+  ],
+  "note": "仅分离非JSON诊断行，消息顺序与有效事件内容不变。"
+}

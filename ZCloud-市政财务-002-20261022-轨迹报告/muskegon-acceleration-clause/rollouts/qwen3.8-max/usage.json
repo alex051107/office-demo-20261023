@@ -1,0 +1,10 @@
+{
+  "source": "真实历史运行回执；本轮不调用模型",
+  "this_conversion_paid_calls": 0,
+  "historical_cost": {
+    "metered_usd": 1.795464,
+    "gateway_usd": 1.795464,
+    "requests": 17,
+    "minutes": 9.16
+  }
+}

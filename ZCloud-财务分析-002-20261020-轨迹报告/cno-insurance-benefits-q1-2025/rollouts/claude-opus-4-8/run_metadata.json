@@ -1,0 +1,153 @@
+{
+  "model_id": "claude-opus-4-8",
+  "agent_lane": "claude",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-20T12:51:43+00:00",
+  "ended": "2026-10-20T12:59:40+00:00",
+  "minutes": 7.96,
+  "returned_model_counts": {
+    "claude-opus-4-8": 12
+  },
+  "total_requests": 12,
+  "substitute_requests": 0,
+  "harness": "Claude Code",
+  "harness_difference_note": "Sol使用Codex CLI；Opus使用Claude Code；轨迹与诊断保持原始格式。",
+  "terminal_event": {
+    "is_error": false,
+    "duration_api_ms": 474416,
+    "num_turns": 13,
+    "stop_reason": "end_turn",
+    "session_id": "0accb33a-dbdf-4b87-9998-3a6a543ed2ea",
+    "total_cost_usd": 1.2140515,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 102572,
+      "cache_read_input_tokens": 516213,
+      "output_tokens": 12590,
+      "output_tokens_details": {
+        "thinking_tokens": 10981
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 102572
+      },
+      "inference_geo": "not_available",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-4-8": {
+        "inputTokens": 24,
+        "outputTokens": 12590,
+        "cacheReadInputTokens": 516213,
+        "cacheCreationInputTokens": 102572,
+        "webSearchRequests": 0,
+        "costUSD": 1.2140515,
+        "contextWindow": 200000,
+        "maxOutputTokens": 64000,
+        "canonicalModel": "claude-opus-4-8",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`/app/output/answer.xlsx` is complete and verified. Here's what the workbook contains:\n\n**Key figures:**\n- Q4 2024 insurance policy benefits: **$545.5M** — derived by subtracting the nine-month figure ($1,926.4M from `CNO_2024-09-30_10Q.xlsx` T010) from the full-year 2024 figure ($2,471.9M from `CNO_2024-12-31_10K.xlsx` T050)\n- Q1 2025 insurance policy benefits: **$580.1M** — directly from `CNO_2025-03-31_10Q.xlsx` T010 (three months ended March 31, 2025)\n- Change (Q1 2025 minus Q4 2024): **+$34.6M**\n- Percentage change: **+6.34%**\n\n**Sheets:**\n- `Results` — two labeled rows with value, unit, and source notes\n- `Analysis` — one row per quarter with period, measure, amount, source document, and source page\n- `Summary` — compact two-row quarter/benefit table",
+    "ttft_ms": 38487,
+    "ttft_stream_ms": 38486,
+    "time_to_request_ms": 87,
+    "type": "result",
+    "duration_ms": 476666,
+    "uuid": "e7adbeee-5234-421e-82a8-ffed8fd1e0d7",
+    "queued_turn_count": 0
+  },
+  "event_count": 50,
+  "non_json_lines": [],
+  "trajectory_format": "claude-code-stream-json",
+  "source_log_sha256": "905a8ecae67863521b79565e166330a724f08e4a8aefc68cc1f4f3e2f02eb32b",
+  "exported_log_sha256": "905a8ecae67863521b79565e166330a724f08e4a8aefc68cc1f4f3e2f02eb32b",
+  "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+  "source_candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+  "redaction_matches": {
+    "path_replacement": 0,
+    "internal_identifier_replacement": 0,
+    "secret_value_redaction": 0
+  },
+  "original_terminal_preserved": true,
+  "path_placeholders": [
+    "<RUN_ROOT>",
+    "<CASE_ROOT>",
+    "<HOME>",
+    "<HOST_PATH>"
+  ],
+  "evaluation": {
+    "judge": "judge.json",
+    "reward": 0.0,
+    "judge_model": "qwen3.7-plus",
+    "criteria_counted": 16,
+    "status": "COMPLETED",
+    "source_run": "claude-opus-4-8_r1"
+  },
+  "candidate_label": "claude-opus-4-8",
+  "judge_model": "qwen3.7-plus",
+  "current_export_rubric_sha256": "494bda071b149f95ab68024a4b68d95ab0b212120b6f60eb31cf8561175dab85",
+  "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+  "score_preserved": 0.0,
+  "this_export_paid_calls": 0,
+  "historical_prompt_available": false,
+  "historical_provider_response_available": false,
+  "missing_artifacts": [
+    "历史完整judge请求",
+    "上游原始judge响应",
+    "container_boundary.json",
+    "execution_verification.json",
+    "gateway_config.json",
+    "trajectory/provider_requests.jsonl",
+    "分段请求原件、额外检查笔记及错误尝试原件未留存"
+  ],
+  "searched_sources": [
+    "既有rollout目录",
+    "既有_judge_runs的reward-details及graded目录",
+    "既有_history归档"
+  ],
+  "evidence_note": "只导出既有回执；缺失的容器、网关及请求证据不由运行器名或成功状态推定。",
+  "jsonl_normalization": {
+    "non_json_lines_separated": 0,
+    "original_preserved_in_history": true,
+    "historical_solver_events_added": false
+  }
+}

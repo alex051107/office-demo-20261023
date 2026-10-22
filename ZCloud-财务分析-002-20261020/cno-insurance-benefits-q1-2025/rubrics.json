@@ -1,0 +1,339 @@
+{
+  "case_id": "cno-insurance-benefits-q1-2025",
+  "rubric_version": "office-demo-20261020",
+  "pass_threshold": 0.7,
+  "normalization": {
+    "allowed_weights": [
+      10,
+      7,
+      -3,
+      -7,
+      -10
+    ],
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+    "binary": [
+      0,
+      1
+    ],
+    "gradient": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ]
+  },
+  "items": [
+    {
+      "id": "R01",
+      "description": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 10,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足本条已有判据：Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+        "0": "未满足本条已有判据。"
+      }
+    },
+    {
+      "id": "R02",
+      "description": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 10,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足本条已有判据：Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+        "0": "未满足本条已有判据。"
+      }
+    },
+    {
+      "id": "A1",
+      "description": "Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 7,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足本条已有判据：Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)",
+        "0": "未满足本条已有判据。"
+      }
+    },
+    {
+      "id": "A2",
+      "description": "Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)",
+      "dimension": "内容质量-数值与计算准确性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": 7,
+      "negate": false,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "满足本条已有判据：Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)",
+        "0": "未满足本条已有判据。"
+      }
+    },
+    {
+      "id": "P1",
+      "description": "缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record",
+      "dimension": "操作与交付安全",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "P2",
+      "description": "缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row",
+      "dimension": "操作与交付安全",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "SD1",
+      "description": "缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "SD2",
+      "description": "缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "F1",
+      "description": "缺失或错误时扣分；正确不加分：Results sheet has the four stated headers",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Results sheet has the four stated headers",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "F2",
+      "description": "缺失或错误时扣分；正确不加分：Analysis sheet has the six stated headers",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Analysis sheet has the six stated headers",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "F3",
+      "description": "缺失或错误时扣分；正确不加分：Summary sheet has the two stated headers",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Summary sheet has the two stated headers",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "X1",
+      "description": "Deduct 3 when any cell of the workbook holds an Excel error value",
+      "dimension": "操作与交付安全",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "触发本条已有违规条件：Deduct 3 when any cell of the workbook holds an Excel error value",
+        "0": "未触发本条已有违规条件。"
+      }
+    },
+    {
+      "id": "X2",
+      "description": "Unsupported additional business records in Results/Analysis/Summary: proportion of the expected record count, at most 7 points",
+      "dimension": "操作与交付安全",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "gradient",
+      "weight": -7,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "levels": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      },
+      "score_domain": "continuous [0,1]; levels are anchors, no quantization",
+      "anchors": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      }
+    },
+    {
+      "id": "L01",
+      "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    },
+    {
+      "id": "L02",
+      "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    },
+    {
+      "id": "L03",
+      "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+      "dimension": "内容质量-事实忠实性",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Implicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "llm_judge",
+      "anchors": {
+        "1": "存在明确违规证据",
+        "0": "无违规或无交付物"
+      }
+    }
+  ],
+  "metadata": {
+    "scoring": {
+      "s_max": 34,
+      "negative_total": -40,
+      "negative_total_absolute": 40,
+      "programmatic_negative_total": -31,
+      "llm_negative_total": -9,
+      "decision_date": "2026-10-20",
+      "rule": "Results两项业务结果各10分；Analysis两期amount各7分；Summary不重复计正分。记录一致性及其余负项按各自判据扣分。",
+      "positive_count": 4,
+      "programmatic_count": 13,
+      "llm_count": 3,
+      "programmatic_positive_share": 1.0,
+      "llm_positive_share": 0.0,
+      "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+      "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
+      "llm_status": "COMPLETED_HISTORICAL_RESULTS_NOT_RERUN",
+      "negative_weight_total_abs": 40,
+      "negative_hit_semantics": "违反负向判据时score=1；未违反时score=0。SDK以value=1-违规度、negate=true保存；固定finalize还原带符号扣分，不做第二次取反。"
+    },
+    "format_migration": {
+      "criteria_content_changed": false,
+      "weights_changed": false,
+      "anchors_changed": true,
+      "scores_rejudged": false,
+      "changes": [
+        "补充样例字段",
+        "保留所有原有anchors；binary仅补原条件，gradient复制原levels，不引入阈值"
+      ],
+      "historical_rubric_sha256": "3cb3729c7ef9379423882eba8faf7f8d5d67e7cae3e33f5f10d32b3ba81126d0",
+      "existing_anchors_preserved": true
+    },
+    "scoring_revision": {
+      "date": "2026-10-22",
+      "reason": "格式导出，不修订评分规则",
+      "removed_criterion_ids": [],
+      "remaining_criteria_changed": false,
+      "remaining_weights_changed": false,
+      "rejudge_required": false
+    }
+  },
+  "scope_note": "评分规则未改。既有混合裁判结果已随轨迹交付；offline_score.py只重放程序子集，不调用LLM。",
+  "run_id": "office-demo-20261020-existing-judgements",
+  "source_authenticity": "public_source_business_adaptation",
+  "golden_threshold": 0.85,
+  "three_model_average_threshold": 0.7,
+  "scoring_note": "保留现有判据、权重、类型、阈值及计算规则。正项按正确度计分，负项按违规程度扣分；负向权重不进入分母。2026-10-22仅补充导出字段，未重跑裁判。"
+}

@@ -1,0 +1,10 @@
+{
+  "source": "原events.jsonl（agent.log）",
+  "non_json_lines": [
+    {
+      "line": 1,
+      "text": "Reading additional input from stdin..."
+    }
+  ],
+  "note": "仅分离非JSON诊断行，消息顺序与有效事件内容不变。"
+}

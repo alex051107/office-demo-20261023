@@ -1,0 +1,213 @@
+{
+  "status": "FORMAT_ALIGNED_QWEN_UNAVAILABLE",
+  "task_count": 1,
+  "input_file_count": 4,
+  "models": [
+    {
+      "system": "Sol",
+      "path": "rollouts/gpt-5.6-sol/candidate.xlsx",
+      "status": "有效答卷及混合裁判已完成",
+      "programmatic_score": 0.205882,
+      "harness": "Codex CLI",
+      "score": 0.205882,
+      "hybrid_score": 0.205882,
+      "judge_model": "qwen3.7-plus",
+      "judge": "rollouts/gpt-5.6-sol/judge.json",
+      "evaluation_run": "gpt-5.6-sol_r1"
+    },
+    {
+      "system": "Opus",
+      "path": "rollouts/claude-opus-4-8/candidate.xlsx",
+      "status": "有效答卷及混合裁判已完成",
+      "programmatic_score": 0,
+      "harness": "Claude Code",
+      "score": 0.0,
+      "hybrid_score": 0.0,
+      "judge_model": "qwen3.7-plus",
+      "judge": "rollouts/claude-opus-4-8/judge.json",
+      "evaluation_run": "claude-opus-4-8_r1"
+    },
+    {
+      "system": "千问",
+      "status": "VALID_RUN",
+      "programmatic_score": null,
+      "harness": null,
+      "score": 0.0,
+      "hybrid_score": null,
+      "judge_model": null,
+      "note": "千问：2026-10-22补跑一次，正常完成（网关返回 qwen/qwen3.8-max 与 qwen3.8-max-0902，同一基础型号）；Office裁判 0.0；执行线冻结评分器（另一套原子判据、含部分分）0.16；用LibreOffice重算公式后Office离线程序分仍为0"
+    }
+  ],
+  "available_model_mean": 0.068627,
+  "three_model_mean": 0.068627,
+  "three_model_mean_status": "千问：2026-10-22补跑一次，正常完成（网关返回 qwen/qwen3.8-max 与 qwen3.8-max-0902，同一基础型号）；Office裁判 0.0；执行线冻结评分器（另一套原子判据、含部分分）0.16；用LibreOffice重算公式后Office离线程序分仍为0",
+  "reference_programmatic_score": 1.0,
+  "reference_hybrid_score": 1.0,
+  "blank_programmatic_score": 0,
+  "missing_programmatic_score": 0,
+  "empty_controls": [
+    {
+      "name": "P_blank_headers_only",
+      "score": 0
+    },
+    {
+      "name": "P_output_missing",
+      "score": 0
+    },
+    {
+      "name": "empty_workbook",
+      "score": 0
+    },
+    {
+      "name": "empty_result_skeleton",
+      "score": 0
+    }
+  ],
+  "gate": "NOT_CERTIFIED_TWO_VALID_MODELS_ONLY",
+  "gate_failures": [],
+  "harness_difference": "Sol使用Codex CLI JSONL；Opus使用Claude Code stream-json。导出时将非JSON诊断另存，未增加求解事件；原始记录保留归档。",
+  "llm_judge": "COMPLETED: qwen3.7-plus / anthropic / rewardkit 0.1.7",
+  "llm_consistency_experiment": {
+    "path": "consistency.json",
+    "status": "PASS",
+    "groups": 1
+  },
+  "programmatic_sdk": "PASS: real harbor-rewardkit 0.1.7, network none; all registered cases equal",
+  "formal_package_exported": true,
+  "scoring": {
+    "s_max": 34,
+    "negative_total": -40,
+    "negative_total_absolute": 40,
+    "programmatic_negative_total": -31,
+    "llm_negative_total": -9,
+    "decision_date": "2026-10-20",
+    "rule": "Results两项业务结果各10分；Analysis两期amount各7分；Summary不重复计正分。记录一致性及其余负项按各自判据扣分。",
+    "positive_count": 4,
+    "programmatic_count": 13,
+    "llm_count": 3,
+    "programmatic_positive_share": 1.0,
+    "llm_positive_share": 0.0,
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+    "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
+    "llm_status": "COMPLETED"
+  },
+  "pass_at_8": null,
+  "available_model_count": 3,
+  "available_model_mean_basis": "Sol、Opus、千问各一份有效答卷的第1次Office裁判分",
+  "reference_judge_runs": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "reference_judge_mean": 1.0,
+  "reference_score_policy": "参考及模型代表分均取第1次裁判结果；重复结果另列。",
+  "imported_judge_jobs": 7,
+  "judge_model": "qwen3.7-plus",
+  "criteria_counted": 16,
+  "verifier_error_count": 0,
+  "canonical_run_policy": "r1 for all candidates",
+  "discrimination": {
+    "reference_r1": 1.0,
+    "reference_mean": 1.0,
+    "model_scores": {
+      "Sol": 0.205882,
+      "Opus": 0.0,
+      "千问": 0.0
+    },
+    "reference_r1_minus_model": {
+      "Sol": 0.794118,
+      "Opus": 1.0
+    },
+    "reference_mean_minus_model": {
+      "Sol": 0.794118,
+      "Opus": 1.0
+    },
+    "reference_r1_minus_two_model_mean": 0.897059,
+    "limitation": "仅为当前两份既有答卷的观测分差；不是三系统难度或pass@8验收。"
+  },
+  "limitations": [
+    "同一参考答案重复裁判的观测一致性不等于未来稳定性或pass@8。",
+    "千问答卷的程序评分在两套评分器中不同：执行线冻结评分器（另一套原子判据、含部分分）0.16；用LibreOffice重算公式后Office离线程序分仍为0；本包统一使用Office裁判分。"
+  ],
+  "offline_programmatic_gate": {
+    "status": "GATES_PASS",
+    "failures": []
+  },
+  "judge_timeout_seconds": 7200,
+  "judge_timeout_reason": "单条裁判超时7200秒，与样例配置一致；历史回执保留实际配置。",
+  "qwen_status": "千问：2026-10-22补跑一次，正常完成（网关返回 qwen/qwen3.8-max 与 qwen3.8-max-0902，同一基础型号）；Office裁判 0.0；执行线冻结评分器（另一套原子判据、含部分分）0.16；用LibreOffice重算公式后Office离线程序分仍为0",
+  "schema_version": "rl0-1-trajectory-report-v2",
+  "case_id": "cno-insurance-benefits-q1-2025",
+  "task_package": "ZCloud-财务分析-002-20261020",
+  "artifact_path_base": "case_root",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_authenticity_check": {
+    "status": "PASS_CURRENT_INPUT_IDENTITY",
+    "path": "validation/source_pair_audit.json",
+    "live_source_verified": false,
+    "original_customer_query": false
+  },
+  "rubric_sha256": "494bda071b149f95ab68024a4b68d95ab0b212120b6f60eb31cf8561175dab85",
+  "target": {
+    "path": "golden/candidate.xlsx",
+    "sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
+    "judge": "golden/judge.json",
+    "visual_review": "golden/visual_review.json",
+    "score_final": 1.0
+  },
+  "rollout_summary": {
+    "models": [
+      {
+        "model": "gpt-5.6-sol",
+        "execution_status": "COMPLETED",
+        "score_final": 0.205882,
+        "judge_status": "FAIL",
+        "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+        "candidate": "rollouts/gpt-5.6-sol/candidate.xlsx",
+        "trajectory": "rollouts/gpt-5.6-sol/trajectory/events.jsonl",
+        "judge": "rollouts/gpt-5.6-sol/judge.json",
+        "source": "historical_completed_run",
+        "new_docker_run": false
+      },
+      {
+        "model": "claude-opus-4-8",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+        "candidate": "rollouts/claude-opus-4-8/candidate.xlsx",
+        "trajectory": "rollouts/claude-opus-4-8/trajectory/events.jsonl",
+        "judge": "rollouts/claude-opus-4-8/judge.json",
+        "source": "historical_completed_run",
+        "new_docker_run": false
+      },
+      {
+        "model": "qwen3.8-max",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+        "candidate": "rollouts/qwen3.8-max/candidate.xlsx",
+        "trajectory": "rollouts/qwen3.8-max/trajectory/events.jsonl",
+        "judge": "rollouts/qwen3.8-max/judge.json",
+        "source": "rerun_20261022_completed_run",
+        "new_docker_run": true
+      }
+    ],
+    "average_score": 0.068627,
+    "average_basis": "three_valid_models_r1_only",
+    "available_model_count": 3,
+    "three_model_average_score": 0.068627,
+    "three_model_average_threshold": 0.7,
+    "difficulty_tier": "not_certified_pass_at_8",
+    "difficulty_gate": "MEETS_AVG_BELOW_0.6_SINGLE_RUN_NOT_PASS_AT_8"
+  },
+  "model_evidence": {
+    "qwen_and_opus": "Opus与千问均有正常完成的答卷与原始轨迹；千问为2026-10-22补跑，运行记录由原始回执导出。",
+    "gpt": "使用既有正常完成答卷与原始轨迹；导出时仅分离非JSON诊断行，不重新求解或裁判。"
+  },
+  "overall_delivery_compliance": "FORMAT_ALIGNED_WITH_DOCUMENTED_HISTORICAL_GAPS_NOT_DIFFICULTY_ACCEPTANCE",
+  "three_model_average_score": 0.068627
+}

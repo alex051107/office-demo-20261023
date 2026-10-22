@@ -1,0 +1,414 @@
+{
+  "task_id": "FINREP/cno-insurance-benefits-q1-2025",
+  "sheet": "Results",
+  "formula_policy": "static_ok",
+  "scorer_version": 2,
+  "scorer_entrypoint": "tests/score_output.py",
+  "amount_base_unit": "usd millions",
+  "interfaces": {
+    "Results": {
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "key": [
+        "label"
+      ],
+      "expected_keys": [
+        [
+          "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ],
+        [
+          "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ]
+      ]
+    },
+    "Analysis": {
+      "headers": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "key": [
+        "period",
+        "measure"
+      ],
+      "expected_keys": [
+        [
+          "Fourth quarter of 2024",
+          "Insurance policy benefits"
+        ],
+        [
+          "First quarter of 2025",
+          "Insurance policy benefits"
+        ]
+      ],
+      "aliases": [
+        "Analysis detail"
+      ],
+      "value_aliases": {
+        "Fourth quarter of 2024": [
+          "Q4 2024",
+          "4Q 2024",
+          "Fourth quarter 2024",
+          "Three months ended December 31, 2024",
+          "Q4 FY2024"
+        ],
+        "First quarter of 2025": [
+          "Q1 2025",
+          "1Q 2025",
+          "First quarter 2025",
+          "Three months ended March 31, 2025",
+          "Q1 FY2025"
+        ],
+        "Insurance policy benefits": [
+          "Insurance policy benefits expense",
+          "Policy benefits"
+        ]
+      },
+      "header_aliases": {
+        "amount": [
+          "amount_usd_millions",
+          "value",
+          "usd millions"
+        ],
+        "source_document": [
+          "source",
+          "document",
+          "source_file",
+          "filing"
+        ],
+        "source_page": [
+          "page",
+          "source location",
+          "worksheet",
+          "location",
+          "table"
+        ]
+      }
+    },
+    "Summary": {
+      "headers": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "key": [
+        "quarter"
+      ],
+      "expected_keys": [
+        [
+          "Fourth quarter of 2024"
+        ],
+        [
+          "First quarter of 2025"
+        ]
+      ],
+      "aliases": [
+        "Pivot",
+        "Summary pivot"
+      ],
+      "value_aliases": {
+        "Fourth quarter of 2024": [
+          "Q4 2024",
+          "4Q 2024",
+          "Fourth quarter 2024",
+          "Three months ended December 31, 2024",
+          "Q4 FY2024"
+        ],
+        "First quarter of 2025": [
+          "Q1 2025",
+          "1Q 2025",
+          "First quarter 2025",
+          "Three months ended March 31, 2025",
+          "Q1 FY2025"
+        ]
+      },
+      "header_aliases": {
+        "quarter": [
+          "period"
+        ],
+        "insurance_policy_benefits": [
+          "insurance policy benefits",
+          "benefits",
+          "amount",
+          "policy benefits"
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "unit": "USD millions",
+      "type": "number",
+      "gold": 61.7,
+      "abs": 0.05,
+      "rel": 0,
+      "weight": 10,
+      "baseline_weight": 50,
+      "percent_forms": false,
+      "dimension": "内容质量-数值与计算准确性",
+      "budget_group": "results",
+      "description": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "negate": false
+    },
+    {
+      "criterion_id": "R02",
+      "label": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "unit": "percent",
+      "type": "number",
+      "gold": 12.138500885303955,
+      "abs": 0.005,
+      "rel": 0,
+      "weight": 10,
+      "baseline_weight": 50,
+      "percent_forms": true,
+      "dimension": "内容质量-数值与计算准确性",
+      "budget_group": "results",
+      "description": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "negate": false
+    }
+  ],
+  "tables": [
+    {
+      "criterion_id": "A1",
+      "sheet": "Analysis",
+      "key": [
+        "period",
+        "measure"
+      ],
+      "value_columns": {
+        "amount": {
+          "type": "number",
+          "abs": 0.05,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "period": "Fourth quarter of 2024",
+          "measure": "Insurance policy benefits",
+          "amount": 508.3
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "budget_group": "analysis",
+      "description": "Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "negate": false
+    },
+    {
+      "criterion_id": "A2",
+      "sheet": "Analysis",
+      "key": [
+        "period",
+        "measure"
+      ],
+      "value_columns": {
+        "amount": {
+          "type": "number",
+          "abs": 0.05,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "period": "First quarter of 2025",
+          "measure": "Insurance policy benefits",
+          "amount": 570.0
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "budget_group": "analysis",
+      "description": "Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      },
+      "negate": false
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "P1",
+      "kind": "aggregate",
+      "refs": [
+        [
+          "Summary",
+          [
+            "Fourth quarter of 2024"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Analysis",
+          [
+            "Fourth quarter of 2024",
+            "Insurance policy benefits"
+          ],
+          "amount"
+        ]
+      ],
+      "coefficients": [
+        1,
+        -1
+      ],
+      "abs": 0.05,
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "budget_group": "pivot",
+      "description": "缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "P2",
+      "kind": "aggregate",
+      "refs": [
+        [
+          "Summary",
+          [
+            "First quarter of 2025"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Summary",
+          [
+            "Fourth quarter of 2024"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Results",
+          [
+            "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ],
+          "value"
+        ]
+      ],
+      "coefficients": [
+        1,
+        -1,
+        -1
+      ],
+      "abs": 0.05,
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "budget_group": "pivot",
+      "description": "缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "SD1",
+      "kind": "source",
+      "ref": [
+        "Analysis",
+        [
+          "Fourth quarter of 2024",
+          "Insurance policy benefits"
+        ],
+        "source_document"
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "budget_group": "sources",
+      "description": "缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "SD2",
+      "kind": "source",
+      "ref": [
+        "Analysis",
+        [
+          "First quarter of 2025",
+          "Insurance policy benefits"
+        ],
+        "source_document"
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "budget_group": "sources",
+      "description": "缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "F1",
+      "kind": "header",
+      "sheet": "Results",
+      "weight": -3,
+      "dimension": "结构与组织",
+      "budget_group": "format",
+      "description": "缺失或错误时扣分；正确不加分：Results sheet has the four stated headers",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "F2",
+      "kind": "header",
+      "sheet": "Analysis",
+      "weight": -3,
+      "dimension": "结构与组织",
+      "budget_group": "format",
+      "description": "缺失或错误时扣分；正确不加分：Analysis sheet has the six stated headers",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "F3",
+      "kind": "header",
+      "sheet": "Summary",
+      "weight": -3,
+      "dimension": "结构与组织",
+      "budget_group": "format",
+      "description": "缺失或错误时扣分；正确不加分：Summary sheet has the two stated headers",
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "X1",
+      "kind": "error_cells",
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "budget_group": "penalty",
+      "description": "Deduct 3 when any cell of the workbook holds an Excel error value",
+      "negate": true
+    },
+    {
+      "criterion_id": "X2",
+      "kind": "unsupported_records",
+      "weight": -7,
+      "dimension": "操作与交付安全",
+      "budget_group": "penalty",
+      "description": "Unsupported additional business records in Results/Analysis/Summary: proportion of the expected record count, at most 7 points",
+      "negate": true
+    }
+  ],
+  "source_patterns": [
+    "cno",
+    "10-?k",
+    "10-?q",
+    "filing",
+    "quarterly report",
+    "annual report"
+  ],
+  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)",
+  "pivot_scope": "Summary is checked only by the existing aggregate consistency penalties; quarter amounts receive positive credit only in Analysis.",
+  "source_scope": "Any supplied file name or document title is accepted; no winning document is required.",
+  "alternative_sets": []
+}

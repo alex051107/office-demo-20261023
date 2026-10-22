@@ -1,0 +1,21 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-22",
+  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
+  "candidate_sha256": "ce5bea3d6237fc387f212ca0a4d338f4046c0c8e90e01a342576a3ec157b9927",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 1,
+  "historical_score": 0.0,
+  "not_a_new_judgement": true
+}

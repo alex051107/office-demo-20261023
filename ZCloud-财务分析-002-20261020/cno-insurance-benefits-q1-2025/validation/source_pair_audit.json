@@ -1,0 +1,55 @@
+{
+  "schema_version": "office-demo-source-pair-audit-v1",
+  "checked_at": "2026-10-22T14:57:09.447100-04:00",
+  "status": "PASS_CURRENT_INPUT_IDENTITY",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_note": "CNO Financial Group公开SEC申报。四份Excel来自HTML可见段落与表格转录；Q2材料沿用已登记的节选与删减，其他申报保留可见内容。query为基于公开材料的业务改编，不是客户原始委托。",
+  "live_source_reverified": false,
+  "original_customer_query_available": false,
+  "files": [
+    {
+      "path": "environment/input_files/CNO_2024-09-30_10Q.xlsx",
+      "bytes": 172810,
+      "sha256": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
+      "kind": "derived",
+      "source_url": "https://www.sec.gov/ (CNO Financial Group filings)",
+      "source_file": "CNO_2024-09-30_10Q.xlsx",
+      "source_manifest_sha256": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/CNO_2024-12-31_10K.xlsx",
+      "bytes": 302695,
+      "sha256": "22948e6421a12bfe94dbb56fd71c0700bcb0d8955e49ade9f69b22bc501dceca",
+      "kind": "derived",
+      "source_url": "https://www.sec.gov/ (CNO Financial Group filings)",
+      "source_file": "CNO_2024-12-31_10K.xlsx",
+      "source_manifest_sha256": "22948e6421a12bfe94dbb56fd71c0700bcb0d8955e49ade9f69b22bc501dceca",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/CNO_2025-03-31_10Q.xlsx",
+      "bytes": 153878,
+      "sha256": "df68eed54fa4d1ff977a5dd6c915be5379273553366cfa1490ff033dd1b6f0fa",
+      "kind": "derived",
+      "source_url": "https://www.sec.gov/ (CNO Financial Group filings)",
+      "source_file": "CNO_2025-03-31_10Q.xlsx",
+      "source_manifest_sha256": "df68eed54fa4d1ff977a5dd6c915be5379273553366cfa1490ff033dd1b6f0fa",
+      "manifest_match": true,
+      "source_bytes_match": true
+    },
+    {
+      "path": "environment/input_files/CNO_2025-06-30_10Q.xlsx",
+      "bytes": 177457,
+      "sha256": "aa1d131e5cf545bec09a111bf85f6ee6334d03cc7dc0be58223a31b2e877d3eb",
+      "kind": "derived",
+      "source_url": "https://www.sec.gov/ (CNO Financial Group filings)",
+      "source_file": "CNO_2025-06-30_10Q.xlsx",
+      "source_manifest_sha256": "aa1d131e5cf545bec09a111bf85f6ee6334d03cc7dc0be58223a31b2e877d3eb",
+      "manifest_match": true,
+      "source_bytes_match": true
+    }
+  ]
+}

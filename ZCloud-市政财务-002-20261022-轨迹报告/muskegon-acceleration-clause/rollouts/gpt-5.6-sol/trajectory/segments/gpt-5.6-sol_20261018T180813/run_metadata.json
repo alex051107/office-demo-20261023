@@ -1,0 +1,53 @@
+{
+  "model_id": "gpt-5.6-sol",
+  "agent_lane": "codex",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-18T22:08:21+00:00",
+  "ended": "2026-10-18T22:10:46+00:00",
+  "minutes": 2.4,
+  "harness": "Codex CLI",
+  "returned_model_counts": {
+    "gpt-5.6-sol": 13
+  },
+  "substitute_requests": 0,
+  "terminal_event": {
+    "type": "turn.completed",
+    "usage": {
+      "input_tokens": 367431,
+      "cached_input_tokens": 338816,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10670,
+      "reasoning_output_tokens": 5344
+    }
+  },
+  "event_count": 39,
+  "non_json_lines": [],
+  "historical_non_json_line_numbers": [
+    1,
+    33
+  ],
+  "trajectory_format": "Codex CLI-jsonl-diagnostics-separated",
+  "source_log_sha256": "9f65e2c91d6d58c11d13b1b3125a53de1fc15c6ddd46f6993d9f4457e3767555",
+  "exported_log_sha256": "7c6382ab018c5cc89deab672e8ea7b06cbaca78251aebad970edd10a77ec1c1a",
+  "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+  "source_candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+  "source_run": "gpt-5.6-sol_20261018T180813",
+  "source_instruction_sha256": "73d1c1441bd6734f46043d2988b9a813c3e48f397ba084b0d7a1337f4e7ba392",
+  "exported_instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
+  "source_wording_note": "外发版已登记的Results标题和说明句改写；实测绑定此前冻结题面。",
+  "redaction_matches": {
+    "path_replacement": 0,
+    "internal_identifier_replacement": 0,
+    "secret_value_redaction": 0
+  },
+  "original_terminal_preserved": true,
+  "paid_calls_this_session": 0,
+  "this_export_paid_calls": 0,
+  "missing_artifacts": [
+    "付费裁判未跑"
+  ],
+  "searched_sources": [
+    "对应答卷SHA256匹配的既有screening运行目录"
+  ]
+}

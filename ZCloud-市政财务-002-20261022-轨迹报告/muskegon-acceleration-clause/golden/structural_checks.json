@@ -1,0 +1,30 @@
+{
+  "format": "xlsx",
+  "check_type": "current_offline_export_inspection",
+  "candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Detail",
+      "state": "visible",
+      "rows": 4,
+      "columns": 3,
+      "nonempty_cells": 12,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 2,
+  "historical_score": 1.0,
+  "programmatic_score": 1,
+  "not_a_new_judgement": true
+}

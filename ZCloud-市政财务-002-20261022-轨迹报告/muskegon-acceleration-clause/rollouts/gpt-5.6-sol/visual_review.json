@@ -1,0 +1,39 @@
+{
+  "format": "xlsx",
+  "reviewed_at": "2026-10-22",
+  "renderer": "LibreOffice calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+  "scope": "每张工作表单独预览；仅临时副本设置打印范围、A3横向和单页缩放，原答卷不变。",
+  "worksheet_count": 3,
+  "render_count": 3,
+  "renders": [
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png"
+    },
+    {
+      "sheet": "Detail",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png"
+    },
+    {
+      "sheet": "Calc",
+      "pdf": "renders/sheet-03.pdf",
+      "png": "renders/sheet-03.png"
+    }
+  ],
+  "render_status": "COMPLETED",
+  "visual_inspection_status": "REVIEWED_ORIGINAL_LAYOUT_LIMITATIONS",
+  "visual_findings": [
+    "参考、Opus和千问的Results部分长出处/标签因原列宽截断；Sol Calc工作底稿较宽、缩放后字小。保留原卷，不把本轮渲染当历史裁判；完整文本见extracted_text.md。"
+  ],
+  "historical_scores_changed": false,
+  "ppt_checks": {
+    "status": "NOT_APPLICABLE",
+    "reason": "xlsx工作表不是PPT幻灯片。"
+  },
+  "inspection_method": "逐表渲染后按题聚合的预览联系图人工检查；28张工作表均有PDF及PNG。",
+  "business_quality_assessed": false,
+  "source_workbook_unchanged": true
+}

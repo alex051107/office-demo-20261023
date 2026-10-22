@@ -1,0 +1,39 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-22",
+  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
+  "candidate_sha256": "136c76d02f59ad604b871e06a9d0cf201fc5ac965fc5ae00e37b5fc2b1dc378a",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Capex reconciliation 2020",
+      "state": "visible",
+      "rows": 22,
+      "columns": 9,
+      "nonempty_cells": 142,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Summary",
+      "state": "visible",
+      "rows": 6,
+      "columns": 4,
+      "nonempty_cells": 18,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 3,
+  "historical_score": 0.0,
+  "not_a_new_judgement": true
+}

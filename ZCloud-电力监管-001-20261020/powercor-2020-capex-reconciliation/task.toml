@@ -1,0 +1,88 @@
+schema_version = "1.4"
+artifacts = ["/app/output/answer.xlsx"]
+
+[task]
+name = "UTL/powercor-2020-capex-reconciliation"
+description = "Powercor 2020 年资本支出期末调整核算"
+track = "A"
+version = "office-demo-20261020-format-20261022"
+keywords = ["office-document", "xlsx", "电力监管"]
+
+[metadata]
+difficulty_tier = "not_certified_pass_at_8"
+sector = "Energy"
+occupation = "Regulatory financial analyst"
+est_minutes = 60
+multimodal = true
+web_search_required = false
+skills = ["Regulatory interpretation", "Rate basis conversion", "Period reconciliation"]
+name = "powercor-2020-capex-reconciliation"
+business = "Powercor"
+domain = "电力监管"
+topic = "office-document"
+task_id = "UTL/powercor-2020-capex-reconciliation"
+track = "A"
+export_ready = true
+author_organization = "ZCloud"
+tags = ["office-document", "xlsx", "public-source-adaptation"]
+domain_l2 = "电力监管"
+domain_l3 = "配电资本支出复核"
+domain_l4 = "日历年净资本支出差额"
+environment_template = "environment/Dockerfile"
+environment_template_status = "custom_dockerfile_path_pending_platform_acceptance"
+task_complexity = "unclassified"
+task_complexity_status = "not_assessed"
+task_complexity_basis = "未取得可适用于本题的完整算法分级表；不从分数或样例C2标签推定。"
+task_complexity_note = "本次只对齐交付格式，不新增复杂度认证。"
+capabilities = "给定材料事实抽取、来源口径与跨文件核对、领域计算建模、可编辑Excel交付与自检"
+difficulty = "not_certified_pass_at_8"
+source_note = "AER公开监管模型及配电滚动模型手册。工作簿为公开材料的静态输入区改编，包含既有登记的数值变更；手册保持原字节。不是官方原件的原样复现，也不是已收到的客户原始query。"
+tools = "解析给定PDF/Excel/图像，产出Excel并离线渲染"
+tool_set = ["filesystem", "shell", "python"]
+expected_tool_dependencies = ["filesystem", "shell", "python"]
+weakness_tag = ["跨文件口径", "领域计算", "证据追溯"]
+skill_set = []
+expected_skill_dependencies = []
+required_tools = ["PDF reader", "Excel reader", "Excel editor", "Office headless renderer"]
+domain_knowledge_dependency = "日历年净资本支出差额"
+evaluated_capabilities = ["给定材料事实抽取", "来源口径与跨文件核对", "领域计算建模", "可编辑Excel交付与自检"]
+three_model_average_threshold = 0.7
+reference_answer_threshold = 0.85
+vl_dependency = "否"
+format_adapter = "rewardkit_with_optional_harbor_adapter"
+
+[[metadata.deliverables]]
+path = "answer.xlsx"
+required = true
+desc = "题面所列结果与工作底稿的可编辑Excel"
+
+[agent]
+timeout_sec = 5400
+
+[environment]
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+allow_internet = false
+workdir = "/app"
+os = "linux"
+network_mode = "none"
+storage_mb = 12288
+
+[verifier]
+timeout_sec = 18000
+user = "root"
+
+[verifier.env]
+LITELLM_DROP_PARAMS = "${LITELLM_DROP_PARAMS:-true}"
+JUDGE_MODEL = "${JUDGE_MODEL:-qwen3.7-plus}"
+JUDGE_PROVIDER = "${JUDGE_PROVIDER:-anthropic}"
+JUDGE_API_PROTOCOL = "${JUDGE_API_PROTOCOL:-anthropic}"
+JUDGE_API_KEY = "${JUDGE_API_KEY}"
+JUDGE_BASE_URL = "${JUDGE_BASE_URL}"
+EVAL_API_KEY = "${EVAL_API_KEY:-}"
+EVAL_API_BASE = "${EVAL_API_BASE:-}"
+
+[solution]
+
+[solution.env]

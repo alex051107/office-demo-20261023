@@ -1,0 +1,394 @@
+{
+  "task_id": "FINREP/cno-insurance-benefits-q1-2025",
+  "sheet": "Results",
+  "formula_policy": "static_ok",
+  "scorer_version": 2,
+  "scorer_entrypoint": "tests/score_output.py",
+  "amount_base_unit": "usd millions",
+  "interfaces": {
+    "Results": {
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "key": [
+        "label"
+      ],
+      "expected_keys": [
+        [
+          "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ],
+        [
+          "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ]
+      ]
+    },
+    "Analysis": {
+      "headers": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "key": [
+        "period",
+        "measure"
+      ],
+      "expected_keys": [
+        [
+          "Fourth quarter of 2024",
+          "Insurance policy benefits"
+        ],
+        [
+          "First quarter of 2025",
+          "Insurance policy benefits"
+        ]
+      ],
+      "aliases": [
+        "Analysis detail"
+      ],
+      "value_aliases": {
+        "Fourth quarter of 2024": [
+          "Q4 2024",
+          "4Q 2024",
+          "Fourth quarter 2024",
+          "Three months ended December 31, 2024",
+          "Q4 FY2024"
+        ],
+        "First quarter of 2025": [
+          "Q1 2025",
+          "1Q 2025",
+          "First quarter 2025",
+          "Three months ended March 31, 2025",
+          "Q1 FY2025"
+        ],
+        "Insurance policy benefits": [
+          "Insurance policy benefits expense",
+          "Policy benefits"
+        ]
+      },
+      "header_aliases": {
+        "amount": [
+          "amount_usd_millions",
+          "value",
+          "usd millions"
+        ],
+        "source_document": [
+          "source",
+          "document",
+          "source_file",
+          "filing"
+        ],
+        "source_page": [
+          "page",
+          "source location",
+          "worksheet",
+          "location",
+          "table"
+        ]
+      }
+    },
+    "Summary": {
+      "headers": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "key": [
+        "quarter"
+      ],
+      "expected_keys": [
+        [
+          "Fourth quarter of 2024"
+        ],
+        [
+          "First quarter of 2025"
+        ]
+      ],
+      "aliases": [
+        "Pivot",
+        "Summary pivot"
+      ],
+      "value_aliases": {
+        "Fourth quarter of 2024": [
+          "Q4 2024",
+          "4Q 2024",
+          "Fourth quarter 2024",
+          "Three months ended December 31, 2024",
+          "Q4 FY2024"
+        ],
+        "First quarter of 2025": [
+          "Q1 2025",
+          "1Q 2025",
+          "First quarter 2025",
+          "Three months ended March 31, 2025",
+          "Q1 FY2025"
+        ]
+      },
+      "header_aliases": {
+        "quarter": [
+          "period"
+        ],
+        "insurance_policy_benefits": [
+          "insurance policy benefits",
+          "benefits",
+          "amount",
+          "policy benefits"
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "unit": "USD millions",
+      "type": "number",
+      "gold": 61.7,
+      "abs": 0.05,
+      "rel": 0,
+      "weight": 22,
+      "baseline_weight": 50,
+      "percent_forms": false,
+      "dimension": "data_accuracy",
+      "budget_group": "results",
+      "description": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+    },
+    {
+      "criterion_id": "R02",
+      "label": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "unit": "percent",
+      "type": "number",
+      "gold": 12.138500885303955,
+      "abs": 0.005,
+      "rel": 0,
+      "weight": 22,
+      "baseline_weight": 50,
+      "percent_forms": true,
+      "dimension": "data_accuracy",
+      "budget_group": "results",
+      "description": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+    }
+  ],
+  "tables": [
+    {
+      "criterion_id": "A1",
+      "sheet": "Analysis",
+      "key": [
+        "period",
+        "measure"
+      ],
+      "value_columns": {
+        "amount": {
+          "type": "number",
+          "abs": 0.05,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "period": "Fourth quarter of 2024",
+          "measure": "Insurance policy benefits",
+          "amount": 508.3
+        }
+      ],
+      "weight": 20,
+      "dimension": "data_accuracy",
+      "budget_group": "analysis",
+      "description": "Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    },
+    {
+      "criterion_id": "A2",
+      "sheet": "Analysis",
+      "key": [
+        "period",
+        "measure"
+      ],
+      "value_columns": {
+        "amount": {
+          "type": "number",
+          "abs": 0.05,
+          "rel": 0
+        }
+      },
+      "gold": [
+        {
+          "period": "First quarter of 2025",
+          "measure": "Insurance policy benefits",
+          "amount": 570.0
+        }
+      ],
+      "weight": 20,
+      "dimension": "data_accuracy",
+      "budget_group": "analysis",
+      "description": "Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)",
+      "pass_rule": {
+        "per_record": true,
+        "ignore_extra": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "P1",
+      "kind": "aggregate",
+      "refs": [
+        [
+          "Summary",
+          [
+            "Fourth quarter of 2024"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Analysis",
+          [
+            "Fourth quarter of 2024",
+            "Insurance policy benefits"
+          ],
+          "amount"
+        ]
+      ],
+      "coefficients": [
+        1,
+        -1
+      ],
+      "abs": 0.05,
+      "weight": 5,
+      "dimension": "consistency_file_ops",
+      "budget_group": "pivot",
+      "description": "Pivot: Summary fourth-quarter benefits equal the Analysis record"
+    },
+    {
+      "criterion_id": "P2",
+      "kind": "aggregate",
+      "refs": [
+        [
+          "Summary",
+          [
+            "First quarter of 2025"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Summary",
+          [
+            "Fourth quarter of 2024"
+          ],
+          "insurance_policy_benefits"
+        ],
+        [
+          "Results",
+          [
+            "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ],
+          "value"
+        ]
+      ],
+      "coefficients": [
+        1,
+        -1,
+        -1
+      ],
+      "abs": 0.05,
+      "weight": 5,
+      "dimension": "consistency_file_ops",
+      "budget_group": "pivot",
+      "description": "Pivot: Summary first quarter less fourth quarter equals the Results change row"
+    },
+    {
+      "criterion_id": "SD1",
+      "kind": "source",
+      "ref": [
+        "Analysis",
+        [
+          "Fourth quarter of 2024",
+          "Insurance policy benefits"
+        ],
+        "source_document"
+      ],
+      "weight": 2.5,
+      "dimension": "professional_standard",
+      "budget_group": "sources",
+      "description": "Analysis fourth-quarter record names a supplied file"
+    },
+    {
+      "criterion_id": "SD2",
+      "kind": "source",
+      "ref": [
+        "Analysis",
+        [
+          "First quarter of 2025",
+          "Insurance policy benefits"
+        ],
+        "source_document"
+      ],
+      "weight": 2.5,
+      "dimension": "professional_standard",
+      "budget_group": "sources",
+      "description": "Analysis first-quarter record names a supplied file"
+    },
+    {
+      "criterion_id": "F1",
+      "kind": "header",
+      "sheet": "Results",
+      "weight": 0.3333333333333333,
+      "dimension": "structure_organization",
+      "budget_group": "format",
+      "description": "Results sheet has the four stated headers"
+    },
+    {
+      "criterion_id": "F2",
+      "kind": "header",
+      "sheet": "Analysis",
+      "weight": 0.3333333333333333,
+      "dimension": "structure_organization",
+      "budget_group": "format",
+      "description": "Analysis sheet has the six stated headers"
+    },
+    {
+      "criterion_id": "F3",
+      "kind": "header",
+      "sheet": "Summary",
+      "weight": 0.3333333333333333,
+      "dimension": "structure_organization",
+      "budget_group": "format",
+      "description": "Summary sheet has the two stated headers"
+    },
+    {
+      "criterion_id": "X1",
+      "kind": "error_cells",
+      "weight": -5,
+      "dimension": "consistency_file_ops",
+      "budget_group": "penalty",
+      "description": "Deduct 5 when any cell of the workbook holds an Excel error value"
+    },
+    {
+      "criterion_id": "X2",
+      "kind": "unsupported_records",
+      "weight": -5,
+      "dimension": "consistency_file_ops",
+      "budget_group": "penalty",
+      "description": "Unsupported additional business records in Results/Analysis/Summary: proportion of the expected record count, at most 5 points"
+    }
+  ],
+  "source_patterns": [
+    "cno",
+    "10-?k",
+    "10-?q",
+    "filing",
+    "quarterly report",
+    "annual report"
+  ],
+  "aggregation": "clip(sum(weight * atomic credit)/100,0,1); negative penalties only; no core cap",
+  "pivot_scope": "One aggregate relationship per criterion; duplicate displayed amounts are not rescored as independent facts.",
+  "source_scope": "Any supplied file name or document title is accepted; no winning document is required.",
+  "alternative_sets": []
+}

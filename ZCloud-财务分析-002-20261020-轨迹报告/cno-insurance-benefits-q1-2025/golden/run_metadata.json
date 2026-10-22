@@ -1,0 +1,31 @@
+{
+  "candidate_label": "golden",
+  "candidate_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
+  "judge_model": "qwen3.7-plus",
+  "current_export_rubric_sha256": "494bda071b149f95ab68024a4b68d95ab0b212120b6f60eb31cf8561175dab85",
+  "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+  "score_preserved": 1.0,
+  "this_export_paid_calls": 0,
+  "historical_prompt_available": false,
+  "historical_provider_response_available": false,
+  "missing_artifacts": [
+    "历史完整judge请求",
+    "上游原始judge响应",
+    "container_boundary.json",
+    "execution_verification.json",
+    "gateway_config.json",
+    "trajectory/provider_requests.jsonl",
+    "分段请求原件、额外检查笔记及错误尝试原件未留存"
+  ],
+  "searched_sources": [
+    "既有rollout目录",
+    "既有_judge_runs的reward-details及graded目录",
+    "既有_history归档"
+  ],
+  "evidence_note": "只导出既有回执；缺失的容器、网关及请求证据不由运行器名或成功状态推定。",
+  "status": "REFERENCE_ARTIFACT_EXISTING_JUDGE_RESULT",
+  "model_id": null,
+  "harness": null,
+  "solver_run": null,
+  "trajectory_note": "参考答案没有求解会话；events.jsonl仅索引既有五次裁判记录，不冒充求解轨迹。"
+}

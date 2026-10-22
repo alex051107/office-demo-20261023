@@ -1,0 +1,3 @@
+{"event": "session_start", "at": "2026-10-22T20:28:34+00:00", "model": "qwen3.8-max"}
+{"event": "session_end", "at": "2026-10-22T20:36:30+00:00", "returncode": 0, "status": "SESSION_EXITED_OK", "minutes": 7.93}
+{"event": "outputs_collected", "complete": true, "files": ["answer.xlsx"]}

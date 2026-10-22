@@ -1,0 +1,98 @@
+{
+  "difficulty_tier": "not_certified_pass_at_8",
+  "sector": "Energy",
+  "occupation": "Regulatory financial analyst",
+  "est_minutes": 60,
+  "multimodal": true,
+  "web_search_required": false,
+  "skills": [
+    "Regulatory interpretation",
+    "Rate basis conversion",
+    "Period reconciliation"
+  ],
+  "name": "powercor-2020-capex-reconciliation",
+  "business": "Powercor",
+  "domain": "电力监管",
+  "topic": "office-document",
+  "task_id": "UTL/powercor-2020-capex-reconciliation",
+  "track": "A",
+  "export_ready": true,
+  "sample_id": "powercor-2020-capex-reconciliation",
+  "difficulty": "not_certified_pass_at_8",
+  "full_judge_status": "COMPLETED_FOR_AVAILABLE_CANDIDATES",
+  "pass_at_8": null,
+  "frozen_at": "2026-10-20T03:11:02+00:00",
+  "visibility": {
+    "solver": [
+      "instruction.md",
+      "environment/input_files/"
+    ],
+    "evaluator": [
+      "tests/",
+      "solution/",
+      "targets/",
+      "rubrics.json",
+      "metadata/"
+    ],
+    "runtime_solver_input_root": "/app/input_files/",
+    "solver_path_base": "related_task_package_case_root"
+  },
+  "judge_model": "qwen3.7-plus",
+  "reference_hybrid_score": 1.0,
+  "reference_judge_mean": 1.0,
+  "model_scores": {
+    "Sol": 0.0,
+    "Opus": 0.0,
+    "千问": 0.0
+  },
+  "qwen_status": "千问：2026-10-22补跑一次，正常完成（网关返回 qwen/qwen3.8-max 与 qwen3.8-max-0902，同一基础型号）；Office裁判 0.0；执行线冻结评分器（会先重算公式）0.02",
+  "two_model_mean": 0.0,
+  "three_model_mean": 0.0,
+  "consistency_status": "PASS",
+  "judge_timeout_seconds": 7200,
+  "abilities": [
+    "给定材料事实抽取",
+    "来源口径与跨文件核对",
+    "领域计算建模",
+    "可编辑Excel交付与自检"
+  ],
+  "domain_level_2": "电力监管",
+  "domain_level_3": "配电资本支出复核",
+  "domain_level_4": "日历年净资本支出差额",
+  "difficulty_basis": "三模型各一份有效答卷（Office裁判第1次评分）：Sol 0.0、Opus 0.0、千问 0.0，三模型均分 0.0；每个模型只有一次运行，未做pass@8认证。",
+  "environment_template": "environment/Dockerfile",
+  "environment_template_status": "custom_dockerfile_path_pending_platform_acceptance",
+  "task_complexity": "unclassified",
+  "task_complexity_status": "not_assessed",
+  "task_complexity_basis": "未取得可适用于本题的完整算法分级表；不从分数或样例C2标签推定。",
+  "authenticity": {
+    "source_status": "public_source_business_adaptation",
+    "authorization_status": "public_sources_archived_no_additional_license_claim",
+    "synthetic_entities": false,
+    "real_or_authorized_input_required": true,
+    "authored_supporting_records": false
+  },
+  "task_description": {
+    "why_real": "配电资本支出复核对应专业复核工作，但query由公开材料改编。",
+    "how_authenticity_is_guaranteed": "AER公开监管模型及配电滚动模型手册。工作簿为公开材料的静态输入区改编，包含既有登记的数值变更；手册保持原字节。不是官方原件的原样复现，也不是已收到的客户原始query。",
+    "real_deliverable": "answer.xlsx，包含题面要求的结果及工作底稿"
+  },
+  "required_tools": [
+    "PDF reader",
+    "Excel reader",
+    "Excel editor",
+    "Office headless renderer"
+  ],
+  "domain_knowledge_dependency": "日历年净资本支出差额",
+  "visual_language_dependency": false,
+  "format_adapter": "rewardkit_with_optional_harbor_adapter",
+  "version": "office-demo-20261020-format-20261022",
+  "task_count": 1,
+  "three_model_average_score": 0.0,
+  "rollout_models": [
+    "gpt-5.6-sol",
+    "claude-opus-4-8",
+    "qwen3.8-max"
+  ],
+  "related_task_package": "ZCloud-电力监管-001-20261020"
+}

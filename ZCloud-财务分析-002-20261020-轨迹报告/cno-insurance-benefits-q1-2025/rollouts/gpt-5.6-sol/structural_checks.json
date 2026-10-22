@@ -1,0 +1,39 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-22",
+  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
+  "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 3,
+      "columns": 4,
+      "nonempty_cells": 12,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Analysis",
+      "state": "visible",
+      "rows": 3,
+      "columns": 6,
+      "nonempty_cells": 18,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Summary",
+      "state": "visible",
+      "rows": 3,
+      "columns": 2,
+      "nonempty_cells": 6,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 3,
+  "historical_score": 0.205882,
+  "not_a_new_judgement": true
+}

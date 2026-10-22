@@ -1,0 +1,79 @@
+{
+  "task_id": "UTL/powercor-2020-capex-reconciliation",
+  "sheet": "Results",
+  "rows": [
+    {
+      "criterion_id": "R01",
+      "label": "2020 network net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": 13.690108344179448,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "negate": false
+    },
+    {
+      "criterion_id": "R02",
+      "label": "2020 non-network net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": -11.546100406081113,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "negate": false
+    },
+    {
+      "criterion_id": "R03",
+      "label": "2020 total net capex difference",
+      "unit": "AUD million nominal",
+      "type": "number",
+      "gold": 1.1431857863294523,
+      "tolerance": {
+        "abs": 0.005,
+        "rel": 0
+      },
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "negate": false
+    }
+  ],
+  "checks": [
+    {
+      "criterion_id": "S01",
+      "kind": "results_header",
+      "description": "缺失或错误时扣分；正确不加分：Requested Results header",
+      "dimension": "结构与组织",
+      "weight": -3,
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "S02",
+      "kind": "results_units",
+      "description": "缺失或错误时扣分；正确不加分：Requested nominal AUD million unit",
+      "dimension": "内容质量-专业规范",
+      "weight": -3,
+      "s3_transform": "violation_complement",
+      "negate": true
+    },
+    {
+      "criterion_id": "P01",
+      "kind": "error_cells",
+      "description": "Deduct for Excel error cells outside result cells already assessed",
+      "dimension": "操作与交付安全",
+      "weight": -3,
+      "negate": true
+    }
+  ],
+  "alternative_sets": [],
+  "tables": [],
+  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)"
+}
