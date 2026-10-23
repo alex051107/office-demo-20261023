@@ -2,7 +2,7 @@
   "schema_version": "office-demo-manifest-v1",
   "package_name": "ZCloud-财务分析-002-20261020-轨迹报告",
   "path_base": "case_root",
-  "file_count": 140,
+  "file_count": 141,
   "manifest_excludes": [
     "**/manifest.json"
   ],
@@ -16,8 +16,14 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/delivery_note.md",
-      "bytes": 4916,
-      "sha256": "2d1643e15d883ac038eafb6ead071066da55beb8f100ca40ebd525eaccbb73ca"
+      "bytes": 5198,
+      "sha256": "844443d8c2f313006e9c9f2e8a22d672aeae5ce1c99dbbd42f63d9a8dfb3e91f"
+    },
+    {
+      "path": "discrimination_cases.json",
+      "zip_path": "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/discrimination_cases.json",
+      "bytes": 3368,
+      "sha256": "133b72b149d0ae53bc4d8a0f2434ad559e312ecf05b667f393760201f3dfd286"
     },
     {
       "path": "golden/candidate.xlsx",
@@ -268,8 +274,8 @@
     {
       "path": "quality_report.json",
       "zip_path": "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/quality_report.json",
-      "bytes": 5985,
-      "sha256": "51be0a5d8f898b89e343071f52a8e0c55f6c9fdde9e92aebf2bffc6686c44757"
+      "bytes": 6433,
+      "sha256": "96c54e36acda9eac0c6ff1650b5d72232503e95f0ade38afe5ec7278f3df259f"
     },
     {
       "path": "records.jsonl",

@@ -127,7 +127,17 @@
         "score": 0
       }
     ],
-    "note": "参考答案得满分，空表和缺卷得 0；三个模型的答卷都明显低于参考答案。每个模型只有一份答卷，模型之间的排序证据有限。"
+    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_4_positive_results_correct": 0,
+        "1_of_4_positive_results_correct": 0.205882,
+        "2_of_4_positive_results_correct": 0.5,
+        "3_of_4_positive_results_correct": 0.794118,
+        "4_of_4_positive_results_correct": 1.0
+      }
+    }
   },
   "model_evidence": {
     "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",

@@ -2,7 +2,7 @@
   "schema_version": "office-demo-manifest-v1",
   "package_name": "ZCloud-电力监管-001-20261020-轨迹报告",
   "path_base": "package_root",
-  "file_count": 143,
+  "file_count": 144,
   "manifest_excludes": [
     "**/manifest.json"
   ],
@@ -22,8 +22,14 @@
     {
       "path": "powercor-2020-capex-reconciliation/delivery_note.md",
       "zip_path": "ZCloud-电力监管-001-20261020-轨迹报告/powercor-2020-capex-reconciliation/delivery_note.md",
-      "bytes": 5145,
-      "sha256": "89d8006835f36abae25113b0f34c0927725d66b2455cdb5ed7a4fcb40fb76fed"
+      "bytes": 5405,
+      "sha256": "925b9db0dfed72af4f97c1f6fa94c6fa761a7450049ca78ef8a182af4f9b64bf"
+    },
+    {
+      "path": "powercor-2020-capex-reconciliation/discrimination_cases.json",
+      "zip_path": "ZCloud-电力监管-001-20261020-轨迹报告/powercor-2020-capex-reconciliation/discrimination_cases.json",
+      "bytes": 2433,
+      "sha256": "a4d80122b9fff6ff04af3836ba0f1187558cefa946b762439c8f3f332252daac"
     },
     {
       "path": "powercor-2020-capex-reconciliation/excluded_runs.json",
@@ -340,8 +346,8 @@
     {
       "path": "powercor-2020-capex-reconciliation/quality_report.json",
       "zip_path": "ZCloud-电力监管-001-20261020-轨迹报告/powercor-2020-capex-reconciliation/quality_report.json",
-      "bytes": 6660,
-      "sha256": "da3d02943f7026a7cc6da23d6cdeee8142d43b83ea49b15256ae1ad2232ed373"
+      "bytes": 7062,
+      "sha256": "79698c75e64ad254a26df4fbbe4ad0d267f02bb2062acd2401c5053312a493e3"
     },
     {
       "path": "powercor-2020-capex-reconciliation/records.jsonl",
@@ -862,8 +868,8 @@
     {
       "path": "交付文档.md",
       "zip_path": "ZCloud-电力监管-001-20261020-轨迹报告/交付文档.md",
-      "bytes": 2854,
-      "sha256": "09c94575652fb642ebad1f8702c59d749f535c176eab0657fbb7af690d7eaff7"
+      "bytes": 3114,
+      "sha256": "459311333b9248464e302feec7787bf47ade0f9088677082f438ecaa173e7981"
     }
   ]
 }

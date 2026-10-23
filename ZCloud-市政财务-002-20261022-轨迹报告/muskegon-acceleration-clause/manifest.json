@@ -1,7 +1,7 @@
 {
   "schema_version": "office-split-v1",
   "path_base": "case_root",
-  "file_count": 147,
+  "file_count": 148,
   "manifest_excludes": [
     "manifest.json"
   ],
@@ -15,8 +15,14 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/delivery_note.md",
-      "bytes": 5309,
-      "sha256": "1fc379309e13b783445e70b8c4f6bb187f152495a0ac88e2f22c56e64be87572"
+      "bytes": 5635,
+      "sha256": "aacaef58df0f4db1c1f45a55ece4ecfd09c4d7eddb0f64d6e8719b8791be3500"
+    },
+    {
+      "path": "discrimination_cases.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/discrimination_cases.json",
+      "bytes": 5587,
+      "sha256": "9b283c65e4cd629635cc2dc3a7f2e716793a9f974c0fa211d76ac92d6a317dc7"
     },
     {
       "path": "excluded_runs.json",
@@ -243,8 +249,8 @@
     {
       "path": "quality_report.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/quality_report.json",
-      "bytes": 6128,
-      "sha256": "8b432305d63fcb063f4a9e187756951baebe1d638100daeb918a85e8b068ab02"
+      "bytes": 6688,
+      "sha256": "771aec4c3ce56d16230f981de821b23f7b9ead447754193a0a421e95caa58660"
     },
     {
       "path": "records.jsonl",

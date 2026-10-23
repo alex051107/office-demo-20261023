@@ -1,0 +1,94 @@
+{
+  "method": "以参考答案为底，前 k 项计分结果保持正确，其余结果乘以 1.25，用题包自带的离线程序评分器打分；其他工作表不跟着改，所以跨表一致性扣分项会按实际情况触发；总分按 rubrics.json 的公式计算，LLM 扣分项按未违规处理（需要付费裁判）。没有调用模型或裁判。",
+  "s_max": 30,
+  "cases": [
+    {
+      "case": "0_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R01",
+          "cell": "Results!B2",
+          "reference": 13.69010834417945,
+          "set_to": 17.112635
+        },
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": -11.54610040608111,
+          "set_to": -14.432626
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 0,
+        "R02": 0,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.0
+    },
+    {
+      "case": "1_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": -11.54610040608111,
+          "set_to": -14.432626
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 0,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.333333
+    },
+    {
+      "case": "2_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.666667
+    },
+    {
+      "case": "3_of_3_positive_results_correct",
+      "changed_cells": [],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 1.0
+    }
+  ],
+  "model_answers": {
+    "gpt-5.6-sol": 0.0,
+    "claude-opus-4-8": 0.0,
+    "qwen3.8-max": 0.0
+  }
+}

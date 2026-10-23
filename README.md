@@ -51,6 +51,7 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 | `rollouts/<模型>/container_boundary.json`、`gateway_config.json`、`execution_verification.json`、`run_metadata.json`、`usage.json` | 运行环境、模型网关、返回型号核验、起止时间、请求数和用量，均从运行回执导出。 |
 | `golden/` | 参考答案的同一套文件。 |
 | `judge_runs/` | 参考答案 5 次、各模型 1 次的全部裁判结果。 |
+| `discrimination_cases.json` | 部分正确样例：参考答案改错 k 项结果后的程序评分，用来证明评分能区分部分正确和完全正确。 |
 | `consistency.json` | 参考答案重复评分 5 次的一致性统计（总分和逐条）。 |
 | `quality_report.json` | 汇总：三模型分数、均分、区分度、一致性、来源核验和限制。 |
 

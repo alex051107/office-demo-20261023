@@ -119,7 +119,19 @@
         "score": 0
       }
     ],
-    "note": "参考答案得满分，空表和缺卷得 0；三个模型的答卷都明显低于参考答案。每个模型只有一份答卷，模型之间的排序证据有限。"
+    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_6_positive_results_correct": 0.0,
+        "1_of_6_positive_results_correct": 0.196078,
+        "2_of_6_positive_results_correct": 0.392157,
+        "3_of_6_positive_results_correct": 0.588235,
+        "4_of_6_positive_results_correct": 0.72549,
+        "5_of_6_positive_results_correct": 0.862745,
+        "6_of_6_positive_results_correct": 1.0
+      }
+    }
   },
   "excluded_judge_jobs": {
     "path": "excluded_runs.json",
