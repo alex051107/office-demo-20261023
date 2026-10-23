@@ -11,17 +11,12 @@
     "Workbook construction"
   ],
   "name": "muskegon-acceleration-clause",
-  "business": "musk_accel",
   "domain": "市政财务",
   "topic": "office-document",
   "task_id": "MUNIFIN/muskegon-acceleration-clause",
-  "track": "C",
-  "export_ready": true,
   "sample_id": "muskegon-acceleration-clause",
   "difficulty": "not_certified_pass_at_8",
-  "full_judge_status": "COMPLETED",
   "pass_at_8": null,
-  "frozen_at": "2026-10-18T22:01:54+00:00",
   "visibility": {
     "solver": [
       "instruction.md",
@@ -41,14 +36,11 @@
   "reference_hybrid_score": 1.0,
   "reference_judge_mean": 1.0,
   "model_scores": {
-    "Sol": 0.0,
-    "Opus": 0.0,
-    "千问": 0.0
+    "gpt-5.6-sol": 0.0,
+    "claude-opus-4-8": 0.0,
+    "qwen3.8-max": 0.0
   },
-  "qwen_status": "千问：2026-10-22补跑一次，正常完成；Office裁判 0.0",
-  "two_model_mean": 0.0,
   "three_model_mean": 0.0,
-  "consistency_status": "PASS_STDDEV_0.0",
   "judge_timeout_seconds": 7200,
   "abilities": [
     "给定材料抽取",
@@ -59,12 +51,12 @@
   "domain_level_2": "市政财务",
   "domain_level_3": "场馆合同本金核算",
   "domain_level_4": "合同加速条款与本金余额",
-  "difficulty_basis": "只验证离线程序分；LLM和pass@8均未执行。",
+  "difficulty_basis": "三个模型各一次正常完成的运行，取 Office 裁判第 1 次评分：GPT-5.6-SOL 0.0000、Claude Opus 4.8 0.0000、Qwen 3.8 Max 0.0000，均分 0.0000。三个模型都低于 0.6；每个模型只跑了一次，没有 pass@8，难度等级未认证。",
   "environment_template": "environment/Dockerfile",
   "environment_template_status": "custom_dockerfile_path_pending_platform_acceptance",
   "task_complexity": "unclassified",
   "task_complexity_status": "not_assessed",
-  "task_complexity_basis": "本单未认证任务复杂度；不从低分推定等级。",
+  "task_complexity_basis": "未取得甲方的任务复杂度分级表，本题暂不分级。",
   "authenticity": {
     "source_status": "public_source_business_adaptation",
     "authorization_status": "public_sources_archived_no_additional_license_claim",
@@ -73,8 +65,8 @@
     "authored_supporting_records": true
   },
   "task_description": {
-    "why_real": "场馆合同本金核算对应业务复核，query为公开材料改编。",
-    "how_authenticity_is_guaranteed": "Muskegon公开合同节选及既有编制记录；记录转为PDF和同页PNG，并非全部是市政府原件。沿用冻结输入，不是客户原始query。",
+    "why_real": "场馆冠名合同的提前终止核算对应市政财务的合同复核工作；题面依据公开材料改编。",
+    "how_authenticity_is_guaranteed": "输入为 Muskegon 体育馆冠名合同的公开节选，以及依据合同编制的付款台账（以 PDF 和同页图片两种形式给出）；台账不是市政府原件。不是客户原始委托。",
     "real_deliverable": "answer.xlsx：题面要求的结果与工作底稿"
   },
   "required_tools": [
@@ -103,9 +95,9 @@
   "domain_l2": "市政财务",
   "domain_l3": "场馆合同本金核算",
   "domain_l4": "合同加速条款与本金余额",
-  "task_complexity_note": "只导出冻结内容，不重新造题。",
+  "task_complexity_note": "复杂度等级待甲方确认。",
   "capabilities": "给定材料抽取、跨材料口径核对、业务计算、Excel交付自检",
-  "source_note": "Muskegon公开合同节选及既有编制记录；记录转为PDF和同页PNG，并非全部是市政府原件。沿用冻结输入，不是客户原始query。",
+  "source_note": "输入为 Muskegon 体育馆冠名合同的公开节选，以及依据合同编制的付款台账（以 PDF 和同页图片两种形式给出）；台账不是市政府原件。不是客户原始委托。",
   "tools": "PDF/Excel/图像读取与Excel离线渲染",
   "tool_set": [
     "filesystem",
@@ -140,8 +132,6 @@
       "desc": "题面要求的可编辑Excel"
     }
   ],
-  "image": "sha256:f6e2e1c918ee89f6906837c69c45cc2cdd2cf0026cddf69873bdb5979b84adb9",
-  "image_tag": "excel-benchmark-runtime:20260912-arm64",
-  "score_basis": "Office裁判第1次评分（程序判据+LLM扣分项）",
+  "score_basis": "Office 裁判第 1 次评分（程序判据 + LLM 扣分项）",
   "related_task_package": "ZCloud-市政财务-002-20261022"
 }

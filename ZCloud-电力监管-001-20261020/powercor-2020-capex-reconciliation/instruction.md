@@ -25,3 +25,5 @@ Use `label`, `value`, `unit` and `source_note` in cells A1:D1 of Results. Starti
 | 2 | 2020 network net capex difference | AUD million nominal |
 | 3 | 2020 non-network net capex difference | AUD million nominal |
 | 4 | 2020 total net capex difference | AUD million nominal |
+
+Input materials are in `/app/input_files/` (read-only). Save your deliverables to `/app/output` exactly as the instruction specifies. Use local tools to inspect the supplied files. Do not use external web search.

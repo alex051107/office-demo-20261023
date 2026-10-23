@@ -35,3 +35,5 @@ Save the workbook as `/app/output/answer.xlsx` with the three sheets below.
 `quarter | insurance_policy_benefits`
 
 A pivot table, a formula-based summary or an equivalent static summary is acceptable.
+
+Input materials are in `/app/input_files/` (read-only). Save your deliverables to `/app/output` exactly as the instruction specifies. Use local tools to inspect the supplied files. Do not use external web search.

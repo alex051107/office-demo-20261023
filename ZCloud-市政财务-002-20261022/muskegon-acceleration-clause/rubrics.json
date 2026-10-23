@@ -314,7 +314,7 @@
       "programmatic_negative_total": -28,
       "llm_negative_total": -9,
       "decision_date": "2026-10-22",
-      "rule": "业务Results核心结果10、原表格业务结果7；格式/抄录仅违规扣3，既有额外记录负项上限7；冻结零权重保持零权重，不新增重复奖励。",
+      "rule": "Results 表三项核心结果各 10 分，Detail 表三项业务结果各 7 分；格式、抄录和公式错误每项扣 3 分，无依据的方案记录扣 7 分；LLM 扣分项每项扣 3 分。",
       "positive_count": 6,
       "programmatic_count": 14,
       "llm_count": 3,
@@ -322,7 +322,7 @@
       "llm_positive_share": 0.0,
       "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
       "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
-      "llm_status": "NOT_RUN",
+      "llm_status": "COMPLETED",
       "negative_weight_total_abs": 37,
       "negative_hit_semantics": "负项score为违规程度；SDK保存value=1-违规程度且negate=true，固定finalize还原扣分。"
     },
@@ -332,14 +332,14 @@
       "anchors_changed": true,
       "scores_rejudged": false,
       "changes": [
-        "按已授权demo统一规则映射权重；原冻结键和原分保留",
-        "补样例字段；锚点只重述已有判据"
+        "权重按需求说明统一为 10、7、-3、-7",
+        "按样例补齐字段；锚点只复述已有判据"
       ],
       "historical_rubric_sha256": "f1ef11727d56179d60c460477e1b32e9026dbd25140de9962e49667e4a1a0146"
     },
     "scoring_revision": {
       "date": "2026-10-22",
-      "reason": "现行demo：格式只扣分；冻结包只读",
+      "reason": "格式类判据改为只扣分不加分",
       "removed_criterion_ids": [],
       "duplicate_positive_rewards_removed": true,
       "new_business_criteria": false,
@@ -348,10 +348,10 @@
       "remaining_weights_changed": true
     }
   },
-  "scope_note": "Offline programmatic verification only; LLM negative criteria retained but not executed.",
+  "scope_note": "混合裁判结果随轨迹报告交付；tests/offline_score.py 只重算程序判据，不调用 LLM。",
   "run_id": "office-demo-add-three-20261022-offline",
   "source_authenticity": "public_source_business_adaptation",
   "golden_threshold": 0.85,
   "three_model_average_threshold": 0.7,
-  "scoring_note": "保留冻结业务判定；格式/抄录合规不加分，仅违规扣分。历史冻结分另列，不伪装为新口径分。付费裁判未跑。"
+  "scoring_note": "格式与抄录类判据合规不加分，只在缺失或错误时扣分。"
 }

@@ -2,7 +2,7 @@
   "candidate_label": "golden",
   "candidate_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
   "judge_model": "qwen3.7-plus",
-  "current_export_rubric_sha256": "494bda071b149f95ab68024a4b68d95ab0b212120b6f60eb31cf8561175dab85",
+  "current_export_rubric_sha256": "19b9c304101304f293a00ed1dff8962239772c49b08c7f253734e7664faa4433",
   "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
   "score_preserved": 1.0,
   "this_export_paid_calls": 0,

@@ -1,10 +1,8 @@
 {
   "difficulty_tier": "not_certified_pass_at_8",
   "name": "cno-insurance-benefits-q1-2025",
-  "business": "CNO Financial Group",
   "domain": "财务分析",
   "topic": "office-document",
-  "track": "B",
   "sector": "Finance and insurance",
   "occupation": "Financial analyst",
   "est_minutes": 90,
@@ -20,9 +18,7 @@
   "task_id": "FINREP/cno-insurance-benefits-q1-2025",
   "sample_id": "cno-insurance-benefits-q1-2025",
   "difficulty": "not_certified_pass_at_8",
-  "full_judge_status": "COMPLETED_FOR_AVAILABLE_CANDIDATES",
   "pass_at_8": null,
-  "frozen_at": "2026-10-20T10:46:28+00:00",
   "visibility": {
     "solver": [
       "instruction.md",
@@ -42,14 +38,11 @@
   "reference_hybrid_score": 1.0,
   "reference_judge_mean": 1.0,
   "model_scores": {
-    "Sol": 0.205882,
-    "Opus": 0.0,
-    "千问": 0.0
+    "gpt-5.6-sol": 0.205882,
+    "claude-opus-4-8": 0.0,
+    "qwen3.8-max": 0.0
   },
-  "qwen_status": "千问：2026-10-22补跑一次，正常完成（网关返回 qwen/qwen3.8-max 与 qwen3.8-max-0902，同一基础型号）；Office裁判 0.0；执行线冻结评分器（另一套原子判据、含部分分）0.16；用LibreOffice重算公式后Office离线程序分仍为0",
-  "two_model_mean": 0.102941,
   "three_model_mean": 0.068627,
-  "consistency_status": "PASS",
   "judge_timeout_seconds": 7200,
   "abilities": [
     "给定材料事实抽取",
@@ -60,12 +53,12 @@
   "domain_level_2": "财务分析",
   "domain_level_3": "保险公司季度报表分析",
   "domain_level_4": "跨期修订与季度赔付比较",
-  "difficulty_basis": "三模型各一份有效答卷（Office裁判第1次评分）：Sol 0.205882、Opus 0.0、千问 0.0，三模型均分 0.068627；每个模型只有一次运行，未做pass@8认证。",
+  "difficulty_basis": "三个模型各一次正常完成的运行，取 Office 裁判第 1 次评分：GPT-5.6-SOL 0.2059、Claude Opus 4.8 0.0000、Qwen 3.8 Max 0.0000，均分 0.0686。三个模型都低于 0.6；每个模型只跑了一次，没有 pass@8，难度等级未认证。",
   "environment_template": "environment/Dockerfile",
   "environment_template_status": "custom_dockerfile_path_pending_platform_acceptance",
   "task_complexity": "unclassified",
   "task_complexity_status": "not_assessed",
-  "task_complexity_basis": "未取得可适用于本题的完整算法分级表；不从分数或样例C2标签推定。",
+  "task_complexity_basis": "未取得甲方的任务复杂度分级表，本题暂不分级。",
   "authenticity": {
     "source_status": "public_source_business_adaptation",
     "authorization_status": "public_sources_archived_no_additional_license_claim",
@@ -74,8 +67,8 @@
     "authored_supporting_records": false
   },
   "task_description": {
-    "why_real": "保险公司季度报表分析对应专业复核工作，但query由公开材料改编。",
-    "how_authenticity_is_guaranteed": "CNO Financial Group公开SEC申报。四份Excel来自HTML可见段落与表格转录；Q2材料沿用已登记的节选与删减，其他申报保留可见内容。query为基于公开材料的业务改编，不是客户原始委托。",
+    "why_real": "保险公司季度报表分析是财务分析师的常规工作；题面依据公开材料改编。",
+    "how_authenticity_is_guaranteed": "输入为 CNO Financial Group 向美国证监会提交的四份季度和年度报告，按报告中的段落与表格转录为 Excel；2025 年第二季度报告为节选。不是客户原始委托。",
     "real_deliverable": "answer.xlsx，包含题面要求的结果及工作底稿"
   },
   "required_tools": [
@@ -95,5 +88,8 @@
     "claude-opus-4-8",
     "qwen3.8-max"
   ],
-  "related_task_package": "ZCloud-财务分析-002-20261020"
+  "related_task_package": "ZCloud-财务分析-002-20261020",
+  "task_complexity_note": "复杂度等级待甲方确认。",
+  "source_note": "输入为 CNO Financial Group 向美国证监会提交的四份季度和年度报告，按报告中的段落与表格转录为 Excel；2025 年第二季度报告为节选。不是客户原始委托。",
+  "score_basis": "Office 裁判第 1 次评分（程序判据 + LLM 扣分项）"
 }

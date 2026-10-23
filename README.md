@@ -43,6 +43,7 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 | 路径 | 作用 |
 |---|---|
 | `rollouts/<模型>/candidate.xlsx` | 该模型交出的答卷，`solver_output/` 是原样副本。 |
+| `rollouts/<模型>/solver_prompt.md` | 该模型运行时实际收到的题面，原样保存。 |
 | `rollouts/<模型>/trajectory/` | 原始事件流 `events.jsonl`（消息、工具调用、结束状态），逐条模型请求 `provider_requests.jsonl`，分段记录 `segments.json`。 |
 | `rollouts/<模型>/judge.json` | 逐条评分：每条判据的得分、程序或 LLM 给出的理由。`reward.json` 与 `reward-details.json` 是评分器原始输出。 |
 | `rollouts/<模型>/renders/`、`visual_review.json` | 答卷每张工作表渲染成的 PDF 和 PNG，以及查看记录。 |
@@ -55,7 +56,7 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 
 ## 复现评分
 
-1. 在题包目录构建镜像：`docker build -t office-demo environment/`。
+1. 在题包目录构建镜像：`docker build -t office-demo environment/`。镜像只用公开源（python:3.12-slim-bookworm、Debian、npm、PyPI），国内网络可加 `--build-arg DEBIAN_MIRROR=https://mirrors.tuna.tsinghua.edu.cn`。
 2. 设置裁判凭据：`JUDGE_API_KEY` 和 `JUDGE_BASE_URL` 必填，`JUDGE_MODEL` 默认 `qwen3.7-plus`。完整变量表见各题 `delivery_note.md`。
 3. 把答卷挂到 `/app/output/answer.xlsx`，在容器里执行 `bash /tests/test.sh`，结果写入 `/logs/verifier/`。
 4. 只想看程序判据、不调用 LLM，可以在宿主机运行 `python3 tests/offline_score.py --candidate <答卷> --out <目录>`。
@@ -63,7 +64,10 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 ## 和样例不同的地方
 
 - 样例交付的是 PPT，这三道题交付 Excel。样例按页渲染幻灯片，这里按工作表渲染。
+- 样例的题面和评分标准是中文。这三道题的原始材料是英文的监管手册、财报和合同，所以题面和程序判据的名称用英文，LLM 扣分项、元数据和说明文档用中文。模型和裁判都是按这份文本运行和评分的。
+- 题面在模型运行后改过措辞：Powercor 题补了一句角色说明，Powercor 和 Muskegon 两题的 Results 小标题与表头说明句换了说法，三题末尾的运行说明把输入目录改成题包镜像里的 `/app/input_files/`。数值、判据和输出格式要求没有变。模型实际收到的题面见各模型目录下的 `solver_prompt.md`。
 - 三个模型各跑了一次。需求说明要求的多次 rollout 和 pass@8 还没有做。
+- 模型运行时用的是开发环境的镜像，题包里的 Dockerfile 是交付时重新写的公开版本。我们用它在断网容器里重新跑了程序判据：三道题的参考答案都是 1 分，九份模型答卷的程序分和表里的成绩一致。
 - 运行环境：GPT-5.6-SOL 与 Qwen 3.8 Max 用 Codex CLI，Claude Opus 4.8 用 Claude Code，都在隔离的 Docker 容器里运行。样例三个模型都用 Claude Code。
 - 裁判的上游原始 HTTP 响应没有单独保存。逐条评分结果完整保存在 `reward-details.json` 和 `judge.json` 里，`judge_provider_response.json` 如实写明了这一点。
 - `task.toml` 的 `environment_template` 写的是包内的 `environment/Dockerfile`，平台是否接受这种写法需要确认。

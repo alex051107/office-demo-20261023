@@ -1,21 +1,15 @@
-# The offline target reuses the existing pinned research image: no installation.
-FROM excel-benchmark-runtime:20260912-arm64 AS offline
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
-WORKDIR /app
-COPY input_files/ /app/input_files/
-RUN python3 -c "import openpyxl; print(openpyxl.__version__)" \
-    && chmod -R a-w /app/input_files \
-    && mkdir -p /app/output /logs/verifier
-
-# Build this target only when preparing the later paid judge environment.
-# It is deliberately separate from the zero-network offline acceptance.
-FROM python:3.12-slim-bookworm AS judge
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
-RUN apt-get update && apt-get install -y --no-install-recommends bash nodejs npm ca-certificates \
+# Self-contained image for solving and verification; every layer comes from public package sources.
+FROM python:3.12-slim-bookworm
+ARG DEBIAN_MIRROR=http://deb.debian.org
+ENV DEBIAN_FRONTEND=noninteractive PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+RUN sed -i "s|http://deb.debian.org|${DEBIAN_MIRROR}|g" /etc/apt/sources.list.d/debian.sources \
+    && apt-get update && apt-get install -y --no-install-recommends \
+       bash ca-certificates nodejs npm poppler-utils libreoffice-calc-nogui fonts-noto-cjk \
     && rm -rf /var/lib/apt/lists/*
+# Judge component pinned to the version in the delivery template.
+RUN npm install -g @anthropic-ai/claude-code@2.1.114
 COPY requirements.txt /tmp/requirements.txt
-RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt \
-    && npm install -g @anthropic-ai/claude-code@2.1.114
+RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt
 WORKDIR /app
 COPY input_files/ /app/input_files/
 RUN chmod -R a-w /app/input_files && mkdir -p /app/output /logs/verifier

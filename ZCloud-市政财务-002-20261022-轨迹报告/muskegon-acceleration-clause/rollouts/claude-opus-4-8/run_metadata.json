@@ -104,7 +104,7 @@
   "source_run": "claude-opus-4-8_20261018T185448",
   "source_instruction_sha256": "73d1c1441bd6734f46043d2988b9a813c3e48f397ba084b0d7a1337f4e7ba392",
   "exported_instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
-  "source_wording_note": "外发版已登记的Results标题和说明句改写；实测绑定此前冻结题面。",
+  "source_wording_note": "模型运行时的题面见 solver_prompt.md；本包 instruction.md 的 Results 小标题和表头说明句换了措辞，末尾运行说明改为 /app/input_files/，要求相同。",
   "redaction_matches": {
     "path_replacement": 0,
     "internal_identifier_replacement": 0,
@@ -114,9 +114,9 @@
   "paid_calls_this_session": 0,
   "this_export_paid_calls": 0,
   "missing_artifacts": [
-    "付费裁判未跑"
+    "LLM 裁判结果（裁判作业异常后人工停止）"
   ],
   "searched_sources": [
-    "对应答卷SHA256匹配的既有screening运行目录"
+    "按答卷 SHA256 匹配的原始运行目录"
   ]
 }

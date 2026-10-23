@@ -31,3 +31,5 @@ Use A1:D1 for the headers `label`, `value`, `unit` and `source_note`. List the p
 Header row 1: `plan | date | value` in A1:C1. Include one row for each plan A, B and C. Transcribe the original `Termination date` field from Plans into `date` as YYYY-MM-DD, and enter that plan's requested final USD amount in `value`.
 
 The record pages are supplied both as `input/Records.pdf` and as `input/Records_*.png`; they contain the same records.
+
+Input materials are in `/app/input_files/` (read-only). Save your deliverables to `/app/output` exactly as the instruction specifies. Use local tools to inspect the supplied files. Do not use external web search.

@@ -330,7 +330,7 @@
       "rejudge_required": false
     }
   },
-  "scope_note": "评分规则未改。既有混合裁判结果已随轨迹交付；offline_score.py只重放程序子集，不调用LLM。",
+  "scope_note": "混合裁判结果随轨迹报告交付；tests/offline_score.py 只重算程序判据，不调用 LLM。",
   "run_id": "office-demo-20261020-existing-judgements",
   "source_authenticity": "public_source_business_adaptation",
   "golden_threshold": 0.85,

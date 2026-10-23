@@ -26,7 +26,7 @@
   "render_status": "COMPLETED",
   "visual_inspection_status": "REVIEWED_ORIGINAL_LAYOUT_LIMITATIONS",
   "visual_findings": [
-    "参考、Opus和千问的Results部分长出处/标签因原列宽截断；Sol Calc工作底稿较宽、缩放后字小。保留原卷，不把本轮渲染当历史裁判；完整文本见extracted_text.md。"
+    "参考、Opus和千问的Results部分长出处/标签因原列宽截断；Sol Calc工作底稿较宽、缩放后字小。保留原卷，导出时的渲染不替代评分；完整文本见extracted_text.md。"
   ],
   "historical_scores_changed": false,
   "ppt_checks": {

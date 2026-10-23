@@ -6,7 +6,7 @@
   "started": "2026-10-22T21:15:10+00:00",
   "ended": "2026-10-22T21:24:20+00:00",
   "minutes": 9.16,
-  "harness": "Qwen Code CLI",
+  "harness": "Codex CLI",
   "returned_model_counts": {
     "qwen3.8-max-0902": 17
   },
@@ -26,7 +26,7 @@
   "historical_non_json_line_numbers": [
     1
   ],
-  "trajectory_format": "Qwen Code CLI-jsonl-diagnostics-separated",
+  "trajectory_format": "Codex CLI-jsonl-diagnostics-separated",
   "source_log_sha256": "7e64a46a043119a6f2deea4548b10ed8e659536141d6717cb09601d2dc62b762",
   "exported_log_sha256": "7c018d4bb3043c338e0bdb852817661d65d2ef87b44ae0a41031e485e9f2204c",
   "candidate_sha256": "2d35bcfb19bfbe4da4b525b0f880bf645adb61fc1d6d1266641e1b5d4dc8742a",
@@ -34,7 +34,7 @@
   "source_run": "qwen3.8-max_20261022T171505",
   "source_instruction_sha256": "73d1c1441bd6734f46043d2988b9a813c3e48f397ba084b0d7a1337f4e7ba392",
   "exported_instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
-  "source_wording_note": "外发版已登记的Results标题和说明句改写；实测绑定此前冻结题面。",
+  "source_wording_note": "模型运行时的题面见 solver_prompt.md；本包 instruction.md 的 Results 小标题和表头说明句换了措辞，末尾运行说明改为 /app/input_files/，要求相同。",
   "redaction_matches": {
     "path_replacement": 0,
     "internal_identifier_replacement": 0,
@@ -44,9 +44,9 @@
   "paid_calls_this_session": 0,
   "this_export_paid_calls": 0,
   "missing_artifacts": [
-    "付费裁判未跑"
+    "裁判上游原始 HTTP 响应"
   ],
   "searched_sources": [
-    "对应答卷SHA256匹配的既有screening运行目录"
+    "按答卷 SHA256 匹配的原始运行目录"
   ]
 }

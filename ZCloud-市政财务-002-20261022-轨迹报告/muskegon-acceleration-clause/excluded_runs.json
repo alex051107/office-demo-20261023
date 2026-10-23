@@ -1,7 +1,9 @@
 {
-  "count": 0,
-  "runs": [],
+  "count": 1,
   "included_in_statistics": false,
   "count_as_zero": false,
-  "note": "裁判未完成的作业不参与均分或一致性。"
+  "note": "Claude Opus 4.8 答卷的 LLM 裁判作业运行异常（请求次数远超正常作业），被人工停止，没有纳入一致性统计。",
+  "reason_categories": [
+    "裁判作业异常，人工停止"
+  ]
 }

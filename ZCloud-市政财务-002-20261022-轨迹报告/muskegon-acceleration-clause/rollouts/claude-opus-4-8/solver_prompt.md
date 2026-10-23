@@ -1,0 +1,36 @@
+You are an analyst preparing a workbook.
+
+Prepare the unpaid SFMG principal balance due on 31 December 2007 for each of the three alternative termination plans.
+
+Report USD to two decimal places.
+Use the supplied records and include supporting calculations and source references.
+Materials are adapted from public documents; some figures and passages may differ from public versions.
+
+The following are left to you: Supporting worksheet organization.
+
+## Deliverables
+
+Save the following files:
+
+- `/app/output/answer.xlsx` — new workbook
+  - Sheet named Results; header row 1: label | value | unit | source_note in A1:D1.
+  - One numeric result per listed label, in the listed order, with the stated unit and a source reference.
+
+### `Results` sheet — fixed rows, in this order
+
+Row 1 is the header: `label` in A1, `value` in B1, `unit` in C1, `source_note` in D1. Rows follow from row 2, one per label below.
+
+| row | label (column A, exactly as written) | unit |
+|---|---|---|
+| 2 | Plan A principal balance | USD |
+| 3 | Plan B principal balance | USD |
+| 4 | Plan C principal balance | USD |
+
+### `Detail` sheet
+
+Header row 1: `plan | date | value` in A1:C1. Include one row for each plan A, B and C. Transcribe the original `Termination date` field from Plans into `date` as YYYY-MM-DD, and enter that plan's requested final USD amount in `value`.
+
+The record pages are supplied both as `input/Records.pdf` and as `input/Records_*.png`; they contain the same records.
+
+
+Input materials are in /app/input. Save your output files to /app/output, following the instruction exactly. Use local tools to inspect the supplied files. Do not use external web search.

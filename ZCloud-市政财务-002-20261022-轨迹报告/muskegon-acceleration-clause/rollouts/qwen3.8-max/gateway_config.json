@@ -4,7 +4,7 @@
   "models": [
     "qwen3.8-max"
   ],
-  "harness": "Qwen Code CLI",
+  "harness": "Codex CLI",
   "harness_version": null,
   "effort": null,
   "max_output_tokens": 64000,
