@@ -18,6 +18,28 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 - **B 轨 · ZCloud-财务分析-002-20261020**：从 CNO Financial 的 10-Q 与 10-K 表格推出 2024 年第四季度保险赔付（全年减前三季度），与 2025 年第一季度比较，给出变化额和变化率，并整理季度汇总。输入 4 份（CNO_2024-09-30_10Q.xlsx、CNO_2024-12-31_10K.xlsx、CNO_2025-03-31_10Q.xlsx、CNO_2025-06-30_10Q.xlsx），评分标准 16 条，其中 LLM 扣分项 3 条。
 - **C 轨 · ZCloud-市政财务-002-20261022**：按 Muskegon 体育馆冠名合同的提前终止条款和付款台账，算三种终止方案下截至 2007 年 12 月 31 日应付的 SFMG 本金余额。台账同时给 PDF 与图片。输入 8 份（Agreement.pdf、Records.pdf、Records_Broker_payments.png、Records_Finance_forecast.png、Records_Other_payments.png、Records_Plans.png、Records_Sources.png、Records_Sponsorships.png），评分标准 17 条，其中 LLM 扣分项 3 条。
 
+## 目录结构
+
+和样例一样，每道题是两个并列的文件夹：
+
+```text
+office-demo-20261023/
+├── ZCloud-电力监管-001-20261020/            # 题包
+│   ├── README.md、manifest.json、交付文档.md
+│   └── powercor-2020-capex-reconciliation/
+│       ├── environment/、solution/、tests/、targets/
+│       ├── metadata/、validation/
+│       └── task.toml、instruction.md、rubrics.json、records.jsonl 等
+├── ZCloud-电力监管-001-20261020-轨迹报告/
+│   ├── README.md、manifest.json、交付文档.md
+│   └── powercor-2020-capex-reconciliation/
+│       ├── golden/、rollouts/、judge_runs/、metadata/、validation/
+│       └── quality_report.json、consistency.json、records.jsonl 等
+├── ZCloud-财务分析-002-20261020/ 与 -轨迹报告/    # 同上
+├── ZCloud-市政财务-002-20261022/ 与 -轨迹报告/    # 同上
+└── zips/                                  # 6 个压缩包与 SHA256SUMS.txt
+```
+
 ## 下载
 
 `zips/` 里有 6 个压缩包，每道题一个题包、一个轨迹报告，和样例一样可以直接转发。`zips/SHA256SUMS.txt` 是校验值。同样的内容也以文件夹形式放在仓库根目录，方便在线浏览。

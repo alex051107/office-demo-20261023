@@ -1,7 +1,7 @@
 {
   "schema_version": "office-split-v1",
   "path_base": "case_root",
-  "file_count": 37,
+  "file_count": 36,
   "manifest_excludes": [
     "manifest.json"
   ],
@@ -95,12 +95,6 @@
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/rubrics.json",
       "bytes": 12030,
       "sha256": "19a9a9804df161a1c07888165fa3dd6c64bdbbe011972a88e722a0d83a8feab4"
-    },
-    {
-      "path": "run_judge.sh",
-      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/run_judge.sh",
-      "bytes": 1779,
-      "sha256": "dc1c6e831b6c9185db71bb326edb9a3fbde609c44798fb51d8115257fa0f282e"
     },
     {
       "path": "solution/golden/answer.xlsx",
