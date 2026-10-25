@@ -1,5 +1,21 @@
 # 随包输入离线提取
 
+## 本次修订直接核对的输入锚点（2026-10-25）
+
+逐文件读取既有输入；下列为原单元格值，不是新增材料。Results D2和D3均包含这六处定位。
+
+- `CNO_2024-12-31_10K.xlsx` → 工作表/表 `T050` → `G15`：2,471.9
+- `CNO_2024-09-30_10Q.xlsx` → 工作表/表 `T010` → `S19`：1,926.4
+- `CNO_2025-03-31_10Q.xlsx` → 工作表/表 `T010` → `G19`：580.1
+- `CNO_2025-06-30_10Q.xlsx` → 工作表/表 `T016` → `N14`：15.6
+- `CNO_2025-06-30_10Q.xlsx` → 工作表/表 `T016` → `N24`：(21.6)
+- `CNO_2025-06-30_10Q.xlsx` → 工作表/表 `Text` → `A131`：In addition, the Company identified an immaterial overstatement of its policy holder account balances and insurance policy benefits recorded for the year ended December 31, 2024 and the quarter ended March 31, 2025 related to the calculation of the embedded derivative for its flexible premium bonus indexed annuity product. This error caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively. The correction of these errors had no impact on our statement of cash flows or segment results for the periods reported.
+
+修订口径：2024年末21.6、2025年3月末31.7为累计嵌入衍生工具高估数，2025Q1当季调减为31.7−21.6=10.1；不是直接减31.7。Q4=(2471.9−21.6)−(1926.4+15.6)=508.3，Q1=580.1−10.1=570.0，差额61.7，百分比61.7/508.3×100=12.1385008853…%，显示12.14。
+
+## 历史全文提取（2026-10-22）
+
+
 2026-10-22从既有输入字节重新提取，供查证。不是历史裁判请求，也不代表裁判当时读取过全部内容。图片以随包原图及既有记录为准，不生成或假称OCR。
 
 ## CNO_2024-09-30_10Q.xlsx

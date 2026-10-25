@@ -1,6 +1,6 @@
 {
   "case_id": "muskegon-acceleration-clause",
-  "rubric_version": "office-demo-s3-20261020",
+  "rubric_version": "office-v2-2026-10-26",
   "pass_threshold": 0.7,
   "normalization": {
     "allowed_weights": [
@@ -39,7 +39,8 @@
       "anchors": {
         "1": "满足判据：Plan A principal balance",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "R02",
@@ -55,7 +56,8 @@
       "anchors": {
         "1": "满足判据：Plan B principal balance",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "R03",
@@ -71,7 +73,8 @@
       "anchors": {
         "1": "满足判据：Plan C principal balance",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "D01",
@@ -87,7 +90,8 @@
       "anchors": {
         "1": "满足判据：Detail plan A final value",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "V01",
@@ -119,7 +123,8 @@
       "anchors": {
         "1": "满足判据：Detail plan B final value",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "V02",
@@ -151,7 +156,8 @@
       "anchors": {
         "1": "满足判据：Detail plan C final value",
         "0": "未满足。"
-      }
+      },
+      "numeric_abs_tolerance": 0.005
     },
     {
       "id": "V03",
@@ -171,7 +177,7 @@
     },
     {
       "id": "S01",
-      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
+      "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -187,7 +193,7 @@
     },
     {
       "id": "S02",
-      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
+      "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
       "dimension": "内容质量-专业规范",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -203,7 +209,7 @@
     },
     {
       "id": "S03",
-      "description": "缺失或错误时扣分；正确不加分：Detail interface",
+      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -215,6 +221,55 @@
       "anchors": {
         "1": "触发违规：缺失或错误时扣分；正确不加分：Detail interface",
         "0": "未违规。"
+      },
+      "gate": {
+        "failure_score": 0,
+        "required_interfaces": {
+          "Results": {
+            "headers": [
+              "label",
+              "value",
+              "unit",
+              "source_note"
+            ],
+            "key": [
+              "label"
+            ],
+            "expected_keys": [
+              [
+                "Plan A principal balance"
+              ],
+              [
+                "Plan B principal balance"
+              ],
+              [
+                "Plan C principal balance"
+              ]
+            ]
+          },
+          "Detail": {
+            "headers": [
+              "plan",
+              "date",
+              "value"
+            ],
+            "key": [
+              "plan"
+            ],
+            "expected_keys": [
+              [
+                "A"
+              ],
+              [
+                "B"
+              ],
+              [
+                "C"
+              ]
+            ]
+          }
+        },
+        "support_sheets": "allowed without interface constraints"
       }
     },
     {
@@ -235,12 +290,93 @@
     },
     {
       "id": "P02",
-      "description": "Unsupported plan record",
+      "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
       "dimension": "指令遵循",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
       "type": "gradient",
-      "weight": -7,
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "levels": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      },
+      "score_domain": "continuous [0,1]; levels are anchors, no quantization",
+      "anchors": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      }
+    },
+    {
+      "id": "S04",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "dimension": "指令遵循",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "gradient",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "levels": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      },
+      "score_domain": "continuous [0,1]; levels are anchors, no quantization",
+      "anchors": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      }
+    },
+    {
+      "id": "S05",
+      "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "dimension": "指令遵循",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "gradient",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "levels": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      },
+      "score_domain": "continuous [0,1]; levels are anchors, no quantization",
+      "anchors": {
+        "1": "violation proportion = 1",
+        "0.75": "violation proportion = 0.75",
+        "0.5": "violation proportion = 0.5",
+        "0.25": "violation proportion = 0.25",
+        "0": "violation proportion = 0"
+      }
+    },
+    {
+      "id": "S06",
+      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "dimension": "指令遵循",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "gradient",
+      "weight": -3,
       "negate": true,
       "method": "programmatic",
       "evidence_required": true,
@@ -309,21 +445,21 @@
   "metadata": {
     "scoring": {
       "s_max": 51,
-      "negative_total": -37,
-      "negative_total_absolute": 37,
-      "programmatic_negative_total": -28,
+      "negative_total": -42,
+      "negative_total_absolute": 42,
+      "programmatic_negative_total": -33,
       "llm_negative_total": -9,
-      "decision_date": "2026-10-22",
-      "rule": "Results 表三项核心结果各 10 分，Detail 表三项业务结果各 7 分；格式、抄录和公式错误每项扣 3 分，无依据的方案记录扣 7 分；LLM 扣分项每项扣 3 分。",
+      "decision_date": "2026-10-26",
+      "rule": "正项权重 51 不变；每条程序负项扣 3 分，LLM 三条各扣 3 分且内容不变；接口不合格全题 0；金额绝对容差 0.005 USD，另查两位小数显示。",
       "positive_count": 6,
-      "programmatic_count": 14,
+      "programmatic_count": 17,
       "llm_count": 3,
       "programmatic_positive_share": 1.0,
       "llm_positive_share": 0.0,
       "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
       "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
       "llm_status": "COMPLETED",
-      "negative_weight_total_abs": 37,
+      "negative_weight_total_abs": 42,
       "negative_hit_semantics": "负项score为违规程度；SDK保存value=1-违规程度且negate=true，固定finalize还原扣分。"
     },
     "format_migration": {
@@ -338,14 +474,12 @@
       "historical_rubric_sha256": "f1ef11727d56179d60c460477e1b32e9026dbd25140de9962e49667e4a1a0146"
     },
     "scoring_revision": {
-      "date": "2026-10-22",
-      "reason": "格式类判据改为只扣分不加分",
-      "removed_criterion_ids": [],
-      "duplicate_positive_rewards_removed": true,
-      "new_business_criteria": false,
-      "rejudge_required": true,
-      "remaining_criteria_changed": false,
-      "remaining_weights_changed": true
+      "date": "2026-10-26",
+      "label": "评分器 v2（2026-10-26）",
+      "programmatic_only": true,
+      "llm_criteria_changed": false,
+      "llm_judgments": "reuse saved judgments without new calls",
+      "instruction_changed": false
     }
   },
   "scope_note": "混合裁判结果随轨迹报告交付；tests/offline_score.py 只重算程序判据，不调用 LLM。",

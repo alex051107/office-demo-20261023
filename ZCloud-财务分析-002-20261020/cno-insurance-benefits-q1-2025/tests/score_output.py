@@ -14,7 +14,9 @@ def score(evidence,key):
         cid=c['criterion_id'];v=copy.deepcopy(original['verdicts'][cid])
         if c.get('s3_transform')=='violation_complement':
             v['original_compliance_credit']=v['credit'];v['credit']=1-v['credit']
+        v.update(weight=c['weight'],dimension=c['dimension'])
         verdicts[cid]=v
     smax=sum(c['weight'] for c in criteria if c['weight']>0)
     numerator=sum(c['weight']*(1-round(1-verdicts[c['criterion_id']]['credit'],4) if c['weight']<0 else round(verdicts[c['criterion_id']]['credit'],4)) for c in criteria)
-    return {'status':original['status'],'score':round(max(0,min(1,numerator/smax)),6),'verdicts':verdicts}
+    return {'status':original['status'],'score':round(max(0,min(1,numerator/smax)),6),'verdicts':verdicts,
+            'interface_gate':original.get('interface_gate',{'failed':False,'errors':[]})}

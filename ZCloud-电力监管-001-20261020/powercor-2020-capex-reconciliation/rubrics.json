@@ -1,6 +1,6 @@
 {
   "case_id": "powercor-2020-capex-reconciliation",
-  "rubric_version": "office-demo-20261020",
+  "rubric_version": "office-demo-scorer-v2-20261026",
   "pass_threshold": 0.7,
   "normalization": {
     "allowed_weights": [
@@ -36,8 +36,8 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "满足本条已有判据：2020 network net capex difference",
-        "0": "未满足本条已有判据。"
+        "1": "数值与参考值的绝对差不超过0.0005。",
+        "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
     {
@@ -52,8 +52,8 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "满足本条已有判据：2020 non-network net capex difference",
-        "0": "未满足本条已有判据。"
+        "1": "数值与参考值的绝对差不超过0.0005。",
+        "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
     {
@@ -68,13 +68,13 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "满足本条已有判据：2020 total net capex difference",
-        "0": "未满足本条已有判据。"
+        "1": "数值与参考值的绝对差不超过0.0005。",
+        "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
     {
       "id": "S01",
-      "description": "缺失或错误时扣分；正确不加分：Requested Results header",
+      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -84,13 +84,14 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Requested Results header",
-        "0": "未触发本条已有违规条件。"
-      }
+        "1": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
+        "0": "未触发违规条件。"
+      },
+      "interface_gate": true
     },
     {
       "id": "S02",
-      "description": "缺失或错误时扣分；正确不加分：Requested nominal AUD million unit",
+      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
       "dimension": "内容质量-专业规范",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -100,8 +101,8 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "触发本条已有违规条件：缺失或错误时扣分；正确不加分：Requested nominal AUD million unit",
-        "0": "未触发本条已有违规条件。"
+        "1": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
+        "0": "未触发违规条件。"
       }
     },
     {
@@ -116,8 +117,72 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "触发本条已有违规条件：Deduct for Excel error cells outside result cells already assessed",
-        "0": "未触发本条已有违规条件。"
+        "1": "Deduct for Excel error cells outside result cells already assessed",
+        "0": "未触发违规条件。"
+      }
+    },
+    {
+      "id": "S03",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "dimension": "内容质量-事实忠实性",
+      "weight": -3,
+      "anchors": {
+        "1": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+        "0": "未触发违规条件。"
+      }
+    },
+    {
+      "id": "S04",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。",
+      "dimension": "结构与组织",
+      "weight": -3,
+      "anchors": {
+        "1": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。",
+        "0": "未触发违规条件。"
+      }
+    },
+    {
+      "id": "S05",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "dimension": "结构与组织",
+      "weight": -3,
+      "anchors": {
+        "1": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+        "0": "未触发违规条件。"
+      }
+    },
+    {
+      "id": "S06",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "dimension": "内容质量-专业规范",
+      "weight": -3,
+      "anchors": {
+        "1": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+        "0": "未触发违规条件。"
       }
     },
     {
@@ -169,21 +234,21 @@
   "metadata": {
     "scoring": {
       "s_max": 30,
-      "negative_total": -18,
-      "negative_total_absolute": 18,
-      "programmatic_negative_total": -9,
+      "negative_total": -30,
+      "negative_total_absolute": 30,
+      "programmatic_negative_total": -21,
       "llm_negative_total": -9,
-      "decision_date": "2026-10-20",
-      "rule": "三个业务结果各10分；同一结果不重复计正分，其他判据按各自条件扣分。",
+      "decision_date": "2026-10-26",
+      "rule": "接口门槛未满足则全题0分；三个数值结果各10分，其他程序违规项各扣3分，复用既有LLM判定。",
       "positive_count": 3,
-      "programmatic_count": 6,
+      "programmatic_count": 10,
       "llm_count": 3,
       "programmatic_positive_share": 1.0,
       "llm_positive_share": 0.0,
       "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
       "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
       "llm_status": "COMPLETED_HISTORICAL_RESULTS_NOT_RERUN",
-      "negative_weight_total_abs": 18,
+      "negative_weight_total_abs": 30,
       "negative_hit_semantics": "违反负向判据时score=1；未违反时score=0。SDK以value=1-违规度、negate=true保存；固定finalize还原带符号扣分，不做第二次取反。"
     },
     "format_migration": {
@@ -199,10 +264,10 @@
       "existing_anchors_preserved": true
     },
     "scoring_revision": {
-      "date": "2026-10-22",
-      "reason": "格式导出，不修订评分规则",
+      "date": "2026-10-26",
+      "reason": "评分器v2：严格接口门槛，独立来源、行序、额外记录与精度扣分，数值容差0.0005；离线复算程序并复用历史LLM判定",
       "removed_criterion_ids": [],
-      "remaining_criteria_changed": false,
+      "remaining_criteria_changed": true,
       "remaining_weights_changed": false,
       "rejudge_required": false
     }

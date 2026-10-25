@@ -9,7 +9,7 @@
       "type": "number",
       "gold": 13.690108344179448,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 32,
@@ -22,7 +22,7 @@
       "type": "number",
       "gold": -11.546100406081113,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 32,
@@ -35,7 +35,7 @@
       "type": "number",
       "gold": 1.1431857863294523,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 34,

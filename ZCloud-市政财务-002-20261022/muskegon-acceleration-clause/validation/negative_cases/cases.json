@@ -1,0 +1,574 @@
+{
+  "baseline_program_score": 1.0,
+  "cases": [
+    {
+      "file": "both_sheets_renamed.xlsx",
+      "mutation": "Results、Detail 均改错表名",
+      "expected_outcome": "gate",
+      "old_score_from_review": 0.882353,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "required_sheet_missing_or_misnamed"
+        },
+        {
+          "sheet": "Detail",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ]
+    },
+    {
+      "file": "results_columns_reversed.xlsx",
+      "mutation": "Results 四列逆序",
+      "expected_outcome": "gate",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "label",
+            "value",
+            "unit",
+            "source_note"
+          ],
+          "observed": [
+            "source_note",
+            "unit",
+            "value",
+            "label"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "results_rows_reversed.xlsx",
+      "mutation": "Results 三行逆序",
+      "expected_outcome": "S01",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "units_eur.xlsx",
+      "mutation": "Results USD 改为 EUR",
+      "expected_outcome": "S02",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "detail_columns_reversed.xlsx",
+      "mutation": "Detail 三列逆序",
+      "expected_outcome": "gate",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "plan",
+            "date",
+            "value"
+          ],
+          "observed": [
+            "value",
+            "date",
+            "plan"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "sources_empty.xlsx",
+      "mutation": "清空全部 Results source_note",
+      "expected_outcome": "S04",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "sources_header_empty.xlsx",
+      "mutation": "来源列连表头一并清空",
+      "expected_outcome": "gate",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03",
+        "S04"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "label",
+            "value",
+            "unit",
+            "source_note"
+          ],
+          "observed": [
+            "label",
+            "value",
+            "unit"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "results_plan_d.xlsx",
+      "mutation": "Results 尾部新增 Plan D=999999",
+      "expected_outcome": "S05",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_plus_cent.xlsx",
+      "mutation": "Results 三项各增加 USD 0.01",
+      "expected_outcome": "numeric",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.411765,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_missing.xlsx",
+      "mutation": "删除必需 Results 表",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ]
+    },
+    {
+      "file": "detail_missing.xlsx",
+      "mutation": "删除必需 Detail 表",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S03",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ]
+    },
+    {
+      "file": "results_header_case.xlsx",
+      "mutation": "Results 表头 value 改为 Value",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "label",
+            "value",
+            "unit",
+            "source_note"
+          ],
+          "observed": [
+            "label",
+            "Value",
+            "unit",
+            "source_note"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "detail_header_case.xlsx",
+      "mutation": "Detail 表头 date 改为 Date",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "plan",
+            "date",
+            "value"
+          ],
+          "observed": [
+            "plan",
+            "Date",
+            "value"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "results_extra_column.xlsx",
+      "mutation": "Results 增加第五列",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "label",
+            "value",
+            "unit",
+            "source_note"
+          ],
+          "observed": [
+            "label",
+            "value",
+            "unit",
+            "source_note",
+            "extra"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "detail_extra_column.xlsx",
+      "mutation": "Detail 增加第四列",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "header_text_order_or_column_count",
+          "expected": [
+            "plan",
+            "date",
+            "value"
+          ],
+          "observed": [
+            "plan",
+            "date",
+            "value",
+            "extra"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "detail_plan_d.xlsx",
+      "mutation": "Detail 尾部新增 Plan D",
+      "expected_outcome": "P02",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_duplicate.xlsx",
+      "mutation": "Results 重复 Plan A 记录",
+      "expected_outcome": "S05",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "detail_duplicate.xlsx",
+      "mutation": "Detail 重复 A 记录",
+      "expected_outcome": "P02",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_blank_label.xlsx",
+      "mutation": "Results 增加无标签金额记录",
+      "expected_outcome": "S05",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "detail_blank_label.xlsx",
+      "mutation": "Detail 增加无标签金额记录",
+      "expected_outcome": "P02",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "source_one_empty.xlsx",
+      "mutation": "只清空 Results D3",
+      "expected_outcome": "S04",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "sources_numeric.xlsx",
+      "mutation": "来源说明全部替换为金额数字",
+      "expected_outcome": "S04",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "sources_whitespace.xlsx",
+      "mutation": "来源说明全部替换为空白",
+      "expected_outcome": "S04",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_general.xlsx",
+      "mutation": "Results 金额全部恢复 General 格式",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "detail_general.xlsx",
+      "mutation": "Detail 金额全部恢复 General 格式",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "money_one_decimal.xlsx",
+      "mutation": "六个金额均显示一位小数",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "money_three_decimals.xlsx",
+      "mutation": "六个金额均显示三位小数",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "detail_plus_cent.xlsx",
+      "mutation": "Detail 三项各增加 USD 0.01",
+      "expected_outcome": "numeric",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.588235,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "units_case.xlsx",
+      "mutation": "Results USD 改为 usd",
+      "expected_outcome": "S02",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "results_blank_row.xlsx",
+      "mutation": "Results 首条结果前插入空行",
+      "expected_outcome": "S01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "wrong_date.xlsx",
+      "mutation": "Detail A 日期改为 2008-01-01",
+      "expected_outcome": "V01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "V01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    },
+    {
+      "file": "support_error.xlsx",
+      "mutation": "支持表出现未计分的 Excel 错误",
+      "expected_outcome": "P01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": []
+    }
+  ],
+  "controls": [
+    "additional_support_sheet=1",
+    "tolerance_0.0049=accepted",
+    "tolerance_0.005=accepted",
+    "tolerance_0.0051=rejected",
+    "missing_output=0"
+  ],
+  "llm_status": "NOT_RUN"
+}

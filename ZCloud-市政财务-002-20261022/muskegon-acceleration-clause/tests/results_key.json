@@ -10,7 +10,7 @@
       "gold": 42200.0,
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "abs": 0.011,
+      "abs": 0.005,
       "rel": 0,
       "negate": false
     },
@@ -22,7 +22,7 @@
       "gold": 55200.0,
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "abs": 0.011,
+      "abs": 0.005,
       "rel": 0,
       "negate": false
     },
@@ -34,7 +34,7 @@
       "gold": 50500.0,
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "abs": 0.011,
+      "abs": 0.005,
       "rel": 0,
       "negate": false
     }
@@ -42,18 +42,11 @@
   "checks": [
     {
       "criterion_id": "S01",
-      "kind": "header",
+      "kind": "row_order",
       "sheet": "Results",
-      "headers": [
-        "label",
-        "value",
-        "unit",
-        "source_note"
-      ],
       "weight": -3,
       "dimension": "结构与组织",
-      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
-      "s3_transform": "violation_complement",
+      "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
       "negate": true
     },
     {
@@ -61,8 +54,7 @@
       "kind": "results_units",
       "weight": -3,
       "dimension": "内容质量-专业规范",
-      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
-      "s3_transform": "violation_complement",
+      "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
       "negate": true
     },
     {
@@ -76,9 +68,9 @@
       ],
       "weight": -3,
       "dimension": "结构与组织",
-      "description": "缺失或错误时扣分；正确不加分：Detail interface",
-      "s3_transform": "violation_complement",
-      "negate": true
+      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "negate": true,
+      "gate": true
     },
     {
       "criterion_id": "P01",
@@ -92,9 +84,34 @@
       "criterion_id": "P02",
       "kind": "unsupported_records",
       "sheet": "Detail",
-      "weight": -7,
+      "weight": -3,
       "dimension": "指令遵循",
-      "description": "Unsupported plan record",
+      "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "negate": true
+    },
+    {
+      "criterion_id": "S04",
+      "kind": "source_notes",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "negate": true
+    },
+    {
+      "criterion_id": "S05",
+      "kind": "unsupported_records",
+      "sheet": "Results",
+      "weight": -3,
+      "dimension": "指令遵循",
+      "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "negate": true
+    },
+    {
+      "criterion_id": "S06",
+      "kind": "money_precision",
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
       "negate": true
     }
   ],
@@ -112,7 +129,7 @@
       "value_columns": {
         "value": {
           "type": "number",
-          "abs": 0.011,
+          "abs": 0.005,
           "rel": 0
         }
       },
@@ -155,7 +172,6 @@
         "per_record": true,
         "ignore_extra": true
       },
-      "s3_transform": "violation_complement",
       "negate": true
     },
     {
@@ -167,7 +183,7 @@
       "value_columns": {
         "value": {
           "type": "number",
-          "abs": 0.011,
+          "abs": 0.005,
           "rel": 0
         }
       },
@@ -210,7 +226,6 @@
         "per_record": true,
         "ignore_extra": true
       },
-      "s3_transform": "violation_complement",
       "negate": true
     },
     {
@@ -222,7 +237,7 @@
       "value_columns": {
         "value": {
           "type": "number",
-          "abs": 0.011,
+          "abs": 0.005,
           "rel": 0
         }
       },
@@ -265,7 +280,6 @@
         "per_record": true,
         "ignore_extra": true
       },
-      "s3_transform": "violation_complement",
       "negate": true
     }
   ],
@@ -314,5 +328,10 @@
       ]
     }
   },
-  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)"
+  "aggregation": "clip(sum(signed_weight * raw_credit)/51,0,1); invalid required interface => 0",
+  "scoring_revision": "office-v2-2026-10-26",
+  "interface_gate": {
+    "criterion_id": "S03",
+    "policy": "exact required sheet names, header text, order and occupied column count; no fallback; extra support sheets allowed"
+  }
 }

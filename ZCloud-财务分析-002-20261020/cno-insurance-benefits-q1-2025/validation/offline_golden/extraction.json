@@ -1,0 +1,232 @@
+{
+  "status": "PARSED",
+  "sheets": {
+    "Results": {
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "raw_headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "records": {
+        "change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024": [
+          {
+            "label": {
+              "raw": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+              "cell": "Results!A2",
+              "format": "General"
+            },
+            "value": {
+              "raw": 61.7,
+              "cell": "Results!B2",
+              "format": "0.0"
+            },
+            "unit": {
+              "raw": "USD millions",
+              "cell": "Results!C2",
+              "format": "General"
+            },
+            "source_note": {
+              "raw": "CNO_2024-12-31_10K.xlsx | worksheet/table T050!G15: FY 2024 = 2,471.9.\nCNO_2024-09-30_10Q.xlsx | worksheet/table T010!S19: 9M 2024 = 1,926.4.\nCNO_2025-03-31_10Q.xlsx | worksheet/table T010!G19: Q1 2025 = 580.1.\nCNO_2025-06-30_10Q.xlsx | worksheet/table T016!N14: 9M adjustment +15.6; T016!N24: FY adjustment -21.6; worksheet Text!A131: cumulative embedded-derivative overstatement 21.6 at December 31, 2024 and 31.7 at March 31, 2025.\nRevision basis: the 21.6 and 31.7 embedded-derivative errors are cumulative balances, not separate quarterly expenses. Convert the cumulative error to the quarter's adjustment: Q1 reduction = 31.7 - 21.6 = 10.1.\nRevised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Revised Q1 = 580.1 - 10.1 = 570.0.\nChange = 570.0 - 508.3 = 61.7 USD millions.",
+              "cell": "Results!D2",
+              "format": "General"
+            }
+          }
+        ],
+        "percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024": [
+          {
+            "label": {
+              "raw": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+              "cell": "Results!A3",
+              "format": "General"
+            },
+            "value": {
+              "raw": 12.13850088530396,
+              "cell": "Results!B3",
+              "format": "0.00"
+            },
+            "unit": {
+              "raw": "percent",
+              "cell": "Results!C3",
+              "format": "General"
+            },
+            "source_note": {
+              "raw": "CNO_2024-12-31_10K.xlsx | worksheet/table T050!G15: FY 2024 = 2,471.9.\nCNO_2024-09-30_10Q.xlsx | worksheet/table T010!S19: 9M 2024 = 1,926.4.\nCNO_2025-03-31_10Q.xlsx | worksheet/table T010!G19: Q1 2025 = 580.1.\nCNO_2025-06-30_10Q.xlsx | worksheet/table T016!N14: 9M adjustment +15.6; T016!N24: FY adjustment -21.6; worksheet Text!A131: cumulative embedded-derivative overstatement 21.6 at December 31, 2024 and 31.7 at March 31, 2025.\nRevision basis: the 21.6 and 31.7 embedded-derivative errors are cumulative balances, not separate quarterly expenses. Convert the cumulative error to the quarter's adjustment: Q1 reduction = 31.7 - 21.6 = 10.1.\nRevised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Revised Q1 = 580.1 - 10.1 = 570.0.\nPercentage change = (570.0 - 508.3) / 508.3 * 100 = 12.1385008853...%; displayed to two decimals: 12.14 percent.",
+              "cell": "Results!D3",
+              "format": "General"
+            }
+          }
+        ]
+      },
+      "extra": [],
+      "row_keys": [
+        [
+          "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ],
+        [
+          "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        ]
+      ],
+      "actual_name": "Results"
+    },
+    "Analysis": {
+      "headers": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "raw_headers": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "records": {
+        "fourth quarter of 2024|insurance policy benefits": [
+          {
+            "period": {
+              "raw": "Fourth quarter of 2024",
+              "cell": "Analysis!A2",
+              "format": "General"
+            },
+            "measure": {
+              "raw": "Insurance policy benefits",
+              "cell": "Analysis!B2",
+              "format": "General"
+            },
+            "amount": {
+              "raw": 508.3,
+              "cell": "Analysis!C2",
+              "format": "0.0"
+            },
+            "unit": {
+              "raw": "USD millions",
+              "cell": "Analysis!D2",
+              "format": "General"
+            },
+            "source_document": {
+              "raw": "CNO_2024-12-31_10K.xlsx; CNO_2024-09-30_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+              "cell": "Analysis!E2",
+              "format": "General"
+            },
+            "source_page": {
+              "raw": "CNO_2024-12-31_10K.xlsx T050!G15; CNO_2024-09-30_10Q.xlsx T010!S19; CNO_2025-06-30_10Q.xlsx T016!N14 (+15.6), T016!N24 (-21.6), Text!A131. Revised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3 USD millions.",
+              "cell": "Analysis!F2",
+              "format": "General"
+            }
+          }
+        ],
+        "first quarter of 2025|insurance policy benefits": [
+          {
+            "period": {
+              "raw": "First quarter of 2025",
+              "cell": "Analysis!A3",
+              "format": "General"
+            },
+            "measure": {
+              "raw": "Insurance policy benefits",
+              "cell": "Analysis!B3",
+              "format": "General"
+            },
+            "amount": {
+              "raw": 570,
+              "cell": "Analysis!C3",
+              "format": "0.0"
+            },
+            "unit": {
+              "raw": "USD millions",
+              "cell": "Analysis!D3",
+              "format": "General"
+            },
+            "source_document": {
+              "raw": "CNO_2025-03-31_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+              "cell": "Analysis!E3",
+              "format": "General"
+            },
+            "source_page": {
+              "raw": "CNO_2025-03-31_10Q.xlsx T010!G19; CNO_2025-06-30_10Q.xlsx Text!A131 (cumulative errors 31.7 at March 31, 2025 and 21.6 at December 31, 2024), T016!N24 (2024 correction). Quarter-only adjustment = -(31.7 - 21.6) = -10.1. Revised Q1 = 580.1 - 10.1 = 570.0 USD millions.",
+              "cell": "Analysis!F3",
+              "format": "General"
+            }
+          }
+        ]
+      },
+      "extra": [],
+      "row_keys": [
+        [
+          "Fourth quarter of 2024",
+          "Insurance policy benefits"
+        ],
+        [
+          "First quarter of 2025",
+          "Insurance policy benefits"
+        ]
+      ],
+      "actual_name": "Analysis"
+    },
+    "Summary": {
+      "headers": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "raw_headers": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "records": {
+        "fourth quarter of 2024": [
+          {
+            "quarter": {
+              "raw": "Fourth quarter of 2024",
+              "cell": "Summary!A2",
+              "format": "General"
+            },
+            "insurance_policy_benefits": {
+              "raw": 508.3,
+              "cell": "Summary!B2",
+              "format": "0.0"
+            }
+          }
+        ],
+        "first quarter of 2025": [
+          {
+            "quarter": {
+              "raw": "First quarter of 2025",
+              "cell": "Summary!A3",
+              "format": "General"
+            },
+            "insurance_policy_benefits": {
+              "raw": 570,
+              "cell": "Summary!B3",
+              "format": "0.0"
+            }
+          }
+        ]
+      },
+      "extra": [],
+      "row_keys": [
+        [
+          "Fourth quarter of 2024"
+        ],
+        [
+          "First quarter of 2025"
+        ]
+      ],
+      "actual_name": "Summary"
+    }
+  },
+  "formulas": [],
+  "error_cells": [],
+  "interface_errors": []
+}

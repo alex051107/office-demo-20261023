@@ -1,0 +1,201 @@
+{
+  "status": "SCORED",
+  "score": 0,
+  "verdicts": {
+    "R01": {
+      "credit": 0.0,
+      "observed": null,
+      "expected": 61.7,
+      "evidence": [],
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "R02": {
+      "credit": 0.0,
+      "observed": null,
+      "expected": 12.138500885303955,
+      "evidence": [],
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "A1": {
+      "credit": 0.0,
+      "observed": null,
+      "expected": 508.3,
+      "evidence": [],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "A2": {
+      "credit": 0.0,
+      "observed": null,
+      "expected": 570.0,
+      "evidence": [],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "P1": {
+      "credit": 1.0,
+      "evidence": [
+        508.3,
+        null
+      ],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "original_compliance_credit": 0.0
+    },
+    "P2": {
+      "credit": 1.0,
+      "evidence": [
+        570.0,
+        508.3,
+        null
+      ],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "original_compliance_credit": 0.0
+    },
+    "SD1": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "original_compliance_credit": 0.0
+    },
+    "SD2": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "original_compliance_credit": 0.0
+    },
+    "F1": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 0.0
+    },
+    "F2": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 0.0
+    },
+    "F3": {
+      "credit": 1.0,
+      "evidence": [
+        "insurance_policy_benefits",
+        "quarter"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 0.0
+    },
+    "X1": {
+      "credit": 0.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全"
+    },
+    "X2": {
+      "credit": 0.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全"
+    },
+    "S01": {
+      "credit": 1.0,
+      "evidence": [
+        [],
+        []
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "S02": {
+      "credit": 1.0,
+      "evidence": [
+        false,
+        false
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "SP1": {
+      "credit": 1.0,
+      "evidence": [
+        false,
+        false
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "O01": {
+      "credit": 1.0,
+      "evidence": {
+        "Results": [],
+        "Analysis": [],
+        "Summary": [
+          [
+            "Fourth quarter of 2024"
+          ],
+          [
+            "First quarter of 2025"
+          ]
+        ]
+      },
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "U01": {
+      "credit": 1.0,
+      "evidence": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "DP1": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "DP2": {
+      "credit": 1.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织"
+    }
+  },
+  "interface_gate": {
+    "failed": true,
+    "errors": [
+      {
+        "sheet": "Results",
+        "reason": "required sheet missing or misnamed"
+      },
+      {
+        "sheet": "Analysis",
+        "reason": "required sheet missing or misnamed"
+      },
+      {
+        "sheet": "Summary",
+        "reason": "row 1 headers/order/column count mismatch",
+        "observed": [
+          "insurance_policy_benefits",
+          "quarter"
+        ],
+        "expected": [
+          "quarter",
+          "insurance_policy_benefits"
+        ]
+      }
+    ]
+  }
+}

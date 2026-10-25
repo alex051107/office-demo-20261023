@@ -1,0 +1,24 @@
+{
+  "protected_files": {
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/instruction.md": "64c1412cd8f8760027f0e67ada1a4b1742313adee21a94ded6c3855886100a31",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/tests/prompt.md": "fc7f1595ec983643c1aef55519245b3ed5baae5e9817f5383fbb2ca82fb37a78",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/environment/input_files/CNO_2024-09-30_10Q.xlsx": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/environment/input_files/CNO_2024-12-31_10K.xlsx": "22948e6421a12bfe94dbb56fd71c0700bcb0d8955e49ade9f69b22bc501dceca",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/environment/input_files/CNO_2025-03-31_10Q.xlsx": "df68eed54fa4d1ff977a5dd6c915be5379273553366cfa1490ff033dd1b6f0fa",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/environment/input_files/CNO_2025-06-30_10Q.xlsx": "aa1d131e5cf545bec09a111bf85f6ee6334d03cc7dc0be58223a31b2e877d3eb",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/claude-opus-4-8/candidate.xlsx": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/gpt-5.6-sol/candidate.xlsx": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/qwen3.8-max/candidate.xlsx": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/qwen3.8-max/solver_output/answer.xlsx": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/gpt-5.6-sol/solver_output/answer.xlsx": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/rollouts/claude-opus-4-8/solver_output/answer.xlsx": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec"
+  },
+  "original_golden_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
+  "golden_copies": [
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/targets/answer.xlsx",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/solution/golden/answer.xlsx",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/solution/golden_output/answer.xlsx",
+    "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/tests/__golden_output/answer.xlsx",
+    "ZCloud-财务分析-002-20261020-轨迹报告/cno-insurance-benefits-q1-2025/golden/candidate.xlsx"
+  ]
+}

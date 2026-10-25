@@ -1,0 +1,7 @@
+{
+  "scope": "programmatic_subset_only",
+  "programmatic_score": 1.0,
+  "criteria_counted": 20,
+  "hybrid_reward": null,
+  "llm_status": "NOT_RUN"
+}

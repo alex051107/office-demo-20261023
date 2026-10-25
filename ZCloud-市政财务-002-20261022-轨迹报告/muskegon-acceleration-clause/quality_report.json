@@ -11,10 +11,10 @@
     "live_source_verified": false,
     "original_customer_query": false
   },
-  "rubric_sha256": "19a9a9804df161a1c07888165fa3dd6c64bdbbe011972a88e722a0d83a8feab4",
+  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
   "target": {
     "path": "golden/candidate.xlsx",
-    "sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+    "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
     "score_final": 1.0
@@ -78,7 +78,7 @@
     "model": "qwen3.7-plus",
     "protocol": "anthropic（Claude Code 裁判）",
     "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "每份答卷取第 1 次评分；重复评分只用于一致性统计。",
+    "score_basis": "程序判据按 v2 离线重算，LLM 逐条判定原样复用；无新增裁判。Opus 未完成的负项保留未完成，零分由程序上界推出。",
     "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
   },
   "consistency": {
@@ -100,13 +100,14 @@
         "pass_stddev_lt_0_05": true
       }
     ],
-    "status": "PASS"
+    "status": "RECOMPUTED_WITH_SAVED_JUDGMENTS",
+    "note": "同一参考答卷的程序重算，与五份已保存 LLM 判定分别重组；不是新增重复裁判。"
   },
   "discrimination": {
     "reference_score": 1.0,
     "model_scores": {
-      "gpt-5.6-sol": 0.0,
       "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
       "qwen3.8-max": 0.0
     },
     "empty_controls": [
@@ -153,5 +154,40 @@
     "开发阶段的另一套评分规则给三个模型各 0.07 分，全部来自格式项；本包规则下格式项只扣分不加分，记 0。",
     "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。"
   ],
-  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN"
+  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+  "scoring_revision": {
+    "revision": "评分器 v2（2026-10-26）",
+    "scores": {
+      "golden": {
+        "old_score": 1.0,
+        "new_score": 1.0,
+        "programmatic_score": 1.0,
+        "llm_status": "COMPLETED",
+        "criteria_counted": 20
+      },
+      "claude-opus-4-8": {
+        "old_score": 0.0,
+        "new_score": 0.0,
+        "programmatic_score": 0.0,
+        "llm_status": "STOPPED_RUNAWAY",
+        "criteria_counted": 17
+      },
+      "gpt-5.6-sol": {
+        "old_score": 0.0,
+        "new_score": 0.0,
+        "programmatic_score": 0.0,
+        "llm_status": "COMPLETED",
+        "criteria_counted": 20
+      },
+      "qwen3.8-max": {
+        "old_score": 0.0,
+        "new_score": 0.0,
+        "programmatic_score": 0.0,
+        "llm_status": "COMPLETED",
+        "criteria_counted": 20
+      }
+    },
+    "new_solver_runs": 0,
+    "new_llm_calls": 0
+  }
 }

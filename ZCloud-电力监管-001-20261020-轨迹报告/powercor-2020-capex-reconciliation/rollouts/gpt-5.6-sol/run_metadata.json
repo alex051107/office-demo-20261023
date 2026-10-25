@@ -52,7 +52,7 @@
   },
   "candidate_label": "gpt-5.6-sol",
   "judge_model": "qwen3.7-plus",
-  "current_export_rubric_sha256": "9a82b1569e513b6b064025aa465c97331990a75ba8f0b0aa588d1de14c5afdfb",
+  "current_export_rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
   "historical_judge_rubric_sha256": "0a65180fae81d9f567ae15f76595053c5d07476401fb8326521f8cc3c308e6c2",
   "score_preserved": 0.0,
   "this_export_paid_calls": 0,
@@ -80,5 +80,7 @@
   },
   "historical_non_json_line_numbers": [
     1
-  ]
+  ],
+  "scorer_version": "v2 (2026-10-26)",
+  "score_basis": "v2程序离线复算，按固定finalize逻辑合成原有LLM判定；未新增求解或LLM评审。"
 }

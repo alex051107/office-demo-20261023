@@ -1,0 +1,86 @@
+{
+  "status": "EXTRACTED",
+  "book": {
+    "Results": [
+      [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      [
+        "2020 network net capex difference",
+        5.97982451514963,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx, 'RFM input'!L7:L8,L10 (forecast net capex); F61:F62,F64 (actual capex), F115:F116,F118 (disposals), F169:F170,F172 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Network: Subtransmission, Distribution system assets, SCADA/Network control."
+      ],
+      [
+        "2020 non-network net capex difference",
+        -13.79712049285413,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx, 'RFM input'!L11:L13 (forecast net capex); F65:F67 (actual capex), F119:F121 (disposals), F173:F175 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Non-network: Non-network general assets - IT, Non-network general assets - Other, VBRC."
+      ],
+      [
+        "2020 total net capex difference",
+        -8.818118129473419,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx, 'RFM input'!L7:L14 (forecast net capex); F61:F68 (actual capex), F115:F122 (disposals), F169:F176 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Includes all named classes, including Land."
+      ]
+    ]
+  },
+  "formulas": {
+    "Results": [
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "interface_errors": [],
+  "required_results": [
+    {
+      "row": 2,
+      "label": "2020 network net capex difference",
+      "value": 5.97982451514963,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx, 'RFM input'!L7:L8,L10 (forecast net capex); F61:F62,F64 (actual capex), F115:F116,F118 (disposals), F169:F170,F172 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Network: Subtransmission, Distribution system assets, SCADA/Network control.",
+      "number_format": "0.000000000"
+    },
+    {
+      "row": 3,
+      "label": "2020 non-network net capex difference",
+      "value": -13.79712049285413,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx, 'RFM input'!L11:L13 (forecast net capex); F65:F67 (actual capex), F119:F121 (disposals), F173:F175 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Non-network: Non-network general assets - IT, Non-network general assets - Other, VBRC.",
+      "number_format": "0.000000000"
+    },
+    {
+      "row": 4,
+      "label": "2020 total net capex difference",
+      "value": -8.818118129473419,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx, 'RFM input'!L7:L14 (forecast net capex); F61:F68 (actual capex), F115:F122 (disposals), F169:F176 (contributions). Actual net capex = capex - disposals - contributions; difference = actual - forecast. Includes all named classes, including Land.",
+      "number_format": "0.000000000"
+    }
+  ]
+}

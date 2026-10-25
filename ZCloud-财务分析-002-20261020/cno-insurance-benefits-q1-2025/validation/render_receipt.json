@@ -1,0 +1,30 @@
+{
+  "renderer": "LibreOffice 26.2.5.2 / calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+  "sheets": [
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png",
+      "page_count": 1,
+      "header_verified": "source_note",
+      "pdf_sha256": "533d6aad1ec9512e20974f94aea6ac9a085e482af5a7a7581e8c8c3b7de25ea5"
+    },
+    {
+      "sheet": "Analysis",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png",
+      "page_count": 1,
+      "header_verified": "source_document",
+      "pdf_sha256": "02124377629fdcbecec88ba30666f93e0419fa4e6a4e4172d5b72b4583e3e0e5"
+    },
+    {
+      "sheet": "Summary",
+      "pdf": "renders/sheet-03.pdf",
+      "png": "renders/sheet-03.png",
+      "page_count": 1,
+      "header_verified": "insurance_policy_benefits",
+      "pdf_sha256": "3548f844f64be38849045c614ed2b01127a3e0df5e63bde52d78bcc9ee50ab5a"
+    }
+  ]
+}

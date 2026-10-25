@@ -1,0 +1,273 @@
+{
+  "status": "SCORED",
+  "task_id": "MUNIFIN/muskegon-acceleration-clause",
+  "score": 0.0,
+  "S0": 0.0,
+  "S": 0.0,
+  "cap_enabled": false,
+  "interface_gate_passed": true,
+  "interface_errors": [],
+  "total_weight": 51,
+  "earned": 0,
+  "penalty_weight": 0,
+  "accepted_S0": false,
+  "root_criteria_met": 0,
+  "root_criteria": 0,
+  "verdicts": {
+    "R01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "R02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "R03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "D01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "V01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "D02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "V02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "D03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "0.00"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "not_met"
+    },
+    "V03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "S01": {
+      "credit": 0,
+      "evidence": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "status": "clear"
+    },
+    "S02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4",
+          "number_format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "status": "clear"
+    },
+    "S03": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "status": "clear"
+    },
+    "P01": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "status": "clear"
+    },
+    "P02": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "指令遵循",
+      "status": "clear"
+    },
+    "S04": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "Computed from Records: Sponsorships (A1 235,000 + A2 347,000), Broker payments (9,200 + 6,800), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (13,100)",
+          "cell": "Results!D2",
+          "number_format": "General"
+        },
+        {
+          "raw": "Computed from Records: Sponsorships (B1 318,000 + B2 429,000), Broker payments (11,200 + 8,300), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (17,850)",
+          "cell": "Results!D3",
+          "number_format": "General"
+        },
+        {
+          "raw": "Computed from Records: Sponsorships (C1 287,000 + C2 386,000), Broker payments (9,700 + 7,100), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (16,850)",
+          "cell": "Results!D4",
+          "number_format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "S05": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "指令遵循",
+      "status": "clear"
+    },
+    "S06": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "0.00"
+        },
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "0.00"
+        },
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "0.00"
+        },
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "0.00"
+        },
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "0.00"
+        },
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "0.00"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "status": "clear"
+    }
+  }
+}

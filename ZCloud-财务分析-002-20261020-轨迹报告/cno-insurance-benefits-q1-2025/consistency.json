@@ -1,6 +1,6 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
-  "unit": "repeated judge jobs on one fixed candidate, not independent solver runs",
+  "unit": "deterministic program replay combined with five saved text judgments; not five new judge calls",
   "threshold": 0.05,
   "comparison": "strictly less than",
   "primary_statistic": "sample standard deviation (ddof=1)",
@@ -265,7 +265,140 @@
         {
           "criterion_id": "X2",
           "kind": "programmatic",
-          "weight": -7,
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S01",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S02",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SP1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "O01",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "U01",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "DP1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "DP2",
+          "kind": "programmatic",
+          "weight": -3,
           "values": [
             0.0,
             0.0,
@@ -340,13 +473,15 @@
         }
       ],
       "failed_criteria": [],
-      "criterion_requirement_status": "PASS"
+      "criterion_requirement_status": "OFFLINE_REPLAY_PASS"
     }
   ],
-  "status": "PASS",
+  "status": "OFFLINE_REPLAY_PASS_SAVED_TEXT_ONLY",
   "limitations": [
     "n=5仅为该卷的观测一致性；不能证明未来裁判稳定性。",
     "只有参考三组与Powercor Sol有五次；其他模型只有一次，不计算样本标准差，不以0代替未测。",
-    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。"
-  ]
+    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。",
+    "本次仅重算程序判据并复用历史五份文字判定；修订后的参考说明未重新送文字裁判，不构成新版混合裁判的独立稳定性验证。"
+  ],
+  "scorer_revision": "office-review-v2-20261026"
 }

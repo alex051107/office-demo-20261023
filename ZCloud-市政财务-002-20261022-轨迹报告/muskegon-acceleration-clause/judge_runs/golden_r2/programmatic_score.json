@@ -1,0 +1,273 @@
+{
+  "status": "SCORED",
+  "task_id": "MUNIFIN/muskegon-acceleration-clause",
+  "score": 1.0,
+  "S0": 1.0,
+  "S": 1.0,
+  "cap_enabled": false,
+  "interface_gate_passed": true,
+  "interface_errors": [],
+  "total_weight": 51,
+  "earned": 51,
+  "penalty_weight": 0,
+  "accepted_S0": true,
+  "root_criteria_met": 0,
+  "root_criteria": 0,
+  "verdicts": {
+    "R01": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "R02": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 55200,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "R03": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 50500,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "D01": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 42200.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "V01": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "D02": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 55200,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 55200.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "V02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "D03": {
+      "credit": 1,
+      "evidence": [
+        {
+          "raw": 50500,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "expected": 50500.0,
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性",
+      "status": "met"
+    },
+    "V03": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4",
+          "number_format": "General"
+        }
+      ],
+      "expected": "2007-12-31",
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "S01": {
+      "credit": 0,
+      "evidence": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "status": "clear"
+    },
+    "S02": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4",
+          "number_format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "status": "clear"
+    },
+    "S03": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "status": "clear"
+    },
+    "P01": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "status": "clear"
+    },
+    "P02": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "指令遵循",
+      "status": "clear"
+    },
+    "S04": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan A: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records A1 and A2: term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200. PDF p.4 Broker payments, Plan A, 2007-07-15 USD 9,200 and 2007-08-15 USD 6,800. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record A date comes from Plans; value and this principal balance are USD 42,200 = 58,200 - 9,200 - 6,800.",
+          "cell": "Results!D2",
+          "number_format": "General"
+        },
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan B: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records B1 and B2: term cash USD 318,000 and 429,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 74,700. PDF p.4 Broker payments, Plan B, 2007-07-15 USD 11,200 and 2007-08-15 USD 8,300. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record B date comes from Plans; value and this principal balance are USD 55,200 = 74,700 - 11,200 - 8,300.",
+          "cell": "Results!D3",
+          "number_format": "General"
+        },
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan C: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records C1 and C2: term cash USD 287,000 and 386,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 67,300. PDF p.4 Broker payments, Plan C, 2007-07-15 USD 9,700 and 2007-08-15 USD 7,100. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record C date comes from Plans; value and this principal balance are USD 50,500 = 67,300 - 9,700 - 7,100.",
+          "cell": "Results!D4",
+          "number_format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-事实忠实性",
+      "status": "clear"
+    },
+    "S05": {
+      "credit": 0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "指令遵循",
+      "status": "clear"
+    },
+    "S06": {
+      "credit": 0,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 55200,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 50500,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 42200,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 55200,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 50500,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "status": "clear"
+    }
+  }
+}

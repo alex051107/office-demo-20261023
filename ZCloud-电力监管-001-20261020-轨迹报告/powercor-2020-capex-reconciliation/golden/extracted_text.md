@@ -1,4 +1,3 @@
-
 ## Results
 
 A1=label | B1=value | C1=unit | D1=source_note
@@ -21,5 +20,10 @@ A10=Accelerated depreciation assets | B10=other | C10=0 | D10=0 | E10=0 | F10=Po
 A11=Old SWER ACRs | B11=other | C11=0 | D11=0 | E11=0 | F11=Powercor_RFM_inputs.xlsx, 'RFM input'!F16 (asset class), F60 (year), F70 (capex), F124 (asset disposals), F178 (capital contributions), L16 (2020 forecast net capex), F282, F284 and F287 (inflation and WACC); Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20.
 A12=in-house software | B12=other | C12=0 | D12=0 | E12=0 | F12=Powercor_RFM_inputs.xlsx, 'RFM input'!F55 (asset class), F60 (year), F109 (capex), F163 (asset disposals), F217 (capital contributions), L55 (2020 forecast net capex), F282, F284 and F287 (inflation and WACC); Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20.
 A13=Equity raising costs | B13=other | C13=0 | D13=0 | E13=0 | F13=Powercor_RFM_inputs.xlsx, 'RFM input'!F56 (asset class), F60 (year), F110 (capex), F164 (asset disposals), F218 (capital contributions), L56 (2020 forecast net capex), F282, F284 and F287 (inflation and WACC); Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20.
-A14=Applicable rate | B14=0.05008580413845843 | C14=Powercor_RFM_inputs.xlsx, 'RFM input'!F281:F284 and F287; Distribution_handbook.pdf, p. 27, section 2.4.1, footnote 20.
-A15=Year-end factor | B15=1.024736943873138
+A14=Applicable rate | B14=0.05008580413845843 | F14=Powercor_RFM_inputs.xlsx, 'RFM input'!F281:F284 and F287; Distribution_handbook.pdf, p. 27, section 2.4.1, footnote 20.
+A15=Year-end factor | B15=1.024736943873138 | F15=sqrt(1 + applicable rate). The factor grosses up actual net capex only; forecast is already at year end. Distribution_handbook.pdf, p. 27, section 2.4.1 and footnotes 19-20.
+A17=Calculation and scope
+A18=Actual net capex = gross capex - asset disposals - capital contributions. Year-end difference = actual net capex x year-end factor - 2020 forecast net capex. All capex figures are nominal AUD million.
+A19=Applicable rate = (1 + F287) / (1 + F284) x (1 + F282) - 1; year-end factor = sqrt(1 + applicable rate). Inputs are Powercor_RFM_inputs.xlsx, RFM input; policy is Distribution_handbook.pdf, p. 27, section 2.4.1 / footnotes 19-20.
+A20=All 12 named asset classes are included in the total, including Land. Land contributes -1.000822151768884; therefore the total is not just network plus non-network. Results displays 0.000 while underlying full-precision values are retained.
+A21=The Results interface contains exactly the four requested columns and the three requested labels in order. Each result retains a source reference. Supporting worksheets may be organized freely; static values and cached formulas are both permitted by the task.

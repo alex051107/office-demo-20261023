@@ -1,0 +1,93 @@
+{
+  "status": "PARSED",
+  "sheets": {
+    "Results": {
+      "headers": [],
+      "records": {},
+      "extra": [],
+      "row_keys": [],
+      "actual_name": null
+    },
+    "Analysis": {
+      "headers": [],
+      "records": {},
+      "extra": [],
+      "row_keys": [],
+      "actual_name": null
+    },
+    "Summary": {
+      "headers": [
+        "insurance_policy_benefits",
+        "quarter"
+      ],
+      "raw_headers": [
+        "insurance_policy_benefits",
+        "quarter"
+      ],
+      "records": {
+        "fourth quarter of 2024": [
+          {
+            "insurance_policy_benefits": {
+              "raw": 508.3,
+              "cell": "Summary!A2",
+              "format": "0.0"
+            },
+            "quarter": {
+              "raw": "Fourth quarter of 2024",
+              "cell": "Summary!B2",
+              "format": "0.0"
+            }
+          }
+        ],
+        "first quarter of 2025": [
+          {
+            "insurance_policy_benefits": {
+              "raw": 570,
+              "cell": "Summary!A3",
+              "format": "0.0"
+            },
+            "quarter": {
+              "raw": "First quarter of 2025",
+              "cell": "Summary!B3",
+              "format": "0.0"
+            }
+          }
+        ]
+      },
+      "extra": [],
+      "row_keys": [
+        [
+          "Fourth quarter of 2024"
+        ],
+        [
+          "First quarter of 2025"
+        ]
+      ],
+      "actual_name": "Summary"
+    }
+  },
+  "formulas": [],
+  "error_cells": [],
+  "interface_errors": [
+    {
+      "sheet": "Results",
+      "reason": "required sheet missing or misnamed"
+    },
+    {
+      "sheet": "Analysis",
+      "reason": "required sheet missing or misnamed"
+    },
+    {
+      "sheet": "Summary",
+      "reason": "row 1 headers/order/column count mismatch",
+      "observed": [
+        "insurance_policy_benefits",
+        "quarter"
+      ],
+      "expected": [
+        "quarter",
+        "insurance_policy_benefits"
+      ]
+    }
+  ]
+}

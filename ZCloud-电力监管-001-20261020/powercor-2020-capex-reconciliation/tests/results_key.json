@@ -9,7 +9,7 @@
       "type": "number",
       "gold": 13.690108344179448,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 10,
@@ -23,7 +23,7 @@
       "type": "number",
       "gold": -11.546100406081113,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 10,
@@ -37,7 +37,7 @@
       "type": "number",
       "gold": 1.1431857863294523,
       "tolerance": {
-        "abs": 0.005,
+        "abs": 0.0005,
         "rel": 0
       },
       "weight": 10,
@@ -49,19 +49,17 @@
     {
       "criterion_id": "S01",
       "kind": "results_header",
-      "description": "缺失或错误时扣分；正确不加分：Requested Results header",
+      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
       "dimension": "结构与组织",
       "weight": -3,
-      "s3_transform": "violation_complement",
       "negate": true
     },
     {
       "criterion_id": "S02",
       "kind": "results_units",
-      "description": "缺失或错误时扣分；正确不加分：Requested nominal AUD million unit",
+      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
       "dimension": "内容质量-专业规范",
       "weight": -3,
-      "s3_transform": "violation_complement",
       "negate": true
     },
     {
@@ -71,9 +69,50 @@
       "dimension": "操作与交付安全",
       "weight": -3,
       "negate": true
+    },
+    {
+      "criterion_id": "S03",
+      "kind": "results_source_notes",
+      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "dimension": "内容质量-事实忠实性",
+      "weight": -3,
+      "negate": true
+    },
+    {
+      "criterion_id": "S04",
+      "kind": "results_rows_in_order",
+      "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。",
+      "dimension": "结构与组织",
+      "weight": -3,
+      "negate": true
+    },
+    {
+      "criterion_id": "S05",
+      "kind": "extra_business_records",
+      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "dimension": "结构与组织",
+      "weight": -3,
+      "negate": true
+    },
+    {
+      "criterion_id": "S06",
+      "kind": "results_precision",
+      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "dimension": "内容质量-专业规范",
+      "weight": -3,
+      "negate": true
     }
   ],
   "alternative_sets": [],
   "tables": [],
-  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)"
+  "aggregation": "clip(sum(signed_weight * raw_credit)/s_max,0,1)",
+  "required_sheets": {
+    "Results": [
+      "label",
+      "value",
+      "unit",
+      "source_note"
+    ]
+  },
+  "scorer_version": "v2 (2026-10-26)"
 }

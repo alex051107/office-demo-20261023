@@ -1,6 +1,6 @@
 {
   "case_id": "muskegon-acceleration-clause",
-  "unit": "repeated judge jobs on one fixed candidate, not independent solver runs",
+  "unit": "同一参考答卷的程序重算，与五份已保存 LLM 判定分别重组；不是新增重复裁判。",
   "threshold": 0.05,
   "comparison": "strictly less than",
   "primary_statistic": "sample standard deviation (ddof=1)",
@@ -39,16 +39,16 @@
           "weight": 10,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -58,16 +58,16 @@
           "weight": 10,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -77,16 +77,16 @@
           "weight": 10,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -96,16 +96,16 @@
           "weight": 7,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -115,16 +115,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -134,16 +134,16 @@
           "weight": 7,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -153,16 +153,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -172,16 +172,16 @@
           "weight": 7,
           "kind": "programmatic",
           "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
+            1,
+            1,
+            1,
+            1,
+            1
           ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -191,16 +191,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -210,16 +210,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -229,16 +229,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -248,16 +248,16 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -267,35 +267,92 @@
           "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
         },
         {
           "criterion_id": "P02",
-          "weight": -7,
+          "weight": -3,
           "kind": "programmatic",
           "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S04",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S05",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S06",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
           "pass_stddev_lt_0_05": true
@@ -359,5 +416,6 @@
         }
       ]
     }
-  ]
+  ],
+  "scoring_revision": "评分器 v2（2026-10-26）"
 }

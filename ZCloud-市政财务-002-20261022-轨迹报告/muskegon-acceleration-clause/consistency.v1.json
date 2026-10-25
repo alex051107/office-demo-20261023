@@ -1,0 +1,363 @@
+{
+  "case_id": "muskegon-acceleration-clause",
+  "unit": "repeated judge jobs on one fixed candidate, not independent solver runs",
+  "threshold": 0.05,
+  "comparison": "strictly less than",
+  "primary_statistic": "sample standard deviation (ddof=1)",
+  "secondary_statistic": "population standard deviation (ddof=0)",
+  "criterion_scale": "unweighted normalized score in [0,1]; negative items use violation credit",
+  "groups": [
+    {
+      "candidate_label": "golden",
+      "run_ids": [
+        "golden_r1",
+        "golden_r2",
+        "golden_r3",
+        "golden_r4",
+        "golden_r5"
+      ],
+      "n": 5,
+      "total_score": {
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "n": 5,
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "stddev_population": 0.0,
+        "stddev_sample": 0.0,
+        "pass_stddev_lt_0_05": true
+      },
+      "criteria": [
+        {
+          "criterion_id": "R01",
+          "weight": 10,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "R02",
+          "weight": 10,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "R03",
+          "weight": 10,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "D01",
+          "weight": 7,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "V01",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "D02",
+          "weight": 7,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "V02",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "D03",
+          "weight": 7,
+          "kind": "programmatic",
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "V03",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S01",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S02",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S03",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P01",
+          "weight": -3,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P02",
+          "weight": -7,
+          "kind": "programmatic",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L01",
+          "weight": -3,
+          "kind": "agent",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L02",
+          "weight": -3,
+          "kind": "agent",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L03",
+          "weight": -3,
+          "kind": "agent",
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        }
+      ]
+    }
+  ]
+}

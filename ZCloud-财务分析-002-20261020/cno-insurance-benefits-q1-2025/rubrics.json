@@ -1,6 +1,6 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
-  "rubric_version": "office-demo-20261020",
+  "rubric_version": "office-review-v2-20261026",
   "pass_threshold": 0.7,
   "normalization": {
     "allowed_weights": [
@@ -154,7 +154,7 @@
     },
     {
       "id": "F1",
-      "description": "缺失或错误时扣分；正确不加分：Results sheet has the four stated headers",
+      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -170,7 +170,7 @@
     },
     {
       "id": "F2",
-      "description": "缺失或错误时扣分；正确不加分：Analysis sheet has the six stated headers",
+      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -186,7 +186,7 @@
     },
     {
       "id": "F3",
-      "description": "缺失或错误时扣分；正确不加分：Summary sheet has the two stated headers",
+      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -218,12 +218,12 @@
     },
     {
       "id": "X2",
-      "description": "Unsupported additional business records in Results/Analysis/Summary: proportion of the expected record count, at most 7 points",
+      "description": "任一必需表出现额外业务记录、空键非空记录或重复记录时扣3分。",
       "dimension": "操作与交付安全",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
-      "type": "gradient",
-      "weight": -7,
+      "type": "binary",
+      "weight": -3,
       "negate": true,
       "method": "programmatic",
       "evidence_required": true,
@@ -287,6 +287,118 @@
         "1": "存在明确违规证据",
         "0": "无违规或无交付物"
       }
+    },
+    {
+      "id": "S01",
+      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "S02",
+      "description": "Results来源须指向实际随包文件和存在的worksheet/table；明确给出单元格时须在该表范围内，允许明确引用第2行来源；任一违规扣3分。",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "SP1",
+      "description": "Analysis每行source_page须给实际随包文件中的worksheet/table；任一缺失或不存在扣3分。",
+      "dimension": "内容质量-专业规范",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "O01",
+      "description": "Results、Analysis、Summary的必需记录须按题面顺序出现且各一次；任一缺失、逆序或重复扣3分。",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "U01",
+      "description": "Results两行unit分别严格为USD millions、percent，Analysis两行严格为USD millions；任一违规扣3分。",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "DP1",
+      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
+    },
+    {
+      "id": "DP2",
+      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "dimension": "结构与组织",
+      "criterion_type": "Objective",
+      "criterion_necessity": "Explicit",
+      "type": "binary",
+      "weight": -3,
+      "negate": true,
+      "method": "programmatic",
+      "evidence_required": true,
+      "anchors": {
+        "1": "违反本条要求，扣3分。",
+        "0": "满足本条要求，不扣分。"
+      }
     }
   ],
   "metadata": {
@@ -335,5 +447,16 @@
   "source_authenticity": "public_source_business_adaptation",
   "golden_threshold": 0.85,
   "three_model_average_threshold": 0.7,
-  "scoring_note": "保留现有判据、权重、类型、阈值及计算规则。正项按正确度计分，负项按违规程度扣分；负向权重不进入分母。2026-10-22仅补充导出字段，未重跑裁判。"
+  "scoring_note": "保留现有判据、权重、类型、阈值及计算规则。正项按正确度计分，负项按违规程度扣分；负向权重不进入分母。2026-10-22仅补充导出字段，未重跑裁判。",
+  "interface_gate": {
+    "failure_score": 0,
+    "required_sheets": [
+      "Results",
+      "Analysis",
+      "Summary"
+    ],
+    "exact_names": true,
+    "exact_headers": true,
+    "support_sheets": "allowed and unconstrained"
+  }
 }

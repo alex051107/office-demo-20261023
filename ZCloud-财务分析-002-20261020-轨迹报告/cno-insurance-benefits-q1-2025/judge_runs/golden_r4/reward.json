@@ -1,6 +1,9 @@
 {
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 16.0,
-  "verifier_error": 0.0
+  "criteria_counted": 23.0,
+  "verifier_error": 0.0,
+  "programmatic_score": 1,
+  "scorer_revision": "office-review-v2-20261026",
+  "text_judgments": "reused_saved; not newly evaluated"
 }

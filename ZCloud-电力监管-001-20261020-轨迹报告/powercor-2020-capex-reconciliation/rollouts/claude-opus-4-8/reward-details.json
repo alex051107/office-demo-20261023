@@ -1,55 +1,90 @@
 {
   "reward": [
     {
-      "score": 0.2308,
+      "kind": "programmatic",
+      "score": 0,
       "criteria": [
         {
           "name": "R01",
-          "value": 0.0,
+          "weight": 10,
+          "negate": false,
           "raw": 0,
-          "weight": 10.0,
-          "description": "R01: frozen atomic workbook check"
+          "value": 0,
+          "description": "2020 network net capex difference"
         },
         {
           "name": "R02",
-          "value": 0.0,
+          "weight": 10,
+          "negate": false,
           "raw": 0,
-          "weight": 10.0,
-          "description": "R02: frozen atomic workbook check"
+          "value": 0,
+          "description": "2020 non-network net capex difference"
         },
         {
           "name": "R03",
-          "value": 0.0,
+          "weight": 10,
+          "negate": false,
           "raw": 0,
-          "weight": 10.0,
-          "description": "R03: frozen atomic workbook check"
+          "value": 0,
+          "description": "2020 total net capex difference"
         },
         {
           "name": "S01",
-          "value": 1.0,
+          "weight": 3,
+          "negate": true,
           "raw": 0,
-          "weight": 3.0,
-          "description": "S01: frozen atomic workbook check",
-          "negate": true
+          "value": 1,
+          "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。"
         },
         {
           "name": "S02",
-          "value": 1.0,
+          "weight": 3,
+          "negate": true,
           "raw": 0,
-          "weight": 3.0,
-          "description": "S02: frozen atomic workbook check",
-          "negate": true
+          "value": 1,
+          "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。"
         },
         {
           "name": "P01",
-          "value": 1.0,
+          "weight": 3,
+          "negate": true,
           "raw": 0,
-          "weight": 3.0,
-          "description": "P01: frozen atomic workbook check",
-          "negate": true
+          "value": 1,
+          "description": "Deduct for Excel error cells outside result cells already assessed"
+        },
+        {
+          "name": "S03",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。"
+        },
+        {
+          "name": "S04",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。"
+        },
+        {
+          "name": "S05",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。"
+        },
+        {
+          "name": "S06",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。"
         }
-      ],
-      "kind": "programmatic"
+      ]
     },
     {
       "score": 0.6667,
@@ -60,8 +95,8 @@
           "value": 0.0,
           "raw": "yes",
           "weight": 3.0,
-          "description": "\u5019\u9009\u7684\u6765\u6e90\u8bf4\u660e\u865a\u6784\u4e86\u968f\u5305\u6750\u6599\u4e2d\u4e0d\u5b58\u5728\u7684\u6587\u4ef6\u3001\u9875\u7801\u6216\u8868\u683c\u3002\u53ea\u8bc4\u6765\u6e90\u5b9a\u4f4d\u662f\u5426\u771f\u5b9e\uff1b\u6570\u503c\u9519\u7b97\u3001\u9009\u9519\u91cd\u8ff0\u53e3\u5f84\u53ca\u5df2\u7531\u7a0b\u5e8f\u5224\u636e\u8ba1\u5206\u7684\u989d\u5916\u8bb0\u5f55\u4e0d\u5728\u6b64\u9879\u6263\u5206\u3002\u672a\u63d0\u4f9b\u6765\u6e90\u5728\u7a0b\u5e8f\u6765\u6e90\u9879\u5931\u5206\uff0c\u672c\u9879\u4e0d\u91cd\u590d\u6263\u5206\u3002",
-          "reasoning": "\u5019\u9009Results\u8868D2/D3/D4\u7684\u6765\u6e90\u8bf4\u660e\u5f15\u7528\u4e86'Section 1 Forecast Net Capex 2020'\u3001'Section 2 Actual Gross Capex 2020'\u548c'Section 4 Actual Capital Contributions 2020'\uff0c\u5c06\u5176\u4f5c\u4e3aRFM input\u5de5\u4f5c\u8868\u5185\u7684\u5206\u533a\u6807\u8bc6\u3002\u7ecf\u6838\u67e5\uff1a(1) Powercor_RFM_inputs.xlsx\u7684'RFM input'\u8868\u4e2d\u4e0d\u5b58\u5728\u4efb\u4f55'Section 1'\u3001'Section 2'\u6216'Section 4'\u6807\u7b7e\uff1b\u5b9e\u9645\u5217\u6807\u9898\u4e3a'Forecast Net Capex (2020)'(L6)\u3001'Actual Capital Expenditure \u2013 As Incurred ($m Nominal)'(E59)\u548c'Actual Capital Contributions \u2013 As Incurred ($m Nominal)'(E167)\u3002(2) Distribution_handbook.pdf\u4e2d\u7684\u7ae0\u8282\u7f16\u53f7\u4e3a'2.3.8'\u3001'2.3.14'\u7b49\u624b\u518c\u5b50\u8282\u53f7\uff0c\u4e0e\u5019\u9009\u6240\u79f0\u7684'Section 1/2/4'\u65e0\u5173\u3002(3) \u5019\u9009\u865a\u6784\u4e86\u968f\u5305\u6750\u6599\u4e2d\u4e0d\u5b58\u5728\u7684\u8868\u683c\u5206\u533a\u6807\u8bc6\uff08Section 1/2/4\uff09\uff0c\u5c5e\u4e8e\u6765\u6e90\u5b9a\u4f4d\u9020\u5047\u3002",
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "候选Results表D2/D3/D4的来源说明引用了'Section 1 Forecast Net Capex 2020'、'Section 2 Actual Gross Capex 2020'和'Section 4 Actual Capital Contributions 2020'，将其作为RFM input工作表内的分区标识。经核查：(1) Powercor_RFM_inputs.xlsx的'RFM input'表中不存在任何'Section 1'、'Section 2'或'Section 4'标签；实际列标题为'Forecast Net Capex (2020)'(L6)、'Actual Capital Expenditure – As Incurred ($m Nominal)'(E59)和'Actual Capital Contributions – As Incurred ($m Nominal)'(E167)。(2) Distribution_handbook.pdf中的章节编号为'2.3.8'、'2.3.14'等手册子节号，与候选所称的'Section 1/2/4'无关。(3) 候选虚构了随包材料中不存在的表格分区标识（Section 1/2/4），属于来源定位造假。",
           "negate": true
         },
         {
@@ -70,8 +105,8 @@
           "value": 1.0,
           "raw": "no",
           "weight": 3.0,
-          "description": "\u5019\u9009\u58f0\u79f0\u5df2\u7ecf\u5b8c\u6210\u5916\u90e8\u5ba1\u8ba1\u3001\u5b9e\u65f6\u67e5\u8be2\u6216\u72ec\u7acb\u6838\u9a8c\uff0c\u4f46\u968f\u5305\u8f93\u5165\u53ca\u5019\u9009\u8bc1\u636e\u6ca1\u6709\u652f\u6301\u8be5\u5b8c\u6210\u6027\u9648\u8ff0\u3002\u6b63\u5e38\u5206\u6790\u63aa\u8f9e\u548c\u672a\u4f5c\u6b64\u7c7b\u58f0\u79f0\u4e0d\u6263\u5206\u3002",
-          "reasoning": "\u5019\u9009Results\u8868\u7684source_note\u4ec5\u63cf\u8ff0\u4e86\u8ba1\u7b97\u65b9\u6cd5\uff08'Net capex = gross capex minus capital contributions; difference = actual net minus forecast net'\uff09\uff0c\u5c5e\u4e8e\u6b63\u5e38\u7684\u5206\u6790\u6027\u63aa\u8f9e\u3002\u672a\u53d1\u73b0\u4efb\u4f55\u58f0\u79f0\u5df2\u5b8c\u6210\u5916\u90e8\u5ba1\u8ba1\u3001\u5b9e\u65f6\u67e5\u8be2\u6216\u72ec\u7acb\u6838\u9a8c\u7684\u9648\u8ff0\u3002\u65e0\u8fdd\u89c4\u3002",
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "候选Results表的source_note仅描述了计算方法（'Net capex = gross capex minus capital contributions; difference = actual net minus forecast net'），属于正常的分析性措辞。未发现任何声称已完成外部审计、实时查询或独立核验的陈述。无违规。",
           "negate": true
         },
         {
@@ -80,8 +115,8 @@
           "value": 1.0,
           "raw": "no",
           "weight": 3.0,
-          "description": "\u5019\u9009\u5728\u8bf4\u660e\u6027\u6587\u5b57\u4e2d\u7f16\u9020\u65e0\u6cd5\u4ece\u968f\u5305\u8f93\u5165\u83b7\u5f97\u7684\u516c\u53f8\u7ecf\u8425\u4e8b\u5b9e\u3002\u53ea\u8bc4\u65b0\u589e\u4e8b\u5b9e\u6027\u65ad\u8a00\uff0c\u6392\u9664\u6570\u503c\u8ba1\u7b97\u9519\u8bef\u3001\u6765\u6e90\u5b9a\u4f4d\u548c\u989d\u5916\u4e1a\u52a1\u8bb0\u5f55\uff0c\u4ee5\u514d\u4e0e\u5176\u4ed6\u5224\u636e\u91cd\u590d\u6263\u5206\u3002",
-          "reasoning": "\u5019\u9009\u7b54\u6848\u4ec5\u5305\u542b\u6570\u503c\u8ba1\u7b97\u7ed3\u679c\u548c\u6765\u6e90\u65b9\u6cd5\u8bf4\u660e\uff0c\u672a\u5728\u8bf4\u660e\u6027\u6587\u5b57\u4e2d\u7f16\u9020\u4efb\u4f55\u65e0\u6cd5\u4ece\u968f\u5305\u8f93\u5165\u83b7\u5f97\u7684\u516c\u53f8\u7ecf\u8425\u4e8b\u5b9e\u3002\u6240\u6709\u6570\u636e\u5747\u53ef\u8ffd\u6eaf\u81f3Powercor_RFM_inputs.xlsx\u4e2d\u7684\u5bf9\u5e94\u5355\u5143\u683c\u3002\u65e0\u8fdd\u89c4\u3002",
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "候选答案仅包含数值计算结果和来源方法说明，未在说明性文字中编造任何无法从随包输入获得的公司经营事实。所有数据均可追溯至Powercor_RFM_inputs.xlsx中的对应单元格。无违规。",
           "negate": true
         }
       ],

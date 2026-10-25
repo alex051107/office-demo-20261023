@@ -1,0 +1,352 @@
+{
+  "case_id": "cno-insurance-benefits-q1-2025",
+  "unit": "repeated judge jobs on one fixed candidate, not independent solver runs",
+  "threshold": 0.05,
+  "comparison": "strictly less than",
+  "primary_statistic": "sample standard deviation (ddof=1)",
+  "secondary_statistic": "population standard deviation (ddof=0)",
+  "criterion_scale": "unweighted normalized score in [0,1]; negative items use violation credit",
+  "groups": [
+    {
+      "candidate_label": "golden",
+      "run_ids": [
+        "golden_r1",
+        "golden_r2",
+        "golden_r3",
+        "golden_r4",
+        "golden_r5"
+      ],
+      "n": 5,
+      "total_score": {
+        "values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "n": 5,
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "stddev_population": 0.0,
+        "stddev_sample": 0.0,
+        "pass_stddev_lt_0_05": true
+      },
+      "criteria": [
+        {
+          "criterion_id": "R01",
+          "kind": "programmatic",
+          "weight": 10,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "R02",
+          "kind": "programmatic",
+          "weight": 10,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "A1",
+          "kind": "programmatic",
+          "weight": 7,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "A2",
+          "kind": "programmatic",
+          "weight": 7,
+          "values": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 5,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P2",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SD1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SD2",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F2",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F3",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "X1",
+          "kind": "programmatic",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "X2",
+          "kind": "programmatic",
+          "weight": -7,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L01",
+          "kind": "agent",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L02",
+          "kind": "agent",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L03",
+          "kind": "agent",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 5,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true
+        }
+      ],
+      "failed_criteria": [],
+      "criterion_requirement_status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "limitations": [
+    "n=5仅为该卷的观测一致性；不能证明未来裁判稳定性。",
+    "只有参考三组与Powercor Sol有五次；其他模型只有一次，不计算样本标准差，不以0代替未测。",
+    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。"
+  ]
+}

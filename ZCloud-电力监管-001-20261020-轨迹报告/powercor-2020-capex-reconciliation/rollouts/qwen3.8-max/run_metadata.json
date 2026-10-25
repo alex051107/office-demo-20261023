@@ -29,5 +29,8 @@
   "judge_model": "qwen3.7-plus",
   "office_judge_score": 0.0,
   "program_score_frozen_scorer": 0.02,
-  "this_export_paid_calls": 0
+  "this_export_paid_calls": 0,
+  "current_export_rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
+  "scorer_version": "v2 (2026-10-26)",
+  "score_basis": "v2程序离线复算，按固定finalize逻辑合成原有LLM判定；未新增求解或LLM评审。"
 }

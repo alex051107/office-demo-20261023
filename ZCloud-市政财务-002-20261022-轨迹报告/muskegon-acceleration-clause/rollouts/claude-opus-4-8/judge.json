@@ -3,183 +3,363 @@
   "candidate_label": "claude-opus-4-8",
   "judge_model": "qwen3.7-plus",
   "candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
-  "rubric_sha256": "1c591db859a20d04b78e636757fbb4ecfc3e43cf59ef7a95cd12757ec1c5af16",
+  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
   "status": "PROGRAMMATIC_ONLY_LLM_JUDGE_STOPPED",
   "reward": 0.0,
   "score_final": 0.0,
   "hybrid_score": 0.0,
   "programmatic_score": 0.0,
-  "criteria_counted": 14,
+  "criteria_counted": 17,
   "positive_weight_total": 51,
   "weighted_sum": 0,
   "criteria": [
     {
       "criterion_id": "R01",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan A principal balance",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/0"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/0"
     },
     {
       "criterion_id": "R02",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan B principal balance",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/1"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/1"
     },
     {
       "criterion_id": "R03",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan C principal balance",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/2"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/2"
     },
     {
       "criterion_id": "D01",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan A final value",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/3"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/3"
     },
     {
       "criterion_id": "V01",
       "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2",
+          "number_format": "General"
+        }
+      ],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/4"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/4"
     },
     {
       "criterion_id": "D02",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan B final value",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/5"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/5"
     },
     {
       "criterion_id": "V02",
       "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3",
+          "number_format": "General"
+        }
+      ],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/6"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/6"
     },
     {
       "criterion_id": "D03",
       "score": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
       "sdk_value": 0,
       "raw": 0,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan C final value",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/7"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/7"
     },
     {
       "criterion_id": "V03",
       "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4",
+          "number_format": "General"
+        }
+      ],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/8"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/8"
     },
     {
       "criterion_id": "S01",
       "score": 0,
+      "evidence": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/9"
+      "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/9"
     },
     {
       "criterion_id": "S02",
       "score": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4",
+          "number_format": "General"
+        }
+      ],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/10"
+      "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/10"
     },
     {
       "criterion_id": "S03",
       "score": 0,
+      "evidence": [],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Detail interface",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/11"
+      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/11"
     },
     {
       "criterion_id": "P01",
       "score": 0,
+      "evidence": [],
       "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "Excel error outside scored cells",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/12"
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/12"
     },
     {
       "criterion_id": "P02",
       "score": 0,
+      "evidence": [],
       "sdk_value": 1,
       "raw": 0,
-      "weight": -7,
+      "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Unsupported plan record",
-      "reason": null,
-      "source_pointer": "reward-details.offline.json#/reward/criteria/13"
+      "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/13"
+    },
+    {
+      "criterion_id": "S04",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "Records_Finance_forecast.png; Finance forecast table (source: Agreement.pdf p2 staff two-year payment illustration)",
+          "cell": "Results!D2",
+          "number_format": "General"
+        },
+        {
+          "raw": "Records_Finance_forecast.png; Finance forecast table (source: Agreement.pdf p2 staff two-year payment illustration)",
+          "cell": "Results!D3",
+          "number_format": "General"
+        },
+        {
+          "raw": "Records_Finance_forecast.png; Finance forecast table (source: Agreement.pdf p2 staff two-year payment illustration)",
+          "cell": "Results!D4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/14"
+    },
+    {
+      "criterion_id": "S05",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/15"
+    },
+    {
+      "criterion_id": "S06",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/16"
     },
     {
       "criterion_id": "L01",
@@ -213,5 +393,22 @@
   "limitations": [
     "Office裁判对该答卷的会话失控（约55美元、234次请求）后被人工停止，LLM扣分项无结果。",
     "总分0不依赖LLM扣分项；参考答案5次与另两个模型的裁判均正常完成。"
-  ]
+  ],
+  "delivery_rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "graded_score": 0.0,
+  "scoring_revision": {
+    "label": "评分器 v2（2026-10-26）",
+    "method": "offline_program_rescore_with_saved_llm",
+    "new_llm_calls": 0,
+    "saved_llm_complete": false,
+    "saved_llm_candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+    "old_score": 0.0,
+    "new_score": 0.0,
+    "original_judgment": "judge.v1.json",
+    "limitation": "保存的 LLM 判定原样复用；不是新增模型运行或新增 LLM 裁判。"
+  },
+  "interface_gate_passed": true,
+  "interface_errors": [],
+  "reward_details_sha256": "539d3c590aa0b27da62e324be09b933e47e90ce7e7392bfd8970f21e71578b3f",
+  "raw_score": null
 }

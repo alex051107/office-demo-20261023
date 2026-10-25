@@ -11,10 +11,10 @@
     "live_source_verified": false,
     "original_customer_query": false
   },
-  "rubric_sha256": "9a82b1569e513b6b064025aa465c97331990a75ba8f0b0aa588d1de14c5afdfb",
+  "rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
   "target": {
     "path": "golden/candidate.xlsx",
-    "sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
+    "sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
     "score_final": 1.0
@@ -34,7 +34,8 @@
         "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
         "harness": "Codex CLI",
         "run_started": "2026-10-20T10:47:15+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
       },
       {
         "model": "claude-opus-4-8",
@@ -49,7 +50,8 @@
         "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
         "harness": "Claude Code",
         "run_started": "2026-10-20T04:16:06+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
       },
       {
         "model": "qwen3.8-max",
@@ -64,7 +66,8 @@
         "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
         "harness": "Codex CLI",
         "run_started": "2026-10-22T20:28:34+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
       }
     ],
     "average_score": 0.0,
@@ -78,8 +81,9 @@
     "model": "qwen3.7-plus",
     "protocol": "anthropic（Claude Code 裁判）",
     "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "每份答卷取第 1 次评分；重复评分只用于一致性统计。",
-    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
+    "score_basis": "v2程序离线复算后，按finalize.py池化原有每份答卷第1次LLM判定；无新增调用。",
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
+    "llm_status": "REUSED_SAVED_JUDGMENTS"
   },
   "consistency": {
     "path": "consistency.json",
@@ -119,9 +123,9 @@
   "discrimination": {
     "reference_score": 1.0,
     "model_scores": {
-      "gpt-5.6-sol": 0.0,
-      "claude-opus-4-8": 0.0,
-      "qwen3.8-max": 0.0
+      "claude-opus-4-8": 0,
+      "gpt-5.6-sol": 0,
+      "qwen3.8-max": 0
     },
     "empty_controls": [
       {
@@ -145,10 +149,10 @@
     "partial_credit_cases": {
       "path": "discrimination_cases.json",
       "totals": {
-        "0_of_3_positive_results_correct": 0.0,
+        "0_of_3_positive_results_correct": 0,
         "1_of_3_positive_results_correct": 0.333333,
         "2_of_3_positive_results_correct": 0.666667,
-        "3_of_3_positive_results_correct": 1.0
+        "3_of_3_positive_results_correct": 1
       }
     }
   },
@@ -170,7 +174,9 @@
     "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
     "Qwen 3.8 Max 答卷的三条 LLM 扣分项被判为违规，裁判给出的理由却写未发现虚构；该答卷正项得分为 0，总分不受影响，原始判定原样保留。",
     "开发阶段的另一套评分规则会先重算公式，给 Qwen 3.8 Max 0.02 分；本包统一使用 Office 裁判分。",
-    "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。"
+    "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。",
+    "v2金标仅更新阅读呈现和解释；新的程序评分已运行，LLM条款及历史判定未变，不宣称重新完成LLM验收。"
   ],
-  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN"
+  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+  "scorer_version": "v2 (2026-10-26)"
 }

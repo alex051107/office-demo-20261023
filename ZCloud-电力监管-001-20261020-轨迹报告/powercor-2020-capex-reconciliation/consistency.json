@@ -1,6 +1,6 @@
 {
   "case_id": "powercor-2020-capex-reconciliation",
-  "unit": "repeated judge jobs on one fixed candidate, not independent solver runs",
+  "unit": "offline recombination of one fixed candidate with five saved judge jobs; no new solver or LLM runs",
   "threshold": 0.05,
   "comparison": "strictly less than",
   "primary_statistic": "sample standard deviation (ddof=1)",
@@ -18,7 +18,7 @@
       ],
       "n": 5,
       "total_score": {
-        "values": [
+        "scores": [
           1.0,
           1.0,
           1.0,
@@ -38,172 +38,248 @@
           "criterion_id": "R01",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "criterion_id": "R02",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "criterion_id": "R03",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            1.0,
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
           "n": 5,
-          "mean": 1.0,
-          "min": 1.0,
-          "max": 1.0,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "criterion_id": "S01",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "S02",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "P01",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S03",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S04",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S05",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S06",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "L01",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         },
         {
           "criterion_id": "L02",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         },
         {
           "criterion_id": "L03",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         }
       ],
       "failed_criteria": [],
@@ -220,7 +296,7 @@
       ],
       "n": 5,
       "total_score": {
-        "values": [
+        "scores": [
           0.0,
           0.0,
           0.0,
@@ -240,172 +316,248 @@
           "criterion_id": "R01",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "R02",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "R03",
           "kind": "programmatic",
           "weight": 10,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "S01",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "S02",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "P01",
           "kind": "programmatic",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
-          "mean": 0.0,
-          "min": 0.0,
-          "max": 0.0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S03",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S04",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S05",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "criterion_id": "S06",
+          "kind": "programmatic",
+          "weight": -3,
+          "n": 5,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "stddev_population": 0.0,
+          "stddev_sample": 0.0,
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
         },
         {
           "criterion_id": "L01",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         },
         {
           "criterion_id": "L02",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         },
         {
           "criterion_id": "L03",
           "kind": "agent",
           "weight": -3,
-          "values": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
           "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
           "stddev_population": 0.0,
           "stddev_sample": 0.0,
-          "pass_stddev_lt_0_05": true
+          "pass_stddev_lt_0_05": true,
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
         }
       ],
       "failed_criteria": [],
@@ -416,8 +568,11 @@
   "limitations": [
     "n=5仅为该卷的观测一致性；不能证明未来裁判稳定性。",
     "只有参考三组与Powercor Sol有五次；其他模型只有一次，不计算样本标准差，不以0代替未测。",
-    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。"
+    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。",
+    "v2程序离线复算，沿用每次既有LLM判定；修订金标没有重新请求LLM审查。"
   ],
-  "reference_candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
-  "excluded_runs_path": "excluded_runs.json"
+  "reference_candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+  "excluded_runs_path": "excluded_runs.json",
+  "saved_llm_candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
+  "scorer_version": "v2 (2026-10-26)"
 }

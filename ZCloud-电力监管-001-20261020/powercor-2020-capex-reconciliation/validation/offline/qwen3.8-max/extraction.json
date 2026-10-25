@@ -1,0 +1,650 @@
+{
+  "status": "EXTRACTED",
+  "book": {
+    "Results": [
+      [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      [
+        "2020 network net capex difference",
+        5.979824515,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 actual net capex (F61/F62/F64 less disposals F115/F116/F118 less contributions F169/F170/F172) minus forecast net capex (L7+L8+L10) for Subtransmission, Distribution system assets and SCADA/Network control. Net capex = capex - disposals - contributions per Distribution_handbook.pdf s2.3.5 / s2.2."
+      ],
+      [
+        "2020 non-network net capex difference",
+        -13.797120493,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 actual net capex (F65/F66/F67 less disposals F119/F120/F121 less contributions F173/F174/F175) minus forecast net capex (L11+L12+L13) for Non-network general assets - IT, Non-network general assets - Other and VBRC."
+      ],
+      [
+        "2020 total net capex difference",
+        -8.818118129,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 total actual net capex (capex F111 539.7102015 less disposals F165 0.96249947 less contributions F219 136.05834934) minus total forecast net capex L57 411.5074708; covers all named asset classes incl. Public lighting, Land, Accelerated depreciation assets, Old SWER ACRs, in-house software and Equity raising costs."
+      ]
+    ],
+    "Capex reconciliation 2020": [
+      [
+        "Powercor - calendar 2020 capital expenditure reconciliation (AUD million nominal)",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Net capex = actual gross capex - actual asset disposals - actual capital contributions (Distribution_handbook.pdf s2.3.5). Difference = actual less forecast.",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Source: /app/input/Powercor_RFM_inputs.xlsx, sheet 'RFM input' (2020 column F; forecast net capex column L).",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Asset class",
+        "Group",
+        "Actual gross capex 2020",
+        "Less: actual disposals 2020",
+        "Less: actual capital contributions 2020",
+        "Actual net capex 2020",
+        "Forecast net capex 2020",
+        "Difference (actual - forecast)",
+        "Source cells"
+      ],
+      [
+        "Subtransmission",
+        "Network",
+        7.077317030000001,
+        0,
+        1.42965759,
+        5.647659440000001,
+        3.430646381427779,
+        2.217013058572222,
+        "'RFM input'!L7; F61; F115; F169"
+      ],
+      [
+        "Distribution system assets",
+        "Network",
+        420.48420874,
+        0,
+        134.62869175,
+        285.85551699,
+        279.6600947254131,
+        6.195422264586853,
+        "'RFM input'!L8; F62; F116; F170"
+      ],
+      [
+        "Public lighting",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "'RFM input'!L9; F63; F117; F171"
+      ],
+      [
+        "SCADA/Network control",
+        "Network",
+        20.18786627,
+        0,
+        0,
+        20.18786627,
+        22.62047707800938,
+        -2.432610808009379,
+        "'RFM input'!L10; F64; F118; F172"
+      ],
+      [
+        "Non-network general assets - IT",
+        "Non-network",
+        34.80915085,
+        0,
+        0,
+        34.80915085,
+        36.86465196632263,
+        -2.055501116322631,
+        "'RFM input'!L11; F65; F119; F173"
+      ],
+      [
+        "Non-network general assets - Other",
+        "Non-network",
+        43.43735354,
+        0.96249947,
+        0,
+        42.47485407,
+        42.52701479772985,
+        -0.05216072772984859,
+        "'RFM input'!L12; F66; F120; F174"
+      ],
+      [
+        "VBRC",
+        "Non-network",
+        13.71430507,
+        0,
+        0,
+        13.71430507,
+        25.40376371880166,
+        -11.68945864880166,
+        "'RFM input'!L13; F67; F121; F175"
+      ],
+      [
+        "Land",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        1.000822151768884,
+        -1.000822151768884,
+        "'RFM input'!L14; F68; F122; F176"
+      ],
+      [
+        "Accelerated depreciation assets",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "'RFM input'!L15; F69; F123; F177"
+      ],
+      [
+        "Old SWER ACRs",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "'RFM input'!L16; F70; F124; F178"
+      ],
+      [
+        "in-house software",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "'RFM input'!L55; F109; F163; F217"
+      ],
+      [
+        "Equity raising costs",
+        "Other (in total only)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "'RFM input'!L56; F110; F164; F218"
+      ],
+      [
+        "Network assets (Subtransmission + Distribution system assets + SCADA/Network control)",
+        null,
+        447.74939204,
+        0,
+        136.05834934,
+        311.6910427,
+        305.711218185,
+        5.979824515,
+        null
+      ],
+      [
+        "Non-network assets (Non-network general assets - IT and - Other + VBRC)",
+        null,
+        91.96080946,
+        0.96249947,
+        0,
+        90.99830999,
+        104.795430483,
+        -13.797120493,
+        null
+      ],
+      [
+        "All named asset classes (total, incl. Land)",
+        null,
+        539.7102015,
+        0.96249947,
+        136.05834934,
+        402.68935269,
+        411.507470819,
+        -8.818118129,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Cross-check: total row agrees with workbook totals F111 (539.7102015), F165 (0.96249947), F219 (136.05834934) and L57 (411.5074708195).",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "Summary": [
+      [
+        "Group",
+        "Actual net capex 2020 (AUDm nominal)",
+        "Forecast net capex 2020 (AUDm nominal)",
+        "Difference actual less forecast (AUDm nominal)"
+      ],
+      [
+        "Network assets",
+        311.6910427,
+        305.711218185,
+        5.979824515
+      ],
+      [
+        "Non-network assets",
+        90.99830999,
+        104.795430483,
+        -13.797120493
+      ],
+      [
+        "Total (all named asset classes)",
+        402.68935269,
+        411.507470819,
+        -8.818118129
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Note",
+        "Network + non-network does not equal total because Land carries forecast net capex of 1.000822152 (L14) with nil actual 2020 net capex.",
+        null,
+        null
+      ]
+    ]
+  },
+  "formulas": {
+    "Results": [
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "Capex reconciliation 2020": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "Summary": [
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "interface_errors": [],
+  "required_results": [
+    {
+      "row": 2,
+      "label": "2020 network net capex difference",
+      "value": 5.979824515,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 actual net capex (F61/F62/F64 less disposals F115/F116/F118 less contributions F169/F170/F172) minus forecast net capex (L7+L8+L10) for Subtransmission, Distribution system assets and SCADA/Network control. Net capex = capex - disposals - contributions per Distribution_handbook.pdf s2.3.5 / s2.2.",
+      "number_format": "0.000000"
+    },
+    {
+      "row": 3,
+      "label": "2020 non-network net capex difference",
+      "value": -13.797120493,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 actual net capex (F65/F66/F67 less disposals F119/F120/F121 less contributions F173/F174/F175) minus forecast net capex (L11+L12+L13) for Non-network general assets - IT, Non-network general assets - Other and VBRC.",
+      "number_format": "0.000000"
+    },
+    {
+      "row": 4,
+      "label": "2020 total net capex difference",
+      "value": -8.818118129,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': calendar-2020 total actual net capex (capex F111 539.7102015 less disposals F165 0.96249947 less contributions F219 136.05834934) minus total forecast net capex L57 411.5074708; covers all named asset classes incl. Public lighting, Land, Accelerated depreciation assets, Old SWER ACRs, in-house software and Equity raising costs.",
+      "number_format": "0.000000"
+    }
+  ]
+}

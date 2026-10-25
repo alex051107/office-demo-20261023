@@ -2,8 +2,8 @@
   "case_id": "muskegon-acceleration-clause",
   "candidate_label": "golden",
   "judge_model": "qwen3.7-plus",
-  "candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
-  "rubric_sha256": "1c591db859a20d04b78e636757fbb4ecfc3e43cf59ef7a95cd12757ec1c5af16",
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
   "instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
   "input_sha256": {
     "Agreement.pdf": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887",
@@ -33,7 +33,7 @@
   "score_final": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 17.0,
+  "criteria_counted": 20,
   "verifier_error": 0.0,
   "reported_model": null,
   "provider_response_id": null,
@@ -41,185 +41,351 @@
   "criteria": [
     {
       "criterion_id": "R01",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan A principal balance",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/0"
     },
     {
       "criterion_id": "R02",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 55200,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan B principal balance",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/1"
     },
     {
       "criterion_id": "R03",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 50500,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Plan C principal balance",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/2"
     },
     {
       "criterion_id": "D01",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan A final value",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/3"
     },
     {
       "criterion_id": "V01",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/4"
     },
     {
       "criterion_id": "D02",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 55200,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan B final value",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/5"
     },
     {
       "criterion_id": "V02",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/6"
     },
     {
       "criterion_id": "D03",
-      "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 1,
+      "evidence": [
+        {
+          "raw": 50500,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 1,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Detail plan C final value",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/7"
     },
     {
       "criterion_id": "V03",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/8"
     },
     {
       "criterion_id": "S01",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Results fixed interface and row labels",
+      "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/9"
     },
     {
       "criterion_id": "S02",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：USD units on Results",
+      "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/10"
     },
     {
       "criterion_id": "S03",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Detail interface",
+      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/11"
     },
     {
       "criterion_id": "P01",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
       "raw": 0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "Excel error outside scored cells",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/12"
     },
     {
       "criterion_id": "P02",
-      "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
       "raw": 0,
-      "weight": -7,
+      "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Unsupported plan record",
+      "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/13"
+    },
+    {
+      "criterion_id": "S04",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan A: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records A1 and A2: term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200. PDF p.4 Broker payments, Plan A, 2007-07-15 USD 9,200 and 2007-08-15 USD 6,800. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record A date comes from Plans; value and this principal balance are USD 42,200 = 58,200 - 9,200 - 6,800.",
+          "cell": "Results!D2",
+          "number_format": "General"
+        },
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan B: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records B1 and B2: term cash USD 318,000 and 429,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 74,700. PDF p.4 Broker payments, Plan B, 2007-07-15 USD 11,200 and 2007-08-15 USD 8,300. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record B date comes from Plans; value and this principal balance are USD 55,200 = 74,700 - 11,200 - 8,300.",
+          "cell": "Results!D3",
+          "number_format": "General"
+        },
+        {
+          "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan C: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records C1 and C2: term cash USD 287,000 and 386,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 67,300. PDF p.4 Broker payments, Plan C, 2007-07-15 USD 9,700 and 2007-08-15 USD 7,100. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record C date comes from Plans; value and this principal balance are USD 50,500 = 67,300 - 9,700 - 7,100.",
+          "cell": "Results!D4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/14"
+    },
+    {
+      "criterion_id": "S05",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/15"
+    },
+    {
+      "criterion_id": "S06",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 42200,
+          "cell": "Results!B2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 55200,
+          "cell": "Results!B3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 50500,
+          "cell": "Results!B4",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 42200,
+          "cell": "Detail!C2",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 55200,
+          "cell": "Detail!C3",
+          "number_format": "#,##0.00"
+        },
+        {
+          "raw": 50500,
+          "cell": "Detail!C4",
+          "number_format": "#,##0.00"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/16"
     },
     {
       "criterion_id": "L01",
@@ -268,15 +434,29 @@
   "protocol_source": "run_demo_judges.sh (same settings as the other demos)",
   "rewardkit_version": "0.1.7",
   "source_run": "golden_r5",
-  "reward_details_sha256": "2e53bca07a91e3ccf8a0aeb34e8e5cbf7cc85e36c9945d46c8de730d48a6700e",
+  "reward_details_sha256": "87100666b1cd1abe8c092fd540d45b48d97f17df7e524c337654a9b83fa7e21f",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 1.0,
   "llm_status": "COMPLETED",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "1c591db859a20d04b78e636757fbb4ecfc3e43cf59ef7a95cd12757ec1c5af16",
+  "delivery_rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
   "limitations": [
     "正项score表示正确程度；负项score表示违规程度，sdk_value与raw原样保留。",
     "上游原始HTTP响应未单独留存；逐条结果来自reward-details.json。",
     "started_at/finished_at未单独记录，保留null。"
-  ]
+  ],
+  "programmatic_score": 1.0,
+  "scoring_revision": {
+    "label": "评分器 v2（2026-10-26）",
+    "method": "offline_program_rescore_with_saved_llm",
+    "new_llm_calls": 0,
+    "saved_llm_complete": true,
+    "saved_llm_candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+    "old_score": 1.0,
+    "new_score": 1.0,
+    "original_judgment": "judge.v1.json",
+    "limitation": "保存的 LLM 判定原样复用；不是新增模型运行或新增 LLM 裁判。"
+  },
+  "interface_gate_passed": true,
+  "interface_errors": []
 }

@@ -3,7 +3,7 @@
   "candidate_label": "gpt-5.6-sol",
   "judge_model": "qwen3.7-plus",
   "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
-  "rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+  "rubric_sha256": "7bfa31d130cfd8b985b911104cb427430b3cf4fd6a42ca2760471e1c38176548",
   "instruction_sha256": "cfe47782bcf393f60fcf5351cf4c0fad0b3dbb4ed5837ad26899d7e314731205",
   "input_sha256": {
     "CNO_2024-09-30_10Q.xlsx": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
@@ -30,7 +30,7 @@
   "score_final": 0.205882,
   "reward": 0.205882,
   "graded_score": 0.205882,
-  "criteria_counted": 16,
+  "criteria_counted": 23,
   "verifier_error": 0.0,
   "reported_model": null,
   "provider_response_id": null,
@@ -39,171 +39,385 @@
     {
       "criterion_id": "R01",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 0.0,
       "raw": 0.0,
+      "sdk_value": 0.0,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "evidence": [
+        {
+          "raw": 40.1,
+          "cell": "Results!B2",
+          "format": "0.0"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/0"
     },
     {
       "criterion_id": "R02",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 0.0,
       "raw": 0.0,
+      "sdk_value": 0.0,
       "weight": 10,
       "negate": false,
       "kind": "programmatic",
       "description": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024",
+      "evidence": [
+        {
+          "raw": 7.89,
+          "cell": "Results!B3",
+          "format": "0.00"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/1"
     },
     {
       "criterion_id": "A1",
       "score": 1.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 1.0,
+      "sdk_value": 1.0,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)",
+      "evidence": [
+        {
+          "raw": 508.3,
+          "cell": "Analysis!C2",
+          "format": "0.0"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/2"
     },
     {
       "criterion_id": "A2",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 0.0,
       "raw": 0.0,
+      "sdk_value": 0.0,
       "weight": 7,
       "negate": false,
       "kind": "programmatic",
       "description": "Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)",
+      "evidence": [
+        {
+          "raw": 548.4,
+          "cell": "Analysis!C3",
+          "format": "0.0"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/3"
     },
     {
       "criterion_id": "P1",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record",
+      "evidence": [
+        508.3,
+        508.3
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/4"
     },
     {
       "criterion_id": "P2",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row",
+      "evidence": [
+        548.4,
+        508.3,
+        40.1
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/5"
     },
     {
       "criterion_id": "SD1",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file",
+      "evidence": [
+        {
+          "raw": "CNO_2025-06-30_10Q.xlsx",
+          "cell": "Analysis!E2",
+          "format": "General"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/6"
     },
     {
       "criterion_id": "SD2",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file",
+      "evidence": [
+        {
+          "raw": "CNO_2025-03-31_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+          "cell": "Analysis!E3",
+          "format": "General"
+        }
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/7"
     },
     {
       "criterion_id": "F1",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Results sheet has the four stated headers",
+      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "evidence": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/8"
     },
     {
       "criterion_id": "F2",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Analysis sheet has the six stated headers",
+      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "evidence": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/9"
     },
     {
       "criterion_id": "F3",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "缺失或错误时扣分；正确不加分：Summary sheet has the two stated headers",
+      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "evidence": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/10"
     },
     {
       "criterion_id": "X1",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
+      "sdk_value": 1.0,
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
       "description": "Deduct 3 when any cell of the workbook holds an Excel error value",
+      "evidence": [],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/11"
     },
     {
       "criterion_id": "X2",
       "score": 0.0,
-      "evidence": null,
-      "reason": null,
-      "sdk_value": 1.0,
       "raw": 0.0,
-      "weight": -7,
+      "sdk_value": 1.0,
+      "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Unsupported additional business records in Results/Analysis/Summary: proportion of the expected record count, at most 7 points",
+      "description": "任一必需表出现额外业务记录、空键非空记录或重复记录时扣3分。",
+      "evidence": [],
+      "reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/12"
+    },
+    {
+      "criterion_id": "S01",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。",
+      "evidence": [
+        [
+          {
+            "raw": "CNO_2025-03-31_10Q.xlsx, T010, and CNO_2025-06-30_10Q.xlsx, Text!A131: revised Q1 2025 = 580.1 - 31.7 = 548.4. CNO_2025-06-30_10Q.xlsx, T016: revised Q4 2024 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Change = 548.4 - 508.3 = 40.1.",
+            "cell": "Results!D2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "Same filing locations and revised quarter amounts as row 2. Percentage change = (548.4 - 508.3) / 508.3 x 100 = 7.89%.",
+            "cell": "Results!D3",
+            "format": "General"
+          }
+        ]
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/13"
+    },
+    {
+      "criterion_id": "S02",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results来源须指向实际随包文件和存在的worksheet/table；明确给出单元格时须在该表范围内，允许明确引用第2行来源；任一违规扣3分。",
+      "evidence": [
+        true,
+        true
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/14"
+    },
+    {
+      "criterion_id": "SP1",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Analysis每行source_page须给实际随包文件中的worksheet/table；任一缺失或不存在扣3分。",
+      "evidence": [
+        true,
+        true
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/15"
+    },
+    {
+      "criterion_id": "O01",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results、Analysis、Summary的必需记录须按题面顺序出现且各一次；任一缺失、逆序或重复扣3分。",
+      "evidence": {
+        "Results": [
+          [
+            "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ],
+          [
+            "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ]
+        ],
+        "Analysis": [
+          [
+            "Fourth quarter of 2024",
+            "Insurance policy benefits"
+          ],
+          [
+            "First quarter of 2025",
+            "Insurance policy benefits"
+          ]
+        ],
+        "Summary": [
+          [
+            "Fourth quarter of 2024"
+          ],
+          [
+            "First quarter of 2025"
+          ]
+        ]
+      },
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/16"
+    },
+    {
+      "criterion_id": "U01",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results两行unit分别严格为USD millions、percent，Analysis两行严格为USD millions；任一违规扣3分。",
+      "evidence": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/17"
+    },
+    {
+      "criterion_id": "DP1",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "evidence": [
+        {
+          "raw": 40.1,
+          "cell": "Results!B2",
+          "format": "0.0"
+        }
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/18"
+    },
+    {
+      "criterion_id": "DP2",
+      "score": 0.0,
+      "raw": 0.0,
+      "sdk_value": 1.0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "evidence": [
+        {
+          "raw": 7.89,
+          "cell": "Results!B3",
+          "format": "0.00"
+        }
+      ],
+      "reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/19"
     },
     {
       "criterion_id": "L01",
@@ -264,5 +478,19 @@
   "hybrid_score": 0.205882,
   "llm_status": "COMPLETED",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "3cb3729c7ef9379423882eba8faf7f8d5d67e7cae3e33f5f10d32b3ba81126d0"
+  "delivery_rubric_sha256": "3cb3729c7ef9379423882eba8faf7f8d5d67e7cae3e33f5f10d32b3ba81126d0",
+  "programmatic_score": 0.205882,
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "offline_revision": {
+    "revision": "office-review-v2-20261026",
+    "evaluated_at": "2026-10-25T18:30:54.848829-04:00",
+    "mode": "offline_program_replay_with_saved_text_judgments",
+    "new_judge_calls": 0,
+    "saved_text_details": "reward-details.v1.json",
+    "saved_candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+    "candidate_changed_since_saved_text_judgment": false
+  }
 }

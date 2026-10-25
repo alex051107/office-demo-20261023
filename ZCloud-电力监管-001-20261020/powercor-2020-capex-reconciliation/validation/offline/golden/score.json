@@ -1,0 +1,78 @@
+{
+  "status": "EXTRACTED",
+  "score": 1,
+  "interface_gate": {
+    "passed": true,
+    "reasons": []
+  },
+  "verdicts": {
+    "R01": {
+      "status": "met",
+      "decided_by": "program",
+      "evidence": "written 13.69010834417945 as a literal",
+      "dimension": "data_accuracy",
+      "weight": 32,
+      "credit": 1
+    },
+    "R02": {
+      "status": "met",
+      "decided_by": "program",
+      "evidence": "written -11.54610040608111 as a literal",
+      "dimension": "data_accuracy",
+      "weight": 32,
+      "credit": 1
+    },
+    "R03": {
+      "status": "met",
+      "decided_by": "program",
+      "evidence": "written 1.143185786329452 as a literal",
+      "dimension": "data_accuracy",
+      "weight": 34,
+      "credit": 1
+    },
+    "S01": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "required sheet and exact four-column header are present"
+    },
+    "S02": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "units not exactly as specified: []"
+    },
+    "P01": {
+      "status": "clear",
+      "decided_by": "program",
+      "evidence": "error values outside the graded cells: []",
+      "dimension": "consistency_file_ops",
+      "weight": -5,
+      "credit": 0
+    },
+    "S03": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "missing or non-textual source references: []"
+    },
+    "S04": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "required row sequence: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']; expected rows 2, 3, 4"
+    },
+    "S05": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "unrequested business rows: []; duplicate labels: []"
+    },
+    "S06": {
+      "credit": 0,
+      "decided_by": "program",
+      "status": "not_triggered",
+      "evidence": "results not showing at least three decimal places: []"
+    }
+  }
+}

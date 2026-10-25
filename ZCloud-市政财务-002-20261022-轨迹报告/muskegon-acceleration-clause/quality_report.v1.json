@@ -1,0 +1,157 @@
+{
+  "schema_version": "rl0-1-trajectory-report-v2",
+  "case_id": "muskegon-acceleration-clause",
+  "task_count": 1,
+  "task_package": "ZCloud-市政财务-002-20261022",
+  "artifact_path_base": "case_root",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_authenticity_check": {
+    "status": "PASS_CURRENT_INPUT_IDENTITY",
+    "path": "validation/source_pair_audit.json",
+    "live_source_verified": false,
+    "original_customer_query": false
+  },
+  "rubric_sha256": "19a9a9804df161a1c07888165fa3dd6c64bdbbe011972a88e722a0d83a8feab4",
+  "target": {
+    "path": "golden/candidate.xlsx",
+    "sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+    "judge": "golden/judge.json",
+    "visual_review": "golden/visual_review.json",
+    "score_final": 1.0
+  },
+  "rollout_summary": {
+    "models": [
+      {
+        "model": "gpt-5.6-sol",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+        "candidate": "rollouts/gpt-5.6-sol/candidate.xlsx",
+        "trajectory": "rollouts/gpt-5.6-sol/trajectory/events.jsonl",
+        "judge": "rollouts/gpt-5.6-sol/judge.json",
+        "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-18T22:08:21+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "claude-opus-4-8",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": false,
+        "candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+        "candidate": "rollouts/claude-opus-4-8/candidate.xlsx",
+        "trajectory": "rollouts/claude-opus-4-8/trajectory/events.jsonl",
+        "judge": "rollouts/claude-opus-4-8/judge.json",
+        "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
+        "harness": "Claude Code",
+        "run_started": "2026-10-18T22:54:54+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "qwen3.8-max",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "2d35bcfb19bfbe4da4b525b0f880bf645adb61fc1d6d1266641e1b5d4dc8742a",
+        "candidate": "rollouts/qwen3.8-max/candidate.xlsx",
+        "trajectory": "rollouts/qwen3.8-max/trajectory/events.jsonl",
+        "judge": "rollouts/qwen3.8-max/judge.json",
+        "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-22T21:15:10+00:00",
+        "source": "isolated_docker_run"
+      }
+    ],
+    "average_score": 0.0,
+    "difficulty_tier": "not_certified_pass_at_8",
+    "difficulty_gate": "AVG_BELOW_0.6_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+    "models_below_0_6": 3,
+    "three_model_average_threshold": 0.6,
+    "pass_at_8": null
+  },
+  "judge": {
+    "model": "qwen3.7-plus",
+    "protocol": "anthropic（Claude Code 裁判）",
+    "sdk": "harbor-rewardkit 0.1.7",
+    "score_basis": "每份答卷取第 1 次评分；重复评分只用于一致性统计。",
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
+  },
+  "consistency": {
+    "path": "consistency.json",
+    "requirement": "同一答卷重复评分 5 次，单条判据与总分的样本标准差都 < 0.05",
+    "groups": [
+      {
+        "candidate": "golden",
+        "repeats": 5,
+        "total_scores": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "total_stddev_sample": 0.0,
+        "max_criterion_stddev_sample": 0.0,
+        "pass_stddev_lt_0_05": true
+      }
+    ],
+    "status": "PASS"
+  },
+  "discrimination": {
+    "reference_score": 1.0,
+    "model_scores": {
+      "gpt-5.6-sol": 0.0,
+      "claude-opus-4-8": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "empty_controls": [
+      {
+        "name": "blank",
+        "score": 0
+      },
+      {
+        "name": "missing",
+        "score": 0
+      }
+    ],
+    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_6_positive_results_correct": 0.0,
+        "1_of_6_positive_results_correct": 0.196078,
+        "2_of_6_positive_results_correct": 0.392157,
+        "3_of_6_positive_results_correct": 0.588235,
+        "4_of_6_positive_results_correct": 0.72549,
+        "5_of_6_positive_results_correct": 0.862745,
+        "6_of_6_positive_results_correct": 1.0
+      }
+    }
+  },
+  "excluded_judge_jobs": {
+    "path": "excluded_runs.json",
+    "count": 1,
+    "note": "Claude Opus 4.8 答卷的 LLM 裁判作业运行异常（请求次数远超正常作业），被人工停止，没有纳入一致性统计。"
+  },
+  "model_evidence": {
+    "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
+    "qwen": "Qwen 3.8 Max 于 2026-10-22 在独立 Docker 容器中运行一次，正常完成；网关返回型号含 qwen/qwen3.8-max 与 qwen3.8-max-0902，属同一基础型号。"
+  },
+  "solver_prompt": {
+    "files": "rollouts/<模型>/solver_prompt.md",
+    "difference_from_instruction": "Results 表的小标题和表头说明句换了措辞，行顺序、单位和数值要求不变；末尾的运行说明把输入目录从 /app/input 改为题包镜像里的 /app/input_files/。"
+  },
+  "limitations": [
+    "每个模型只有一次运行；pass@8 未测，难度等级未认证。",
+    "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
+    "Claude Opus 4.8 答卷只有程序判据结果：正项得分为 0，LLM 判据全部是扣分项，所以总分只能是 0，记 0。",
+    "开发阶段的另一套评分规则给三个模型各 0.07 分，全部来自格式项；本包规则下格式项只扣分不加分，记 0。",
+    "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。"
+  ],
+  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN"
+}

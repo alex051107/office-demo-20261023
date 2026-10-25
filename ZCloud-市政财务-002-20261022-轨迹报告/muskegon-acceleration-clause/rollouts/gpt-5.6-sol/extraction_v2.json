@@ -1,0 +1,201 @@
+{
+  "status": "PARSED",
+  "sheets": {
+    "Results": {
+      "actual_name": "Results",
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "records": {
+        "plan a principal balance": [
+          {
+            "label": {
+              "raw": "Plan A principal balance",
+              "cell": "Results!A2",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 13100,
+              "cell": "Results!B2",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C2",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Records.pdf p.3, Finance forecast, Plan A; see Calc for reconciliation and source detail.",
+              "cell": "Results!D2",
+              "number_format": "General"
+            }
+          }
+        ],
+        "plan b principal balance": [
+          {
+            "label": {
+              "raw": "Plan B principal balance",
+              "cell": "Results!A3",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 17850,
+              "cell": "Results!B3",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C3",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Records.pdf p.3, Finance forecast, Plan B; see Calc for reconciliation and source detail.",
+              "cell": "Results!D3",
+              "number_format": "General"
+            }
+          }
+        ],
+        "plan c principal balance": [
+          {
+            "label": {
+              "raw": "Plan C principal balance",
+              "cell": "Results!A4",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 16850,
+              "cell": "Results!B4",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C4",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Records.pdf p.3, Finance forecast, Plan C; see Calc for reconciliation and source detail.",
+              "cell": "Results!D4",
+              "number_format": "General"
+            }
+          }
+        ]
+      },
+      "rows": [
+        "plan a principal balance",
+        "plan b principal balance",
+        "plan c principal balance"
+      ],
+      "raw_labels": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "row_numbers": [
+        2,
+        3,
+        4
+      ],
+      "unsupported": []
+    },
+    "Detail": {
+      "actual_name": "Detail",
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "records": {
+        "a": [
+          {
+            "plan": {
+              "raw": "A",
+              "cell": "Detail!A2",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B2",
+              "number_format": "yyyy-mm-dd"
+            },
+            "value": {
+              "raw": 13100,
+              "cell": "Detail!C2",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            }
+          }
+        ],
+        "b": [
+          {
+            "plan": {
+              "raw": "B",
+              "cell": "Detail!A3",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B3",
+              "number_format": "yyyy-mm-dd"
+            },
+            "value": {
+              "raw": 17850,
+              "cell": "Detail!C3",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            }
+          }
+        ],
+        "c": [
+          {
+            "plan": {
+              "raw": "C",
+              "cell": "Detail!A4",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B4",
+              "number_format": "yyyy-mm-dd"
+            },
+            "value": {
+              "raw": 16850,
+              "cell": "Detail!C4",
+              "number_format": "$#,##0.00;[Red]($#,##0.00)"
+            }
+          }
+        ]
+      },
+      "rows": [
+        "a",
+        "b",
+        "c"
+      ],
+      "raw_labels": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "row_numbers": [
+        2,
+        3,
+        4
+      ],
+      "unsupported": []
+    }
+  },
+  "errors": [],
+  "interface_errors": []
+}

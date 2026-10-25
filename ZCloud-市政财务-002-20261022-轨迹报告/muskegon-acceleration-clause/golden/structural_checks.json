@@ -1,7 +1,7 @@
 {
   "format": "xlsx",
   "check_type": "current_offline_export_inspection",
-  "candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
   "opens": true,
   "worksheets": [
     {
@@ -25,6 +25,7 @@
   ],
   "worksheet_count": 2,
   "historical_score": 1.0,
-  "programmatic_score": 1,
-  "not_a_new_judgement": true
+  "programmatic_score": 1.0,
+  "not_a_new_judgement": true,
+  "scoring_revision": "评分器 v2（2026-10-26）"
 }

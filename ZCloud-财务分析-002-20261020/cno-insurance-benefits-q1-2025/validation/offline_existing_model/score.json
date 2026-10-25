@@ -1,0 +1,268 @@
+{
+  "status": "SCORED",
+  "score": 0.205882,
+  "verdicts": {
+    "R01": {
+      "credit": 0.0,
+      "observed": 40.1,
+      "expected": 61.7,
+      "evidence": [
+        {
+          "raw": 40.1,
+          "cell": "Results!B2",
+          "format": "0.0"
+        }
+      ],
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "R02": {
+      "credit": 0.0,
+      "observed": 7.89,
+      "expected": 12.138500885303955,
+      "evidence": [
+        {
+          "raw": 7.89,
+          "cell": "Results!B3",
+          "format": "0.00"
+        }
+      ],
+      "weight": 10,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "A1": {
+      "credit": 1.0,
+      "observed": 508.3,
+      "expected": 508.3,
+      "evidence": [
+        {
+          "raw": 508.3,
+          "cell": "Analysis!C2",
+          "format": "0.0"
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "A2": {
+      "credit": 0.0,
+      "observed": 548.4,
+      "expected": 570.0,
+      "evidence": [
+        {
+          "raw": 548.4,
+          "cell": "Analysis!C3",
+          "format": "0.0"
+        }
+      ],
+      "weight": 7,
+      "dimension": "内容质量-数值与计算准确性"
+    },
+    "P1": {
+      "credit": 0.0,
+      "evidence": [
+        508.3,
+        508.3
+      ],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "original_compliance_credit": 1.0
+    },
+    "P2": {
+      "credit": 0.0,
+      "evidence": [
+        548.4,
+        508.3,
+        40.1
+      ],
+      "weight": -3,
+      "dimension": "操作与交付安全",
+      "original_compliance_credit": 1.0
+    },
+    "SD1": {
+      "credit": 0.0,
+      "evidence": [
+        {
+          "raw": "CNO_2025-06-30_10Q.xlsx",
+          "cell": "Analysis!E2",
+          "format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "original_compliance_credit": 1.0
+    },
+    "SD2": {
+      "credit": 0.0,
+      "evidence": [
+        {
+          "raw": "CNO_2025-03-31_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+          "cell": "Analysis!E3",
+          "format": "General"
+        }
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范",
+      "original_compliance_credit": 1.0
+    },
+    "F1": {
+      "credit": 0.0,
+      "evidence": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 1.0
+    },
+    "F2": {
+      "credit": 0.0,
+      "evidence": [
+        "period",
+        "measure",
+        "amount",
+        "unit",
+        "source_document",
+        "source_page"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 1.0
+    },
+    "F3": {
+      "credit": 0.0,
+      "evidence": [
+        "quarter",
+        "insurance_policy_benefits"
+      ],
+      "weight": -3,
+      "dimension": "结构与组织",
+      "original_compliance_credit": 1.0
+    },
+    "X1": {
+      "credit": 0.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全"
+    },
+    "X2": {
+      "credit": 0.0,
+      "evidence": [],
+      "weight": -3,
+      "dimension": "操作与交付安全"
+    },
+    "S01": {
+      "credit": 0.0,
+      "evidence": [
+        [
+          {
+            "raw": "CNO_2025-03-31_10Q.xlsx, T010, and CNO_2025-06-30_10Q.xlsx, Text!A131: revised Q1 2025 = 580.1 - 31.7 = 548.4. CNO_2025-06-30_10Q.xlsx, T016: revised Q4 2024 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Change = 548.4 - 508.3 = 40.1.",
+            "cell": "Results!D2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "Same filing locations and revised quarter amounts as row 2. Percentage change = (548.4 - 508.3) / 508.3 x 100 = 7.89%.",
+            "cell": "Results!D3",
+            "format": "General"
+          }
+        ]
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "S02": {
+      "credit": 0.0,
+      "evidence": [
+        true,
+        true
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "SP1": {
+      "credit": 0.0,
+      "evidence": [
+        true,
+        true
+      ],
+      "weight": -3,
+      "dimension": "内容质量-专业规范"
+    },
+    "O01": {
+      "credit": 0.0,
+      "evidence": {
+        "Results": [
+          [
+            "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ],
+          [
+            "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+          ]
+        ],
+        "Analysis": [
+          [
+            "Fourth quarter of 2024",
+            "Insurance policy benefits"
+          ],
+          [
+            "First quarter of 2025",
+            "Insurance policy benefits"
+          ]
+        ],
+        "Summary": [
+          [
+            "Fourth quarter of 2024"
+          ],
+          [
+            "First quarter of 2025"
+          ]
+        ]
+      },
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "U01": {
+      "credit": 0.0,
+      "evidence": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "DP1": {
+      "credit": 0.0,
+      "evidence": [
+        {
+          "raw": 40.1,
+          "cell": "Results!B2",
+          "format": "0.0"
+        }
+      ],
+      "weight": -3,
+      "dimension": "结构与组织"
+    },
+    "DP2": {
+      "credit": 0.0,
+      "evidence": [
+        {
+          "raw": 7.89,
+          "cell": "Results!B3",
+          "format": "0.00"
+        }
+      ],
+      "weight": -3,
+      "dimension": "结构与组织"
+    }
+  },
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  }
+}

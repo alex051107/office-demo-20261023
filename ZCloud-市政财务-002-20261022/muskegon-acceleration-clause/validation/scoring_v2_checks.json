@@ -1,0 +1,39 @@
+{
+  "revision": "评分器 v2（2026-10-26）",
+  "scores": {
+    "golden": {
+      "old_score": 1.0,
+      "new_score": 1.0,
+      "programmatic_score": 1.0,
+      "llm_status": "COMPLETED",
+      "criteria_counted": 20
+    },
+    "claude-opus-4-8": {
+      "old_score": 0.0,
+      "new_score": 0.0,
+      "programmatic_score": 0.0,
+      "llm_status": "STOPPED_RUNAWAY",
+      "criteria_counted": 17
+    },
+    "gpt-5.6-sol": {
+      "old_score": 0.0,
+      "new_score": 0.0,
+      "programmatic_score": 0.0,
+      "llm_status": "COMPLETED",
+      "criteria_counted": 20
+    },
+    "qwen3.8-max": {
+      "old_score": 0.0,
+      "new_score": 0.0,
+      "programmatic_score": 0.0,
+      "llm_status": "COMPLETED",
+      "criteria_counted": 20
+    }
+  },
+  "new_solver_runs": 0,
+  "new_llm_calls": 0,
+  "golden_copy_count": 5,
+  "negative_case_count": 32,
+  "all_saved_llm_criteria_unchanged": true,
+  "instruction_and_model_workbooks_unchanged": true
+}

@@ -1,8 +1,8 @@
 {
   "format": "xlsx",
-  "checked_at": "2026-10-22",
-  "check_type": "offline_openpyxl_export_inspection_not_historical_judge",
-  "candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
+  "checked_at": "2026-10-25",
+  "check_type": "offline_openpyxl_v2_inspection",
+  "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
   "opens": true,
   "worksheets": [
     {
@@ -17,14 +17,16 @@
     {
       "name": "Working",
       "state": "visible",
-      "rows": 15,
+      "rows": 21,
       "columns": 6,
-      "nonempty_cells": 83,
+      "nonempty_cells": 89,
       "formula_cells": [],
       "error_cells": []
     }
   ],
   "worksheet_count": 2,
   "historical_score": 1.0,
-  "not_a_new_judgement": true
+  "not_a_new_judgement": true,
+  "programmatic_score": 1.0,
+  "scorer_version": "v2 (2026-10-26)"
 }

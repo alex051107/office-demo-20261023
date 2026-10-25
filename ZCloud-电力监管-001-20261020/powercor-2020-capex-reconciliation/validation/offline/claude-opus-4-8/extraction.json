@@ -1,0 +1,324 @@
+{
+  "status": "EXTRACTED",
+  "book": {
+    "Calculation": [
+      [
+        "Asset Class",
+        "Category",
+        "Actual Gross Capex 2020 ($m nom.)",
+        "Actual Cap Contributions 2020 ($m nom.)",
+        "Actual Net Capex 2020 ($m nom.)",
+        "Forecast Net Capex 2020 ($m nom.)",
+        "Difference actual minus forecast ($m nom.)"
+      ],
+      [
+        "Subtransmission",
+        "Network",
+        7.077317030000001,
+        1.42965759,
+        5.647659440000001,
+        3.430646381427779,
+        2.217013058572222
+      ],
+      [
+        "Distribution system assets",
+        "Network",
+        420.48420874,
+        134.62869175,
+        285.85551699,
+        279.6600947254131,
+        6.195422264586853
+      ],
+      [
+        "SCADA/Network control",
+        "Network",
+        20.18786627,
+        0,
+        20.18786627,
+        22.62047707800938,
+        -2.432610808009379
+      ],
+      [
+        "Non-network general assets - IT",
+        "Non-network",
+        34.80915085,
+        0,
+        34.80915085,
+        36.86465196632263,
+        -2.055501116322631
+      ],
+      [
+        "Non-network general assets - Other",
+        "Non-network",
+        43.43735354,
+        0,
+        43.43735354,
+        42.52701479772985,
+        0.9103387422701488
+      ],
+      [
+        "VBRC",
+        "Non-network",
+        13.71430507,
+        0,
+        13.71430507,
+        25.40376371880166,
+        -11.68945864880166
+      ],
+      [
+        "Land",
+        "Land",
+        0,
+        0,
+        0,
+        1.000822151768884,
+        -1.000822151768884
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Network subtotal",
+        null,
+        447.74939204,
+        136.05834934,
+        311.6910427,
+        305.7112181848503,
+        5.979824515149687
+      ],
+      [
+        "Non-network subtotal",
+        null,
+        91.96080946,
+        0,
+        91.96080946,
+        104.7954304828541,
+        -12.83462102285414
+      ],
+      [
+        "Land subtotal",
+        null,
+        0,
+        0,
+        0,
+        1.000822151768884,
+        -1.000822151768884
+      ],
+      [
+        "Grand total (all classes)",
+        null,
+        539.7102014999999,
+        136.05834934,
+        403.6518521599999,
+        411.5074708194733,
+        -7.855618659473407
+      ]
+    ],
+    "Results": [
+      [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      [
+        "2020 network net capex difference",
+        5.979824515149687,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net."
+      ],
+      [
+        "2020 non-network net capex difference",
+        -12.83462102285414,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net."
+      ],
+      [
+        "2020 total net capex difference",
+        -7.855618659473407,
+        "AUD million nominal",
+        "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net."
+      ]
+    ]
+  },
+  "formulas": {
+    "Calculation": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "Results": [
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "interface_errors": [],
+  "required_results": [
+    {
+      "row": 2,
+      "label": "2020 network net capex difference",
+      "value": 5.979824515149687,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net.",
+      "number_format": "#,##0.000"
+    },
+    {
+      "row": 3,
+      "label": "2020 non-network net capex difference",
+      "value": -12.83462102285414,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net.",
+      "number_format": "#,##0.000"
+    },
+    {
+      "row": 4,
+      "label": "2020 total net capex difference",
+      "value": -7.855618659473407,
+      "unit": "AUD million nominal",
+      "source_note": "Powercor_RFM_inputs.xlsx 'RFM input': Section 1 Forecast Net Capex 2020 vs Section 2 Actual Gross Capex 2020 less Section 4 Actual Capital Contributions 2020. Net capex = gross capex minus capital contributions; difference = actual net minus forecast net.",
+      "number_format": "#,##0.000"
+    }
+  ]
+}

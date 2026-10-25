@@ -20,6 +20,45 @@ def canon(x,aliases):
   if n in [norm(key)]+[norm(v) for v in values]:return norm(key)
  return n
 
+def source_files(text, key):
+ names=re.findall(r'[A-Za-z0-9_.-]+\.xlsx',str(text or ''),re.I)
+ return names if names and all(name in key['source_locations'] for name in names) else []
+
+def source_location(text, files, key):
+ if not isinstance(text,str) or not files:return False
+ named=re.findall(r'[A-Za-z0-9_.-]+\.xlsx',text,re.I)
+ if any(name not in key['source_locations'] for name in named):return False
+ locations=re.findall(r'\b(T\d{3}|Text)(?:!\$?([A-Z]+)\$?(\d+))?\b',text)
+ if not locations:return False
+ for sheet,column,row in locations:
+  bounds=[key['source_locations'][name][sheet] for name in files if sheet in key['source_locations'][name]]
+  if not bounds:return False
+  if column and not any(1<=int(row)<=height and sum((ord(letter)-64)*26**power for power,letter in enumerate(reversed(column)))<=width for height,width in bounds):return False
+ return True
+
+def results_source(e,key,ident):
+ notes=observations(e,key,['Results',ident,'source_note'])
+ if len(notes)!=1:return False
+ text=notes[0]['raw'];files=source_files(text,key)
+ if not files and isinstance(text,str) and re.search(r'same.*(?:row\s*2|sources)',text,re.I):
+  first=observations(e,key,['Results',key['interfaces']['Results']['expected_keys'][0],'source_note'])
+  if first:text=first[0]['raw'];files=source_files(text,key)
+ return source_location(text,files,key)
+
+def stated_precision(observation,decimals,percent=False):
+ raw=observation['raw'];number=num(raw)
+ if number is None:return False
+ number_format=observation.get('format','General').split(';')[0]
+ cleaned=re.sub(r'"[^"]*"|\[[^\]]*\]|\\.|_.|\*.', '', number_format)
+ if '%' in cleaned and not percent:return False
+ if isinstance(raw,str):
+  text=re.sub(r'[,$%\s]','',raw).strip('()')
+  return bool(re.fullmatch(r'[-+]?\d+(?:\.\d{1,'+str(decimals)+r'})?',text))
+ if re.search(r'[0#?]',cleaned):
+  fraction=re.search(r'\.([0#?]+)',cleaned)
+  return bool(fraction and len(fraction[1])==decimals and fraction[1].count('0')==decimals)
+ return abs(number-round(number,decimals))<=1e-9
+
 def extract(path,key):
  if not Path(path).is_file():return {'status':'OUTPUT_MISSING','sheets':{},'formulas':[]}
  try:
@@ -29,6 +68,7 @@ def extract(path,key):
  errors=[]
  ERR={'#DIV/0!','#VALUE!','#REF!','#NAME?','#N/A','#NUM!','#NULL!','#SPILL!','#CALC!'}
  for s_ in w:
+  if s_.title not in key['interfaces']:continue
   for row_ in s_.iter_rows():
    for c_ in row_:
     if c_.data_type=='e' or (isinstance(c_.value,str) and c_.value.strip().upper() in ERR):errors.append(s_.title+'!'+c_.coordinate)
@@ -65,25 +105,31 @@ def extract(path,key):
    return ev(ast.parse(expr,mode='eval'))
   except Exception:return None
   finally:resolving.remove(ident)
+ interface_errors=[]
  for sheet,definition in key['interfaces'].items():
-  allowed=[norm(sheet)]+[norm(x) for x in definition.get('aliases',[])]
-  candidates=[s for s in w if norm(s.title) in allowed]
-  if not candidates:
-   candidates=[s for s in w if set(definition['key']) <= {canon(c.value,definition.get('header_aliases',{})) for c in s[1]}]
-  if len(candidates)!=1:
-   sheets[sheet]={'headers':[],'records':{},'extra':[],'actual_name':None};continue
-  s=candidates[0]; headers=[canon(c.value,definition.get('header_aliases',{})) for c in s[1]]
+  if sheet not in w.sheetnames:
+   interface_errors.append({'sheet':sheet,'reason':'required sheet missing or misnamed'})
+   sheets[sheet]={'headers':[],'records':{},'extra':[],'row_keys':[],'actual_name':None};continue
+  s=w[sheet]
+  used_columns=[cell.column for row in fw[sheet] for cell in row if cell.value is not None]
+  column_count=max(used_columns,default=0)
+  raw_headers=[s.cell(1,column).value for column in range(1,column_count+1)]
+  if raw_headers!=definition['headers']:
+   interface_errors.append({'sheet':sheet,'reason':'row 1 headers/order/column count mismatch','observed':raw_headers,'expected':definition['headers']})
+  headers=[canon(header,definition.get('header_aliases',{})) for header in raw_headers]
   expected={tuple(canon(v,definition.get('value_aliases',{})) for v in x) for x in definition['expected_keys']}
-  records={};extra=[]
+  records={};extra=[];row_keys=[];seen=set()
   for row in list(s)[1:]:
    record={h:{'raw':value(s.title,c.coordinate),'cell':s.title+'!'+c.coordinate,'format':c.number_format} for h,c in zip(headers,row) if h}
+   if not any(cell['raw'] is not None and str(cell['raw']).strip() for cell in record.values()):continue
    ident=tuple(canon(record.get(h,{}).get('raw'),definition.get('value_aliases',{})) for h in definition['key'])
-   if not any(ident):continue
+   row_keys.append([record.get(header,{}).get('raw') for header in definition['key']])
    records.setdefault('|'.join(ident),[]).append(record)
-   if ident not in expected:extra.append(ident)
-  sheets[sheet]={'headers':headers,'records':records,'extra':extra,'actual_name':s.title}
+   if ident not in expected or ident in seen:extra.append(ident)
+   seen.add(ident)
+  sheets[sheet]={'headers':headers,'raw_headers':raw_headers,'records':records,'extra':extra,'row_keys':row_keys,'actual_name':s.title}
  w.close();fw.close()
- return {'status':'PARSED','sheets':sheets,'formulas':sorted(set(formula_cells)),'error_cells':errors}
+ return {'status':'PARSED','sheets':sheets,'formulas':sorted(set(formula_cells)),'error_cells':errors,'interface_errors':interface_errors}
 
 def observations(e,key,ref):
  sheet,ident,field=ref; aliases=key['interfaces'][sheet].get('value_aliases',{})
@@ -125,20 +171,47 @@ def score(e,key):
    credit=float(all(v is not None for v in vals) and abs(sum(a*b for a,b in zip(vals,c['coefficients'])))<=c['abs']+1e-8)
   elif typ=='source':
    oo=observations(e,key,c['ref']);observed=oo
-   # Recognized supplied file/title alias. No winning filing, count, or sequence is required.
-   credit=float(bool(oo) and all(any(re.search(p,norm(o['raw']),re.I) for p in key['source_patterns']) for o in oo))
+   credit=float(bool(oo) and all(source_files(o['raw'],key) for o in oo))
   elif typ=='header':
    d=e['sheets'].get(c['sheet'],{});observed=d.get('headers',[])
    nonempty=any(x.get('raw') not in [None,''] for rr in d.get('records',{}).values() for r in rr for h,x in r.items() if h not in key['interfaces'][c['sheet']]['key'])
-   credit=float(nonempty and set(key['interfaces'][c['sheet']]['headers'])<=set(observed))
+   credit=float(d.get('actual_name')==c['sheet'] and d.get('raw_headers')==key['interfaces'][c['sheet']]['headers'])
   elif typ=='error_cells':
    observed=e.get('error_cells',[]);credit=float(bool(observed))
   elif typ=='unsupported_records':
    extra=[x for s in e['sheets'].values() for x in s.get('extra',[])];observed=extra
-   denominator=sum(len(d['expected_keys']) for d in key['interfaces'].values())
-   credit=min(1,len(extra)/denominator)
+   credit=float(bool(extra))
+  elif typ=='required_sources':
+   observed=[observations(e,key,['Results',ident,'source_note']) for ident in key['interfaces']['Results']['expected_keys']]
+   credit=float(any(len(notes)!=1 or not isinstance(notes[0]['raw'],str) or not notes[0]['raw'].strip() or num(notes[0]['raw']) is not None for notes in observed))
+  elif typ=='results_locations':
+   observed=[results_source(e,key,ident) for ident in key['interfaces']['Results']['expected_keys']]
+   credit=float(not all(observed))
+  elif typ=='analysis_locations':
+   observed=[]
+   for ident in key['interfaces']['Analysis']['expected_keys']:
+    documents=observations(e,key,['Analysis',ident,'source_document']);locations=observations(e,key,['Analysis',ident,'source_page'])
+    observed.append(len(documents)==len(locations)==1 and source_location(locations[0]['raw'],source_files(documents[0]['raw'],key),key))
+   credit=float(not all(observed))
+  elif typ=='row_order':
+   observed={sheet:definition.get('row_keys',[]) for sheet,definition in e['sheets'].items()}
+   credit=float(any([ident for ident in observed.get(sheet,[]) if ident in definition['expected_keys']]!=definition['expected_keys'] for sheet,definition in key['interfaces'].items()))
+  elif typ=='units':
+   observed=[]
+   for sheet in ['Results','Analysis']:
+    for index,ident in enumerate(key['interfaces'][sheet]['expected_keys']):
+     expected_unit=key['rows'][index]['unit'] if sheet=='Results' else 'USD millions'
+     units=observations(e,key,[sheet,ident,'unit']);observed.append(len(units)==1 and units[0]['raw']==expected_unit)
+   credit=float(not all(observed))
+  elif typ=='precision':
+   observed=observations(e,key,c['ref'])
+   credit=float(len(observed)!=1 or not stated_precision(observed[0],c['decimals'],c.get('percent',False)))
   else:raise ValueError(typ)
   verdicts[c['criterion_id']]={'credit':credit,'evidence':observed}
+ gate={'failed':bool(e.get('interface_errors')),'errors':e.get('interface_errors',[])}
+ if gate['failed']:
+  for criterion in key['rows']+key['tables']:
+   if criterion['weight']>0:verdicts[criterion['criterion_id']]['credit']=0.0
  total=sum(c['weight'] for c in criteria if c['weight']>0)
  earned=sum(c['weight']*verdicts[c['criterion_id']]['credit'] for c in criteria)
  for c in criteria:verdicts[c['criterion_id']].update(weight=c['weight'],dimension=c['dimension'])
@@ -150,9 +223,10 @@ def score(e,key):
  result={'status':'SCORED','task_id':key['task_id'],'score':min(1,max(0,earned/total)),'total_weight':total,'earned':earned,'groups':bygroup,
   'baseline_roots_score':baseline,'equal_criterion_score':sum(verdicts[c['criterion_id']]['credit'] for c in positive)/len(positive),
   'equal_business_score':sum(verdicts[c['criterion_id']]['credit'] for c in key['rows']+key['tables'])/(len(key['rows'])+len(key['tables'])),
-  'verdicts':verdicts,'core_cap':False,'llm_judge_fraction':0}
+  'verdicts':verdicts,'core_cap':False,'llm_judge_fraction':0,'interface_gate':gate}
  if e['status']=='JUDGE_ERROR':result.update(status='JUDGE_ERROR',score=None,error=e.get('error'))
  if e['status']=='OUTPUT_MISSING':result.update(status='OUTPUT_MISSING',score=0.0)
+ if gate['failed']:result['score']=0.0
  return result
 
 def main():

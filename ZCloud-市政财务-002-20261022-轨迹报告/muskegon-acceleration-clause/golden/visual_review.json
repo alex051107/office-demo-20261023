@@ -1,9 +1,9 @@
 {
   "format": "xlsx",
-  "reviewed_at": "2026-10-22",
+  "reviewed_at": "2026-10-25T18:21:58-04:00",
   "renderer": "LibreOffice calc_pdf_Export + pdftoppm",
-  "candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
-  "scope": "每张工作表单独预览；仅临时副本设置打印范围、A3横向和单页缩放，原答卷不变。",
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+  "scope": "逐表从更新后的参考工作簿导出；临时副本使用 A3 横向和单页缩放。",
   "worksheet_count": 2,
   "render_count": 2,
   "renders": [
@@ -19,16 +19,12 @@
     }
   ],
   "render_status": "COMPLETED",
-  "visual_inspection_status": "REVIEWED_ORIGINAL_LAYOUT_LIMITATIONS",
+  "visual_inspection_status": "REVIEWED",
   "visual_findings": [
-    "参考、Opus和千问的Results部分长出处/标签因原列宽截断；Sol Calc工作底稿较宽、缩放后字小。保留原卷，导出时的渲染不替代评分；完整文本见extracted_text.md。"
+    "Results：三条来源与计算说明完整显示；标签、金额和单位均顶端对齐，没有遮挡或截断。",
+    "Results 与 Detail：六个金额均显示千位分隔与两位小数；表头顺序和三条记录正确。",
+    "Detail：三条日期均完整显示为 2007-12-31。"
   ],
-  "historical_scores_changed": false,
-  "ppt_checks": {
-    "status": "NOT_APPLICABLE",
-    "reason": "xlsx工作表不是PPT幻灯片。"
-  },
-  "inspection_method": "逐表渲染后按题聚合的预览联系图人工检查；28张工作表均有PDF及PNG。",
-  "business_quality_assessed": false,
-  "source_workbook_unchanged": true
+  "source_workbook_unchanged": true,
+  "scoring_revision": "评分器 v2（2026-10-26）"
 }

@@ -1,0 +1,137 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 1,
+      "criteria": [
+        {
+          "name": "R01",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "description": "2020 network net capex difference"
+        },
+        {
+          "name": "R02",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "description": "2020 non-network net capex difference"
+        },
+        {
+          "name": "R03",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "description": "2020 total net capex difference"
+        },
+        {
+          "name": "S01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。"
+        },
+        {
+          "name": "S02",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。"
+        },
+        {
+          "name": "P01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Deduct for Excel error cells outside result cells already assessed"
+        },
+        {
+          "name": "S03",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。"
+        },
+        {
+          "name": "S04",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。"
+        },
+        {
+          "name": "S05",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。"
+        },
+        {
+          "name": "S06",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。"
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "All source citations resolve to real, existing locations in the bundled materials. Excel: sheet 'RFM input' exists; F7:F13 hold the asset-class names (Subtransmission, Distribution system assets, Public lighting, SCADA/Network control, Non-network general assets - IT/Other, VBRC) consistent with the candidate's 'network classes F7:F8, F10' and 'non-network classes F11:F13' labels; F55/F56 are in-house software/Equity raising costs; F60 is the 2020 year header; F61:F67 etc. are 2020 capex rows; rows 115-121 are asset disposals; rows 169-175 are capital contributions; L7:L13 are 2020 forecast net capex; F282/F284/F287 are CPI inflation, forecast inflation and nominal vanilla WACC. PDF: Distribution_handbook.pdf page 27 (verified: the page footer prints '27') contains section 2.4.1 'Nominal adjustments for difference between actual and forecast net capex in final year (year t-1)' and footnote 20, exactly as cited. No non-existent file, page, table or cell is claimed.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "The candidate makes no claim of having completed an external audit, real-time query or independent verification. The descriptive cells (Results!D2:D4 'source_note', Working!F2:F15 'Source') are purely locative citations to bundled workbook cells and to handbook p.27/section 2.4.1/footnote 20; 'Applicable rate' and 'Year-end factor' rows are computed labels without any verification-completion claim. Only normal analytical wording, so no violation.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "The descriptive text contains only asset-class names, group labels (network/non-network/other), cell pointers and the handbook citation. No new company business facts are asserted. The labels 'asset disposals' (rows 115-121) and 'capital contributions' (rows 169-175) reflect the input workbook's own block layout and are consistent with handbook section 2.4.1, which describes rows 65-115 as actual net capex and the gross-up process. No fabricated operational, strategic or market facts about the company appear anywhere in the candidate's descriptive text.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"All source citations resolve to real, existing locations in the bundled materials. Excel: sheet 'RFM input' exists; F7:F13 hold the asset-class names (Subtransmission, Distribution system assets, Public lighting, SCADA/Network control, Non-network general assets - IT/Other, VBRC) consistent with the candidate's 'network classes F7:F8, F10' and 'non-network classes F11:F13' labels; F55/F56 are in-house software/Equity raising costs; F60 is the 2020 year header; F61:F67 etc. are 2020 capex rows; rows 115-121 are asset disposals; rows 169-175 are capital contributions; L7:L13 are 2020 forecast net capex; F282/F284/F287 are CPI inflation, forecast inflation and nominal vanilla WACC. PDF: Distribution_handbook.pdf page 27 (verified: the page footer prints '27') contains section 2.4.1 'Nominal adjustments for difference between actual and forecast net capex in final year (year t-1)' and footnote 20, exactly as cited. No non-existent file, page, table or cell is claimed.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"The candidate makes no claim of having completed an external audit, real-time query or independent verification. The descriptive cells (Results!D2:D4 'source_note', Working!F2:F15 'Source') are purely locative citations to bundled workbook cells and to handbook p.27/section 2.4.1/footnote 20; 'Applicable rate' and 'Year-end factor' rows are computed labels without any verification-completion claim. Only normal analytical wording, so no violation.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"The descriptive text contains only asset-class names, group labels (network/non-network/other), cell pointers and the handbook citation. No new company business facts are asserted. The labels 'asset disposals' (rows 115-121) and 'capital contributions' (rows 169-175) reflect the input workbook's own block layout and are consistent with handbook section 2.4.1, which describes rows 65-115 as actual net capex and the gross-up process. No fabricated operational, strategic or market facts about the company appear anywhere in the candidate's descriptive text.\"}}"
+    }
+  ]
+}
