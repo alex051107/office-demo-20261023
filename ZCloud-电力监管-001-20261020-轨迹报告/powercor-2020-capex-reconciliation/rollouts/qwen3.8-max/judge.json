@@ -225,7 +225,7 @@
     "old_reward": 0.0,
     "new_reward": 0.0,
     "saved_llm_candidate_sha256": "136c76d02f59ad604b871e06a9d0cf201fc5ac965fc5ae00e37b5fc2b1dc378a",
-    "saved_llm_details": "reward-details.round1.json",
+    "saved_llm_details": "../../history/rollouts/qwen3.8-max/reward-details.round1.json",
     "new_llm_calls": 0,
     "scope": "Saved L01-L03 reused unchanged; historical golden repeats are not fresh round-2 runs."
   },

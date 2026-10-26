@@ -17,8 +17,11 @@
     "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": 1.0,
-    "score_status": "PROVISIONAL_SAVED_JUDGMENTS"
+    "score_final": null,
+    "score_status": "NO_VALID_NEW_JUDGMENT",
+    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "valid_runs": 0,
+    "provisional": false
   },
   "rollout_summary": {
     "models": [
@@ -76,58 +79,29 @@
     "pass_at_8": null
   },
   "judge": {
-    "model": "qwen3.7-plus",
-    "protocol": "anthropic（Claude Code 裁判）",
-    "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "第二轮程序评分与保存的历史 LLM 判定重组；金标五次新裁判因费用停止而未完成，金标总分仅为暂定重组值。",
-    "formula": "signed-weight pooling / 51, clipped to [0,1], then required_sheet_gate=0, required_header_cap<=0.69, must_clause_cap<=0.69",
-    "round2_golden_judgments": {
-      "status": "BLOCKED_COST_GUARD",
-      "required_valid_runs": 5,
-      "attempted_runs": 1,
-      "valid_runs": 0,
-      "remaining_valid_runs": 5,
-      "retry_count": 0,
-      "new_solver_runs": 0,
-      "per_run_limit_usd": 0.5,
-      "account_limit_usd": 1635,
-      "account_usage_delta_usd": 8.650104000000056,
-      "cost_guard_detected_after_limit_exceeded": true,
-      "runner_returncode": 137,
-      "started_at": "2026-10-25T23:31:00Z",
-      "finished_at": "2026-10-25T23:46:01Z",
-      "attempt_receipt": "round2_attempts/golden_r1/run_metadata.json",
-      "per_criterion_standard_deviation": null,
-      "total_standard_deviation": null,
-      "golden_score_basis": "provisional_saved_historical_judgments",
-      "note": "首个真实金标重判未通过运行器有效性检查；费用超过上限后停止，无重试，未启动 r2–r5。现有 golden_r1..r5 为历史 LLM 判定的程序重组，不是本轮新裁判。"
-    }
+    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "fresh_golden_runs": 0,
+    "required_golden_runs": 5,
+    "cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd"
   },
   "consistency": {
     "path": "consistency.json",
-    "requirement": "同一答卷重复评分 5 次，单条判据与总分的样本标准差都 < 0.05",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 5,
-        "total_scores": [
-          1.0,
-          1.0,
-          1.0,
-          1.0,
-          1.0
-        ],
-        "total_stddev_sample": 0.0,
-        "max_criterion_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": true,
-        "judgment_origin": "saved_historical"
+        "repeats": 0,
+        "total_scores": [],
+        "total_stddev_sample": null,
+        "pass_stddev_lt_0_05": false
       }
-    ],
-    "status": "BLOCKED_NEW_GOLDEN_JUDGMENTS",
-    "note": "程序重算与保存判定重组。"
+    ]
   },
   "discrimination": {
-    "reference_score": 1.0,
+    "reference_score": null,
     "model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.0,
@@ -158,7 +132,7 @@
     }
   },
   "excluded_judge_jobs": {
-    "path": "excluded_runs.json",
+    "path": "history/excluded_runs.json",
     "count": 1,
     "note": "Claude Opus 4.8 答卷的 LLM 裁判作业运行异常（请求次数远超正常作业），被人工停止，没有纳入一致性统计。"
   },
@@ -178,44 +152,64 @@
     "第二轮保留 20 个判据及全部权重，更新程序判据描述与汇总规则；judge.json 记录当前交付 rubric 的哈希。",
     "本轮金标仅 1 次真实尝试、0 次有效完成；费用超限后停止。五次新真实裁判与其逐项及总分标准差尚未完成。"
   ],
-  "overall_delivery_compliance": "PARTIAL_ROUND2_GOLDEN_JUDGMENTS_BLOCKED_COST_GUARD",
-  "scoring_revision": {
-    "revision": "评分器 v2（2026-10-26）",
-    "round": 2,
-    "scores": {
-      "golden": {
-        "old_score": 1.0,
-        "new_score": 1.0,
-        "programmatic_score": 1.0,
-        "llm_status": "COMPLETED",
-        "criteria_counted": 20
-      },
-      "claude-opus-4-8": {
-        "old_score": 0.0,
-        "new_score": 0.0,
-        "programmatic_score": 0.0,
-        "llm_status": "STOPPED_RUNAWAY",
-        "criteria_counted": 17
-      },
-      "gpt-5.6-sol": {
-        "old_score": 0.0,
-        "new_score": 0.0,
-        "programmatic_score": 0.0,
-        "llm_status": "COMPLETED",
-        "criteria_counted": 20
-      },
-      "qwen3.8-max": {
-        "old_score": 0.0,
-        "new_score": 0.0,
-        "programmatic_score": 0.0,
-        "llm_status": "COMPLETED",
-        "criteria_counted": 20
-      }
+  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
+  "scoring_revision": "candidate-access-v3",
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "score_revision": "candidate-access-v3",
+  "new_llm_calls": 0,
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "C",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 0,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "D01": null,
+      "V01": null,
+      "D02": null,
+      "V02": null,
+      "D03": null,
+      "V03": null,
+      "S01": null,
+      "S02": null,
+      "S03": null,
+      "P01": null,
+      "P02": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
     },
-    "new_solver_runs": 0,
-    "new_llm_calls": 1,
-    "new_valid_golden_judgments": 0,
-    "golden_judgment_status": "BLOCKED_COST_GUARD",
-    "golden_score_basis": "provisional_saved_historical_judgments"
+    "total_cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/judge_runs/round2_attempts/history_pre_v3",
+    "invalid_attempts_count": 0,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
   }
 }

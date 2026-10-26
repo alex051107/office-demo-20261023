@@ -501,7 +501,7 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "gpt-5.6-sol_r1",
-  "reward_details_sha256": "e248ef4b86a5c5635ae9c499ff333db9695c6f83bb6489396607558e65ded8d0",
+  "reward_details_sha256": "8db9a26d5707ee1e5864c009606dd69fec41bbf4f6ab85eef8e7a786d23d1b06",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 0.205882,
   "llm_status": "COMPLETED",
@@ -517,7 +517,7 @@
     "evaluated_at": "2026-10-25T20:23:20.492141-04:00",
     "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
-    "saved_text_details": "reward-details.v1.json",
+    "saved_text_details": "../../history/rollouts/gpt-5.6-sol/reward-details.v1.json",
     "saved_candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
     "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
     "candidate_changed_since_saved_text_judgment": false

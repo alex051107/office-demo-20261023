@@ -3,5 +3,12 @@
   "scope": "目录、相对引用、清单及文件完整性",
   "pass_at_8": null,
   "source_authenticity": "PASS_CURRENT_INPUT_IDENTITY",
-  "source_pair_audit_sha256": "664a113ff4b59a0bf08fc2eb54a9db1634d11e1d23d2495eb4e11342708906d8"
+  "source_pair_audit_sha256": "664a113ff4b59a0bf08fc2eb54a9db1634d11e1d23d2495eb4e11342708906d8",
+  "cleanup_layout": {
+    "history_directory": "history/",
+    "regression_entry": "validation/run_regression.py",
+    "offline_only": true,
+    "judge_or_solver_executed": false,
+    "historical_scores_are_current_scores": false
+  }
 }

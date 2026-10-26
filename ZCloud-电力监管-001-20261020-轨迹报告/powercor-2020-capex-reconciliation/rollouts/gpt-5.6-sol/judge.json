@@ -222,7 +222,7 @@
     "old_reward": 0.0,
     "new_reward": 0.0,
     "saved_llm_candidate_sha256": "ce5bea3d6237fc387f212ca0a4d338f4046c0c8e90e01a342576a3ec157b9927",
-    "saved_llm_details": "reward-details.round1.json",
+    "saved_llm_details": "../../history/rollouts/gpt-5.6-sol/reward-details.round1.json",
     "new_llm_calls": 0,
     "scope": "Saved L01-L03 reused unchanged; historical golden repeats are not fresh round-2 runs."
   },

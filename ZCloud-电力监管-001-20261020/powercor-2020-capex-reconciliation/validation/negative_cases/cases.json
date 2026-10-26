@@ -1,7 +1,19 @@
 {
   "scorer_version": "v2 (2026-10-26)",
   "scope": "programmatic subset only; no new LLM judgments",
-  "negative_cases": [
+  "independent_calculation": {
+    "asset_classes": 12,
+    "applicable_rate": 0.05008580413845842,
+    "year_end_factor": 1.0247369438731377,
+    "totals": {
+      "network": 13.690108344179393,
+      "non-network": -11.546100406081122,
+      "all": 1.1431857863293873
+    },
+    "max_absolute_difference": 6.461498003318411e-14
+  },
+  "precision_rule": "p decimals: a matching number_format or stored value equal to round(value,p); at least p also accepts stored decimal places >= p. Numeric tolerance is separate.",
+  "cases": [
     {
       "case": "sheet_renamed",
       "workbook": "sheet_renamed.xlsx",
@@ -35,7 +47,9 @@
         "R01",
         "R02",
         "R03"
-      ]
+      ],
+      "file": "sheet_renamed.xlsx",
+      "category": "negative"
     },
     {
       "case": "header_reversed",
@@ -78,7 +92,9 @@
         "R01",
         "R02",
         "R03"
-      ]
+      ],
+      "file": "header_reversed.xlsx",
+      "category": "negative"
     },
     {
       "case": "unit_wrong",
@@ -109,7 +125,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "unit_wrong.xlsx",
+      "category": "negative"
     },
     {
       "case": "sources_empty",
@@ -140,7 +158,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "sources_empty.xlsx",
+      "category": "negative"
     },
     {
       "case": "rows_reversed",
@@ -169,7 +189,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "rows_reversed.xlsx",
+      "category": "negative"
     },
     {
       "case": "rounded_two_general",
@@ -196,7 +218,9 @@
       },
       "numeric_criteria_failed": [
         "R02"
-      ]
+      ],
+      "file": "rounded_two_general.xlsx",
+      "category": "negative"
     },
     {
       "case": "sheet_case",
@@ -231,7 +255,9 @@
         "R01",
         "R02",
         "R03"
-      ]
+      ],
+      "file": "sheet_case.xlsx",
+      "category": "negative"
     },
     {
       "case": "sheet_missing",
@@ -266,7 +292,9 @@
         "R01",
         "R02",
         "R03"
-      ]
+      ],
+      "file": "sheet_missing.xlsx",
+      "category": "negative"
     },
     {
       "case": "source_header_missing",
@@ -297,7 +325,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "source_header_missing.xlsx",
+      "category": "negative"
     },
     {
       "case": "header_case",
@@ -328,7 +358,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "header_case.xlsx",
+      "category": "negative"
     },
     {
       "case": "header_order_only",
@@ -359,7 +391,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "header_order_only.xlsx",
+      "category": "negative"
     },
     {
       "case": "header_shifted",
@@ -393,7 +427,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "header_shifted.xlsx",
+      "category": "negative"
     },
     {
       "case": "rows_shifted",
@@ -422,7 +458,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "rows_shifted.xlsx",
+      "category": "negative"
     },
     {
       "case": "source_one_empty",
@@ -453,7 +491,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "source_one_empty.xlsx",
+      "category": "negative"
     },
     {
       "case": "sources_numeric",
@@ -484,7 +524,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "sources_numeric.xlsx",
+      "category": "negative"
     },
     {
       "case": "sources_numeric_text",
@@ -515,7 +557,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "sources_numeric_text.xlsx",
+      "category": "negative"
     },
     {
       "case": "unit_case",
@@ -546,7 +590,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "unit_case.xlsx",
+      "category": "negative"
     },
     {
       "case": "extra_record",
@@ -577,7 +623,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "extra_record.xlsx",
+      "category": "negative"
     },
     {
       "case": "extra_text_record",
@@ -608,7 +656,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "extra_text_record.xlsx",
+      "category": "negative"
     },
     {
       "case": "duplicate_record",
@@ -639,7 +689,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "duplicate_record.xlsx",
+      "category": "negative"
     },
     {
       "case": "orphan_value",
@@ -670,7 +722,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "orphan_value.xlsx",
+      "category": "negative"
     },
     {
       "case": "rounded_two_formatted",
@@ -697,7 +751,9 @@
       },
       "numeric_criteria_failed": [
         "R02"
-      ]
+      ],
+      "file": "rounded_two_formatted.xlsx",
+      "category": "negative"
     },
     {
       "case": "nonnumeric_value",
@@ -726,7 +782,9 @@
           "maximum_score": 0.69
         }
       },
-      "numeric_criteria_failed": []
+      "numeric_criteria_failed": [],
+      "file": "nonnumeric_value.xlsx",
+      "category": "negative"
     },
     {
       "case": "outside_tolerance",
@@ -753,73 +811,9 @@
       },
       "numeric_criteria_failed": [
         "R01"
-      ]
+      ],
+      "file": "outside_tolerance.xlsx",
+      "category": "negative"
     }
-  ],
-  "positive_controls": [
-    {
-      "case": "golden",
-      "program_score": 1
-    },
-    {
-      "case": "full_precision_general",
-      "program_score": 1
-    },
-    {
-      "case": "rounded_three",
-      "program_score": 1
-    },
-    {
-      "case": "rounded_three_general",
-      "program_score": 1
-    },
-    {
-      "case": "rounded_asset_aggregation",
-      "program_score": 1
-    },
-    {
-      "case": "inside_tolerance",
-      "program_score": 1
-    },
-    {
-      "case": "extra_support_sheet",
-      "program_score": 1
-    },
-    {
-      "case": "header_spaces",
-      "program_score": 1
-    },
-    {
-      "case": "empty_styled_column",
-      "program_score": 1
-    },
-    {
-      "case": "extra_column",
-      "program_score": 1
-    },
-    {
-      "case": "extra_column_no_header",
-      "program_score": 1
-    },
-    {
-      "case": "two_decimal_display",
-      "program_score": 1
-    },
-    {
-      "case": "label_only_note",
-      "program_score": 1
-    }
-  ],
-  "independent_calculation": {
-    "asset_classes": 12,
-    "applicable_rate": 0.05008580413845842,
-    "year_end_factor": 1.0247369438731377,
-    "totals": {
-      "network": 13.690108344179393,
-      "non-network": -11.546100406081122,
-      "all": 1.1431857863293873
-    },
-    "max_absolute_difference": 6.461498003318411e-14
-  },
-  "precision_rule": "p decimals: a matching number_format or stored value equal to round(value,p); at least p also accepts stored decimal places >= p. Numeric tolerance is separate."
+  ]
 }

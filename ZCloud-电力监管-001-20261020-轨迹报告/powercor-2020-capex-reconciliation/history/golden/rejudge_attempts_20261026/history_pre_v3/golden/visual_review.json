@@ -1,0 +1,37 @@
+{
+  "format": "xlsx",
+  "reviewed_at": "2026-10-25",
+  "renderer": "LibreOffice 26.2.5.2 / calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+  "scope": "修订后的两张工作表各导出一页A3横向PDF及120dpi PNG；临时导出副本只保留目标工作表，不改变原工作簿的两表结构。",
+  "worksheet_count": 2,
+  "render_count": 2,
+  "renders": [
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png"
+    },
+    {
+      "sheet": "Working",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png"
+    }
+  ],
+  "render_status": "COMPLETED",
+  "visual_inspection_status": "COMPLETED",
+  "visual_findings": [],
+  "historical_scores_changed": false,
+  "ppt_checks": {
+    "status": "NOT_APPLICABLE",
+    "reason": "xlsx工作表不是幻灯片；不检查PPT页数、母版或放映。"
+  },
+  "inspection_method": "逐张查看Results和Working的完整PNG；同时核对PDF页数及可提取文本。不调用视觉模型或OCR。",
+  "inspection_coverage": [
+    "Results",
+    "Working"
+  ],
+  "layout_finding_handling": "已调整列宽、换行、行高和数值格式；Results三条来源完整可读，Working逐项来源及Applicable rate和年末因子分行呈现。",
+  "score_scope": "本轮程序复算与一次真实LLM裁判已分别记录；该视觉检查不证明LLM判定可信。",
+  "round2_note": "工作簿和渲染字节未变，重用第一轮检查；不是本轮新渲染。程序分1.0，首次新LLM合成分0.70；仅1/5次，LLM质量与一致性未建立。"
+}

@@ -1,0 +1,148 @@
+{
+  "method": "以参考答案为底，前 k 项计分结果保持正确，其余结果乘以 1.25，用题包自带的离线程序评分器打分；其他工作表不跟着改，所以跨表一致性扣分项会按实际情况触发；总分按 rubrics.json 的公式计算，LLM 扣分项按未违规处理（需要付费裁判）。没有调用模型或裁判。",
+  "s_max": 34,
+  "cases": [
+    {
+      "case": "0_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R01",
+          "cell": "Results!B2",
+          "reference": 61.7,
+          "set_to": 77.125
+        },
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 12.13850088530396,
+          "set_to": 15.173126
+        },
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 0.0,
+        "R02": 0.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1",
+        "P2"
+      ],
+      "programmatic_total": 0
+    },
+    {
+      "case": "1_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 12.13850088530396,
+          "set_to": 15.173126
+        },
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 0.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1"
+      ],
+      "programmatic_total": 0.205882
+    },
+    {
+      "case": "2_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1"
+      ],
+      "programmatic_total": 0.5
+    },
+    {
+      "case": "3_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 1.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.794118
+    },
+    {
+      "case": "4_of_4_positive_results_correct",
+      "changed_cells": [],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 1.0,
+        "A2": 1.0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 1
+    }
+  ],
+  "model_answers": {
+    "gpt-5.6-sol": 0.205882,
+    "claude-opus-4-8": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "text_judgment_scope": "partial-credit controls have no new text judgment; reported scores are programmatic only",
+  "reference_score": 1.0,
+  "reference_status": "PROVISIONAL_SAVED_VALID_TEXT",
+  "reference_score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "invalid_judge_attempts_excluded": true
+}

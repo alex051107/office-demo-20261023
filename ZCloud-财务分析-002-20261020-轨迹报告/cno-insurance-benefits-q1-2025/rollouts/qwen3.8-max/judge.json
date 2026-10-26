@@ -504,7 +504,7 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "qwen3.8-max_r1",
-  "reward_details_sha256": "33626d0042df18931390d82002598a90e6b5edb5cd9fcc845adea26be7625f86",
+  "reward_details_sha256": "c6c7391810fcd5974014cf84d2a846e9a4aee3e6b823ba2fa3f0498d330343e0",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 0.0,
   "llm_status": "COMPLETED",
@@ -520,7 +520,7 @@
     "evaluated_at": "2026-10-25T20:23:20.510036-04:00",
     "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
-    "saved_text_details": "reward-details.v1.json",
+    "saved_text_details": "../../history/rollouts/qwen3.8-max/reward-details.v1.json",
     "saved_candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
     "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
     "candidate_changed_since_saved_text_judgment": false

@@ -1,0 +1,1873 @@
+{
+  "baseline_program_score": 1.0,
+  "cases": [
+    {
+      "file": "both_sheets_renamed.xlsx",
+      "mutation": "Results、Detail 均改错表名",
+      "expected_outcome": "gate",
+      "old_score_from_review": 0.882353,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S01",
+        "S02",
+        "S04",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "required_sheet_missing_or_misnamed"
+        },
+        {
+          "sheet": "Detail",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": true,
+          "maximum_score": 0.0,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_sheet_missing_or_misnamed"
+            },
+            {
+              "sheet": "Detail",
+              "reason": "required_sheet_missing_or_misnamed"
+            }
+          ]
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            },
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_columns_reversed.xlsx",
+      "mutation": "Results 四列逆序",
+      "expected_outcome": "cap",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.058824,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_header_prefix_mismatch",
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ],
+              "observed": [
+                "source_note",
+                "unit",
+                "value",
+                "label"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            },
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            },
+            {
+              "sheet": "Results",
+              "row": 2,
+              "label": "agreement.pdf, pdf p.5 sections 3c-3d: earned term-revenue commission and normal payment timing; pdf p.7 section 4f: early termination accelerates the entire unpaid base fees, commissions and expenses. records.pdf, pdf p.2 plans, plan a: termination 2007-12-31, no amendments or other principal. pdf p.3 sponsorships, records a1 and a2: term cash usd 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission usd 58,200. pdf p.4 broker payments, plan a, 2007-07-15 usd 9,200 and 2007-08-15 usd 6,800. agreement.pdf, pdf p.4 section 3a, and records.pdf, pdf p.5 other payments: base fee fully paid, expenses zero. detail record a date comes from plans; value and this principal balance are usd 42,200 = 58,200 - 9,200 - 6,800",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            },
+            {
+              "sheet": "Results",
+              "row": 3,
+              "label": "agreement.pdf, pdf p.5 sections 3c-3d: earned term-revenue commission and normal payment timing; pdf p.7 section 4f: early termination accelerates the entire unpaid base fees, commissions and expenses. records.pdf, pdf p.2 plans, plan b: termination 2007-12-31, no amendments or other principal. pdf p.3 sponsorships, records b1 and b2: term cash usd 318,000 and 429,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission usd 74,700. pdf p.4 broker payments, plan b, 2007-07-15 usd 11,200 and 2007-08-15 usd 8,300. agreement.pdf, pdf p.4 section 3a, and records.pdf, pdf p.5 other payments: base fee fully paid, expenses zero. detail record b date comes from plans; value and this principal balance are usd 55,200 = 74,700 - 11,200 - 8,300",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            },
+            {
+              "sheet": "Results",
+              "row": 4,
+              "label": "agreement.pdf, pdf p.5 sections 3c-3d: earned term-revenue commission and normal payment timing; pdf p.7 section 4f: early termination accelerates the entire unpaid base fees, commissions and expenses. records.pdf, pdf p.2 plans, plan c: termination 2007-12-31, no amendments or other principal. pdf p.3 sponsorships, records c1 and c2: term cash usd 287,000 and 386,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission usd 67,300. pdf p.4 broker payments, plan c, 2007-07-15 usd 9,700 and 2007-08-15 usd 7,100. agreement.pdf, pdf p.4 section 3a, and records.pdf, pdf p.5 other payments: base fee fully paid, expenses zero. detail record c date comes from plans; value and this principal balance are usd 50,500 = 67,300 - 9,700 - 7,100",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_rows_reversed.xlsx",
+      "mutation": "Results 三行逆序",
+      "expected_outcome": "S01",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "units_eur.xlsx",
+      "mutation": "Results USD 改为 EUR",
+      "expected_outcome": "cap",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_columns_reversed.xlsx",
+      "mutation": "Detail 三列逆序",
+      "expected_outcome": "cap",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.235294,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S03",
+        "P02",
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "reason": "required_header_prefix_mismatch",
+              "expected": [
+                "plan",
+                "date",
+                "value"
+              ],
+              "observed": [
+                "value",
+                "date",
+                "plan"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "row": 2,
+              "label": "42200",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            },
+            {
+              "sheet": "Detail",
+              "row": 3,
+              "label": "55200",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            },
+            {
+              "sheet": "Detail",
+              "row": 4,
+              "label": "50500",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "sources_empty.xlsx",
+      "mutation": "清空全部 Results source_note",
+      "expected_outcome": "cap",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "sources_header_empty.xlsx",
+      "mutation": "来源列连表头一并清空",
+      "expected_outcome": "cap",
+      "old_score_from_review": 0.941176,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03",
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_header_prefix_mismatch",
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ],
+              "observed": [
+                "label",
+                "value",
+                "unit"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_plan_d.xlsx",
+      "mutation": "Results 尾部新增 Plan D=999999",
+      "expected_outcome": "cap",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "row": 5,
+              "label": "plan d principal balance",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_plus_cent.xlsx",
+      "mutation": "Results 三项各增加 USD 0.01",
+      "expected_outcome": "numeric",
+      "old_score_from_review": 1.0,
+      "old_score_scope": "reviewer programmatic subset",
+      "new_program_score": 0.411765,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_missing.xlsx",
+      "mutation": "删除必需 Results 表",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S04",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": true,
+          "maximum_score": 0.0,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_sheet_missing_or_misnamed"
+            }
+          ]
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            },
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_missing.xlsx",
+      "mutation": "删除必需 Detail 表",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": true,
+          "maximum_score": 0.0,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "reason": "required_sheet_missing_or_misnamed"
+            }
+          ]
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_header_case.xlsx",
+      "mutation": "Results 表头 value 改为 Value",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_header_prefix_mismatch",
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ],
+              "observed": [
+                "label",
+                "Value",
+                "unit",
+                "source_note"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_header_case.xlsx",
+      "mutation": "Detail 表头 date 改为 Date",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "reason": "required_header_prefix_mismatch",
+              "expected": [
+                "plan",
+                "date",
+                "value"
+              ],
+              "observed": [
+                "plan",
+                "Date",
+                "value"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_extra_column.xlsx",
+      "mutation": "Results 增加第五列",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "detail_extra_column.xlsx",
+      "mutation": "Detail 增加第四列",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "detail_plan_d.xlsx",
+      "mutation": "Detail 尾部新增 Plan D",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "row": 5,
+              "label": "d",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_duplicate.xlsx",
+      "mutation": "Results 重复 Plan A 记录",
+      "expected_outcome": "S05",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_duplicate.xlsx",
+      "mutation": "Detail 重复 A 记录",
+      "expected_outcome": "P02",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_blank_label.xlsx",
+      "mutation": "Results 增加无标签金额记录",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "row": 5,
+              "label": null,
+              "reason": "business_row_without_label",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_blank_label.xlsx",
+      "mutation": "Detail 增加无标签金额记录",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "row": 5,
+              "label": null,
+              "reason": "business_row_without_label",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "source_one_empty.xlsx",
+      "mutation": "只清空 Results D3",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "sources_numeric.xlsx",
+      "mutation": "来源说明全部替换为金额数字",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "sources_whitespace.xlsx",
+      "mutation": "来源说明全部替换为空白",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_general.xlsx",
+      "mutation": "Results 整数金额使用 General，存值已等于两位舍入",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "detail_general.xlsx",
+      "mutation": "Detail 整数金额使用 General，存值已等于两位舍入",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "money_one_decimal.xlsx",
+      "mutation": "六个整数金额显示一位，存值已等于两位舍入",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "money_three_decimals.xlsx",
+      "mutation": "六个整数金额显示三位，存值已等于两位舍入",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "detail_plus_cent.xlsx",
+      "mutation": "Detail 三项各增加 USD 0.01",
+      "expected_outcome": "numeric",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.588235,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "units_case.xlsx",
+      "mutation": "Results USD 改为 usd",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_blank_row.xlsx",
+      "mutation": "Results 首条结果前插入空行",
+      "expected_outcome": "S01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "wrong_date.xlsx",
+      "mutation": "Detail A 日期改为 2008-01-01",
+      "expected_outcome": "V01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "V01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "support_error.xlsx",
+      "mutation": "支持表出现未计分的 Excel 错误",
+      "expected_outcome": "P01",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "P01"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "header_trailing_spaces.xlsx",
+      "mutation": "两个表的必需表头带前后空格",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "extra_styled_column.xlsx",
+      "mutation": "两个表增加空白但有样式的列",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "additional_support_sheet.xlsx",
+      "mutation": "增加自由组织支持表",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "equivalent_storage.xlsx",
+      "mutation": "六个存值为整数，数字格式为 General",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "formatted_subcent.xlsx",
+      "mutation": "存值多 0.001 USD，格式显示两位",
+      "expected_outcome": "positive",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 1.0,
+      "penalties_triggered": [],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "positive_control"
+    },
+    {
+      "file": "stored_cent.xlsx",
+      "mutation": "存值多 0.004 USD，General 格式未显示两位",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "three_decimal_subcent.xlsx",
+      "mutation": "存值多 0.001 USD，格式显示三位",
+      "expected_outcome": "S06",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.941176,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "sources_numeric_text.xlsx",
+      "mutation": "来源说明替换为数值字符串",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_sheet_case.xlsx",
+      "mutation": "必需表名 Results 改为 results",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S04",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Results",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": true,
+          "maximum_score": 0.0,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required_sheet_missing_or_misnamed"
+            }
+          ]
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            },
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_sheet_case.xlsx",
+      "mutation": "必需表名 Detail 改为 detail",
+      "expected_outcome": "gate",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "V01",
+        "V02",
+        "V03",
+        "S06"
+      ],
+      "interface_gate_passed": false,
+      "interface_errors": [
+        {
+          "sheet": "Detail",
+          "reason": "required_sheet_missing_or_misnamed"
+        }
+      ],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": true,
+          "maximum_score": 0.0,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "reason": "required_sheet_missing_or_misnamed"
+            }
+          ]
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "detail_plan_d_zero.xlsx",
+      "mutation": "额外 Plan D 金额为零仍属业务记录",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "P02"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Detail",
+              "row": 5,
+              "label": "d",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_unknown_label.xlsx",
+      "mutation": "Results 非规定标签保留业务金额",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.509804,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "criterion_id": "S04",
+              "reason": "required_source_empty_or_numeric_only"
+            },
+            {
+              "criterion_id": "S02",
+              "reason": "required_unit_mismatch"
+            },
+            {
+              "sheet": "Results",
+              "row": 2,
+              "label": "other principal balance",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    },
+    {
+      "file": "results_label_case.xlsx",
+      "mutation": "Results 标签大小写不符但保留金额",
+      "expected_outcome": "cap",
+      "old_score_from_review": null,
+      "old_score_scope": "not reviewed",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S01",
+        "S05"
+      ],
+      "interface_gate_passed": true,
+      "interface_errors": [],
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": true,
+          "maximum_score": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "row": 2,
+              "label": "plan a principal balance",
+              "reason": "unexpected_record",
+              "has_business_value": true
+            }
+          ]
+        }
+      ],
+      "category": "negative"
+    }
+  ],
+  "precision_rule": "p decimals: format shows p decimals OR stored value equals round(value,p); at least p also accepts stored precision >=p.",
+  "controls": [
+    "additional_support_sheet=1",
+    "tolerance_0.0049=accepted",
+    "tolerance_0.005=accepted",
+    "tolerance_0.0051=rejected",
+    "missing_output=0"
+  ],
+  "llm_status": "NOT_RUN"
+}

@@ -1,0 +1,202 @@
+{
+  "status": "PARSED",
+  "sheets": {
+    "Results": {
+      "actual_name": "Results",
+      "headers": [
+        "label",
+        "value",
+        "unit",
+        "source_note"
+      ],
+      "records": {
+        "plan a principal balance": [
+          {
+            "label": {
+              "raw": "Plan A principal balance",
+              "cell": "Results!A2",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 42200,
+              "cell": "Results!B2",
+              "number_format": "#,##0.00"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C2",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan A: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records A1 and A2: term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200. PDF p.4 Broker payments, Plan A, 2007-07-15 USD 9,200 and 2007-08-15 USD 6,800. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record A date comes from Plans; value and this principal balance are USD 42,200 = 58,200 - 9,200 - 6,800.",
+              "cell": "Results!D2",
+              "number_format": "General"
+            }
+          }
+        ],
+        "plan b principal balance": [
+          {
+            "label": {
+              "raw": "Plan B principal balance",
+              "cell": "Results!A3",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 55200,
+              "cell": "Results!B3",
+              "number_format": "#,##0.00"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C3",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan B: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records B1 and B2: term cash USD 318,000 and 429,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 74,700. PDF p.4 Broker payments, Plan B, 2007-07-15 USD 11,200 and 2007-08-15 USD 8,300. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record B date comes from Plans; value and this principal balance are USD 55,200 = 74,700 - 11,200 - 8,300.",
+              "cell": "Results!D3",
+              "number_format": "General"
+            }
+          }
+        ],
+        "plan c principal balance": [
+          {
+            "label": {
+              "raw": "Plan C principal balance",
+              "cell": "Results!A4",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 50500,
+              "cell": "Results!B4",
+              "number_format": "#,##0.00"
+            },
+            "unit": {
+              "raw": "USD",
+              "cell": "Results!C4",
+              "number_format": "General"
+            },
+            "source_note": {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan C: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records C1 and C2: term cash USD 287,000 and 386,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 67,300. PDF p.4 Broker payments, Plan C, 2007-07-15 USD 9,700 and 2007-08-15 USD 7,100. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record C date comes from Plans; value and this principal balance are USD 50,500 = 67,300 - 9,700 - 7,100.",
+              "cell": "Results!D4",
+              "number_format": "General"
+            }
+          }
+        ]
+      },
+      "rows": [
+        "plan a principal balance",
+        "plan b principal balance",
+        "plan c principal balance"
+      ],
+      "raw_labels": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "row_numbers": [
+        2,
+        3,
+        4
+      ],
+      "unsupported": []
+    },
+    "Detail": {
+      "actual_name": "Detail",
+      "headers": [
+        "plan",
+        "date",
+        "value"
+      ],
+      "records": {
+        "a": [
+          {
+            "plan": {
+              "raw": "A",
+              "cell": "Detail!A2",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B2",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 42200,
+              "cell": "Detail!C2",
+              "number_format": "#,##0.00"
+            }
+          }
+        ],
+        "b": [
+          {
+            "plan": {
+              "raw": "B",
+              "cell": "Detail!A3",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B3",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 55200,
+              "cell": "Detail!C3",
+              "number_format": "#,##0.00"
+            }
+          }
+        ],
+        "c": [
+          {
+            "plan": {
+              "raw": "C",
+              "cell": "Detail!A4",
+              "number_format": "General"
+            },
+            "date": {
+              "raw": "2007-12-31",
+              "cell": "Detail!B4",
+              "number_format": "General"
+            },
+            "value": {
+              "raw": 50500,
+              "cell": "Detail!C4",
+              "number_format": "#,##0.00"
+            }
+          }
+        ]
+      },
+      "rows": [
+        "a",
+        "b",
+        "c"
+      ],
+      "raw_labels": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "row_numbers": [
+        2,
+        3,
+        4
+      ],
+      "unsupported": []
+    }
+  },
+  "errors": [],
+  "interface_errors": [],
+  "header_errors": []
+}

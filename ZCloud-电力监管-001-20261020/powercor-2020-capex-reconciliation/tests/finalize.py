@@ -13,6 +13,14 @@ import pathlib
 import re
 
 
+def llm_evidence_errors(details, candidate=pathlib.Path('/app/output/answer.xlsx')):
+    here = pathlib.Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location('artifact_evidence_check', here / 'llm_artifact_check.py')
+    checker = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checker)
+    return checker.evidence_errors(details, candidate)
+
+
 def load_json(path):
     """读取 JSON；不可读或解析失败返回 None。"""
     try:
@@ -116,14 +124,14 @@ def apply_score_policy(pooled, policy):
     return pooled
 
 
-def attach_score_policy(details):
+def attach_score_policy(details, candidate='/app/output/answer.xlsx'):
     if 'score_policy' not in details:
         here = pathlib.Path(__file__).resolve().parent
         spec = importlib.util.spec_from_file_location('finalizer_contract', here / 'score_output.py')
         engine = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(engine)
         key = load_json(here / 'results_key.json')
-        evidence = engine.extract(pathlib.Path('/app/output/answer.xlsx'), key)
+        evidence = engine.extract(pathlib.Path(candidate), key)
         result = engine.score(evidence, key)
         details['score_policy'] = result['score_policy']
     return details['score_policy']
@@ -210,6 +218,8 @@ def classify_exit(args, result):
     无论哪种，exit_reason 都是 Reward Kit 自己的原话（error 字段或 stderr 末尾），
     不做二次加工——排查时看到的应当是判分器实际报了什么。
     """
+    if result.get('llm_evidence_errors'):
+        return 'judge:artifact_access_error', result['llm_evidence_errors'][0]['reason']
     detail_msgs = detail_error_messages(pathlib.Path(args.graded))
     stderr_tail = read_stderr_tail(pathlib.Path(args.graded))
     haystack = " | ".join(detail_msgs) + "\n" + stderr_tail
@@ -245,7 +255,7 @@ def compute(args):
     pooled, counted, broken = pooled_score(graded_details)
     score = 0.0
     if pooled is not None and broken == 0:
-        policy = attach_score_policy(graded_details)
+        policy = attach_score_policy(graded_details, getattr(args, 'candidate', '/app/output/answer.xlsx'))
         score = round(apply_score_policy(pooled, policy), 6)
         graded_path.with_name('reward-details.json').write_text(
             json.dumps(graded_details, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
@@ -255,10 +265,16 @@ def compute(args):
     if soft is not None:
         soft = round(soft, 6)
 
+    evidence_failures = llm_evidence_errors(graded_details, getattr(args, 'candidate', '/app/output/answer.xlsx'))
+    if graded_details is not None:
+        graded_details['llm_evidence_errors'] = evidence_failures
+        graded_path.with_name('reward-details.json').write_text(json.dumps(graded_details, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
     graded_ok = (args.graded_rc == 0 and bool(dims) and pooled is not None
-                 and counted > 0 and broken == 0)
+                 and counted > 0 and broken == 0 and not evidence_failures)
 
     result = dict(dims)
+    result['llm_evidence_errors'] = evidence_failures
     result["graded_score"] = score
     result['signed_pooled_score'] = 0.0 if pooled is None else round(pooled, 6)
     result["criteria_counted"] = float(counted)
@@ -279,6 +295,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--graded", required=True)
     parser.add_argument("--graded-rc", type=int, required=True)
+    parser.add_argument("--candidate", type=pathlib.Path, default=pathlib.Path("/app/output/answer.xlsx"))
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
 

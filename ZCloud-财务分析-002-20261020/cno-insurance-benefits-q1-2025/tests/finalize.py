@@ -5,6 +5,7 @@
 并显式区分"评分不可用"与"确实得零分"。
 """
 import argparse
+import importlib.util
 import sys
 import json
 import math
@@ -21,18 +22,12 @@ def apply_post_pool_rules(details, score):
     return score
 
 
-def llm_evidence_errors(details):
-    failures = []
-    for entry in (details or {}).values():
-        blocks = entry if isinstance(entry, list) else [entry]
-        for block in blocks:
-            if not isinstance(block, dict) or block.get('kind') != 'agent':
-                continue
-            for item in block.get('criteria', []):
-                reason = item.get('reasoning', '')
-                if re.search(r'无法解析候选文件|文件无法解析|无法解析工作簿|(?:cannot|could not|unable to) (?:read|parse|open) (?:the )?(?:candidate|workbook|xlsx)', reason, re.I):
-                    failures.append({'criterion_id': item.get('id', item.get('name')), 'reason': reason})
-    return failures
+def llm_evidence_errors(details, candidate=pathlib.Path('/app/output/answer.xlsx')):
+    here = pathlib.Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location('artifact_evidence_check', here / 'llm_artifact_check.py')
+    checker = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checker)
+    return checker.evidence_errors(details, candidate)
 
 
 def load_json(path):
@@ -249,7 +244,7 @@ def compute(args):
     if graded_details is not None and 'post_pool_rules' not in graded_details:
         from score_output import extract, score as score_workbook
         key = load_json(pathlib.Path(__file__).with_name('results_key.json'))
-        policy = score_workbook(extract(pathlib.Path('/app/output/answer.xlsx'), key), key)
+        policy = score_workbook(extract(pathlib.Path(getattr(args, 'candidate', '/app/output/answer.xlsx')), key), key)
         graded_details['interface_gate'] = policy['interface_gate']
         graded_details['post_pool_rules'] = policy['post_pool_rules']
         graded_path.with_name('reward-details.json').write_text(json.dumps(graded_details, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -263,16 +258,21 @@ def compute(args):
     if soft is not None:
         soft = round(soft, 6)
 
+    evidence_failures = llm_evidence_errors(graded_details, getattr(args, 'candidate', '/app/output/answer.xlsx'))
+    if graded_details is not None:
+        graded_details['llm_evidence_errors'] = evidence_failures
+        graded_path.with_name('reward-details.json').write_text(json.dumps(graded_details, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
     graded_ok = (args.graded_rc == 0 and bool(dims) and pooled is not None
-                 and counted > 0 and broken == 0 and not llm_evidence_errors(graded_details))
+                 and counted > 0 and broken == 0 and not evidence_failures)
 
     result = dict(dims)
+    result['llm_evidence_errors'] = evidence_failures
     result["graded_score"] = score
     result["criteria_counted"] = float(counted)
     result['score_before_post_pool_rules'] = uncapped_score
     result['interface_gate'] = (graded_details or {}).get('interface_gate', {})
     result['post_pool_rules'] = (graded_details or {}).get('post_pool_rules', [])
-    result['llm_evidence_errors'] = llm_evidence_errors(graded_details)
     if soft is not None:
         result["soft_score"] = soft
     # 评分不可用时主分一律记 0：宁可保守低估，也不要因为把异常条目排除在分母之外
@@ -290,6 +290,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--graded", required=True)
     parser.add_argument("--graded-rc", type=int, required=True)
+    parser.add_argument("--candidate", type=pathlib.Path, default=pathlib.Path("/app/output/answer.xlsx"))
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
 

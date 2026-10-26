@@ -1,0 +1,825 @@
+{
+  "scorer_version": "v2 (2026-10-26)",
+  "scope": "programmatic subset only; no new LLM judgments",
+  "negative_cases": [
+    {
+      "case": "sheet_renamed",
+      "workbook": "sheet_renamed.xlsx",
+      "mutation": "Results改错表名",
+      "expected_outcome": "interface_gate_0",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": 0.0,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": true,
+          "reasons": [
+            "required sheet 'Results' is missing or misnamed"
+          ],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R01",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "case": "header_reversed",
+      "workbook": "header_reversed.xlsx",
+      "mutation": "Results四列逆序",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": 0.9,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0,
+      "penalties_triggered": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "signed_pooled_score": 0,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "Results first columns ['source_note', 'unit', 'value', 'label']; expected ['label', 'value', 'unit', 'source_note']",
+            "units not exactly as specified: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']",
+            "missing or non-textual source references: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']",
+            "fabricated extra business records in rows [2, 3, 4]"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R01",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "case": "unit_wrong",
+      "workbook": "unit_wrong.xlsx",
+      "mutation": "单位改为USD thousand real",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S02"
+      ],
+      "old_review_program_score": 0.9,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "units not exactly as specified: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "sources_empty",
+      "workbook": "sources_empty.xlsx",
+      "mutation": "清空三条source_note",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S03"
+      ],
+      "old_review_program_score": 1.0,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "missing or non-textual source references: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "rows_reversed",
+      "workbook": "rows_reversed.xlsx",
+      "mutation": "Results三条结果逆序",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [
+        "S04"
+      ],
+      "old_review_program_score": 1.0,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0.9,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "rounded_two_general",
+      "workbook": "rounded_two_general.xlsx",
+      "mutation": "三项四舍五入两位且为General；存储精度合规但数值误差失分",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [],
+      "old_review_program_score": 1.0,
+      "old_score_source": "review section 三·A",
+      "new_program_score": 0.666667,
+      "penalties_triggered": [],
+      "signed_pooled_score": 0.666667,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R02"
+      ]
+    },
+    {
+      "case": "sheet_case",
+      "workbook": "sheet_case.xlsx",
+      "mutation": "Results仅表名大小写错误",
+      "expected_outcome": "interface_gate_0",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": true,
+          "reasons": [
+            "required sheet 'Results' is missing or misnamed"
+          ],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R01",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "case": "sheet_missing",
+      "workbook": "sheet_missing.xlsx",
+      "mutation": "删除Results表",
+      "expected_outcome": "interface_gate_0",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.0,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": true,
+          "reasons": [
+            "required sheet 'Results' is missing or misnamed"
+          ],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R01",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "case": "source_header_missing",
+      "workbook": "source_header_missing.xlsx",
+      "mutation": "source_note表头清空",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "Results first columns ['label', 'value', 'unit', None]; expected ['label', 'value', 'unit', 'source_note']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "header_case",
+      "workbook": "header_case.xlsx",
+      "mutation": "label表头大小写错误",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "Results first columns ['Label', 'value', 'unit', 'source_note']; expected ['label', 'value', 'unit', 'source_note']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "header_order_only",
+      "workbook": "header_order_only.xlsx",
+      "mutation": "仅交换前两个表头，数值内容不变",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S01"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "Results first columns ['value', 'label', 'unit', 'source_note']; expected ['label', 'value', 'unit', 'source_note']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "header_shifted",
+      "workbook": "header_shifted.xlsx",
+      "mutation": "表头移至第二行",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S01"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "signed_pooled_score": 0.7,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "Results first columns [None, None, None, None]; expected ['label', 'value', 'unit', 'source_note']",
+            "fabricated extra business records in rows [2]"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "rows_shifted",
+      "workbook": "rows_shifted.xlsx",
+      "mutation": "必需结果移至第3至5行",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [
+        "S04"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.9,
+      "penalties_triggered": [
+        "S04"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "source_one_empty",
+      "workbook": "source_one_empty.xlsx",
+      "mutation": "仅一条source_note为空",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S03"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "missing or non-textual source references: ['2020 network net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "sources_numeric",
+      "workbook": "sources_numeric.xlsx",
+      "mutation": "来源说明全部换成纯数字",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S03"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "missing or non-textual source references: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "sources_numeric_text",
+      "workbook": "sources_numeric_text.xlsx",
+      "mutation": "来源说明全部换成纯数字字符串",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S03"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S03"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "missing or non-textual source references: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "unit_case",
+      "workbook": "unit_case.xlsx",
+      "mutation": "单位大小写与题面不一致",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S02"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S02"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "units not exactly as specified: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "extra_record",
+      "workbook": "extra_record.xlsx",
+      "mutation": "尾部新增未请求的数字业务行",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S05"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "fabricated extra business records in rows [5]"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "extra_text_record",
+      "workbook": "extra_text_record.xlsx",
+      "mutation": "尾部新增未请求的文字业务行",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S05"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "fabricated extra business records in rows [5]"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "duplicate_record",
+      "workbook": "duplicate_record.xlsx",
+      "mutation": "重复首条必需业务行",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [
+        "S04",
+        "S05"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.8,
+      "penalties_triggered": [
+        "S04",
+        "S05"
+      ],
+      "signed_pooled_score": 0.8,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "orphan_value",
+      "workbook": "orphan_value.xlsx",
+      "mutation": "无标签但有金额的额外业务行",
+      "expected_outcome": "must_clause_cap_0.69",
+      "expected_penalties": [
+        "S05"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.69,
+      "penalties_triggered": [
+        "S05"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": true,
+          "reasons": [
+            "fabricated extra business records in rows [5]"
+          ],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "rounded_two_formatted",
+      "workbook": "rounded_two_formatted.xlsx",
+      "mutation": "两位存储值以0.000显示",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.666667,
+      "penalties_triggered": [],
+      "signed_pooled_score": 0.666667,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R02"
+      ]
+    },
+    {
+      "case": "nonnumeric_value",
+      "workbook": "nonnumeric_value.xlsx",
+      "mutation": "一条结果换成文本而非数值",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [
+        "S06"
+      ],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.9,
+      "penalties_triggered": [
+        "S06"
+      ],
+      "signed_pooled_score": 0.9,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": []
+    },
+    {
+      "case": "outside_tolerance",
+      "workbook": "outside_tolerance.xlsx",
+      "mutation": "第一项增加0.00151超出该派生行0.0015容差",
+      "expected_outcome": "penalty_below_1",
+      "expected_penalties": [],
+      "old_review_program_score": null,
+      "old_score_source": "未在原审查中运行",
+      "new_program_score": 0.666667,
+      "penalties_triggered": [],
+      "signed_pooled_score": 0.666667,
+      "score_policy": {
+        "required_sheet_gate": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.0
+        },
+        "must_clause_cap": {
+          "triggered": false,
+          "reasons": [],
+          "maximum_score": 0.69
+        }
+      },
+      "numeric_criteria_failed": [
+        "R01"
+      ]
+    }
+  ],
+  "positive_controls": [
+    {
+      "case": "golden",
+      "program_score": 1
+    },
+    {
+      "case": "full_precision_general",
+      "program_score": 1
+    },
+    {
+      "case": "rounded_three",
+      "program_score": 1
+    },
+    {
+      "case": "rounded_three_general",
+      "program_score": 1
+    },
+    {
+      "case": "rounded_asset_aggregation",
+      "program_score": 1
+    },
+    {
+      "case": "inside_tolerance",
+      "program_score": 1
+    },
+    {
+      "case": "extra_support_sheet",
+      "program_score": 1
+    },
+    {
+      "case": "header_spaces",
+      "program_score": 1
+    },
+    {
+      "case": "empty_styled_column",
+      "program_score": 1
+    },
+    {
+      "case": "extra_column",
+      "program_score": 1
+    },
+    {
+      "case": "extra_column_no_header",
+      "program_score": 1
+    },
+    {
+      "case": "two_decimal_display",
+      "program_score": 1
+    },
+    {
+      "case": "label_only_note",
+      "program_score": 1
+    }
+  ],
+  "independent_calculation": {
+    "asset_classes": 12,
+    "applicable_rate": 0.05008580413845842,
+    "year_end_factor": 1.0247369438731377,
+    "totals": {
+      "network": 13.690108344179393,
+      "non-network": -11.546100406081122,
+      "all": 1.1431857863293873
+    },
+    "max_absolute_difference": 6.461498003318411e-14
+  },
+  "precision_rule": "p decimals: a matching number_format or stored value equal to round(value,p); at least p also accepts stored decimal places >= p. Numeric tolerance is separate."
+}

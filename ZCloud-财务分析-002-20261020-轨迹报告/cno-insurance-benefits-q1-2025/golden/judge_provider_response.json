@@ -1,21 +1,4 @@
 {
-  "status": "RAW_PROVIDER_RESPONSE_NOT_RETAINED",
-  "provider_response": null,
-  "provider_response_id": null,
-  "reported_model": null,
-  "usage": null,
-  "existing_judge_model": "qwen3.7-plus",
-  "evidence": {
-    "normalized_judge": "judge.v1.json",
-    "sdk_reward_details": "reward-details.v1.json",
-    "reward_receipt": "reward.v1.json"
-  },
-  "note": "未查到历史上游原始响应；.v1文件是原有效裁判留存，不能冒充原始HTTP响应。当前代表记录为第二轮程序判据加原有效文字判定的离线重组。",
-  "this_export_paid_calls": 0,
-  "current_representative": {
-    "judge": "judge.json",
-    "reward": "reward.json",
-    "status": "PROVISIONAL_SAVED_VALID_TEXT",
-    "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
-  }
+  "current_representative": null,
+  "status": "NO_VALID_NEW_JUDGMENT"
 }

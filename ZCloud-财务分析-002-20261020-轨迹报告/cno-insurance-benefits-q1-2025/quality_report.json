@@ -17,14 +17,16 @@
     "sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": 1.0,
+    "score_final": null,
     "programmatic_score": 1,
     "raw_hybrid_score": 1.0,
     "verifier_error": 0.0,
-    "judgment_status": "PROVISIONAL_SAVED_VALID_TEXT",
-    "provisional": true,
+    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "provisional": false,
     "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
-    "invalid_judge_attempts_excluded": true
+    "invalid_judge_attempts_excluded": true,
+    "score_status": "NO_VALID_NEW_JUDGMENT",
+    "valid_runs": 0
   },
   "rollout_summary": {
     "models": [
@@ -82,38 +84,32 @@
     "pass_at_8": null
   },
   "judge": {
-    "model": "qwen3.7-plus",
-    "protocol": "anthropic（Claude Code 裁判）",
-    "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定；当前金标、五份原有效重复及模型均按第二轮程序判据离线重组；第二轮裁判错误已归档，不计为分数。本次无网络或付费调用。",
-    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
+    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "fresh_golden_runs": 0,
+    "required_golden_runs": 5,
+    "cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd"
   },
   "consistency": {
     "path": "consistency.json",
-    "requirement": "同一答卷重复评分 5 次，单条判据与总分的样本标准差都 < 0.05",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 5,
-        "total_scores": [
-          1.0,
-          1.0,
-          1.0,
-          1.0,
-          1.0
-        ],
-        "total_stddev_sample": 0.0,
-        "max_criterion_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": true
+        "repeats": 0,
+        "total_scores": [],
+        "total_stddev_sample": null,
+        "pass_stddev_lt_0_05": false
       }
-    ],
-    "status": "OFFLINE_REPLAY_PASS_SAVED_VALID_TEXT_ONLY"
+    ]
   },
   "discrimination": {
-    "reference_score": 1.0,
+    "reference_score": null,
     "model_scores": {
-      "gpt-5.6-sol": 0.205882,
       "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
       "qwen3.8-max": 0.0
     },
     "empty_controls": [
@@ -162,8 +158,7 @@
     "新版金标文字未重新裁判；沿用原有效文字判定",
     "第二轮重裁因工作簿不可读而无效并触发费用停止；已隔离，不参与任何分数或σ。新版文字独立验收未完成。"
   ],
-  "overall_delivery_compliance": "PROVISIONAL_SAVED_VALID_TEXT",
-  "scorer_revision": "office-review-v2-round2-20261026",
+  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
   "interface_gate": {
     "failure_score": 0,
     "required_sheets": [
@@ -196,5 +191,68 @@
       ]
     }
   ],
-  "correction": "golden-representative-correction-20261026"
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "score_revision": "candidate-access-v3",
+  "new_llm_calls": 0,
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "B",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 0,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "A1": null,
+      "A2": null,
+      "P1": null,
+      "P2": null,
+      "SD1": null,
+      "SD2": null,
+      "F1": null,
+      "F2": null,
+      "F3": null,
+      "X1": null,
+      "X2": null,
+      "L01": null,
+      "L02": null,
+      "L03": null,
+      "S01": null,
+      "S02": null,
+      "SP1": null,
+      "O01": null,
+      "U01": null,
+      "DP1": null,
+      "DP2": null
+    },
+    "total_cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/golden/rejudge_attempts_20261026/history_pre_v3",
+    "invalid_attempts_count": 0,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
+  },
+  "scoring_revision": "candidate-access-v3",
+  "previous_correction": "golden-representative-correction-20261026",
+  "previous_scorer_revision": "office-review-v2-round2-20261026"
 }

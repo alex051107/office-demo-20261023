@@ -1,0 +1,22 @@
+{
+  "reward": 0.0,
+  "graded_score": 0.0,
+  "criteria_counted": 17.0,
+  "verifier_error": 0.0,
+  "programmatic_score": 0.0,
+  "llm_status": "STOPPED_RUNAWAY",
+  "scoring_revision": {
+    "label": "评分器 v2（2026-10-26）",
+    "method": "offline_program_rescore_with_saved_llm",
+    "round": 2,
+    "new_llm_calls": 0,
+    "saved_llm_complete": false,
+    "saved_llm_candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+    "old_score": 0.0,
+    "new_score": 0.0,
+    "original_judgment": "judge.round1.json",
+    "llm_judgment_origin": "saved_historical",
+    "limitation": "保存的 LLM 判定原样复用；金标此分仅为历史判定重组，不能替代本轮五次新裁判。"
+  },
+  "score_basis": "程序分上界为 0；尚未完成的 LLM 项均为负项，总分必为 0，未补造判定。"
+}

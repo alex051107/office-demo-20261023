@@ -1,0 +1,116 @@
+{
+  "scope": "deterministic programmatic subset; no new text judgment",
+  "precision_rule": "p decimals satisfied by number_format OR stored value equal to rounding to p decimals; percentage formats use percentage points for stored comparison",
+  "old_score_scope": "review value only where present; other old_program_score values are offline v1 replays on the formatted golden",
+  "golden_program_score": 1,
+  "cases": [
+    {
+      "id": "support_sheet_unconstrained",
+      "workbook": "support_sheet_unconstrained.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1,
+      "file": "support_sheet_unconstrained.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "rounded_stored_values",
+      "workbook": "rounded_stored_values.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1,
+      "file": "rounded_stored_values.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "percentage_excel_format",
+      "workbook": "percentage_excel_format.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1,
+      "file": "percentage_excel_format.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "styling_only_extra_column",
+      "workbook": "styling_only_extra_column.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1,
+      "file": "styling_only_extra_column.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "trailing_header_spaces",
+      "workbook": "trailing_header_spaces.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null,
+      "file": "trailing_header_spaces.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "leading_header_spaces",
+      "workbook": "leading_header_spaces.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null,
+      "file": "leading_header_spaces.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "results_percentage_wrong_format",
+      "workbook": "results_percentage_wrong_format.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0.911765,
+      "file": "results_percentage_wrong_format.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "formatted_unrounded_value",
+      "workbook": "formatted_unrounded_value.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null,
+      "file": "formatted_unrounded_value.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "results_extra_header",
+      "workbook": "results_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0,
+      "file": "results_extra_header.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "analysis_extra_header",
+      "workbook": "analysis_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0,
+      "file": "analysis_extra_header.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "summary_extra_header",
+      "workbook": "summary_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0,
+      "file": "summary_extra_header.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "id": "trailing_duplicate_header",
+      "workbook": "trailing_duplicate_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null,
+      "file": "trailing_duplicate_header.xlsx",
+      "category": "positive_control"
+    }
+  ]
+}

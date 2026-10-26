@@ -1,0 +1,46 @@
+{
+  "revision": "candidate-access-v3",
+  "task": "A",
+  "status": "NO_VALID_NEW_JUDGMENT",
+  "required_valid_runs": 5,
+  "valid_runs": 0,
+  "attempted_runs": 1,
+  "representative": null,
+  "old_provisional_score": 1.0,
+  "new_score": null,
+  "programmatic_score": 1.0,
+  "total_sigma_sample": null,
+  "total_sigma_population": null,
+  "criterion_sigma_sample": {
+    "R01": null,
+    "R02": null,
+    "R03": null,
+    "S01": null,
+    "S02": null,
+    "P01": null,
+    "S03": null,
+    "S04": null,
+    "S05": null,
+    "S06": null,
+    "L01": null,
+    "L02": null,
+    "L03": null
+  },
+  "total_cost_usd": 2.148244,
+  "stop_reason": "single_run_cost_exceeded_2_usd",
+  "old_model_scores": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "new_model_scores": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "model_rejudge_completed": false,
+  "history": "golden/rejudge_attempts_20261026/history_pre_v3",
+  "invalid_attempts_count": 1,
+  "accounting_final_pending": false,
+  "cost_measurement": "Account cumulative usage difference before run and at post-run readback; not isolated request-level billing."
+}

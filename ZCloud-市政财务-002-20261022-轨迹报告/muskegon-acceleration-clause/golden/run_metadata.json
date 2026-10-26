@@ -1,0 +1,9 @@
+{
+  "status": "NO_VALID_NEW_JUDGMENT",
+  "accepted_reward": null,
+  "verifier_error": 1,
+  "judge_completed": false,
+  "new_judge_calls": 0,
+  "fresh_valid_runs": 0,
+  "scoring_revision": "candidate-access-v3"
+}

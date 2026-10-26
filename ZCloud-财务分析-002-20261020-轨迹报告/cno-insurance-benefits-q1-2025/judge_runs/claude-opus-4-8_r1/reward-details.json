@@ -219,7 +219,7 @@
     "evaluated_at": "2026-10-25T20:23:20.518317-04:00",
     "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
-    "saved_text_details": "reward-details.v1.json",
+    "saved_text_details": "../../history/judge_runs/claude-opus-4-8_r1/reward-details.v1.json",
     "saved_candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
     "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
     "candidate_changed_since_saved_text_judgment": false

@@ -33,11 +33,11 @@
     "solver_path_base": "task_package_case_root"
   },
   "judge_model": "qwen3.7-plus",
-  "reference_hybrid_score": 1.0,
-  "reference_judge_mean": 1.0,
+  "reference_hybrid_score": null,
+  "reference_judge_mean": null,
   "model_scores": {
-    "gpt-5.6-sol": 0.0,
     "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
     "qwen3.8-max": 0.0
   },
   "three_model_mean": 0.0,
@@ -132,6 +132,72 @@
       "desc": "题面要求的可编辑Excel"
     }
   ],
-  "score_basis": "Office 裁判第 1 次评分（程序判据 + LLM 扣分项）",
-  "related_task_package": "ZCloud-市政财务-002-20261022"
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "related_task_package": "ZCloud-市政财务-002-20261022",
+  "reference_judge_stddev": null,
+  "reference_judge_stddev_sample": null,
+  "reference_judge_runs_completed": 0,
+  "reference_saved_valid_runs": 0,
+  "reference_fresh_valid_judge_runs": 0,
+  "reference_judge_status": "NO_VALID_NEW_JUDGMENT",
+  "reference_status": "NO_VALID_NEW_JUDGMENT",
+  "reference_provisional": false,
+  "reference_judge_runs_required": 5,
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "C",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 0,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "D01": null,
+      "V01": null,
+      "D02": null,
+      "V02": null,
+      "D03": null,
+      "V03": null,
+      "S01": null,
+      "S02": null,
+      "S03": null,
+      "P01": null,
+      "P02": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
+    },
+    "total_cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/judge_runs/round2_attempts/history_pre_v3",
+    "invalid_attempts_count": 0,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
+  },
+  "reference_score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "reference_invalid_judge_attempts": 0,
+  "reference_scoring_revision": "candidate-access-v3"
 }

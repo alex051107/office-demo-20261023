@@ -1,0 +1,2677 @@
+{
+  "scope": "deterministic programmatic subset; no new text judgment",
+  "precision_rule": "p decimals satisfied by number_format OR stored value equal to rounding to p decimals; percentage formats use percentage points for stored comparison",
+  "old_score_scope": "review value only where present; other old_program_score values are offline v1 replays on the formatted golden",
+  "golden_program_score": 1,
+  "cases": [
+    {
+      "id": "review_wrong_structure",
+      "mutation": "review_wrong_names_reverse_all",
+      "gate": true,
+      "old_score_from_review": 1.0,
+      "workbook": "review_wrong_structure.xlsx",
+      "expected_outcome": "gate 0",
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.0,
+      "triggered": [
+        "R01",
+        "R02",
+        "A1",
+        "A2",
+        "P1",
+        "P2",
+        "SD1",
+        "SD2",
+        "F1",
+        "F2",
+        "F3",
+        "S01",
+        "S02",
+        "SP1",
+        "O01",
+        "U01",
+        "DP1",
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": true,
+        "errors": [
+          {
+            "sheet": "Results",
+            "reason": "required sheet missing or misnamed"
+          },
+          {
+            "sheet": "Analysis",
+            "reason": "required sheet missing or misnamed"
+          }
+        ]
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Summary",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "insurance_policy_benefits",
+                "quarter"
+              ],
+              "expected": [
+                "quarter",
+                "insurance_policy_benefits"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_rename",
+      "sheet": "Results",
+      "mutation": "rename",
+      "gate": true,
+      "cap": false,
+      "workbook": "results_rename.xlsx",
+      "expected_outcome": "gate 0",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.0,
+      "triggered": [
+        "R01",
+        "R02",
+        "A1",
+        "A2",
+        "P2",
+        "F1",
+        "S01",
+        "S02",
+        "O01",
+        "U01",
+        "DP1",
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": true,
+        "errors": [
+          {
+            "sheet": "Results",
+            "reason": "required sheet missing or misnamed"
+          }
+        ]
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_reverse_columns",
+      "sheet": "Results",
+      "mutation": "reverse_columns",
+      "gate": false,
+      "cap": true,
+      "workbook": "results_reverse_columns.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F1",
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "source_note",
+                "unit",
+                "value",
+                "label"
+              ],
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_missing_header",
+      "sheet": "Results",
+      "mutation": "missing_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "results_missing_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.911765,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F1",
+        "S01",
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "label",
+                "value",
+                "unit",
+                null
+              ],
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_shift_header",
+      "sheet": "Results",
+      "mutation": "shift_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "results_shift_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.235294,
+      "round1_program_score": 0,
+      "new_program_score": 0,
+      "triggered": [
+        "R01",
+        "R02",
+        "P2",
+        "F1",
+        "S01",
+        "S02",
+        "O01",
+        "U01",
+        "DP1",
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_header_case",
+      "sheet": "Results",
+      "mutation": "header_case",
+      "gate": false,
+      "cap": true,
+      "workbook": "results_header_case.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Results",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "LABEL",
+                "value",
+                "unit",
+                "source_note"
+              ],
+              "expected": [
+                "label",
+                "value",
+                "unit",
+                "source_note"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_swap_rows",
+      "sheet": "Results",
+      "mutation": "swap_rows",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "results_swap_rows.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.823529,
+      "triggered": [
+        "O01",
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_extra_record",
+      "sheet": "Results",
+      "mutation": "extra_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "results_extra_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.965679,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Results",
+              "row": 4,
+              "key": [
+                "unexpected business record"
+              ],
+              "value": 61.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_duplicate_record",
+      "sheet": "Results",
+      "mutation": "duplicate_record",
+      "cap": false,
+      "penalty": "X2",
+      "workbook": "results_duplicate_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.470588,
+      "new_program_score": 0.470588,
+      "triggered": [
+        "X2",
+        "S01",
+        "S02",
+        "O01",
+        "U01",
+        "DP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_blank_key_record",
+      "sheet": "Results",
+      "mutation": "blank_key_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "results_blank_key_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Results",
+              "row": 4,
+              "key": [
+                ""
+              ],
+              "value": 61.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_missing_record",
+      "sheet": "Results",
+      "mutation": "missing_record",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "results_missing_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 0.617647,
+      "round1_program_score": 0.176471,
+      "new_program_score": 0.176471,
+      "triggered": [
+        "R01",
+        "P2",
+        "S01",
+        "S02",
+        "O01",
+        "U01",
+        "DP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_rename",
+      "sheet": "Analysis",
+      "mutation": "rename",
+      "gate": true,
+      "cap": false,
+      "workbook": "analysis_rename.xlsx",
+      "expected_outcome": "gate 0",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.0,
+      "triggered": [
+        "R01",
+        "R02",
+        "A1",
+        "A2",
+        "P1",
+        "SD1",
+        "SD2",
+        "F2",
+        "S01",
+        "SP1",
+        "O01",
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": true,
+        "errors": [
+          {
+            "sheet": "Analysis",
+            "reason": "required sheet missing or misnamed"
+          }
+        ]
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_reverse_columns",
+      "sheet": "Analysis",
+      "mutation": "reverse_columns",
+      "gate": false,
+      "cap": true,
+      "workbook": "analysis_reverse_columns.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Analysis",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "source_page",
+                "source_document",
+                "unit",
+                "amount",
+                "measure",
+                "period"
+              ],
+              "expected": [
+                "period",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                "source_page"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_missing_header",
+      "sheet": "Analysis",
+      "mutation": "missing_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "analysis_missing_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.911765,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F2",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Analysis",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "period",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                null
+              ],
+              "expected": [
+                "period",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                "source_page"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_shift_header",
+      "sheet": "Analysis",
+      "mutation": "shift_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "analysis_shift_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.235294,
+      "round1_program_score": 0,
+      "new_program_score": 0,
+      "triggered": [
+        "A1",
+        "A2",
+        "P1",
+        "SD1",
+        "SD2",
+        "F2",
+        "S01",
+        "SP1",
+        "O01",
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Analysis",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "expected": [
+                "period",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                "source_page"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_header_case",
+      "sheet": "Analysis",
+      "mutation": "header_case",
+      "gate": false,
+      "cap": true,
+      "workbook": "analysis_header_case.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Analysis",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "PERIOD",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                "source_page"
+              ],
+              "expected": [
+                "period",
+                "measure",
+                "amount",
+                "unit",
+                "source_document",
+                "source_page"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_swap_rows",
+      "sheet": "Analysis",
+      "mutation": "swap_rows",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "analysis_swap_rows.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_extra_record",
+      "sheet": "Analysis",
+      "mutation": "extra_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "analysis_extra_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.965679,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Analysis",
+              "row": 4,
+              "key": [
+                "unexpected business record",
+                "insurance policy benefits"
+              ],
+              "value": 508.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_duplicate_record",
+      "sheet": "Analysis",
+      "mutation": "duplicate_record",
+      "cap": false,
+      "penalty": "X2",
+      "workbook": "analysis_duplicate_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.647059,
+      "new_program_score": 0.558824,
+      "triggered": [
+        "X2",
+        "S01",
+        "SP1",
+        "O01",
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_blank_key_record",
+      "sheet": "Analysis",
+      "mutation": "blank_key_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "analysis_blank_key_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.965679,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Analysis",
+              "row": 4,
+              "key": [
+                "",
+                "insurance policy benefits"
+              ],
+              "value": 508.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_missing_record",
+      "sheet": "Analysis",
+      "mutation": "missing_record",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "analysis_missing_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 0.617647,
+      "round1_program_score": 0.352941,
+      "new_program_score": 0.264706,
+      "triggered": [
+        "A1",
+        "P1",
+        "SD1",
+        "S01",
+        "SP1",
+        "O01",
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only",
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summary_rename",
+      "sheet": "Summary",
+      "mutation": "rename",
+      "gate": true,
+      "cap": false,
+      "workbook": "summary_rename.xlsx",
+      "expected_outcome": "gate 0",
+      "old_score_from_review": null,
+      "old_program_score": 0.735294,
+      "round1_program_score": 0,
+      "new_program_score": 0.0,
+      "triggered": [
+        "R01",
+        "R02",
+        "A1",
+        "A2",
+        "P1",
+        "P2",
+        "F3",
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": true,
+        "errors": [
+          {
+            "sheet": "Summary",
+            "reason": "required sheet missing or misnamed"
+          }
+        ]
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_reverse_columns",
+      "sheet": "Summary",
+      "mutation": "reverse_columns",
+      "gate": false,
+      "cap": true,
+      "workbook": "summary_reverse_columns.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F3"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Summary",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "insurance_policy_benefits",
+                "quarter"
+              ],
+              "expected": [
+                "quarter",
+                "insurance_policy_benefits"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_missing_header",
+      "sheet": "Summary",
+      "mutation": "missing_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "summary_missing_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.735294,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "P1",
+        "P2",
+        "F3"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Summary",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "quarter",
+                null
+              ],
+              "expected": [
+                "quarter",
+                "insurance_policy_benefits"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_shift_header",
+      "sheet": "Summary",
+      "mutation": "shift_header",
+      "gate": false,
+      "cap": true,
+      "workbook": "summary_shift_header.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.735294,
+      "round1_program_score": 0,
+      "new_program_score": 0.647059,
+      "triggered": [
+        "P1",
+        "P2",
+        "F3",
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Summary",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                null,
+                null
+              ],
+              "expected": [
+                "quarter",
+                "insurance_policy_benefits"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_header_case",
+      "sheet": "Summary",
+      "mutation": "header_case",
+      "gate": false,
+      "cap": true,
+      "workbook": "summary_header_case.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0,
+      "new_program_score": 0.69,
+      "triggered": [
+        "F3"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "sheet": "Summary",
+              "reason": "required header prefix text/order mismatch after trimming",
+              "observed": [
+                "QUARTER",
+                "insurance_policy_benefits"
+              ],
+              "expected": [
+                "quarter",
+                "insurance_policy_benefits"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_swap_rows",
+      "sheet": "Summary",
+      "mutation": "swap_rows",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "summary_swap_rows.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_extra_record",
+      "sheet": "Summary",
+      "mutation": "extra_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "summary_extra_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.965679,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Summary",
+              "row": 4,
+              "key": [
+                "unexpected business record"
+              ],
+              "value": 508.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summary_duplicate_record",
+      "sheet": "Summary",
+      "mutation": "duplicate_record",
+      "cap": false,
+      "penalty": "X2",
+      "workbook": "summary_duplicate_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.823529,
+      "triggered": [
+        "X2",
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "summary_blank_key_record",
+      "sheet": "Summary",
+      "mutation": "blank_key_record",
+      "cap": true,
+      "penalty": "X2",
+      "workbook": "summary_blank_key_record.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "X2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            {
+              "reason": "fabricated extra business record",
+              "sheet": "Summary",
+              "row": 4,
+              "key": [
+                ""
+              ],
+              "value": 508.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summary_missing_record",
+      "sheet": "Summary",
+      "mutation": "missing_record",
+      "cap": false,
+      "penalty": "O01",
+      "workbook": "summary_missing_record.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 0.823529,
+      "round1_program_score": 0.735294,
+      "new_program_score": 0.735294,
+      "triggered": [
+        "P1",
+        "P2",
+        "O01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_empty_source_d2",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": null,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "results_empty_source_d2.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_empty_source_d3",
+      "mutation": "set_cell",
+      "cell": "D3",
+      "value": " ",
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "results_empty_source_d3.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_numeric_source",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": 123,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "results_numeric_source.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_generic_source",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": "CNO filings",
+      "penalty": "S02",
+      "cap": false,
+      "workbook": "results_generic_source.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_fake_file",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": "Imaginary.xlsx T010!G19",
+      "penalty": "S02",
+      "cap": false,
+      "workbook": "results_fake_file.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_fake_table",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": "CNO_2025-03-31_10Q.xlsx T999!G19",
+      "penalty": "S02",
+      "cap": false,
+      "workbook": "results_fake_table.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_fake_cell",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": "CNO_2025-03-31_10Q.xlsx T010!ZZ99999",
+      "penalty": "S02",
+      "cap": false,
+      "workbook": "results_fake_cell.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "S02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_wrong_unit",
+      "mutation": "set_cell",
+      "cell": "C2",
+      "value": "USD thousands",
+      "penalty": "U01",
+      "cap": true,
+      "workbook": "results_wrong_unit.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_unit_case",
+      "mutation": "set_cell",
+      "cell": "C3",
+      "value": "Percent",
+      "penalty": "U01",
+      "cap": true,
+      "workbook": "results_unit_case.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results_percentage_general",
+      "mutation": "set_cell",
+      "cell": "B3",
+      "value": 12.13850088530396,
+      "penalty": "DP2",
+      "cap": false,
+      "format": "General",
+      "workbook": "results_percentage_general.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_percentage_unrounded_coarse_format",
+      "mutation": "set_cell",
+      "cell": "B3",
+      "value": 12.13850088530396,
+      "penalty": "DP2",
+      "cap": false,
+      "format": "0.0",
+      "workbook": "results_percentage_unrounded_coarse_format.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "DP2"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_amount_extra_decimal",
+      "mutation": "set_cell",
+      "cell": "B2",
+      "value": 61.71,
+      "penalty": "DP1",
+      "cap": false,
+      "format": "General",
+      "workbook": "results_amount_extra_decimal.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "DP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "results_percentage_outside_tolerance",
+      "mutation": "set_cell",
+      "cell": "B3",
+      "value": 12.1441,
+      "penalty": "R02",
+      "cap": false,
+      "format": "0.00",
+      "workbook": "results_percentage_outside_tolerance.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 0.705882,
+      "round1_program_score": 0.705882,
+      "new_program_score": 0.705882,
+      "triggered": [
+        "R02"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_fake_file",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E2",
+      "value": "Imaginary.xlsx",
+      "penalty": "SD1",
+      "cap": false,
+      "workbook": "analysis_fake_file.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 0.911765,
+      "round1_program_score": 0.823529,
+      "new_program_score": 0.823529,
+      "triggered": [
+        "SD1",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_empty_location",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F3",
+      "value": null,
+      "penalty": "SP1",
+      "cap": true,
+      "workbook": "analysis_empty_location.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_fake_table",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F2",
+      "value": "T999",
+      "penalty": "SP1",
+      "cap": false,
+      "workbook": "analysis_fake_table.xlsx",
+      "expected_outcome": "penalty <1",
+      "old_score_from_review": null,
+      "old_program_score": 1,
+      "round1_program_score": 0.911765,
+      "new_program_score": 0.911765,
+      "triggered": [
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "analysis_wrong_unit",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "D2",
+      "value": "USD thousand",
+      "penalty": "U01",
+      "cap": true,
+      "workbook": "analysis_wrong_unit.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": 0.705882,
+      "round1_program_score": 0.617647,
+      "new_program_score": 0.617647,
+      "triggered": [
+        "A1",
+        "P1",
+        "U01"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required unit differs from the instruction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e2_empty",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E2",
+      "value": null,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e2_empty.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD1",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e2_numeric",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E2",
+      "value": 123,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e2_numeric.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD1",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e2_numeric_text",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E2",
+      "value": "123",
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e2_numeric_text.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD1",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e3_empty",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E3",
+      "value": null,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e3_empty.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD2",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e3_numeric",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E3",
+      "value": 123,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e3_numeric.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD2",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_e3_numeric_text",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "E3",
+      "value": "123",
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_e3_numeric_text.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "SD2",
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f2_empty",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F2",
+      "value": null,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f2_empty.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f2_numeric",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F2",
+      "value": 123,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f2_numeric.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f2_numeric_text",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F2",
+      "value": "123",
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f2_numeric_text.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f3_empty",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F3",
+      "value": null,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f3_empty.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f3_numeric",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F3",
+      "value": 123,
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f3_numeric.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analysis_f3_numeric_text",
+      "sheet": "Analysis",
+      "mutation": "set_cell",
+      "cell": "F3",
+      "value": "123",
+      "penalty": "S01",
+      "cap": true,
+      "workbook": "analysis_f3_numeric_text.xlsx",
+      "expected_outcome": "cap <=0.69",
+      "old_score_from_review": null,
+      "old_program_score": null,
+      "round1_program_score": null,
+      "new_program_score": 0.69,
+      "triggered": [
+        "S01",
+        "SP1"
+      ],
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": true,
+          "cap": 0.69,
+          "reasons": [
+            "a required source/support cell is empty or numeric-only"
+          ]
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "support_sheet_unconstrained",
+      "workbook": "support_sheet_unconstrained.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1
+    },
+    {
+      "id": "rounded_stored_values",
+      "workbook": "rounded_stored_values.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1
+    },
+    {
+      "id": "percentage_excel_format",
+      "workbook": "percentage_excel_format.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1
+    },
+    {
+      "id": "styling_only_extra_column",
+      "workbook": "styling_only_extra_column.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 1
+    },
+    {
+      "id": "trailing_header_spaces",
+      "workbook": "trailing_header_spaces.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null
+    },
+    {
+      "id": "leading_header_spaces",
+      "workbook": "leading_header_spaces.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null
+    },
+    {
+      "id": "results_percentage_wrong_format",
+      "workbook": "results_percentage_wrong_format.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0.911765
+    },
+    {
+      "id": "formatted_unrounded_value",
+      "workbook": "formatted_unrounded_value.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null
+    },
+    {
+      "id": "results_extra_header",
+      "workbook": "results_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0
+    },
+    {
+      "id": "analysis_extra_header",
+      "workbook": "analysis_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0
+    },
+    {
+      "id": "summary_extra_header",
+      "workbook": "summary_extra_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": 0
+    },
+    {
+      "id": "trailing_duplicate_header",
+      "workbook": "trailing_duplicate_header.xlsx",
+      "expected_program_score": 1.0,
+      "program_score": 1,
+      "round1_program_score": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "revision": "candidate-access-v3",
+  "task": "C",
+  "runs": [],
+  "total_cost_usd": 0,
+  "per_run_stop_usd": 2,
+  "account_stop_usd": 1635,
+  "timeout_seconds": 900,
+  "stop_reason": "single_run_cost_exceeded_2_usd"
+}

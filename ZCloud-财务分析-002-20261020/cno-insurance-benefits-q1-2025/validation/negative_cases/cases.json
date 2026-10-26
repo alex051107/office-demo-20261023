@@ -76,7 +76,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "review_wrong_structure.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_rename",
@@ -129,7 +131,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_rename.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_reverse_columns",
@@ -181,7 +185,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_reverse_columns.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_missing_header",
@@ -236,7 +242,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "results_missing_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_shift_header",
@@ -299,7 +307,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_shift_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_header_case",
@@ -350,7 +360,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_header_case.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_swap_rows",
@@ -385,7 +397,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_swap_rows.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_extra_record",
@@ -429,7 +443,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "results_extra_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_duplicate_record",
@@ -471,7 +487,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_duplicate_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_blank_key_record",
@@ -515,7 +533,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "results_blank_key_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_missing_record",
@@ -558,7 +578,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_missing_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_rename",
@@ -611,7 +633,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "analysis_rename.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_reverse_columns",
@@ -666,7 +690,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "analysis_reverse_columns.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_missing_header",
@@ -725,7 +751,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_missing_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_shift_header",
@@ -792,7 +820,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "analysis_shift_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_header_case",
@@ -847,7 +877,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "analysis_header_case.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_swap_rows",
@@ -881,7 +913,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "analysis_swap_rows.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_extra_record",
@@ -926,7 +960,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "analysis_extra_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_duplicate_record",
@@ -967,7 +1003,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "analysis_duplicate_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_blank_key_record",
@@ -1012,7 +1050,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "analysis_blank_key_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_missing_record",
@@ -1055,7 +1095,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "analysis_missing_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_rename",
@@ -1101,7 +1143,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_rename.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_reverse_columns",
@@ -1148,7 +1192,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_reverse_columns.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_missing_header",
@@ -1197,7 +1243,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_missing_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_shift_header",
@@ -1247,7 +1295,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_shift_header.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_header_case",
@@ -1294,7 +1344,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_header_case.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_swap_rows",
@@ -1328,7 +1380,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_swap_rows.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_extra_record",
@@ -1372,7 +1426,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "summary_extra_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_duplicate_record",
@@ -1407,7 +1463,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_duplicate_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_blank_key_record",
@@ -1451,7 +1509,9 @@
             }
           ]
         }
-      ]
+      ],
+      "file": "summary_blank_key_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "summary_missing_record",
@@ -1487,7 +1547,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "summary_missing_record.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_empty_source_d2",
@@ -1525,7 +1587,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "results_empty_source_d2.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_empty_source_d3",
@@ -1563,7 +1627,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "results_empty_source_d3.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_numeric_source",
@@ -1601,7 +1667,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "results_numeric_source.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_generic_source",
@@ -1636,7 +1704,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_generic_source.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_fake_file",
@@ -1671,7 +1741,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_fake_file.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_fake_table",
@@ -1706,7 +1778,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_fake_table.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_fake_cell",
@@ -1741,7 +1815,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_fake_cell.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_wrong_unit",
@@ -1778,7 +1854,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_wrong_unit.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_unit_case",
@@ -1815,7 +1893,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "results_unit_case.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_percentage_general",
@@ -1851,7 +1931,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_percentage_general.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_percentage_unrounded_coarse_format",
@@ -1887,7 +1969,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_percentage_unrounded_coarse_format.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_amount_extra_decimal",
@@ -1923,7 +2007,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_amount_extra_decimal.xlsx",
+      "category": "negative"
     },
     {
       "id": "results_percentage_outside_tolerance",
@@ -1959,7 +2045,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "results_percentage_outside_tolerance.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_fake_file",
@@ -1996,7 +2084,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "analysis_fake_file.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_empty_location",
@@ -2035,7 +2125,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_empty_location.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_fake_table",
@@ -2071,7 +2163,9 @@
           "cap": 0.69,
           "reasons": []
         }
-      ]
+      ],
+      "file": "analysis_fake_table.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_wrong_unit",
@@ -2111,7 +2205,9 @@
             "a required unit differs from the instruction"
           ]
         }
-      ]
+      ],
+      "file": "analysis_wrong_unit.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e2_empty",
@@ -2151,7 +2247,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e2_empty.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e2_numeric",
@@ -2191,7 +2289,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e2_numeric.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e2_numeric_text",
@@ -2231,7 +2331,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e2_numeric_text.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e3_empty",
@@ -2271,7 +2373,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e3_empty.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e3_numeric",
@@ -2311,7 +2415,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e3_numeric.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_e3_numeric_text",
@@ -2351,7 +2457,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_e3_numeric_text.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f2_empty",
@@ -2390,7 +2498,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_f2_empty.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f2_numeric",
@@ -2429,7 +2539,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_f2_numeric.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f2_numeric_text",
@@ -2468,7 +2580,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_f2_numeric_text.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f3_empty",
@@ -2507,7 +2621,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_f3_empty.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f3_numeric",
@@ -2546,7 +2662,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
+      ],
+      "file": "analysis_f3_numeric.xlsx",
+      "category": "negative"
     },
     {
       "id": "analysis_f3_numeric_text",
@@ -2585,93 +2703,9 @@
             "a required source/support cell is empty or numeric-only"
           ]
         }
-      ]
-    }
-  ],
-  "controls": [
-    {
-      "id": "support_sheet_unconstrained",
-      "workbook": "support_sheet_unconstrained.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 1
-    },
-    {
-      "id": "rounded_stored_values",
-      "workbook": "rounded_stored_values.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 1
-    },
-    {
-      "id": "percentage_excel_format",
-      "workbook": "percentage_excel_format.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 1
-    },
-    {
-      "id": "styling_only_extra_column",
-      "workbook": "styling_only_extra_column.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 1
-    },
-    {
-      "id": "trailing_header_spaces",
-      "workbook": "trailing_header_spaces.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": null
-    },
-    {
-      "id": "leading_header_spaces",
-      "workbook": "leading_header_spaces.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": null
-    },
-    {
-      "id": "results_percentage_wrong_format",
-      "workbook": "results_percentage_wrong_format.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 0.911765
-    },
-    {
-      "id": "formatted_unrounded_value",
-      "workbook": "formatted_unrounded_value.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": null
-    },
-    {
-      "id": "results_extra_header",
-      "workbook": "results_extra_header.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 0
-    },
-    {
-      "id": "analysis_extra_header",
-      "workbook": "analysis_extra_header.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 0
-    },
-    {
-      "id": "summary_extra_header",
-      "workbook": "summary_extra_header.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": 0
-    },
-    {
-      "id": "trailing_duplicate_header",
-      "workbook": "trailing_duplicate_header.xlsx",
-      "expected_program_score": 1.0,
-      "program_score": 1,
-      "round1_program_score": null
+      ],
+      "file": "analysis_f3_numeric_text.xlsx",
+      "category": "negative"
     }
   ]
 }

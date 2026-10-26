@@ -1,0 +1,12 @@
+{
+  "status": "RAW_PROVIDER_RESPONSE_NOT_RETAINED",
+  "provider_response": null,
+  "note": "裁判上游原始 HTTP 响应没有单独保存；逐条评分见 reward-details.json 与 judge.json。",
+  "this_export_paid_calls": 0,
+  "existing_judge_model": "qwen3.7-plus",
+  "evidence": {
+    "normalized_judge": "judge.json",
+    "sdk_reward_details": "reward-details.json",
+    "reward_receipt": "reward.json"
+  }
+}

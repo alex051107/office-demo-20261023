@@ -17,15 +17,18 @@
     "sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": 1.0,
+    "score_final": null,
     "programmatic_score": 1.0,
-    "score_status": "PROVISIONAL",
+    "score_status": "NO_VALID_NEW_JUDGMENT",
     "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
     "score_revision": "round3_golden_record_correction",
     "score_basis": "round2_program_plus_original_valid_saved_llm",
     "new_llm_calls": 0,
-    "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
-    "invalid_attempt_archive_path_base": "trajectory_case_root"
+    "invalid_attempt_archive": "history/golden/rejudge_attempts_20261026",
+    "invalid_attempt_archive_path_base": "trajectory_case_root",
+    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "valid_runs": 0,
+    "provisional": false
   },
   "rollout_summary": {
     "models": [
@@ -86,66 +89,33 @@
     "pass_at_8": null
   },
   "judge": {
-    "model": "qwen3.7-plus",
-    "protocol": "anthropic（Claude Code 裁判）",
-    "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
-    "formula": "round(apply_score_policy(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),score_policy),6)",
-    "llm_status": "REUSED_VALID_SAVED_JUDGMENTS",
+    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
+    "status": "NO_VALID_NEW_JUDGMENT",
     "fresh_golden_runs": 0,
-    "saved_valid_golden_runs": 5,
-    "invalid_rejudge_attempts": 1,
     "required_golden_runs": 5,
-    "semantic_reliability": "Original valid judgments only; revised text not rejudged; contradictory attempt excluded."
+    "cost_usd": 2.148244,
+    "stop_reason": "single_run_cost_exceeded_2_usd"
   },
   "consistency": {
     "path": "consistency.json",
-    "requirement": "同一答卷重复评分 5 次，单条判据与总分的样本标准差都 < 0.05",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 5,
-        "total_scores": [
-          1.0,
-          1.0,
-          1.0,
-          1.0,
-          1.0
-        ],
-        "total_stddev_sample": 0.0,
-        "max_criterion_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": true
-      },
-      {
-        "candidate": "gpt-5.6-sol",
-        "repeats": 5,
-        "total_scores": [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        "total_stddev_sample": 0.0,
-        "max_criterion_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": true
+        "repeats": 0,
+        "total_scores": [],
+        "total_stddev_sample": null,
+        "pass_stddev_lt_0_05": false
       }
-    ],
-    "status": "PASS",
-    "score_status": "PROVISIONAL",
-    "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
-    "score_revision": "round3_golden_record_correction",
-    "score_basis": "round2_program_plus_original_valid_saved_llm",
-    "new_llm_calls": 0,
-    "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
-    "invalid_attempt_archive_path_base": "trajectory_case_root"
+    ]
   },
   "discrimination": {
-    "reference_score": 1.0,
+    "reference_score": null,
     "model_scores": {
-      "claude-opus-4-8": 0,
-      "gpt-5.6-sol": 0,
-      "qwen3.8-max": 0
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
     },
     "empty_controls": [
       {
@@ -177,7 +147,7 @@
     }
   },
   "excluded_judge_jobs": {
-    "path": "excluded_runs.json",
+    "path": "history/excluded_runs.json",
     "count": 7,
     "note": "6次历史超时/连接中断及1次判定与理由矛盾的金标裁判错误均排除；不作成绩或零分。"
   },
@@ -197,14 +167,61 @@
     "第二轮修改程序判据、派生容差与后置评分规则，保持各条权重和LLM文本不变；delivery_rubric_sha256记录当前导出，历史裁判rubric摘要保留用于追溯。",
     "新版金标文字未重新裁判；沿用原有效文字判定"
   ],
-  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
   "scorer_version": "v2 (2026-10-26)",
-  "round2_status": "PROGRAM_COMPLETE_GOLDEN_PROVISIONAL_SAVED_LLM",
-  "score_status": "PROVISIONAL",
-  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
-  "score_revision": "round3_golden_record_correction",
-  "score_basis": "round2_program_plus_original_valid_saved_llm",
-  "new_llm_calls": 0,
-  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
-  "invalid_attempt_archive_path_base": "trajectory_case_root"
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "score_revision": "candidate-access-v3",
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "new_llm_calls": 1,
+  "invalid_attempt_archive": "history/golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root",
+  "previous_round2_status": "PROGRAM_COMPLETE_GOLDEN_PROVISIONAL_SAVED_LLM",
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "A",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 1,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "S01": null,
+      "S02": null,
+      "P01": null,
+      "S03": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
+    },
+    "total_cost_usd": 2.148244,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/golden/rejudge_attempts_20261026/history_pre_v3",
+    "invalid_attempts_count": 1,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage difference before run and at post-run readback; not isolated request-level billing."
+  },
+  "scoring_revision": "candidate-access-v3"
 }

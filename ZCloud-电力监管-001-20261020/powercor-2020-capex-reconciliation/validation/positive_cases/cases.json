@@ -1,0 +1,96 @@
+{
+  "scorer_version": "v2 (2026-10-26)",
+  "scope": "programmatic subset only; no new LLM judgments",
+  "independent_calculation": {
+    "asset_classes": 12,
+    "applicable_rate": 0.05008580413845842,
+    "year_end_factor": 1.0247369438731377,
+    "totals": {
+      "network": 13.690108344179393,
+      "non-network": -11.546100406081122,
+      "all": 1.1431857863293873
+    },
+    "max_absolute_difference": 6.461498003318411e-14
+  },
+  "precision_rule": "p decimals: a matching number_format or stored value equal to round(value,p); at least p also accepts stored decimal places >= p. Numeric tolerance is separate.",
+  "cases": [
+    {
+      "case": "golden",
+      "program_score": 1,
+      "file": "golden.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "full_precision_general",
+      "program_score": 1,
+      "file": "full_precision_general.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "rounded_three",
+      "program_score": 1,
+      "file": "rounded_three.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "rounded_three_general",
+      "program_score": 1,
+      "file": "rounded_three_general.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "rounded_asset_aggregation",
+      "program_score": 1,
+      "file": "rounded_asset_aggregation.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "inside_tolerance",
+      "program_score": 1,
+      "file": "inside_tolerance.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "extra_support_sheet",
+      "program_score": 1,
+      "file": "extra_support_sheet.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "header_spaces",
+      "program_score": 1,
+      "file": "header_spaces.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "empty_styled_column",
+      "program_score": 1,
+      "file": "empty_styled_column.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "extra_column",
+      "program_score": 1,
+      "file": "extra_column.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "extra_column_no_header",
+      "program_score": 1,
+      "file": "extra_column_no_header.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "two_decimal_display",
+      "program_score": 1,
+      "file": "two_decimal_display.xlsx",
+      "category": "positive_control"
+    },
+    {
+      "case": "label_only_note",
+      "program_score": 1,
+      "file": "label_only_note.xlsx",
+      "category": "positive_control"
+    }
+  ]
+}

@@ -223,7 +223,7 @@
     "old_reward": 0.0,
     "new_reward": 0.0,
     "saved_llm_candidate_sha256": "6bdf0598cb332812e5de518729ad142c75c0da3734ab2830638ba40205f46cb1",
-    "saved_llm_details": "reward-details.round1.json",
+    "saved_llm_details": "../../history/rollouts/claude-opus-4-8/reward-details.round1.json",
     "new_llm_calls": 0,
     "scope": "Saved L01-L03 reused unchanged; historical golden repeats are not fresh round-2 runs."
   },

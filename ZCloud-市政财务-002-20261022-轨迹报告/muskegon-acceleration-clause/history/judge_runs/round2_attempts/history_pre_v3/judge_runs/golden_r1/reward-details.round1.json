@@ -1,0 +1,354 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "description": "Plan A principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 42200,
+              "cell": "Results!B2",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "R02",
+          "description": "Plan B principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 55200,
+              "cell": "Results!B3",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "R03",
+          "description": "Plan C principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 50500,
+              "cell": "Results!B4",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D01",
+          "description": "Detail plan A final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 42200,
+              "cell": "Detail!C2",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V01",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B2",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D02",
+          "description": "Detail plan B final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 55200,
+              "cell": "Detail!C3",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V02",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B3",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D03",
+          "description": "Detail plan C final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 1,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 50500,
+              "cell": "Detail!C4",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V03",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S01",
+          "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            [
+              "Plan A principal balance"
+            ],
+            [
+              "Plan B principal balance"
+            ],
+            [
+              "Plan C principal balance"
+            ]
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S02",
+          "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "USD",
+              "cell": "Results!C2",
+              "number_format": "General"
+            },
+            {
+              "raw": "USD",
+              "cell": "Results!C3",
+              "number_format": "General"
+            },
+            {
+              "raw": "USD",
+              "cell": "Results!C4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S03",
+          "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "P01",
+          "description": "Excel error outside scored cells",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "P02",
+          "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "S04",
+          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan A: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records A1 and A2: term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200. PDF p.4 Broker payments, Plan A, 2007-07-15 USD 9,200 and 2007-08-15 USD 6,800. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record A date comes from Plans; value and this principal balance are USD 42,200 = 58,200 - 9,200 - 6,800.",
+              "cell": "Results!D2",
+              "number_format": "General"
+            },
+            {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan B: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records B1 and B2: term cash USD 318,000 and 429,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 74,700. PDF p.4 Broker payments, Plan B, 2007-07-15 USD 11,200 and 2007-08-15 USD 8,300. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record B date comes from Plans; value and this principal balance are USD 55,200 = 74,700 - 11,200 - 8,300.",
+              "cell": "Results!D3",
+              "number_format": "General"
+            },
+            {
+              "raw": "Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission and normal payment timing; PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses. Records.pdf, PDF p.2 Plans, Plan C: termination 2007-12-31, no amendments or other principal. PDF p.3 Sponsorships, records C1 and C2: term cash USD 287,000 and 386,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 67,300. PDF p.4 Broker payments, Plan C, 2007-07-15 USD 9,700 and 2007-08-15 USD 7,100. Agreement.pdf, PDF p.4 section 3A, and Records.pdf, PDF p.5 Other payments: base fee fully paid, expenses zero. Detail record C date comes from Plans; value and this principal balance are USD 50,500 = 67,300 - 9,700 - 7,100.",
+              "cell": "Results!D4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S05",
+          "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "S06",
+          "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 42200,
+              "cell": "Results!B2",
+              "number_format": "#,##0.00"
+            },
+            {
+              "raw": 55200,
+              "cell": "Results!B3",
+              "number_format": "#,##0.00"
+            },
+            {
+              "raw": 50500,
+              "cell": "Results!B4",
+              "number_format": "#,##0.00"
+            },
+            {
+              "raw": 42200,
+              "cell": "Detail!C2",
+              "number_format": "#,##0.00"
+            },
+            {
+              "raw": 55200,
+              "cell": "Detail!C3",
+              "number_format": "#,##0.00"
+            },
+            {
+              "raw": 50500,
+              "cell": "Detail!C4",
+              "number_format": "#,##0.00"
+            }
+          ],
+          "gate_reason": null
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "候选输出D列引用的所有来源（Agreement.pdf p.4 section 3A、p.5 sections 3C-3D、p.7 section 4F；Records.pdf p.2 Plans、p.3 Sponsorships、p.4 Broker payments、p.5 Other payments）均能在随包输入文件中找到对应内容，未虚构任何文件、页码或表格。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "候选说明仅引用协议条款和记录表数据进行计算分析，未声称已完成外部审计、实时查询或独立核验。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "候选说明中的所有事实性断言（终止日期、sponsorship金额、broker commission、base fee等）均可从随包输入的Plans、Sponsorships、Broker payments、Other payments表及Agreement.pdf中获得，未编造额外公司经营事实。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u8f93\\u51faD\\u5217\\u5f15\\u7528\\u7684\\u6240\\u6709\\u6765\\u6e90\\uff08Agreement.pdf p.4 section 3A\\u3001p.5 sections 3C-3D\\u3001p.7 section 4F\\uff1bRecords.pdf p.2 Plans\\u3001p.3 Sponsorships\\u3001p.4 Broker payments\\u3001p.5 Other payments\\uff09\\u5747\\u80fd\\u5728\\u968f\\u5305\\u8f93\\u5165\\u6587\\u4ef6\\u4e2d\\u627e\\u5230\\u5bf9\\u5e94\\u5185\\u5bb9\\uff0c\\u672a\\u865a\\u6784\\u4efb\\u4f55\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u8bf4\\u660e\\u4ec5\\u5f15\\u7528\\u534f\\u8bae\\u6761\\u6b3e\\u548c\\u8bb0\\u5f55\\u8868\\u6570\\u636e\\u8fdb\\u884c\\u8ba1\\u7b97\\u5206\\u6790\\uff0c\\u672a\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u8bf4\\u660e\\u4e2d\\u7684\\u6240\\u6709\\u4e8b\\u5b9e\\u6027\\u65ad\\u8a00\\uff08\\u7ec8\\u6b62\\u65e5\\u671f\\u3001sponsorship\\u91d1\\u989d\\u3001broker commission\\u3001base fee\\u7b49\\uff09\\u5747\\u53ef\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u7684Plans\\u3001Sponsorships\\u3001Broker payments\\u3001Other payments\\u8868\\u53caAgreement.pdf\\u4e2d\\u83b7\\u5f97\\uff0c\\u672a\\u7f16\\u9020\\u989d\\u5916\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+    }
+  ]
+}

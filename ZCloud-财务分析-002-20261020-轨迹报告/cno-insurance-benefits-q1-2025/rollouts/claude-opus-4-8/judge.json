@@ -501,7 +501,7 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "claude-opus-4-8_r1",
-  "reward_details_sha256": "b191d6d91e2c3726e991e06000093670ad296a316db66ce152d09675b94d5f87",
+  "reward_details_sha256": "ad8afcd151f455047f76331715507d2c172ab07b8c4b3297ad6b1856ebf99509",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 0.0,
   "llm_status": "COMPLETED",
@@ -517,7 +517,7 @@
     "evaluated_at": "2026-10-25T20:23:20.481401-04:00",
     "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
-    "saved_text_details": "reward-details.v1.json",
+    "saved_text_details": "../../history/rollouts/claude-opus-4-8/reward-details.v1.json",
     "saved_candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
     "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
     "candidate_changed_since_saved_text_judgment": false

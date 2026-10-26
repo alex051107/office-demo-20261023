@@ -14,7 +14,7 @@
     "saved_llm_candidate_sha256": "2d35bcfb19bfbe4da4b525b0f880bf645adb61fc1d6d1266641e1b5d4dc8742a",
     "old_score": 0.0,
     "new_score": 0.0,
-    "original_judgment": "judge.round1.json",
+    "original_judgment": "../../history/rollouts/qwen3.8-max/judge.round1.json",
     "llm_judgment_origin": "saved_historical",
     "limitation": "保存的 LLM 判定原样复用；金标此分仅为历史判定重组，不能替代本轮五次新裁判。"
   }

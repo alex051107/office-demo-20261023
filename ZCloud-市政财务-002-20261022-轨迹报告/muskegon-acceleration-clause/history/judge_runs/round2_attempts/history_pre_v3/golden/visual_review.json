@@ -1,0 +1,29 @@
+{
+  "format": "xlsx",
+  "reviewed_at": "2026-10-25T19:35:33-04:00",
+  "renderer": "LibreOffice calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+  "scope": "逐表从更新后的参考工作簿导出；临时副本使用 A3 横向和单页缩放。",
+  "worksheet_count": 2,
+  "render_count": 2,
+  "renders": [
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png"
+    },
+    {
+      "sheet": "Detail",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png"
+    }
+  ],
+  "render_status": "COMPLETED",
+  "visual_inspection_status": "COMPLETED",
+  "visual_findings": [
+    "Results 三条来源与计算文字完整换行，无截断或重叠；三笔金额显示两位小数。",
+    "Detail 表头 plan/date/value、三条日期及金额清晰，金额显示两位小数。"
+  ],
+  "source_workbook_unchanged": true,
+  "scoring_revision": "评分器 v2（2026-10-26）第二轮"
+}

@@ -14,7 +14,7 @@
     "saved_llm_candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
     "old_score": 0.0,
     "new_score": 0.0,
-    "original_judgment": "judge.round1.json",
+    "original_judgment": "../../history/rollouts/claude-opus-4-8/judge.round1.json",
     "llm_judgment_origin": "saved_historical",
     "limitation": "保存的 LLM 判定原样复用；金标此分仅为历史判定重组，不能替代本轮五次新裁判。"
   },

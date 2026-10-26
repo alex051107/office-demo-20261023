@@ -1,0 +1,39 @@
+{
+  "source": "C golden_r4, saved before the candidate-access correction",
+  "expected_verifier_error": 1,
+  "agent": {
+    "kind": "agent",
+    "criteria": [
+      {
+        "id": "L01",
+        "name": "L01",
+        "value": 1.0,
+        "raw": "no",
+        "weight": 3.0,
+        "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+        "reasoning": "无法解析文件：候选交付物 /app/output/answer.xlsx 不存在，无法进行来源真实性评估。根据规则'无法解析的文件必须明确报告错误'，此项判0分（无违规）。",
+        "negate": true
+      },
+      {
+        "id": "L02",
+        "name": "L02",
+        "value": 1.0,
+        "raw": "no",
+        "weight": 3.0,
+        "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+        "reasoning": "无法解析文件：候选交付物 /app/output/answer.xlsx 不存在，无法检查是否声称完成外部审计或实时查询。根据规则'无法解析的文件必须明确报告错误'，此项判0分（无违规）。",
+        "negate": true
+      },
+      {
+        "id": "L03",
+        "name": "L03",
+        "value": 1.0,
+        "raw": "no",
+        "weight": 3.0,
+        "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+        "reasoning": "无法解析文件：候选交付物 /app/output/answer.xlsx 不存在，无法检查是否编造公司经营事实。根据规则'无法解析的文件必须明确报告错误'，此项判0分（无违规）。",
+        "negate": true
+      }
+    ]
+  }
+}

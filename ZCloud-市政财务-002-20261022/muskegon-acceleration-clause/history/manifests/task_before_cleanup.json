@@ -1,0 +1,755 @@
+{
+  "schema_version": "office-split-v1",
+  "path_base": "case_root",
+  "file_count": 124,
+  "manifest_excludes": [
+    "manifest.json"
+  ],
+  "files": [
+    {
+      "path": "delivery_note.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/delivery_note.md",
+      "bytes": 12219,
+      "sha256": "bf8c0a6a1de0cda858d3d65fd83b2ef797f1ae8bd1df4251eedb6864aec8b482"
+    },
+    {
+      "path": "environment/Dockerfile",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/Dockerfile",
+      "bytes": 897,
+      "sha256": "b238a6fd24b42e7e535e9f78bc78f57ada3691fbfbaf397117de3fa7e44cecc2"
+    },
+    {
+      "path": "environment/input_files/Agreement.pdf",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Agreement.pdf",
+      "bytes": 317417,
+      "sha256": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887"
+    },
+    {
+      "path": "environment/input_files/Records.pdf",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records.pdf",
+      "bytes": 248666,
+      "sha256": "712f78dffb01ede2e0246df882f00cd1132dfa7a46178d8f12e273f26bfd2979"
+    },
+    {
+      "path": "environment/input_files/Records_Broker_payments.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Broker_payments.png",
+      "bytes": 45594,
+      "sha256": "a235fb93980d851886aa9bf8d8f3ab8597846e3e703b4baf8c7bb8145082faa9"
+    },
+    {
+      "path": "environment/input_files/Records_Finance_forecast.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Finance_forecast.png",
+      "bytes": 23628,
+      "sha256": "b25d2b6911afa5d30f55632cc59af20e0506b2b3fece7da4f28a78d23c60156c"
+    },
+    {
+      "path": "environment/input_files/Records_Other_payments.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Other_payments.png",
+      "bytes": 55363,
+      "sha256": "2b8f67a11d766f13014d93d34e431135b6f1ef257067e97121d532c20fef09a7"
+    },
+    {
+      "path": "environment/input_files/Records_Plans.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Plans.png",
+      "bytes": 25340,
+      "sha256": "b2c60dba14a1a2434c3c10af9c3e0a079c4e4ff8aba7a5e1f63cd7234ad8f507"
+    },
+    {
+      "path": "environment/input_files/Records_Sources.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Sources.png",
+      "bytes": 28048,
+      "sha256": "8647329c046c0a1d1910fc5a8ba569b80ba7fbd3105b56104eabacd293c636c9"
+    },
+    {
+      "path": "environment/input_files/Records_Sponsorships.png",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/input_files/Records_Sponsorships.png",
+      "bytes": 55337,
+      "sha256": "d6957e760c59497a27cd82ed2ea3e62b55ffe04644933cbb9ca8531530231ed0"
+    },
+    {
+      "path": "environment/requirements.txt",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/environment/requirements.txt",
+      "bytes": 40,
+      "sha256": "3b1701e9abed3da7702a6c5887cd8936e952e74639c0eeddaa40475caec9eef8"
+    },
+    {
+      "path": "instruction.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/instruction.md",
+      "bytes": 1667,
+      "sha256": "0ae5fc48c8bf67010084240b8528392e2e6b4c7c98bd0ea5d19831180521d33d"
+    },
+    {
+      "path": "metadata/task_metadata.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/metadata/task_metadata.json",
+      "bytes": 6623,
+      "sha256": "b3abd2f6eb4e8110faec78a5531808f6e06800efe86fa74504ee6fb4ea527528"
+    },
+    {
+      "path": "records.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/records.jsonl",
+      "bytes": 6361,
+      "sha256": "487eef5192bbccc8baead8a248cb902570534d414d904d60ceebca1523890c96"
+    },
+    {
+      "path": "records.pre_judge_fix.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/records.pre_judge_fix.jsonl",
+      "bytes": 4427,
+      "sha256": "5f12a2014d2ad1e523eef6fa6449f53ee4d519ccb0d4b551c862d87d55c91006"
+    },
+    {
+      "path": "records.round1.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/records.round1.jsonl",
+      "bytes": 4270,
+      "sha256": "4b8afc6e5ac622f1708dbcf22385daded8093cdea10138288dc0b8cf4399178f"
+    },
+    {
+      "path": "records.v1.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/records.v1.jsonl",
+      "bytes": 3528,
+      "sha256": "ce6b02f685b021ceefa5cd120b34b36277b3eb389fc4269652727b538d78dbcc"
+    },
+    {
+      "path": "rubrics.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/rubrics.json",
+      "bytes": 17143,
+      "sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02"
+    },
+    {
+      "path": "solution/golden/answer.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/solution/golden/answer.xlsx",
+      "bytes": 6261,
+      "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a"
+    },
+    {
+      "path": "solution/golden/source_explanation.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/solution/golden/source_explanation.md",
+      "bytes": 2169,
+      "sha256": "e7dafcc8274245170df8c6e45e9bd7d285c628850f762fcb7075243f9491411b"
+    },
+    {
+      "path": "solution/golden_output/answer.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/solution/golden_output/answer.xlsx",
+      "bytes": 6261,
+      "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a"
+    },
+    {
+      "path": "solution/solve.sh",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/solution/solve.sh",
+      "bytes": 122,
+      "sha256": "4c0c1bbd85ead9be3b5c544527fc84f0ebd9fa19ac6526cb16e539973842f4bd"
+    },
+    {
+      "path": "targets/answer.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/targets/answer.xlsx",
+      "bytes": 6261,
+      "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a"
+    },
+    {
+      "path": "task.toml",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/task.toml",
+      "bytes": 2978,
+      "sha256": "bbe82e6a6abdbf6c06dfbd850aa675159a01ad95464143dda2ec317a48aa1642"
+    },
+    {
+      "path": "tests/__golden_output/answer.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/__golden_output/answer.xlsx",
+      "bytes": 6261,
+      "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a"
+    },
+    {
+      "path": "tests/criterion_adapter.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/criterion_adapter.py",
+      "bytes": 2563,
+      "sha256": "89170fcf79f25156cec7a3da6f712a254db64aa9960c1e2c909588281292000e"
+    },
+    {
+      "path": "tests/finalize.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/finalize.py",
+      "bytes": 14686,
+      "sha256": "01b1ef70d4e8ec5cc575cd94ec101fca4a00ef206b2756ca7bfc7289ffa63b45"
+    },
+    {
+      "path": "tests/frozen_bridge.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/frozen_bridge.py",
+      "bytes": 1785,
+      "sha256": "81a75aa1f1eb5530b2d95f566ed939013747faff2f950533989061ae7d72bf68"
+    },
+    {
+      "path": "tests/frozen_evaluator.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/frozen_evaluator.py",
+      "bytes": 14938,
+      "sha256": "47a3ce0cdb9195f672ff5ab65c440990ce23ba0503f07dad2d9707af52ad33ac"
+    },
+    {
+      "path": "tests/frozen_key.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/frozen_key.json",
+      "bytes": 9542,
+      "sha256": "b60657cc36ee3c094d04dc6e35471a3b2273220c6f6cbce3261b478c655af3dd"
+    },
+    {
+      "path": "tests/llm_artifact_check.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/llm_artifact_check.py",
+      "bytes": 2663,
+      "sha256": "7f4a23ec312714ffe694edb52b91bd1f0ebcca384cb9ab2f4310a465e7c7df22"
+    },
+    {
+      "path": "tests/no_key_check.sh",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/no_key_check.sh",
+      "bytes": 709,
+      "sha256": "8d7743ec8622318de7cf78c94b7556549bb0e105e0638048ca1ac5502475b73c"
+    },
+    {
+      "path": "tests/offline_score.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/offline_score.py",
+      "bytes": 2600,
+      "sha256": "11f540796b28b2212d9d8ddb53aa75134cae37e1031934a05506d87e7a69e8a6"
+    },
+    {
+      "path": "tests/prompt.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/prompt.md",
+      "bytes": 1285,
+      "sha256": "396df7c61975629f60f9ca01dacf0893c0e3d77fbaf45e08eca0906e00d221df"
+    },
+    {
+      "path": "tests/results_key.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/results_key.json",
+      "bytes": 9542,
+      "sha256": "b60657cc36ee3c094d04dc6e35471a3b2273220c6f6cbce3261b478c655af3dd"
+    },
+    {
+      "path": "tests/rubrics.toml",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/rubrics.toml",
+      "bytes": 1113,
+      "sha256": "e1c20a01a166e3e7ed581c39f546772801521824899861a954d170d831b31e21"
+    },
+    {
+      "path": "tests/score_output.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/score_output.py",
+      "bytes": 458,
+      "sha256": "d4187200dd6d7ed309403ffa47fe0a3f87f67a0a01a2b7614b4af8977aa5fac2"
+    },
+    {
+      "path": "tests/test.sh",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/tests/test.sh",
+      "bytes": 3353,
+      "sha256": "568cb8c368d113de38b6f9d8c7bb809ebae3ee9a6cf8b28dbd3c14e5177b8926"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/extraction.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/extraction.json",
+      "bytes": 4944,
+      "sha256": "ede50a40bb683400f6e308fff766e0c86e66fee07cd0d6d75f095b7ac6886547"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/reward-details.json",
+      "bytes": 2617,
+      "sha256": "638ee1d9235f6a90b2e394d465707cb17c3f38857375e93519b5fcc9d5eedf35"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/reward-details.v1.json",
+      "bytes": 2156,
+      "sha256": "a87d9fac00a94da9ea82fb180fee6fbb69d6913d50ef98321d117152f8f16b63"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/reward.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/reward.v1.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/claude-opus-4-8/score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/claude-opus-4-8/score.json",
+      "bytes": 6698,
+      "sha256": "59009107870fefb3005fad9c7c142f4a4e16d06767aefe1e360dd9663dbd2144"
+    },
+    {
+      "path": "validation/cli_checks/golden/extraction.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/extraction.json",
+      "bytes": 6971,
+      "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
+    },
+    {
+      "path": "validation/cli_checks/golden/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/reward-details.json",
+      "bytes": 2617,
+      "sha256": "941b8024d58e65eceb15cb6bab9d60d0f7568b0f72edfcf10fd4dc47c5fdcefb"
+    },
+    {
+      "path": "validation/cli_checks/golden/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/reward-details.v1.json",
+      "bytes": 2156,
+      "sha256": "b9a491c216ff6fb5c4220f27c44bf1c95431545ba6b1ab6c69ded18f3b837ccf"
+    },
+    {
+      "path": "validation/cli_checks/golden/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/reward.json",
+      "bytes": 149,
+      "sha256": "635657cfcca83da4cc07adc00beaccc85c9c4bb530db8a4994cc4949c50a5289"
+    },
+    {
+      "path": "validation/cli_checks/golden/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/reward.v1.json",
+      "bytes": 149,
+      "sha256": "635657cfcca83da4cc07adc00beaccc85c9c4bb530db8a4994cc4949c50a5289"
+    },
+    {
+      "path": "validation/cli_checks/golden/score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/golden/score.json",
+      "bytes": 8700,
+      "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/extraction.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/extraction.json",
+      "bytes": 4983,
+      "sha256": "5462308ba83683b8577e9f369a1a330743eb752f1fc92dfd6697c4b7736cb89e"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/reward-details.json",
+      "bytes": 2617,
+      "sha256": "638ee1d9235f6a90b2e394d465707cb17c3f38857375e93519b5fcc9d5eedf35"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/reward-details.v1.json",
+      "bytes": 2156,
+      "sha256": "a87d9fac00a94da9ea82fb180fee6fbb69d6913d50ef98321d117152f8f16b63"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/reward.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/reward.v1.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/gpt-5.6-sol/score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/gpt-5.6-sol/score.json",
+      "bytes": 6845,
+      "sha256": "a5f2138b1a0d2bef6c7fd8500b2f8877850e8b8b608f68da554aa18901a2d9ab"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/extraction.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/extraction.json",
+      "bytes": 5242,
+      "sha256": "77e729b5ede9dd968ff6b729363eb52700d178ab5393eb13ab9904e178d087f9"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/reward-details.json",
+      "bytes": 2617,
+      "sha256": "638ee1d9235f6a90b2e394d465707cb17c3f38857375e93519b5fcc9d5eedf35"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/reward-details.v1.json",
+      "bytes": 2156,
+      "sha256": "a87d9fac00a94da9ea82fb180fee6fbb69d6913d50ef98321d117152f8f16b63"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/reward.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/reward.v1.json",
+      "bytes": 149,
+      "sha256": "16f21f624991849c5e4d64445107a76f2fd40057970cef570b226ff6b6e02f62"
+    },
+    {
+      "path": "validation/cli_checks/qwen3.8-max/score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/cli_checks/qwen3.8-max/score.json",
+      "bytes": 6972,
+      "sha256": "6a8adb812fc5a7a561b74994558a7dc884fbbd47ad62564266a4d5fe146fc10b"
+    },
+    {
+      "path": "validation/final_checks.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/final_checks.json",
+      "bytes": 1350,
+      "sha256": "ec67db5c6b59ca2569d4b4a87876d3f0cbafefdf3ee664435da073b5e721c030"
+    },
+    {
+      "path": "validation/final_checks.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/final_checks.round1.json",
+      "bytes": 899,
+      "sha256": "79db68ff5c8df3c049d205080f78b409f6518664b6f86bf94f21f9a41dc1a63b"
+    },
+    {
+      "path": "validation/golden_judge_fix_summary.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/golden_judge_fix_summary.json",
+      "bytes": 1316,
+      "sha256": "88295f224c7bf9b9bbd48714e7fe75315e1b05b96bd4560e14ba963fd82fc7e6"
+    },
+    {
+      "path": "validation/judge_fixtures/saved_blind.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/judge_fixtures/saved_blind.json",
+      "bytes": 2090,
+      "sha256": "c3fcda6608caa1c62b2919d2552822f72797f6f7220e9595cb98db588030c917"
+    },
+    {
+      "path": "validation/llm_criterion_ownership.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/llm_criterion_ownership.md",
+      "bytes": 1857,
+      "sha256": "c676048ca2abda400cd36b1fc83577f5b7c2cab23bccd8ddee0403a09bb9ff5b"
+    },
+    {
+      "path": "validation/negative_cases/additional_support_sheet.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/additional_support_sheet.xlsx",
+      "bytes": 6775,
+      "sha256": "96b7938af0ec79065ae66d254a2ac9c79295217d774adc80a73348cd8d9f41d4"
+    },
+    {
+      "path": "validation/negative_cases/both_sheets_renamed.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/both_sheets_renamed.xlsx",
+      "bytes": 6263,
+      "sha256": "609a4a860cea352c30de6c6007ef6ec971dd716060f396e896944934e86e6a5f"
+    },
+    {
+      "path": "validation/negative_cases/cases.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/cases.json",
+      "bytes": 51376,
+      "sha256": "abf456c40ffb90686ddaff42c232c7ee2f83696cf90850f7fa0487f00d0b49e9"
+    },
+    {
+      "path": "validation/negative_cases/cases.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/cases.round1.json",
+      "bytes": 15326,
+      "sha256": "97c29399de0cc9cfd166d1fffef76b6b317fac832e8350782d71394643093942"
+    },
+    {
+      "path": "validation/negative_cases/detail_blank_label.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_blank_label.xlsx",
+      "bytes": 6277,
+      "sha256": "f41efe6cc19994039611f60fa6fcca2d60b70348744e2baee2c1e47ebad1a045"
+    },
+    {
+      "path": "validation/negative_cases/detail_columns_reversed.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_columns_reversed.xlsx",
+      "bytes": 6257,
+      "sha256": "6b2e009a2014f94678d3eab8274f4071ec87ead582c3cec8883b795efee980e2"
+    },
+    {
+      "path": "validation/negative_cases/detail_duplicate.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_duplicate.xlsx",
+      "bytes": 6275,
+      "sha256": "656eeacb8180d67612511ae7cf4ab16b5c54e3e15eb1196fc3763130710165cf"
+    },
+    {
+      "path": "validation/negative_cases/detail_extra_column.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_extra_column.xlsx",
+      "bytes": 6270,
+      "sha256": "c160fee80b72b65e1a2f096bfc4473dc390d45daba9c2626681a9e75fbb9a3bc"
+    },
+    {
+      "path": "validation/negative_cases/detail_general.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_general.xlsx",
+      "bytes": 6258,
+      "sha256": "ea264f5a541983638afc95244f1342185bce714536d39c70bac5ab4f0a8d3ce5"
+    },
+    {
+      "path": "validation/negative_cases/detail_header_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_header_case.xlsx",
+      "bytes": 6261,
+      "sha256": "71fd3988aca7ef497251d164e832986bce2197f7e22cec9d05dbe1a18d4cdd96"
+    },
+    {
+      "path": "validation/negative_cases/detail_missing.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_missing.xlsx",
+      "bytes": 5646,
+      "sha256": "bcd32e6eed3745b4a56eaa09035ef6e06d08ac637196bf0a7b4cc5e5ad47f774"
+    },
+    {
+      "path": "validation/negative_cases/detail_plan_d.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_plan_d.xlsx",
+      "bytes": 6281,
+      "sha256": "27e3c89dccdaa333cc8882fd367c0c9a1161cc5a38347cd71a9a7a110322a143"
+    },
+    {
+      "path": "validation/negative_cases/detail_plan_d_zero.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_plan_d_zero.xlsx",
+      "bytes": 6278,
+      "sha256": "9eec67aff4c2b7522a98fa7158bdc45b6de838b4f9acd8f52f4f405c2af5c3b3"
+    },
+    {
+      "path": "validation/negative_cases/detail_plus_cent.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_plus_cent.xlsx",
+      "bytes": 6264,
+      "sha256": "30a18922b5bf14cc9cb6af7d1cd3d5768a51a3f545c6bff1947a1b7aa35e5177"
+    },
+    {
+      "path": "validation/negative_cases/detail_sheet_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/detail_sheet_case.xlsx",
+      "bytes": 6263,
+      "sha256": "4fe316ed66be49645d47ae0b6b872d8893ee50f97197e79755a61e49ccdbe55a"
+    },
+    {
+      "path": "validation/negative_cases/equivalent_storage.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/equivalent_storage.xlsx",
+      "bytes": 6256,
+      "sha256": "ff730a31b5642a6bd1c289e7a6d0f5f034f7d3145a023b22463c26f5f8b0ffa3"
+    },
+    {
+      "path": "validation/negative_cases/extra_styled_column.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/extra_styled_column.xlsx",
+      "bytes": 6263,
+      "sha256": "7a7b7d85a1e81e53245579971b45c21737b37098e7c55bc7e9918fd2bd33d974"
+    },
+    {
+      "path": "validation/negative_cases/formatted_subcent.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/formatted_subcent.xlsx",
+      "bytes": 6274,
+      "sha256": "b9b089391b5705695adc5c6a8d83849a274684c938e001d05481e372f20c75c3"
+    },
+    {
+      "path": "validation/negative_cases/header_trailing_spaces.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/header_trailing_spaces.xlsx",
+      "bytes": 6299,
+      "sha256": "cff94a29bc6041f221e738cd6dc13977a7cbeebe7f6e5e33c71680d866414ffa"
+    },
+    {
+      "path": "validation/negative_cases/money_one_decimal.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/money_one_decimal.xlsx",
+      "bytes": 6291,
+      "sha256": "82d64197894eaf58768f8973c561e732a9de4e4e705efdc5ac2332a54273285c"
+    },
+    {
+      "path": "validation/negative_cases/money_three_decimals.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/money_three_decimals.xlsx",
+      "bytes": 6293,
+      "sha256": "7aab66faac93d9d959e26136eaac21c4cba6850888d9f50ff0fdb72456c1960d"
+    },
+    {
+      "path": "validation/negative_cases/results_blank_label.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_blank_label.xlsx",
+      "bytes": 6287,
+      "sha256": "f77cab4b1c7e6d5c8ba1ab4888a80d63f893fc07684036e61275fcf53dfb7a7f"
+    },
+    {
+      "path": "validation/negative_cases/results_blank_row.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_blank_row.xlsx",
+      "bytes": 6266,
+      "sha256": "8c0baf655ae97409eb799f6a9982e9fc37f94d3245b03a00a0163b3102dd3596"
+    },
+    {
+      "path": "validation/negative_cases/results_columns_reversed.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_columns_reversed.xlsx",
+      "bytes": 6256,
+      "sha256": "70849bef8771612544fe1bbee4a1acd879a6b4810c6991955e17a442e84c4145"
+    },
+    {
+      "path": "validation/negative_cases/results_duplicate.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_duplicate.xlsx",
+      "bytes": 6296,
+      "sha256": "45dee4532b9f1e5b872fa45131838cf126ce25eb5e5efaef47da3b7c739d4bc0"
+    },
+    {
+      "path": "validation/negative_cases/results_extra_column.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_extra_column.xlsx",
+      "bytes": 6273,
+      "sha256": "c9c5d3d4856fd16eee077f2c22124033b6cf9696415c50f6a1aeb2397536dcd3"
+    },
+    {
+      "path": "validation/negative_cases/results_general.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_general.xlsx",
+      "bytes": 6260,
+      "sha256": "87695c7e4c7622cf7a0f8351544ec209118010b9d877fef8ce63fa8c07b28df2"
+    },
+    {
+      "path": "validation/negative_cases/results_header_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_header_case.xlsx",
+      "bytes": 6264,
+      "sha256": "e161e853fb0b579af30e11f17b34a5b03b04c2f052cde5dbf26c4116ecbd5c14"
+    },
+    {
+      "path": "validation/negative_cases/results_label_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_label_case.xlsx",
+      "bytes": 6266,
+      "sha256": "359c2f54be9d553ced837b48e663fab344b4a8461c33be0514b87c6b67f64d8e"
+    },
+    {
+      "path": "validation/negative_cases/results_missing.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_missing.xlsx",
+      "bytes": 5054,
+      "sha256": "734b285198fb772d195a76325b65306b5f8c44ecabcd541368813453fd693bdf"
+    },
+    {
+      "path": "validation/negative_cases/results_plan_d.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_plan_d.xlsx",
+      "bytes": 6294,
+      "sha256": "b8656f4365922f470ab461d7d60a38eb0ff0f8264debadf6b193694373c20ae9"
+    },
+    {
+      "path": "validation/negative_cases/results_plus_cent.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_plus_cent.xlsx",
+      "bytes": 6266,
+      "sha256": "950fd52b8306779f060726641ed48c33066aff26fc8b85033275a9e022802c51"
+    },
+    {
+      "path": "validation/negative_cases/results_rows_reversed.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_rows_reversed.xlsx",
+      "bytes": 6261,
+      "sha256": "bd9a49049ba11ecb3d49e8109f9c41dbb73821a1685faec7b05d7ff8984ec1a4"
+    },
+    {
+      "path": "validation/negative_cases/results_sheet_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_sheet_case.xlsx",
+      "bytes": 6262,
+      "sha256": "2f9cc06c1fb004ab5484e853278b8b17c60407324cb0bdec2e209df1537e9242"
+    },
+    {
+      "path": "validation/negative_cases/results_unknown_label.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/results_unknown_label.xlsx",
+      "bytes": 6263,
+      "sha256": "e3145b13b0c29b444541b456606babd582c1e9c2fce2ee5d331c111b251388bd"
+    },
+    {
+      "path": "validation/negative_cases/source_one_empty.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/source_one_empty.xlsx",
+      "bytes": 6201,
+      "sha256": "7de71ad840f601926c2e0fbc20f8e3390fe4698ff7c942460f120fa5302184e3"
+    },
+    {
+      "path": "validation/negative_cases/sources_empty.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/sources_empty.xlsx",
+      "bytes": 5743,
+      "sha256": "12bcaf33c222ab8b6fe1d93ecaff52c2ca082cee53bc067d4f901af8659c8c2f"
+    },
+    {
+      "path": "validation/negative_cases/sources_header_empty.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/sources_header_empty.xlsx",
+      "bytes": 5731,
+      "sha256": "b26384220f16bd65af410663007b3eda119085accc4e24e30ec2136f0d1c7526"
+    },
+    {
+      "path": "validation/negative_cases/sources_numeric.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/sources_numeric.xlsx",
+      "bytes": 5745,
+      "sha256": "8aeefed0831d64580f3f89253a71119d269f2ca5476734b4c4e2082778734ea9"
+    },
+    {
+      "path": "validation/negative_cases/sources_numeric_text.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/sources_numeric_text.xlsx",
+      "bytes": 6212,
+      "sha256": "f3a10e9dc7e17f1a8e47a39585788093cf4d0ae8c7bb917a3386d84e8f7deb44"
+    },
+    {
+      "path": "validation/negative_cases/sources_whitespace.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/sources_whitespace.xlsx",
+      "bytes": 5764,
+      "sha256": "d538f313d266eb09b4d2627c4f7aeaeb77d7f20e64bb5bd7d5cb26e3f3c2e0b8"
+    },
+    {
+      "path": "validation/negative_cases/stored_cent.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/stored_cent.xlsx",
+      "bytes": 6265,
+      "sha256": "5e52259d41c1825ce137576840258c2c0f2c683b4276d1a3b0d6e246a3bcba7c"
+    },
+    {
+      "path": "validation/negative_cases/support_error.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/support_error.xlsx",
+      "bytes": 6722,
+      "sha256": "7818da0595f969f919364c3142eea21b028083d3675329d9c4252934c1606682"
+    },
+    {
+      "path": "validation/negative_cases/three_decimal_subcent.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/three_decimal_subcent.xlsx",
+      "bytes": 6296,
+      "sha256": "5e96e2c64d55825b274dd3582f8b17fd2acf3a4729c9e5a04d4a01b61271ae55"
+    },
+    {
+      "path": "validation/negative_cases/units_case.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/units_case.xlsx",
+      "bytes": 6263,
+      "sha256": "778cccad87551e032af66c38d48ca6ba31b5de9ca46dae80cab880fd224d07ec"
+    },
+    {
+      "path": "validation/negative_cases/units_eur.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/units_eur.xlsx",
+      "bytes": 6261,
+      "sha256": "5dd215ab9cc3faa52957e0f8e575e08d2371434c17c25712ded7818b076c0185"
+    },
+    {
+      "path": "validation/negative_cases/wrong_date.xlsx",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/negative_cases/wrong_date.xlsx",
+      "bytes": 6268,
+      "sha256": "37a68b44a1f98bc245937d903d7aae558b58914a084577d4bdc312a27821ad7c"
+    },
+    {
+      "path": "validation/package_audit.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/package_audit.json",
+      "bytes": 305,
+      "sha256": "2d0f490aaf80ead90a1a6c3261b481e762b197ad9bbb5a580bf489e4414bfa66"
+    },
+    {
+      "path": "validation/render_golden.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/render_golden.py",
+      "bytes": 3250,
+      "sha256": "c984ce56fab8e59f53424bf35902dbe3ec1b9ef4937db16d93e2d4a45f168ff7"
+    },
+    {
+      "path": "validation/rescore_saved.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/rescore_saved.py",
+      "bytes": 16304,
+      "sha256": "faed51b26dfaef4b4fe64ee26e08ef23e8a586d5fdd8ff405901780d7a8fd78b"
+    },
+    {
+      "path": "validation/revision_v2_baseline.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/revision_v2_baseline.json",
+      "bytes": 7226,
+      "sha256": "1af56ebe42a62a4fe2e549dd69b34becf0d3594a3b118ef8ea62debfe824cc8b"
+    },
+    {
+      "path": "validation/scoring_policy.md",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/scoring_policy.md",
+      "bytes": 2804,
+      "sha256": "4da7e7bcad0e076af648abb5295aa63b0fab00c45d67bd5eb760b0e0b75219af"
+    },
+    {
+      "path": "validation/scoring_v2_checks.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/scoring_v2_checks.json",
+      "bytes": 1157,
+      "sha256": "d579e77ba3c162592e6c24146c289e7bdc6b23d89fd1a3c16953dd6c219d44c3"
+    },
+    {
+      "path": "validation/source_pair_audit.json",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/source_pair_audit.json",
+      "bytes": 4423,
+      "sha256": "8f719faf1020c4477515bd1e934e532950dbe57ff94ffade5cf52b5c13f66367"
+    },
+    {
+      "path": "validation/test_judge_artifact_access.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/test_judge_artifact_access.py",
+      "bytes": 4196,
+      "sha256": "0acbe53a8d0ec5dd8c8eca7095c3d8e75b3e6599c6c07021f544e2ba11ac0c28"
+    },
+    {
+      "path": "validation/test_scoring_v2.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/test_scoring_v2.py",
+      "bytes": 16681,
+      "sha256": "e603ad0e7a46485d4c4a51430fa8ea924254af4f98afe18cbb1ac2987c3986ae"
+    },
+    {
+      "path": "validation/validate_paths.py",
+      "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/validate_paths.py",
+      "bytes": 6473,
+      "sha256": "73cac25a5c5b805063613ffabbc1c18d89a8aa244e5e7944dde1c13032027c7a"
+    }
+  ],
+  "package_name": "ZCloud-市政财务-002-20261022"
+}

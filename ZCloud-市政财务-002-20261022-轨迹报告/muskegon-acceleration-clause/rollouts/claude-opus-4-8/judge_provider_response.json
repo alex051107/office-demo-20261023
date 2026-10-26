@@ -1,6 +1,6 @@
 {
   "status": "NOT_RUN",
   "provider_response": null,
-  "note": "LLM 裁判作业运行异常后被人工停止，没有可用的裁判响应；程序判据结果见 reward-details.offline.json。",
+  "note": "LLM 裁判作业运行异常后被人工停止，没有可用的裁判响应；程序判据结果见 ../../history/rollouts/claude-opus-4-8/reward-details.offline.json。",
   "this_export_paid_calls": 0
 }

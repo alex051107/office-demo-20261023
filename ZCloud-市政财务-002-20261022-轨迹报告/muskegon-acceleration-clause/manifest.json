@@ -1,7 +1,7 @@
 {
   "schema_version": "office-split-v1",
   "path_base": "case_root",
-  "file_count": 249,
+  "file_count": 305,
   "manifest_excludes": [
     "manifest.json"
   ],
@@ -9,50 +9,20 @@
     {
       "path": "consistency.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/consistency.json",
-      "bytes": 10083,
-      "sha256": "b6f4c3ea8403d85b9088236a6721ee4df328f5f6dba74a9869d35e14569da2a0"
-    },
-    {
-      "path": "consistency.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/consistency.round1.json",
-      "bytes": 9205,
-      "sha256": "64920e3ae7cc3ef9e89424ed16b9deb7bab4f62813766fa5f4bf1b92482a78b2"
-    },
-    {
-      "path": "consistency.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/consistency.v1.json",
-      "bytes": 8121,
-      "sha256": "94521c5129c30143c6441b40c1c0da689303bdf3604f1fb44ca1dfd8b893ec30"
+      "bytes": 7050,
+      "sha256": "e20a21a9d9daec11e684776c6d6d6b990aa034e3d5d5ff218af79192e0c12752"
     },
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/delivery_note.md",
-      "bytes": 10655,
-      "sha256": "66aad3e177b5b6477f8021db55249ec0ed1cfc910a7ae91a765b9eef9eeef23a"
+      "bytes": 2633,
+      "sha256": "c95419c4d000660ed19755b445a72dee97fea85d69479c7ea85862404b8cfad7"
     },
     {
       "path": "discrimination_cases.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/discrimination_cases.json",
-      "bytes": 8862,
-      "sha256": "bf6d7935525d101530baee7f0be1528791c3aec02ac7b447b92acb767ff7e12e"
-    },
-    {
-      "path": "discrimination_cases.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/discrimination_cases.round1.json",
-      "bytes": 5464,
-      "sha256": "62fd8934e6f7049eb6d05028444d7bb430d340f2d7959add8fbe25b5fb2ddae6"
-    },
-    {
-      "path": "discrimination_cases.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/discrimination_cases.v1.json",
-      "bytes": 5587,
-      "sha256": "9b283c65e4cd629635cc2dc3a7f2e716793a9f974c0fa211d76ac92d6a317dc7"
-    },
-    {
-      "path": "excluded_runs.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/excluded_runs.json",
-      "bytes": 303,
-      "sha256": "759bf932b96efbfe5006af7537d905db15707e05c1a0b6ddf5dc953c64d24861"
+      "bytes": 10702,
+      "sha256": "266aa9bbc4c3c3a46013a84a910be85cee0e8184711086295dbab50a2fe3b148"
     },
     {
       "path": "golden/candidate.xlsx",
@@ -75,38 +45,32 @@
     {
       "path": "golden/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge.json",
-      "bytes": 19184,
-      "sha256": "fc3dd1161cb149d8fd3495b4117f704214720548cb61adf20c7058dd527d1e5b"
+      "bytes": 347,
+      "sha256": "e9c1f288160f542e3a6557bb263d301610b3d1a336adeb5a769ccc425c9d99b1"
     },
     {
-      "path": "golden/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge.round1.json",
-      "bytes": 18510,
-      "sha256": "9d843ca009239dca665a4a9b6ea3d574611bd091615515af13d7946fb9936c74"
-    },
-    {
-      "path": "golden/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge.v1.json",
-      "bytes": 11463,
-      "sha256": "9ac7a60a9be5893ed153f945e771a8c5fdce8a73a9c569ec20ff48123708fd4b"
-    },
-    {
-      "path": "golden/judge_prompt.md",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge_prompt.md",
-      "bytes": 1952,
-      "sha256": "3cc0c22b94a25c8222a4d607f42beebfbe1e9a90eda5fe9bffb86c5329da034d"
+      "path": "golden/judge_metadata.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge_metadata.json",
+      "bytes": 90,
+      "sha256": "19512f94e32923eb61528f7cc9950665d3b0b22e6cf4398d02580a31895177e1"
     },
     {
       "path": "golden/judge_provider_response.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/judge_provider_response.json",
-      "bytes": 417,
-      "sha256": "40be86869e54c8a2ef6480648c205927a34692ab6d9bbe0927f76d615347a39b"
+      "bytes": 74,
+      "sha256": "0e44f5ddcc023a224884f84f00c9b3ce7483ae54a96e0fb8566b189944ceba6a"
     },
     {
       "path": "golden/programmatic_score.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/programmatic_score.json",
       "bytes": 8700,
       "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
+    },
+    {
+      "path": "golden/provider_response.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/provider_response.json",
+      "bytes": 74,
+      "sha256": "0e44f5ddcc023a224884f84f00c9b3ce7483ae54a96e0fb8566b189944ceba6a"
     },
     {
       "path": "golden/renders/sheet-01.pdf",
@@ -135,38 +99,32 @@
     {
       "path": "golden/reward-details.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward-details.json",
-      "bytes": 15070,
-      "sha256": "9a417e8c6bd847f8d7fe2a824afb5082096ddc91275a57c15d8938d59b1c78de"
-    },
-    {
-      "path": "golden/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward-details.round1.json",
-      "bytes": 14446,
-      "sha256": "739cbbfe9d64e9278d94629b524b1e2be7dd1e6c9b03c1e2086d2517f44990e4"
-    },
-    {
-      "path": "golden/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward-details.v1.json",
-      "bytes": 7723,
-      "sha256": "c1a60b47c11e2639dd5207416ba130c983ac05539d2d3837faa337292aaaee06"
+      "bytes": 123,
+      "sha256": "bdff2f67a81c3d85c58725a9cb6f10723de20d46a1af6078b6e44331e0eea816"
     },
     {
       "path": "golden/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward.json",
-      "bytes": 726,
-      "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
+      "bytes": 284,
+      "sha256": "66a94a53c4c24ad90e2ebb2de32b4791a05914a247df86cb442526babc1b533d"
     },
     {
-      "path": "golden/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward.round1.json",
-      "bytes": 631,
-      "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
+      "path": "golden/reward.txt",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward.txt",
+      "bytes": 4,
+      "sha256": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
     },
     {
-      "path": "golden/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward.v1.json",
-      "bytes": 95,
-      "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
+      "path": "golden/reward_exit_message.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/reward_exit_message.json",
+      "bytes": 112,
+      "sha256": "fe8341a6590bf1c1ab511482230df19ebcab401b62ce5ade080c42e98e2f610e"
+    },
+    {
+      "path": "golden/run_metadata.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/golden/run_metadata.json",
+      "bytes": 212,
+      "sha256": "63f27b770a6a2299fce831b4cb995d751026aeaf3b63da155e5259f6e1834f58"
     },
     {
       "path": "golden/source_explanation.md",
@@ -193,340 +151,928 @@
       "sha256": "899d8e12c8991f9641e4dfd03cbe64e259eb97c1d03dc1e8bc0b639a492644cb"
     },
     {
-      "path": "judge_runs/golden_r1/extraction_v2.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/extraction_v2.json",
-      "bytes": 6971,
-      "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
+      "path": "history/CHANGELOG.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/CHANGELOG.md",
+      "bytes": 12219,
+      "sha256": "bf8c0a6a1de0cda858d3d65fd83b2ef797f1ae8bd1df4251eedb6864aec8b482"
     },
     {
-      "path": "judge_runs/golden_r1/judge.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/judge.json",
-      "bytes": 19150,
-      "sha256": "a25dcdf0a1013f90fcd1778ee553611eafd1dba80492b42a5417c7e1d2434789"
+      "path": "history/README.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/README.md",
+      "bytes": 1877,
+      "sha256": "f00cb4626ec856d3dada594620e7ea79cc3ae800698e3b1509c961115242da2d"
     },
     {
-      "path": "judge_runs/golden_r1/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/judge.round1.json",
-      "bytes": 18476,
-      "sha256": "41353088342ca0a11d2ec48d90d5c451f136f32434a3154b5d17834bde729bed"
+      "path": "history/before_cleanup/discrimination_cases.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/discrimination_cases.json",
+      "bytes": 10694,
+      "sha256": "c0ad69df4436d4701b21e328a0908a936501ab4d64a383e07debd0822d7d67a2"
     },
     {
-      "path": "judge_runs/golden_r1/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/judge.v1.json",
-      "bytes": 11429,
-      "sha256": "0e95bc3621629845202c206c0f33951261994ed47c21893ecd649254ed9f82a1"
+      "path": "history/before_cleanup/judge_runs/golden_round2_status.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/judge_runs/golden_round2_status.json",
+      "bytes": 1534,
+      "sha256": "ee49b5da447b7eca3f13223a231732b8b7318772d29adbcde7a4f948a9a779a2"
     },
     {
-      "path": "judge_runs/golden_r1/programmatic_score.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/programmatic_score.json",
-      "bytes": 8700,
-      "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
+      "path": "history/before_cleanup/judge_runs/gpt-5.6-sol_r1/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/judge_runs/gpt-5.6-sol_r1/judge.json",
+      "bytes": 16023,
+      "sha256": "32ace34beab94487c5af1beea09bca6f1e4044af3f2a85d1a986b0e816f07da1"
     },
     {
-      "path": "judge_runs/golden_r1/reward-details.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward-details.json",
+      "path": "history/before_cleanup/judge_runs/gpt-5.6-sol_r1/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/judge_runs/gpt-5.6-sol_r1/reward.json",
+      "bytes": 726,
+      "sha256": "4060f4677d046571053274d77eac833125b1ec577391837b2664459b1ba6090c"
+    },
+    {
+      "path": "history/before_cleanup/judge_runs/qwen3.8-max_r1/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/judge_runs/qwen3.8-max_r1/judge.json",
+      "bytes": 16936,
+      "sha256": "106f70ee3c4735548bd0a024bc1fbb91787b3a38d3cddaf3de9c919eee50cb20"
+    },
+    {
+      "path": "history/before_cleanup/judge_runs/qwen3.8-max_r1/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/judge_runs/qwen3.8-max_r1/reward.json",
+      "bytes": 726,
+      "sha256": "3b2189b4fed2a9336c64f1ebf4ad81d60b94f9b23cab924e8ef60b54cb6087bb"
+    },
+    {
+      "path": "history/before_cleanup/metadata/task_metadata.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/metadata/task_metadata.json",
+      "bytes": 6735,
+      "sha256": "358a04f879ae8dab1c761862a4a6ca563fb77267f8247928980bc89aaddb7e81"
+    },
+    {
+      "path": "history/before_cleanup/quality_report.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/quality_report.json",
+      "bytes": 8545,
+      "sha256": "5d2cd8fe671f93d3c95fa3b52e181234311a34e0d66b40a4c4e0901c05dc1c48"
+    },
+    {
+      "path": "history/before_cleanup/records.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/records.jsonl",
+      "bytes": 7650,
+      "sha256": "8f7bbd653e0ccfa2b74e3d92e8d474aef1888921f52e808c84850a9cc4928365"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/claude-opus-4-8/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/claude-opus-4-8/judge.json",
+      "bytes": 13250,
+      "sha256": "08eff6e3d33d6c456e0288169ddca9cf682b1b1ecae9e0c6ccafd59eedbb024a"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/claude-opus-4-8/judge_provider_response.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/claude-opus-4-8/judge_provider_response.json",
+      "bytes": 231,
+      "sha256": "e98ab0d92609d8cc15de391e5d0d2036d564e372c2c709b79b44c1fb8ea63921"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/claude-opus-4-8/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/claude-opus-4-8/reward.json",
+      "bytes": 850,
+      "sha256": "1cbf981b41c83a22523f554bf6d829ef6ec0b18714c37ab2b31a3db3a57d8b17"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/gpt-5.6-sol/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/gpt-5.6-sol/judge.json",
+      "bytes": 16058,
+      "sha256": "cfea0b8c6879c264ab607311a62a7d24176cb1e34a2cbf9d363ef7e02cd6f6e3"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/gpt-5.6-sol/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/gpt-5.6-sol/reward.json",
+      "bytes": 726,
+      "sha256": "4060f4677d046571053274d77eac833125b1ec577391837b2664459b1ba6090c"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/qwen3.8-max/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/qwen3.8-max/judge.json",
+      "bytes": 16971,
+      "sha256": "cfe98e19390e68f8793466fd24621590145c3831ea14e26faf2db22561fbf2f6"
+    },
+    {
+      "path": "history/before_cleanup/rollouts/qwen3.8-max/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/rollouts/qwen3.8-max/reward.json",
+      "bytes": 726,
+      "sha256": "3b2189b4fed2a9336c64f1ebf4ad81d60b94f9b23cab924e8ef60b54cb6087bb"
+    },
+    {
+      "path": "history/before_cleanup/validation/package_audit.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/before_cleanup/validation/package_audit.json",
+      "bytes": 305,
+      "sha256": "2d0f490aaf80ead90a1a6c3261b481e762b197ad9bbb5a580bf489e4414bfa66"
+    },
+    {
+      "path": "history/consistency.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/consistency.pre_judge_fix.json",
+      "bytes": 10083,
+      "sha256": "b6f4c3ea8403d85b9088236a6721ee4df328f5f6dba74a9869d35e14569da2a0"
+    },
+    {
+      "path": "history/consistency.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/consistency.round1.json",
+      "bytes": 9205,
+      "sha256": "64920e3ae7cc3ef9e89424ed16b9deb7bab4f62813766fa5f4bf1b92482a78b2"
+    },
+    {
+      "path": "history/consistency.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/consistency.v1.json",
+      "bytes": 8121,
+      "sha256": "94521c5129c30143c6441b40c1c0da689303bdf3604f1fb44ca1dfd8b893ec30"
+    },
+    {
+      "path": "history/discrimination_cases.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/discrimination_cases.pre_judge_fix.json",
+      "bytes": 8862,
+      "sha256": "bf6d7935525d101530baee7f0be1528791c3aec02ac7b447b92acb767ff7e12e"
+    },
+    {
+      "path": "history/discrimination_cases.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/discrimination_cases.round1.json",
+      "bytes": 5464,
+      "sha256": "62fd8934e6f7049eb6d05028444d7bb430d340f2d7959add8fbe25b5fb2ddae6"
+    },
+    {
+      "path": "history/discrimination_cases.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/discrimination_cases.v1.json",
+      "bytes": 5587,
+      "sha256": "9b283c65e4cd629635cc2dc3a7f2e716793a9f974c0fa211d76ac92d6a317dc7"
+    },
+    {
+      "path": "history/excluded_runs.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/excluded_runs.json",
+      "bytes": 303,
+      "sha256": "759bf932b96efbfe5006af7537d905db15707e05c1a0b6ddf5dc953c64d24861"
+    },
+    {
+      "path": "history/golden/judge.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/judge.pre_judge_fix.json",
+      "bytes": 19184,
+      "sha256": "fc3dd1161cb149d8fd3495b4117f704214720548cb61adf20c7058dd527d1e5b"
+    },
+    {
+      "path": "history/golden/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/judge.round1.json",
+      "bytes": 18510,
+      "sha256": "9d843ca009239dca665a4a9b6ea3d574611bd091615515af13d7946fb9936c74"
+    },
+    {
+      "path": "history/golden/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/judge.v1.json",
+      "bytes": 11463,
+      "sha256": "9ac7a60a9be5893ed153f945e771a8c5fdce8a73a9c569ec20ff48123708fd4b"
+    },
+    {
+      "path": "history/golden/reward-details.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward-details.pre_judge_fix.json",
       "bytes": 15070,
       "sha256": "9a417e8c6bd847f8d7fe2a824afb5082096ddc91275a57c15d8938d59b1c78de"
     },
     {
-      "path": "judge_runs/golden_r1/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward-details.round1.json",
+      "path": "history/golden/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward-details.round1.json",
       "bytes": 14446,
       "sha256": "739cbbfe9d64e9278d94629b524b1e2be7dd1e6c9b03c1e2086d2517f44990e4"
     },
     {
-      "path": "judge_runs/golden_r1/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward-details.v1.json",
+      "path": "history/golden/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward-details.v1.json",
       "bytes": 7723,
       "sha256": "c1a60b47c11e2639dd5207416ba130c983ac05539d2d3837faa337292aaaee06"
     },
     {
-      "path": "judge_runs/golden_r1/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward.json",
+      "path": "history/golden/reward.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward.pre_judge_fix.json",
       "bytes": 726,
       "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
     },
     {
-      "path": "judge_runs/golden_r1/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward.round1.json",
+      "path": "history/golden/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward.round1.json",
       "bytes": 631,
       "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
     },
     {
-      "path": "judge_runs/golden_r1/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r1/reward.v1.json",
+      "path": "history/golden/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden/reward.v1.json",
       "bytes": 95,
       "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
     },
     {
-      "path": "judge_runs/golden_r2/extraction_v2.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/extraction_v2.json",
+      "path": "history/golden_judge_fix_summary.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/golden_judge_fix_summary.json",
+      "bytes": 1316,
+      "sha256": "88295f224c7bf9b9bbd48714e7fe75315e1b05b96bd4560e14ba963fd82fc7e6"
+    },
+    {
+      "path": "history/judge_costs.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_costs.json",
+      "bytes": 222,
+      "sha256": "29dfb6de07d7f76688df302b7fc73f16dfd4d900249ad6dd9cc5d6ec2360e930"
+    },
+    {
+      "path": "history/judge_runs/golden_round2_status.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/golden_round2_status.json",
+      "bytes": 1534,
+      "sha256": "ee49b5da447b7eca3f13223a231732b8b7318772d29adbcde7a4f948a9a779a2"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/judge.round1.json",
+      "bytes": 15349,
+      "sha256": "dca02cf0d8244603c94e4591ef6d13929120a0d3238d4ff177d8b90e49552b8a"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/judge.v1.json",
+      "bytes": 10182,
+      "sha256": "8a1eada9dca766db6300408d49d03f1eaab00a79055ce378e1c91cb72815cd71"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/reward-details.round1.json",
+      "bytes": 11296,
+      "sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/reward-details.v1.json",
+      "bytes": 6006,
+      "sha256": "02352857d476900be41a14a51d341b79e2b0339ae632815418aa42f0dc6f9b54"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/reward.round1.json",
+      "bytes": 631,
+      "sha256": "9b257d884c1c420dfce8e82b0c6c520e4da278662bea56b27a73580c9d316929"
+    },
+    {
+      "path": "history/judge_runs/gpt-5.6-sol_r1/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/gpt-5.6-sol_r1/reward.v1.json",
+      "bytes": 95,
+      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/judge.round1.json",
+      "bytes": 16262,
+      "sha256": "c804bcebcb0edefbf362d9ed88768132eeaf2140026d5f43ce96475938f6cf03"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/judge.v1.json",
+      "bytes": 10968,
+      "sha256": "1b2a72cbec85b24c7a4dc273c9a908a2fdc20684e95aa2b8ddd0a57163eab7a9"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/reward-details.round1.json",
+      "bytes": 12201,
+      "sha256": "457d6d6e2a226350f6d230d36b4ff474f0d022bcced1333687559386a267febc"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/reward-details.v1.json",
+      "bytes": 7207,
+      "sha256": "aec84ad119f9706984beb2bd9c642e0f8aef42d4fc985aa1a85511dd7a875f51"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/reward.round1.json",
+      "bytes": 631,
+      "sha256": "d5637e5f93805a88cde3c6d730c974a3e2a403f2f7acd9e104995407a9218e05"
+    },
+    {
+      "path": "history/judge_runs/qwen3.8-max_r1/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/qwen3.8-max_r1/reward.v1.json",
+      "bytes": 95,
+      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/golden_r1/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/golden_r1/reward.json",
+      "bytes": 86,
+      "sha256": "a513b8bef6f21fd86f7ff97c91e372080344ae1d62401d9009bccf39bd94e33c"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/golden_r1/reward_exit_message.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/golden_r1/reward_exit_message.json",
+      "bytes": 148,
+      "sha256": "2f64ce45bbd6d5ffc3bec6e18bc5c4dfa4c4b34643be783ca2b0ad133082b253"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/golden_r1/run_metadata.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/golden_r1/run_metadata.json",
+      "bytes": 899,
+      "sha256": "8287644fb8600573e498dc339696c1461ff6f4c493c85ad27c30299493ffc041"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/extracted_text.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/extracted_text.md",
+      "bytes": 2731,
+      "sha256": "942397368bed4701f91221b4103fdd4b9b83428c0fa14368904045f13c9c45b4"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/extraction_v2.json",
       "bytes": 6971,
       "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
     },
     {
-      "path": "judge_runs/golden_r2/judge.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/judge.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/judge.json",
+      "bytes": 19184,
+      "sha256": "fc3dd1161cb149d8fd3495b4117f704214720548cb61adf20c7058dd527d1e5b"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/judge.round1.json",
+      "bytes": 18510,
+      "sha256": "9d843ca009239dca665a4a9b6ea3d574611bd091615515af13d7946fb9936c74"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/judge.v1.json",
+      "bytes": 11463,
+      "sha256": "9ac7a60a9be5893ed153f945e771a8c5fdce8a73a9c569ec20ff48123708fd4b"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/judge_prompt.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/judge_prompt.md",
+      "bytes": 1952,
+      "sha256": "3cc0c22b94a25c8222a4d607f42beebfbe1e9a90eda5fe9bffb86c5329da034d"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/judge_provider_response.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/judge_provider_response.json",
+      "bytes": 417,
+      "sha256": "40be86869e54c8a2ef6480648c205927a34692ab6d9bbe0927f76d615347a39b"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/programmatic_score.json",
+      "bytes": 8700,
+      "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.json",
+      "bytes": 15070,
+      "sha256": "9a417e8c6bd847f8d7fe2a824afb5082096ddc91275a57c15d8938d59b1c78de"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.round1.json",
+      "bytes": 14446,
+      "sha256": "739cbbfe9d64e9278d94629b524b1e2be7dd1e6c9b03c1e2086d2517f44990e4"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward-details.v1.json",
+      "bytes": 7723,
+      "sha256": "c1a60b47c11e2639dd5207416ba130c983ac05539d2d3837faa337292aaaee06"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward.json",
+      "bytes": 726,
+      "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward.round1.json",
+      "bytes": 631,
+      "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/reward.v1.json",
+      "bytes": 95,
+      "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/source_explanation.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/source_explanation.md",
+      "bytes": 2169,
+      "sha256": "e7dafcc8274245170df8c6e45e9bd7d285c628850f762fcb7075243f9491411b"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/source_extracts.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/source_extracts.md",
+      "bytes": 26750,
+      "sha256": "f891917466c9a141c11a8bc0ccbec1126fc4a329f97e51824a071ed85ccd6664"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/structural_checks.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/structural_checks.json",
+      "bytes": 729,
+      "sha256": "6905668ad33fe19720df2375901df467ff650a2b07102cc01ff8c6eb46e761d1"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/golden/visual_review.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/golden/visual_review.json",
+      "bytes": 1019,
+      "sha256": "899d8e12c8991f9641e4dfd03cbe64e259eb97c1d03dc1e8bc0b639a492644cb"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/extraction_v2.json",
+      "bytes": 6971,
+      "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.json",
+      "bytes": 19150,
+      "sha256": "a25dcdf0a1013f90fcd1778ee553611eafd1dba80492b42a5417c7e1d2434789"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.round1.json",
+      "bytes": 18476,
+      "sha256": "41353088342ca0a11d2ec48d90d5c451f136f32434a3154b5d17834bde729bed"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/judge.v1.json",
+      "bytes": 11429,
+      "sha256": "0e95bc3621629845202c206c0f33951261994ed47c21893ecd649254ed9f82a1"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/programmatic_score.json",
+      "bytes": 8700,
+      "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.json",
+      "bytes": 15070,
+      "sha256": "9a417e8c6bd847f8d7fe2a824afb5082096ddc91275a57c15d8938d59b1c78de"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.round1.json",
+      "bytes": 14446,
+      "sha256": "739cbbfe9d64e9278d94629b524b1e2be7dd1e6c9b03c1e2086d2517f44990e4"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward-details.v1.json",
+      "bytes": 7723,
+      "sha256": "c1a60b47c11e2639dd5207416ba130c983ac05539d2d3837faa337292aaaee06"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.json",
+      "bytes": 726,
+      "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.round1.json",
+      "bytes": 631,
+      "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r1/reward.v1.json",
+      "bytes": 95,
+      "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/extraction_v2.json",
+      "bytes": 6971,
+      "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
+    },
+    {
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.json",
       "bytes": 18818,
       "sha256": "6e7c70097b0c7b18d84bca4507ae951b205538166e2a26e11d9ace2660855847"
     },
     {
-      "path": "judge_runs/golden_r2/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/judge.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.round1.json",
       "bytes": 18144,
       "sha256": "395e21f2cecb5ef492c18bcfc4b93233a795dfa3fa9a67c0e2285065d925d39c"
     },
     {
-      "path": "judge_runs/golden_r2/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/judge.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/judge.v1.json",
       "bytes": 11097,
       "sha256": "faad69b763c89ef116796cf8397d5d2dda01de44bd61c1669d54842fcf4ac6ca"
     },
     {
-      "path": "judge_runs/golden_r2/programmatic_score.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/programmatic_score.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/programmatic_score.json",
       "bytes": 8700,
       "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
     },
     {
-      "path": "judge_runs/golden_r2/reward-details.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward-details.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.json",
       "bytes": 14738,
       "sha256": "bb7de192571dfabb229c593d0d74e1fcfb26e8a526015e441528119dc70a88c4"
     },
     {
-      "path": "judge_runs/golden_r2/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward-details.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.round1.json",
       "bytes": 14114,
       "sha256": "7dc8f96189969a611b155f901ee7c714cebed466e25eeaf8a9a2f896aa9d2e26"
     },
     {
-      "path": "judge_runs/golden_r2/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward-details.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward-details.v1.json",
       "bytes": 7382,
       "sha256": "df0c35197795353452fb6fe3ff0356c6a4074ad9bb747bd28da0b06bb9b3c443"
     },
     {
-      "path": "judge_runs/golden_r2/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.json",
       "bytes": 726,
       "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
     },
     {
-      "path": "judge_runs/golden_r2/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.round1.json",
       "bytes": 631,
       "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
     },
     {
-      "path": "judge_runs/golden_r2/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r2/reward.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r2/reward.v1.json",
       "bytes": 95,
       "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
     },
     {
-      "path": "judge_runs/golden_r3/extraction_v2.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/extraction_v2.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/extraction_v2.json",
       "bytes": 6971,
       "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
     },
     {
-      "path": "judge_runs/golden_r3/judge.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/judge.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.json",
       "bytes": 17668,
       "sha256": "f3701d4effcdebe0f84ea16c0cd1a5aee3fbd8b0472f94837e43333afbc9d367"
     },
     {
-      "path": "judge_runs/golden_r3/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/judge.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.round1.json",
       "bytes": 16994,
       "sha256": "5743722896f058bb432c89a1f34efe2fc8a715c5eada33cfdeb29c688805aba7"
     },
     {
-      "path": "judge_runs/golden_r3/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/judge.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/judge.v1.json",
       "bytes": 9947,
       "sha256": "6710f071270d02afacaa012e870c50f769f0d4f27d392853ae39b85b8b3fd6d2"
     },
     {
-      "path": "judge_runs/golden_r3/programmatic_score.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/programmatic_score.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/programmatic_score.json",
       "bytes": 8700,
       "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
     },
     {
-      "path": "judge_runs/golden_r3/reward-details.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward-details.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.json",
       "bytes": 13588,
       "sha256": "db5464d012f63d5cd52d37467b06452bb8b282f92d35e71291acab9dac03cb99"
     },
     {
-      "path": "judge_runs/golden_r3/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward-details.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.round1.json",
       "bytes": 12964,
       "sha256": "84a8a56a36cdab4cf64fe22750ed300cfc5a51dfb63c1c77491f4e74f163e4f0"
     },
     {
-      "path": "judge_runs/golden_r3/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward-details.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward-details.v1.json",
       "bytes": 5791,
       "sha256": "0e5d83a0638d13617c189dd4dc4da8f6a3cdd064e5b4233040d82536008240c6"
     },
     {
-      "path": "judge_runs/golden_r3/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.json",
       "bytes": 726,
       "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
     },
     {
-      "path": "judge_runs/golden_r3/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.round1.json",
       "bytes": 631,
       "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
     },
     {
-      "path": "judge_runs/golden_r3/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r3/reward.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r3/reward.v1.json",
       "bytes": 95,
       "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
     },
     {
-      "path": "judge_runs/golden_r4/extraction_v2.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/extraction_v2.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/extraction_v2.json",
       "bytes": 6971,
       "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
     },
     {
-      "path": "judge_runs/golden_r4/judge.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/judge.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.json",
       "bytes": 19208,
       "sha256": "954ffc7146f0611960032c5db8cf13490c91006b481743d5936308266187d947"
     },
     {
-      "path": "judge_runs/golden_r4/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/judge.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.round1.json",
       "bytes": 18534,
       "sha256": "ad8350c886f45a25a29f6a82a1abe58af174012a54ad967ff9dada3eef22db54"
     },
     {
-      "path": "judge_runs/golden_r4/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/judge.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/judge.v1.json",
       "bytes": 11487,
       "sha256": "3215c2def6a580fd181379c989f461933bc8b85e5be9209bbf0df814beeca1ce"
     },
     {
-      "path": "judge_runs/golden_r4/programmatic_score.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/programmatic_score.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/programmatic_score.json",
       "bytes": 8700,
       "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
     },
     {
-      "path": "judge_runs/golden_r4/reward-details.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward-details.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.json",
       "bytes": 15128,
       "sha256": "557d1024055dcecde4dab0ed1c6555e6dc3d97d723a3500cad08e2b81dd0aaef"
     },
     {
-      "path": "judge_runs/golden_r4/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward-details.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.round1.json",
       "bytes": 14504,
       "sha256": "5e59d5bbab26220da71d1f43002637df2755bfa5d491d4048abd68c62e223b61"
     },
     {
-      "path": "judge_runs/golden_r4/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward-details.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward-details.v1.json",
       "bytes": 7886,
       "sha256": "09b05712a2e965924a86c8f483b76b3401e856a04217e101a690bc9e93fb668e"
     },
     {
-      "path": "judge_runs/golden_r4/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.json",
       "bytes": 726,
       "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
     },
     {
-      "path": "judge_runs/golden_r4/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.round1.json",
       "bytes": 631,
       "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
     },
     {
-      "path": "judge_runs/golden_r4/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r4/reward.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r4/reward.v1.json",
       "bytes": 95,
       "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
     },
     {
-      "path": "judge_runs/golden_r5/extraction_v2.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/extraction_v2.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/extraction_v2.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/extraction_v2.json",
       "bytes": 6971,
       "sha256": "eb2db1661e83be86ee6d2c55f7bcc2409fdc34863be7064f288cf9297e05cad6"
     },
     {
-      "path": "judge_runs/golden_r5/judge.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/judge.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.json",
       "bytes": 18786,
       "sha256": "1fa5b23a61a1ef443fd4824713b971c65247f034f195ffc396488c77791d0934"
     },
     {
-      "path": "judge_runs/golden_r5/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/judge.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.round1.json",
       "bytes": 18112,
       "sha256": "ec8e41000eb6ffdd1bde3ef0fa87c704233783eb21da5a7f63d5b25cc74c279d"
     },
     {
-      "path": "judge_runs/golden_r5/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/judge.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/judge.v1.json",
       "bytes": 11065,
       "sha256": "f86cb2561a22b2af46ff42b972a141a240078047076b9c34cfcd40a65a227c07"
     },
     {
-      "path": "judge_runs/golden_r5/programmatic_score.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/programmatic_score.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/programmatic_score.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/programmatic_score.json",
       "bytes": 8700,
       "sha256": "25ee0cc7e3517770e6b7509e0194a1a0913f50d0facd73ecd8f3f7c0cfe7f8b8"
     },
     {
-      "path": "judge_runs/golden_r5/reward-details.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward-details.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.json",
       "bytes": 14706,
       "sha256": "067529ea7cec93e0f0b7e354603551e44da449bfa2e0a4ba7163ebb58535bfe8"
     },
     {
-      "path": "judge_runs/golden_r5/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward-details.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.round1.json",
       "bytes": 14082,
       "sha256": "87100666b1cd1abe8c092fd540d45b48d97f17df7e524c337654a9b83fa7e21f"
     },
     {
-      "path": "judge_runs/golden_r5/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward-details.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward-details.v1.json",
       "bytes": 7332,
       "sha256": "2e53bca07a91e3ccf8a0aeb34e8e5cbf7cc85e36c9945d46c8de730d48a6700e"
     },
     {
-      "path": "judge_runs/golden_r5/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.json",
       "bytes": 726,
       "sha256": "009b0446d2110b4c77e0fe7e8571b466ca6785d6c4f97a9d9ffc5024f520e311"
     },
     {
-      "path": "judge_runs/golden_r5/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward.round1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.round1.json",
       "bytes": 631,
       "sha256": "567895b5b38761144b53f22f69eecacd972f8fd53eb0833c3c1a8cdd5d56e046"
     },
     {
-      "path": "judge_runs/golden_r5/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_r5/reward.v1.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/judge_runs/golden_r5/reward.v1.json",
       "bytes": 95,
       "sha256": "1ddfa34010520a9faa83865e09893043a4e4d111f58ee53684ae4a314828c670"
     },
     {
-      "path": "judge_runs/golden_round2_status.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/golden_round2_status.json",
+      "path": "history/judge_runs/round2_attempts/history_pre_v3/superseded_summaries/golden_round2_status.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/judge_runs/round2_attempts/history_pre_v3/superseded_summaries/golden_round2_status.json",
       "bytes": 879,
       "sha256": "099d735dc80b562f7a4296093562d740eafd0f3de388b5349818690a61b6d185"
+    },
+    {
+      "path": "history/manifests/outer_before_cleanup.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/manifests/outer_before_cleanup.json",
+      "bytes": 103024,
+      "sha256": "72be7b59675071bab5a47ed536c30186ca20dee83929f74783fe1aeb7180b062"
+    },
+    {
+      "path": "history/manifests/task_before_cleanup.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/manifests/task_before_cleanup.json",
+      "bytes": 94419,
+      "sha256": "2498453d233789310c3abe4b3f39ca844caa398a1333b72b5f4949f5ee3aa19a"
+    },
+    {
+      "path": "history/package_root/交付文档.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/package_root/交付文档.md",
+      "bytes": 8415,
+      "sha256": "bda11e6015bf6100155a08855e921d7b57906c74cfbcc9c8aae590d60d957c31"
+    },
+    {
+      "path": "history/quality_report.pre_judge_fix.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/quality_report.pre_judge_fix.json",
+      "bytes": 9190,
+      "sha256": "763a136ec9f7d703c11d1bf2e7f6e35acb3da7ff62c00e9455e183b53c912180"
+    },
+    {
+      "path": "history/quality_report.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/quality_report.round1.json",
+      "bytes": 7813,
+      "sha256": "9e891e560e5f3f2d4bd5a6faf0d1472c47a46a404d7d78f1a2645957b7cfddee"
+    },
+    {
+      "path": "history/quality_report.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/quality_report.v1.json",
+      "bytes": 6688,
+      "sha256": "771aec4c3ce56d16230f981de821b23f7b9ead447754193a0a421e95caa58660"
+    },
+    {
+      "path": "history/records.pre_judge_fix.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/records.pre_judge_fix.jsonl",
+      "bytes": 5367,
+      "sha256": "01153d8d66cd414ae2f0b5cb0fa8c2bff66608a60c4f5a7a1bd2086f0785d593"
+    },
+    {
+      "path": "history/records.round1.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/records.round1.jsonl",
+      "bytes": 5210,
+      "sha256": "3085feb0a3ec17346d2c53839af1bcc2b1513e7182c45ffd961856d2b02c13f2"
+    },
+    {
+      "path": "history/records.v1.jsonl",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/records.v1.jsonl",
+      "bytes": 4468,
+      "sha256": "5fbb7375a6ab79388480445ee17edc1648d531b7373e87a5e94a8d1e553fdb85"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/judge.round1.json",
+      "bytes": 12576,
+      "sha256": "5de244a312ae9ae4c41d622ca3f23472351375452e8c16409451802aea1bb8d1"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/judge.v1.json",
+      "bytes": 7039,
+      "sha256": "18efc13bf9a130071a042cfb5fb5ae789d1d5acd0bcb50e868cea4fd2e29b005"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/reward-details.offline.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/reward-details.offline.json",
+      "bytes": 1790,
+      "sha256": "74250eedbbb0c04303854d73d71361fe4372aeca674863e3088061d7c865f04c"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/reward-details.v1.json",
+      "bytes": 8606,
+      "sha256": "539d3c590aa0b27da62e324be09b933e47e90ce7e7392bfd8970f21e71578b3f"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/reward.v1.json",
+      "bytes": 755,
+      "sha256": "0da0494517738a17f75da2bf15c20c5579608573ac347a97408007460d2264e5"
+    },
+    {
+      "path": "history/rollouts/claude-opus-4-8/score.offline.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/claude-opus-4-8/score.offline.json",
+      "bytes": 3732,
+      "sha256": "bf44876d05777e7d17f8fd95cf8d52775aef6f4a594917c7b0b0e0e857c6abf2"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/judge.round1.json",
+      "bytes": 15384,
+      "sha256": "b5721e34b99227dda9bdfc89d13d8f972b5411b6bae496b0470107d410922c1f"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/judge.v1.json",
+      "bytes": 10217,
+      "sha256": "de44d23f2d8a42b5bc05b9dcc2ba57670d703064234f82a1e5afa5d12f45874e"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/reward-details.round1.json",
+      "bytes": 11296,
+      "sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/reward-details.v1.json",
+      "bytes": 6006,
+      "sha256": "02352857d476900be41a14a51d341b79e2b0339ae632815418aa42f0dc6f9b54"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/reward.round1.json",
+      "bytes": 631,
+      "sha256": "9b257d884c1c420dfce8e82b0c6c520e4da278662bea56b27a73580c9d316929"
+    },
+    {
+      "path": "history/rollouts/gpt-5.6-sol/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/gpt-5.6-sol/reward.v1.json",
+      "bytes": 95,
+      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/judge.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/judge.round1.json",
+      "bytes": 16297,
+      "sha256": "98ded767eff48360de923deab4b63760f1d4772f3a83bbfdec8e68b0d5770193"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/judge.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/judge.v1.json",
+      "bytes": 11003,
+      "sha256": "c5eb03b097fc5a910e5dd95cb36780c8e269fa6ed17b499aa792097d8031db61"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/reward-details.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/reward-details.round1.json",
+      "bytes": 12201,
+      "sha256": "457d6d6e2a226350f6d230d36b4ff474f0d022bcced1333687559386a267febc"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/reward-details.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/reward-details.v1.json",
+      "bytes": 7207,
+      "sha256": "aec84ad119f9706984beb2bd9c642e0f8aef42d4fc985aa1a85511dd7a875f51"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/reward.round1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/reward.round1.json",
+      "bytes": 631,
+      "sha256": "d5637e5f93805a88cde3c6d730c974a3e2a403f2f7acd9e104995407a9218e05"
+    },
+    {
+      "path": "history/rollouts/qwen3.8-max/reward.v1.json",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/history/rollouts/qwen3.8-max/reward.v1.json",
+      "bytes": 95,
+      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
     },
     {
       "path": "judge_runs/gpt-5.6-sol_r1/extraction_v2.json",
@@ -537,20 +1083,8 @@
     {
       "path": "judge_runs/gpt-5.6-sol_r1/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/judge.json",
-      "bytes": 16023,
-      "sha256": "32ace34beab94487c5af1beea09bca6f1e4044af3f2a85d1a986b0e816f07da1"
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/judge.round1.json",
-      "bytes": 15349,
-      "sha256": "dca02cf0d8244603c94e4591ef6d13929120a0d3238d4ff177d8b90e49552b8a"
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/judge.v1.json",
-      "bytes": 10182,
-      "sha256": "8a1eada9dca766db6300408d49d03f1eaab00a79055ce378e1c91cb72815cd71"
+      "bytes": 16063,
+      "sha256": "4366343866529ebdfcf77cf3116070f7048abb21054234ac9c4829b4bac3df96"
     },
     {
       "path": "judge_runs/gpt-5.6-sol_r1/programmatic_score.json",
@@ -565,34 +1099,10 @@
       "sha256": "f30276f6d94ec8cac38b052b5209e4ab3ddf2b722df6d3a6b15651db6e9b25e4"
     },
     {
-      "path": "judge_runs/gpt-5.6-sol_r1/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/reward-details.round1.json",
-      "bytes": 11296,
-      "sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57"
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/reward-details.v1.json",
-      "bytes": 6006,
-      "sha256": "02352857d476900be41a14a51d341b79e2b0339ae632815418aa42f0dc6f9b54"
-    },
-    {
       "path": "judge_runs/gpt-5.6-sol_r1/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/reward.json",
-      "bytes": 726,
-      "sha256": "4060f4677d046571053274d77eac833125b1ec577391837b2664459b1ba6090c"
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/reward.round1.json",
-      "bytes": 631,
-      "sha256": "9b257d884c1c420dfce8e82b0c6c520e4da278662bea56b27a73580c9d316929"
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/gpt-5.6-sol_r1/reward.v1.json",
-      "bytes": 95,
-      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+      "bytes": 766,
+      "sha256": "68ca972caf57c66855e5fad607ab6cd17b15558a18ea3f0f9fa1e92b3e010c37"
     },
     {
       "path": "judge_runs/qwen3.8-max_r1/extraction_v2.json",
@@ -603,20 +1113,8 @@
     {
       "path": "judge_runs/qwen3.8-max_r1/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/judge.json",
-      "bytes": 16936,
-      "sha256": "106f70ee3c4735548bd0a024bc1fbb91787b3a38d3cddaf3de9c919eee50cb20"
-    },
-    {
-      "path": "judge_runs/qwen3.8-max_r1/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/judge.round1.json",
-      "bytes": 16262,
-      "sha256": "c804bcebcb0edefbf362d9ed88768132eeaf2140026d5f43ce96475938f6cf03"
-    },
-    {
-      "path": "judge_runs/qwen3.8-max_r1/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/judge.v1.json",
-      "bytes": 10968,
-      "sha256": "1b2a72cbec85b24c7a4dc273c9a908a2fdc20684e95aa2b8ddd0a57163eab7a9"
+      "bytes": 16976,
+      "sha256": "fb39f308a20323f68ba89d515801a7c3df742478eeec5e4c9a8edda33ff5ac88"
     },
     {
       "path": "judge_runs/qwen3.8-max_r1/programmatic_score.json",
@@ -631,94 +1129,28 @@
       "sha256": "270b48bb48298d92f47cfa6b5461fb4dd244a4a92c85c1bba9504fec71709916"
     },
     {
-      "path": "judge_runs/qwen3.8-max_r1/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/reward-details.round1.json",
-      "bytes": 12201,
-      "sha256": "457d6d6e2a226350f6d230d36b4ff474f0d022bcced1333687559386a267febc"
-    },
-    {
-      "path": "judge_runs/qwen3.8-max_r1/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/reward-details.v1.json",
-      "bytes": 7207,
-      "sha256": "aec84ad119f9706984beb2bd9c642e0f8aef42d4fc985aa1a85511dd7a875f51"
-    },
-    {
       "path": "judge_runs/qwen3.8-max_r1/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/reward.json",
-      "bytes": 726,
-      "sha256": "3b2189b4fed2a9336c64f1ebf4ad81d60b94f9b23cab924e8ef60b54cb6087bb"
-    },
-    {
-      "path": "judge_runs/qwen3.8-max_r1/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/reward.round1.json",
-      "bytes": 631,
-      "sha256": "d5637e5f93805a88cde3c6d730c974a3e2a403f2f7acd9e104995407a9218e05"
-    },
-    {
-      "path": "judge_runs/qwen3.8-max_r1/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/qwen3.8-max_r1/reward.v1.json",
-      "bytes": 95,
-      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
-    },
-    {
-      "path": "judge_runs/round2_attempts/golden_r1/reward.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/round2_attempts/golden_r1/reward.json",
-      "bytes": 86,
-      "sha256": "a513b8bef6f21fd86f7ff97c91e372080344ae1d62401d9009bccf39bd94e33c"
-    },
-    {
-      "path": "judge_runs/round2_attempts/golden_r1/reward_exit_message.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/round2_attempts/golden_r1/reward_exit_message.json",
-      "bytes": 148,
-      "sha256": "2f64ce45bbd6d5ffc3bec6e18bc5c4dfa4c4b34643be783ca2b0ad133082b253"
-    },
-    {
-      "path": "judge_runs/round2_attempts/golden_r1/run_metadata.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/judge_runs/round2_attempts/golden_r1/run_metadata.json",
-      "bytes": 899,
-      "sha256": "8287644fb8600573e498dc339696c1461ff6f4c493c85ad27c30299493ffc041"
+      "bytes": 766,
+      "sha256": "44dca1e03571034d549071b3f13c34fed26322910b24d629c9630af4940ab143"
     },
     {
       "path": "metadata/task_metadata.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/metadata/task_metadata.json",
-      "bytes": 4739,
-      "sha256": "88f0548359e4e5c0116b5d8af8ef1189d962791f5c7ac969e567d332277636ab"
+      "bytes": 6743,
+      "sha256": "f29b03542f161560d2516957c226bf1a084988b4898c05d578695868be75baf7"
     },
     {
       "path": "quality_report.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/quality_report.json",
-      "bytes": 9190,
-      "sha256": "763a136ec9f7d703c11d1bf2e7f6e35acb3da7ff62c00e9455e183b53c912180"
-    },
-    {
-      "path": "quality_report.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/quality_report.round1.json",
-      "bytes": 7813,
-      "sha256": "9e891e560e5f3f2d4bd5a6faf0d1472c47a46a404d7d78f1a2645957b7cfddee"
-    },
-    {
-      "path": "quality_report.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/quality_report.v1.json",
-      "bytes": 6688,
-      "sha256": "771aec4c3ce56d16230f981de821b23f7b9ead447754193a0a421e95caa58660"
+      "bytes": 8561,
+      "sha256": "4d2e19955dde4c2a4ffc80d4a42527a6ce61ff5b6496ccfbfeeaf837254204b3"
     },
     {
       "path": "records.jsonl",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/records.jsonl",
-      "bytes": 5367,
-      "sha256": "01153d8d66cd414ae2f0b5cb0fa8c2bff66608a60c4f5a7a1bd2086f0785d593"
-    },
-    {
-      "path": "records.round1.jsonl",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/records.round1.jsonl",
-      "bytes": 5210,
-      "sha256": "3085feb0a3ec17346d2c53839af1bcc2b1513e7182c45ffd961856d2b02c13f2"
-    },
-    {
-      "path": "records.v1.jsonl",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/records.v1.jsonl",
-      "bytes": 4468,
-      "sha256": "5fbb7375a6ab79388480445ee17edc1648d531b7373e87a5e94a8d1e553fdb85"
+      "bytes": 7658,
+      "sha256": "ee11edbe5214e29c1bfa5c3fef341fac29f18d3d4a1973db33b215ab2cd3032b"
     },
     {
       "path": "rollouts/claude-opus-4-8/candidate.xlsx",
@@ -759,20 +1191,8 @@
     {
       "path": "rollouts/claude-opus-4-8/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/judge.json",
-      "bytes": 13250,
-      "sha256": "08eff6e3d33d6c456e0288169ddca9cf682b1b1ecae9e0c6ccafd59eedbb024a"
-    },
-    {
-      "path": "rollouts/claude-opus-4-8/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/judge.round1.json",
-      "bytes": 12576,
-      "sha256": "5de244a312ae9ae4c41d622ca3f23472351375452e8c16409451802aea1bb8d1"
-    },
-    {
-      "path": "rollouts/claude-opus-4-8/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/judge.v1.json",
-      "bytes": 7039,
-      "sha256": "18efc13bf9a130071a042cfb5fb5ae789d1d5acd0bcb50e868cea4fd2e29b005"
+      "bytes": 13289,
+      "sha256": "eb6638ec8873c3ebbf1ba504e0325a817e0c658aa036160a4802b3d54e52f708"
     },
     {
       "path": "rollouts/claude-opus-4-8/judge_prompt.md",
@@ -783,8 +1203,8 @@
     {
       "path": "rollouts/claude-opus-4-8/judge_provider_response.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/judge_provider_response.json",
-      "bytes": 231,
-      "sha256": "e98ab0d92609d8cc15de391e5d0d2036d564e372c2c709b79b44c1fb8ea63921"
+      "bytes": 270,
+      "sha256": "27757fa92886ae263d37e89346c73bf0e7212e8149d3494f1eec165932da47f5"
     },
     {
       "path": "rollouts/claude-opus-4-8/programmatic_score.json",
@@ -823,28 +1243,10 @@
       "sha256": "0f8c8cf022f27028f4aa1d7b95fb718bc81e7e7e3c761a762c435f7f15da4c1e"
     },
     {
-      "path": "rollouts/claude-opus-4-8/reward-details.offline.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/reward-details.offline.json",
-      "bytes": 1790,
-      "sha256": "74250eedbbb0c04303854d73d71361fe4372aeca674863e3088061d7c865f04c"
-    },
-    {
-      "path": "rollouts/claude-opus-4-8/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/reward-details.v1.json",
-      "bytes": 8606,
-      "sha256": "539d3c590aa0b27da62e324be09b933e47e90ce7e7392bfd8970f21e71578b3f"
-    },
-    {
       "path": "rollouts/claude-opus-4-8/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/reward.json",
-      "bytes": 850,
-      "sha256": "1cbf981b41c83a22523f554bf6d829ef6ec0b18714c37ab2b31a3db3a57d8b17"
-    },
-    {
-      "path": "rollouts/claude-opus-4-8/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/reward.v1.json",
-      "bytes": 755,
-      "sha256": "0da0494517738a17f75da2bf15c20c5579608573ac347a97408007460d2264e5"
+      "bytes": 889,
+      "sha256": "f4f449f6e33085ac8a3540f7ed53d0e51747cb37ae145814472291fc57bb7ec2"
     },
     {
       "path": "rollouts/claude-opus-4-8/run_metadata.json",
@@ -857,12 +1259,6 @@
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/runtime_events.jsonl",
       "bytes": 289,
       "sha256": "88dd781148b8ed91ad1f4a93c9495077232bbe7148f313cee923ac3e5bab0f83"
-    },
-    {
-      "path": "rollouts/claude-opus-4-8/score.offline.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/claude-opus-4-8/score.offline.json",
-      "bytes": 3732,
-      "sha256": "bf44876d05777e7d17f8fd95cf8d52775aef6f4a594917c7b0b0e0e857c6abf2"
     },
     {
       "path": "rollouts/claude-opus-4-8/solver_output/answer.xlsx",
@@ -1005,20 +1401,8 @@
     {
       "path": "rollouts/gpt-5.6-sol/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/judge.json",
-      "bytes": 16058,
-      "sha256": "cfea0b8c6879c264ab607311a62a7d24176cb1e34a2cbf9d363ef7e02cd6f6e3"
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/judge.round1.json",
-      "bytes": 15384,
-      "sha256": "b5721e34b99227dda9bdfc89d13d8f972b5411b6bae496b0470107d410922c1f"
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/judge.v1.json",
-      "bytes": 10217,
-      "sha256": "de44d23f2d8a42b5bc05b9dcc2ba57670d703064234f82a1e5afa5d12f45874e"
+      "bytes": 16093,
+      "sha256": "b2be21b36960991328ec58db55a5b413e0d64d3a7fdee038df3d66fc6bee8d24"
     },
     {
       "path": "rollouts/gpt-5.6-sol/judge_prompt.md",
@@ -1081,34 +1465,10 @@
       "sha256": "f30276f6d94ec8cac38b052b5209e4ab3ddf2b722df6d3a6b15651db6e9b25e4"
     },
     {
-      "path": "rollouts/gpt-5.6-sol/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/reward-details.round1.json",
-      "bytes": 11296,
-      "sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57"
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/reward-details.v1.json",
-      "bytes": 6006,
-      "sha256": "02352857d476900be41a14a51d341b79e2b0339ae632815418aa42f0dc6f9b54"
-    },
-    {
       "path": "rollouts/gpt-5.6-sol/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/reward.json",
-      "bytes": 726,
-      "sha256": "4060f4677d046571053274d77eac833125b1ec577391837b2664459b1ba6090c"
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/reward.round1.json",
-      "bytes": 631,
-      "sha256": "9b257d884c1c420dfce8e82b0c6c520e4da278662bea56b27a73580c9d316929"
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/gpt-5.6-sol/reward.v1.json",
-      "bytes": 95,
-      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+      "bytes": 761,
+      "sha256": "094c5d263dfb307736d379aa5b3bdc083d007d74de5a96d439520df71faa2b00"
     },
     {
       "path": "rollouts/gpt-5.6-sol/run_metadata.json",
@@ -1263,20 +1623,8 @@
     {
       "path": "rollouts/qwen3.8-max/judge.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/judge.json",
-      "bytes": 16971,
-      "sha256": "cfe98e19390e68f8793466fd24621590145c3831ea14e26faf2db22561fbf2f6"
-    },
-    {
-      "path": "rollouts/qwen3.8-max/judge.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/judge.round1.json",
-      "bytes": 16297,
-      "sha256": "98ded767eff48360de923deab4b63760f1d4772f3a83bbfdec8e68b0d5770193"
-    },
-    {
-      "path": "rollouts/qwen3.8-max/judge.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/judge.v1.json",
-      "bytes": 11003,
-      "sha256": "c5eb03b097fc5a910e5dd95cb36780c8e269fa6ed17b499aa792097d8031db61"
+      "bytes": 17006,
+      "sha256": "61576d9c15a49c30e4a334ea4a269a9e33538ed091b54765856029ea369d77c0"
     },
     {
       "path": "rollouts/qwen3.8-max/judge_prompt.md",
@@ -1339,34 +1687,10 @@
       "sha256": "270b48bb48298d92f47cfa6b5461fb4dd244a4a92c85c1bba9504fec71709916"
     },
     {
-      "path": "rollouts/qwen3.8-max/reward-details.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/reward-details.round1.json",
-      "bytes": 12201,
-      "sha256": "457d6d6e2a226350f6d230d36b4ff474f0d022bcced1333687559386a267febc"
-    },
-    {
-      "path": "rollouts/qwen3.8-max/reward-details.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/reward-details.v1.json",
-      "bytes": 7207,
-      "sha256": "aec84ad119f9706984beb2bd9c642e0f8aef42d4fc985aa1a85511dd7a875f51"
-    },
-    {
       "path": "rollouts/qwen3.8-max/reward.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/reward.json",
-      "bytes": 726,
-      "sha256": "3b2189b4fed2a9336c64f1ebf4ad81d60b94f9b23cab924e8ef60b54cb6087bb"
-    },
-    {
-      "path": "rollouts/qwen3.8-max/reward.round1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/reward.round1.json",
-      "bytes": 631,
-      "sha256": "d5637e5f93805a88cde3c6d730c974a3e2a403f2f7acd9e104995407a9218e05"
-    },
-    {
-      "path": "rollouts/qwen3.8-max/reward.v1.json",
-      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/rollouts/qwen3.8-max/reward.v1.json",
-      "bytes": 95,
-      "sha256": "19ff5483c4b479924b93ac4ffd53b46ef6cbd086973f5a09aaa1e29587292f63"
+      "bytes": 761,
+      "sha256": "cfe3894c84d139f3c4a44c806d9de5095ef2eed36dec20341404e76e139b95d7"
     },
     {
       "path": "rollouts/qwen3.8-max/run_metadata.json",
@@ -1485,8 +1809,20 @@
     {
       "path": "validation/package_audit.json",
       "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/validation/package_audit.json",
-      "bytes": 305,
-      "sha256": "2d0f490aaf80ead90a1a6c3261b481e762b197ad9bbb5a580bf489e4414bfa66"
+      "bytes": 540,
+      "sha256": "723655529a2bc4ec0d9862e0cc516c491ee9e075ba4da77022e68146959dcbcf"
+    },
+    {
+      "path": "validation/run_regression.py",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/validation/run_regression.py",
+      "bytes": 747,
+      "sha256": "9bbbc99027d0206f470e31797ae27c57a6e317adaa9a690f65b5d4302478c336"
+    },
+    {
+      "path": "validation/scoring_policy.md",
+      "zip_path": "ZCloud-市政财务-002-20261022-轨迹报告/muskegon-acceleration-clause/validation/scoring_policy.md",
+      "bytes": 6017,
+      "sha256": "5561cedefb55986f26f2e31636c13f93cb3fdc288a4a90e2f29f87a07f0b70d5"
     },
     {
       "path": "validation/source_pair_audit.json",

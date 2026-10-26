@@ -1,0 +1,227 @@
+{
+  "schema_version": "rl0-1-trajectory-report-v2",
+  "case_id": "powercor-2020-capex-reconciliation",
+  "task_count": 1,
+  "task_package": "ZCloud-电力监管-001-20261020",
+  "artifact_path_base": "case_root",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_authenticity_check": {
+    "status": "PASS_CURRENT_INPUT_IDENTITY",
+    "path": "validation/source_pair_audit.json",
+    "live_source_verified": false,
+    "original_customer_query": false
+  },
+  "rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
+  "target": {
+    "path": "golden/candidate.xlsx",
+    "sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+    "judge": "golden/judge.json",
+    "visual_review": "golden/visual_review.json",
+    "score_final": null,
+    "programmatic_score": 1.0,
+    "score_status": "NO_VALID_NEW_JUDGMENT",
+    "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "score_revision": "round3_golden_record_correction",
+    "score_basis": "round2_program_plus_original_valid_saved_llm",
+    "new_llm_calls": 0,
+    "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+    "invalid_attempt_archive_path_base": "trajectory_case_root",
+    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "valid_runs": 0,
+    "provisional": false
+  },
+  "rollout_summary": {
+    "models": [
+      {
+        "model": "gpt-5.6-sol",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "ce5bea3d6237fc387f212ca0a4d338f4046c0c8e90e01a342576a3ec157b9927",
+        "candidate": "rollouts/gpt-5.6-sol/candidate.xlsx",
+        "trajectory": "rollouts/gpt-5.6-sol/trajectory/events.jsonl",
+        "judge": "rollouts/gpt-5.6-sol/judge.json",
+        "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-20T10:47:15+00:00",
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
+      },
+      {
+        "model": "claude-opus-4-8",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "6bdf0598cb332812e5de518729ad142c75c0da3734ab2830638ba40205f46cb1",
+        "candidate": "rollouts/claude-opus-4-8/candidate.xlsx",
+        "trajectory": "rollouts/claude-opus-4-8/trajectory/events.jsonl",
+        "judge": "rollouts/claude-opus-4-8/judge.json",
+        "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
+        "harness": "Claude Code",
+        "run_started": "2026-10-20T04:16:06+00:00",
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
+      },
+      {
+        "model": "qwen3.8-max",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "136c76d02f59ad604b871e06a9d0cf201fc5ac965fc5ae00e37b5fc2b1dc378a",
+        "candidate": "rollouts/qwen3.8-max/candidate.xlsx",
+        "trajectory": "rollouts/qwen3.8-max/trajectory/events.jsonl",
+        "judge": "rollouts/qwen3.8-max/judge.json",
+        "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-22T20:28:34+00:00",
+        "source": "isolated_docker_run",
+        "scorer_version": "v2 (2026-10-26)"
+      }
+    ],
+    "average_score": 0.0,
+    "difficulty_tier": "not_certified_pass_at_8",
+    "difficulty_gate": "AVG_BELOW_0.6_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+    "models_below_0_6": 3,
+    "three_model_average_threshold": 0.6,
+    "pass_at_8": null
+  },
+  "judge": {
+    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "fresh_golden_runs": 0,
+    "required_golden_runs": 5,
+    "cost_usd": 2.148244,
+    "stop_reason": "single_run_cost_exceeded_2_usd"
+  },
+  "consistency": {
+    "path": "consistency.json",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
+    "groups": [
+      {
+        "candidate": "golden",
+        "repeats": 0,
+        "total_scores": [],
+        "total_stddev_sample": null,
+        "pass_stddev_lt_0_05": false
+      }
+    ]
+  },
+  "discrimination": {
+    "reference_score": null,
+    "model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "empty_controls": [
+      {
+        "name": "empty_complete_contract",
+        "score": 0
+      },
+      {
+        "name": "empty_workbook",
+        "score": 0
+      },
+      {
+        "name": "missing_workbook",
+        "score": 0
+      },
+      {
+        "name": "empty_result_skeleton",
+        "score": 0
+      }
+    ],
+    "note": "新版金标文字未重新裁判；沿用原有效文字判定；金标程序分1.0，合成分1.0；异常输出不计分。部分正确样例仅验证程序区分度。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_3_positive_results_correct": 0,
+        "1_of_3_positive_results_correct": 0.333333,
+        "2_of_3_positive_results_correct": 0.666667,
+        "3_of_3_positive_results_correct": 1
+      }
+    }
+  },
+  "excluded_judge_jobs": {
+    "path": "excluded_runs.json",
+    "count": 7,
+    "note": "6次历史超时/连接中断及1次判定与理由矛盾的金标裁判错误均排除；不作成绩或零分。"
+  },
+  "model_evidence": {
+    "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
+    "qwen": "Qwen 3.8 Max 于 2026-10-22 在独立 Docker 容器中运行一次，正常完成；网关返回型号含 qwen/qwen3.8-max 与 qwen3.8-max-0902，属同一基础型号。"
+  },
+  "solver_prompt": {
+    "files": "rollouts/<模型>/solver_prompt.md",
+    "difference_from_instruction": "题面开头补了一句角色说明；Results 表的小标题和表头说明句换了措辞，行顺序、单位和数值要求不变；末尾的运行说明把输入目录从 /app/input 改为题包镜像里的 /app/input_files/。"
+  },
+  "limitations": [
+    "每个模型只有一次运行；pass@8 未测，难度等级未认证。",
+    "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
+    "Qwen 3.8 Max 答卷的三条 LLM 扣分项被判为违规，裁判给出的理由却写未发现虚构；该答卷正项得分为 0，总分不受影响，原始判定原样保留。",
+    "开发阶段的另一套评分规则会先重算公式，给 Qwen 3.8 Max 0.02 分；本包统一使用 Office 裁判分。",
+    "第二轮修改程序判据、派生容差与后置评分规则，保持各条权重和LLM文本不变；delivery_rubric_sha256记录当前导出，历史裁判rubric摘要保留用于追溯。",
+    "新版金标文字未重新裁判；沿用原有效文字判定"
+  ],
+  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
+  "scorer_version": "v2 (2026-10-26)",
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "score_revision": "candidate-access-v3",
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "new_llm_calls": 1,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root",
+  "previous_round2_status": "PROGRAM_COMPLETE_GOLDEN_PROVISIONAL_SAVED_LLM",
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "A",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 1,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "S01": null,
+      "S02": null,
+      "P01": null,
+      "S03": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
+    },
+    "total_cost_usd": 2.148244,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "golden/rejudge_attempts_20261026/history_pre_v3",
+    "invalid_attempts_count": 1,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage difference before run and at post-run readback; not isolated request-level billing."
+  },
+  "scoring_revision": "candidate-access-v3"
+}
