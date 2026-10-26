@@ -1,0 +1,48 @@
+{
+  "reward": 0.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中引用的所有来源（CNO_2024-12-31_10K.xlsx T050!G15=2,471.9、CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4、CNO_2025-03-31_10Q.xlsx T010!G19=580.1、CNO_2025-06-30_10Q.xlsx T016!N14=15.6、T016!N24=(21.6)、Text!A131）均在实际输入文件中存在且数值匹配，无虚构文件、页码或表格。"
+    },
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中的文字为分析性计算说明，描述如何从累积误差推导季度调整额（如Q1 reduction = 31.7 - 21.6 = 10.1），未声称已完成外部审计、实时查询或独立核验。"
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中提及的嵌入式衍生工具高述21.6百万（2024年末）和31.7百万（2025年3月末）直接来自Text!A131单元格的实际内容，属于可从随包输入获得的事实，未编造额外公司经营事实。"
+    }
+  ],
+  "graded_score": 1.0,
+  "criteria_counted": 23.0,
+  "score_before_post_pool_rules": 1.0,
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "verifier_error": 1.0
+}

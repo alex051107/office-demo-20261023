@@ -1,0 +1,13 @@
+{
+  "case_id": "powercor-2020-capex-reconciliation",
+  "candidate_label": "golden",
+  "score_final": null,
+  "hybrid_score": null,
+  "programmatic_score": 1.0,
+  "verifier_error": 1,
+  "status": "NO_VALID_NEW_JUDGMENT",
+  "judge_completed": false,
+  "criteria": [],
+  "llm_status": "NO_VALID_NEW_JUDGMENT",
+  "scoring_revision": "candidate-access-v3"
+}

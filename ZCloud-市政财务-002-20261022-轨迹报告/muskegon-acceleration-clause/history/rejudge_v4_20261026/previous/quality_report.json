@@ -1,0 +1,215 @@
+{
+  "schema_version": "rl0-1-trajectory-report-v2",
+  "case_id": "muskegon-acceleration-clause",
+  "task_count": 1,
+  "task_package": "ZCloud-市政财务-002-20261022",
+  "artifact_path_base": "case_root",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_authenticity_check": {
+    "status": "PASS_CURRENT_INPUT_IDENTITY",
+    "path": "validation/source_pair_audit.json",
+    "live_source_verified": false,
+    "original_customer_query": false
+  },
+  "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
+  "target": {
+    "path": "golden/candidate.xlsx",
+    "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+    "judge": "golden/judge.json",
+    "visual_review": "golden/visual_review.json",
+    "score_final": null,
+    "score_status": "NO_VALID_NEW_JUDGMENT",
+    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "valid_runs": 0,
+    "provisional": false
+  },
+  "rollout_summary": {
+    "models": [
+      {
+        "model": "gpt-5.6-sol",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+        "candidate": "rollouts/gpt-5.6-sol/candidate.xlsx",
+        "trajectory": "rollouts/gpt-5.6-sol/trajectory/events.jsonl",
+        "judge": "rollouts/gpt-5.6-sol/judge.json",
+        "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-18T22:08:21+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "claude-opus-4-8",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": false,
+        "candidate_sha256": "ccc26b4736c16d1d4802fa40e04105eb68ab8a56c41f8537973a4c70725fe0eb",
+        "candidate": "rollouts/claude-opus-4-8/candidate.xlsx",
+        "trajectory": "rollouts/claude-opus-4-8/trajectory/events.jsonl",
+        "judge": "rollouts/claude-opus-4-8/judge.json",
+        "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
+        "harness": "Claude Code",
+        "run_started": "2026-10-18T22:54:54+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "qwen3.8-max",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "2d35bcfb19bfbe4da4b525b0f880bf645adb61fc1d6d1266641e1b5d4dc8742a",
+        "candidate": "rollouts/qwen3.8-max/candidate.xlsx",
+        "trajectory": "rollouts/qwen3.8-max/trajectory/events.jsonl",
+        "judge": "rollouts/qwen3.8-max/judge.json",
+        "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-22T21:15:10+00:00",
+        "source": "isolated_docker_run"
+      }
+    ],
+    "average_score": 0.0,
+    "difficulty_tier": "not_certified_pass_at_8",
+    "difficulty_gate": "AVG_BELOW_0.6_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+    "models_below_0_6": 3,
+    "three_model_average_threshold": 0.6,
+    "pass_at_8": null
+  },
+  "judge": {
+    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "fresh_golden_runs": 0,
+    "required_golden_runs": 5,
+    "cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd"
+  },
+  "consistency": {
+    "path": "consistency.json",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
+    "groups": [
+      {
+        "candidate": "golden",
+        "repeats": 0,
+        "total_scores": [],
+        "total_stddev_sample": null,
+        "pass_stddev_lt_0_05": false
+      }
+    ]
+  },
+  "discrimination": {
+    "reference_score": null,
+    "model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "empty_controls": [
+      {
+        "name": "blank",
+        "score": 0
+      },
+      {
+        "name": "missing",
+        "score": 0
+      }
+    ],
+    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_6_positive_results_correct": 0.0,
+        "1_of_6_positive_results_correct": 0.196078,
+        "2_of_6_positive_results_correct": 0.392157,
+        "3_of_6_positive_results_correct": 0.588235,
+        "4_of_6_positive_results_correct": 0.72549,
+        "5_of_6_positive_results_correct": 0.862745,
+        "6_of_6_positive_results_correct": 1.0
+      }
+    }
+  },
+  "excluded_judge_jobs": {
+    "path": "history/excluded_runs.json",
+    "count": 1,
+    "note": "Claude Opus 4.8 答卷的 LLM 裁判作业运行异常（请求次数远超正常作业），被人工停止，没有纳入一致性统计。"
+  },
+  "model_evidence": {
+    "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
+    "qwen": "Qwen 3.8 Max 于 2026-10-22 在独立 Docker 容器中运行一次，正常完成；网关返回型号含 qwen/qwen3.8-max 与 qwen3.8-max-0902，属同一基础型号。"
+  },
+  "solver_prompt": {
+    "files": "rollouts/<模型>/solver_prompt.md",
+    "difference_from_instruction": "Results 表的小标题和表头说明句换了措辞，行顺序、单位和数值要求不变；末尾的运行说明把输入目录从 /app/input 改为题包镜像里的 /app/input_files/。"
+  },
+  "limitations": [
+    "每个模型只有一次运行；pass@8 未测，难度等级未认证。",
+    "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
+    "Claude Opus 4.8 答卷只有程序判据结果：正项得分为 0，LLM 判据全部是扣分项，所以总分只能是 0，记 0。",
+    "开发阶段的另一套评分规则给三个模型各 0.07 分，全部来自格式项；本包规则下格式项只扣分不加分，记 0。",
+    "第二轮保留 20 个判据及全部权重，更新程序判据描述与汇总规则；judge.json 记录当前交付 rubric 的哈希。",
+    "本轮金标仅 1 次真实尝试、0 次有效完成；费用超限后停止。五次新真实裁判与其逐项及总分标准差尚未完成。"
+  ],
+  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
+  "scoring_revision": "candidate-access-v3",
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
+  "score_basis": "candidate-access-v3 accepted runs only",
+  "score_revision": "candidate-access-v3",
+  "new_llm_calls": 0,
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "C",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 0,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "D01": null,
+      "V01": null,
+      "D02": null,
+      "V02": null,
+      "D03": null,
+      "V03": null,
+      "S01": null,
+      "S02": null,
+      "S03": null,
+      "P01": null,
+      "P02": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
+    },
+    "total_cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/judge_runs/round2_attempts/history_pre_v3",
+    "invalid_attempts_count": 0,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
+  }
+}

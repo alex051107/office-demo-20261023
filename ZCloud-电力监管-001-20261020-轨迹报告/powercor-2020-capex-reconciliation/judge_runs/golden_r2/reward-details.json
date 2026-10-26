@@ -1,0 +1,147 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "候选 Results!D2-D4 和 Working!F2-F13 的 source_note 列引用的来源文件（Powercor_RFM_inputs.xlsx 和 Distribution_handbook.pdf）均真实存在于 /app/input_files/ 目录中，未虚构文件、页码或表格。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "候选工作簿中未见声称已完成外部审计、实时查询或独立核验的陈述。Results!D2-D4 和 Working!F2-F13 的 source_note 仅引用输入文件和政策文档页码，属于正常分析措辞。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "候选 Working!A18-A22 的说明性文字仅描述计算方法和范围（如 'Actual net capex = gross capex - asset disposals - capital contributions'），未编造无法从随包输入获得的公司经营事实。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009 Results!D2-D4 \\u548c Working!F2-F13 \\u7684 source_note \\u5217\\u5f15\\u7528\\u7684\\u6765\\u6e90\\u6587\\u4ef6\\uff08Powercor_RFM_inputs.xlsx \\u548c Distribution_handbook.pdf\\uff09\\u5747\\u771f\\u5b9e\\u5b58\\u5728\\u4e8e /app/input_files/ \\u76ee\\u5f55\\u4e2d\\uff0c\\u672a\\u865a\\u6784\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u4e2d\\u672a\\u89c1\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u9648\\u8ff0\\u3002Results!D2-D4 \\u548c Working!F2-F13 \\u7684 source_note \\u4ec5\\u5f15\\u7528\\u8f93\\u5165\\u6587\\u4ef6\\u548c\\u653f\\u7b56\\u6587\\u6863\\u9875\\u7801\\uff0c\\u5c5e\\u4e8e\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009 Working!A18-A22 \\u7684\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\u4ec5\\u63cf\\u8ff0\\u8ba1\\u7b97\\u65b9\\u6cd5\\u548c\\u8303\\u56f4\\uff08\\u5982 'Actual net capex = gross capex - asset disposals - capital contributions'\\uff09\\uff0c\\u672a\\u7f16\\u9020\\u65e0\\u6cd5\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+    }
+  ],
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "llm_evidence_errors": []
+}

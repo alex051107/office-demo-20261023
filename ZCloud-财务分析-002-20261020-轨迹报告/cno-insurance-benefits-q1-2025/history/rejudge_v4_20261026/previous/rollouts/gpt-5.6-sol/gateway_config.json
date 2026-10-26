@@ -1,0 +1,25 @@
+{
+  "base_url": "http://<gateway-host>:3000",
+  "protocol": "openai-responses",
+  "models": [
+    "gpt-5.6-sol"
+  ],
+  "harness": "Codex CLI",
+  "harness_version": null,
+  "effort": null,
+  "max_output_tokens": 8192,
+  "max_api_requests": null,
+  "upstream_timeout_seconds": null,
+  "not_recorded": [
+    "max_api_requests",
+    "upstream_timeout_seconds",
+    "harness_version"
+  ],
+  "source_run": "gpt-5.6-sol_20261020T083539",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

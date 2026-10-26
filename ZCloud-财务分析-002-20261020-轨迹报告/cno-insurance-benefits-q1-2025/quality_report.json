@@ -17,16 +17,23 @@
     "sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": null,
+    "score_final": 1.0,
     "programmatic_score": 1,
     "raw_hybrid_score": 1.0,
     "verifier_error": 0.0,
-    "judgment_status": "NO_VALID_NEW_JUDGMENT",
+    "judgment_status": "INSUFFICIENT_VALID_RUNS",
     "provisional": false,
-    "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "score_basis": "candidate-access-v4 accepted runs only",
     "invalid_judge_attempts_excluded": true,
-    "score_status": "NO_VALID_NEW_JUDGMENT",
-    "valid_runs": 0
+    "score_status": "INSUFFICIENT_VALID_RUNS",
+    "valid_runs": 3,
+    "score_revision": "candidate-access-v4",
+    "scoring_revision": "candidate-access-v4",
+    "new_llm_calls": 7,
+    "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
+    "invalid_attempt_archive_path_base": "trajectory_case_root",
+    "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
+    "score_available": true
   },
   "rollout_summary": {
     "models": [
@@ -76,7 +83,7 @@
         "source": "isolated_docker_run"
       }
     ],
-    "average_score": 0.068627,
+    "average_score": 0.06862733333333333,
     "difficulty_tier": "not_certified_pass_at_8",
     "difficulty_gate": "AVG_BELOW_0.6_SINGLE_RUN_PASS_AT_8_NOT_RUN",
     "models_below_0_6": 3,
@@ -84,29 +91,33 @@
     "pass_at_8": null
   },
   "judge": {
-    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
-    "status": "NO_VALID_NEW_JUDGMENT",
-    "fresh_golden_runs": 0,
+    "score_basis": "candidate-access-v4 accepted runs only",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "fresh_golden_runs": 3,
     "required_golden_runs": 5,
-    "cost_usd": 0,
-    "stop_reason": "single_run_cost_exceeded_2_usd"
+    "cost_usd": 13.137896,
+    "stop_reason": null
   },
   "consistency": {
     "path": "consistency.json",
-    "status": "NO_VALID_NEW_JUDGMENT",
-    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "requirement": "五次有效评分；每条判据和总分样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 0,
-        "total_scores": [],
-        "total_stddev_sample": null,
+        "repeats": 3,
+        "total_scores": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "total_stddev_sample": 0.0,
         "pass_stddev_lt_0_05": false
       }
     ]
   },
   "discrimination": {
-    "reference_score": null,
+    "reference_score": 1.0,
     "model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.205882,
@@ -130,7 +141,7 @@
         "score": 0
       }
     ],
-    "note": "参考答案程序分及暂定混合分均为1；新版金标文字未重新裁判；沿用原有效文字判定。裁判错误不计分；部分分样例仅为程序判据控制，模型沿用保存文字判定，每个模型只有一份答卷。",
+    "note": "参考混合分仅使用本轮有效判定；无效裁判不计分。部分正确样例仅验证程序区分度；模型各只有一次独立求解，不构成pass@8。",
     "partial_credit_cases": {
       "path": "discrimination_cases.json",
       "totals": {
@@ -155,8 +166,8 @@
     "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
     "Qwen 3.8 Max 答卷用公式给出结果；用 LibreOffice 重算公式后离线程序分仍为 0，失分来自数值本身。",
     "开发阶段的另一套评分规则含部分分，给 Qwen 3.8 Max 0.16 分；本包统一使用 Office 裁判分。",
-    "新版金标文字未重新裁判；沿用原有效文字判定",
-    "第二轮重裁因工作簿不可读而无效并触发费用停止；已隔离，不参与任何分数或σ。新版文字独立验收未完成。"
+    "本轮有效金标3/5；有效次数或标准差要求未满足，不宣称一致性验收通过。",
+    "账户增量存在单次超过3.5美元的实测，未实现严格费用封顶；见judge_costs.json逐次读数及终止原因。"
   ],
   "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
   "interface_gate": {
@@ -191,51 +202,54 @@
       ]
     }
   ],
-  "score_status": "NO_VALID_NEW_JUDGMENT",
-  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
-  "score_basis": "candidate-access-v3 accepted runs only",
-  "score_revision": "candidate-access-v3",
-  "new_llm_calls": 0,
+  "score_status": "INSUFFICIENT_VALID_RUNS",
+  "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
+  "score_basis": "candidate-access-v4 accepted runs only",
+  "score_revision": "candidate-access-v4",
+  "new_llm_calls": 8,
   "judge_fix": {
-    "revision": "candidate-access-v3",
+    "revision": "candidate-access-v4",
     "task": "B",
-    "status": "NO_VALID_NEW_JUDGMENT",
+    "status": "INSUFFICIENT_VALID_RUNS",
     "required_valid_runs": 5,
-    "valid_runs": 0,
-    "attempted_runs": 0,
-    "representative": null,
+    "valid_runs": 3,
+    "attempted_runs": 8,
+    "golden_attempted_runs": 7,
+    "representative": "golden_r2",
     "old_provisional_score": 1.0,
-    "new_score": null,
+    "previous_current_score": null,
+    "new_score": 1.0,
     "programmatic_score": 1.0,
-    "total_sigma_sample": null,
-    "total_sigma_population": null,
+    "total_sigma_sample": 0.0,
+    "total_sigma_population": 0.0,
     "criterion_sigma_sample": {
-      "R01": null,
-      "R02": null,
-      "A1": null,
-      "A2": null,
-      "P1": null,
-      "P2": null,
-      "SD1": null,
-      "SD2": null,
-      "F1": null,
-      "F2": null,
-      "F3": null,
-      "X1": null,
-      "X2": null,
-      "L01": null,
-      "L02": null,
-      "L03": null,
-      "S01": null,
-      "S02": null,
-      "SP1": null,
-      "O01": null,
-      "U01": null,
-      "DP1": null,
-      "DP2": null
+      "R01": 0.0,
+      "R02": 0.0,
+      "A1": 0.0,
+      "A2": 0.0,
+      "P1": 0.0,
+      "P2": 0.0,
+      "SD1": 0.0,
+      "SD2": 0.0,
+      "F1": 0.0,
+      "F2": 0.0,
+      "F3": 0.0,
+      "X1": 0.0,
+      "X2": 0.0,
+      "L01": 0.0,
+      "L02": 0.0,
+      "L03": 0.0,
+      "S01": 0.0,
+      "S02": 0.0,
+      "SP1": 0.0,
+      "O01": 0.0,
+      "U01": 0.0,
+      "DP1": 0.0,
+      "DP2": 0.0
     },
-    "total_cost_usd": 0,
-    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "consistency_requirement_met": false,
+    "total_cost_usd": 13.137896,
+    "stop_reason": null,
     "old_model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.205882,
@@ -246,13 +260,23 @@
       "gpt-5.6-sol": 0.205882,
       "qwen3.8-max": 0.0
     },
-    "model_rejudge_completed": false,
-    "history": "history/golden/rejudge_attempts_20261026/history_pre_v3",
-    "invalid_attempts_count": 0,
+    "model_rejudge_completed": true,
+    "history": "rejudge_v4_20261026",
+    "invalid_attempts_count": 4,
     "accounting_final_pending": false,
-    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
+    "cost_limit_exceeded_runs": [
+      "golden_r1_retry1"
+    ],
+    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+    "limits": {
+      "single_run_usd": 3.5,
+      "account_usd": 1675,
+      "run_seconds": 1200
+    }
   },
-  "scoring_revision": "candidate-access-v3",
+  "scoring_revision": "candidate-access-v4",
   "previous_correction": "golden-representative-correction-20261026",
-  "previous_scorer_revision": "office-review-v2-round2-20261026"
+  "previous_scorer_revision": "office-review-v2-round2-20261026",
+  "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

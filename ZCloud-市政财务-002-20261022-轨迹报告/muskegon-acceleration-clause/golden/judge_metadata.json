@@ -1,5 +1,11 @@
 {
-  "status": "NO_VALID_NEW_JUDGMENT",
-  "accepted_reward": null,
-  "verifier_error": 1
+  "status": "PASS",
+  "accepted_reward": 1.0,
+  "verifier_error": 0,
+  "judge_completed": true,
+  "source_run": "golden_r1_retry1",
+  "scoring_revision": "candidate-access-v4",
+  "started_at": "2026-10-26T07:20:56-04:00",
+  "finished_at": "2026-10-26T07:26:17-04:00",
+  "cost_usd": 3.091872
 }

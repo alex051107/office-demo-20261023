@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "候选未虚构来源。Results!D2中引用的'Agreement.pdf, PDF p.5 sections 3C-3D'和'Records.pdf, PDF p.2 Plans'均指向随包中真实存在的文件，Agreement.pdf共10页，p.5确实包含Commission条款（3C-3D节），Records.pdf共6页包含Plans/Sponsorships等图像页，所有引用页码均在有效范围内。",
+  "extra_fields": {
+    "criteria_counted": 20.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "task": "B",
+  "candidate": "golden",
+  "run": "golden_r1",
+  "attempt": 0,
+  "started_at": "2026-10-26T06:50:07-04:00",
+  "usage_before_usd": 1625.081394,
+  "status": "INVALID",
+  "valid": false,
+  "finished_at": "2026-10-26T06:52:09-04:00",
+  "duration_seconds": 121.381,
+  "returncode": 1,
+  "usage_after_usd": 1625.470944,
+  "cost_usd": 0.38955,
+  "timed_out": false,
+  "stop_reason": null,
+  "reward": 0.0,
+  "graded_score": 1.0,
+  "verifier_error": 1.0,
+  "criteria_counted": 23.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件在当前环境中不存在，无法读取任何单元格内容进行来源虚构判断。"
+    },
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有虚假审计声称。"
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有编造的经营事实。"
+    }
+  ],
+  "exit_code": "judge:artifact_access_error",
+  "account_limit_reached": false,
+  "cost_limit_exceeded": false
+}

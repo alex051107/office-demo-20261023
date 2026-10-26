@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "遍历候选工作簿所有工作表的所有字符串单元格，未发现 'external audit'、'independent verification'、'real-time query'、'外部审计'、'独立核验'、'实时查询' 等关键词。候选仅陈述数据来源和计算过程，未声称已完成外部审计、实时查询或独立核验，故 L02 无违规。",
+  "extra_fields": {
+    "criteria_counted": 23.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "task": "A",
+  "candidate": "golden",
+  "run": "golden_r1",
+  "attempt": 0,
+  "started_at": "2026-10-26T06:01:00-04:00",
+  "usage_before_usd": 1609.301664,
+  "status": "INVALID",
+  "valid": false,
+  "finished_at": "2026-10-26T06:03:18-04:00",
+  "duration_seconds": 138.174,
+  "returncode": 1,
+  "usage_after_usd": 1610.097972,
+  "cost_usd": 0.796308,
+  "timed_out": false,
+  "stop_reason": null,
+  "reward": 0.0,
+  "graded_score": 1.0,
+  "verifier_error": 1.0,
+  "criteria_counted": 13.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Cannot determine L02 status - the code_interpreter tool calls were blocked by stop hooks and I did not receive the actual cell contents from the candidate workbook. Without reading the workbook cells, I cannot check for claims about external audits or real-time queries."
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Cannot determine L03 status - the code_interpreter tool calls were blocked by stop hooks and I did not receive the actual cell contents from the candidate workbook. Without reading cells containing explanatory text, I cannot verify whether company facts are fabricated."
+    }
+  ],
+  "exit_code": "judge:artifact_access_error",
+  "account_limit_reached": false,
+  "cost_limit_exceeded": false
+}

@@ -1,11 +1,31 @@
 {
-  "reward": 0.0,
-  "graded_score": 0.0,
-  "criteria_counted": 0.0,
-  "verifier_error": 1.0,
-  "programmatic_score": 1.0,
-  "llm_status": "NO_VALID_NEW_JUDGMENT",
-  "scoring_revision": "candidate-access-v3",
-  "score_available": false,
-  "reason": "single_run_cost_exceeded_2_usd"
+  "reward": 1.0,
+  "llm_evidence_errors": [],
+  "graded_score": 1.0,
+  "criteria_counted": 20.0,
+  "score_before_rules": 1.0,
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "verifier_error": 0.0,
+  "score_available": true,
+  "scoring_revision": "candidate-access-v4",
+  "programmatic_score": 1.0
 }

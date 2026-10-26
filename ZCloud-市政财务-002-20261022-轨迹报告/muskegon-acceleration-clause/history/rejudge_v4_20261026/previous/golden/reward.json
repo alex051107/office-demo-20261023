@@ -1,0 +1,11 @@
+{
+  "reward": 0.0,
+  "graded_score": 0.0,
+  "criteria_counted": 0.0,
+  "verifier_error": 1.0,
+  "programmatic_score": 1.0,
+  "llm_status": "NO_VALID_NEW_JUDGMENT",
+  "scoring_revision": "candidate-access-v3",
+  "score_available": false,
+  "reason": "single_run_cost_exceeded_2_usd"
+}

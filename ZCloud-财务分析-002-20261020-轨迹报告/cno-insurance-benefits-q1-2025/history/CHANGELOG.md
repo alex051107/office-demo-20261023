@@ -128,3 +128,5 @@ Oracle 入口为 `bash /solution/solve.sh`，验收入口为 `bash /tests/test.s
 - environment/Dockerfile 只用公开源构建（python:3.12-slim-bookworm、Debian、npm、PyPI）。模型运行时用的是开发环境镜像；用本 Dockerfile 在断网容器里重算程序判据，参考答案 1 分，三份模型答卷的程序分与本文成绩一致。
 - Qwen 3.8 Max 答卷用公式给出结果；用 LibreOffice 重算公式后离线程序分仍为 0，失分来自数值本身。
 - 开发阶段的另一套评分规则含部分分，给 Qwen 3.8 Max 0.16 分；本包统一使用 Office 裁判分。
+
+- 2026-10-26 重判：`rejudge_v4_20261026/previous/`保留替换前记录；轨迹报告同组`invalid_attempts/`保留无效尝试；有效金标3/5，无效尝试4次，不计分；费用13.137896美元。

@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "Working!R18 说明性文字描述的是计算方法和范围说明，未编造无法从随包输入获得的公司经营事实。所有数值均源自输入文件中的单元格引用，未新增事实性断言。",
+  "extra_fields": {
+    "criteria_counted": 13.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

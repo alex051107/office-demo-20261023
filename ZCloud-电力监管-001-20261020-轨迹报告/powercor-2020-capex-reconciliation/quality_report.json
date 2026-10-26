@@ -17,18 +17,20 @@
     "sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": null,
+    "score_final": 1.0,
     "programmatic_score": 1.0,
-    "score_status": "NO_VALID_NEW_JUDGMENT",
-    "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
-    "score_revision": "round3_golden_record_correction",
-    "score_basis": "round2_program_plus_original_valid_saved_llm",
-    "new_llm_calls": 0,
-    "invalid_attempt_archive": "history/golden/rejudge_attempts_20261026",
+    "score_status": "INSUFFICIENT_VALID_RUNS",
+    "score_note": "本轮有效金标2/5；仅有效判定计分和计算标准差。",
+    "score_revision": "candidate-access-v4",
+    "score_basis": "candidate-access-v4 accepted runs only",
+    "new_llm_calls": 6,
+    "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
     "invalid_attempt_archive_path_base": "trajectory_case_root",
-    "judgment_status": "NO_VALID_NEW_JUDGMENT",
-    "valid_runs": 0,
-    "provisional": false
+    "judgment_status": "INSUFFICIENT_VALID_RUNS",
+    "valid_runs": 2,
+    "provisional": false,
+    "scoring_revision": "candidate-access-v4",
+    "score_available": true
   },
   "rollout_summary": {
     "models": [
@@ -89,29 +91,32 @@
     "pass_at_8": null
   },
   "judge": {
-    "score_basis": "修订提示和候选单元格证据校验后的有效判定；旧暂定判定不再计分。",
-    "status": "NO_VALID_NEW_JUDGMENT",
-    "fresh_golden_runs": 0,
+    "score_basis": "candidate-access-v4 accepted runs only",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "fresh_golden_runs": 2,
     "required_golden_runs": 5,
-    "cost_usd": 2.148244,
-    "stop_reason": "single_run_cost_exceeded_2_usd"
+    "cost_usd": 15.77973,
+    "stop_reason": null
   },
   "consistency": {
     "path": "consistency.json",
-    "status": "NO_VALID_NEW_JUDGMENT",
-    "requirement": "五次有效评分；单条判据与总分的样本标准差都严格小于0.05",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "requirement": "五次有效评分；每条判据和总分样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 0,
-        "total_scores": [],
-        "total_stddev_sample": null,
+        "repeats": 2,
+        "total_scores": [
+          1.0,
+          1.0
+        ],
+        "total_stddev_sample": 0.0,
         "pass_stddev_lt_0_05": false
       }
     ]
   },
   "discrimination": {
-    "reference_score": null,
+    "reference_score": 1.0,
     "model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.0,
@@ -135,7 +140,7 @@
         "score": 0
       }
     ],
-    "note": "新版金标文字未重新裁判；沿用原有效文字判定；金标程序分1.0，合成分1.0；异常输出不计分。部分正确样例仅验证程序区分度。",
+    "note": "参考混合分仅使用本轮有效判定；无效裁判不计分。部分正确样例仅验证程序区分度；模型各只有一次独立求解，不构成pass@8。",
     "partial_credit_cases": {
       "path": "discrimination_cases.json",
       "totals": {
@@ -165,48 +170,52 @@
     "Qwen 3.8 Max 答卷的三条 LLM 扣分项被判为违规，裁判给出的理由却写未发现虚构；该答卷正项得分为 0，总分不受影响，原始判定原样保留。",
     "开发阶段的另一套评分规则会先重算公式，给 Qwen 3.8 Max 0.02 分；本包统一使用 Office 裁判分。",
     "第二轮修改程序判据、派生容差与后置评分规则，保持各条权重和LLM文本不变；delivery_rubric_sha256记录当前导出，历史裁判rubric摘要保留用于追溯。",
-    "新版金标文字未重新裁判；沿用原有效文字判定"
+    "本轮有效金标2/5；有效次数或标准差要求未满足，不宣称一致性验收通过。",
+    "账户增量存在单次超过3.5美元的实测，未实现严格费用封顶；见judge_costs.json逐次读数及终止原因。"
   ],
   "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
   "scorer_version": "v2 (2026-10-26)",
-  "score_status": "NO_VALID_NEW_JUDGMENT",
-  "score_note": "本轮有效判定不足；旧暂定分已撤下。",
-  "score_revision": "candidate-access-v3",
-  "score_basis": "candidate-access-v3 accepted runs only",
-  "new_llm_calls": 1,
-  "invalid_attempt_archive": "history/golden/rejudge_attempts_20261026",
+  "score_status": "INSUFFICIENT_VALID_RUNS",
+  "score_note": "本轮有效金标2/5；仅有效判定计分和计算标准差。",
+  "score_revision": "candidate-access-v4",
+  "score_basis": "candidate-access-v4 accepted runs only",
+  "new_llm_calls": 6,
+  "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
   "invalid_attempt_archive_path_base": "trajectory_case_root",
   "previous_round2_status": "PROGRAM_COMPLETE_GOLDEN_PROVISIONAL_SAVED_LLM",
   "judge_fix": {
-    "revision": "candidate-access-v3",
+    "revision": "candidate-access-v4",
     "task": "A",
-    "status": "NO_VALID_NEW_JUDGMENT",
+    "status": "INSUFFICIENT_VALID_RUNS",
     "required_valid_runs": 5,
-    "valid_runs": 0,
-    "attempted_runs": 1,
-    "representative": null,
+    "valid_runs": 2,
+    "attempted_runs": 6,
+    "golden_attempted_runs": 6,
+    "representative": "golden_r3",
     "old_provisional_score": 1.0,
-    "new_score": null,
+    "previous_current_score": null,
+    "new_score": 1.0,
     "programmatic_score": 1.0,
-    "total_sigma_sample": null,
-    "total_sigma_population": null,
+    "total_sigma_sample": 0.0,
+    "total_sigma_population": 0.0,
     "criterion_sigma_sample": {
-      "R01": null,
-      "R02": null,
-      "R03": null,
-      "S01": null,
-      "S02": null,
-      "P01": null,
-      "S03": null,
-      "S04": null,
-      "S05": null,
-      "S06": null,
-      "L01": null,
-      "L02": null,
-      "L03": null
+      "R01": 0.0,
+      "R02": 0.0,
+      "R03": 0.0,
+      "S01": 0.0,
+      "S02": 0.0,
+      "P01": 0.0,
+      "S03": 0.0,
+      "S04": 0.0,
+      "S05": 0.0,
+      "S06": 0.0,
+      "L01": 0.0,
+      "L02": 0.0,
+      "L03": 0.0
     },
-    "total_cost_usd": 2.148244,
-    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "consistency_requirement_met": false,
+    "total_cost_usd": 15.77973,
+    "stop_reason": null,
     "old_model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.0,
@@ -218,10 +227,20 @@
       "qwen3.8-max": 0.0
     },
     "model_rejudge_completed": false,
-    "history": "history/golden/rejudge_attempts_20261026/history_pre_v3",
-    "invalid_attempts_count": 1,
+    "history": "rejudge_v4_20261026",
+    "invalid_attempts_count": 4,
     "accounting_final_pending": false,
-    "cost_measurement": "Account cumulative usage difference before run and at post-run readback; not isolated request-level billing."
+    "cost_limit_exceeded_runs": [
+      "golden_r2",
+      "golden_r3",
+      "golden_r5"
+    ],
+    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+    "limits": {
+      "single_run_usd": 3.5,
+      "account_usd": 1675,
+      "run_seconds": 1200
+    }
   },
-  "scoring_revision": "candidate-access-v3"
+  "scoring_revision": "candidate-access-v4"
 }

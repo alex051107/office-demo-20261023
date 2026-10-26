@@ -1,0 +1,23 @@
+{
+  "reward": 0.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Cannot determine L02 status - the code_interpreter tool calls were blocked by stop hooks and I did not receive the actual cell contents from the candidate workbook. Without reading the workbook cells, I cannot check for claims about external audits or real-time queries."
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Cannot determine L03 status - the code_interpreter tool calls were blocked by stop hooks and I did not receive the actual cell contents from the candidate workbook. Without reading cells containing explanatory text, I cannot verify whether company facts are fabricated."
+    }
+  ],
+  "graded_score": 1.0,
+  "signed_pooled_score": 1.0,
+  "criteria_counted": 13.0,
+  "verifier_error": 1.0
+}

@@ -1,0 +1,212 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "D01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D01: frozen atomic workbook check"
+        },
+        {
+          "name": "V01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "D02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D02: frozen atomic workbook check"
+        },
+        {
+          "name": "V02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "D03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D03: frozen atomic workbook check"
+        },
+        {
+          "name": "V03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "Results!D2 的 source_note 引用了 Agreement.pdf 和 Records.pdf 及其页码/章节，这两个文件均存在于 /app/input_files/ 中，未虚构文件名。来源定位基于真实存在的随包材料文件。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Results!D2 的 source_note 仅引用协议和记录的章节及数据，未出现'外部审计'、'实时查询'或'独立核验'等完成性声称，属于正常分析措辞。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Results!D2 的 source_note 中描述的佣金比例、付款金额、赞助收入等均是对 Agreement.pdf 和 Records.pdf 内容的引用和分析，未编造随包输入中不存在的经营事实。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u5f15\\u7528\\u4e86 Agreement.pdf \\u548c Records.pdf \\u53ca\\u5176\\u9875\\u7801/\\u7ae0\\u8282\\uff0c\\u8fd9\\u4e24\\u4e2a\\u6587\\u4ef6\\u5747\\u5b58\\u5728\\u4e8e /app/input_files/ \\u4e2d\\uff0c\\u672a\\u865a\\u6784\\u6587\\u4ef6\\u540d\\u3002\\u6765\\u6e90\\u5b9a\\u4f4d\\u57fa\\u4e8e\\u771f\\u5b9e\\u5b58\\u5728\\u7684\\u968f\\u5305\\u6750\\u6599\\u6587\\u4ef6\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u4ec5\\u5f15\\u7528\\u534f\\u8bae\\u548c\\u8bb0\\u5f55\\u7684\\u7ae0\\u8282\\u53ca\\u6570\\u636e\\uff0c\\u672a\\u51fa\\u73b0'\\u5916\\u90e8\\u5ba1\\u8ba1'\\u3001'\\u5b9e\\u65f6\\u67e5\\u8be2'\\u6216'\\u72ec\\u7acb\\u6838\\u9a8c'\\u7b49\\u5b8c\\u6210\\u6027\\u58f0\\u79f0\\uff0c\\u5c5e\\u4e8e\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u4e2d\\u63cf\\u8ff0\\u7684\\u4f63\\u91d1\\u6bd4\\u4f8b\\u3001\\u4ed8\\u6b3e\\u91d1\\u989d\\u3001\\u8d5e\\u52a9\\u6536\\u5165\\u7b49\\u5747\\u662f\\u5bf9 Agreement.pdf \\u548c Records.pdf \\u5185\\u5bb9\\u7684\\u5f15\\u7528\\u548c\\u5206\\u6790\\uff0c\\u672a\\u7f16\\u9020\\u968f\\u5305\\u8f93\\u5165\\u4e2d\\u4e0d\\u5b58\\u5728\\u7684\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+    }
+  ],
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "pooling": {
+    "before_rules": 1.0,
+    "after_rules": 1.0
+  },
+  "llm_evidence_errors": []
+}

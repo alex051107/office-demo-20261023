@@ -1,0 +1,254 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "A1",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A1: frozen atomic workbook check"
+        },
+        {
+          "name": "A2",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A2: frozen atomic workbook check"
+        },
+        {
+          "name": "P1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F3",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F3: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "O01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "O01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "U01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "U01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP2: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "Results!D2和Results!D3中引用的所有来源（CNO_2024-12-31_10K.xlsx T050!G15=2,471.9、CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4、CNO_2025-03-31_10Q.xlsx T010!G19=580.1、CNO_2025-06-30_10Q.xlsx T016!N14=15.6、T016!N24=(21.6)、Text!A131）均在实际输入文件中存在且数值匹配，无虚构文件、页码或表格。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Results!D2和Results!D3中的文字为分析性计算说明，描述如何从累积误差推导季度调整额（如Q1 reduction = 31.7 - 21.6 = 10.1），未声称已完成外部审计、实时查询或独立核验。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Results!D2和Results!D3中提及的嵌入式衍生工具高述21.6百万（2024年末）和31.7百万（2025年3月末）直接来自Text!A131单元格的实际内容，属于可从随包输入获得的事实，未编造额外公司经营事实。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2\\u548cResults!D3\\u4e2d\\u5f15\\u7528\\u7684\\u6240\\u6709\\u6765\\u6e90\\uff08CNO_2024-12-31_10K.xlsx T050!G15=2,471.9\\u3001CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4\\u3001CNO_2025-03-31_10Q.xlsx T010!G19=580.1\\u3001CNO_2025-06-30_10Q.xlsx T016!N14=15.6\\u3001T016!N24=(21.6)\\u3001Text!A131\\uff09\\u5747\\u5728\\u5b9e\\u9645\\u8f93\\u5165\\u6587\\u4ef6\\u4e2d\\u5b58\\u5728\\u4e14\\u6570\\u503c\\u5339\\u914d\\uff0c\\u65e0\\u865a\\u6784\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D2\\u548cResults!D3\\u4e2d\\u7684\\u6587\\u5b57\\u4e3a\\u5206\\u6790\\u6027\\u8ba1\\u7b97\\u8bf4\\u660e\\uff0c\\u63cf\\u8ff0\\u5982\\u4f55\\u4ece\\u7d2f\\u79ef\\u8bef\\u5dee\\u63a8\\u5bfc\\u5b63\\u5ea6\\u8c03\\u6574\\u989d\\uff08\\u5982Q1 reduction = 31.7 - 21.6 = 10.1\\uff09\\uff0c\\u672a\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"Results!D2\\u548cResults!D3\\u4e2d\\u63d0\\u53ca\\u7684\\u5d4c\\u5165\\u5f0f\\u884d\\u751f\\u5de5\\u5177\\u9ad8\\u8ff021.6\\u767e\\u4e07\\uff082024\\u5e74\\u672b\\uff09\\u548c31.7\\u767e\\u4e07\\uff082025\\u5e743\\u6708\\u672b\\uff09\\u76f4\\u63a5\\u6765\\u81eaText!A131\\u5355\\u5143\\u683c\\u7684\\u5b9e\\u9645\\u5185\\u5bb9\\uff0c\\u5c5e\\u4e8e\\u53ef\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u4e8b\\u5b9e\\uff0c\\u672a\\u7f16\\u9020\\u989d\\u5916\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中引用的所有来源（CNO_2024-12-31_10K.xlsx T050!G15=2,471.9、CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4、CNO_2025-03-31_10Q.xlsx T010!G19=580.1、CNO_2025-06-30_10Q.xlsx T016!N14=15.6、T016!N24=(21.6)、Text!A131）均在实际输入文件中存在且数值匹配，无虚构文件、页码或表格。"
+    },
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中的文字为分析性计算说明，描述如何从累积误差推导季度调整额（如Q1 reduction = 31.7 - 21.6 = 10.1），未声称已完成外部审计、实时查询或独立核验。"
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Results!D2和Results!D3中提及的嵌入式衍生工具高述21.6百万（2024年末）和31.7百万（2025年3月末）直接来自Text!A131单元格的实际内容，属于可从随包输入获得的事实，未编造额外公司经营事实。"
+    }
+  ]
+}

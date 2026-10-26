@@ -1,0 +1,257 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "A1",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A1: frozen atomic workbook check"
+        },
+        {
+          "name": "A2",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A2: frozen atomic workbook check"
+        },
+        {
+          "name": "P1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F3",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F3: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "O01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "O01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "U01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "U01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP2: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "无法打开候选工作簿 /app/output/answer.xlsx — 文件在当前环境中不存在，无法读取任何单元格内容进行来源虚构判断。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有虚假审计声称。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有编造的经营事实。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u6253\\u5f00\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f /app/output/answer.xlsx \\u2014 \\u6587\\u4ef6\\u5728\\u5f53\\u524d\\u73af\\u5883\\u4e2d\\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u8bfb\\u53d6\\u4efb\\u4f55\\u5355\\u5143\\u683c\\u5185\\u5bb9\\u8fdb\\u884c\\u6765\\u6e90\\u865a\\u6784\\u5224\\u65ad\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u6253\\u5f00\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f /app/output/answer.xlsx \\u2014 \\u6587\\u4ef6\\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5355\\u5143\\u683c\\u5185\\u5bb9\\u5224\\u65ad\\u662f\\u5426\\u6709\\u865a\\u5047\\u5ba1\\u8ba1\\u58f0\\u79f0\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u6253\\u5f00\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f /app/output/answer.xlsx \\u2014 \\u6587\\u4ef6\\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5355\\u5143\\u683c\\u5185\\u5bb9\\u5224\\u65ad\\u662f\\u5426\\u6709\\u7f16\\u9020\\u7684\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件在当前环境中不存在，无法读取任何单元格内容进行来源虚构判断。"
+    },
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有虚假审计声称。"
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_reported_missing_or_unreadable",
+        "candidate_cell_not_cited"
+      ],
+      "reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件不存在，无法读取单元格内容判断是否有编造的经营事实。"
+    }
+  ]
+}

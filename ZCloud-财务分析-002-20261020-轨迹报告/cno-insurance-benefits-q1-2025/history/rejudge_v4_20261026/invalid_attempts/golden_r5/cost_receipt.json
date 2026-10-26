@@ -1,0 +1,33 @@
+{
+  "task": "B",
+  "candidate": "golden",
+  "run": "golden_r5",
+  "attempt": 0,
+  "started_at": "2026-10-26T07:15:01-04:00",
+  "usage_before_usd": 1634.182128,
+  "status": "INVALID",
+  "valid": false,
+  "finished_at": "2026-10-26T07:17:21-04:00",
+  "duration_seconds": 140.015,
+  "returncode": 1,
+  "usage_after_usd": 1635.782312,
+  "cost_usd": 1.600184,
+  "timed_out": false,
+  "stop_reason": null,
+  "reward": 0.0,
+  "graded_score": 1.0,
+  "verifier_error": 1.0,
+  "criteria_counted": 23.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "遍历候选工作簿所有工作表的所有字符串单元格，未发现 'external audit'、'independent verification'、'real-time query'、'外部审计'、'独立核验'、'实时查询' 等关键词。候选仅陈述数据来源和计算过程，未声称已完成外部审计、实时查询或独立核验，故 L02 无违规。"
+    }
+  ],
+  "exit_code": "judge:artifact_access_error",
+  "account_limit_reached": false,
+  "cost_limit_exceeded": false
+}

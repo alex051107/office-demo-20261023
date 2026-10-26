@@ -1,0 +1,15 @@
+{
+  "status": "RAW_PROVIDER_RESPONSE_NOT_RETAINED",
+  "provider_response": null,
+  "provider_response_id": null,
+  "reported_model": null,
+  "usage": null,
+  "existing_judge_model": "qwen3.7-plus",
+  "evidence": {
+    "normalized_judge": "judge.json",
+    "sdk_reward_details": "reward-details.json",
+    "reward_receipt": "reward.json"
+  },
+  "note": "未查到上游原始响应；包内reward-details是已留存的SDK裁判结果，不能冒充原始HTTP响应。",
+  "this_export_paid_calls": 0
+}

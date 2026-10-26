@@ -1,0 +1,445 @@
+{
+  "method": "以修订后参考答案为底，按既有 changed_cells 重建七份部分正确控制卷并离线评分；仅程序子集，不对控制卷推定 LLM 违规或未违规。",
+  "s_max": 51,
+  "cases": [
+    {
+      "case": "0_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R01",
+          "cell": "Results!B2",
+          "reference": 42200,
+          "set_to": 52750.0
+        },
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 50500,
+          "set_to": 63125.0
+        },
+        {
+          "criterion": "D01",
+          "cell": "Detail!C2",
+          "reference": 42200,
+          "set_to": 52750.0
+        },
+        {
+          "criterion": "D02",
+          "cell": "Detail!C3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 0,
+        "R02": 0,
+        "R03": 0,
+        "D01": 0,
+        "D02": 0,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.0,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "1_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 50500,
+          "set_to": 63125.0
+        },
+        {
+          "criterion": "D01",
+          "cell": "Detail!C2",
+          "reference": 42200,
+          "set_to": 52750.0
+        },
+        {
+          "criterion": "D02",
+          "cell": "Detail!C3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 0,
+        "R03": 0,
+        "D01": 0,
+        "D02": 0,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.196078,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "2_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 50500,
+          "set_to": 63125.0
+        },
+        {
+          "criterion": "D01",
+          "cell": "Detail!C2",
+          "reference": 42200,
+          "set_to": 52750.0
+        },
+        {
+          "criterion": "D02",
+          "cell": "Detail!C3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 0,
+        "D01": 0,
+        "D02": 0,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.392157,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "3_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "D01",
+          "cell": "Detail!C2",
+          "reference": 42200,
+          "set_to": 52750.0
+        },
+        {
+          "criterion": "D02",
+          "cell": "Detail!C3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1,
+        "D01": 0,
+        "D02": 0,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.588235,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "4_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "D02",
+          "cell": "Detail!C3",
+          "reference": 55200,
+          "set_to": 69000.0
+        },
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1,
+        "D01": 1,
+        "D02": 0,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.72549,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "5_of_6_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "D03",
+          "cell": "Detail!C4",
+          "reference": 50500,
+          "set_to": 63125.0
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1,
+        "D01": 1,
+        "D02": 1,
+        "D03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.862745,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "case": "6_of_6_positive_results_correct",
+      "changed_cells": [],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1,
+        "D01": 1,
+        "D02": 1,
+        "D03": 1
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 1.0,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "model_answers": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "scoring_revision": "评分器 v2（2026-10-26）",
+  "round": 2,
+  "golden_hybrid_score_basis": "candidate-access-v3 accepted runs only",
+  "reference_score": null,
+  "reference_status": "NO_VALID_NEW_JUDGMENT",
+  "reference_score_basis": "candidate-access-v3 accepted runs only",
+  "judge_fix": {
+    "revision": "candidate-access-v3",
+    "task": "C",
+    "status": "NO_VALID_NEW_JUDGMENT",
+    "required_valid_runs": 5,
+    "valid_runs": 0,
+    "attempted_runs": 0,
+    "representative": null,
+    "old_provisional_score": 1.0,
+    "new_score": null,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": null,
+    "total_sigma_population": null,
+    "criterion_sigma_sample": {
+      "R01": null,
+      "R02": null,
+      "R03": null,
+      "D01": null,
+      "V01": null,
+      "D02": null,
+      "V02": null,
+      "D03": null,
+      "V03": null,
+      "S01": null,
+      "S02": null,
+      "S03": null,
+      "P01": null,
+      "P02": null,
+      "S04": null,
+      "S05": null,
+      "S06": null,
+      "L01": null,
+      "L02": null,
+      "L03": null
+    },
+    "total_cost_usd": 0,
+    "stop_reason": "single_run_cost_exceeded_2_usd",
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "history/judge_runs/round2_attempts/history_pre_v3",
+    "invalid_attempts_count": 0,
+    "accounting_final_pending": false,
+    "cost_measurement": "Account cumulative usage increase observed at container termination; post-run settlement is pending when accounting_final_pending is true."
+  },
+  "score_status": "NO_VALID_NEW_JUDGMENT",
+  "score_note": "参考混合分不可用，程序对照与历史模型分不变。",
+  "score_revision": "candidate-access-v3",
+  "new_llm_calls": 0,
+  "score_basis": "candidate-access-v3 accepted runs only"
+}

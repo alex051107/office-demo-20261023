@@ -1,0 +1,33 @@
+{
+  "task": "A",
+  "candidate": "golden",
+  "run": "golden_r1_retry1",
+  "attempt": 1,
+  "started_at": "2026-10-26T06:03:18-04:00",
+  "usage_before_usd": 1610.097972,
+  "status": "INVALID",
+  "valid": false,
+  "finished_at": "2026-10-26T06:05:06-04:00",
+  "duration_seconds": 107.67,
+  "returncode": 1,
+  "usage_after_usd": 1610.60379,
+  "cost_usd": 0.505818,
+  "timed_out": false,
+  "stop_reason": null,
+  "reward": 0.0,
+  "graded_score": 1.0,
+  "verifier_error": 1.0,
+  "criteria_counted": 13.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "Working!R18 说明性文字描述的是计算方法和范围说明，未编造无法从随包输入获得的公司经营事实。所有数值均源自输入文件中的单元格引用，未新增事实性断言。"
+    }
+  ],
+  "exit_code": "judge:artifact_access_error",
+  "account_limit_reached": false,
+  "cost_limit_exceeded": false
+}

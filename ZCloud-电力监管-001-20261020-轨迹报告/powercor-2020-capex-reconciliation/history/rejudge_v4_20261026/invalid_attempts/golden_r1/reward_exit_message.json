@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "Cannot determine L02 status - the code_interpreter tool calls were blocked by stop hooks and I did not receive the actual cell contents from the candidate workbook. Without reading the workbook cells, I cannot check for claims about external audits or real-time queries.",
+  "extra_fields": {
+    "criteria_counted": 13.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

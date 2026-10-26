@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "隔离容器与求解流程；不是业务质量或难度验收",
+  "target_model": "gpt-5.6-sol",
+  "returned_model_counts": {
+    "gpt-5.6-sol": 17
+  },
+  "provider_reported_models": [
+    "gpt-5.6-sol"
+  ],
+  "provider_success_requests": 17,
+  "provider_requests_total": 17,
+  "substitute_requests": 0,
+  "usage": {
+    "input_tokens": 770354,
+    "output_tokens": 8368
+  },
+  "session": {
+    "started": "2026-10-20T12:35:46+00:00",
+    "ended": "2026-10-20T12:50:48+00:00",
+    "minutes": 15.02,
+    "returncode": 0,
+    "status": "SESSION_EXITED_OK"
+  },
+  "checks": {
+    "artifacts_present": true,
+    "docker_isolation_verified": true,
+    "upstream_requests_present": true,
+    "requested_model_pinned": true,
+    "upstream_reported_model_matches": true,
+    "frozen_instruction_sha256": "cfe47782bcf393f60fcf5351cf4c0fad0b3dbb4ed5837ad26899d7e314731205"
+  },
+  "source_run": "gpt-5.6-sol_20261020T083539",
+  "source_files": [
+    "session_receipt.json",
+    "screening_receipt.json",
+    "proxy_usage.json",
+    "agent.log"
+  ]
+}

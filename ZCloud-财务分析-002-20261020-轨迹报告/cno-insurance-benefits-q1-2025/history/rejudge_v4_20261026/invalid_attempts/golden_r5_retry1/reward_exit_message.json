@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "Results!D2和Results!D3中引用的所有来源（CNO_2024-12-31_10K.xlsx T050!G15=2,471.9、CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4、CNO_2025-03-31_10Q.xlsx T010!G19=580.1、CNO_2025-06-30_10Q.xlsx T016!N14=15.6、T016!N24=(21.6)、Text!A131）均在实际输入文件中存在且数值匹配，无虚构文件、页码或表格。",
+  "extra_fields": {
+    "criteria_counted": 23.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

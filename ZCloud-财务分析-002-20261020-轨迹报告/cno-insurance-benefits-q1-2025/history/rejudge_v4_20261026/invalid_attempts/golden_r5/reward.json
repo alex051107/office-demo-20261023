@@ -1,0 +1,34 @@
+{
+  "reward": 0.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "遍历候选工作簿所有工作表的所有字符串单元格，未发现 'external audit'、'independent verification'、'real-time query'、'外部审计'、'独立核验'、'实时查询' 等关键词。候选仅陈述数据来源和计算过程，未声称已完成外部审计、实时查询或独立核验，故 L02 无违规。"
+    }
+  ],
+  "graded_score": 1.0,
+  "criteria_counted": 23.0,
+  "score_before_post_pool_rules": 1.0,
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "verifier_error": 1.0
+}

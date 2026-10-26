@@ -2,7 +2,7 @@
   "schema_version": "office-demo-manifest-v1",
   "package_name": "ZCloud-财务分析-002-20261020",
   "path_base": "case_root",
-  "file_count": 156,
+  "file_count": 163,
   "manifest_excludes": [
     "manifest.json"
   ],
@@ -10,8 +10,8 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/delivery_note.md",
-      "bytes": 2604,
-      "sha256": "998ba732c11ad5121373349eb3166670c9a91b11657db73475f64e13466a2ab8"
+      "bytes": 3423,
+      "sha256": "e518163be4f81854b9fca260a9e955c519ee91031c04984bb0e3f3f242fa0fbb"
     },
     {
       "path": "environment/Dockerfile",
@@ -52,14 +52,14 @@
     {
       "path": "history/CHANGELOG.md",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/CHANGELOG.md",
-      "bytes": 15905,
-      "sha256": "0ec2596eb782f8730d5c98d8b8f5d7d273c6d205d719dc12cda6f088b860030f"
+      "bytes": 16115,
+      "sha256": "37f36bef731d935095088a288c81c4e295f1255c63aa40cf0d310d8e6ee2a572"
     },
     {
       "path": "history/README.md",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/README.md",
-      "bytes": 1877,
-      "sha256": "f00cb4626ec856d3dada594620e7ea79cc3ae800698e3b1509c961115242da2d"
+      "bytes": 2087,
+      "sha256": "768926ee70bebf26b7b790ab00dc329ccb7b3d3c473d88088b47e9fbabcea5ab"
     },
     {
       "path": "history/before_cleanup/validation/negative_cases/cases.json",
@@ -108,6 +108,42 @@
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/records.v1.jsonl",
       "bytes": 1666,
       "sha256": "dcaaf3e356cc99a88c308204642e99e2db97732a3e290f62fb45ca30860500bc"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/attempts.json",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/attempts.json",
+      "bytes": 10349,
+      "sha256": "b1d5c95104509b9f6d6ef405485f6e5ade5c0a363779f59315e0246258329506"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/previous/delivery_note.md",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/previous/delivery_note.md",
+      "bytes": 2604,
+      "sha256": "998ba732c11ad5121373349eb3166670c9a91b11657db73475f64e13466a2ab8"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/previous/metadata/task_metadata.json",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/previous/metadata/task_metadata.json",
+      "bytes": 5981,
+      "sha256": "9a7127e75a293394eeec47c50dfb6fceb7ecec860a04f8200b34d1413a1f2840"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/previous/records.jsonl",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/previous/records.jsonl",
+      "bytes": 3802,
+      "sha256": "10e72784f8ecf7962403949a7793525ae644c44de80dc91abd5cf250df12ec6d"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/previous/validation/run_regression.py",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/previous/validation/run_regression.py",
+      "bytes": 27446,
+      "sha256": "f897cc5c439f18ca6e2e3cdffdaa1b0f70140310a8ad380461762a9d5ddeafd7"
+    },
+    {
+      "path": "history/rejudge_v4_20261026/previous/validation/scoring_policy.md",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/history/rejudge_v4_20261026/previous/validation/scoring_policy.md",
+      "bytes": 5025,
+      "sha256": "e8537e2d1a752859aabe1c7bd65f19c867954ed93a30af8684eba77a77846314"
     },
     {
       "path": "history/validation/golden_judge_fix_summary.json",
@@ -334,14 +370,14 @@
     {
       "path": "metadata/task_metadata.json",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/metadata/task_metadata.json",
-      "bytes": 5981,
-      "sha256": "9a7127e75a293394eeec47c50dfb6fceb7ecec860a04f8200b34d1413a1f2840"
+      "bytes": 6441,
+      "sha256": "d734c3d195d54e38a9667b93d8c6e99f51f02e8896a21c71a6f090c298d6d6b5"
     },
     {
       "path": "records.jsonl",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/records.jsonl",
-      "bytes": 3802,
-      "sha256": "10e72784f8ecf7962403949a7793525ae644c44de80dc91abd5cf250df12ec6d"
+      "bytes": 4283,
+      "sha256": "0feb12c414472e684401d15f387f1fcb726538718b0caba0dfc08445add8fa11"
     },
     {
       "path": "rubrics.json",
@@ -920,16 +956,22 @@
       "sha256": "acaf450dec5e3294f72a3d6cb630eadcbd703f86d8e74202a1ca8b4577fad24a"
     },
     {
+      "path": "validation/rejudge_summary.json",
+      "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/validation/rejudge_summary.json",
+      "bytes": 1527,
+      "sha256": "95fbd48656d24f21f5848000ed882f065c4413bfbefdbe03cbe3ed8f5e582511"
+    },
+    {
       "path": "validation/run_regression.py",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/validation/run_regression.py",
-      "bytes": 27446,
-      "sha256": "f897cc5c439f18ca6e2e3cdffdaa1b0f70140310a8ad380461762a9d5ddeafd7"
+      "bytes": 28523,
+      "sha256": "f51c957adf88e7d356785d6969370bfd4e0a7a6aaf4823defc896f8ef34fe0b2"
     },
     {
       "path": "validation/scoring_policy.md",
       "zip_path": "ZCloud-财务分析-002-20261020/cno-insurance-benefits-q1-2025/validation/scoring_policy.md",
-      "bytes": 5025,
-      "sha256": "e8537e2d1a752859aabe1c7bd65f19c867954ed93a30af8684eba77a77846314"
+      "bytes": 5247,
+      "sha256": "74c88c6f604a9ddbd3776af073601c662e028014dd024ca81a7e7dec86bcc861"
     },
     {
       "path": "validation/source_pair_audit.json",

@@ -269,33 +269,109 @@ def check_saved_cases(task):
 
 
 def check_saved_report(task, track):
+    import statistics
+
+    def read(path):
+        return json.loads(path.read_text())
+
     engine = import_module('saved_report_engine', task / 'tests/score_output.py')
-    key = json.loads((task / 'tests/results_key.json').read_text())
+    finalizer = import_module('saved_report_finalizer', task / 'tests/finalize.py')
+    key = read(task / 'tests/results_key.json')
     golden = track / 'golden/candidate.xlsx'
     assert golden.read_bytes() == (task / 'solution/golden_output/answer.xlsx').read_bytes()
     assert engine.score(engine.extract(golden, key), key)['score'] == 1.0
-    reward = json.loads((track / 'golden/reward.json').read_text())
-    judge = json.loads((track / 'golden/judge.json').read_text())
-    consistency = json.loads((track / 'consistency.json').read_text())
-    assert reward['verifier_error'] == 1 and reward['score_available'] is False
-    assert judge['score_final'] is None and judge['judge_completed'] is False
-    assert consistency['status'] == 'NO_VALID_NEW_JUDGMENT'
-    assert all(group['n'] == 0 and not group['run_ids'] and not group['requirement_met']
-               for group in consistency['groups'])
-    summary = json.loads((track / 'history/golden_judge_fix_summary.json').read_text())
+    summary = read(track / 'rejudge_summary.json')
+    assert summary == read(task / 'validation/rejudge_summary.json')
+    consistency = read(track / 'consistency.json')
+    group = consistency['groups'][0]
+    judges = []
+    expected_ids = {item['id'] for item in read(task / 'rubrics.json')['items']}
+    for identifier in group['run_ids']:
+        folder = track / 'judge_runs' / identifier
+        reward = read(folder / 'reward.json')
+        details = read(folder / 'reward-details.json')
+        judge = read(folder / 'judge.json')
+        assert reward['verifier_error'] == judge['verifier_error'] == 0
+        assert finalizer.llm_evidence_errors(details, golden) == []
+        pooled, counted, broken = finalizer.pooled_score(details)
+        if hasattr(finalizer, 'apply_post_pool_rules'):
+            score = finalizer.apply_post_pool_rules(details, pooled)
+        elif hasattr(finalizer, 'apply_score_policy'):
+            score = finalizer.apply_score_policy(pooled, details['score_policy'])
+        else:
+            score = finalizer.apply_score_rules(pooled, finalizer.program_result(golden))
+        assert not broken and counted == len(expected_ids)
+        assert reward['reward'] == judge['score_final'] == round(score, 6)
+        assert {item['criterion_id'] for item in judge['criteria']} == expected_ids
+        assert judge['reward_details_sha256'] == hashlib.sha256((folder / 'reward-details.json').read_bytes()).hexdigest()
+        judges.append(judge)
+    scores = [judge['score_final'] for judge in judges]
+    sigma = statistics.stdev(scores) if len(scores) > 1 else None
+    assert group['n'] == summary['valid_runs'] == len(scores)
+    assert group['total_score']['values'] == scores
+    assert group['total_score']['stddev_sample'] == summary['total_sigma_sample'] == sigma
+    assert len(group['criteria']) == len(expected_ids)
+    for criterion in group['criteria']:
+        values = [next(item['score'] for item in judge['criteria'] if item['criterion_id'] == criterion['criterion_id']) for judge in judges]
+        deviation = statistics.stdev(values) if len(values) > 1 else None
+        assert criterion['values'] == values and criterion['n'] == len(values)
+        assert criterion['stddev_sample'] == summary['criterion_sigma_sample'][criterion['criterion_id']] == deviation
+        assert criterion['pass_stddev_lt_0_05'] == (deviation is not None and deviation < 0.05)
+    requirement = len(scores) == 5 and sigma is not None and sigma < 0.05 and all(item['pass_stddev_lt_0_05'] for item in group['criteria'])
+    assert group['requirement_met'] == summary['consistency_requirement_met'] == requirement
+    reward = read(track / 'golden/reward.json')
+    judge = read(track / 'golden/judge.json')
+    if scores:
+        assert judge['source_run'] == summary['representative'] == judges[0]['source_run']
+        assert reward['reward'] == judge['score_final'] == scores[0] == summary['new_score']
+        assert reward['score_available'] and judge['judge_completed']
+        assert (track / 'golden/reward-details.json').read_bytes() == (track / 'judge_runs' / group['run_ids'][0] / 'reward-details.json').read_bytes()
+    else:
+        assert reward['verifier_error'] == 1 and reward['score_available'] is False
+        assert judge['score_final'] is None and judge['judge_completed'] is False
+        assert not list((track / 'judge_runs').glob('golden_r[1-5]'))
+    quality = read(track / 'quality_report.json')
+    partial = read(track / 'discrimination_cases.json')
+    assert quality['target']['score_final'] == quality['discrimination']['reference_score'] == partial['reference_score'] == summary['new_score']
+    assert quality['consistency']['status'] == consistency['status'] == summary['status']
+    assert quality['consistency']['groups'][0]['total_scores'] == scores
+    assert partial['model_answers'] == quality['discrimination']['model_scores'] == summary['new_model_scores']
+    for root in [task, track]:
+        for line in (root / 'records.jsonl').read_text().splitlines():
+            record = json.loads(line)
+            assert record['reference_score'] == summary['new_score'] and record['score_status'] == summary['status']
+            for field in ['target', 'golden']:
+                if isinstance(record.get(field), dict):
+                    assert record[field]['reward'] == summary['new_score']
+                    assert record[field]['status'] == summary['status']
+                    assert record[field]['score_available'] == bool(scores)
+                    assert record[field]['new_llm_calls'] == summary['golden_attempted_runs']
+        metadata = read(root / 'metadata/task_metadata.json')
+        assert metadata['reference_hybrid_score'] == summary['new_score']
+        assert metadata['reference_fresh_valid_judge_runs'] == len(scores)
     archive = track / 'history' / summary['history']
-    assert (archive / 'golden/reward.json').is_file()
-    assert len(list((archive / 'judge_runs').glob('golden_r[1-5]/reward-details.json'))) == 5
+    assert (archive / 'previous/golden/reward.json').is_file()
+    previous = read(track / 'history/golden_judge_fix_summary.json')
+    earlier = track / 'history' / previous['history'] / 'judge_runs'
+    assert len(list(earlier.glob('golden_r[1-5]/reward-details.json'))) == 5
+    costs = read(track / 'judge_costs.json')
+    assert round(sum(row['cost_usd'] for row in costs['runs']), 6) == summary['total_cost_usd']
+    assert len(costs['runs']) == summary['attempted_runs']
+    for row in costs['runs']:
+        assert round(row['usage_after_usd'] - row['usage_before_usd'], 6) == row['cost_usd']
+        if not row['valid']:
+            assert (archive / 'invalid_attempts' / row['run'] / 'cost_receipt.json').is_file()
     for folder in sorted((track / 'rollouts').iterdir()):
         candidate = folder / 'candidate.xlsx'
         result = engine.score(engine.extract(candidate, key), key)
-        receipt = json.loads((folder / 'reward.json').read_text())
-        saved_program = receipt.get('programmatic_score', receipt['reward'])
-        assert abs(result['score'] - saved_program) < 0.000001, folder.name
+        receipt = read(folder / 'reward.json')
+        assert abs(result['score'] - receipt.get('programmatic_score', receipt['reward'])) < 0.000001, folder.name
         assert receipt['reward'] == summary['new_model_scores'][folder.name], folder.name
-    print(json.dumps({'saved_report_checked': track.parent.name, 'programmatic_golden': 1.0,
-                      'valid_new_judgments': 0, 'current_golden_score': None,
-                      'archived_judgments_excluded': 5}))
+    blind = read(task / 'history/validation/judge_fixtures/saved_blind.json')
+    assert finalizer.llm_evidence_errors({'reward': blind['agent']}, golden)
+    print(json.dumps({'saved_valid_runs': len(scores), 'sample_sigma': sigma,
+                      'current_score': summary['new_score'], 'requirement_met': requirement,
+                      'invalid_attempts_excluded': summary['invalid_attempts_count']}))
 
 
 def import_module(name, path):

@@ -1,13 +1,13 @@
 {
   "reward": 0.205882,
+  "llm_evidence_errors": [],
   "graded_score": 0.205882,
   "criteria_counted": 23.0,
-  "verifier_error": 0.0,
-  "programmatic_score": 0.205882,
-  "scorer_revision": "office-review-v2-round2-20261026",
-  "text_judgments": "reused_saved; not newly evaluated",
-  "llm_evidence_errors": [],
   "score_before_post_pool_rules": 0.20588235294117646,
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
   "post_pool_rules": [
     {
       "name": "required_header_cap",
@@ -22,8 +22,8 @@
       "reasons": []
     }
   ],
-  "interface_gate": {
-    "failed": false,
-    "errors": []
-  }
+  "verifier_error": 0.0,
+  "score_available": true,
+  "scoring_revision": "candidate-access-v4",
+  "programmatic_score": 0.205882
 }

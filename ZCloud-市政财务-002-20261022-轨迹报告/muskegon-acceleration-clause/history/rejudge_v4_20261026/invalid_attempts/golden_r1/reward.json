@@ -1,0 +1,50 @@
+{
+  "reward": 0.0,
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "候选未虚构来源。Results!D2中引用的'Agreement.pdf, PDF p.5 sections 3C-3D'和'Records.pdf, PDF p.2 Plans'均指向随包中真实存在的文件，Agreement.pdf共10页，p.5确实包含Commission条款（3C-3D节），Records.pdf共6页包含Plans/Sponsorships等图像页，所有引用页码均在有效范围内。"
+    },
+    {
+      "criterion_id": "L02",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "候选未声称完成外部审计或独立核验。Results!D3中的措辞为'Agreement.pdf, PDF p.5 sections 3C-3D: earned term-revenue commission...'，这是对随包输入文件的引用分析，未出现'已进行外部审计'、'实时查询'或'独立验证'等声称。"
+    },
+    {
+      "criterion_id": "L03",
+      "problems": [
+        "candidate_cell_not_cited"
+      ],
+      "reason": "候选未编造公司经营事实。Results!D4中提到的数值（如USD 287,000、386,000、67,300等）和日期（2007-05-01、2007-06-01、2007-12-31）均来自Records.pdf和Agreement.pdf，计算公式'USD 50,500 = 67,300 - 9,700 - 7,100'是基于源文件的推导，无新增事实性断言。"
+    }
+  ],
+  "graded_score": 1.0,
+  "criteria_counted": 20.0,
+  "score_before_rules": 1.0,
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "verifier_error": 1.0
+}

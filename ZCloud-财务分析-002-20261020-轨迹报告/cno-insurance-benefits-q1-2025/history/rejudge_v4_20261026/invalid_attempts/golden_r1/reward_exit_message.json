@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "无法打开候选工作簿 /app/output/answer.xlsx — 文件在当前环境中不存在，无法读取任何单元格内容进行来源虚构判断。",
+  "extra_fields": {
+    "criteria_counted": 23.0,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}
