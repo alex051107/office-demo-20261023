@@ -9,14 +9,14 @@
     {
       "path": "README.md",
       "zip_path": "ZCloud-市政财务-002-20261022/README.md",
-      "bytes": 940,
-      "sha256": "0afc4d3d79d37b3e0134be37a799d96447010eb541aa7ffcc3fbd3bd66a5a24a"
+      "bytes": 891,
+      "sha256": "0996caf793b61eee02548eb4ebf90c27f78a14761aa34011a102eab38772d6f3"
     },
     {
       "path": "muskegon-acceleration-clause/delivery_note.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/delivery_note.md",
-      "bytes": 3566,
-      "sha256": "47bfee1ad6d6feecdac698a5d7caf3d20834a36e91de4a61679b106c35f1fb17"
+      "bytes": 3879,
+      "sha256": "73f0cc570054f3e3a440b3fce352bae99c8c533b9ae9fd33e4e8821e9310215a"
     },
     {
       "path": "muskegon-acceleration-clause/environment/Dockerfile",
@@ -87,8 +87,8 @@
     {
       "path": "muskegon-acceleration-clause/history/README.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/history/README.md",
-      "bytes": 2294,
-      "sha256": "a4e27319b318fed220f9a0829c7599415f217a0aa85a575e064c7c65fd7a935d"
+      "bytes": 2093,
+      "sha256": "8a2dafa2bca517127952a9347b120fe9ff22485f9f3d2fa5e3a240a947381ffa"
     },
     {
       "path": "muskegon-acceleration-clause/history/before_cleanup/validation/negative_cases/cases.json",
@@ -891,8 +891,8 @@
     {
       "path": "muskegon-acceleration-clause/validation/scoring_policy.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/scoring_policy.md",
-      "bytes": 5394,
-      "sha256": "1bd354d39344beebac09d9c3fde7e1034fb5e7bdaef801b3b6c0200d849a7303"
+      "bytes": 5715,
+      "sha256": "72f48e875dc975c4d7eddabae942e256a1b3fefad0f3e552eca847684602a215"
     },
     {
       "path": "muskegon-acceleration-clause/validation/sonnet_events.log",
@@ -915,8 +915,8 @@
     {
       "path": "交付文档.md",
       "zip_path": "ZCloud-市政财务-002-20261022/交付文档.md",
-      "bytes": 661,
-      "sha256": "45e58c645d1923a9211111b0f525879b76b586f8d8f940e642d3ecd3008c1030"
+      "bytes": 679,
+      "sha256": "3ff72bbd69e3e841d305f4858fb179dfd625a67d4722cfbfd026e57e826d1f1b"
     }
   ],
   "package_name": "ZCloud-市政财务-002-20261022"

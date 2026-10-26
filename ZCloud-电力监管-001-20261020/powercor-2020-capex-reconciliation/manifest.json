@@ -10,8 +10,8 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/delivery_note.md",
-      "bytes": 3504,
-      "sha256": "fe7b09ed2bc61143c7162d92ce8256113e19ca764e93e04b29ba4752ace65382"
+      "bytes": 3815,
+      "sha256": "562b8d513723dde562b2b18a7ff529ccb767bc26d494dd35579f4a4264213c94"
     },
     {
       "path": "environment/Dockerfile",
@@ -46,8 +46,8 @@
     {
       "path": "history/README.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/README.md",
-      "bytes": 2294,
-      "sha256": "ca808369d4dcf06b5615b8921e7c54701365f59fc65da4d5560cf232b5af87ef"
+      "bytes": 2093,
+      "sha256": "c32d09112189f73931e7c4a68cb765ca6c7dddcd1cb7612d5a59cb9bdedc2b47"
     },
     {
       "path": "history/before_cleanup/validation/negative_cases/cases.json",
@@ -904,8 +904,8 @@
     {
       "path": "validation/scoring_policy.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/validation/scoring_policy.md",
-      "bytes": 5385,
-      "sha256": "a40df123e3cf50cce5fae3da127ade6d05546ddfd5d90611da476afdae1021c5"
+      "bytes": 5444,
+      "sha256": "26a5bfe7b38e9c82f374ab5d846a8896f3c73643e577073dc0b8f6cb7a00cd78"
     },
     {
       "path": "validation/sonnet_events.log",
