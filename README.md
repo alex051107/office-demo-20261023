@@ -14,7 +14,7 @@ A、B、C 三条轨道各做了一道完整的题，格式照张老师飞书里�
 - **回归样例**：每道题的 `validation/negative_cases/` 收录审查里的负例和同类变体，另有一组合法变体（多一张辅助表、表头带空格、等价舍入等）必须保持 1 分。参考答案 1 分；负例都低于 1 分，找不到答案的为 0，违反“必须”条款的不超过 0.69。
 - **LLM 裁判的读取缺陷**：复查发现 LLM 裁判有时没打开 `answer.xlsx` 就作答，称文件不存在；三条 LLM 判据都是扣分项，原提示又写着“缺交付物的负项判 0（无违规）”，这种空判照样满分。历史记录里 C 题参考答案第 4 次评分和 Qwen 答卷的评分就是空判。v2 删掉了这条退路，要求裁判先用 openpyxl 打开候选、每条理由引用候选单元格；程序能打开工作簿而裁判声称读不到或不引用单元格时，记为裁判错误（`judge:artifact_access_error`），不计分。
 - **换裁判**：修好读取问题后，qwen3.7-plus 仍有不少次没打开答卷就作答，三道题的参考答案各只凑到 2、3、4 次有效评分。裁判因此换成 claude-sonnet-5-5。三道题的参考答案各评 5 次，B 的 GPT-5.6-SOL 答卷评 1 次，共 16 次，每次都打开了工作簿并引用了单元格。参考答案 15 次都是 1.0，总分和每条判据的标准差都是 0；GPT-5.6-SOL 仍是 0.2059。其余八份模型答卷程序分都是 0，LLM 判据只会扣分，换哪个裁判都是 0 分，所以没有重评。旧的 qwen 评分收在各包 `history/` 里。
-- 旧评分文件、各轮中间结果和无效的裁判尝试都收在各包的 `history/` 里，修改经过见 `history/CHANGELOG.md`；各题 `validation/` 只保留回归样例、`run_regression.py` 和 `scoring_policy.md`。
+- 旧评分文件、各轮中间结果和无效的裁判尝试都收在各包的 `history/` 里，修改经过见 `history/CHANGELOG.md`；各题 `validation/` 放的是当前的回归样例、检查脚本、评分说明和本次重判的汇总。
 
 ## 成绩
 
@@ -67,11 +67,11 @@ office-demo-20261023/
 | `rubrics.json` | 评分标准，统一 schema。每条有 id、描述、权重、类型、维度和评分方法；权重只用 10、7、-3、-7。 |
 | `environment/` | `Dockerfile`、`requirements.txt` 和 `input_files/`（全部输入原件，没有外链）。 |
 | `solution/` | `solve.sh` 与参考答案 `golden_output/answer.xlsx`。求解 Agent 看不到。 |
-| `tests/` | 验收入口 `test.sh` 和 `finalize.py`（与样例逐字一致），以及程序判据的实现与 LLM 判据提示词。 |
+| `tests/` | 验收入口 `test.sh`（与样例逐字一致）和 `finalize.py`（在样例基础上加了门槛、封顶和裁判读取校验），以及程序判据的实现与 LLM 判据提示词。 |
 | `targets/` | 要求交付的文件形态（answer.xlsx）。 |
 | `metadata/task_metadata.json` | 题目来源、真实性说明、能力标签、三模型分数。 |
 | `records.jsonl`、`manifest.json` | 本题的索引记录与文件清单。 |
-| `validation/` | 路径检查脚本、包审计结果、原件与随包文件的哈希比对。 |
+| `validation/` | 回归检查 `run_regression.py` 和正负例（`negative_cases/`、`positive_cases/`），路径检查 `validate_paths.py`，评分说明 `scoring_policy.md`，包审计结果，原件与随包文件的哈希比对，以及 Sonnet 重判的汇总和运行日志。 |
 | `delivery_note.md` | 本题的交付说明：可见范围、运行方式、评分证据和限制。 |
 
 ## 轨迹报告里有什么

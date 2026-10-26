@@ -1,45 +1,64 @@
-# 评分口径
+# 评分说明
 
-版本标签：评分器 v2（2026-10-26）。23 条判据保持现有权重：20 条程序项、3 条文字负项，正项权重合计 34。
+评分器版本 v2（2026-10-26）。共 23 条判据：4 条数值正项（R01、R02 各 10 分，A1、A2 各 7 分，合计 34），16 条程序负项和 3 条 LLM 负项（各 −3）。
 
-## 门槛、封顶与扣分
+## 门槛和封顶
 
-- 必需 Results、Analysis 或 Summary 缺失或错名：整卷 0 分，不通过表头搜索补救。
-- 必需表头去首尾空格后按大小写、文字和顺序比较；不符时 required_header_cap 将总分封顶 0.69。题面仅规定前置列，允许后附列、空白样式列和自由结构支持表。
-- 来源/支持格空白或纯数字、单位不符、未知标签携带业务值：instruction_must_clause_cap 将总分封顶 0.69。
-- 行序、重复记录、精度、来源定位等仍按对应程序负项扣分；不增加权重模拟封顶。正负权重池化后执行门槛与封顶，规则和原因写入 reward-details.json。
+三条规则在正负项合成分数之后执行，不进分母，也不靠加大扣分来模拟。触发的规则和原因写在 `reward-details.json` 里。
 
-## 精度与容差
+| 规则 | 触发条件 | 总分上限 |
+|---|---|---:|
+| `required_sheet_gate` | Results、Analysis 或 Summary 缺失或名字不对。评分器不会按表头去别的表里找答案。 | 0 |
+| `required_header_cap` | 必需表头去掉首尾空格后，文字、大小写或顺序不对 | 0.69 |
+| `instruction_must_clause_cap` | 来源或支持字段为空或只有数字；单位不对；多出带业务值、但标签不在要求里的记录 | 0.69 |
 
-要求 p 位小数时，number_format 显示 p 位，或存值等于 round(value,p)，任一满足即可；百分比格式按百分点比较。通用的“至少 p 位”规则也接受存值精度不少于 p；本题没有此要求。数值容差独立：金额为 0.05 百万美元，百分比为 0.005 个百分点。输入与累计调整为十分位，季度加减没有额外合法中间舍入误差，不放宽容差。
+题面只规定了每张表的前几列，所以后面多加列、空白的样式列、自己组织的辅助表都允许。行序、重复记录、小数位、来源定位这些问题只按对应判据扣分，不封顶。
 
-## LLM 与程序归属
+## 小数位和容差
 
-程序独占标准来源字段的文件、表格和单元格真实性（SD1、SD2、S02、SP1），以及来源存在性（S01）、数值、记录、顺序、单位与格式。L01 只看这些字段之外新增的虚构来源断言；L02 检查无证据的完成性声明；L03 检查新增公司经营事实。三条文字判据的文本和权重不变，不比较金标文本相似性。历史模型保存的判定不代表重新验证了全部候选上的归属行为。
+金额要求一位小数，百分比要求两位小数。下面两种情况任一满足就算合格：单元格格式显示了要求的位数；或者存储值本身等于舍入到这个位数的值。百分比格式按百分点比较。本题没有“至少 p 位”的写法。
 
-## 程序负项
+数值容差另算：金额 0.05 百万美元，百分比 0.005 个百分点。输入和累计调整都是一位小数，季度加减不会产生额外的舍入误差，所以容差没有放宽。
 
-- `P1`（-3）：缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record
-- `P2`（-3）：缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row
-- `SD1`（-3）：缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file
-- `SD2`（-3）：缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file
-- `F1`（-3）：Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.
-- `F2`（-3）：Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.
-- `F3`（-3）：Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.
-- `X1`（-3）：Deduct 3 when any cell of the workbook holds an Excel error value
-- `X2`（-3）：任一必需表出现额外业务记录、空键非空记录或重复记录时扣3分。
-- `S01`（-3）：A required Results source_note or Analysis source_document/source_page is empty or numeric-only.
-- `S02`（-3）：Results来源须指向实际随包文件和存在的worksheet/table；明确给出单元格时须在该表范围内，允许明确引用第2行来源；任一违规扣3分。
-- `SP1`（-3）：Analysis每行source_page须给实际随包文件中的worksheet/table；任一缺失或不存在扣3分。
-- `O01`（-3）：Results、Analysis、Summary的必需记录须按题面顺序出现且各一次；任一缺失、逆序或重复扣3分。
-- `U01`（-3）：Results两行unit分别严格为USD millions、percent，Analysis两行严格为USD millions；任一违规扣3分。
-- `DP1`（-3）：Results金额变动的number_format显示一位小数，或存储值等于舍入到一位小数的值，即满足要求；后者不限于General格式。否则扣3分。
-- `DP2`（-3）：Results百分比的number_format显示两位小数，或存储值等于舍入到两位小数的值，即满足要求；后者不限于General格式。否则扣3分。
+## LLM 判据和程序判据的分工
 
-## 候选文件访问校验
+程序判据负责标准来源字段里的文件、表格和单元格是否真实（SD1、SD2、S02、SP1），以及来源是否为空（S01），还有数值、记录、顺序、单位和格式。三条 LLM 判据只看程序管不到的地方：
 
-内容判定必须建立在实际读取候选工作簿的证据上，每条理由须引用候选中存在的工作表与单元格。程序已成功读取候选，但理由宣称候选缺失/不可读，或缺少有效候选单元格引用时，finalize 记录 verifier_error=1、judge:artifact_access_error；该记录不是答卷得分，不计入一致性样本。来源文件缺失与候选无法读取分开处理，避免把正常来源负项误判为裁判错误。
+- L01：上述来源字段之外，候选新写的来源说法是否虚构。
+- L02：候选是否声称做过外部审计、实时查询或独立核验，却没有证据。
+- L03：候选是否编造了输入里没有的公司经营事实。
 
-## 复现与证据边界
+三条 LLM 判据的文字和权重都没有改，也不和参考答案的文字比较。模型答卷沿用当时保存的 LLM 判定。
 
-运行 `python3 -B validation/run_regression.py` 检查正负例、池化规则、候选访问证据与保存判定；不调用求解器或裁判。LLM 裁判为 claude-sonnet-5-5。参考答案的 5 次评分（`judge_runs/golden_r1` 到 `golden_r5`）都来自它，总分和每条判据的标准差都是 0。除 B 的 GPT-5.6-SOL 外，模型答卷没有重评：它们程序分为 0，LLM 判据只扣分，任何裁判下都是 0 分。旧的 qwen 判定保留在 `history/`，不参与统计。
+## 程序负项（各 −3）
+
+| 判据 | 检查内容 |
+|---|---|
+| P1 | Summary 里第四季度的赔付额等于 Analysis 里的记录 |
+| P2 | Summary 里第一季度减第四季度，等于 Results 里的变化额 |
+| SD1 | Analysis 第四季度那一行写的是随包提供的文件 |
+| SD2 | Analysis 第一季度那一行写的是随包提供的文件 |
+| F1 | Results 有题面规定的四个表头 |
+| F2 | Analysis 有题面规定的六个表头 |
+| F3 | Summary 有题面规定的两个表头 |
+| X1 | 工作簿任何单元格出现 Excel 错误值 |
+| X2 | 必需表里出现多出的业务记录、键为空但有内容的记录，或重复记录 |
+| S01 | Results 的 `source_note`，或 Analysis 的 `source_document`、`source_page` 为空或只有数字 |
+| S02 | Results 的来源指向随包的文件和存在的工作表或表格；写了单元格时，单元格要在这张表的范围内。也可以明确引用第 2 行的来源。 |
+| SP1 | Analysis 每一行的 `source_page` 是随包文件里存在的工作表或表格 |
+| O01 | Results、Analysis、Summary 的必需记录按题面顺序各出现一次，不缺、不颠倒、不重复 |
+| U01 | Results 两行的单位分别是 `USD millions` 和 `percent`，Analysis 两行都是 `USD millions` |
+| DP1 | Results 的金额变化显示一位小数，或存储值等于舍入到一位的值（不限于常规格式） |
+| DP2 | Results 的百分比显示两位小数，或存储值等于舍入到两位的值（不限于常规格式） |
+
+表头判据 F1–F3 去掉首尾空格后比较，大小写和顺序必须一致，后面可以加列。
+
+## 裁判读取校验
+
+LLM 裁判必须先打开候选工作簿，每条理由都要引用候选里实际存在的工作表和单元格。如果程序能读取工作簿，裁判却说文件不存在、读不到，或者理由里没有引用候选单元格，这次评分记为裁判错误（`verifier_error=1`，`judge:artifact_access_error`）。裁判错误不算答卷分数，也不计入一致性统计。候选引用的来源文件不存在，是答卷的问题，按来源判据扣分，不算裁判错误。
+
+## 复现
+
+运行 `python3 -B validation/run_regression.py`，会检查正负例、分数合成规则、裁判读取校验和已保存的评分记录。它不调用求解模型，也不调用裁判。
+
+LLM 裁判是 claude-sonnet-5-5。参考答案的 5 次评分（`judge_runs/golden_r1` 到 `golden_r5`）都来自它，总分和每条判据的标准差都是 0。旧的 qwen 判定保留在 `history/`，不参与统计。

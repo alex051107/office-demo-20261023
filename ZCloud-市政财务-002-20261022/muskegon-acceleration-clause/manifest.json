@@ -9,8 +9,8 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/delivery_note.md",
-      "bytes": 3536,
-      "sha256": "2a7c927b47cc1c05f5942a0bac54a265acc9e1585636150e4694c0ae2013824a"
+      "bytes": 3566,
+      "sha256": "47bfee1ad6d6feecdac698a5d7caf3d20834a36e91de4a61679b106c35f1fb17"
     },
     {
       "path": "environment/Dockerfile",
@@ -81,8 +81,8 @@
     {
       "path": "history/README.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/history/README.md",
-      "bytes": 2087,
-      "sha256": "7bdc46649ed9fc005f8910df9e0b50d8f121602b2a43060351fe36172b0d102d"
+      "bytes": 2294,
+      "sha256": "a4e27319b318fed220f9a0829c7599415f217a0aa85a575e064c7c65fd7a935d"
     },
     {
       "path": "history/before_cleanup/validation/negative_cases/cases.json",
@@ -885,8 +885,8 @@
     {
       "path": "validation/scoring_policy.md",
       "zip_path": "ZCloud-市政财务-002-20261022/muskegon-acceleration-clause/validation/scoring_policy.md",
-      "bytes": 5831,
-      "sha256": "73459b26985e4b151c849bc32de365df443771a810e15565c3be3adaf35bd2d7"
+      "bytes": 5394,
+      "sha256": "1bd354d39344beebac09d9c3fde7e1034fb5e7bdaef801b3b6c0200d849a7303"
     },
     {
       "path": "validation/sonnet_events.log",
