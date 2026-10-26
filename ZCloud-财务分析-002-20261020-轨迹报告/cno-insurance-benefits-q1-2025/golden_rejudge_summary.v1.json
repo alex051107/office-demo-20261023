@@ -1,0 +1,33 @@
+{
+  "requested_runs": 5,
+  "attempted_runs": 1,
+  "runner_structure_check_passes": 1,
+  "accepted_content_judgments": 0,
+  "remaining_runs": 4,
+  "status": "STOPPED_COST_GUARD",
+  "guard_threshold_usd": 0.5,
+  "detailed_guard_threshold_usd": 1.0,
+  "observed_account_delta_usd": 2.639501999999993,
+  "usage_scope": "shared account delta during the run; not an isolated per-task invoice",
+  "runs": [
+    {
+      "run_id": "golden_r1",
+      "runner_exit_code": 0,
+      "runner_reward": 1.0,
+      "criteria_counted": 23,
+      "llm_evidence_status": "UNAVAILABLE",
+      "accepted_reward": 0.0,
+      "verifier_error": 1.0,
+      "reason": "All three textual criterion reasons state that the candidate workbook could not be parsed; raw receipts retained without alteration.",
+      "raw_reward": "judge_runs/golden_r1/reward.raw_judge.json",
+      "raw_details": "judge_runs/golden_r1/reward-details.raw_judge.json"
+    }
+  ],
+  "per_criterion_sigma": {
+    "L01": null,
+    "L02": null,
+    "L03": null
+  },
+  "total_sigma": null,
+  "sigma_reason": "No accepted new content judgments; old repeats excluded."
+}

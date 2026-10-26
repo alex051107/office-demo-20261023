@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED_COST_GUARD",
+  "required_valid_runs": 5,
+  "attempted_runs": 1,
+  "valid_runs": 0,
+  "remaining_valid_runs": 5,
+  "retry_count": 0,
+  "new_solver_runs": 0,
+  "per_run_limit_usd": 0.5,
+  "account_limit_usd": 1635,
+  "account_usage_delta_usd": 8.650104000000056,
+  "cost_guard_detected_after_limit_exceeded": true,
+  "runner_returncode": 137,
+  "started_at": "2026-10-25T23:31:00Z",
+  "finished_at": "2026-10-25T23:46:01Z",
+  "attempt_receipt": "round2_attempts/golden_r1/run_metadata.json",
+  "per_criterion_standard_deviation": null,
+  "total_standard_deviation": null,
+  "golden_score_basis": "provisional_saved_historical_judgments",
+  "note": "首个真实金标重判未通过运行器有效性检查；费用超过上限后停止，无重试，未启动 r2–r5。现有 golden_r1..r5 为历史 LLM 判定的程序重组，不是本轮新裁判。"
+}

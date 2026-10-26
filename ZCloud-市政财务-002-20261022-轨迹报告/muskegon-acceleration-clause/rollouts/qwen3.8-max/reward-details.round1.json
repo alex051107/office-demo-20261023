@@ -1,0 +1,354 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 0.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "description": "Plan A principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 13100,
+              "cell": "Results!B2",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "R02",
+          "description": "Plan B principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 17850,
+              "cell": "Results!B3",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "R03",
+          "description": "Plan C principal balance",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 16850,
+              "cell": "Results!B4",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D01",
+          "description": "Detail plan A final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 13100,
+              "cell": "Detail!C2",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V01",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B2",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D02",
+          "description": "Detail plan B final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 17850,
+              "cell": "Detail!C3",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V02",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B3",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "D03",
+          "description": "Detail plan C final value",
+          "weight": 7,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "evidence": [
+            {
+              "raw": 16850,
+              "cell": "Detail!C4",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "V03",
+          "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "2007-12-31",
+              "cell": "Detail!B4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S01",
+          "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            [
+              "Plan A principal balance"
+            ],
+            [
+              "Plan B principal balance"
+            ],
+            [
+              "Plan C principal balance"
+            ]
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S02",
+          "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "USD",
+              "cell": "Results!C2",
+              "number_format": "General"
+            },
+            {
+              "raw": "USD",
+              "cell": "Results!C3",
+              "number_format": "General"
+            },
+            {
+              "raw": "USD",
+              "cell": "Results!C4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S03",
+          "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "P01",
+          "description": "Excel error outside scored cells",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "P02",
+          "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "S04",
+          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": "Computed from Records: Sponsorships (A1 235,000 + A2 347,000), Broker payments (9,200 + 6,800), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (13,100)",
+              "cell": "Results!D2",
+              "number_format": "General"
+            },
+            {
+              "raw": "Computed from Records: Sponsorships (B1 318,000 + B2 429,000), Broker payments (11,200 + 8,300), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (17,850)",
+              "cell": "Results!D3",
+              "number_format": "General"
+            },
+            {
+              "raw": "Computed from Records: Sponsorships (C1 287,000 + C2 386,000), Broker payments (9,700 + 7,100), Other payments, Plans; Agreement Sec.3.C/3.D and memo p2 two-year illustration; agrees with Records: Finance forecast (16,850)",
+              "cell": "Results!D4",
+              "number_format": "General"
+            }
+          ],
+          "gate_reason": null
+        },
+        {
+          "name": "S05",
+          "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [],
+          "gate_reason": null
+        },
+        {
+          "name": "S06",
+          "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "evidence": [
+            {
+              "raw": 13100,
+              "cell": "Results!B2",
+              "number_format": "0.00"
+            },
+            {
+              "raw": 17850,
+              "cell": "Results!B3",
+              "number_format": "0.00"
+            },
+            {
+              "raw": 16850,
+              "cell": "Results!B4",
+              "number_format": "0.00"
+            },
+            {
+              "raw": 13100,
+              "cell": "Detail!C2",
+              "number_format": "0.00"
+            },
+            {
+              "raw": 17850,
+              "cell": "Detail!C3",
+              "number_format": "0.00"
+            },
+            {
+              "raw": 16850,
+              "cell": "Detail!C4",
+              "number_format": "0.00"
+            }
+          ],
+          "gate_reason": null
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "无法找到候选文件 /app/output/answer.xlsx，环境中不存在该文件。根据'缺交付物的负项判0（无违规）'规则，未发现来源虚构问题。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "无法读取候选文件内容，无法判断是否存在外部审计完成性声称。根据缺交付物判0规则，未发现此类违规。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "无法读取候选文件内容，无法判断是否存在编造的公司经营事实。根据缺交付物判0规则，未发现此类违规。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u627e\\u5230\\u5019\\u9009\\u6587\\u4ef6 /app/output/answer.xlsx\\uff0c\\u73af\\u5883\\u4e2d\\u4e0d\\u5b58\\u5728\\u8be5\\u6587\\u4ef6\\u3002\\u6839\\u636e'\\u7f3a\\u4ea4\\u4ed8\\u7269\\u7684\\u8d1f\\u9879\\u52240\\uff08\\u65e0\\u8fdd\\u89c4\\uff09'\\u89c4\\u5219\\uff0c\\u672a\\u53d1\\u73b0\\u6765\\u6e90\\u865a\\u6784\\u95ee\\u9898\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5019\\u9009\\u6587\\u4ef6\\u5185\\u5bb9\\uff0c\\u65e0\\u6cd5\\u5224\\u65ad\\u662f\\u5426\\u5b58\\u5728\\u5916\\u90e8\\u5ba1\\u8ba1\\u5b8c\\u6210\\u6027\\u58f0\\u79f0\\u3002\\u6839\\u636e\\u7f3a\\u4ea4\\u4ed8\\u7269\\u52240\\u89c4\\u5219\\uff0c\\u672a\\u53d1\\u73b0\\u6b64\\u7c7b\\u8fdd\\u89c4\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u8bfb\\u53d6\\u5019\\u9009\\u6587\\u4ef6\\u5185\\u5bb9\\uff0c\\u65e0\\u6cd5\\u5224\\u65ad\\u662f\\u5426\\u5b58\\u5728\\u7f16\\u9020\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\\u6839\\u636e\\u7f3a\\u4ea4\\u4ed8\\u7269\\u52240\\u89c4\\u5219\\uff0c\\u672a\\u53d1\\u73b0\\u6b64\\u7c7b\\u8fdd\\u89c4\\u3002\"}}"
+    }
+  ]
+}

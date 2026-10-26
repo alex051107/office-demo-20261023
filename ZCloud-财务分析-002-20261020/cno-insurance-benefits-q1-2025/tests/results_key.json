@@ -23,7 +23,8 @@
         [
           "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
         ]
-      ]
+      ],
+      "exact_column_count": false
     },
     "Analysis": {
       "headers": [
@@ -67,7 +68,8 @@
           "Insurance policy benefits expense",
           "Policy benefits"
         ]
-      }
+      },
+      "exact_column_count": false
     },
     "Summary": {
       "headers": [
@@ -100,7 +102,8 @@
           "Three months ended March 31, 2025",
           "Q1 FY2025"
         ]
-      }
+      },
+      "exact_column_count": false
     }
   },
   "rows": [
@@ -316,7 +319,7 @@
       "weight": -3,
       "dimension": "结构与组织",
       "budget_group": "format",
-      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "s3_transform": "violation_complement",
       "negate": true
     },
@@ -327,7 +330,7 @@
       "weight": -3,
       "dimension": "结构与组织",
       "budget_group": "format",
-      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "s3_transform": "violation_complement",
       "negate": true
     },
@@ -338,7 +341,7 @@
       "weight": -3,
       "dimension": "结构与组织",
       "budget_group": "format",
-      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "s3_transform": "violation_complement",
       "negate": true
     },
@@ -367,7 +370,7 @@
       "negate": true,
       "dimension": "内容质量-专业规范",
       "budget_group": "instruction_constraints",
-      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。"
+      "description": "A required Results source_note or Analysis source_document/source_page is empty or numeric-only."
     },
     {
       "criterion_id": "S02",
@@ -412,7 +415,7 @@
       "negate": true,
       "dimension": "结构与组织",
       "budget_group": "instruction_constraints",
-      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "description": "Results value meets 1 decimals through number_format OR an already-rounded stored value.",
       "ref": [
         "Results",
         [
@@ -430,7 +433,7 @@
       "negate": true,
       "dimension": "结构与组织",
       "budget_group": "instruction_constraints",
-      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "description": "Results value meets 2 decimals through number_format OR an already-rounded stored value.",
       "ref": [
         "Results",
         [
@@ -2464,7 +2467,7 @@
       ]
     }
   },
-  "scorer_revision": "office-review-v2-20261026",
+  "scorer_revision": "office-review-v2-round2-20261026",
   "interface_gate": {
     "failure_score": 0,
     "required_sheets": [
@@ -2473,7 +2476,35 @@
       "Summary"
     ],
     "exact_names": true,
-    "exact_headers": true,
-    "support_sheets": "allowed and unconstrained"
+    "exact_headers": false,
+    "support_sheets": "allowed and unconstrained",
+    "header_failure_score_cap": 0.69,
+    "header_trimming": "leading and trailing whitespace",
+    "required_columns": "exact case-sensitive prefix in specified order",
+    "trailing_columns": "allowed; instruction.md lines 16, 23-25 and 33-35 do not restrict total column count"
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "cap": 0.69,
+      "binary": true
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "cap": 0.69,
+      "binary": true,
+      "triggers": [
+        "empty or numeric-only required source/support cell",
+        "wrong required unit",
+        "unrequired label carrying a business value"
+      ]
+    }
+  ],
+  "precision_policy": {
+    "rule": "number_format shows p decimals OR stored value equals rounding to p decimals; at-least-p also accepts stored precision >= p",
+    "extracted_amount_tolerance": 0.05,
+    "derived_change_tolerance": 0.05,
+    "derived_percent_tolerance": 0.005,
+    "rounding_reason": "All supplied insurance benefits and adjustment amounts are in tenths of USD millions. Quarter subtraction adds no legitimate intermediate rounding spread; percent may be stored full precision or rounded to two decimals (maximum difference 0.005 percentage points)."
   }
 }

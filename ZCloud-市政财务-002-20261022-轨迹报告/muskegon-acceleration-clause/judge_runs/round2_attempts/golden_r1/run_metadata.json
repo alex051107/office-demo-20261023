@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-10-25T23:31:00Z",
+  "finished_at": "2026-10-25T23:46:01Z",
+  "account_usage_delta_usd": 8.650104000000056,
+  "runner_returncode": 137,
+  "per_run_limit_usd": 0.5,
+  "account_limit_usd": 1635,
+  "cost_guard_passed": false,
+  "status": "COST_GUARD_STOPPED_INVALID_RUN",
+  "valid": false,
+  "completed_criteria": 0,
+  "expected_criteria": 20,
+  "retry_count": 0,
+  "termination": "Stopped the task-owned container after account usage delta exceeded the per-run limit.",
+  "observed_failure": "Repeated assistant text-form function_call/code_interpreter output followed by Stop hook feedback requiring StructuredOutput; no accepted structured verdict.",
+  "account_usage_delta_is_run_bill": false,
+  "account_usage_note": "Account usage increased during this attempt; this is not an isolated provider invoice. The guard was detected after the limit had already been exceeded."
+}

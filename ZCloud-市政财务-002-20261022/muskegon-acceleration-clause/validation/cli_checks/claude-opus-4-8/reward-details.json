@@ -122,5 +122,29 @@
         "value": 1
       }
     ]
+  },
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "pooling": {
+    "before_rules": 0.0,
+    "after_rules": 0.0
   }
 }

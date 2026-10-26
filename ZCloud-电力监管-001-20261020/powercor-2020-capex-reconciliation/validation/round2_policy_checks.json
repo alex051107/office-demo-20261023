@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "finalizer_cli_cases": 37,
+  "cap_never_increases_score": true,
+  "gate_overrides_full_pool": true,
+  "precision_controls_passed": true,
+  "cases": [
+    {
+      "case": "duplicate_record",
+      "score": 0.8,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "extra_record",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "extra_text_record",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "header_case",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "header_order_only",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "header_reversed",
+      "score": 0,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "header_shifted",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "nonnumeric_value",
+      "score": 0.9,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "orphan_value",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "outside_tolerance",
+      "score": 0.666667,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rounded_two_formatted",
+      "score": 0.666667,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rounded_two_general",
+      "score": 0.666667,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rows_reversed",
+      "score": 0.9,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rows_shifted",
+      "score": 0.9,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sheet_case",
+      "score": 0.0,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sheet_missing",
+      "score": 0.0,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sheet_renamed",
+      "score": 0.0,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "source_header_missing",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "source_one_empty",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sources_empty",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sources_numeric",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "sources_numeric_text",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "unit_case",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "unit_wrong",
+      "score": 0.69,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "empty_styled_column",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "extra_column",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "extra_column_no_header",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "extra_support_sheet",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "full_precision_general",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "golden",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "header_spaces",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "inside_tolerance",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "label_only_note",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rounded_asset_aggregation",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rounded_three",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "rounded_three_general",
+      "score": 1,
+      "finalizer_cli_passed": true
+    },
+    {
+      "case": "two_decimal_display",
+      "score": 1,
+      "finalizer_cli_passed": true
+    }
+  ]
+}

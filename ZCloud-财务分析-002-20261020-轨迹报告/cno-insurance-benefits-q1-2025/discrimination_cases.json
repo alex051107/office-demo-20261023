@@ -139,6 +139,10 @@
     "claude-opus-4-8": 0.0,
     "qwen3.8-max": 0.0
   },
-  "scorer_revision": "office-review-v2-20261026",
-  "text_judgment_scope": "partial-credit controls have no new text judgment; reported scores are programmatic only"
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "text_judgment_scope": "partial-credit controls have no new text judgment; reported scores are programmatic only",
+  "reference_score": 1.0,
+  "reference_status": "PROVISIONAL_SAVED_VALID_TEXT",
+  "reference_score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "invalid_judge_attempts_excluded": true
 }

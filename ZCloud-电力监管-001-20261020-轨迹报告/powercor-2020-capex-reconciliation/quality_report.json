@@ -11,13 +11,21 @@
     "live_source_verified": false,
     "original_customer_query": false
   },
-  "rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
+  "rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
   "target": {
     "path": "golden/candidate.xlsx",
     "sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": 1.0
+    "score_final": 1.0,
+    "programmatic_score": 1.0,
+    "score_status": "PROVISIONAL",
+    "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "score_revision": "round3_golden_record_correction",
+    "score_basis": "round2_program_plus_original_valid_saved_llm",
+    "new_llm_calls": 0,
+    "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+    "invalid_attempt_archive_path_base": "trajectory_case_root"
   },
   "rollout_summary": {
     "models": [
@@ -81,9 +89,14 @@
     "model": "qwen3.7-plus",
     "protocol": "anthropic（Claude Code 裁判）",
     "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "v2程序离线复算后，按finalize.py池化原有每份答卷第1次LLM判定；无新增调用。",
-    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)",
-    "llm_status": "REUSED_SAVED_JUDGMENTS"
+    "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "formula": "round(apply_score_policy(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),score_policy),6)",
+    "llm_status": "REUSED_VALID_SAVED_JUDGMENTS",
+    "fresh_golden_runs": 0,
+    "saved_valid_golden_runs": 5,
+    "invalid_rejudge_attempts": 1,
+    "required_golden_runs": 5,
+    "semantic_reliability": "Original valid judgments only; revised text not rejudged; contradictory attempt excluded."
   },
   "consistency": {
     "path": "consistency.json",
@@ -118,7 +131,14 @@
         "pass_stddev_lt_0_05": true
       }
     ],
-    "status": "PASS"
+    "status": "PASS",
+    "score_status": "PROVISIONAL",
+    "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "score_revision": "round3_golden_record_correction",
+    "score_basis": "round2_program_plus_original_valid_saved_llm",
+    "new_llm_calls": 0,
+    "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+    "invalid_attempt_archive_path_base": "trajectory_case_root"
   },
   "discrimination": {
     "reference_score": 1.0,
@@ -145,7 +165,7 @@
         "score": 0
       }
     ],
-    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "note": "新版金标文字未重新裁判；沿用原有效文字判定；金标程序分1.0，合成分1.0；异常输出不计分。部分正确样例仅验证程序区分度。",
     "partial_credit_cases": {
       "path": "discrimination_cases.json",
       "totals": {
@@ -158,8 +178,8 @@
   },
   "excluded_judge_jobs": {
     "path": "excluded_runs.json",
-    "count": 6,
-    "note": "6 次裁判作业因网关超时或连接中断没有完成，没有纳入成绩和一致性统计，也没有按 0 分计。"
+    "count": 7,
+    "note": "6次历史超时/连接中断及1次判定与理由矛盾的金标裁判错误均排除；不作成绩或零分。"
   },
   "model_evidence": {
     "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
@@ -174,9 +194,17 @@
     "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
     "Qwen 3.8 Max 答卷的三条 LLM 扣分项被判为违规，裁判给出的理由却写未发现虚构；该答卷正项得分为 0，总分不受影响，原始判定原样保留。",
     "开发阶段的另一套评分规则会先重算公式，给 Qwen 3.8 Max 0.02 分；本包统一使用 Office 裁判分。",
-    "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。",
-    "v2金标仅更新阅读呈现和解释；新的程序评分已运行，LLM条款及历史判定未变，不宣称重新完成LLM验收。"
+    "第二轮修改程序判据、派生容差与后置评分规则，保持各条权重和LLM文本不变；delivery_rubric_sha256记录当前导出，历史裁判rubric摘要保留用于追溯。",
+    "新版金标文字未重新裁判；沿用原有效文字判定"
   ],
   "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
-  "scorer_version": "v2 (2026-10-26)"
+  "scorer_version": "v2 (2026-10-26)",
+  "round2_status": "PROGRAM_COMPLETE_GOLDEN_PROVISIONAL_SAVED_LLM",
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

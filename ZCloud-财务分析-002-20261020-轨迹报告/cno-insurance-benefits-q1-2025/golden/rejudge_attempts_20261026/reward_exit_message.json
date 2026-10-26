@@ -1,0 +1,9 @@
+{
+  "exit_code": "judge:artifact_access_error",
+  "exit_reason": "无法解析候选文件 /app/output/answer.xlsx（openpyxl 读取二进制 xlsx 失败），因此无法检查来源说明是否虚构。根据规则'无法解析的文件必须明确报告错误'，本项无证据支持违规判定。",
+  "extra_fields": {
+    "criteria_counted": 23,
+    "graded_score": 1.0,
+    "rewardkit_rc": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "reward": 1.0,
+  "graded_score": 1.0,
+  "criteria_counted": 20.0,
+  "verifier_error": 0.0,
+  "programmatic_score": 1.0,
+  "llm_status": "COMPLETED",
+  "scoring_revision": {
+    "label": "评分器 v2（2026-10-26）",
+    "method": "offline_program_rescore_with_saved_llm",
+    "new_llm_calls": 0,
+    "saved_llm_complete": true,
+    "saved_llm_candidate_sha256": "fbb4b2e1ebaee257431524ad51043e3118c6f15b9f2d02c20d71725a87824500",
+    "old_score": 1.0,
+    "new_score": 1.0,
+    "original_judgment": "judge.v1.json",
+    "limitation": "保存的 LLM 判定原样复用；不是新增模型运行或新增 LLM 裁判。"
+  }
+}

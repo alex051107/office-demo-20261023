@@ -3,7 +3,7 @@
   "candidate_label": "golden",
   "judge_model": "qwen3.7-plus",
   "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-  "rubric_sha256": "7bfa31d130cfd8b985b911104cb427430b3cf4fd6a42ca2760471e1c38176548",
+  "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
   "instruction_sha256": "cfe47782bcf393f60fcf5351cf4c0fad0b3dbb4ed5837ad26899d7e314731205",
   "input_sha256": {
     "CNO_2024-09-30_10Q.xlsx": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
@@ -21,7 +21,7 @@
     ]
   },
   "started_at": null,
-  "status": "COMPLETED",
+  "status": "PROVISIONAL_SAVED_VALID_TEXT",
   "request_timeout_seconds": 900,
   "http_status": null,
   "positive_weight_total": 34,
@@ -191,7 +191,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "label",
         "value",
@@ -209,7 +209,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "period",
         "measure",
@@ -229,7 +229,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "quarter",
         "insurance_policy_benefits"
@@ -271,7 +271,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。",
+      "description": "A required Results source_note or Analysis source_document/source_page is empty or numeric-only.",
       "evidence": [
         [
           {
@@ -284,6 +284,34 @@
           {
             "raw": "CNO_2024-12-31_10K.xlsx | worksheet/table T050!G15: FY 2024 = 2,471.9.\nCNO_2024-09-30_10Q.xlsx | worksheet/table T010!S19: 9M 2024 = 1,926.4.\nCNO_2025-03-31_10Q.xlsx | worksheet/table T010!G19: Q1 2025 = 580.1.\nCNO_2025-06-30_10Q.xlsx | worksheet/table T016!N14: 9M adjustment +15.6; T016!N24: FY adjustment -21.6; worksheet Text!A131: cumulative embedded-derivative overstatement 21.6 at December 31, 2024 and 31.7 at March 31, 2025.\nRevision basis: the 21.6 and 31.7 embedded-derivative errors are cumulative balances, not separate quarterly expenses. Convert the cumulative error to the quarter's adjustment: Q1 reduction = 31.7 - 21.6 = 10.1.\nRevised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Revised Q1 = 580.1 - 10.1 = 570.0.\nPercentage change = (570.0 - 508.3) / 508.3 * 100 = 12.1385008853...%; displayed to two decimals: 12.14 percent.",
             "cell": "Results!D3",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2024-12-31_10K.xlsx; CNO_2024-09-30_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+            "cell": "Analysis!E2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2024-12-31_10K.xlsx T050!G15; CNO_2024-09-30_10Q.xlsx T010!S19; CNO_2025-06-30_10Q.xlsx T016!N14 (+15.6), T016!N24 (-21.6), Text!A131. Revised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3 USD millions.",
+            "cell": "Analysis!F2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2025-03-31_10Q.xlsx; CNO_2025-06-30_10Q.xlsx",
+            "cell": "Analysis!E3",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2025-03-31_10Q.xlsx T010!G19; CNO_2025-06-30_10Q.xlsx Text!A131 (cumulative errors 31.7 at March 31, 2025 and 21.6 at December 31, 2024), T016!N24 (2024 correction). Quarter-only adjustment = -(31.7 - 21.6) = -10.1. Revised Q1 = 580.1 - 10.1 = 570.0 USD millions.",
+            "cell": "Analysis!F3",
             "format": "General"
           }
         ]
@@ -389,7 +417,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "description": "Results value meets 1 decimals through number_format OR an already-rounded stored value.",
       "evidence": [
         {
           "raw": 61.7,
@@ -408,7 +436,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "description": "Results value meets 2 decimals through number_format OR an already-rounded stored value.",
       "evidence": [
         {
           "raw": 12.13850088530396,
@@ -466,30 +494,59 @@
     "未查到唯一完成时间则finished_at保留null；不以文件修改时间代替。"
   ],
   "raw_response": "{\"L01\": {\"reasoning\": \"All source references in the candidate (CNO_2024-12-31_10K.xlsx with sheets T050, T010, T016, Text; CNO_2024-09-30_10Q.xlsx with T010; CNO_2025-03-31_10Q.xlsx with T010, Text; CNO_2025-06-30_10Q.xlsx with T016) correspond to files and sheet names that actually exist in /app/input_files/. No fabricated file names, page numbers, or table identifiers were found. Whether the cited tables contain the exact data point is a numerical/source-relevance issue outside L01 scope.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The candidate answer contains only labels, numerical values, unit designations, and source citations. There are no statements claiming completion of external audits, real-time queries, or independent verification. No unsupported completion claims detected.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The candidate's explanatory text consists solely of metric labels ('Change in insurance policy benefits', 'Percentage change'), period descriptors ('Fourth quarter of 2024', 'First quarter of 2025'), measure names ('Insurance policy benefits'), units, and source references. No new company operating facts are asserted beyond what is derivable from the input filings. Numerical values (508.3, 570, 61.7, 12.14%) are computational results excluded from L03 per the judging instructions.\", \"score\": \"no\"}}",
-  "judge_completed": true,
-  "finished_at": "2026-10-20T18:26:05-04:00",
+  "judge_completed": false,
+  "finished_at": null,
   "judge_agent": "claude-code",
   "judge_protocol": "anthropic",
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "golden_r5",
-  "reward_details_sha256": "a82d3d3a284d27e0d2ee27e36a5576498f53e196ed641538747b89ade9dd83d7",
+  "reward_details_sha256": "ff939b056eea659c03fc772dd078b9f6ffda9703ceb4be7db26d4628bb4e2175",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 1.0,
-  "llm_status": "COMPLETED",
-  "delivery_rubric_sha256": "3cb3729c7ef9379423882eba8faf7f8d5d67e7cae3e33f5f10d32b3ba81126d0",
+  "llm_status": "SAVED_VALID_JUDGMENT_REUSED",
+  "delivery_rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
   "programmatic_score": 1,
   "interface_gate": {
     "failed": false,
     "errors": []
   },
   "offline_revision": {
-    "revision": "office-review-v2-20261026",
-    "evaluated_at": "2026-10-25T18:30:54.825959-04:00",
-    "mode": "offline_program_replay_with_saved_text_judgments",
+    "revision": "office-review-v2-round2-20261026",
+    "evaluated_at": "2026-10-25T20:23:20.561499-04:00",
+    "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
     "saved_text_details": "reward-details.v1.json",
     "saved_candidate_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
-    "candidate_changed_since_saved_text_judgment": true
-  }
+    "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+    "candidate_changed_since_saved_text_judgment": true,
+    "correction": "golden-representative-correction-20261026",
+    "status": "PROVISIONAL_SAVED_VALID_TEXT",
+    "provisional": true,
+    "note": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "new_text_judgment_completed": false
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "score_before_post_pool_rules": 1.0,
+  "llm_evidence_errors": [],
+  "judgment_available": true,
+  "provisional": true,
+  "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "saved_judge_completed": true,
+  "saved_judgment_finished_at": "2026-10-20T18:26:05-04:00",
+  "saved_judge": "judge.v1.json",
+  "selection_policy": "Original valid first judgment recombined offline; invalid round-2 attempt excluded."
 }

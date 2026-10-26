@@ -1,9 +1,12 @@
 # Programmatic criteria use results_key.json; 4 positive criteria, 16 penalties, s_max=34.
-# Interface gate: exact required sheet names and row-1 header text/order/count; failure => 0.
-# S01/S02/SP1: source presence and actual file/worksheet locations; each -3.
+# Sheet-name gate => 0; trimmed exact header prefix mismatch => cap 0.69; trailing columns allowed.
+# S01/S02/SP1: required source presence and actual file/worksheet locations; each -3.
 # O01/U01/DP1/DP2: required record order, exact units, one/two decimal precision; each -3.
 # X2: any unsupported or duplicate required-sheet record; -3 (binary).
 # Full programmatic descriptions are in rubrics.json and results_key.json.
+# Post-pool named binary caps cover headers, empty/numeric sources, units and fabricated records.
+# Precision accepts p-decimal number_format OR a stored value already rounded to p decimals.
+# LLM ownership is documented in llm_ownership.md and enforced by prompt.md; text/weights unchanged.
 # This file retains the same three LLM penalties; no Summary positive criterion is registered.
 [judge]
 judge = "claude-code"

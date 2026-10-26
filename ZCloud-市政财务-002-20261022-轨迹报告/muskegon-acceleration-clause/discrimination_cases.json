@@ -51,7 +51,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.0
+      "programmatic_total": 0.0,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "1_of_6_positive_results_correct",
@@ -96,7 +116,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.196078
+      "programmatic_total": 0.196078,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "2_of_6_positive_results_correct",
@@ -135,7 +175,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.392157
+      "programmatic_total": 0.392157,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "3_of_6_positive_results_correct",
@@ -168,7 +228,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.588235
+      "programmatic_total": 0.588235,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "4_of_6_positive_results_correct",
@@ -195,7 +275,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.72549
+      "programmatic_total": 0.72549,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "5_of_6_positive_results_correct",
@@ -216,7 +316,27 @@
         "D03": 0
       },
       "penalties_triggered": [],
-      "programmatic_total": 0.862745
+      "programmatic_total": 0.862745,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     },
     {
       "case": "6_of_6_positive_results_correct",
@@ -230,7 +350,27 @@
         "D03": 1
       },
       "penalties_triggered": [],
-      "programmatic_total": 1.0
+      "programmatic_total": 1.0,
+      "score_rules": [
+        {
+          "name": "required_sheet_gate",
+          "triggered": false,
+          "maximum_score": 0.0,
+          "reasons": []
+        },
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "must_clause_cap",
+          "triggered": false,
+          "maximum_score": 0.69,
+          "reasons": []
+        }
+      ]
     }
   ],
   "model_answers": {
@@ -238,5 +378,7 @@
     "gpt-5.6-sol": 0.0,
     "qwen3.8-max": 0.0
   },
-  "scoring_revision": "评分器 v2（2026-10-26）"
+  "scoring_revision": "评分器 v2（2026-10-26）",
+  "round": 2,
+  "golden_hybrid_score_basis": "provisional_saved_historical_judgments"
 }

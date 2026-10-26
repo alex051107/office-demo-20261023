@@ -1,0 +1,28 @@
+{
+  "status": "JUDGE_ERROR_EXCLUDED",
+  "is_score": false,
+  "valid_score": null,
+  "attempt_count": 1,
+  "valid_fresh_runs": 0,
+  "included_in_statistics": false,
+  "count_as_zero": false,
+  "reason": "L01-L03均判yes违规，理由却称无违规且声称答卷不存在。",
+  "raw_attempt": "golden/rejudge_attempts_20261026",
+  "cost_guard_stopped": true,
+  "new_calls_this_correction": 0,
+  "saved_valid_runs": [
+    "golden_r1",
+    "golden_r2",
+    "golden_r3",
+    "golden_r4",
+    "golden_r5"
+  ],
+  "representative_score": 1.0,
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
+}

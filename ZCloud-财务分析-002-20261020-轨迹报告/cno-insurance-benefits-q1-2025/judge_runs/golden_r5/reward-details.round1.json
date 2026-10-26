@@ -1,0 +1,230 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 1,
+      "criteria": [
+        {
+          "name": "R01",
+          "raw": 1.0,
+          "value": 1.0,
+          "weight": 10,
+          "negate": false,
+          "description": "Change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        },
+        {
+          "name": "R02",
+          "raw": 1.0,
+          "value": 1.0,
+          "weight": 10,
+          "negate": false,
+          "description": "Percentage change in insurance policy benefits, first quarter of 2025 versus fourth quarter of 2024"
+        },
+        {
+          "name": "A1",
+          "raw": 1.0,
+          "value": 1.0,
+          "weight": 7,
+          "negate": false,
+          "description": "Analysis Fourth quarter of 2024 / Insurance policy benefits amount (USD millions)"
+        },
+        {
+          "name": "A2",
+          "raw": 1.0,
+          "value": 1.0,
+          "weight": 7,
+          "negate": false,
+          "description": "Analysis First quarter of 2025 / Insurance policy benefits amount (USD millions)"
+        },
+        {
+          "name": "P1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "缺失或错误时扣分；正确不加分：Pivot: Summary fourth-quarter benefits equal the Analysis record"
+        },
+        {
+          "name": "P2",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "缺失或错误时扣分；正确不加分：Pivot: Summary first quarter less fourth quarter equals the Results change row"
+        },
+        {
+          "name": "SD1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "缺失或错误时扣分；正确不加分：Analysis fourth-quarter record names a supplied file"
+        },
+        {
+          "name": "SD2",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "缺失或错误时扣分；正确不加分：Analysis first-quarter record names a supplied file"
+        },
+        {
+          "name": "F1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。"
+        },
+        {
+          "name": "F2",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。"
+        },
+        {
+          "name": "F3",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。"
+        },
+        {
+          "name": "X1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Deduct 3 when any cell of the workbook holds an Excel error value"
+        },
+        {
+          "name": "X2",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "任一必需表出现额外业务记录、空键非空记录或重复记录时扣3分。"
+        },
+        {
+          "name": "S01",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。"
+        },
+        {
+          "name": "S02",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results来源须指向实际随包文件和存在的worksheet/table；明确给出单元格时须在该表范围内，允许明确引用第2行来源；任一违规扣3分。"
+        },
+        {
+          "name": "SP1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Analysis每行source_page须给实际随包文件中的worksheet/table；任一缺失或不存在扣3分。"
+        },
+        {
+          "name": "O01",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results、Analysis、Summary的必需记录须按题面顺序出现且各一次；任一缺失、逆序或重复扣3分。"
+        },
+        {
+          "name": "U01",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results两行unit分别严格为USD millions、percent，Analysis两行严格为USD millions；任一违规扣3分。"
+        },
+        {
+          "name": "DP1",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。"
+        },
+        {
+          "name": "DP2",
+          "raw": 0.0,
+          "value": 1.0,
+          "weight": 3,
+          "negate": true,
+          "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。"
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "All source references in the candidate (CNO_2024-12-31_10K.xlsx with sheets T050, T010, T016, Text; CNO_2024-09-30_10Q.xlsx with T010; CNO_2025-03-31_10Q.xlsx with T010, Text; CNO_2025-06-30_10Q.xlsx with T016) correspond to files and sheet names that actually exist in /app/input_files/. No fabricated file names, page numbers, or table identifiers were found. Whether the cited tables contain the exact data point is a numerical/source-relevance issue outside L01 scope.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "The candidate answer contains only labels, numerical values, unit designations, and source citations. There are no statements claiming completion of external audits, real-time queries, or independent verification. No unsupported completion claims detected.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "The candidate's explanatory text consists solely of metric labels ('Change in insurance policy benefits', 'Percentage change'), period descriptors ('Fourth quarter of 2024', 'First quarter of 2025'), measure names ('Insurance policy benefits'), units, and source references. No new company operating facts are asserted beyond what is derivable from the input filings. Numerical values (508.3, 570, 61.7, 12.14%) are computational results excluded from L03 per the judging instructions.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 900,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"All source references in the candidate (CNO_2024-12-31_10K.xlsx with sheets T050, T010, T016, Text; CNO_2024-09-30_10Q.xlsx with T010; CNO_2025-03-31_10Q.xlsx with T010, Text; CNO_2025-06-30_10Q.xlsx with T016) correspond to files and sheet names that actually exist in /app/input_files/. No fabricated file names, page numbers, or table identifiers were found. Whether the cited tables contain the exact data point is a numerical/source-relevance issue outside L01 scope.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The candidate answer contains only labels, numerical values, unit designations, and source citations. There are no statements claiming completion of external audits, real-time queries, or independent verification. No unsupported completion claims detected.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The candidate's explanatory text consists solely of metric labels ('Change in insurance policy benefits', 'Percentage change'), period descriptors ('Fourth quarter of 2024', 'First quarter of 2025'), measure names ('Insurance policy benefits'), units, and source references. No new company operating facts are asserted beyond what is derivable from the input filings. Numerical values (508.3, 570, 61.7, 12.14%) are computational results excluded from L03 per the judging instructions.\", \"score\": \"no\"}}"
+    }
+  ],
+  "offline_revision": {
+    "revision": "office-review-v2-20261026",
+    "evaluated_at": "2026-10-25T18:30:54.825959-04:00",
+    "mode": "offline_program_replay_with_saved_text_judgments",
+    "new_judge_calls": 0,
+    "saved_text_details": "reward-details.v1.json",
+    "saved_candidate_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
+    "candidate_changed_since_saved_text_judgment": true
+  },
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "method": "以参考答案为底，前 k 项计分结果保持正确，其余结果乘以 1.25，用题包自带的离线程序评分器打分；其他工作表不跟着改，所以跨表一致性扣分项会按实际情况触发；总分按 rubrics.json 的公式计算，LLM 扣分项按未违规处理（需要付费裁判）。没有调用模型或裁判。",
+  "method": "以参考答案为底，保留前k项正确结果，其余值乘1.25；用本轮程序评分器和独立后置规则计算。LLM按未违规作程序分对照，不调用模型或裁判，不据此认定金标LLM质量。",
   "s_max": 30,
   "cases": [
     {
@@ -91,5 +91,14 @@
     "gpt-5.6-sol": 0,
     "qwen3.8-max": 0
   },
-  "scorer_version": "v2 (2026-10-26)"
+  "scorer_version": "v2 (2026-10-26)",
+  "reference_score": 1.0,
+  "reference_programmatic_score": 1.0,
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

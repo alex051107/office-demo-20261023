@@ -4,6 +4,44 @@
   "criteria_counted": 23.0,
   "verifier_error": 0.0,
   "programmatic_score": 1,
-  "scorer_revision": "office-review-v2-20261026",
-  "text_judgments": "reused_saved; not newly evaluated"
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "text_judgments": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "llm_evidence_errors": [],
+  "score_before_post_pool_rules": 1.0,
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "status": "PROVISIONAL_SAVED_VALID_TEXT",
+  "provisional": true,
+  "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "offline_revision": {
+    "revision": "office-review-v2-round2-20261026",
+    "evaluated_at": "2026-10-25T20:23:20.549244-04:00",
+    "mode": "program_replay_with_saved_valid_text_judgments",
+    "new_judge_calls": 0,
+    "saved_text_details": "reward-details.v1.json",
+    "saved_candidate_sha256": "b9c2fe19f86a1a45ae31a10607d7b1663862114fc56c9a9d5066625e06b9f1aa",
+    "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+    "candidate_changed_since_saved_text_judgment": true,
+    "correction": "golden-representative-correction-20261026",
+    "status": "PROVISIONAL_SAVED_VALID_TEXT",
+    "provisional": true,
+    "note": "新版金标文字未重新裁判；沿用原有效文字判定",
+    "new_text_judgment_completed": false
+  }
 }

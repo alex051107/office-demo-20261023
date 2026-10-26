@@ -1,6 +1,27 @@
 {
   "reward": 1.0,
   "graded_score": 1.0,
+  "signed_pooled_score": 1.0,
   "criteria_counted": 13.0,
-  "verifier_error": 0.0
+  "verifier_error": 0.0,
+  "programmatic_score": 1.0,
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

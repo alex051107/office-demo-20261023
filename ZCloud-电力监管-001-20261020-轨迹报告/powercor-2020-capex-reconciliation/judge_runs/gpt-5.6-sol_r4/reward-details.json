@@ -34,7 +34,7 @@
           "negate": true,
           "raw": 0,
           "value": 1,
-          "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。"
+          "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。"
         },
         {
           "name": "S02",
@@ -42,7 +42,7 @@
           "negate": true,
           "raw": 0,
           "value": 1,
-          "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。"
+          "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。"
         },
         {
           "name": "P01",
@@ -58,7 +58,7 @@
           "negate": true,
           "raw": 0,
           "value": 1,
-          "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。"
+          "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。"
         },
         {
           "name": "S04",
@@ -74,7 +74,7 @@
           "negate": true,
           "raw": 0,
           "value": 1,
-          "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。"
+          "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。"
         },
         {
           "name": "S06",
@@ -82,7 +82,7 @@
           "negate": true,
           "raw": 0,
           "value": 1,
-          "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。"
+          "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。"
         }
       ]
     },
@@ -133,5 +133,17 @@
       },
       "judge_output": "{\"L01\": {\"reasoning\": \"All three source_notes cite only 'Powercor_RFM_inputs.xlsx' sheet 'RFM input', which exists. Cited cell ranges L7:L8,L10; L11:L13; L7:L14 for forecast net capex, F61:F68 for actual capex, F115:F122 for disposals, and F169:F176 for contributions all exist and contain numeric values. Category names (Subtransmission, Distribution system assets, SCADA/Network control, Non-network general assets - IT/Other, VBRC, Land) match actual row labels in columns E/F of the input. No fictitious files, sheets, page numbers, or tables are referenced.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The candidate answer contains no statements claiming completion of an external audit, real-time query, or independent verification. Source notes describe only data extraction from the provided input workbook and arithmetic operations (actual net capex = capex - disposals - contributions; difference = actual - forecast). These are normal analytical descriptions, not unverifiable completion claims.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The candidate's source_notes contain only references to input file locations, asset class names drawn directly from the input workbook, and formula descriptions. No new company operating facts, business events, or factual assertions beyond what is present in the supplied Powercor_RFM_inputs.xlsx are introduced. Asset class names and the calculation methodology are derivable from the input package.\", \"score\": \"no\"}}"
     }
-  ]
+  ],
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  }
 }

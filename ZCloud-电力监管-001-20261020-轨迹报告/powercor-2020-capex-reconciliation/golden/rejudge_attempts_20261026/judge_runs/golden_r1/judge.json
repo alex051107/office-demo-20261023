@@ -1,0 +1,243 @@
+{
+  "case_id": "powercor-2020-capex-reconciliation",
+  "candidate_label": "golden",
+  "judge_model": "qwen3.7-plus",
+  "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+  "rubric_sha256": null,
+  "instruction_sha256": "a3868a23ce0ccb9d00412935696e75f8c500f766db8f60e2160e48079b74f3bf",
+  "input_sha256": {
+    "Distribution_handbook.pdf": "401882d13d2d2b4c81b11d3ead1c284f31f69953c4d77b8ad9ca3647ce238c81",
+    "Powercor_RFM_inputs.xlsx": "928075d8ee6ec4b1cd8c310c41a8a9ff893f6130b2859c928986e58c22c2b6ed"
+  },
+  "prompt_sha256": null,
+  "candidate_structure": {
+    "format": "xlsx",
+    "worksheets": [
+      "Results",
+      "Working"
+    ]
+  },
+  "started_at": null,
+  "status": "COMPLETED",
+  "request_timeout_seconds": 7200,
+  "http_status": null,
+  "positive_weight_total": 30,
+  "weighted_sum": 21.0,
+  "raw_score": 0.7,
+  "score_final": 0.7,
+  "reward": 0.7,
+  "graded_score": 0.7,
+  "criteria_counted": 13,
+  "verifier_error": 0.0,
+  "reported_model": null,
+  "provider_response_id": null,
+  "usage": {
+    "account_delta_usd": 1.36818
+  },
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "score": 1,
+      "sdk_value": 1,
+      "raw": 1,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "2020 network net capex difference",
+      "evidence": "written 13.69010834417945 as a literal",
+      "source_pointer": "reward-details.json#/reward/0/criteria/0"
+    },
+    {
+      "criterion_id": "R02",
+      "score": 1,
+      "sdk_value": 1,
+      "raw": 1,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "2020 non-network net capex difference",
+      "evidence": "written -11.54610040608111 as a literal",
+      "source_pointer": "reward-details.json#/reward/0/criteria/1"
+    },
+    {
+      "criterion_id": "R03",
+      "score": 1,
+      "sdk_value": 1,
+      "raw": 1,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "2020 total net capex difference",
+      "evidence": "written 1.143185786329452 as a literal",
+      "source_pointer": "reward-details.json#/reward/0/criteria/2"
+    },
+    {
+      "criterion_id": "S01",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
+      "evidence": "required leading header columns match after trimming spaces",
+      "source_pointer": "reward-details.json#/reward/0/criteria/3"
+    },
+    {
+      "criterion_id": "S02",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
+      "evidence": "units not exactly as specified: []",
+      "source_pointer": "reward-details.json#/reward/0/criteria/4"
+    },
+    {
+      "criterion_id": "P01",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Deduct for Excel error cells outside result cells already assessed",
+      "evidence": "error values outside the graded cells: []",
+      "source_pointer": "reward-details.json#/reward/0/criteria/5"
+    },
+    {
+      "criterion_id": "S03",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
+      "evidence": "missing or non-textual source references: []",
+      "source_pointer": "reward-details.json#/reward/0/criteria/6"
+    },
+    {
+      "criterion_id": "S04",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。",
+      "evidence": "required row sequence: ['2020 network net capex difference', '2020 non-network net capex difference', '2020 total net capex difference']; expected rows 2, 3, 4",
+      "source_pointer": "reward-details.json#/reward/0/criteria/7"
+    },
+    {
+      "criterion_id": "S05",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
+      "evidence": "unrequested business rows: []; duplicate labels: []",
+      "source_pointer": "reward-details.json#/reward/0/criteria/8"
+    },
+    {
+      "criterion_id": "S06",
+      "score": 0,
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
+      "evidence": "results not showing at least three decimal places: []",
+      "source_pointer": "reward-details.json#/reward/0/criteria/9"
+    },
+    {
+      "criterion_id": "L01",
+      "score": 1.0,
+      "sdk_value": 0.0,
+      "raw": "yes",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+      "reason": "候选文件 /app/output/answer.xlsx 不存在，无来源说明可评，按缺交付物规则判为无违规。",
+      "evidence": null,
+      "source_pointer": "reward-details.json#/reward/1/criteria/0"
+    },
+    {
+      "criterion_id": "L02",
+      "score": 1.0,
+      "sdk_value": 0.0,
+      "raw": "yes",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+      "reason": "候选文件不存在，无外部审计或实时查询声明可评，按缺交付物规则判为无违规。",
+      "evidence": null,
+      "source_pointer": "reward-details.json#/reward/1/criteria/1"
+    },
+    {
+      "criterion_id": "L03",
+      "score": 1.0,
+      "sdk_value": 0.0,
+      "raw": "yes",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+      "reason": "候选文件不存在，无编造公司经营事实的陈述可评，按缺交付物规则判为无违规。",
+      "evidence": null,
+      "source_pointer": "reward-details.json#/reward/1/criteria/2"
+    }
+  ],
+  "limitations": [
+    "逐条判定与裁判输出保留；未单独留存上游HTTP请求响应。账户用量增量不等同于逐请求账单。",
+    "真实运行时未单独冻结rubrics.json摘要，rubric_sha256为null；LLM配置未变，当前导出摘要另记delivery_rubric_sha256。"
+  ],
+  "raw_response": "{\"L01\": {\"score\": \"yes\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6 /app/output/answer.xlsx \\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6765\\u6e90\\u8bf4\\u660e\\u53ef\\u8bc4\\uff0c\\u6309\\u7f3a\\u4ea4\\u4ed8\\u7269\\u89c4\\u5219\\u5224\\u4e3a\\u65e0\\u8fdd\\u89c4\\u3002\"}, \"L02\": {\"score\": \"yes\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6\\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u5916\\u90e8\\u5ba1\\u8ba1\\u6216\\u5b9e\\u65f6\\u67e5\\u8be2\\u58f0\\u660e\\u53ef\\u8bc4\\uff0c\\u6309\\u7f3a\\u4ea4\\u4ed8\\u7269\\u89c4\\u5219\\u5224\\u4e3a\\u65e0\\u8fdd\\u89c4\\u3002\"}, \"L03\": {\"score\": \"yes\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6\\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u7f16\\u9020\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u7684\\u9648\\u8ff0\\u53ef\\u8bc4\\uff0c\\u6309\\u7f3a\\u4ea4\\u4ed8\\u7269\\u89c4\\u5219\\u5224\\u4e3a\\u65e0\\u8fdd\\u89c4\\u3002\"}}",
+  "judge_completed": true,
+  "finished_at": "2026-10-25T23:28:57.123108+00:00",
+  "judge_agent": "claude-code",
+  "judge_protocol": "anthropic",
+  "protocol_source": "existing batch runner configuration",
+  "rewardkit_version": "0.1.7",
+  "source_run": "golden_r1",
+  "reward_details_sha256": "28bacb0e303562eb5833364f83dfaac555c008c3a0a8ac8295ffb3ed25b7eef6",
+  "score_semantics": "positive credit / negative violation; signed weight; clipped total",
+  "hybrid_score": 0.7,
+  "llm_status": "COMPLETED",
+  "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
+  "delivery_rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
+  "offline_rescore": {
+    "scorer_version": "v2 (2026-10-26)",
+    "programmatic_score": 1,
+    "interface_gate": {
+      "passed": true,
+      "reasons": []
+    },
+    "old_reward": 1.0,
+    "new_reward": 0.7,
+    "saved_llm_candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+    "saved_llm_details": "verifier_reward-details.json",
+    "new_llm_calls": 1,
+    "scope": "Fresh golden L01-L03 judgment."
+  },
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "judge_criteria_config_sha256": "e1c20a01a166e3e7ed581c39f546772801521824899861a954d170d831b31e21"
+}

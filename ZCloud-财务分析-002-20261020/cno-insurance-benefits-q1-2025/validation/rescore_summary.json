@@ -1,8 +1,13 @@
 {
-  "scorer_revision": "office-review-v2-20261026",
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "correction": "golden-representative-correction-20261026",
   "new_solver_runs": 0,
   "new_judge_calls": 0,
-  "saved_text_criteria_unchanged": true,
+  "golden_status": "PROVISIONAL_SAVED_VALID_TEXT",
+  "golden_score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "saved_golden_text_criteria_unchanged": true,
+  "invalid_judge_attempts_excluded": true,
+  "saved_model_text_criteria_unchanged": true,
   "rows": [
     {
       "candidate": "golden",
@@ -10,111 +15,32 @@
       "old_score": 1.0,
       "new_program_score": 1,
       "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
       "criteria_counted": 23,
       "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
       "interface_gate": {
         "failed": false,
         "errors": []
       },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "claude-opus-4-8_r1",
-      "folder": "judge_runs/claude-opus-4-8_r1",
-      "old_score": 0.0,
-      "new_program_score": 0,
-      "new_final_score": 0.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "golden_r1",
-      "folder": "judge_runs/golden_r1",
-      "old_score": 1.0,
-      "new_program_score": 1,
-      "new_final_score": 1.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "golden_r2",
-      "folder": "judge_runs/golden_r2",
-      "old_score": 1.0,
-      "new_program_score": 1,
-      "new_final_score": 1.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "golden_r3",
-      "folder": "judge_runs/golden_r3",
-      "old_score": 1.0,
-      "new_program_score": 1,
-      "new_final_score": 1.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "golden_r4",
-      "folder": "judge_runs/golden_r4",
-      "old_score": 1.0,
-      "new_program_score": 1,
-      "new_final_score": 1.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "golden_r5",
-      "folder": "judge_runs/golden_r5",
-      "old_score": 1.0,
-      "new_program_score": 1,
-      "new_final_score": 1.0,
-      "criteria_counted": 23,
-      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
-    },
-    {
-      "candidate": "gpt-5.6-sol_r1",
-      "folder": "judge_runs/gpt-5.6-sol_r1",
-      "old_score": 0.205882,
-      "new_program_score": 0.205882,
-      "new_final_score": 0.205882,
-      "criteria_counted": 23,
-      "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
-      "interface_gate": {
-        "failed": false,
-        "errors": []
-      },
-      "penalties_triggered": []
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
     },
     {
       "candidate": "claude-opus-4-8",
@@ -122,12 +48,28 @@
       "old_score": 0.0,
       "new_program_score": 0,
       "new_final_score": 0.0,
+      "raw_hybrid_score": 0.0,
+      "verifier_error": 0.0,
       "criteria_counted": 23,
       "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
       "interface_gate": {
         "failed": false,
         "errors": []
       },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
       "penalties_triggered": []
     },
     {
@@ -136,12 +78,28 @@
       "old_score": 0.205882,
       "new_program_score": 0.205882,
       "new_final_score": 0.205882,
+      "raw_hybrid_score": 0.205882,
+      "verifier_error": 0.0,
       "criteria_counted": 23,
       "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
       "interface_gate": {
         "failed": false,
         "errors": []
       },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
       "penalties_triggered": []
     },
     {
@@ -150,12 +108,253 @@
       "old_score": 0.0,
       "new_program_score": 0,
       "new_final_score": 0.0,
+      "raw_hybrid_score": 0.0,
+      "verifier_error": 0.0,
       "criteria_counted": 23,
       "candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
       "interface_gate": {
         "failed": false,
         "errors": []
       },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": []
+    },
+    {
+      "candidate": "claude-opus-4-8_r1",
+      "folder": "judge_runs/claude-opus-4-8_r1",
+      "old_score": 0.0,
+      "new_program_score": 0,
+      "new_final_score": 0.0,
+      "raw_hybrid_score": 0.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": []
+    },
+    {
+      "candidate": "golden_r1",
+      "folder": "judge_runs/golden_r1",
+      "old_score": 1.0,
+      "new_program_score": 1,
+      "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
+    },
+    {
+      "candidate": "golden_r2",
+      "folder": "judge_runs/golden_r2",
+      "old_score": 1.0,
+      "new_program_score": 1,
+      "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
+    },
+    {
+      "candidate": "golden_r3",
+      "folder": "judge_runs/golden_r3",
+      "old_score": 1.0,
+      "new_program_score": 1,
+      "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
+    },
+    {
+      "candidate": "golden_r4",
+      "folder": "judge_runs/golden_r4",
+      "old_score": 1.0,
+      "new_program_score": 1,
+      "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
+    },
+    {
+      "candidate": "golden_r5",
+      "folder": "judge_runs/golden_r5",
+      "old_score": 1.0,
+      "new_program_score": 1,
+      "new_final_score": 1.0,
+      "raw_hybrid_score": 1.0,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
+      "penalties_triggered": [],
+      "status": "PROVISIONAL_SAVED_VALID_TEXT",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
+    },
+    {
+      "candidate": "gpt-5.6-sol_r1",
+      "folder": "judge_runs/gpt-5.6-sol_r1",
+      "old_score": 0.205882,
+      "new_program_score": 0.205882,
+      "new_final_score": 0.205882,
+      "raw_hybrid_score": 0.205882,
+      "verifier_error": 0.0,
+      "criteria_counted": 23,
+      "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+      "interface_gate": {
+        "failed": false,
+        "errors": []
+      },
+      "post_pool_rules": [
+        {
+          "name": "required_header_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        },
+        {
+          "name": "instruction_must_clause_cap",
+          "triggered": false,
+          "cap": 0.69,
+          "reasons": []
+        }
+      ],
       "penalties_triggered": []
     }
   ],

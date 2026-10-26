@@ -295,6 +295,7 @@
     ]
   },
   "interface_errors": [],
+  "header_errors": [],
   "required_results": [
     {
       "row": 2,

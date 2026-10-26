@@ -1,8 +1,17 @@
 {
   "scorer_version": "v2 (2026-10-26)",
+  "revision": "round3_golden_record_correction",
   "new_model_calls": 0,
   "new_judge_calls": 0,
-  "score_source": "tests/finalize.py pooled_score, with saved L01-L03 blocks unchanged",
+  "new_network_calls": 0,
+  "golden_saved_valid_run_ids": [
+    "golden_r1",
+    "golden_r2",
+    "golden_r3",
+    "golden_r4",
+    "golden_r5"
+  ],
+  "golden_fresh_run_ids": [],
   "rescored": [
     {
       "path": "golden",
@@ -10,50 +19,6 @@
       "old_score": 1.0,
       "new_score": 1.0,
       "programmatic_score": 1,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "rollouts/claude-opus-4-8",
-      "candidate": "claude-opus-4-8",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "rollouts/gpt-5.6-sol",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "rollouts/qwen3.8-max",
-      "candidate": "qwen3.8-max",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "judge_runs/claude-opus-4-8_r1",
-      "candidate": "claude-opus-4-8",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
       "interface_gate": {
         "passed": true,
         "reasons": []
@@ -113,62 +78,14 @@
         "passed": true,
         "reasons": []
       }
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r1",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r2",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r3",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r4",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
-    },
-    {
-      "path": "judge_runs/gpt-5.6-sol_r5",
-      "candidate": "gpt-5.6-sol",
-      "old_score": 0.0,
-      "new_score": 0.0,
-      "programmatic_score": 0,
-      "interface_gate": {
-        "passed": true,
-        "reasons": []
-      }
     }
   ],
-  "consistency_status": "PASS"
+  "consistency_status": "PASS",
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

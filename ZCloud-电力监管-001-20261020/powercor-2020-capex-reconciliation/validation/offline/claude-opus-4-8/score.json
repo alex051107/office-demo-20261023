@@ -1,6 +1,19 @@
 {
   "status": "EXTRACTED",
   "score": 0,
+  "signed_pooled_score": 0,
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
   "interface_gate": {
     "passed": true,
     "reasons": []
@@ -34,7 +47,7 @@
       "credit": 0,
       "decided_by": "program",
       "status": "not_triggered",
-      "evidence": "required sheet and exact four-column header are present"
+      "evidence": "required leading header columns match after trimming spaces"
     },
     "S02": {
       "credit": 0,

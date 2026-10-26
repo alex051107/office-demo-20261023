@@ -1,12 +1,14 @@
 {
+  "revision": "office-v2-round2-2026-10-26",
   "protected_file_count": 13,
-  "score_backups_verified": 36,
+  "historical_v1_backups_verified": 36,
+  "round1_backups_verified": 46,
   "golden_copy_count": 5,
-  "golden_cell_values_unchanged": true,
+  "golden_workbooks_byte_identical_to_round1": true,
   "llm_rubrics_and_saved_judgments_unchanged": true,
   "judge_folders_verified": 11,
   "key_rubric_alignment": true,
-  "syntax_files_checked": 6,
+  "syntax_files_checked": 10,
   "offline_cli": {
     "golden": {
       "programmatic_score": 1.0,
@@ -32,5 +34,19 @@
       "llm_status": "NOT_RUN",
       "hybrid_reward": null
     }
+  },
+  "regression": {
+    "negative_cases_passed": 34,
+    "positive_controls_passed": 11,
+    "finalize_cases_passed": 45,
+    "numeric_boundary_controls": 5,
+    "golden": 1.0
+  },
+  "at_least_precision_assertions_passed": 4,
+  "new_golden_judgments": {
+    "attempted": 1,
+    "valid": 0,
+    "status": "BLOCKED_COST_GUARD",
+    "new_sigma": null
   }
 }

@@ -35,15 +35,18 @@ def main():
                    if c["weight"] < 0 else result["verdicts"][c["criterion_id"]]["credit"], 4)}
         for c in criteria]}}
     pooled, count, broken = finalizer.pooled_score(detail)
-    if broken or abs(pooled-result["score"]) > 0.0001:
+    constrained = finalizer.apply_score_rules(pooled, result)
+    detail['score_rules'] = result['score_rules']
+    detail['pooling'] = {'before_rules': pooled, 'after_rules': constrained}
+    if broken or abs(constrained-result["score"]) > 0.0001:
         raise AssertionError("Finalizer and signed scorer disagree")
     a.out.mkdir(parents=True, exist_ok=True)
     for name, value in [("reward-details.json", detail), ("extraction.json", extracted),
                         ("score.json", result), ("reward.json", {
-                            "scope": "programmatic_subset_only", "programmatic_score": round(pooled,6),
+                            "scope": "programmatic_subset_only", "programmatic_score": round(constrained,6),
                             "criteria_counted": count, "hybrid_reward": None, "llm_status": "NOT_RUN"})]:
         (a.out / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
-    print(json.dumps({"programmatic_score": round(pooled,6), "criteria_counted": count,
+    print(json.dumps({"programmatic_score": round(constrained,6), "criteria_counted": count,
                       "llm_status": "NOT_RUN", "hybrid_reward": None}))
 
 if __name__ == "__main__":

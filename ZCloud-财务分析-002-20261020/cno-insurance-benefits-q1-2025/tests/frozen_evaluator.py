@@ -51,13 +51,12 @@ def stated_precision(observation,decimals,percent=False):
  number_format=observation.get('format','General').split(';')[0]
  cleaned=re.sub(r'"[^"]*"|\[[^\]]*\]|\\.|_.|\*.', '', number_format)
  if '%' in cleaned and not percent:return False
- if isinstance(raw,str):
-  text=re.sub(r'[,$%\s]','',raw).strip('()')
-  return bool(re.fullmatch(r'[-+]?\d+(?:\.\d{1,'+str(decimals)+r'})?',text))
+ stored=number*100 if percent and '%' in cleaned and not isinstance(raw,str) else number
+ if abs(stored-round(stored,decimals))<=1e-9:return True
  if re.search(r'[0#?]',cleaned):
   fraction=re.search(r'\.([0#?]+)',cleaned)
   return bool(fraction and len(fraction[1])==decimals and fraction[1].count('0')==decimals)
- return abs(number-round(number,decimals))<=1e-9
+ return False
 
 def extract(path,key):
  if not Path(path).is_file():return {'status':'OUTPUT_MISSING','sheets':{},'formulas':[]}
@@ -105,7 +104,7 @@ def extract(path,key):
    return ev(ast.parse(expr,mode='eval'))
   except Exception:return None
   finally:resolving.remove(ident)
- interface_errors=[]
+ interface_errors=[];header_errors=[]
  for sheet,definition in key['interfaces'].items():
   if sheet not in w.sheetnames:
    interface_errors.append({'sheet':sheet,'reason':'required sheet missing or misnamed'})
@@ -114,11 +113,13 @@ def extract(path,key):
   used_columns=[cell.column for row in fw[sheet] for cell in row if cell.value is not None]
   column_count=max(used_columns,default=0)
   raw_headers=[s.cell(1,column).value for column in range(1,column_count+1)]
-  if raw_headers!=definition['headers']:
-   interface_errors.append({'sheet':sheet,'reason':'row 1 headers/order/column count mismatch','observed':raw_headers,'expected':definition['headers']})
-  headers=[canon(header,definition.get('header_aliases',{})) for header in raw_headers]
+  required_count=len(definition['headers'])
+  required_headers=[header.strip() if isinstance(header,str) else header for header in raw_headers[:required_count]]
+  if required_headers!=definition['headers'] or definition.get('exact_column_count',False) and column_count!=required_count:
+   header_errors.append({'sheet':sheet,'reason':'required header prefix text/order mismatch after trimming','observed':raw_headers,'expected':definition['headers']})
+  headers=[canon(header,definition.get('header_aliases',{})) for header in raw_headers[:required_count]]
   expected={tuple(canon(v,definition.get('value_aliases',{})) for v in x) for x in definition['expected_keys']}
-  records={};extra=[];row_keys=[];seen=set()
+  records={};extra=[];extra_business=[];row_keys=[];seen=set()
   for row in list(s)[1:]:
    record={h:{'raw':value(s.title,c.coordinate),'cell':s.title+'!'+c.coordinate,'format':c.number_format} for h,c in zip(headers,row) if h}
    if not any(cell['raw'] is not None and str(cell['raw']).strip() for cell in record.values()):continue
@@ -126,10 +127,13 @@ def extract(path,key):
    row_keys.append([record.get(header,{}).get('raw') for header in definition['key']])
    records.setdefault('|'.join(ident),[]).append(record)
    if ident not in expected or ident in seen:extra.append(ident)
+   business_field={'Results':'value','Analysis':'amount','Summary':'insurance_policy_benefits'}[sheet]
+   business_value=record.get(business_field,{}).get('raw')
+   if ident not in expected and business_value is not None and str(business_value).strip():extra_business.append({'row':row[0].row,'key':list(ident),'value':business_value})
    seen.add(ident)
-  sheets[sheet]={'headers':headers,'raw_headers':raw_headers,'records':records,'extra':extra,'row_keys':row_keys,'actual_name':s.title}
+  sheets[sheet]={'headers':headers,'raw_headers':raw_headers,'records':records,'extra':extra,'extra_business':extra_business,'row_keys':row_keys,'actual_name':s.title}
  w.close();fw.close()
- return {'status':'PARSED','sheets':sheets,'formulas':sorted(set(formula_cells)),'error_cells':errors,'interface_errors':interface_errors}
+ return {'status':'PARSED','sheets':sheets,'formulas':sorted(set(formula_cells)),'error_cells':errors,'interface_errors':interface_errors,'header_errors':header_errors}
 
 def observations(e,key,ref):
  sheet,ident,field=ref; aliases=key['interfaces'][sheet].get('value_aliases',{})
@@ -175,7 +179,7 @@ def score(e,key):
   elif typ=='header':
    d=e['sheets'].get(c['sheet'],{});observed=d.get('headers',[])
    nonempty=any(x.get('raw') not in [None,''] for rr in d.get('records',{}).values() for r in rr for h,x in r.items() if h not in key['interfaces'][c['sheet']]['key'])
-   credit=float(d.get('actual_name')==c['sheet'] and d.get('raw_headers')==key['interfaces'][c['sheet']]['headers'])
+   credit=float(d.get('actual_name')==c['sheet'] and not any(error['sheet']==c['sheet'] for error in e.get('header_errors',[])))
   elif typ=='error_cells':
    observed=e.get('error_cells',[]);credit=float(bool(observed))
   elif typ=='unsupported_records':
@@ -183,6 +187,7 @@ def score(e,key):
    credit=float(bool(extra))
   elif typ=='required_sources':
    observed=[observations(e,key,['Results',ident,'source_note']) for ident in key['interfaces']['Results']['expected_keys']]
+   observed.extend(observations(e,key,['Analysis',ident,field]) for ident in key['interfaces']['Analysis']['expected_keys'] for field in ['source_document','source_page'])
    credit=float(any(len(notes)!=1 or not isinstance(notes[0]['raw'],str) or not notes[0]['raw'].strip() or num(notes[0]['raw']) is not None for notes in observed))
   elif typ=='results_locations':
    observed=[results_source(e,key,ident) for ident in key['interfaces']['Results']['expected_keys']]
@@ -226,6 +231,16 @@ def score(e,key):
   'verdicts':verdicts,'core_cap':False,'llm_judge_fraction':0,'interface_gate':gate}
  if e['status']=='JUDGE_ERROR':result.update(status='JUDGE_ERROR',score=None,error=e.get('error'))
  if e['status']=='OUTPUT_MISSING':result.update(status='OUTPUT_MISSING',score=0.0)
+ reasons=[]
+ if verdicts['S01']['credit']:reasons.append('a required source/support cell is empty or numeric-only')
+ if verdicts['U01']['credit']:reasons.append('a required unit differs from the instruction')
+ for sheet,definition in e['sheets'].items():
+  for record in definition.get('extra_business',[]):reasons.append({'reason':'fabricated extra business record','sheet':sheet,**record})
+ result['post_pool_rules']=[{'name':'required_header_cap','triggered':bool(e.get('header_errors')),'cap':0.69,'reasons':e.get('header_errors',[])},
+  {'name':'instruction_must_clause_cap','triggered':bool(reasons),'cap':0.69,'reasons':reasons}]
+ result['score_before_post_pool_rules']=result['score']
+ for rule in result['post_pool_rules']:
+  if rule['triggered']:result['score']=min(result['score'],rule['cap'])
  if gate['failed']:result['score']=0.0
  return result
 

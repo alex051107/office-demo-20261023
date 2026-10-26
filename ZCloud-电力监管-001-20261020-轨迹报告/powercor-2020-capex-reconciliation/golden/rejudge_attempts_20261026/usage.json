@@ -1,0 +1,12 @@
+{
+  "judge_model": "qwen3.7-plus",
+  "usage": null,
+  "this_export_paid_calls": 1,
+  "status": "SHARED_ACCOUNT_DELTA_NOT_REQUEST_BILL",
+  "account_before_usd": 1594.752716,
+  "account_after_usd": 1596.120896,
+  "account_delta_usd": 1.36818,
+  "single_call_cost_usd": null,
+  "cost_guard_triggered": true,
+  "further_paid_calls": 0
+}

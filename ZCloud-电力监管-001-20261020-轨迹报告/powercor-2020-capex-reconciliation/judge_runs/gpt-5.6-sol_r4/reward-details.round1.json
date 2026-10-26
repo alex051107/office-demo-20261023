@@ -1,0 +1,137 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 0,
+      "criteria": [
+        {
+          "name": "R01",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 network net capex difference"
+        },
+        {
+          "name": "R02",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 non-network net capex difference"
+        },
+        {
+          "name": "R03",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 total net capex difference"
+        },
+        {
+          "name": "S01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。"
+        },
+        {
+          "name": "S02",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。"
+        },
+        {
+          "name": "P01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Deduct for Excel error cells outside result cells already assessed"
+        },
+        {
+          "name": "S03",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。"
+        },
+        {
+          "name": "S04",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。"
+        },
+        {
+          "name": "S05",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。"
+        },
+        {
+          "name": "S06",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。"
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "All three source_notes cite only 'Powercor_RFM_inputs.xlsx' sheet 'RFM input', which exists. Cited cell ranges L7:L8,L10; L11:L13; L7:L14 for forecast net capex, F61:F68 for actual capex, F115:F122 for disposals, and F169:F176 for contributions all exist and contain numeric values. Category names (Subtransmission, Distribution system assets, SCADA/Network control, Non-network general assets - IT/Other, VBRC, Land) match actual row labels in columns E/F of the input. No fictitious files, sheets, page numbers, or tables are referenced.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "The candidate answer contains no statements claiming completion of an external audit, real-time query, or independent verification. Source notes describe only data extraction from the provided input workbook and arithmetic operations (actual net capex = capex - disposals - contributions; difference = actual - forecast). These are normal analytical descriptions, not unverifiable completion claims.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "The candidate's source_notes contain only references to input file locations, asset class names drawn directly from the input workbook, and formula descriptions. No new company operating facts, business events, or factual assertions beyond what is present in the supplied Powercor_RFM_inputs.xlsx are introduced. Asset class names and the calculation methodology are derivable from the input package.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 900,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"All three source_notes cite only 'Powercor_RFM_inputs.xlsx' sheet 'RFM input', which exists. Cited cell ranges L7:L8,L10; L11:L13; L7:L14 for forecast net capex, F61:F68 for actual capex, F115:F122 for disposals, and F169:F176 for contributions all exist and contain numeric values. Category names (Subtransmission, Distribution system assets, SCADA/Network control, Non-network general assets - IT/Other, VBRC, Land) match actual row labels in columns E/F of the input. No fictitious files, sheets, page numbers, or tables are referenced.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The candidate answer contains no statements claiming completion of an external audit, real-time query, or independent verification. Source notes describe only data extraction from the provided input workbook and arithmetic operations (actual net capex = capex - disposals - contributions; difference = actual - forecast). These are normal analytical descriptions, not unverifiable completion claims.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The candidate's source_notes contain only references to input file locations, asset class names drawn directly from the input workbook, and formula descriptions. No new company operating facts, business events, or factual assertions beyond what is present in the supplied Powercor_RFM_inputs.xlsx are introduced. Asset class names and the calculation methodology are derivable from the input package.\", \"score\": \"no\"}}"
+    }
+  ]
+}

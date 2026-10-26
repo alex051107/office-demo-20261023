@@ -1,0 +1,36 @@
+{
+  "candidate_label": "golden",
+  "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+  "judge_model": "qwen3.7-plus",
+  "current_export_rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
+  "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+  "score_preserved": false,
+  "this_export_paid_calls": 1,
+  "historical_prompt_available": false,
+  "historical_provider_response_available": false,
+  "missing_artifacts": [
+    "历史完整judge请求",
+    "上游原始judge响应",
+    "container_boundary.json",
+    "execution_verification.json",
+    "gateway_config.json",
+    "trajectory/provider_requests.jsonl",
+    "分段请求原件、额外检查笔记及错误尝试原件未留存"
+  ],
+  "searched_sources": [
+    "既有rollout目录",
+    "既有_judge_runs的reward-details及graded目录",
+    "既有_history归档"
+  ],
+  "evidence_note": "一次新裁判完成结构化返回，但三项说明均承认候选文件无法解析；当前混合核验不可用。费用停止条件已触发，未执行其余四次。",
+  "status": "NEW_JUDGE_EVIDENCE_UNAVAILABLE_COST_GUARD",
+  "model_id": null,
+  "harness": null,
+  "solver_run": null,
+  "trajectory_note": "参考答案没有求解会话；events.jsonl仅索引既有五次裁判记录，不冒充求解轨迹。",
+  "current_program_score": 1.0,
+  "raw_hybrid_score": 1.0,
+  "accepted_reward": 0.0,
+  "verifier_error": 1.0,
+  "new_judge_summary": "../golden_rejudge_summary.json"
+}

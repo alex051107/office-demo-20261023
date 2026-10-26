@@ -18,7 +18,7 @@
     ]
   },
   "started_at": null,
-  "status": "COMPLETED",
+  "status": "PROVISIONAL",
   "request_timeout_seconds": 7200,
   "http_status": null,
   "positive_weight_total": 30,
@@ -77,8 +77,8 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
-      "evidence": "required sheet and exact four-column header are present",
+      "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
+      "evidence": "required leading header columns match after trimming spaces",
       "source_pointer": "reward-details.json#/reward/0/criteria/3"
     },
     {
@@ -89,7 +89,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
+      "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "evidence": "units not exactly as specified: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/4"
     },
@@ -113,7 +113,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "evidence": "missing or non-textual source references: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/6"
     },
@@ -137,7 +137,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
       "evidence": "unrequested business rows: []; duplicate labels: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/8"
     },
@@ -149,7 +149,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
       "evidence": "results not showing at least three decimal places: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/9"
     },
@@ -196,8 +196,9 @@
   "limitations": [
     "原始明细缺少独立evidence、程序reason或运行字段时保留null；已有裁判reasoning逐字保留。",
     "正项score表示正确程度；负项score表示违规程度，sdk_value与raw原样保留。",
-    "rubric_sha256为评分资料绑定值，delivery_rubric_sha256为随包文件校验值；评分条目、权重和容差一致。原始回执未记录运行时输入哈希。",
-    "未查到唯一完成时间则finished_at保留null；不以文件修改时间代替。"
+    "rubric_sha256保留原有效文字判定的历史绑定；delivery_rubric_sha256为当前第二轮规则。程序判据和容差按当前规则重算，LLM判定来自已保存历史明细，不追认其已裁判新版文字。",
+    "未查到唯一完成时间则finished_at保留null；不以文件修改时间代替。",
+    "新版金标文字未重新裁判；沿用原有效文字判定"
   ],
   "raw_response": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u6240\\u6709\\u6765\\u6e90\\u5b9a\\u4f4d\\u5747\\u7ecf\\u9010\\u4e00\\u6838\\u9a8c\\u4e3a\\u771f\\u5b9e\\u3002Powercor_RFM_inputs.xlsx \\u5b58\\u5728\\u4e14\\u542b 'RFM input' \\u8868\\uff1aF60=2020\\uff08\\u5e74\\u4efd\\u884c\\uff09\\uff0cF61:F110 \\u5c5e 'Actual Capital Expenditure \\u2013 As Incurred ($m Nominal)' \\u533a\\u5757\\uff0cF115:F164 \\u5c5e 'Actual Asset Disposal'\\uff0cF169:F218 \\u5c5e 'Actual Capital Contributions'\\uff0cL6='Forecast Net Capex (2020)'\\uff08L7:L56 \\u542b\\u9884\\u6d4b\\u51c0capex\\uff09\\uff0cF282/F284='Lagged Actual CPI Inflation Rate'/'Forecast Inflation Rate'\\u3001F287='Nominal Vanilla WACC'\\uff08\\u4f4d\\u4e8e280\\u884c 'Inflation and Rate of Return' \\u533a\\u5757\\uff09\\uff0cF7:F56 \\u768450\\u4e2a\\u8d44\\u4ea7\\u7c7b\\u522b\\u540d\\u79f0\\u5168\\u90e8\\u5b58\\u5728\\uff08F7=Subtransmission\\u3001F8=Distribution system assets\\u3001F10=SCADA/Network control\\u3001F11-F13 \\u975e\\u7f51\\u7edc\\u7c7b\\u3001F55=in-house software\\u3001F56=Equity raising costs \\u7b49\\uff09\\u3002Distribution_handbook.pdf \\u5b58\\u5728\\uff0885\\u9875\\uff09\\uff0c\\u7b2c27\\u9875\\u786e\\u6709 '2.4.1 Nominal adjustments for difference between actual and forecast net capex in final year (year t\\u22121)' \\u53ca\\u811a\\u6ce820\\uff08'The nominal vanilla WACC is based on a fixed real time varying WACC\\u2026'\\uff09\\u3002\\u672a\\u53d1\\u73b0\\u865a\\u6784\\u7684\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u5168\\u90e858\\u4e2a\\u6587\\u672c\\u5355\\u5143\\u683c\\u4ec5\\u542b\\u5217\\u6807\\u9898\\uff08label/value/unit/source_note\\u3001Asset class/Group/Actual net capex/2020 forecast\\u7b49\\uff09\\u3001\\u5355\\u5143\\u683c\\u4e0ePDF\\u6765\\u6e90\\u5b9a\\u4f4d\\u6ce8\\u8bb0\\u53ca 'Applicable rate'/'Year-end factor' \\u7b49\\u8ba1\\u7b97\\u6807\\u7b7e\\u3002\\u5bf9 audit\\u3001verified\\u3001independent\\u3001real-time\\u3001confirmed\\u3001certified\\u3001external \\u7b49\\u5173\\u952e\\u8bcd\\u7684\\u5168\\u6587\\u626b\\u63cf\\u5747\\u65e0\\u547d\\u4e2d\\uff0c\\u672a\\u51fa\\u73b0\\u4efb\\u4f55\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u5b8c\\u6210\\u6027\\u9648\\u8ff0\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\u672a\\u65b0\\u589e\\u4efb\\u4f55\\u516c\\u53f8\\u4e8b\\u5b9e\\u6027\\u65ad\\u8a00\\u3002Results \\u7684 unit='AUD million nominal' \\u6709\\u8f93\\u5165\\u652f\\u6301\\uff1a\\u8f93\\u5165\\u8868\\u5934\\u4e3a '\\u2026($m Nominal)'\\uff08\\u6fb3\\u5927\\u5229\\u4e9a AER \\u5206\\u9500\\u89c4\\u5219\\u8bed\\u5883\\u4e0b $m \\u5373 AUD million\\uff09\\uff1bWorking \\u7684 Group \\u5217 'network'/'non-network'/'other' \\u76f4\\u63a5\\u6e90\\u81ea\\u8f93\\u5165\\u4e2d\\u8d44\\u4ea7\\u7c7b\\u522b\\u540d\\u79f0\\u672c\\u8eab\\uff08\\u5982 'Non-network general assets - IT'\\u3001'SCADA/Network control'\\u3001'Subtransmission'\\uff09\\uff0c\\u5c5e\\u6765\\u6e90\\u5b9a\\u4f4d\\u7684\\u518d\\u8868\\u8ff0\\u800c\\u975e\\u65b0\\u4e8b\\u5b9e\\u3002\\u672a\\u53d1\\u73b0\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u65e0\\u6cd5\\u83b7\\u5f97\\u7684\\u7f16\\u9020\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}",
   "judge_completed": true,
@@ -207,12 +208,24 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "golden_r2",
-  "reward_details_sha256": "15e7d55e2246456088cf253d946adb4972694e25ab3c46fda9a6103aed20b2b1",
+  "reward_details_sha256": "e5620e83e2fc24c3f7e71f858ac2d300d945d3d9b24d6d004eb36b5faae8eca3",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 1.0,
-  "llm_status": "REUSED_SAVED_JUDGMENTS",
+  "llm_status": "REUSED_VALID_SAVED_JUDGMENTS",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
+  "delivery_rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
   "offline_rescore": {
     "scorer_version": "v2 (2026-10-26)",
     "programmatic_score": 1,
@@ -225,6 +238,15 @@
     "saved_llm_candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
     "saved_llm_details": "reward-details.v1.json",
     "new_llm_calls": 0,
-    "scope": "New programmatic checks; saved L01-L03 reused unchanged, not a new LLM evaluation."
-  }
+    "saved_llm_judge": "judge.v1.json",
+    "saved_llm_run_id": "golden_r2",
+    "scope": "新版金标文字未重新裁判；沿用原有效文字判定"
+  },
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

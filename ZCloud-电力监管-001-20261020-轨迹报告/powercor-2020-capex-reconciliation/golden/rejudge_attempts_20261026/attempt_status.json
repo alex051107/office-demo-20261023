@@ -1,0 +1,66 @@
+{
+  "status": "INCOMPLETE_COST_GUARD",
+  "required_runs": 5,
+  "completed_runner_valid_runs": 1,
+  "missing_runs": [
+    "golden_r2",
+    "golden_r3",
+    "golden_r4",
+    "golden_r5"
+  ],
+  "runner_checks": {
+    "criteria_counted": 13,
+    "verifier_error": 0,
+    "runner_validation_passed": true
+  },
+  "first_fresh_score": 0.7,
+  "golden_programmatic_score": 1.0,
+  "first_fresh_llm": {
+    "L01": 1.0,
+    "L02": 1.0,
+    "L03": 1.0
+  },
+  "judge_reliability": "NOT_ESTABLISHED: all three yes violations conflict with no-violation reasons and an unsupported missing-file assertion.",
+  "local_mount_recheck": {
+    "candidate_exists": true,
+    "worksheets": [
+      "Results",
+      "Working"
+    ],
+    "input_file_count": 2
+  },
+  "usage_observation": {
+    "before_usd": 1594.752716,
+    "after_usd": 1596.120896,
+    "account_delta_usd": 1.36818,
+    "single_call_cost_usd": null,
+    "scope": "shared account observation, not isolated request billing",
+    "stop_threshold_usd": 0.5,
+    "account_stop_usd": 1635
+  },
+  "paid_retries": 0,
+  "further_paid_runs": 0,
+  "criterion_stddev_sample": {
+    "R01": null,
+    "R02": null,
+    "R03": null,
+    "S01": null,
+    "S02": null,
+    "P01": null,
+    "S03": null,
+    "S04": null,
+    "S05": null,
+    "S06": null,
+    "L01": null,
+    "L02": null,
+    "L03": null
+  },
+  "total_stddev_sample": null,
+  "new_results": "judge_runs/golden_r1/verifier_reward-details.json",
+  "historical_runs_not_counted_as_fresh": [
+    "golden_r2",
+    "golden_r3",
+    "golden_r4",
+    "golden_r5"
+  ]
+}

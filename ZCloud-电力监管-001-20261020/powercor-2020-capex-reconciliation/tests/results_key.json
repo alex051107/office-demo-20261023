@@ -9,12 +9,13 @@
       "type": "number",
       "gold": 13.690108344179448,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0015,
         "rel": 0
       },
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "negate": false
+      "negate": false,
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     },
     {
       "criterion_id": "R02",
@@ -23,12 +24,13 @@
       "type": "number",
       "gold": -11.546100406081113,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0015,
         "rel": 0
       },
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "negate": false
+      "negate": false,
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     },
     {
       "criterion_id": "R03",
@@ -37,19 +39,20 @@
       "type": "number",
       "gold": 1.1431857863294523,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0035,
         "rel": 0
       },
       "weight": 10,
       "dimension": "内容质量-数值与计算准确性",
-      "negate": false
+      "negate": false,
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     }
   ],
   "checks": [
     {
       "criterion_id": "S01",
       "kind": "results_header",
-      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
+      "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
       "dimension": "结构与组织",
       "weight": -3,
       "negate": true
@@ -57,7 +60,7 @@
     {
       "criterion_id": "S02",
       "kind": "results_units",
-      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
+      "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "dimension": "内容质量-专业规范",
       "weight": -3,
       "negate": true
@@ -73,7 +76,7 @@
     {
       "criterion_id": "S03",
       "kind": "results_source_notes",
-      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "dimension": "内容质量-事实忠实性",
       "weight": -3,
       "negate": true
@@ -89,7 +92,7 @@
     {
       "criterion_id": "S05",
       "kind": "extra_business_records",
-      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
       "dimension": "结构与组织",
       "weight": -3,
       "negate": true
@@ -97,7 +100,7 @@
     {
       "criterion_id": "S06",
       "kind": "results_precision",
-      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
       "dimension": "内容质量-专业规范",
       "weight": -3,
       "negate": true
@@ -114,5 +117,30 @@
       "source_note"
     ]
   },
-  "scorer_version": "v2 (2026-10-26)"
+  "scorer_version": "v2 (2026-10-26)",
+  "score_policy": {
+    "required_sheet_gate": {
+      "binary": true,
+      "maximum_score": 0.0,
+      "reason": "required sheet missing or misnamed"
+    },
+    "must_clause_cap": {
+      "binary": true,
+      "maximum_score": 0.69,
+      "after": "signed_weight_pooling",
+      "triggers": [
+        "required_header_mismatch",
+        "empty_or_numeric_only_source",
+        "incorrect_unit",
+        "fabricated_extra_business_record"
+      ]
+    }
+  },
+  "header_policy": {
+    "trim_outer_whitespace": true,
+    "case_sensitive": true,
+    "required_columns_first": true,
+    "allow_extra_columns": true,
+    "instruction_evidence": "instruction.md:16,21 specify A1:D1, not exactly or only four columns."
+  }
 }

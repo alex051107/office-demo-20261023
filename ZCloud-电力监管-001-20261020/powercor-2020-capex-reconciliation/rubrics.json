@@ -36,7 +36,7 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "数值与参考值的绝对差不超过0.0005。",
+        "1": "派生汇总值与参考值绝对差不超过0.0015；兼容逐资产差额先按三位小数舍入再汇总。",
         "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
@@ -52,7 +52,7 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "数值与参考值的绝对差不超过0.0005。",
+        "1": "派生汇总值与参考值绝对差不超过0.0015；兼容逐资产差额先按三位小数舍入再汇总。",
         "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
@@ -68,13 +68,13 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "数值与参考值的绝对差不超过0.0005。",
+        "1": "派生汇总值与参考值绝对差不超过0.0035；兼容逐资产差额先按三位小数舍入再汇总。",
         "0": "数值缺失、错误或接口门槛未满足。"
       }
     },
     {
       "id": "S01",
-      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
+      "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -84,14 +84,14 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
-        "0": "未触发违规条件。"
+        "1": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
+        "0": "未发生该项违规。"
       },
       "interface_gate": true
     },
     {
       "id": "S02",
-      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
+      "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "dimension": "内容质量-专业规范",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -101,8 +101,8 @@
       "method": "programmatic",
       "evidence_required": true,
       "anchors": {
-        "1": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
-        "0": "未触发违规条件。"
+        "1": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
+        "0": "未发生该项违规。"
       }
     },
     {
@@ -129,12 +129,12 @@
       "negate": true,
       "method": "programmatic",
       "evidence_required": true,
-      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "dimension": "内容质量-事实忠实性",
       "weight": -3,
       "anchors": {
-        "1": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
-        "0": "未触发违规条件。"
+        "1": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
+        "0": "未发生该项违规。"
       }
     },
     {
@@ -161,12 +161,12 @@
       "negate": true,
       "method": "programmatic",
       "evidence_required": true,
-      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
       "dimension": "结构与组织",
       "weight": -3,
       "anchors": {
-        "1": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
-        "0": "未触发违规条件。"
+        "1": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
+        "0": "未发生该项违规。"
       }
     },
     {
@@ -177,12 +177,12 @@
       "negate": true,
       "method": "programmatic",
       "evidence_required": true,
-      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
       "dimension": "内容质量-专业规范",
       "weight": -3,
       "anchors": {
-        "1": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
-        "0": "未触发违规条件。"
+        "1": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
+        "0": "未发生该项违规。"
       }
     },
     {
@@ -265,11 +265,14 @@
     },
     "scoring_revision": {
       "date": "2026-10-26",
-      "reason": "评分器v2：严格接口门槛，独立来源、行序、额外记录与精度扣分，数值容差0.0005；离线复算程序并复用历史LLM判定",
+      "reason": "第二轮：缺表归零；必需条款违规在签名池化后独立封顶0.69；允许后接列，采用等价存储精度及逐行派生容差；金标使用本轮新LLM判定，模型复用历史LLM判定",
       "removed_criterion_ids": [],
       "remaining_criteria_changed": true,
       "remaining_weights_changed": false,
-      "rejudge_required": false
+      "rejudge_required": true,
+      "reference_rejudge_completed": 1,
+      "reference_rejudge_required": 5,
+      "reference_rejudge_status": "INCOMPLETE_COST_GUARD"
     }
   },
   "scope_note": "混合裁判结果随轨迹报告交付；tests/offline_score.py 只重算程序判据，不调用 LLM。",
@@ -277,5 +280,23 @@
   "source_authenticity": "public_source_business_adaptation",
   "golden_threshold": 0.85,
   "three_model_average_threshold": 0.7,
-  "scoring_note": "保留现有判据、权重、类型、阈值及计算规则。正项按正确度计分，负项按违规程度扣分；负向权重不进入分母。2026-10-22仅补充导出字段，未重跑裁判。"
+  "scoring_note": "保留13条判据及权重、类型；正项按正确度计分，负项按违规程度扣分，负向权重不进入分母。签名权重池化后执行独立缺表门槛和必需条款封顶。金标本轮新裁判仅完成1/5次，不能认定五次一致性通过。",
+  "score_policy": {
+    "required_sheet_gate": {
+      "binary": true,
+      "maximum_score": 0.0,
+      "reason": "required sheet missing or misnamed"
+    },
+    "must_clause_cap": {
+      "binary": true,
+      "maximum_score": 0.69,
+      "after": "signed_weight_pooling",
+      "triggers": [
+        "required_header_mismatch",
+        "empty_or_numeric_only_source",
+        "incorrect_unit",
+        "fabricated_extra_business_record"
+      ]
+    }
+  }
 }

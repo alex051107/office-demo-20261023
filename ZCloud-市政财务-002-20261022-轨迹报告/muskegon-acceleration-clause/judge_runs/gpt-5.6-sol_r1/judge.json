@@ -3,7 +3,7 @@
   "candidate_label": "gpt-5.6-sol",
   "judge_model": "qwen3.7-plus",
   "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
-  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
   "instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
   "input_sha256": {
     "Agreement.pdf": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887",
@@ -272,7 +272,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "description": "必需表的前置表头去除首尾空格后须大小写、文字及列序匹配；不匹配扣 3 分且总分封顶 0.69。题面未限制总列数，允许后附列。",
       "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/11"
     },
@@ -327,7 +327,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持说明；违规扣 3 分，另由 must_clause_cap 将总分封顶 0.69；不核查来源真实性。",
       "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/14"
     },
@@ -384,7 +384,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "description": "六个金额的格式显示两位小数，或存值等于 round(value,2)，均符合精度要求；不符合扣 3 分而不封顶。至少 p 位还接受存值小数位数不少于 p；数值容差另查 0.005 USD。",
       "gate_reason": null,
       "source_pointer": "reward-details.json#/reward/0/criteria/16"
     },
@@ -435,12 +435,12 @@
   "protocol_source": "run_demo_judges.sh (same settings as the other demos)",
   "rewardkit_version": "0.1.7",
   "source_run": "gpt-5.6-sol_r1",
-  "reward_details_sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57",
+  "reward_details_sha256": "f30276f6d94ec8cac38b052b5209e4ab3ddf2b722df6d3a6b15651db6e9b25e4",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 0.0,
   "llm_status": "COMPLETED",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "delivery_rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
   "limitations": [
     "正项score表示正确程度；负项score表示违规程度，sdk_value与raw原样保留。",
     "上游原始HTTP响应未单独留存；逐条结果来自reward-details.json。",
@@ -450,14 +450,37 @@
   "scoring_revision": {
     "label": "评分器 v2（2026-10-26）",
     "method": "offline_program_rescore_with_saved_llm",
+    "round": 2,
     "new_llm_calls": 0,
     "saved_llm_complete": true,
     "saved_llm_candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
     "old_score": 0.0,
     "new_score": 0.0,
-    "original_judgment": "judge.v1.json",
-    "limitation": "保存的 LLM 判定原样复用；不是新增模型运行或新增 LLM 裁判。"
+    "original_judgment": "judge.round1.json",
+    "llm_judgment_origin": "saved_historical",
+    "limitation": "保存的 LLM 判定原样复用；金标此分仅为历史判定重组，不能替代本轮五次新裁判。"
   },
   "interface_gate_passed": true,
-  "interface_errors": []
+  "interface_errors": [],
+  "header_errors": [],
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ]
 }

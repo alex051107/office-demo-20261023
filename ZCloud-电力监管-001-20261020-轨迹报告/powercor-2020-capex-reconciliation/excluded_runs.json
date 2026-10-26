@@ -1,10 +1,14 @@
 {
-  "count": 6,
+  "count": 7,
   "reason_categories": [
     "网关超时",
-    "连接中断"
+    "连接中断",
+    "裁判判定与理由矛盾"
   ],
   "included_in_statistics": false,
   "count_as_zero": false,
-  "note": "6 次裁判作业因网关超时或连接中断没有完成，没有纳入成绩和一致性统计，也没有按 0 分计。"
+  "note": "6次历史超时/连接中断及1次判定与理由矛盾的金标裁判错误均排除；不作成绩或零分。",
+  "historical_incomplete_count": 6,
+  "invalid_rejudge_count": 1,
+  "invalid_rejudge_archive": "golden/rejudge_attempts_20261026"
 }

@@ -1,0 +1,15 @@
+{
+  "status": "RAW_PROVIDER_RESPONSE_NOT_RETAINED",
+  "provider_response": null,
+  "provider_response_id": null,
+  "reported_model": null,
+  "usage": null,
+  "existing_judge_model": "qwen3.7-plus",
+  "this_export_paid_calls": 1,
+  "evidence": {
+    "normalized_judge": "judge.json",
+    "sdk_reward_details": "verifier_reward-details.json",
+    "reward_receipt": "verifier_reward.json"
+  },
+  "note": "本轮真实运行的SDK逐条判定原样保留；未单独留存上游HTTP响应，不能冒充原始响应。"
+}

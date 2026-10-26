@@ -68,7 +68,7 @@
       ],
       "weight": -3,
       "dimension": "结构与组织",
-      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "description": "必需表的前置表头去除首尾空格后须大小写、文字及列序匹配；不匹配扣 3 分且总分封顶 0.69。题面未限制总列数，允许后附列。",
       "negate": true,
       "gate": true
     },
@@ -94,7 +94,7 @@
       "kind": "source_notes",
       "weight": -3,
       "dimension": "内容质量-事实忠实性",
-      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持说明；违规扣 3 分，另由 must_clause_cap 将总分封顶 0.69；不核查来源真实性。",
       "negate": true
     },
     {
@@ -111,7 +111,7 @@
       "kind": "money_precision",
       "weight": -3,
       "dimension": "内容质量-专业规范",
-      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "description": "六个金额的格式显示两位小数，或存值等于 round(value,2)，均符合精度要求；不符合扣 3 分而不封顶。至少 p 位还接受存值小数位数不少于 p；数值容差另查 0.005 USD。",
       "negate": true
     }
   ],
@@ -304,7 +304,9 @@
         [
           "Plan C principal balance"
         ]
-      ]
+      ],
+      "exact_column_count": false,
+      "instruction_basis": "instruction.md:16,21 (Results) and :31 (Detail): header positions, no exactly/only column restriction"
     },
     "Detail": {
       "headers": [
@@ -325,13 +327,41 @@
         [
           "C"
         ]
-      ]
+      ],
+      "exact_column_count": false,
+      "instruction_basis": "instruction.md:16,21 (Results) and :31 (Detail): header positions, no exactly/only column restriction"
     }
   },
-  "aggregation": "clip(sum(signed_weight * raw_credit)/51,0,1); invalid required interface => 0",
-  "scoring_revision": "office-v2-2026-10-26",
+  "aggregation": "signed-weight pooling / 51, clipped to [0,1], then required_sheet_gate, required_header_cap and must_clause_cap",
+  "scoring_revision": "office-v2-round2-2026-10-26",
   "interface_gate": {
-    "criterion_id": "S03",
-    "policy": "exact required sheet names, header text, order and occupied column count; no fallback; extra support sheets allowed"
+    "policy": "required sheet missing or misnamed => 0; no fallback search; additional support sheets allowed",
+    "rule": "required_sheet_gate"
+  },
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "maximum_score": 0.0,
+      "condition": "required sheet missing or misnamed"
+    },
+    {
+      "name": "required_header_cap",
+      "maximum_score": 0.69,
+      "condition": "trimmed required header prefix text/order mismatch"
+    },
+    {
+      "name": "must_clause_cap",
+      "maximum_score": 0.69,
+      "condition": "empty/numeric-only required source, unit mismatch, or extra business label with value"
+    }
+  ],
+  "precision_policy": {
+    "places": 2,
+    "display_or_storage": "format shows p decimals OR value == round(value,p); at least p also accepts stored precision >=p",
+    "numeric_tolerance": {
+      "Results.R01-R03": 0.005,
+      "Detail.D01-D03": 0.005
+    },
+    "rationale": "All six amounts are derived from exact integer USD records and a 10% rate; no intermediate rounding order changes the cent result. Half of 0.01 USD applies; no wider derived-row tolerance is needed."
   }
 }

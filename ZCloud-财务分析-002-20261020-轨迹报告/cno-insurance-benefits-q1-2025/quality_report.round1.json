@@ -1,0 +1,170 @@
+{
+  "schema_version": "rl0-1-trajectory-report-v2",
+  "case_id": "cno-insurance-benefits-q1-2025",
+  "task_count": 1,
+  "task_package": "ZCloud-财务分析-002-20261020",
+  "artifact_path_base": "case_root",
+  "source_authenticity": "public_source_business_adaptation",
+  "source_authenticity_check": {
+    "status": "PASS_CURRENT_INPUT_IDENTITY",
+    "path": "validation/source_pair_audit.json",
+    "live_source_verified": false,
+    "original_customer_query": false
+  },
+  "rubric_sha256": "7bfa31d130cfd8b985b911104cb427430b3cf4fd6a42ca2760471e1c38176548",
+  "target": {
+    "path": "golden/candidate.xlsx",
+    "sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+    "judge": "golden/judge.json",
+    "visual_review": "golden/visual_review.json",
+    "score_final": 1.0
+  },
+  "rollout_summary": {
+    "models": [
+      {
+        "model": "gpt-5.6-sol",
+        "execution_status": "COMPLETED",
+        "score_final": 0.205882,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+        "candidate": "rollouts/gpt-5.6-sol/candidate.xlsx",
+        "trajectory": "rollouts/gpt-5.6-sol/trajectory/events.jsonl",
+        "judge": "rollouts/gpt-5.6-sol/judge.json",
+        "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-20T12:35:46+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "claude-opus-4-8",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "2d48d243ac909d5e0cf4d62ac855f3ad7eb180e4159815539f1f1f3e710023ec",
+        "candidate": "rollouts/claude-opus-4-8/candidate.xlsx",
+        "trajectory": "rollouts/claude-opus-4-8/trajectory/events.jsonl",
+        "judge": "rollouts/claude-opus-4-8/judge.json",
+        "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
+        "harness": "Claude Code",
+        "run_started": "2026-10-20T12:51:43+00:00",
+        "source": "isolated_docker_run"
+      },
+      {
+        "model": "qwen3.8-max",
+        "execution_status": "COMPLETED",
+        "score_final": 0.0,
+        "judge_status": "FAIL",
+        "llm_judge_completed": true,
+        "candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+        "candidate": "rollouts/qwen3.8-max/candidate.xlsx",
+        "trajectory": "rollouts/qwen3.8-max/trajectory/events.jsonl",
+        "judge": "rollouts/qwen3.8-max/judge.json",
+        "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
+        "harness": "Codex CLI",
+        "run_started": "2026-10-22T19:29:08+00:00",
+        "source": "isolated_docker_run"
+      }
+    ],
+    "average_score": 0.068627,
+    "difficulty_tier": "not_certified_pass_at_8",
+    "difficulty_gate": "AVG_BELOW_0.6_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+    "models_below_0_6": 3,
+    "three_model_average_threshold": 0.6,
+    "pass_at_8": null
+  },
+  "judge": {
+    "model": "qwen3.7-plus",
+    "protocol": "anthropic（Claude Code 裁判）",
+    "sdk": "harbor-rewardkit 0.1.7",
+    "score_basis": "评分器v2离线重算全部程序判据，严格按finalize.py合并各答卷已保存文字判据；未执行新裁判或新求解。",
+    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
+  },
+  "consistency": {
+    "path": "consistency.json",
+    "requirement": "同一答卷重复评分 5 次，单条判据与总分的样本标准差都 < 0.05",
+    "groups": [
+      {
+        "candidate": "golden",
+        "repeats": 5,
+        "total_scores": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "total_stddev_sample": 0.0,
+        "max_criterion_stddev_sample": 0.0,
+        "pass_stddev_lt_0_05": true
+      }
+    ],
+    "status": "OFFLINE_REPLAY_PASS_SAVED_TEXT_ONLY"
+  },
+  "discrimination": {
+    "reference_score": 1.0,
+    "model_scores": {
+      "gpt-5.6-sol": 0.205882,
+      "claude-opus-4-8": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "empty_controls": [
+      {
+        "name": "P_blank_headers_only",
+        "score": 0
+      },
+      {
+        "name": "P_output_missing",
+        "score": 0
+      },
+      {
+        "name": "empty_workbook",
+        "score": 0
+      },
+      {
+        "name": "empty_result_skeleton",
+        "score": 0
+      }
+    ],
+    "note": "参考答案满分，空表和缺卷得 0。部分正确样例的分数随答对的结果项数逐级上升，见 discrimination_cases.json。三个模型的答卷都明显低于参考答案；每个模型只有一份答卷，模型之间的排序证据有限。",
+    "partial_credit_cases": {
+      "path": "discrimination_cases.json",
+      "totals": {
+        "0_of_4_positive_results_correct": 0,
+        "1_of_4_positive_results_correct": 0.205882,
+        "2_of_4_positive_results_correct": 0.5,
+        "3_of_4_positive_results_correct": 0.794118,
+        "4_of_4_positive_results_correct": 1
+      }
+    }
+  },
+  "model_evidence": {
+    "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
+    "qwen": "Qwen 3.8 Max 于 2026-10-22 在独立 Docker 容器中运行一次，正常完成；网关返回型号含 qwen/qwen3.8-max 与 qwen3.8-max-0902，属同一基础型号。"
+  },
+  "solver_prompt": {
+    "files": "rollouts/<模型>/solver_prompt.md",
+    "difference_from_instruction": "题面正文与模型运行时一致；末尾的运行说明把输入目录从 /app/input 改为题包镜像里的 /app/input_files/。"
+  },
+  "limitations": [
+    "每个模型只有一次运行；pass@8 未测，难度等级未认证。",
+    "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
+    "Qwen 3.8 Max 答卷用公式给出结果；用 LibreOffice 重算公式后离线程序分仍为 0，失分来自数值本身。",
+    "开发阶段的另一套评分规则含部分分，给 Qwen 3.8 Max 0.16 分；本包统一使用 Office 裁判分。",
+    "评分器v2新增和落实结构、来源、顺序、记录、单位及精度要求；文字判据的文本、权重、既有判定不变。金标说明有修订，未对新文本重新作文字判定。"
+  ],
+  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+  "scorer_revision": "office-review-v2-20261026",
+  "interface_gate": {
+    "failure_score": 0,
+    "required_sheets": [
+      "Results",
+      "Analysis",
+      "Summary"
+    ],
+    "exact_names": true,
+    "exact_headers": true,
+    "support_sheets": "allowed and unconstrained"
+  }
+}

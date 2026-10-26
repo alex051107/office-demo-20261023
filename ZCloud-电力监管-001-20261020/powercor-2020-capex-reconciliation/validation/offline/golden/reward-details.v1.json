@@ -1,0 +1,77 @@
+{
+  "reward": {
+    "kind": "programmatic",
+    "criteria": [
+      {
+        "name": "R01",
+        "weight": 10,
+        "negate": false,
+        "raw": 1,
+        "value": 1
+      },
+      {
+        "name": "R02",
+        "weight": 10,
+        "negate": false,
+        "raw": 1,
+        "value": 1
+      },
+      {
+        "name": "R03",
+        "weight": 10,
+        "negate": false,
+        "raw": 1,
+        "value": 1
+      },
+      {
+        "name": "S01",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "S02",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "P01",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "S03",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "S04",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "S05",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      },
+      {
+        "name": "S06",
+        "weight": 3,
+        "negate": true,
+        "raw": 0,
+        "value": 1
+      }
+    ]
+  }
+}

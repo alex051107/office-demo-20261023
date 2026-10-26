@@ -1,0 +1,463 @@
+{
+  "case_id": "muskegon-acceleration-clause",
+  "candidate_label": "gpt-5.6-sol",
+  "judge_model": "qwen3.7-plus",
+  "candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "instruction_sha256": "d1865ef9e63107d1021e073d7666a74480a4acaf698fd35175311b2152878748",
+  "input_sha256": {
+    "Agreement.pdf": "1b50053c70ff46bfac25634d1d3d64d0469bed1aa316af48453a803e3e70e887",
+    "Records.pdf": "712f78dffb01ede2e0246df882f00cd1132dfa7a46178d8f12e273f26bfd2979",
+    "Records_Broker_payments.png": "a235fb93980d851886aa9bf8d8f3ab8597846e3e703b4baf8c7bb8145082faa9",
+    "Records_Finance_forecast.png": "b25d2b6911afa5d30f55632cc59af20e0506b2b3fece7da4f28a78d23c60156c",
+    "Records_Other_payments.png": "2b8f67a11d766f13014d93d34e431135b6f1ef257067e97121d532c20fef09a7",
+    "Records_Plans.png": "b2c60dba14a1a2434c3c10af9c3e0a079c4e4ff8aba7a5e1f63cd7234ad8f507",
+    "Records_Sources.png": "8647329c046c0a1d1910fc5a8ba569b80ba7fbd3105b56104eabacd293c636c9",
+    "Records_Sponsorships.png": "d6957e760c59497a27cd82ed2ea3e62b55ffe04644933cbb9ca8531530231ed0"
+  },
+  "prompt_sha256": null,
+  "candidate_structure": {
+    "format": "xlsx",
+    "worksheets": [
+      "Results",
+      "Detail",
+      "Calc"
+    ]
+  },
+  "started_at": null,
+  "finished_at": null,
+  "status": "COMPLETED",
+  "http_status": null,
+  "positive_weight_total": 51,
+  "weighted_sum": 0.0,
+  "raw_score": 0.0,
+  "score_final": 0.0,
+  "reward": 0.0,
+  "graded_score": 0.0,
+  "criteria_counted": 20,
+  "verifier_error": 0.0,
+  "reported_model": null,
+  "provider_response_id": null,
+  "usage": null,
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Plan A principal balance",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/0"
+    },
+    {
+      "criterion_id": "R02",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Plan B principal balance",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/1"
+    },
+    {
+      "criterion_id": "R03",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 10,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Plan C principal balance",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/2"
+    },
+    {
+      "criterion_id": "D01",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 7,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Detail plan A final value",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/3"
+    },
+    {
+      "criterion_id": "V01",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B2",
+          "number_format": "yyyy-mm-dd"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan A original date transcription",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/4"
+    },
+    {
+      "criterion_id": "D02",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 7,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Detail plan B final value",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/5"
+    },
+    {
+      "criterion_id": "V02",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B3",
+          "number_format": "yyyy-mm-dd"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan B original date transcription",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/6"
+    },
+    {
+      "criterion_id": "D03",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 0,
+      "raw": 0,
+      "weight": 7,
+      "negate": false,
+      "kind": "programmatic",
+      "description": "Detail plan C final value",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/7"
+    },
+    {
+      "criterion_id": "V03",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "2007-12-31",
+          "cell": "Detail!B4",
+          "number_format": "yyyy-mm-dd"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "缺失或错误时扣分；正确不加分：Detail plan C original date transcription",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/8"
+    },
+    {
+      "criterion_id": "S01",
+      "score": 0,
+      "evidence": [
+        [
+          "Plan A principal balance"
+        ],
+        [
+          "Plan B principal balance"
+        ],
+        [
+          "Plan C principal balance"
+        ]
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 必需标签须按题面顺序列出，标签文字须与题面一致；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/9"
+    },
+    {
+      "criterion_id": "S02",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "USD",
+          "cell": "Results!C2",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C3",
+          "number_format": "General"
+        },
+        {
+          "raw": "USD",
+          "cell": "Results!C4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 三条必需结果的单位须严格为 USD；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/10"
+    },
+    {
+      "criterion_id": "S03",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/11"
+    },
+    {
+      "criterion_id": "P01",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Excel error outside scored cells",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/12"
+    },
+    {
+      "criterion_id": "P02",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Detail 不得增加无依据方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/13"
+    },
+    {
+      "criterion_id": "S04",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": "Records.pdf p.3, Finance forecast, Plan A; see Calc for reconciliation and source detail.",
+          "cell": "Results!D2",
+          "number_format": "General"
+        },
+        {
+          "raw": "Records.pdf p.3, Finance forecast, Plan B; see Calc for reconciliation and source detail.",
+          "cell": "Results!D3",
+          "number_format": "General"
+        },
+        {
+          "raw": "Records.pdf p.3, Finance forecast, Plan C; see Calc for reconciliation and source detail.",
+          "cell": "Results!D4",
+          "number_format": "General"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/14"
+    },
+    {
+      "criterion_id": "S05",
+      "score": 0,
+      "evidence": [],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 不得增加 Plan D 等额外方案、重复方案或无标签业务记录；违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/15"
+    },
+    {
+      "criterion_id": "S06",
+      "score": 0,
+      "evidence": [
+        {
+          "raw": 13100,
+          "cell": "Results!B2",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        },
+        {
+          "raw": 17850,
+          "cell": "Results!B3",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        },
+        {
+          "raw": 16850,
+          "cell": "Results!B4",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        },
+        {
+          "raw": 13100,
+          "cell": "Detail!C2",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        },
+        {
+          "raw": 17850,
+          "cell": "Detail!C3",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        },
+        {
+          "raw": 16850,
+          "cell": "Detail!C4",
+          "number_format": "$#,##0.00;[Red]($#,##0.00)"
+        }
+      ],
+      "sdk_value": 1,
+      "raw": 0,
+      "weight": -3,
+      "negate": true,
+      "kind": "programmatic",
+      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "gate_reason": null,
+      "source_pointer": "reward-details.json#/reward/0/criteria/16"
+    },
+    {
+      "criterion_id": "L01",
+      "score": 0.0,
+      "evidence": null,
+      "reason": "The deliverable file /app/output/answer.xlsx does not exist. No source claims to evaluate for fabricated sources.",
+      "sdk_value": 1.0,
+      "raw": "no",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+      "source_pointer": "reward-details.json#/reward/1/criteria/0"
+    },
+    {
+      "criterion_id": "L02",
+      "score": 0.0,
+      "evidence": null,
+      "reason": "The deliverable file /app/output/answer.xlsx does not exist. No claims about external audits or verification to evaluate.",
+      "sdk_value": 1.0,
+      "raw": "no",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+      "source_pointer": "reward-details.json#/reward/1/criteria/1"
+    },
+    {
+      "criterion_id": "L03",
+      "score": 0.0,
+      "evidence": null,
+      "reason": "The deliverable file /app/output/answer.xlsx does not exist. No factual assertions to evaluate for fabrication.",
+      "sdk_value": 1.0,
+      "raw": "no",
+      "weight": -3,
+      "negate": true,
+      "kind": "agent",
+      "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+      "source_pointer": "reward-details.json#/reward/1/criteria/2"
+    }
+  ],
+  "raw_response": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"The deliverable file /app/output/answer.xlsx does not exist. No source claims to evaluate for fabricated sources.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"The deliverable file /app/output/answer.xlsx does not exist. No claims about external audits or verification to evaluate.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"The deliverable file /app/output/answer.xlsx does not exist. No factual assertions to evaluate for fabrication.\"}}",
+  "judge_completed": true,
+  "judge_agent": "claude-code",
+  "judge_protocol": "anthropic",
+  "protocol_source": "run_demo_judges.sh (same settings as the other demos)",
+  "rewardkit_version": "0.1.7",
+  "source_run": "gpt-5.6-sol_r1",
+  "reward_details_sha256": "cbd22683e859301eff09401dd8b4117432506806ce7ce12ee2c2a10cc9d9df57",
+  "score_semantics": "positive credit / negative violation; signed weight; clipped total",
+  "hybrid_score": 0.0,
+  "llm_status": "COMPLETED",
+  "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
+  "delivery_rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "limitations": [
+    "正项score表示正确程度；负项score表示违规程度，sdk_value与raw原样保留。",
+    "上游原始HTTP响应未单独留存；逐条结果来自reward-details.json。",
+    "started_at/finished_at未单独记录，保留null。"
+  ],
+  "programmatic_score": 0.0,
+  "scoring_revision": {
+    "label": "评分器 v2（2026-10-26）",
+    "method": "offline_program_rescore_with_saved_llm",
+    "new_llm_calls": 0,
+    "saved_llm_complete": true,
+    "saved_llm_candidate_sha256": "959ac122bb3fe65e7e60caf7da35cf91616824a907e1d91be888f801c3796b4d",
+    "old_score": 0.0,
+    "new_score": 0.0,
+    "original_judgment": "judge.v1.json",
+    "limitation": "保存的 LLM 判定原样复用；不是新增模型运行或新增 LLM 裁判。"
+  },
+  "interface_gate_passed": true,
+  "interface_errors": []
+}

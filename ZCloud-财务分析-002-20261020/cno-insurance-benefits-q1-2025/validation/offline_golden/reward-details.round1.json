@@ -1,0 +1,147 @@
+{
+  "reward": {
+    "kind": "programmatic",
+    "criteria": [
+      {
+        "name": "R01",
+        "weight": 10,
+        "negate": false,
+        "raw": 1.0,
+        "value": 1.0
+      },
+      {
+        "name": "R02",
+        "weight": 10,
+        "negate": false,
+        "raw": 1.0,
+        "value": 1.0
+      },
+      {
+        "name": "A1",
+        "weight": 7,
+        "negate": false,
+        "raw": 1.0,
+        "value": 1.0
+      },
+      {
+        "name": "A2",
+        "weight": 7,
+        "negate": false,
+        "raw": 1.0,
+        "value": 1.0
+      },
+      {
+        "name": "P1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "P2",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "SD1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "SD2",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "F1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "F2",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "F3",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "X1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "X2",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "S01",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "S02",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "SP1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "O01",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "U01",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "DP1",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      },
+      {
+        "name": "DP2",
+        "weight": 3,
+        "negate": true,
+        "raw": 0.0,
+        "value": 1.0
+      }
+    ]
+  }
+}

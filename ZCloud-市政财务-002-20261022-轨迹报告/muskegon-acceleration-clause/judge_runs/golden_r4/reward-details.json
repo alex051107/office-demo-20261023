@@ -196,7 +196,7 @@
         },
         {
           "name": "S03",
-          "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+          "description": "必需表的前置表头去除首尾空格后须大小写、文字及列序匹配；不匹配扣 3 分且总分封顶 0.69。题面未限制总列数，允许后附列。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -226,7 +226,7 @@
         },
         {
           "name": "S04",
-          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持说明；违规扣 3 分，另由 must_clause_cap 将总分封顶 0.69；不核查来源真实性。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -262,7 +262,7 @@
         },
         {
           "name": "S06",
-          "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+          "description": "六个金额的格式显示两位小数，或存值等于 round(value,2)，均符合精度要求；不符合扣 3 分而不封顶。至少 p 位还接受存值小数位数不少于 p；数值容差另查 0.005 USD。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -350,5 +350,29 @@
       },
       "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u89e3\\u6790\\u6587\\u4ef6\\uff1a\\u5019\\u9009\\u4ea4\\u4ed8\\u7269 /app/output/answer.xlsx \\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u8fdb\\u884c\\u6765\\u6e90\\u771f\\u5b9e\\u6027\\u8bc4\\u4f30\\u3002\\u6839\\u636e\\u89c4\\u5219'\\u65e0\\u6cd5\\u89e3\\u6790\\u7684\\u6587\\u4ef6\\u5fc5\\u987b\\u660e\\u786e\\u62a5\\u544a\\u9519\\u8bef'\\uff0c\\u6b64\\u9879\\u52240\\u5206\\uff08\\u65e0\\u8fdd\\u89c4\\uff09\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u89e3\\u6790\\u6587\\u4ef6\\uff1a\\u5019\\u9009\\u4ea4\\u4ed8\\u7269 /app/output/answer.xlsx \\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u68c0\\u67e5\\u662f\\u5426\\u58f0\\u79f0\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u6216\\u5b9e\\u65f6\\u67e5\\u8be2\\u3002\\u6839\\u636e\\u89c4\\u5219'\\u65e0\\u6cd5\\u89e3\\u6790\\u7684\\u6587\\u4ef6\\u5fc5\\u987b\\u660e\\u786e\\u62a5\\u544a\\u9519\\u8bef'\\uff0c\\u6b64\\u9879\\u52240\\u5206\\uff08\\u65e0\\u8fdd\\u89c4\\uff09\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u89e3\\u6790\\u6587\\u4ef6\\uff1a\\u5019\\u9009\\u4ea4\\u4ed8\\u7269 /app/output/answer.xlsx \\u4e0d\\u5b58\\u5728\\uff0c\\u65e0\\u6cd5\\u68c0\\u67e5\\u662f\\u5426\\u7f16\\u9020\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\\u6839\\u636e\\u89c4\\u5219'\\u65e0\\u6cd5\\u89e3\\u6790\\u7684\\u6587\\u4ef6\\u5fc5\\u987b\\u660e\\u786e\\u62a5\\u544a\\u9519\\u8bef'\\uff0c\\u6b64\\u9879\\u52240\\u5206\\uff08\\u65e0\\u8fdd\\u89c4\\uff09\\u3002\"}}"
     }
-  ]
+  ],
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "pooling": {
+    "before_rules": 1.0,
+    "after_rules": 1.0
+  }
 }

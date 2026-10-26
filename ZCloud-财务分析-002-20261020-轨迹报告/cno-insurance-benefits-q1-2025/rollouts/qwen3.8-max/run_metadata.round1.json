@@ -1,0 +1,34 @@
+{
+  "model_id": "qwen3.8-max",
+  "agent_lane": "qwen",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-22T19:29:08+00:00",
+  "ended": "2026-10-22T20:20:20+00:00",
+  "minutes": 51.19,
+  "returned_model_counts": {
+    "qwen/qwen3.8-max": 27,
+    "qwen3.8-max-0902": 29
+  },
+  "total_requests": 56,
+  "substitute_requests": 0,
+  "harness": "Codex CLI",
+  "harness_difference_note": "千问与Sol同用Codex CLI（OpenAI Responses协议经网关）；Opus使用Claude Code。2026-10-22补跑，这是首个正常完成的千问运行。",
+  "model_identity_note": "网关返回型号含 qwen/qwen3.8-max 与 qwen3.8-max-0902（同一基础型号的路由/日期标识），未出现其他型号。",
+  "terminal_event": {
+    "type": "turn.completed",
+    "usage": {
+      "input_tokens": 4608165,
+      "cached_input_tokens": 4390400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 93404,
+      "reasoning_output_tokens": 72386
+    }
+  },
+  "source_run": "qwen3.8-max_20261022T152900",
+  "source_candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+  "judge_model": "qwen3.7-plus",
+  "office_judge_score": 0.0,
+  "program_score_frozen_scorer": 0.16,
+  "this_export_paid_calls": 0
+}

@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 import openpyxl
+from openpyxl.styles import PatternFill
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +47,15 @@ def mutate(workbook, name):
         sheet['D1'] = None
     elif name == 'header_case':
         sheet['A1'] = 'Label'
+    elif name == 'header_order_only':
+        sheet['A1'], sheet['B1'] = 'value', 'label'
+    elif name == 'header_spaces':
+        for cell in sheet[1]:
+            cell.value = f'  {cell.value}  '
+    elif name == 'empty_styled_column':
+        sheet['E1'].fill = PatternFill('solid', fgColor='FFEECC')
+    elif name == 'label_only_note':
+        sheet['A6'] = 'Supporting note without a business value'
     elif name == 'header_shifted':
         sheet.insert_rows(1)
     elif name == 'rows_reversed':
@@ -55,9 +65,10 @@ def mutate(workbook, name):
                 sheet.cell(row_index, column, value)
     elif name == 'rows_shifted':
         sheet.insert_rows(2)
-    elif name in {'sources_empty', 'source_one_empty', 'sources_numeric'}:
+    elif name in {'sources_empty', 'source_one_empty', 'sources_numeric', 'sources_numeric_text'}:
         for row_index in range(2, 5 if name != 'source_one_empty' else 3):
-            sheet.cell(row_index, 4).value = 123 if name == 'sources_numeric' else None
+            sheet.cell(row_index, 4).value = (123 if name == 'sources_numeric' else
+                                            '123.45' if name == 'sources_numeric_text' else None)
     elif name in {'unit_wrong', 'unit_case'}:
         for row_index in range(2, 5):
             sheet.cell(row_index, 3, 'USD thousand real' if name == 'unit_wrong' else 'aud million nominal')
@@ -78,8 +89,19 @@ def mutate(workbook, name):
     elif name == 'two_decimal_display':
         for row_index in range(2, 5):
             sheet.cell(row_index, 2).number_format = '0.00'
+    elif name == 'nonnumeric_value':
+        sheet['B2'] = '13.690'
+    elif name == 'rounded_three_general':
+        for row_index in range(2, 5):
+            sheet.cell(row_index, 2).value = round(sheet.cell(row_index, 2).value, 3)
+            sheet.cell(row_index, 2).number_format = 'General'
     elif name in {'inside_tolerance', 'outside_tolerance'}:
-        sheet['B2'] = sheet['B2'].value + (0.00049 if name == 'inside_tolerance' else 0.00051)
+        sheet['B2'] = sheet['B2'].value + (0.00149 if name == 'inside_tolerance' else 0.00151)
+    elif name == 'rounded_asset_aggregation':
+        assets = list(workbook['Working'].iter_rows(min_row=2, max_row=13))
+        for row_index, group in [(2, 'network'), (3, 'non-network'), (4, None)]:
+            sheet.cell(row_index, 2).value = sum(round(row[4].value, 3) for row in assets
+                                               if group is None or row[1].value == group)
     elif name == 'full_precision_general':
         for row_index in range(2, 5):
             sheet.cell(row_index, 2).number_format = 'General'
@@ -125,31 +147,35 @@ def main():
     folder.mkdir(parents=True, exist_ok=True)
     cases = [
         ('sheet_renamed', 'Results改错表名', 0.0, ['S01'], True),
-        ('header_reversed', 'Results四列逆序', 0.9, ['S01'], True),
+        ('header_reversed', 'Results四列逆序', 0.9, ['S01'], False),
         ('unit_wrong', '单位改为USD thousand real', 0.9, ['S02'], False),
-        ('extra_column', 'Results增加第五列表头', 1.0, ['S01'], True),
         ('sources_empty', '清空三条source_note', 1.0, ['S03'], False),
         ('rows_reversed', 'Results三条结果逆序', 1.0, ['S04'], False),
-        ('rounded_two_general', '三项四舍五入两位且为General', 1.0, ['S06'], False),
+        ('rounded_two_general', '三项四舍五入两位且为General；存储精度合规但数值误差失分', 1.0, [], False),
         ('sheet_case', 'Results仅表名大小写错误', None, ['S01'], True),
         ('sheet_missing', '删除Results表', None, ['S01'], True),
-        ('extra_column_no_header', '第五列有数据但表头为空', None, ['S01'], True),
-        ('source_header_missing', 'source_note表头清空', None, ['S01'], True),
-        ('header_case', 'label表头大小写错误', None, ['S01'], True),
-        ('header_shifted', '表头移至第二行', None, ['S01'], True),
+        ('source_header_missing', 'source_note表头清空', None, ['S01'], False),
+        ('header_case', 'label表头大小写错误', None, ['S01'], False),
+        ('header_order_only', '仅交换前两个表头，数值内容不变', None, ['S01'], False),
+        ('header_shifted', '表头移至第二行', None, ['S01'], False),
         ('rows_shifted', '必需结果移至第3至5行', None, ['S04'], False),
         ('source_one_empty', '仅一条source_note为空', None, ['S03'], False),
         ('sources_numeric', '来源说明全部换成纯数字', None, ['S03'], False),
+        ('sources_numeric_text', '来源说明全部换成纯数字字符串', None, ['S03'], False),
         ('unit_case', '单位大小写与题面不一致', None, ['S02'], False),
         ('extra_record', '尾部新增未请求的数字业务行', None, ['S05'], False),
         ('extra_text_record', '尾部新增未请求的文字业务行', None, ['S05'], False),
         ('duplicate_record', '重复首条必需业务行', None, ['S04', 'S05'], False),
         ('orphan_value', '无标签但有金额的额外业务行', None, ['S05'], False),
         ('rounded_two_formatted', '两位存储值以0.000显示', None, [], False),
-        ('two_decimal_display', '保留完整数值但只显示两位', None, ['S06'], False),
-        ('outside_tolerance', '第一项增加0.00051超出容差', None, [], False),
+        ('nonnumeric_value', '一条结果换成文本而非数值', None, ['S06'], False),
+        ('outside_tolerance', '第一项增加0.00151超出该派生行0.0015容差', None, [], False),
     ]
     rows = []
+    cap_cases = {'header_reversed', 'source_header_missing', 'header_case', 'header_order_only',
+                 'header_shifted', 'sources_empty', 'source_one_empty', 'sources_numeric',
+                 'sources_numeric_text', 'unit_wrong', 'unit_case', 'extra_record',
+                 'extra_text_record', 'orphan_value'}
     for name, mutation, old_score, penalties, gate in cases:
         workbook = openpyxl.load_workbook(ROOT / 'solution/golden_output/answer.xlsx')
         mutate(workbook, name)
@@ -161,18 +187,30 @@ def main():
                      if criterion_id[0] in {'S', 'P'} and verdict['credit']]
         assert result['score'] < 1.0, name
         assert not gate or result['score'] == 0.0, name
+        if name in cap_cases:
+            assert result['score_policy']['must_clause_cap']['triggered'], name
+            assert result['score'] <= 0.69, name
+            if name in {'header_order_only', 'header_case', 'source_header_missing'}:
+                assert result['score'] == 0.69, name
+                assert all(result['verdicts'][row['criterion_id']]['credit'] for row in
+                           json.loads((ROOT / 'tests/results_key.json').read_text())['rows']), name
+        elif not gate:
+            assert not result['score_policy']['must_clause_cap']['triggered'], name
         assert set(penalties) <= set(triggered), (name, triggered)
         rows.append({'case': name, 'workbook': path.name, 'mutation': mutation,
-                     'expected_outcome': 'interface_gate_0' if gate else 'penalty_or_numeric_loss',
+                     'expected_outcome': 'interface_gate_0' if gate else 'must_clause_cap_0.69' if name in cap_cases else 'penalty_below_1',
                      'expected_penalties': penalties, 'old_review_program_score': old_score,
                      'old_score_source': 'review section 三·A' if old_score is not None else '未在原审查中运行',
                      'new_program_score': result['score'], 'penalties_triggered': triggered,
+                     'signed_pooled_score': result['signed_pooled_score'], 'score_policy': result['score_policy'],
                      'numeric_criteria_failed': [criterion_id for criterion_id, verdict in result['verdicts'].items()
                                                  if criterion_id.startswith('R') and not verdict['credit']]})
     positives = []
     controls = ROOT / 'validation/positive_cases'
     controls.mkdir(parents=True, exist_ok=True)
-    for name in ['golden', 'full_precision_general', 'rounded_three', 'inside_tolerance', 'extra_support_sheet']:
+    for name in ['golden', 'full_precision_general', 'rounded_three', 'rounded_three_general', 'rounded_asset_aggregation',
+                 'inside_tolerance', 'extra_support_sheet', 'header_spaces', 'empty_styled_column',
+                 'extra_column', 'extra_column_no_header', 'two_decimal_display', 'label_only_note']:
         workbook = openpyxl.load_workbook(ROOT / 'solution/golden_output/answer.xlsx')
         mutate(workbook, name)
         path = controls / f'{name}.xlsx'
@@ -181,8 +219,12 @@ def main():
         result = evaluate(path)
         assert result['score'] == 1.0, (name, result)
         positives.append({'case': name, 'program_score': result['score']})
+    for name in ['extra_column', 'extra_column_no_header', 'two_decimal_display']:
+        (folder / f'{name}.xlsx').unlink(missing_ok=True)
     report = {'scorer_version': 'v2 (2026-10-26)', 'scope': 'programmatic subset only; no new LLM judgments',
               'negative_cases': rows, 'positive_controls': positives, 'independent_calculation': independent_calculation()}
+    report['precision_rule'] = ('p decimals: a matching number_format or stored value equal to round(value,p); '
+                                'at least p also accepts stored decimal places >= p. Numeric tolerance is separate.')
     (folder / 'cases.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'negative_cases': len(rows), 'interface_cases': sum(row['expected_outcome'] == 'interface_gate_0' for row in rows),
                       'positive_controls': len(positives), 'independent_calculation': report['independent_calculation']}, ensure_ascii=False))

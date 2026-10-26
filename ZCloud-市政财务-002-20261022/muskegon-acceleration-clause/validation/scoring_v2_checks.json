@@ -1,5 +1,6 @@
 {
   "revision": "评分器 v2（2026-10-26）",
+  "round": 2,
   "scores": {
     "golden": {
       "old_score": 1.0,
@@ -31,9 +32,13 @@
     }
   },
   "new_solver_runs": 0,
-  "new_llm_calls": 0,
+  "new_llm_calls": 1,
+  "new_valid_golden_judgments": 0,
+  "golden_judgment_status": "BLOCKED_COST_GUARD",
+  "golden_score_basis": "provisional_saved_historical_judgments",
   "golden_copy_count": 5,
-  "negative_case_count": 32,
-  "all_saved_llm_criteria_unchanged": true,
+  "negative_case_count": 34,
+  "positive_control_count": 11,
+  "all_saved_model_llm_criteria_unchanged": true,
   "instruction_and_model_workbooks_unchanged": true
 }

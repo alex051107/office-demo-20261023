@@ -9,11 +9,12 @@
       "type": "number",
       "gold": 13.690108344179448,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0015,
         "rel": 0
       },
       "weight": 32,
-      "dimension": "data_accuracy"
+      "dimension": "data_accuracy",
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     },
     {
       "criterion_id": "R02",
@@ -22,11 +23,12 @@
       "type": "number",
       "gold": -11.546100406081113,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0015,
         "rel": 0
       },
       "weight": 32,
-      "dimension": "data_accuracy"
+      "dimension": "data_accuracy",
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     },
     {
       "criterion_id": "R03",
@@ -35,11 +37,12 @@
       "type": "number",
       "gold": 1.1431857863294523,
       "tolerance": {
-        "abs": 0.0005,
+        "abs": 0.0035,
         "rel": 0
       },
       "weight": 34,
-      "dimension": "data_accuracy"
+      "dimension": "data_accuracy",
+      "tolerance_basis": "Derived sum: rounding each nonzero asset-class difference to 3 decimals before aggregation can change the sum. Seven nonzero classes for total (0.0035); three for each subgroup (0.0015). Extracted inputs use half a unit of precision (0.0005). Full precision remains preferred."
     }
   ],
   "checks": [

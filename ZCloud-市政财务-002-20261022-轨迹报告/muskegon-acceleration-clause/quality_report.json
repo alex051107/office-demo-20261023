@@ -11,13 +11,14 @@
     "live_source_verified": false,
     "original_customer_query": false
   },
-  "rubric_sha256": "e70046ed946e67ace71621ee5d23b7dfe3a782732b8bfce9d11d80db0ae1c33e",
+  "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
   "target": {
     "path": "golden/candidate.xlsx",
     "sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
     "judge": "golden/judge.json",
     "visual_review": "golden/visual_review.json",
-    "score_final": 1.0
+    "score_final": 1.0,
+    "score_status": "PROVISIONAL_SAVED_JUDGMENTS"
   },
   "rollout_summary": {
     "models": [
@@ -78,8 +79,29 @@
     "model": "qwen3.7-plus",
     "protocol": "anthropic（Claude Code 裁判）",
     "sdk": "harbor-rewardkit 0.1.7",
-    "score_basis": "程序判据按 v2 离线重算，LLM 逐条判定原样复用；无新增裁判。Opus 未完成的负项保留未完成，零分由程序上界推出。",
-    "formula": "round(clip((sum(w_i*q_i for w_i>0)-sum(abs(w_j)*v_j for w_j<0))/s_max,0,1),6)"
+    "score_basis": "第二轮程序评分与保存的历史 LLM 判定重组；金标五次新裁判因费用停止而未完成，金标总分仅为暂定重组值。",
+    "formula": "signed-weight pooling / 51, clipped to [0,1], then required_sheet_gate=0, required_header_cap<=0.69, must_clause_cap<=0.69",
+    "round2_golden_judgments": {
+      "status": "BLOCKED_COST_GUARD",
+      "required_valid_runs": 5,
+      "attempted_runs": 1,
+      "valid_runs": 0,
+      "remaining_valid_runs": 5,
+      "retry_count": 0,
+      "new_solver_runs": 0,
+      "per_run_limit_usd": 0.5,
+      "account_limit_usd": 1635,
+      "account_usage_delta_usd": 8.650104000000056,
+      "cost_guard_detected_after_limit_exceeded": true,
+      "runner_returncode": 137,
+      "started_at": "2026-10-25T23:31:00Z",
+      "finished_at": "2026-10-25T23:46:01Z",
+      "attempt_receipt": "round2_attempts/golden_r1/run_metadata.json",
+      "per_criterion_standard_deviation": null,
+      "total_standard_deviation": null,
+      "golden_score_basis": "provisional_saved_historical_judgments",
+      "note": "首个真实金标重判未通过运行器有效性检查；费用超过上限后停止，无重试，未启动 r2–r5。现有 golden_r1..r5 为历史 LLM 判定的程序重组，不是本轮新裁判。"
+    }
   },
   "consistency": {
     "path": "consistency.json",
@@ -97,11 +119,12 @@
         ],
         "total_stddev_sample": 0.0,
         "max_criterion_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": true
+        "pass_stddev_lt_0_05": true,
+        "judgment_origin": "saved_historical"
       }
     ],
-    "status": "RECOMPUTED_WITH_SAVED_JUDGMENTS",
-    "note": "同一参考答卷的程序重算，与五份已保存 LLM 判定分别重组；不是新增重复裁判。"
+    "status": "BLOCKED_NEW_GOLDEN_JUDGMENTS",
+    "note": "程序重算与保存判定重组。"
   },
   "discrimination": {
     "reference_score": 1.0,
@@ -152,11 +175,13 @@
     "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
     "Claude Opus 4.8 答卷只有程序判据结果：正项得分为 0，LLM 判据全部是扣分项，所以总分只能是 0，记 0。",
     "开发阶段的另一套评分规则给三个模型各 0.07 分，全部来自格式项；本包规则下格式项只扣分不加分，记 0。",
-    "rubrics.json 在评分后只改过说明字段，评分条目、权重和容差未改；judge.json 记录的是评分时 rubric 文件的哈希。"
+    "第二轮保留 20 个判据及全部权重，更新程序判据描述与汇总规则；judge.json 记录当前交付 rubric 的哈希。",
+    "本轮金标仅 1 次真实尝试、0 次有效完成；费用超限后停止。五次新真实裁判与其逐项及总分标准差尚未完成。"
   ],
-  "overall_delivery_compliance": "FORMAT_ALIGNED_SINGLE_RUN_PASS_AT_8_NOT_RUN",
+  "overall_delivery_compliance": "PARTIAL_ROUND2_GOLDEN_JUDGMENTS_BLOCKED_COST_GUARD",
   "scoring_revision": {
     "revision": "评分器 v2（2026-10-26）",
+    "round": 2,
     "scores": {
       "golden": {
         "old_score": 1.0,
@@ -188,6 +213,9 @@
       }
     },
     "new_solver_runs": 0,
-    "new_llm_calls": 0
+    "new_llm_calls": 1,
+    "new_valid_golden_judgments": 0,
+    "golden_judgment_status": "BLOCKED_COST_GUARD",
+    "golden_score_basis": "provisional_saved_historical_judgments"
   }
 }

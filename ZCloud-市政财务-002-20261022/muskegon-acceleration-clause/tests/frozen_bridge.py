@@ -20,11 +20,11 @@ def extract(answer, key):
 
 def score(evidence, key):
     criteria = key.get('rows', []) + key.get('tables', []) + key.get('checks', [])
+    if hasattr(engine, 'extract'):
+        return engine.score(evidence, key)
     if evidence['status'] in {'OUTPUT_MISSING', 'JUDGE_ERROR'}:
         return {'status': evidence['status'], 'score': 0 if evidence['status']=='OUTPUT_MISSING' else None,
                 'verdicts': {c['criterion_id']: {'credit': 0} for c in criteria}}
-    if hasattr(engine, 'extract'):
-        return engine.score(evidence, key)
     result = engine.score_book(key, evidence['book'], formulas=evidence['formulas'])
     per_record = {c['criterion_id'] for c in key.get('tables', []) if c.get('pass_rule', {}).get('per_record')}
     for c in criteria:

@@ -1,6 +1,6 @@
 {
   "format": "xlsx",
-  "reviewed_at": "2026-10-25T18:21:58-04:00",
+  "reviewed_at": "2026-10-25T19:35:33-04:00",
   "renderer": "LibreOffice calc_pdf_Export + pdftoppm",
   "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
   "scope": "逐表从更新后的参考工作簿导出；临时副本使用 A3 横向和单页缩放。",
@@ -19,12 +19,11 @@
     }
   ],
   "render_status": "COMPLETED",
-  "visual_inspection_status": "REVIEWED",
+  "visual_inspection_status": "COMPLETED",
   "visual_findings": [
-    "Results：三条来源与计算说明完整显示；标签、金额和单位均顶端对齐，没有遮挡或截断。",
-    "Results 与 Detail：六个金额均显示千位分隔与两位小数；表头顺序和三条记录正确。",
-    "Detail：三条日期均完整显示为 2007-12-31。"
+    "Results 三条来源与计算文字完整换行，无截断或重叠；三笔金额显示两位小数。",
+    "Detail 表头 plan/date/value、三条日期及金额清晰，金额显示两位小数。"
   ],
   "source_workbook_unchanged": true,
-  "scoring_revision": "评分器 v2（2026-10-26）"
+  "scoring_revision": "评分器 v2（2026-10-26）第二轮"
 }

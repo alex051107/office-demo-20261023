@@ -4,13 +4,35 @@
   "score": 1.0,
   "S0": 1.0,
   "S": 1.0,
-  "cap_enabled": false,
+  "cap_enabled": true,
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
   "interface_gate_passed": true,
   "interface_errors": [],
+  "header_errors": [],
   "total_weight": 51,
   "earned": 51,
   "penalty_weight": 0,
   "accepted_S0": true,
+  "accepted": true,
   "root_criteria_met": 0,
   "root_criteria": 0,
   "verdicts": {

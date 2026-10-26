@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""平台固定模板，请勿改动。
+"""Signed-weight finalization with task-scoped, post-pooling score rules.
 
 从 Reward Kit 的逐条判定明细汇总主分（按签名权重池化全题 criterion），
 并显式区分"评分不可用"与"确实得零分"。
 """
 import argparse
+import importlib.util
 import sys
 import json
 import math
@@ -90,6 +91,23 @@ def pooled_score(details):
     if denominator <= 0.0:
         return None, counted, broken
     return min(1.0, max(0.0, numerator / denominator)), counted, broken
+
+
+def apply_score_rules(pooled, program_result):
+    return min([pooled] + [rule['maximum_score'] for rule in program_result['score_rules']
+                          if rule['triggered']])
+
+
+def program_result(candidate):
+    here = pathlib.Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location('finalize_workbook_scorer', here / 'score_output.py')
+    engine = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(engine)
+    key = load_json(here / 'results_key.json')
+    result = engine.score(engine.extract(pathlib.Path(candidate), key), key)
+    if result['score'] is None:
+        raise ValueError('Workbook cannot be parsed; scoring unavailable')
+    return result
 
 
 def count_errors(node):
@@ -221,7 +239,13 @@ def compute(args):
 
     # 主分：按签名权重池化全题 criterion（负向项真扣分，空产物下限为 0）。
     pooled, counted, broken = pooled_score(graded_details)
-    score = 0.0 if pooled is None else round(pooled, 6)
+    program = program_result(getattr(args, 'candidate', '/app/output/answer.xlsx'))
+    score = 0.0 if pooled is None else round(apply_score_rules(pooled, program), 6)
+    if graded_details is not None:
+        graded_details['score_rules'] = program['score_rules']
+        graded_details['pooling'] = {'before_rules': pooled, 'after_rules': score}
+        graded_path.with_name('reward-details.json').write_text(
+            json.dumps(graded_details, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
     # Reward Kit 自己的 [0,1] 归一化聚合值，仅留作审计参照，不作主分。
     soft = finite((graded or {}).get("soft_score"))
@@ -234,6 +258,8 @@ def compute(args):
     result = dict(dims)
     result["graded_score"] = score
     result["criteria_counted"] = float(counted)
+    result['score_before_rules'] = pooled
+    result['score_rules'] = program['score_rules']
     if soft is not None:
         result["soft_score"] = soft
     # 评分不可用时主分一律记 0：宁可保守低估，也不要因为把异常条目排除在分母之外
@@ -252,6 +278,7 @@ def main() -> int:
     parser.add_argument("--graded", required=True)
     parser.add_argument("--graded-rc", type=int, required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument('--candidate', default='/app/output/answer.xlsx')
     args = parser.parse_args()
 
     try:

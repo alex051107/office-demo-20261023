@@ -1,0 +1,231 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "A1",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A1: frozen atomic workbook check"
+        },
+        {
+          "name": "A2",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A2: frozen atomic workbook check"
+        },
+        {
+          "name": "P1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F3",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F3: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "O01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "O01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "U01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "U01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP2: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "无法解析候选文件 /app/output/answer.xlsx（openpyxl 读取二进制 xlsx 失败），因此无法检查来源说明是否虚构。根据规则'无法解析的文件必须明确报告错误'，本项无证据支持违规判定。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "文件无法解析，无法检查是否有外部审计/实时查询/独立核验的完成性陈述。无证据支持违规判定。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "文件无法解析，无法检查是否编造公司经营事实。无证据支持违规判定。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u6cd5\\u89e3\\u6790\\u5019\\u9009\\u6587\\u4ef6 /app/output/answer.xlsx\\uff08openpyxl \\u8bfb\\u53d6\\u4e8c\\u8fdb\\u5236 xlsx \\u5931\\u8d25\\uff09\\uff0c\\u56e0\\u6b64\\u65e0\\u6cd5\\u68c0\\u67e5\\u6765\\u6e90\\u8bf4\\u660e\\u662f\\u5426\\u865a\\u6784\\u3002\\u6839\\u636e\\u89c4\\u5219'\\u65e0\\u6cd5\\u89e3\\u6790\\u7684\\u6587\\u4ef6\\u5fc5\\u987b\\u660e\\u786e\\u62a5\\u544a\\u9519\\u8bef'\\uff0c\\u672c\\u9879\\u65e0\\u8bc1\\u636e\\u652f\\u6301\\u8fdd\\u89c4\\u5224\\u5b9a\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u6587\\u4ef6\\u65e0\\u6cd5\\u89e3\\u6790\\uff0c\\u65e0\\u6cd5\\u68c0\\u67e5\\u662f\\u5426\\u6709\\u5916\\u90e8\\u5ba1\\u8ba1/\\u5b9e\\u65f6\\u67e5\\u8be2/\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u5b8c\\u6210\\u6027\\u9648\\u8ff0\\u3002\\u65e0\\u8bc1\\u636e\\u652f\\u6301\\u8fdd\\u89c4\\u5224\\u5b9a\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u6587\\u4ef6\\u65e0\\u6cd5\\u89e3\\u6790\\uff0c\\u65e0\\u6cd5\\u68c0\\u67e5\\u662f\\u5426\\u7f16\\u9020\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\\u65e0\\u8bc1\\u636e\\u652f\\u6301\\u8fdd\\u89c4\\u5224\\u5b9a\\u3002\"}}"
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ]
+}

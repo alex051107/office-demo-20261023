@@ -89,6 +89,18 @@
   "related_task_package": "ZCloud-电力监管-001-20261020",
   "task_complexity_note": "复杂度等级待甲方确认。",
   "source_note": "输入为澳大利亚能源监管机构（AER）公开的配电网资产滚动模型手册（原文件）和据公开模型整理的输入表；输入表部分数值做过调整，调整有登记。不是官方原件的原样复现，也不是客户原始委托。",
-  "score_basis": "评分器v2程序离线复算，与原第1次LLM判定按固定finalize逻辑重合成；未新增LLM评审。",
-  "scorer_version": "v2 (2026-10-26)"
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "scorer_version": "v2 (2026-10-26)",
+  "reference_judge_stddev": 0.0,
+  "reference_judge_runs_completed": 5,
+  "reference_judge_runs_required": 5,
+  "reference_judge_status": "PROVISIONAL_SAVED_VALID_JUDGMENTS",
+  "score_revision": "round3_golden_record_correction",
+  "reference_fresh_valid_judge_runs": 0,
+  "reference_invalid_judge_attempts": 1,
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

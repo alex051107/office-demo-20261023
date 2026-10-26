@@ -1,0 +1,36 @@
+{
+  "protected_file_count": 13,
+  "score_backups_verified": 36,
+  "golden_copy_count": 5,
+  "golden_cell_values_unchanged": true,
+  "llm_rubrics_and_saved_judgments_unchanged": true,
+  "judge_folders_verified": 11,
+  "key_rubric_alignment": true,
+  "syntax_files_checked": 6,
+  "offline_cli": {
+    "golden": {
+      "programmatic_score": 1.0,
+      "criteria_counted": 17,
+      "llm_status": "NOT_RUN",
+      "hybrid_reward": null
+    },
+    "claude-opus-4-8": {
+      "programmatic_score": 0.0,
+      "criteria_counted": 17,
+      "llm_status": "NOT_RUN",
+      "hybrid_reward": null
+    },
+    "gpt-5.6-sol": {
+      "programmatic_score": 0.0,
+      "criteria_counted": 17,
+      "llm_status": "NOT_RUN",
+      "hybrid_reward": null
+    },
+    "qwen3.8-max": {
+      "programmatic_score": 0.0,
+      "criteria_counted": 17,
+      "llm_status": "NOT_RUN",
+      "hybrid_reward": null
+    }
+  }
+}

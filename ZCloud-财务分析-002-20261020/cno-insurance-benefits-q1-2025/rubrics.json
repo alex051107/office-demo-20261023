@@ -154,7 +154,7 @@
     },
     {
       "id": "F1",
-      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -170,7 +170,7 @@
     },
     {
       "id": "F2",
-      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -186,7 +186,7 @@
     },
     {
       "id": "F3",
-      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -290,7 +290,7 @@
     },
     {
       "id": "S01",
-      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。",
+      "description": "A required Results source_note or Analysis source_document/source_page is empty or numeric-only.",
       "dimension": "内容质量-专业规范",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -370,7 +370,7 @@
     },
     {
       "id": "DP1",
-      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "description": "Results金额变动的number_format显示一位小数，或存储值等于舍入到一位小数的值，即满足要求；后者不限于General格式。否则扣3分。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -386,7 +386,7 @@
     },
     {
       "id": "DP2",
-      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "description": "Results百分比的number_format显示两位小数，或存储值等于舍入到两位小数的值，即满足要求；后者不限于General格式。否则扣3分。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -447,7 +447,7 @@
   "source_authenticity": "public_source_business_adaptation",
   "golden_threshold": 0.85,
   "three_model_average_threshold": 0.7,
-  "scoring_note": "保留现有判据、权重、类型、阈值及计算规则。正项按正确度计分，负项按违规程度扣分；负向权重不进入分母。2026-10-22仅补充导出字段，未重跑裁判。",
+  "scoring_note": "Signed-weight pooling with unchanged positive/negative weights, then sheet-name gate and named binary header/must-clause caps (0.69). Row order and precision remain ordinary penalties.",
   "interface_gate": {
     "failure_score": 0,
     "required_sheets": [
@@ -456,7 +456,22 @@
       "Summary"
     ],
     "exact_names": true,
-    "exact_headers": true,
-    "support_sheets": "allowed and unconstrained"
-  }
+    "exact_headers": false,
+    "support_sheets": "allowed and unconstrained",
+    "header_failure_score_cap": 0.69,
+    "trailing_columns": "allowed; no exact/only-column clause in instruction.md lines 16,23-25,33-35"
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "cap": 0.69,
+      "binary": true
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "cap": 0.69,
+      "binary": true
+    }
+  ],
+  "llm_ownership": "tests/llm_ownership.md; criterion texts and weights unchanged; source fields owned by program, L01 only additional provenance assertions"
 }

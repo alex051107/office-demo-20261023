@@ -34,7 +34,10 @@ def main():
          "value": round(1-result["verdicts"][c["criterion_id"]]["credit"]
                    if c["weight"] < 0 else result["verdicts"][c["criterion_id"]]["credit"], 4)}
         for c in criteria]}}
+    detail["interface_gate"] = result.get("interface_gate", {})
+    detail["post_pool_rules"] = result.get("post_pool_rules", [])
     pooled, count, broken = finalizer.pooled_score(detail)
+    pooled = finalizer.apply_post_pool_rules(detail, pooled)
     if broken or abs(pooled-result["score"]) > 0.0001:
         raise AssertionError("Finalizer and signed scorer disagree")
     a.out.mkdir(parents=True, exist_ok=True)

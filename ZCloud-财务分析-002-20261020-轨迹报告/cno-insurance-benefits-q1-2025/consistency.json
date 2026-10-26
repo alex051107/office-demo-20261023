@@ -1,6 +1,6 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
-  "unit": "deterministic program replay combined with five saved text judgments; not five new judge calls",
+  "unit": "round-2 program criteria recombined with five saved valid original golden text judgments; zero new judge calls",
   "threshold": 0.05,
   "comparison": "strictly less than",
   "primary_statistic": "sample standard deviation (ddof=1)",
@@ -473,15 +473,29 @@
         }
       ],
       "failed_criteria": [],
-      "criterion_requirement_status": "OFFLINE_REPLAY_PASS"
+      "criterion_requirement_status": "OFFLINE_REPLAY_PASS",
+      "provisional": true,
+      "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定",
+      "new_judge_calls": 0,
+      "invalid_judge_attempts_excluded": true,
+      "excluded_runs": [
+        {
+          "run_id": "round2_golden_r1",
+          "path": "golden/rejudge_attempts_20261026",
+          "reason": "judge:artifact_access_error; not a score"
+        }
+      ]
     }
   ],
-  "status": "OFFLINE_REPLAY_PASS_SAVED_TEXT_ONLY",
+  "status": "OFFLINE_REPLAY_PASS_SAVED_VALID_TEXT_ONLY",
   "limitations": [
-    "n=5仅为该卷的观测一致性；不能证明未来裁判稳定性。",
-    "只有参考三组与Powercor Sol有五次；其他模型只有一次，不计算样本标准差，不以0代替未测。",
-    "总分经clip后可能掩盖负项波动，单条判据与总分分别检验。",
-    "本次仅重算程序判据并复用历史五份文字判定；修订后的参考说明未重新送文字裁判，不构成新版混合裁判的独立稳定性验证。"
+    "新版金标文字未重新裁判；沿用原有效文字判定",
+    "n=5及σ仅描述五份原有效文字判定与第二轮程序结果的离线重组，不是新版金标的五次独立重裁。",
+    "第二轮不可读工作簿的尝试已隔离，不计为分数或一致性样本；该轮新有效文字判定仍为0。",
+    "模型文字判定沿用历史回执，未重跑模型。"
   ],
-  "scorer_revision": "office-review-v2-20261026"
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "correction": "golden-representative-correction-20261026",
+  "provisional": true,
+  "score_basis": "新版金标文字未重新裁判；沿用原有效文字判定"
 }

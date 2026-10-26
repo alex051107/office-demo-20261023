@@ -3,7 +3,7 @@
   "candidate_label": "qwen3.8-max",
   "judge_model": "qwen3.7-plus",
   "candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
-  "rubric_sha256": "7bfa31d130cfd8b985b911104cb427430b3cf4fd6a42ca2760471e1c38176548",
+  "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
   "instruction_sha256": "cfe47782bcf393f60fcf5351cf4c0fad0b3dbb4ed5837ad26899d7e314731205",
   "input_sha256": {
     "CNO_2024-09-30_10Q.xlsx": "401c5354e0e57d72cd584e39532f2c8202c39dede81af40dc4141c475eb4d46e",
@@ -193,7 +193,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "label",
         "value",
@@ -211,7 +211,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Analysis必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "period",
         "measure",
@@ -231,7 +231,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Summary必须存在，首行表头文字、列序、列数须精确一致；违规触发全题零分接口门。",
+      "description": "Required sheet header prefix matches exact case-sensitive text and order after trimming; trailing columns allowed.",
       "evidence": [
         "quarter",
         "insurance_policy_benefits"
@@ -273,7 +273,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "每个必需Results行须有非空、非纯数字的source_note；任一缺失扣3分。",
+      "description": "A required Results source_note or Analysis source_document/source_page is empty or numeric-only.",
       "evidence": [
         [
           {
@@ -286,6 +286,34 @@
           {
             "raw": "Change of $34.6M divided by the fourth-quarter 2024 base of $545.5M, expressed as a percentage to two decimal places. Base and current-quarter sources: CNO_2025-03-31_10Q.xlsx worksheet T010 (Consolidated Statement of Operations, p. 5); CNO_2024-12-31_10K.xlsx worksheet T050 (p. 97) less CNO_2024-09-30_10Q.xlsx worksheet T010 (p. 5)",
             "cell": "Results!D3",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2024-12-31_10K.xlsx; CNO_2024-09-30_10Q.xlsx",
+            "cell": "Analysis!E2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "T050 (FY 2024, p. 97) less T010 (nine months 2024, p. 5)",
+            "cell": "Analysis!F2",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "CNO_2025-03-31_10Q.xlsx",
+            "cell": "Analysis!E3",
+            "format": "General"
+          }
+        ],
+        [
+          {
+            "raw": "T010 (Consolidated Statement of Operations, p. 5)",
+            "cell": "Analysis!F3",
             "format": "General"
           }
         ]
@@ -391,7 +419,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results金额变动须按一位小数显示，或以General保存已舍入到一位小数的数值；违规扣3分。",
+      "description": "Results value meets 1 decimals through number_format OR an already-rounded stored value.",
       "evidence": [
         {
           "raw": 34.6,
@@ -410,7 +438,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results百分比须按两位小数显示，或以General保存已舍入到两位小数的数值；违规扣3分。",
+      "description": "Results value meets 2 decimals through number_format OR an already-rounded stored value.",
       "evidence": [
         {
           "raw": 6.34,
@@ -476,24 +504,42 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "qwen3.8-max_r1",
-  "reward_details_sha256": "abd28b6e5165dbed3d4a813ab589ac73a26b858ed11e6cf7795a692c753ee332",
+  "reward_details_sha256": "33626d0042df18931390d82002598a90e6b5edb5cd9fcc845adea26be7625f86",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 0.0,
   "llm_status": "COMPLETED",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "3cb3729c7ef9379423882eba8faf7f8d5d67e7cae3e33f5f10d32b3ba81126d0",
+  "delivery_rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
   "programmatic_score": 0,
   "interface_gate": {
     "failed": false,
     "errors": []
   },
   "offline_revision": {
-    "revision": "office-review-v2-20261026",
-    "evaluated_at": "2026-10-25T18:30:54.858875-04:00",
-    "mode": "offline_program_replay_with_saved_text_judgments",
+    "revision": "office-review-v2-round2-20261026",
+    "evaluated_at": "2026-10-25T20:23:20.510036-04:00",
+    "mode": "program_replay_with_saved_valid_text_judgments",
     "new_judge_calls": 0,
     "saved_text_details": "reward-details.v1.json",
     "saved_candidate_sha256": "f5913d50a5c0ef0d355cc2944a08fb320abdedfaf47ca285917bd1fddaa20694",
+    "saved_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
     "candidate_changed_since_saved_text_judgment": false
-  }
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "score_before_post_pool_rules": 0.0,
+  "llm_evidence_errors": [],
+  "judgment_available": true
 }

@@ -18,5 +18,9 @@ def score(evidence,key):
         verdicts[cid]=v
     smax=sum(c['weight'] for c in criteria if c['weight']>0)
     numerator=sum(c['weight']*(1-round(1-verdicts[c['criterion_id']]['credit'],4) if c['weight']<0 else round(verdicts[c['criterion_id']]['credit'],4)) for c in criteria)
-    return {'status':original['status'],'score':round(max(0,min(1,numerator/smax)),6),'verdicts':verdicts,
-            'interface_gate':original.get('interface_gate',{'failed':False,'errors':[]})}
+    pooled=round(max(0,min(1,numerator/smax)),6)
+    rules=original.get('post_pool_rules',[])
+    score=min([pooled]+[rule['cap'] for rule in rules if rule['triggered']])
+    gate=original.get('interface_gate',{'failed':False,'errors':[]})
+    return {'status':original['status'],'score':0.0 if gate['failed'] else score,'verdicts':verdicts,
+            'score_before_post_pool_rules':pooled,'post_pool_rules':rules,'interface_gate':gate}

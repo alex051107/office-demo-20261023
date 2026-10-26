@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "image": "office-demo-s2-a:20261020",
+  "paid_calls": 0,
+  "primary_candidates": [
+    {
+      "candidate": "golden",
+      "reward": 1.0,
+      "criteria_counted": 13.0,
+      "verifier_error": 0.0,
+      "score_status": "PROVISIONAL",
+      "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+      "score_revision": "round3_golden_record_correction",
+      "score_basis": "round2_program_plus_original_valid_saved_llm",
+      "new_llm_calls": 0,
+      "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+      "invalid_attempt_archive_path_base": "trajectory_case_root"
+    },
+    {
+      "candidate": "gpt-5.6-sol",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "candidate": "claude-opus-4-8",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "candidate": "qwen3.8-max",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    }
+  ],
+  "runtime_policy_attachment": [
+    {
+      "case": "header_order_only",
+      "reward": 0.69,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "case": "source_one_empty",
+      "reward": 0.69,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "case": "sheet_renamed",
+      "reward": 0.0,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    }
+  ],
+  "golden_finalizer_recheck": "PASS_OFFLINE_SAVED_VALID_LLM",
+  "new_judge_calls": 0,
+  "invalid_golden_attempt_report": "golden/rejudge_attempts_20261026/task_validation/round2_runtime_checks.json"
+}

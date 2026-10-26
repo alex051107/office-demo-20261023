@@ -153,5 +153,6 @@
     "historical_solver_events_added": false
   },
   "scorer_version": "v2 (2026-10-26)",
-  "score_basis": "v2程序离线复算，按固定finalize逻辑合成原有LLM判定；未新增求解或LLM评审。"
+  "score_basis": "新程序池化后应用独立门槛/封顶；模型LLM明细不变。",
+  "score_revision": "round2"
 }

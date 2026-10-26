@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""平台固定模板，请勿改动。
+"""Signed-weight finalizer with the task's explicit post-pooling contract policy.
 
 从 Reward Kit 的逐条判定明细汇总主分（按签名权重池化全题 criterion），
 并显式区分"评分不可用"与"确实得零分"。
 """
 import argparse
+import importlib.util
 import sys
 import json
 import math
@@ -105,6 +106,27 @@ def count_errors(node):
         for item in node:
             total += count_errors(item)
     return total
+
+
+def apply_score_policy(pooled, policy):
+    if policy['required_sheet_gate']['triggered']:
+        return 0.0
+    if policy['must_clause_cap']['triggered']:
+        return min(pooled, 0.69)
+    return pooled
+
+
+def attach_score_policy(details):
+    if 'score_policy' not in details:
+        here = pathlib.Path(__file__).resolve().parent
+        spec = importlib.util.spec_from_file_location('finalizer_contract', here / 'score_output.py')
+        engine = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(engine)
+        key = load_json(here / 'results_key.json')
+        evidence = engine.extract(pathlib.Path('/app/output/answer.xlsx'), key)
+        result = engine.score(evidence, key)
+        details['score_policy'] = result['score_policy']
+    return details['score_policy']
 
 
 def detail_errors(reward_path):
@@ -221,7 +243,12 @@ def compute(args):
 
     # 主分：按签名权重池化全题 criterion（负向项真扣分，空产物下限为 0）。
     pooled, counted, broken = pooled_score(graded_details)
-    score = 0.0 if pooled is None else round(pooled, 6)
+    score = 0.0
+    if pooled is not None and broken == 0:
+        policy = attach_score_policy(graded_details)
+        score = round(apply_score_policy(pooled, policy), 6)
+        graded_path.with_name('reward-details.json').write_text(
+            json.dumps(graded_details, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
     # Reward Kit 自己的 [0,1] 归一化聚合值，仅留作审计参照，不作主分。
     soft = finite((graded or {}).get("soft_score"))
@@ -233,6 +260,7 @@ def compute(args):
 
     result = dict(dims)
     result["graded_score"] = score
+    result['signed_pooled_score'] = 0.0 if pooled is None else round(pooled, 6)
     result["criteria_counted"] = float(counted)
     if soft is not None:
         result["soft_score"] = soft

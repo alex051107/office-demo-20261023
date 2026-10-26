@@ -196,7 +196,7 @@
         },
         {
           "name": "S03",
-          "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+          "description": "必需表的前置表头去除首尾空格后须大小写、文字及列序匹配；不匹配扣 3 分且总分封顶 0.69。题面未限制总列数，允许后附列。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -226,7 +226,7 @@
         },
         {
           "name": "S04",
-          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+          "description": "Results 每条必需结果须有非空、非纯数值的来源或支持说明；违规扣 3 分，另由 must_clause_cap 将总分封顶 0.69；不核查来源真实性。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -262,7 +262,7 @@
         },
         {
           "name": "S06",
-          "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+          "description": "六个金额的格式显示两位小数，或存值等于 round(value,2)，均符合精度要求；不符合扣 3 分而不封顶。至少 p 位还接受存值小数位数不少于 p；数值容差另查 0.005 USD。",
           "weight": 3,
           "negate": true,
           "raw": 0,
@@ -350,5 +350,29 @@
       },
       "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6\\u7684\\u6765\\u6e90\\u8bf4\\u660e\\u4e0e\\u53c2\\u8003\\u6587\\u4ef6\\u5b8c\\u5168\\u4e00\\u81f4\\u3002Agreement.pdf \\u7684\\u9875\\u7801\\u548c\\u7ae0\\u8282\\u5f15\\u7528\\uff08p.4 section 3A, p.5 sections 3C-3D, p.7 section 4F\\uff09\\u5747\\u5df2\\u9a8c\\u8bc1\\u771f\\u5b9e\\u5b58\\u5728\\u3002Records.pdf \\u867d\\u4e3a\\u56fe\\u50cf\\u578bPDF\\uff0c\\u4f46\\u5176\\u5f15\\u7528\\u65b9\\u5f0f\\u4e0e\\u53c2\\u8003\\u6587\\u4ef6\\u76f8\\u540c\\uff0c\\u672a\\u865a\\u6784\\u6587\\u4ef6\\u6216\\u9875\\u7801\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6\\u4ec5\\u63d0\\u4f9b\\u6570\\u636e\\u6765\\u6e90\\u8bf4\\u660e\\uff0c\\u672a\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u6587\\u4ef6\\u7684\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\u4ec5\\u6d89\\u53ca\\u4f63\\u91d1\\u8ba1\\u7b97\\u516c\\u5f0f\\u548c\\u6587\\u6863\\u5f15\\u7528\\uff0c\\u672a\\u7f16\\u9020\\u65e0\\u6cd5\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
     }
-  ]
+  ],
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "pooling": {
+    "before_rules": 1.0,
+    "after_rules": 1.0
+  }
 }

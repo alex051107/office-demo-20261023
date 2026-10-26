@@ -91,5 +91,14 @@
   "related_task_package": "ZCloud-财务分析-002-20261020",
   "task_complexity_note": "复杂度等级待甲方确认。",
   "source_note": "输入为 CNO Financial Group 向美国证监会提交的四份季度和年度报告，按报告中的段落与表格转录为 Excel；2025 年第二季度报告为节选。不是客户原始委托。",
-  "score_basis": "Office 裁判第 1 次评分（程序判据 + LLM 扣分项）"
+  "score_basis": "第二轮程序判据＋原有效文字判定离线重组；新版金标文字未重新裁判；沿用原有效文字判定",
+  "reference_programmatic_score": 1.0,
+  "reference_judge_stddev_sample": 0.0,
+  "reference_status": "PROVISIONAL_SAVED_VALID_TEXT",
+  "reference_provisional": true,
+  "reference_saved_valid_runs": 5,
+  "reference_score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "correction": "golden-representative-correction-20261026",
+  "invalid_judge_attempts_excluded": true
 }

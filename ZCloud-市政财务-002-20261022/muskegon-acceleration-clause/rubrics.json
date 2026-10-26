@@ -209,7 +209,7 @@
     },
     {
       "id": "S03",
-      "description": "必需 Results、Detail 表名及第 1 行表头文字、列序、列数须完全匹配；任一不符全题为 0，记录接口原因。",
+      "description": "必需表的前置表头去除首尾空格后须大小写、文字及列序匹配；不匹配扣 3 分且总分封顶 0.69。题面未限制总列数，允许后附列。",
       "dimension": "结构与组织",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -317,7 +317,7 @@
     },
     {
       "id": "S04",
-      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持计算说明；违规扣 3 分。",
+      "description": "Results 每条必需结果须有非空、非纯数值的来源或支持说明；违规扣 3 分，另由 must_clause_cap 将总分封顶 0.69；不核查来源真实性。",
       "dimension": "指令遵循",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -371,7 +371,7 @@
     },
     {
       "id": "S06",
-      "description": "Results 与 Detail 的六个金额须以值或 number_format 显示恰好两位小数；与绝对数值容差 0.005 USD 分开检查，违规扣 3 分。",
+      "description": "六个金额的格式显示两位小数，或存值等于 round(value,2)，均符合精度要求；不符合扣 3 分而不封顶。至少 p 位还接受存值小数位数不少于 p；数值容差另查 0.005 USD。",
       "dimension": "指令遵循",
       "criterion_type": "Objective",
       "criterion_necessity": "Explicit",
@@ -450,7 +450,7 @@
       "programmatic_negative_total": -33,
       "llm_negative_total": -9,
       "decision_date": "2026-10-26",
-      "rule": "正项权重 51 不变；每条程序负项扣 3 分，LLM 三条各扣 3 分且内容不变；接口不合格全题 0；金额绝对容差 0.005 USD，另查两位小数显示。",
+      "rule": "正项权重 51 与所有权重不变；先 signed-weight 池化，再执行缺表零分、表头 0.69 封顶与 must_clause_cap；行序和精度仅普通扣分。",
       "positive_count": 6,
       "programmatic_count": 17,
       "llm_count": 3,
@@ -460,7 +460,24 @@
       "sdk_value_rule": "positive: round(raw_credit,4); negative: value=round(1-violation_credit,4), negate=true; fixed finalize restores signed deduction",
       "llm_status": "COMPLETED",
       "negative_weight_total_abs": 42,
-      "negative_hit_semantics": "负项score为违规程度；SDK保存value=1-违规程度且negate=true，固定finalize还原扣分。"
+      "negative_hit_semantics": "负项score为违规程度；SDK保存value=1-违规程度且negate=true，固定finalize还原扣分。",
+      "post_pool_rules": [
+        {
+          "name": "required_sheet_gate",
+          "maximum_score": 0.0,
+          "condition": "required sheet missing or misnamed"
+        },
+        {
+          "name": "required_header_cap",
+          "maximum_score": 0.69,
+          "condition": "trimmed required header prefix text/order mismatch"
+        },
+        {
+          "name": "must_clause_cap",
+          "maximum_score": 0.69,
+          "condition": "empty/numeric-only required source, unit mismatch, or extra business label with value"
+        }
+      ]
     },
     "format_migration": {
       "criteria_content_changed": false,
@@ -476,10 +493,11 @@
     "scoring_revision": {
       "date": "2026-10-26",
       "label": "评分器 v2（2026-10-26）",
-      "programmatic_only": true,
+      "programmatic_only": false,
       "llm_criteria_changed": false,
-      "llm_judgments": "reuse saved judgments without new calls",
-      "instruction_changed": false
+      "llm_judgments": "golden: five new real judgments; model answers: saved judgments unchanged",
+      "instruction_changed": false,
+      "round": 2
     }
   },
   "scope_note": "混合裁判结果随轨迹报告交付；tests/offline_score.py 只重算程序判据，不调用 LLM。",

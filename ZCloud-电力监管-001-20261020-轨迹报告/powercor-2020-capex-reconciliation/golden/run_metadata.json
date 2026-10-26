@@ -2,7 +2,7 @@
   "candidate_label": "golden",
   "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
   "judge_model": "qwen3.7-plus",
-  "current_export_rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
+  "current_export_rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
   "historical_judge_rubric_sha256": "0a65180fae81d9f567ae15f76595053c5d07476401fb8326521f8cc3c308e6c2",
   "score_preserved": 1.0,
   "this_export_paid_calls": 0,
@@ -23,12 +23,20 @@
     "既有_history归档"
   ],
   "evidence_note": "只导出既有回执；缺失的容器、网关及请求证据不由运行器名或成功状态推定。",
-  "status": "REFERENCE_ARTIFACT_EXISTING_JUDGE_RESULT",
+  "status": "PROVISIONAL_SAVED_VALID_JUDGMENTS",
   "model_id": null,
   "harness": null,
   "solver_run": null,
   "trajectory_note": "参考答案没有求解会话；events.jsonl仅索引既有五次裁判记录，不冒充求解轨迹。",
   "saved_llm_candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
   "scorer_version": "v2 (2026-10-26)",
-  "score_basis": "v2程序离线复算，按固定finalize逻辑合成原有LLM判定；未新增求解或LLM评审。"
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "score_revision": "round3_golden_record_correction",
+  "saved_valid_judge_runs": 5,
+  "fresh_valid_judge_runs": 0,
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

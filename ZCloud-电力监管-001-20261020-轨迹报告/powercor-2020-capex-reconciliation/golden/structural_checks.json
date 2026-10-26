@@ -28,5 +28,6 @@
   "historical_score": 1.0,
   "not_a_new_judgement": true,
   "programmatic_score": 1.0,
-  "scorer_version": "v2 (2026-10-26)"
+  "scorer_version": "v2 (2026-10-26)",
+  "round2_note": "工作簿和渲染字节未变，重用第一轮检查；不是本轮新渲染。程序分1.0，首次新LLM合成分0.70；仅1/5次，LLM质量与一致性未建立。"
 }

@@ -1,0 +1,42 @@
+{
+  "reward": 0.0,
+  "graded_score": 1.0,
+  "criteria_counted": 23.0,
+  "verifier_error": 1.0,
+  "programmatic_score": 1,
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "text_judgments": "new golden judgment; evidence unavailable",
+  "llm_evidence_errors": [
+    {
+      "criterion_id": "L01",
+      "reason": "无法解析候选文件 /app/output/answer.xlsx（openpyxl 读取二进制 xlsx 失败），因此无法检查来源说明是否虚构。根据规则'无法解析的文件必须明确报告错误'，本项无证据支持违规判定。"
+    },
+    {
+      "criterion_id": "L02",
+      "reason": "文件无法解析，无法检查是否有外部审计/实时查询/独立核验的完成性陈述。无证据支持违规判定。"
+    },
+    {
+      "criterion_id": "L03",
+      "reason": "文件无法解析，无法检查是否编造公司经营事实。无证据支持违规判定。"
+    }
+  ],
+  "score_before_post_pool_rules": 1.0,
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  }
+}

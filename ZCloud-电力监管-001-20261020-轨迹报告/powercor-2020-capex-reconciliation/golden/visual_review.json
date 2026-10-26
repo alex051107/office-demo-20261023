@@ -32,5 +32,6 @@
     "Working"
   ],
   "layout_finding_handling": "已调整列宽、换行、行高和数值格式；Results三条来源完整可读，Working逐项来源及Applicable rate和年末因子分行呈现。",
-  "score_scope": "程序判据已离线复算；保存的LLM判定来自原金标，不是修订金标的新LLM评审。"
+  "score_scope": "本轮程序复算与一次真实LLM裁判已分别记录；该视觉检查不证明LLM判定可信。",
+  "round2_note": "工作簿和渲染字节未变，重用第一轮检查；不是本轮新渲染。程序分1.0，首次新LLM合成分0.70；仅1/5次，LLM质量与一致性未建立。"
 }

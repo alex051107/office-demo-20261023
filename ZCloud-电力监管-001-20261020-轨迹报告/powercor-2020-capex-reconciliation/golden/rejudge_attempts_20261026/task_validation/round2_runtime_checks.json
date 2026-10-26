@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "image": "office-demo-s2-a:20261020",
+  "paid_calls": 0,
+  "primary_candidates": [
+    {
+      "candidate": "golden",
+      "reward": 0.7,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "candidate": "gpt-5.6-sol",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "candidate": "claude-opus-4-8",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "candidate": "qwen3.8-max",
+      "reward": 0.0,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    }
+  ],
+  "runtime_policy_attachment": [
+    {
+      "case": "header_order_only",
+      "reward": 0.69,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "case": "source_one_empty",
+      "reward": 0.69,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    },
+    {
+      "case": "sheet_renamed",
+      "reward": 0.0,
+      "policy_attached_from_runtime_answer": true,
+      "criteria_counted": 13,
+      "verifier_error": 0
+    }
+  ]
+}

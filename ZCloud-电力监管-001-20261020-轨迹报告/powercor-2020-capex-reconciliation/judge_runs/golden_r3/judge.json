@@ -18,7 +18,7 @@
     ]
   },
   "started_at": null,
-  "status": "COMPLETED",
+  "status": "PROVISIONAL",
   "request_timeout_seconds": 7200,
   "http_status": null,
   "positive_weight_total": 30,
@@ -77,8 +77,8 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。",
-      "evidence": "required sheet and exact four-column header are present",
+      "description": "S01：Results前四列表头去除首尾空格后须为label、value、unit、source_note，大小写与顺序严格一致；允许后接额外列。表头不符扣3分并触发must_clause_cap，总分上限0.69；缺表或错表名单独归零。",
+      "evidence": "required leading header columns match after trimming spaces",
       "source_pointer": "reward-details.json#/reward/0/criteria/3"
     },
     {
@@ -89,7 +89,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。",
+      "description": "S02：每条必需结果单位严格为AUD million nominal；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "evidence": "units not exactly as specified: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/4"
     },
@@ -113,7 +113,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。",
+      "description": "S03：每条必需结果的来源引用非空且不是纯数字；违反扣3分，并触发must_clause_cap（总分上限0.69）。",
       "evidence": "missing or non-textual source references: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/6"
     },
@@ -137,7 +137,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。",
+      "description": "S05：Results不得新增标签不在必需列表且带业务值的记录，违反扣3分并触发must_clause_cap。重复必需标签扣3分但不单独触发封顶；无业务值的文字备注和支持工作表不触发此项。",
       "evidence": "unrequested business rows: []; duplicate labels: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/8"
     },
@@ -149,7 +149,7 @@
       "weight": -3,
       "negate": true,
       "kind": "programmatic",
-      "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。",
+      "description": "S06：精度p=3；number_format显示p位，或存储值等于其四舍五入至p位的值，均合规；题面至少p位也接受存储小数位数不少于p。数值误差依各派生行容差单独判断。",
       "evidence": "results not showing at least three decimal places: []",
       "source_pointer": "reward-details.json#/reward/0/criteria/9"
     },
@@ -196,8 +196,9 @@
   "limitations": [
     "原始明细缺少独立evidence、程序reason或运行字段时保留null；已有裁判reasoning逐字保留。",
     "正项score表示正确程度；负项score表示违规程度，sdk_value与raw原样保留。",
-    "rubric_sha256为评分资料绑定值，delivery_rubric_sha256为随包文件校验值；评分条目、权重和容差一致。原始回执未记录运行时输入哈希。",
-    "未查到唯一完成时间则finished_at保留null；不以文件修改时间代替。"
+    "rubric_sha256保留原有效文字判定的历史绑定；delivery_rubric_sha256为当前第二轮规则。程序判据和容差按当前规则重算，LLM判定来自已保存历史明细，不追认其已裁判新版文字。",
+    "未查到唯一完成时间则finished_at保留null；不以文件修改时间代替。",
+    "新版金标文字未重新裁判；沿用原有效文字判定"
   ],
   "raw_response": "{\"L01\": {\"reasoning\": \"All cited sources are verifiable in the provided materials. Excel cell references (e.g., 'RFM input'!F7, F61, F115, F169, L7, F282-F287) correspond to actual cells containing the described asset classes, capex values, forecasts, and WACC/inflation parameters. Distribution_handbook.pdf page 27 does contain section 2.4.1 ('Nominal adjustments for difference between actual and forecast net capex in final year') and footnote 20 discussing the nominal vanilla WACC, exactly as cited. No fabricated files, pages, or tables.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The candidate contains only source citations and numerical labels. There are no claims of having completed external audits, real-time queries, or independent verification. No unsupported completion statements present.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The candidate's explanatory text consists solely of asset class names (directly from the input file), group classifications (network/non-network/other), and source references. No new company operating facts are asserted beyond what is contained in the provided input materials.\", \"score\": \"no\"}}",
   "judge_completed": true,
@@ -207,12 +208,24 @@
   "protocol_source": "existing batch runner configuration",
   "rewardkit_version": "0.1.7",
   "source_run": "golden_r3",
-  "reward_details_sha256": "5699a004739000d6363d6243a43035221b23131f67466ae97986283e9abaf07d",
+  "reward_details_sha256": "2f78b267eb26be9de16bcd99eb35177a5cb8052918e996f59c0021e8a4b0d90e",
   "score_semantics": "positive credit / negative violation; signed weight; clipped total",
   "hybrid_score": 1.0,
-  "llm_status": "REUSED_SAVED_JUDGMENTS",
+  "llm_status": "REUSED_VALID_SAVED_JUDGMENTS",
   "selection_policy": "Reference and model representative scores use the first judgement; repeats are reported separately.",
-  "delivery_rubric_sha256": "5af40b6cad219d23a6084d04f60fb53ecc43d11bbb7925ac93646a6f004d11bd",
+  "delivery_rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
   "offline_rescore": {
     "scorer_version": "v2 (2026-10-26)",
     "programmatic_score": 1,
@@ -225,6 +238,15 @@
     "saved_llm_candidate_sha256": "32782c9bd8ae5521b2a66024365fc668e30b8c29a322372befda06a340798c71",
     "saved_llm_details": "reward-details.v1.json",
     "new_llm_calls": 0,
-    "scope": "New programmatic checks; saved L01-L03 reused unchanged, not a new LLM evaluation."
-  }
+    "saved_llm_judge": "judge.v1.json",
+    "saved_llm_run_id": "golden_r3",
+    "scope": "新版金标文字未重新裁判；沿用原有效文字判定"
+  },
+  "score_status": "PROVISIONAL",
+  "score_note": "新版金标文字未重新裁判；沿用原有效文字判定",
+  "score_revision": "round3_golden_record_correction",
+  "score_basis": "round2_program_plus_original_valid_saved_llm",
+  "new_llm_calls": 0,
+  "invalid_attempt_archive": "golden/rejudge_attempts_20261026",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
 }

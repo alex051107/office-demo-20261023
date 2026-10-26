@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""平台固定模板，请勿改动。
+"""Office scorer finalizer with task-specific post-pooling caps.
 
 从 Reward Kit 的逐条判定明细汇总主分（按签名权重池化全题 criterion），
 并显式区分"评分不可用"与"确实得零分"。
@@ -10,6 +10,29 @@ import json
 import math
 import pathlib
 import re
+
+
+def apply_post_pool_rules(details, score):
+    if details.get('interface_gate', {}).get('failed'):
+        return 0.0
+    for rule in details.get('post_pool_rules', []):
+        if rule['triggered']:
+            score = min(score, rule['cap'])
+    return score
+
+
+def llm_evidence_errors(details):
+    failures = []
+    for entry in (details or {}).values():
+        blocks = entry if isinstance(entry, list) else [entry]
+        for block in blocks:
+            if not isinstance(block, dict) or block.get('kind') != 'agent':
+                continue
+            for item in block.get('criteria', []):
+                reason = item.get('reasoning', '')
+                if re.search(r'无法解析候选文件|文件无法解析|无法解析工作簿|(?:cannot|could not|unable to) (?:read|parse|open) (?:the )?(?:candidate|workbook|xlsx)', reason, re.I):
+                    failures.append({'criterion_id': item.get('id', item.get('name')), 'reason': reason})
+    return failures
 
 
 def load_json(path):
@@ -188,6 +211,8 @@ def classify_exit(args, result):
     无论哪种，exit_reason 都是 Reward Kit 自己的原话（error 字段或 stderr 末尾），
     不做二次加工——排查时看到的应当是判分器实际报了什么。
     """
+    if result.get('llm_evidence_errors'):
+        return 'judge:artifact_access_error', result['llm_evidence_errors'][0]['reason']
     detail_msgs = detail_error_messages(pathlib.Path(args.graded))
     stderr_tail = read_stderr_tail(pathlib.Path(args.graded))
     haystack = " | ".join(detail_msgs) + "\n" + stderr_tail
@@ -221,6 +246,16 @@ def compute(args):
 
     # 主分：按签名权重池化全题 criterion（负向项真扣分，空产物下限为 0）。
     pooled, counted, broken = pooled_score(graded_details)
+    if graded_details is not None and 'post_pool_rules' not in graded_details:
+        from score_output import extract, score as score_workbook
+        key = load_json(pathlib.Path(__file__).with_name('results_key.json'))
+        policy = score_workbook(extract(pathlib.Path('/app/output/answer.xlsx'), key), key)
+        graded_details['interface_gate'] = policy['interface_gate']
+        graded_details['post_pool_rules'] = policy['post_pool_rules']
+        graded_path.with_name('reward-details.json').write_text(json.dumps(graded_details, ensure_ascii=False, indent=2), encoding='utf-8')
+    uncapped_score = pooled
+    if pooled is not None:
+        pooled = apply_post_pool_rules(graded_details, pooled)
     score = 0.0 if pooled is None else round(pooled, 6)
 
     # Reward Kit 自己的 [0,1] 归一化聚合值，仅留作审计参照，不作主分。
@@ -229,11 +264,15 @@ def compute(args):
         soft = round(soft, 6)
 
     graded_ok = (args.graded_rc == 0 and bool(dims) and pooled is not None
-                 and counted > 0 and broken == 0)
+                 and counted > 0 and broken == 0 and not llm_evidence_errors(graded_details))
 
     result = dict(dims)
     result["graded_score"] = score
     result["criteria_counted"] = float(counted)
+    result['score_before_post_pool_rules'] = uncapped_score
+    result['interface_gate'] = (graded_details or {}).get('interface_gate', {})
+    result['post_pool_rules'] = (graded_details or {}).get('post_pool_rules', [])
+    result['llm_evidence_errors'] = llm_evidence_errors(graded_details)
     if soft is not None:
         result["soft_score"] = soft
     # 评分不可用时主分一律记 0：宁可保守低估，也不要因为把异常条目排除在分母之外

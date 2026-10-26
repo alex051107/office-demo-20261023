@@ -1,0 +1,137 @@
+{
+  "reward": [
+    {
+      "kind": "programmatic",
+      "score": 0,
+      "criteria": [
+        {
+          "name": "R01",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 network net capex difference"
+        },
+        {
+          "name": "R02",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 non-network net capex difference"
+        },
+        {
+          "name": "R03",
+          "weight": 10,
+          "negate": false,
+          "raw": 0,
+          "value": 0,
+          "description": "2020 total net capex difference"
+        },
+        {
+          "name": "S01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S01 接口门槛：Results 表名与首行表头文本、列序、四列数量必须完全一致；违反则全题为零，记录原因。"
+        },
+        {
+          "name": "S02",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "S02：Results 每条必需结果的单位必须严格为 AUD million nominal；违反扣3分。"
+        },
+        {
+          "name": "P01",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Deduct for Excel error cells outside result cells already assessed"
+        },
+        {
+          "name": "S03",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "每条必需结果均须有非空文字来源引用；数字或空白不是来源。"
+        },
+        {
+          "name": "S04",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "三条必需结果按题面顺序从第2行排列，不得缺失、重复或逆序。"
+        },
+        {
+          "name": "S05",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 不得包含必需标签之外的业务记录或重复记录；支持工作表不受此结构限制。"
+        },
+        {
+          "name": "S06",
+          "weight": 3,
+          "negate": true,
+          "raw": 0,
+          "value": 1,
+          "description": "Results 数值须显示至少三位小数：General 依存储小数位判断，显式格式依显示小数位判断；数值匹配绝对容差另为0.0005。"
+        }
+      ]
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "All cell references in candidate source notes (D2-D4) point to real, existing cells in Powercor_RFM_inputs.xlsx sheet 'RFM input'. Verified: L7/L8/L10 contain forecast net capex for Subtransmission/Distribution/SCADA; F61/F62/F64 contain actual capex for same classes; F115/F116/F118 contain disposals; F169/F170/F172 contain contributions. Similarly verified all non-network references (L11-L13, F65-F67, F119-F121, F173-F175) and total references (L7:L14, F61:F68, F115:F122, F169:F176). Asset class names in descriptions match actual row labels. No fabricated files, pages, or tables.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Candidate makes no claims of external audit, real-time queries, or independent verification. Source notes are purely descriptive of input file cell locations and computational methodology ('Actual net capex = capex - disposals - contributions; difference = actual - forecast'). No audit or verification language present anywhere in the workbook.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Candidate's explanatory text contains only computational methodology descriptions and asset class groupings, all verifiable from the input file. No assertions about company operations, business events, market conditions, or other operating facts beyond what is directly derivable from the input spreadsheet data.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "claude-code",
+        "model": "qwen3.7-plus",
+        "timeout": 900,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"All cell references in candidate source notes (D2-D4) point to real, existing cells in Powercor_RFM_inputs.xlsx sheet 'RFM input'. Verified: L7/L8/L10 contain forecast net capex for Subtransmission/Distribution/SCADA; F61/F62/F64 contain actual capex for same classes; F115/F116/F118 contain disposals; F169/F170/F172 contain contributions. Similarly verified all non-network references (L11-L13, F65-F67, F119-F121, F173-F175) and total references (L7:L14, F61:F68, F115:F122, F169:F176). Asset class names in descriptions match actual row labels. No fabricated files, pages, or tables.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Candidate makes no claims of external audit, real-time queries, or independent verification. Source notes are purely descriptive of input file cell locations and computational methodology ('Actual net capex = capex - disposals - contributions; difference = actual - forecast'). No audit or verification language present anywhere in the workbook.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Candidate's explanatory text contains only computational methodology descriptions and asset class groupings, all verifiable from the input file. No assertions about company operations, business events, market conditions, or other operating facts beyond what is directly derivable from the input spreadsheet data.\", \"score\": \"no\"}}"
+    }
+  ]
+}
