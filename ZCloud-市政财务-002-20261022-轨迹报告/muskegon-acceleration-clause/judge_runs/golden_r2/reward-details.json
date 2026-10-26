@@ -146,7 +146,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'Records.pdf, PDF p.2 Plans' — both files exist in /app/input_files/, Agreement.pdf has 10 pages (p.5/p.7 are valid), Records.pdf has 6 pages (p.2-p.5 are valid). No fictional files, page numbers, or tables detected.",
+          "reasoning": "Results!D2 cites Agreement.pdf and Records.pdf by page and section (e.g., 'Agreement.pdf, PDF p.5 sections 3C-3D'; 'Records.pdf, PDF p.2 Plans'). Both files are confirmed present in /app/input_files/. No file name, page number, or table label is cited that does not correspond to a real bundle member, so no fabricated source location is evidenced.",
           "negate": true
         },
         {
@@ -156,7 +156,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "Results!D2 states 'earned term-revenue commission and normal payment timing' and cites document sections — this is analytical language referencing the provided Agreement.pdf and Records.pdf, not a claim of having completed external audits, real-time queries, or independent verification beyond the input package.",
+          "reasoning": "Results!D2, D3, and D4 contain only analytical attribution language (e.g., 'PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses'). None of these cells assert that an external audit was completed, a real-time query was run, or an independent verification was performed. The criterion is not triggered.",
           "negate": true
         },
         {
@@ -166,14 +166,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "Results!D2 presents figures like 'term cash USD 235,000 and 347,000' and '10% earned commission USD 58,200' but attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2' — these are presented as extractions from the input documents, not as independently discovered external facts about companies outside the provided input package.",
+          "reasoning": "Results!D2 states figures such as 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01; 10% earned commission USD 58,200' and explicitly attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2'. All asserted facts are tied to bundled input documents (Records.pdf, Agreement.pdf), which exist in /app/input_files/. No company operational facts are invented independently of those inputs.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -181,7 +181,7 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'Records.pdf, PDF p.2 Plans' \\u2014 both files exist in /app/input_files/, Agreement.pdf has 10 pages (p.5/p.7 are valid), Records.pdf has 6 pages (p.2-p.5 are valid). No fictional files, page numbers, or tables detected.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D2 states 'earned term-revenue commission and normal payment timing' and cites document sections \\u2014 this is analytical language referencing the provided Agreement.pdf and Records.pdf, not a claim of having completed external audits, real-time queries, or independent verification beyond the input package.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"Results!D2 presents figures like 'term cash USD 235,000 and 347,000' and '10% earned commission USD 58,200' but attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2' \\u2014 these are presented as extractions from the input documents, not as independently discovered external facts about companies outside the provided input package.\"}}"
+      "judge_output": "{\"L01\": {\"reasoning\": \"Results!D2 cites Agreement.pdf and Records.pdf by page and section (e.g., 'Agreement.pdf, PDF p.5 sections 3C-3D'; 'Records.pdf, PDF p.2 Plans'). Both files are confirmed present in /app/input_files/. No file name, page number, or table label is cited that does not correspond to a real bundle member, so no fabricated source location is evidenced.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Results!D2, D3, and D4 contain only analytical attribution language (e.g., 'PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses'). None of these cells assert that an external audit was completed, a real-time query was run, or an independent verification was performed. The criterion is not triggered.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Results!D2 states figures such as 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01; 10% earned commission USD 58,200' and explicitly attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2'. All asserted facts are tied to bundled input documents (Records.pdf, Agreement.pdf), which exist in /app/input_files/. No company operational facts are invented independently of those inputs.\", \"score\": \"no\"}}"
     }
   ],
   "score_rules": [

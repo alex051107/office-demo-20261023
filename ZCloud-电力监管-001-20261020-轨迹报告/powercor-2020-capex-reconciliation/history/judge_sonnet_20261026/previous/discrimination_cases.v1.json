@@ -1,0 +1,167 @@
+{
+  "method": "以参考答案为底，保留前k项正确结果，其余值乘1.25；用本轮程序评分器和独立后置规则计算。LLM按未违规作程序分对照，不调用模型或裁判，不据此认定金标LLM质量。",
+  "s_max": 30,
+  "cases": [
+    {
+      "case": "0_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R01",
+          "cell": "Results!B2",
+          "reference": 13.69010834417945,
+          "set_to": 17.112635
+        },
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": -11.54610040608111,
+          "set_to": -14.432626
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 0,
+        "R02": 0,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0
+    },
+    {
+      "case": "1_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": -11.54610040608111,
+          "set_to": -14.432626
+        },
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 0,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.333333
+    },
+    {
+      "case": "2_of_3_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R03",
+          "cell": "Results!B4",
+          "reference": 1.143185786329452,
+          "set_to": 1.428982
+        }
+      ],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.666667
+    },
+    {
+      "case": "3_of_3_positive_results_correct",
+      "changed_cells": [],
+      "positive_credit": {
+        "R01": 1,
+        "R02": 1,
+        "R03": 1
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 1
+    }
+  ],
+  "model_answers": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "scorer_version": "v2 (2026-10-26)",
+  "reference_score": 1.0,
+  "reference_programmatic_score": 1.0,
+  "score_status": "INSUFFICIENT_VALID_RUNS",
+  "score_note": "本轮有效金标2/5；仅有效判定计分和计算标准差。",
+  "score_revision": "candidate-access-v4",
+  "score_basis": "candidate-access-v4 accepted runs only",
+  "new_llm_calls": 6,
+  "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
+  "invalid_attempt_archive_path_base": "trajectory_case_root",
+  "reference_status": "INSUFFICIENT_VALID_RUNS",
+  "reference_score_basis": "candidate-access-v4 accepted runs only",
+  "judge_fix": {
+    "revision": "candidate-access-v4",
+    "task": "A",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "required_valid_runs": 5,
+    "valid_runs": 2,
+    "attempted_runs": 6,
+    "golden_attempted_runs": 6,
+    "representative": "golden_r3",
+    "old_provisional_score": 1.0,
+    "previous_current_score": null,
+    "new_score": 1.0,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": 0.0,
+    "total_sigma_population": 0.0,
+    "criterion_sigma_sample": {
+      "R01": 0.0,
+      "R02": 0.0,
+      "R03": 0.0,
+      "S01": 0.0,
+      "S02": 0.0,
+      "P01": 0.0,
+      "S03": 0.0,
+      "S04": 0.0,
+      "S05": 0.0,
+      "S06": 0.0,
+      "L01": 0.0,
+      "L02": 0.0,
+      "L03": 0.0
+    },
+    "consistency_requirement_met": false,
+    "total_cost_usd": 15.77973,
+    "stop_reason": null,
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.0,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": false,
+    "history": "rejudge_v4_20261026",
+    "invalid_attempts_count": 4,
+    "accounting_final_pending": false,
+    "cost_limit_exceeded_runs": [
+      "golden_r2",
+      "golden_r3",
+      "golden_r5"
+    ],
+    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+    "limits": {
+      "single_run_usd": 3.5,
+      "account_usd": 1675,
+      "run_seconds": 1200
+    }
+  },
+  "golden_hybrid_score_basis": "candidate-access-v4 accepted runs only",
+  "scoring_revision": "candidate-access-v4"
+}

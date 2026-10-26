@@ -172,7 +172,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "Results!D2 and Results!D3 cite only real files (CNO_2024-12-31_10K.xlsx T050!G15=2,471.9; CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4; CNO_2025-03-31_10Q.xlsx T010!G19=580.1; CNO_2025-06-30_10Q.xlsx T016!N14=15.6, T016!N24=(21.6), Text!A131) all verified in input files. No fabricated file/worksheet/page references.",
+          "reasoning": "Results!D2 and Results!D3 cite CNO_2024-12-31_10K.xlsx T050!G15, CNO_2024-09-30_10Q.xlsx T010!S19, CNO_2025-03-31_10Q.xlsx T010!G19, and CNO_2025-06-30_10Q.xlsx T016!N14, T016!N24, Text!A131. I opened each input file and confirmed: T050!G15='2,471.9', T010!S19='1,926.4', T010!G19='580.1', T016!N14='15.6', T016!N24='(21.6)', Text!A131 contains the 21.6/31.7 overstatement language. All four files exist in /app/input_files/. No source assertion names a file, page, or table absent from the package.",
           "negate": true
         },
         {
@@ -182,7 +182,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "Results!D2/D3 describe revision basis using cumulative embedded-derivative error corrections from Text!A131. No claims of completed external audits, real-time queries, or independent verification beyond the provided inputs.",
+          "reasoning": "Analysis!F2 and Analysis!F3 describe arithmetic revisions derived from input cells (cumulative errors from Text!A131, adjustments from T016!N14 and T016!N24). Results!D2 and D3 do the same. None of the candidate sheets contain any statement claiming that an external audit was completed, a real-time query was run, or an independent third-party verification was performed. No such completion claim exists anywhere in the workbook.",
           "negate": true
         },
         {
@@ -192,14 +192,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "Analysis!F2/F3 and Results!D2/D3 reference the $21.6M/$31.7M embedded-derivative overstatement figures directly from Text!A131 in CNO_2025-06-30_10Q.xlsx. No fabricated operational facts beyond what the input documents disclose.",
+          "reasoning": "The only company operating facts stated in the workbook—FY 2024 policy benefits 2,471.9 (Results!D2 citing T050!G15), 9M 2024 1,926.4 (citing T010!S19), Q1 2025 580.1 (citing T010!G19), and the 21.6/31.7 cumulative embedded-derivative overstatement (citing Text!A131)—are each directly verifiable from the input files I read. No additional qualitative or operational business facts appear in Results, Analysis, or Summary sheets beyond these input-supported figures.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -207,7 +207,7 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2 and Results!D3 cite only real files (CNO_2024-12-31_10K.xlsx T050!G15=2,471.9; CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4; CNO_2025-03-31_10Q.xlsx T010!G19=580.1; CNO_2025-06-30_10Q.xlsx T016!N14=15.6, T016!N24=(21.6), Text!A131) all verified in input files. No fabricated file/worksheet/page references.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D2/D3 describe revision basis using cumulative embedded-derivative error corrections from Text!A131. No claims of completed external audits, real-time queries, or independent verification beyond the provided inputs.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"Analysis!F2/F3 and Results!D2/D3 reference the $21.6M/$31.7M embedded-derivative overstatement figures directly from Text!A131 in CNO_2025-06-30_10Q.xlsx. No fabricated operational facts beyond what the input documents disclose.\"}}"
+      "judge_output": "{\"L01\": {\"reasoning\": \"Results!D2 and Results!D3 cite CNO_2024-12-31_10K.xlsx T050!G15, CNO_2024-09-30_10Q.xlsx T010!S19, CNO_2025-03-31_10Q.xlsx T010!G19, and CNO_2025-06-30_10Q.xlsx T016!N14, T016!N24, Text!A131. I opened each input file and confirmed: T050!G15='2,471.9', T010!S19='1,926.4', T010!G19='580.1', T016!N14='15.6', T016!N24='(21.6)', Text!A131 contains the 21.6/31.7 overstatement language. All four files exist in /app/input_files/. No source assertion names a file, page, or table absent from the package.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Analysis!F2 and Analysis!F3 describe arithmetic revisions derived from input cells (cumulative errors from Text!A131, adjustments from T016!N14 and T016!N24). Results!D2 and D3 do the same. None of the candidate sheets contain any statement claiming that an external audit was completed, a real-time query was run, or an independent third-party verification was performed. No such completion claim exists anywhere in the workbook.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The only company operating facts stated in the workbook\\u2014FY 2024 policy benefits 2,471.9 (Results!D2 citing T050!G15), 9M 2024 1,926.4 (citing T010!S19), Q1 2025 580.1 (citing T010!G19), and the 21.6/31.7 cumulative embedded-derivative overstatement (citing Text!A131)\\u2014are each directly verifiable from the input files I read. No additional qualitative or operational business facts appear in Results, Analysis, or Summary sheets beyond these input-supported figures.\", \"score\": \"no\"}}"
     }
   ],
   "interface_gate": {

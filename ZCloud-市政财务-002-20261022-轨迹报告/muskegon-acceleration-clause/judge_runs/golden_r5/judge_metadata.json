@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "verifier_error": 0,
+  "judge_completed": true,
+  "source_run": "golden_r5",
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
+  "judge_model": "claude-sonnet-5-5",
+  "cost_usd": null,
+  "raw_source_run": "v5_sonnet/C_golden_r5_a1",
+  "new_llm_calls": 0,
+  "accepted_reward": 1.0,
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+  "timing_note": "Batch ledger has unzoned completion times; no per-run start time or request cost is asserted."
+}

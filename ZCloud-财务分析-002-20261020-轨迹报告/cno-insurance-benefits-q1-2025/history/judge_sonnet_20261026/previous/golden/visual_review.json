@@ -1,0 +1,40 @@
+{
+  "format": "xlsx",
+  "reviewed_at": "2026-10-25",
+  "renderer": "LibreOffice 26.2.5.2 / calc_pdf_Export + pdftoppm",
+  "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+  "scope": "三张工作表分别导出A3横向单页PDF与110dpi PNG。逐张核对：标题、标签、固定精度、Results D2/D3全部来源和修订推导、Analysis支持计算均完整可见，无截断。仅在临时渲染副本保留目标表，未改动参考答案内容。",
+  "worksheet_count": 3,
+  "render_count": 3,
+  "renders": [
+    {
+      "sheet": "Results",
+      "pdf": "renders/sheet-01.pdf",
+      "png": "renders/sheet-01.png"
+    },
+    {
+      "sheet": "Analysis",
+      "pdf": "renders/sheet-02.pdf",
+      "png": "renders/sheet-02.png"
+    },
+    {
+      "sheet": "Summary",
+      "pdf": "renders/sheet-03.pdf",
+      "png": "renders/sheet-03.png"
+    }
+  ],
+  "render_status": "COMPLETED",
+  "visual_inspection_status": "COMPLETED",
+  "visual_findings": [],
+  "historical_scores_changed": true,
+  "ppt_checks": {
+    "status": "NOT_APPLICABLE",
+    "reason": "xlsx工作表不是幻灯片；不检查PPT页数、母版或放映。"
+  },
+  "inspection_method": "逐张查看本次Results、Analysis、Summary的原尺寸PNG，并用PDF文本核对专属表头；未执行新文字裁判。",
+  "inspection_coverage": [
+    "Results",
+    "Analysis",
+    "Summary"
+  ]
+}

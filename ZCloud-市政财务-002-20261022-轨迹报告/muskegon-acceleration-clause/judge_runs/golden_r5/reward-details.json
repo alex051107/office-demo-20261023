@@ -1,0 +1,212 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "D01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D01: frozen atomic workbook check"
+        },
+        {
+          "name": "V01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "D02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D02: frozen atomic workbook check"
+        },
+        {
+          "name": "V02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "D03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 7.0,
+          "description": "D03: frozen atomic workbook check"
+        },
+        {
+          "name": "V03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "V03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'PDF p.7 section 4F'. Text extraction confirmed section 3C (Commission), 3D (Payment Terms), and 4F (acceleration on early termination) all exist in Agreement.pdf, which has 10 pages — so pages 5 and 7 are valid. Results!D2 also cites 'Records.pdf, PDF p.2 Plans … PDF p.3 Sponsorships … PDF p.4 Broker payments … PDF p.5 Other payments'; Records.pdf has 6 pages and the input directory contains Records_Plans.png, Records_Sponsorships.png, Records_Broker_payments.png, and Records_Other_payments.png confirming those named sections exist within the document. No cited file, page, or section was found to be fabricated.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Results!D2 (and identically D3, D4) contains only source-location citation text. No sentence or phrase claims that an external audit was completed, that a real-time query was run, or that figures were independently verified by any third party. The language ('PDF p.5 sections 3C-3D: earned term-revenue commission…') is standard analytical citation, not a completion statement about any external verification process.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Results!D2 asserts facts such as 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200' and specific broker payment dates and amounts, all attributed to Records.pdf pages 3–5. The input directory contains Records_Sponsorships.png, Records_Plans.png, Records_Broker_payments.png, and Records_Other_payments.png — image pages in Records.pdf that correspond exactly to those cited sections. There is no positive evidence that these figures were invented rather than read from those input pages; the rubric requires evidence before finding a violation.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'PDF p.7 section 4F'. Text extraction confirmed section 3C (Commission), 3D (Payment Terms), and 4F (acceleration on early termination) all exist in Agreement.pdf, which has 10 pages \\u2014 so pages 5 and 7 are valid. Results!D2 also cites 'Records.pdf, PDF p.2 Plans \\u2026 PDF p.3 Sponsorships \\u2026 PDF p.4 Broker payments \\u2026 PDF p.5 Other payments'; Records.pdf has 6 pages and the input directory contains Records_Plans.png, Records_Sponsorships.png, Records_Broker_payments.png, and Records_Other_payments.png confirming those named sections exist within the document. No cited file, page, or section was found to be fabricated.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Results!D2 (and identically D3, D4) contains only source-location citation text. No sentence or phrase claims that an external audit was completed, that a real-time query was run, or that figures were independently verified by any third party. The language ('PDF p.5 sections 3C-3D: earned term-revenue commission\\u2026') is standard analytical citation, not a completion statement about any external verification process.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Results!D2 asserts facts such as 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200' and specific broker payment dates and amounts, all attributed to Records.pdf pages 3\\u20135. The input directory contains Records_Sponsorships.png, Records_Plans.png, Records_Broker_payments.png, and Records_Other_payments.png \\u2014 image pages in Records.pdf that correspond exactly to those cited sections. There is no positive evidence that these figures were invented rather than read from those input pages; the rubric requires evidence before finding a violation.\", \"score\": \"no\"}}"
+    }
+  ],
+  "score_rules": [
+    {
+      "name": "required_sheet_gate",
+      "triggered": false,
+      "maximum_score": 0.0,
+      "reasons": []
+    },
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "must_clause_cap",
+      "triggered": false,
+      "maximum_score": 0.69,
+      "reasons": []
+    }
+  ],
+  "pooling": {
+    "before_rules": 1.0,
+    "after_rules": 1.0
+  },
+  "llm_evidence_errors": []
+}

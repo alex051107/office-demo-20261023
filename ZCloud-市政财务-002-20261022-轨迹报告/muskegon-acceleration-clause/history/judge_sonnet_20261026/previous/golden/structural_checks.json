@@ -1,0 +1,31 @@
+{
+  "format": "xlsx",
+  "check_type": "current_offline_export_inspection",
+  "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Detail",
+      "state": "visible",
+      "rows": 4,
+      "columns": 3,
+      "nonempty_cells": 12,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 2,
+  "historical_score": 1.0,
+  "programmatic_score": 1.0,
+  "not_a_new_judgement": true,
+  "scoring_revision": "评分器 v2（2026-10-26）"
+}

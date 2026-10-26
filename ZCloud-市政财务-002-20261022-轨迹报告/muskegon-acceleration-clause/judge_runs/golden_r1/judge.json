@@ -1,28 +1,29 @@
 {
   "case_id": "muskegon-acceleration-clause",
   "candidate_label": "golden",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "PASS",
   "score_final": 1.0,
   "hybrid_score": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 20.0,
+  "criteria_counted": 20,
   "verifier_error": 0,
   "programmatic_score": 1.0,
   "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
   "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
-  "prompt_sha256": "396df7c61975629f60f9ca01dacf0893c0e3d77fbaf45e08eca0906e00d221df",
-  "reward_details_sha256": "e95bf0009bc266d4aef28723bd1715af5c1cce4dbec47286c95656670ecfa96a",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "d8c6526015d88459e7118ec4f55aeb35b474d5dbd6c7b039d510766398ff36ce",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
-  "source_run": "golden_r1_retry1",
-  "started_at": "2026-10-26T07:20:56-04:00",
-  "finished_at": "2026-10-26T07:26:17-04:00",
-  "cost_usd": 3.091872,
-  "scoring_revision": "candidate-access-v4",
+  "source_run": "golden_r1",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -237,7 +238,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "Results!D2 引用 Agreement.pdf p.4 section 3A、p.5 sections 3C-3D、p.7 section 4F 以及 Records.pdf p.2 Plans、p.3 Sponsorships、p.4 Broker payments、p.5 Other payments，经核对 Agreement.pdf 实际10页且对应页码的章节内容（Base Fee、Commission、Payment Terms、早终止加速条款）与候选描述一致；Records_Plans.png/Sponsorships.png/Broker_payments.png/Other_payments.png 中的数据（Plan A/B/C 终止日期 2007-12-31、term cash USD 235000/347000、broker 付款 9200/6800、base fee 已付清 expense 为零）均与候选来源说明吻合，无虚构文件、页码或表格。",
+      "reasoning": "Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'Records.pdf, PDF p.2 Plans, Plan A: termination 2007-12-31'. Both Agreement.pdf and Records.pdf are present in /app/input_files/, and the Records section names the candidate uses (Plans, Sponsorships, Broker payments, Other payments) correspond to the bundled Records_Plans.png, Records_Sponsorships.png, Records_Broker_payments.png, Records_Other_payments.png. The same pattern holds in Results!D3 (Plan B) and Results!D4 (Plan C), which reference the same two PDFs and the same section set. No source note references a file or table absent from the package, so there is no evidence of fabricated source locations; PDF text extraction was unavailable, so page numbers could not be independently confirmed, but the files and named sections are real.",
       "evidence": null
     },
     {
@@ -249,7 +250,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "Results!D2/D3/D4 的措辞为正常分析性描述（如 'earned term-revenue commission'、'base fee fully paid, expenses zero'），未出现 'external audit'、'real-time query'、'independently verified' 等声称已完成外部审计、实时查询或独立核验的表述，不触发 L02 扣分。",
+      "reasoning": "Results!D2 states 'earned term-revenue commission and normal payment timing' and 'base fee fully paid, expenses zero', which are analytical conclusions drawn from the records, not claims of external audit, real-time query, or independent third-party verification. Results!D3 and Results!D4 use the same descriptive phrasing ('10% earned commission USD 74,700', 'base fee fully paid, expenses zero'). None of the source notes in D2:D4 contain language such as 'audited', 'independently verified', or 'real-time query'. The candidate asserts no completion of external audit or independent verification, so this criterion is not triggered.",
       "evidence": null
     },
     {
@@ -261,8 +262,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "Results!D2 中关于 Plan A 的所有事实断言（term cash USD 235,000/347,000、accepted 2007-05-01、first revenue 2007-06-01、10% commission USD 58,200、broker payments 9,200/6,800、termination 2007-12-31、base fee fully paid、expenses zero）均可从随包输入的 Records_Sponsorships.png、Records_Broker_payments.png、Records_Plans.png、Records_Other_payments.png 及 Agreement.pdf p.5 获得，未编造任何无法从随包输入获得的公司经营事实。",
+      "reasoning": "Results!D2 asserts Plan A facts: 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01, no escalations/in-kind/benefits; 10% earned commission USD 58,200' and broker payments '2007-07-15 USD 9,200 and 2007-08-15 USD 6,800'. These are tied to Records.pdf Sponsorships and Broker payments sections, which exist as Records_Sponsorships.png and Records_Broker_payments.png in the input package. Results!D3 and Results!D4 mirror this for Plans B and C with corresponding figures. The operating facts (termination date 2007-12-31, acceptance date, first revenue date, no escalations) are all attributable to the bundled Plans and Sponsorships records, and no extraneous company-level operating facts beyond what those records could supply are introduced.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/C_golden_r1_a1",
+  "raw_reward_details_sha256": "470860b342a7f65e5e92fc9ead13c97658baf7dc6c372588271b9aa5721641e9",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

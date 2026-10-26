@@ -130,3 +130,5 @@ Oracle 入口为 `bash /solution/solve.sh`，验收入口为 `bash /tests/test.s
 - 开发阶段的另一套评分规则含部分分，给 Qwen 3.8 Max 0.16 分；本包统一使用 Office 裁判分。
 
 - 2026-10-26 重判：`rejudge_v4_20261026/previous/`保留替换前记录；轨迹报告同组`invalid_attempts/`保留无效尝试；有效金标3/5，无效尝试4次，不计分；费用13.137896美元。
+
+- judge model changed from qwen3.7-plus to claude-sonnet-5-5 on 2026-10-26: qwen often answered without opening the workbook; Sonnet read it in 16/16 runs

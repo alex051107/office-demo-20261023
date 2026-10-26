@@ -1,0 +1,413 @@
+{
+  "case_id": "cno-insurance-benefits-q1-2025",
+  "threshold": 0.05,
+  "comparison": "strictly less than",
+  "primary_statistic": "sample standard deviation (ddof=1)",
+  "groups": [
+    {
+      "candidate_label": "golden",
+      "run_ids": [
+        "golden_r1",
+        "golden_r2",
+        "golden_r3"
+      ],
+      "source_runs": [
+        "golden_r2",
+        "golden_r3",
+        "golden_r4"
+      ],
+      "n": 3,
+      "required_runs": 5,
+      "total_score": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "n": 3,
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "stddev_sample": 0.0,
+        "stddev_population": 0.0,
+        "pass_stddev_lt_0_05": true
+      },
+      "criteria": [
+        {
+          "criterion_id": "R01",
+          "weight": 10,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 3,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "R02",
+          "weight": 10,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 3,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "A1",
+          "weight": 7,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 3,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "A2",
+          "weight": 7,
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n": 3,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "P2",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SD1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SD2",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F2",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "F3",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "X1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "X2",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L01",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L02",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "L03",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S01",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "S02",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "SP1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "O01",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "U01",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "DP1",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        },
+        {
+          "criterion_id": "DP2",
+          "weight": -3,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n": 3,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "stddev_sample": 0.0,
+          "stddev_population": 0.0,
+          "pass_stddev_lt_0_05": true
+        }
+      ],
+      "failed_criteria": [],
+      "requirement_met": false
+    }
+  ],
+  "status": "INSUFFICIENT_VALID_RUNS",
+  "scoring_revision": "candidate-access-v4",
+  "invalid_attempts_excluded": true,
+  "required_valid_runs": 5
+}

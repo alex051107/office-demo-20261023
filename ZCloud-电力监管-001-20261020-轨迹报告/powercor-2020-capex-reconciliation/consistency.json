@@ -8,20 +8,30 @@
       "candidate_label": "golden",
       "run_ids": [
         "golden_r1",
-        "golden_r2"
+        "golden_r2",
+        "golden_r3",
+        "golden_r4",
+        "golden_r5"
       ],
       "source_runs": [
-        "golden_r3",
-        "golden_r4"
+        "model_trial/claude-sonnet-5-5",
+        "v5_sonnet/A_golden_r2_a1",
+        "v5_sonnet/A_golden_r3_a1",
+        "v5_sonnet/A_golden_r4_a1",
+        "v5_sonnet/A_golden_r5_a1"
       ],
-      "n": 2,
+      "judge_model": "claude-sonnet-5-5",
+      "n": 5,
       "required_runs": 5,
       "total_score": {
         "values": [
           1.0,
+          1.0,
+          1.0,
+          1.0,
           1.0
         ],
-        "n": 2,
+        "n": 5,
         "mean": 1.0,
         "min": 1.0,
         "max": 1.0,
@@ -35,9 +45,12 @@
           "weight": 10,
           "values": [
             1.0,
+            1.0,
+            1.0,
+            1.0,
             1.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 1.0,
           "min": 1.0,
           "max": 1.0,
@@ -50,9 +63,12 @@
           "weight": 10,
           "values": [
             1.0,
+            1.0,
+            1.0,
+            1.0,
             1.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 1.0,
           "min": 1.0,
           "max": 1.0,
@@ -65,9 +81,12 @@
           "weight": 10,
           "values": [
             1.0,
+            1.0,
+            1.0,
+            1.0,
             1.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 1.0,
           "min": 1.0,
           "max": 1.0,
@@ -80,9 +99,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -95,9 +117,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -110,9 +135,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -125,9 +153,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -140,9 +171,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -155,9 +189,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -170,9 +207,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -185,9 +225,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -200,9 +243,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -215,9 +261,12 @@
           "weight": -3,
           "values": [
             0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0
           ],
-          "n": 2,
+          "n": 5,
           "mean": 0.0,
           "min": 0.0,
           "max": 0.0,
@@ -227,11 +276,12 @@
         }
       ],
       "failed_criteria": [],
-      "requirement_met": false
+      "requirement_met": true
     }
   ],
-  "status": "INSUFFICIENT_VALID_RUNS",
-  "scoring_revision": "candidate-access-v4",
+  "status": "PASS",
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
+  "judge_model": "claude-sonnet-5-5",
   "invalid_attempts_excluded": true,
   "required_valid_runs": 5
 }

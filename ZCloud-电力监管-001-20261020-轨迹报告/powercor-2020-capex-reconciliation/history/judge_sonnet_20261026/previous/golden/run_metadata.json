@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "accepted_reward": 1.0,
+  "verifier_error": 0,
+  "judge_completed": true,
+  "source_run": "golden_r3",
+  "scoring_revision": "candidate-access-v4",
+  "started_at": "2026-10-26T06:18:51-04:00",
+  "finished_at": "2026-10-26T06:31:43-04:00",
+  "cost_usd": 3.752326,
+  "new_judge_calls": 6,
+  "fresh_valid_runs": 2,
+  "valid_runs": 2,
+  "consistency_requirement_met": false,
+  "total_sigma_sample": 0.0,
+  "aggregate_status": "INSUFFICIENT_VALID_RUNS"
+}

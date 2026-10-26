@@ -1,0 +1,97 @@
+{
+  "model_id": "gpt-5.6-sol",
+  "agent_lane": "codex",
+  "status": "SESSION_EXITED_OK",
+  "returncode": 0,
+  "started": "2026-10-20T12:35:46+00:00",
+  "ended": "2026-10-20T12:50:48+00:00",
+  "minutes": 15.02,
+  "returned_model_counts": {
+    "gpt-5.6-sol": 17
+  },
+  "total_requests": 17,
+  "substitute_requests": 0,
+  "harness": "Codex CLI",
+  "harness_difference_note": "Sol使用Codex CLI；Opus使用Claude Code。导出JSONL将非JSON诊断另存export_diagnostics.json，历史原件保留在归档；未添加求解事件。",
+  "terminal_event": {
+    "type": "turn.completed",
+    "usage": {
+      "input_tokens": 770354,
+      "cached_input_tokens": 719232,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8368,
+      "reasoning_output_tokens": 3685
+    }
+  },
+  "event_count": 41,
+  "non_json_lines": [],
+  "trajectory_format": "codex-cli-jsonl-diagnostics-separated",
+  "source_log_sha256": "57a5cac6aa1f4367228a68731913a75440fc38653a43ee90e0e71e1067dd4aea",
+  "exported_log_sha256": "7cbbfbee44755e50f65e1f53dcdf9a437925f864220863e690d9739ffbc2bd16",
+  "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+  "source_candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+  "redaction_matches": {
+    "path_replacement": 0,
+    "internal_identifier_replacement": 0,
+    "secret_value_redaction": 0
+  },
+  "original_terminal_preserved": true,
+  "path_placeholders": [
+    "<RUN_ROOT>",
+    "<CASE_ROOT>",
+    "<HOME>",
+    "<HOST_PATH>"
+  ],
+  "evaluation": {
+    "judge": "judge.json",
+    "reward": 0.205882,
+    "judge_model": "qwen3.7-plus",
+    "criteria_counted": 23.0,
+    "status": "VALID_REJUDGED",
+    "source_run": "gpt-5.6-sol_r1",
+    "scoring_revision": "candidate-access-v4"
+  },
+  "candidate_label": "gpt-5.6-sol",
+  "judge_model": "qwen3.7-plus",
+  "current_export_rubric_sha256": "19b9c304101304f293a00ed1dff8962239772c49b08c7f253734e7664faa4433",
+  "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
+  "score_preserved": false,
+  "this_export_paid_calls": 1,
+  "historical_prompt_available": false,
+  "historical_provider_response_available": false,
+  "missing_artifacts": [
+    "历史完整judge请求",
+    "上游原始judge响应",
+    "container_boundary.json",
+    "execution_verification.json",
+    "gateway_config.json",
+    "trajectory/provider_requests.jsonl",
+    "分段请求原件、额外检查笔记及错误尝试原件未留存"
+  ],
+  "searched_sources": [
+    "既有rollout目录",
+    "既有_judge_runs的reward-details及graded目录",
+    "既有_history归档"
+  ],
+  "evidence_note": "历史求解证据及其缺失项不变；本轮只替换裁判回执，未重新求解或修改答卷。完整逐条裁判内容见reward-details.json，provider_response.json保留该回执中的agent块，不代表完整网络请求日志。",
+  "jsonl_normalization": {
+    "non_json_lines_separated": 1,
+    "original_preserved_in_history": true,
+    "historical_solver_events_added": false
+  },
+  "historical_non_json_line_numbers": [
+    1
+  ],
+  "judge_completed": true,
+  "current_judge_prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
+  "current_judge_rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
+  "rejudge_v4": {
+    "completed_valid": true,
+    "attempts": [
+      "gpt-5.6-sol_r1"
+    ],
+    "accepted_reward": 0.205882,
+    "retained_historical_reward": null,
+    "invalid_attempts": "history/rejudge_v4_20261026/invalid_attempts"
+  }
+}

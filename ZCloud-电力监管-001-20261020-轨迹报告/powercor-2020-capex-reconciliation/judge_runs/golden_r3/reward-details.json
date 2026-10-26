@@ -1,0 +1,147 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "The candidate's source notes in Results!D2 cite 'Powercor_RFM_inputs.xlsx, RFM input!F61:F62, F64, F115:F116, F118, F169:F170, F172, L7:L8, L10' and 'Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20'. Both files exist in the bundled inputs. The PDF extraction confirmed that section 2.4.1 titled 'Nominal adjustments for difference between actual and forecast net capex in final year' is indeed on p.27 of Distribution_handbook.pdf, and footnote 19 is cited in the same extracted body text, making footnote 20 on the same page plausible and not demonstrably fabricated. The RFM input cell references (e.g. F61, L7, F282, F284, F287) were verified to exist in Powercor_RFM_inputs.xlsx with real values. No fictitious file, page number, or table was found.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Working!A18 through A21 contain only methodological descriptions ('Actual net capex = gross capex - asset disposals - capital contributions', formula derivations, and scope notes). Results!D2–D4 and Working!F2–F15 contain only source citations to the bundled input files. No cell in the candidate workbook claims that an external audit was completed, a real-time data query was performed, or an independent verification was conducted. The language is purely analytical and descriptive.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Working!A20 states 'All 12 named asset classes are included in the total, including Land. Land contributes -1.000822151768884'. This figure is directly derivable from the input: Powercor_RFM_inputs.xlsx 'RFM input' row 14 (verified: L14 = 1.000822151768884) and the year-end factor calculation. Asset class names in Working!A2–A13 (e.g. 'Subtransmission', 'Land') match the labels in the RFM input sheet (row 7 = 'Subtransmission', row 14 = 'Land'). No new operational fact about Powercor's business was asserted beyond what is calculable from the bundled inputs.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"The candidate's source notes in Results!D2 cite 'Powercor_RFM_inputs.xlsx, RFM input!F61:F62, F64, F115:F116, F118, F169:F170, F172, L7:L8, L10' and 'Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20'. Both files exist in the bundled inputs. The PDF extraction confirmed that section 2.4.1 titled 'Nominal adjustments for difference between actual and forecast net capex in final year' is indeed on p.27 of Distribution_handbook.pdf, and footnote 19 is cited in the same extracted body text, making footnote 20 on the same page plausible and not demonstrably fabricated. The RFM input cell references (e.g. F61, L7, F282, F284, F287) were verified to exist in Powercor_RFM_inputs.xlsx with real values. No fictitious file, page number, or table was found.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Working!A18 through A21 contain only methodological descriptions ('Actual net capex = gross capex - asset disposals - capital contributions', formula derivations, and scope notes). Results!D2\\u2013D4 and Working!F2\\u2013F15 contain only source citations to the bundled input files. No cell in the candidate workbook claims that an external audit was completed, a real-time data query was performed, or an independent verification was conducted. The language is purely analytical and descriptive.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Working!A20 states 'All 12 named asset classes are included in the total, including Land. Land contributes -1.000822151768884'. This figure is directly derivable from the input: Powercor_RFM_inputs.xlsx 'RFM input' row 14 (verified: L14 = 1.000822151768884) and the year-end factor calculation. Asset class names in Working!A2\\u2013A13 (e.g. 'Subtransmission', 'Land') match the labels in the RFM input sheet (row 7 = 'Subtransmission', row 14 = 'Land'). No new operational fact about Powercor's business was asserted beyond what is calculable from the bundled inputs.\", \"score\": \"no\"}}"
+    }
+  ],
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "llm_evidence_errors": []
+}

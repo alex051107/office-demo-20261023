@@ -72,7 +72,7 @@ user = "root"
 
 [verifier.env]
 LITELLM_DROP_PARAMS = "${LITELLM_DROP_PARAMS:-true}"
-JUDGE_MODEL = "${JUDGE_MODEL:-qwen3.7-plus}"
+JUDGE_MODEL = "${JUDGE_MODEL:-claude-sonnet-5-5}"
 JUDGE_PROVIDER = "${JUDGE_PROVIDER:-anthropic}"
 JUDGE_API_PROTOCOL = "${JUDGE_API_PROTOCOL:-anthropic}"
 JUDGE_API_KEY = "${JUDGE_API_KEY}"

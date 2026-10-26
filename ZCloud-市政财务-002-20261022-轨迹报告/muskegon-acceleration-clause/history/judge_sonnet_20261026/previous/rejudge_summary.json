@@ -1,0 +1,62 @@
+{
+  "revision": "candidate-access-v4",
+  "task": "C",
+  "status": "INSUFFICIENT_VALID_RUNS",
+  "required_valid_runs": 5,
+  "valid_runs": 4,
+  "attempted_runs": 6,
+  "golden_attempted_runs": 6,
+  "representative": "golden_r1_retry1",
+  "old_provisional_score": 1.0,
+  "previous_current_score": null,
+  "new_score": 1.0,
+  "programmatic_score": 1.0,
+  "total_sigma_sample": 0.0,
+  "total_sigma_population": 0.0,
+  "criterion_sigma_sample": {
+    "R01": 0.0,
+    "R02": 0.0,
+    "R03": 0.0,
+    "D01": 0.0,
+    "V01": 0.0,
+    "D02": 0.0,
+    "V02": 0.0,
+    "D03": 0.0,
+    "V03": 0.0,
+    "S01": 0.0,
+    "S02": 0.0,
+    "S03": 0.0,
+    "P01": 0.0,
+    "P02": 0.0,
+    "S04": 0.0,
+    "S05": 0.0,
+    "S06": 0.0,
+    "L01": 0.0,
+    "L02": 0.0,
+    "L03": 0.0
+  },
+  "consistency_requirement_met": false,
+  "total_cost_usd": 12.692242,
+  "stop_reason": null,
+  "old_model_scores": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "new_model_scores": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.0,
+    "qwen3.8-max": 0.0
+  },
+  "model_rejudge_completed": false,
+  "history": "rejudge_v4_20261026",
+  "invalid_attempts_count": 2,
+  "accounting_final_pending": false,
+  "cost_limit_exceeded_runs": [],
+  "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+  "limits": {
+    "single_run_usd": 3.5,
+    "account_usd": 1675,
+    "run_seconds": 1200
+  }
+}

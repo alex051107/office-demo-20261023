@@ -2,28 +2,29 @@
   "current_representative": {
     "case_id": "powercor-2020-capex-reconciliation",
     "candidate_label": "golden",
-    "judge_model": "qwen3.7-plus",
+    "judge_model": "claude-sonnet-5-5",
     "status": "PASS",
     "score_final": 1.0,
     "hybrid_score": 1.0,
     "reward": 1.0,
     "graded_score": 1.0,
-    "criteria_counted": 13.0,
+    "criteria_counted": 13,
     "verifier_error": 0,
-    "programmatic_score": 1,
+    "programmatic_score": 1.0,
     "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
     "rubric_sha256": "31faf410f96f2ee63645abfbc0f6eefa5668ba3b4b510e90a94186432694fd3b",
-    "prompt_sha256": "396df7c61975629f60f9ca01dacf0893c0e3d77fbaf45e08eca0906e00d221df",
-    "reward_details_sha256": "7655e9ced5b0ac7811c24dfe1fe14c764c8cebe3c86ba3d2c0334ff475d7bd25",
+    "prompt_sha256": null,
+    "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+    "reward_details_sha256": "61aa1fb654c8de888359158c711086b228e4a724453e500bcabc82777f73c9ca",
     "judge_completed": true,
     "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
     "judgment_available": true,
     "provisional": false,
-    "source_run": "golden_r4",
-    "started_at": "2026-10-26T06:31:43-04:00",
-    "finished_at": "2026-10-26T06:37:57-04:00",
-    "cost_usd": 1.795662,
-    "scoring_revision": "candidate-access-v4",
+    "source_run": "golden_r2",
+    "started_at": null,
+    "finished_at": null,
+    "cost_usd": null,
+    "scoring_revision": "sonnet-saved-results-v5-20261026",
     "criteria": [
       {
         "criterion_id": "R01",
@@ -154,7 +155,7 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-        "reasoning": "候选 Results!D2-D4 和 Working!F2-F13 的 source_note 列引用的来源文件（Powercor_RFM_inputs.xlsx 和 Distribution_handbook.pdf）均真实存在于 /app/input_files/ 目录中，未虚构文件、页码或表格。",
+        "reasoning": "I opened the candidate workbook. Results!D2 cites Powercor_RFM_inputs.xlsx 'RFM input'!F61:F62, L7:L8 and Distribution_handbook.pdf p. 27, section 2.4.1 and footnote 20. Both input files exist. In the input workbook, 'RFM input'!F7 is 'Subtransmission', L7 is 3.43 and F60 is 2020. The PDF's page 27 text contains section 2.4.1 and footnotes 19 and 20, which cover the half-year WACC gross-up and the nominal vanilla WACC. Working!F2 and Working!F15 cite the same locations, which are real. No invented file, page or table was found.",
         "evidence": null
       },
       {
@@ -166,7 +167,7 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-        "reasoning": "候选工作簿中未见声称已完成外部审计、实时查询或独立核验的陈述。Results!D2-D4 和 Working!F2-F13 的 source_note 仅引用输入文件和政策文档页码，属于正常分析措辞。",
+        "reasoning": "Results!D4 and Working!A18:A21 only describe the calculation and the sources used. Nothing in the workbook claims an external audit, a live lookup or independent verification. For example, Working!A21 only describes the output layout. No completion claim is made, so there is nothing unsupported.",
         "evidence": null
       },
       {
@@ -178,10 +179,14 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-        "reasoning": "候选 Working!A18-A22 的说明性文字仅描述计算方法和范围（如 'Actual net capex = gross capex - asset disposals - capital contributions'），未编造无法从随包输入获得的公司经营事实。",
+        "reasoning": "The explanatory text, such as Working!A20 ('All 12 named asset classes are included... Land contributes -1.000822...') and Working!A19, describes the method and the input data only. Land's forecast of 1.0008 matches 'RFM input'!L14 in the input workbook. The text adds no company operating facts that the inputs do not support.",
         "evidence": null
       }
-    ]
+    ],
+    "raw_source_run": "v5_sonnet/A_golden_r2_a1",
+    "raw_reward_details_sha256": "0ec9a9637c358e64f652052937a952eeb1fe8152912a245c0c677e8b1282e16a",
+    "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+    "new_llm_calls": 0
   },
   "raw_agent_blocks": [
     {
@@ -194,7 +199,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "候选 Results!D2-D4 和 Working!F2-F13 的 source_note 列引用的来源文件（Powercor_RFM_inputs.xlsx 和 Distribution_handbook.pdf）均真实存在于 /app/input_files/ 目录中，未虚构文件、页码或表格。",
+          "reasoning": "I opened the candidate workbook. Results!D2 cites Powercor_RFM_inputs.xlsx 'RFM input'!F61:F62, L7:L8 and Distribution_handbook.pdf p. 27, section 2.4.1 and footnote 20. Both input files exist. In the input workbook, 'RFM input'!F7 is 'Subtransmission', L7 is 3.43 and F60 is 2020. The PDF's page 27 text contains section 2.4.1 and footnotes 19 and 20, which cover the half-year WACC gross-up and the nominal vanilla WACC. Working!F2 and Working!F15 cite the same locations, which are real. No invented file, page or table was found.",
           "negate": true
         },
         {
@@ -204,7 +209,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "候选工作簿中未见声称已完成外部审计、实时查询或独立核验的陈述。Results!D2-D4 和 Working!F2-F13 的 source_note 仅引用输入文件和政策文档页码，属于正常分析措辞。",
+          "reasoning": "Results!D4 and Working!A18:A21 only describe the calculation and the sources used. Nothing in the workbook claims an external audit, a live lookup or independent verification. For example, Working!A21 only describes the output layout. No completion claim is made, so there is nothing unsupported.",
           "negate": true
         },
         {
@@ -214,14 +219,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "候选 Working!A18-A22 的说明性文字仅描述计算方法和范围（如 'Actual net capex = gross capex - asset disposals - capital contributions'），未编造无法从随包输入获得的公司经营事实。",
+          "reasoning": "The explanatory text, such as Working!A20 ('All 12 named asset classes are included... Land contributes -1.000822...') and Working!A19, describes the method and the input data only. Land's forecast of 1.0008 matches 'RFM input'!L14 in the input workbook. The text adds no company operating facts that the inputs do not support.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -229,8 +234,11 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009 Results!D2-D4 \\u548c Working!F2-F13 \\u7684 source_note \\u5217\\u5f15\\u7528\\u7684\\u6765\\u6e90\\u6587\\u4ef6\\uff08Powercor_RFM_inputs.xlsx \\u548c Distribution_handbook.pdf\\uff09\\u5747\\u771f\\u5b9e\\u5b58\\u5728\\u4e8e /app/input_files/ \\u76ee\\u5f55\\u4e2d\\uff0c\\u672a\\u865a\\u6784\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u4e2d\\u672a\\u89c1\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u9648\\u8ff0\\u3002Results!D2-D4 \\u548c Working!F2-F13 \\u7684 source_note \\u4ec5\\u5f15\\u7528\\u8f93\\u5165\\u6587\\u4ef6\\u548c\\u653f\\u7b56\\u6587\\u6863\\u9875\\u7801\\uff0c\\u5c5e\\u4e8e\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009 Working!A18-A22 \\u7684\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\u4ec5\\u63cf\\u8ff0\\u8ba1\\u7b97\\u65b9\\u6cd5\\u548c\\u8303\\u56f4\\uff08\\u5982 'Actual net capex = gross capex - asset disposals - capital contributions'\\uff09\\uff0c\\u672a\\u7f16\\u9020\\u65e0\\u6cd5\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"I opened the candidate workbook. Results!D2 cites Powercor_RFM_inputs.xlsx 'RFM input'!F61:F62, L7:L8 and Distribution_handbook.pdf p. 27, section 2.4.1 and footnote 20. Both input files exist. In the input workbook, 'RFM input'!F7 is 'Subtransmission', L7 is 3.43 and F60 is 2020. The PDF's page 27 text contains section 2.4.1 and footnotes 19 and 20, which cover the half-year WACC gross-up and the nominal vanilla WACC. Working!F2 and Working!F15 cite the same locations, which are real. No invented file, page or table was found.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D4 and Working!A18:A21 only describe the calculation and the sources used. Nothing in the workbook claims an external audit, a live lookup or independent verification. For example, Working!A21 only describes the output layout. No completion claim is made, so there is nothing unsupported.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"The explanatory text, such as Working!A20 ('All 12 named asset classes are included... Land contributes -1.000822...') and Working!A19, describes the method and the input data only. Land's forecast of 1.0008 matches 'RFM input'!L14 in the input workbook. The text adds no company operating facts that the inputs do not support.\"}}"
     }
   ],
-  "evidence": "reward-details.json"
+  "evidence": {
+    "sdk_reward_details": "reward-details.json"
+  },
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved."
 }

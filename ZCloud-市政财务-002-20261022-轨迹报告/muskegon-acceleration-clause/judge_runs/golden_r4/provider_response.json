@@ -2,28 +2,29 @@
   "current_representative": {
     "case_id": "muskegon-acceleration-clause",
     "candidate_label": "golden",
-    "judge_model": "qwen3.7-plus",
+    "judge_model": "claude-sonnet-5-5",
     "status": "PASS",
     "score_final": 1.0,
     "hybrid_score": 1.0,
     "reward": 1.0,
     "graded_score": 1.0,
-    "criteria_counted": 20.0,
+    "criteria_counted": 20,
     "verifier_error": 0,
     "programmatic_score": 1.0,
     "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
     "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
-    "prompt_sha256": "396df7c61975629f60f9ca01dacf0893c0e3d77fbaf45e08eca0906e00d221df",
-    "reward_details_sha256": "f105bad05d1f4cffe684ca54164407ce8f0d3e6a2839e33d06187b7e87c082a3",
+    "prompt_sha256": null,
+    "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+    "reward_details_sha256": "57a949c7c393f02bfdd6749f67a7d82ac666b8b21efc0f407bacb642f3672148",
     "judge_completed": true,
     "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
     "judgment_available": true,
     "provisional": false,
-    "source_run": "golden_r5",
-    "started_at": "2026-10-26T08:05:27-04:00",
-    "finished_at": "2026-10-26T08:16:55-04:00",
-    "cost_usd": 1.20041,
-    "scoring_revision": "candidate-access-v4",
+    "source_run": "golden_r4",
+    "started_at": null,
+    "finished_at": null,
+    "cost_usd": null,
+    "scoring_revision": "sonnet-saved-results-v5-20261026",
     "criteria": [
       {
         "criterion_id": "R01",
@@ -238,7 +239,7 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-        "reasoning": "Results!D2 的 source_note 引用了 Agreement.pdf 和 Records.pdf 及其页码/章节，这两个文件均存在于 /app/input_files/ 中，未虚构文件名。来源定位基于真实存在的随包材料文件。",
+        "reasoning": "Results!D2 cites Agreement.pdf p.5 sections 3C-3D, p.7 section 4F, p.4 section 3A, and Records.pdf p.2 Plans, p.3 Sponsorships, p.4 Broker payments, p.5 Other payments. These locations match the inputs. In Agreement.pdf the memo takes two pages, so section 3A is on PDF p.4, 3C-3D on p.5, and 4F at the top of internal page 5 (PDF p.7). The Records tables exist as Plans, Sponsorships, Broker payments and Other payments. The records cited in D2 match the images: A1/A2 235,000 and 347,000; Plan A broker payments 9,200 and 6,800; fees of 5,000 for each of 2007-02 to 2007-05; expenses 0. D3 and D4 follow the same pattern with matching data (B 318,000/429,000 and 11,200/8,300; C 287,000/386,000 and 9,700/7,100). No cited file, page or table was invented. The Records.pdf page numbers could not be checked directly, but the order is plausible and consistent.",
         "evidence": null
       },
       {
@@ -250,7 +251,7 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-        "reasoning": "Results!D2 的 source_note 仅引用协议和记录的章节及数据，未出现'外部审计'、'实时查询'或'独立核验'等完成性声称，属于正常分析措辞。",
+        "reasoning": "The source notes in Results!D2, D3 and D4 and the cells in Detail!A1:C4 contain no claim of an external audit, live lookup or independent verification. They only cite the supplied Agreement.pdf and Records.pdf and show the arithmetic (for example Results!D2: 'USD 42,200 = 58,200 - 9,200 - 6,800'). That is ordinary analysis wording, not a completion claim.",
         "evidence": null
       },
       {
@@ -262,10 +263,14 @@
         "sdk_value": 1.0,
         "raw": "no",
         "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-        "reasoning": "Results!D2 的 source_note 中描述的佣金比例、付款金额、赞助收入等均是对 Agreement.pdf 和 Records.pdf 内容的引用和分析，未编造随包输入中不存在的经营事实。",
+        "reasoning": "The text in Results!D2 to D4 only restates facts found in the inputs. Examples are the 2007-12-31 termination date, the 2007-05-01 acceptance, the 2007-06-01 first revenue, the base fee fully paid and expenses of zero. These match Records_Plans, Records_Sponsorships and Records_Other_payments, plus the 10% commission and the 4F acceleration clause in Agreement.pdf. Detail!A2:C4 hold only plan, date and value. The candidate adds no company operating facts that the inputs do not support.",
         "evidence": null
       }
-    ]
+    ],
+    "raw_source_run": "v5_sonnet/C_golden_r4_a1",
+    "raw_reward_details_sha256": "c1f44be680509e728c5ab1e346f233fe5fc446a6153b90de5653b647a5056b52",
+    "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+    "new_llm_calls": 0
   },
   "raw_agent_blocks": [
     {
@@ -278,7 +283,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "Results!D2 的 source_note 引用了 Agreement.pdf 和 Records.pdf 及其页码/章节，这两个文件均存在于 /app/input_files/ 中，未虚构文件名。来源定位基于真实存在的随包材料文件。",
+          "reasoning": "Results!D2 cites Agreement.pdf p.5 sections 3C-3D, p.7 section 4F, p.4 section 3A, and Records.pdf p.2 Plans, p.3 Sponsorships, p.4 Broker payments, p.5 Other payments. These locations match the inputs. In Agreement.pdf the memo takes two pages, so section 3A is on PDF p.4, 3C-3D on p.5, and 4F at the top of internal page 5 (PDF p.7). The Records tables exist as Plans, Sponsorships, Broker payments and Other payments. The records cited in D2 match the images: A1/A2 235,000 and 347,000; Plan A broker payments 9,200 and 6,800; fees of 5,000 for each of 2007-02 to 2007-05; expenses 0. D3 and D4 follow the same pattern with matching data (B 318,000/429,000 and 11,200/8,300; C 287,000/386,000 and 9,700/7,100). No cited file, page or table was invented. The Records.pdf page numbers could not be checked directly, but the order is plausible and consistent.",
           "negate": true
         },
         {
@@ -288,7 +293,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "Results!D2 的 source_note 仅引用协议和记录的章节及数据，未出现'外部审计'、'实时查询'或'独立核验'等完成性声称，属于正常分析措辞。",
+          "reasoning": "The source notes in Results!D2, D3 and D4 and the cells in Detail!A1:C4 contain no claim of an external audit, live lookup or independent verification. They only cite the supplied Agreement.pdf and Records.pdf and show the arithmetic (for example Results!D2: 'USD 42,200 = 58,200 - 9,200 - 6,800'). That is ordinary analysis wording, not a completion claim.",
           "negate": true
         },
         {
@@ -298,14 +303,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "Results!D2 的 source_note 中描述的佣金比例、付款金额、赞助收入等均是对 Agreement.pdf 和 Records.pdf 内容的引用和分析，未编造随包输入中不存在的经营事实。",
+          "reasoning": "The text in Results!D2 to D4 only restates facts found in the inputs. Examples are the 2007-12-31 termination date, the 2007-05-01 acceptance, the 2007-06-01 first revenue, the base fee fully paid and expenses of zero. These match Records_Plans, Records_Sponsorships and Records_Other_payments, plus the 10% commission and the 4F acceleration clause in Agreement.pdf. Detail!A2:C4 hold only plan, date and value. The candidate adds no company operating facts that the inputs do not support.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -313,8 +318,11 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u5f15\\u7528\\u4e86 Agreement.pdf \\u548c Records.pdf \\u53ca\\u5176\\u9875\\u7801/\\u7ae0\\u8282\\uff0c\\u8fd9\\u4e24\\u4e2a\\u6587\\u4ef6\\u5747\\u5b58\\u5728\\u4e8e /app/input_files/ \\u4e2d\\uff0c\\u672a\\u865a\\u6784\\u6587\\u4ef6\\u540d\\u3002\\u6765\\u6e90\\u5b9a\\u4f4d\\u57fa\\u4e8e\\u771f\\u5b9e\\u5b58\\u5728\\u7684\\u968f\\u5305\\u6750\\u6599\\u6587\\u4ef6\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u4ec5\\u5f15\\u7528\\u534f\\u8bae\\u548c\\u8bb0\\u5f55\\u7684\\u7ae0\\u8282\\u53ca\\u6570\\u636e\\uff0c\\u672a\\u51fa\\u73b0'\\u5916\\u90e8\\u5ba1\\u8ba1'\\u3001'\\u5b9e\\u65f6\\u67e5\\u8be2'\\u6216'\\u72ec\\u7acb\\u6838\\u9a8c'\\u7b49\\u5b8c\\u6210\\u6027\\u58f0\\u79f0\\uff0c\\u5c5e\\u4e8e\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"Results!D2 \\u7684 source_note \\u4e2d\\u63cf\\u8ff0\\u7684\\u4f63\\u91d1\\u6bd4\\u4f8b\\u3001\\u4ed8\\u6b3e\\u91d1\\u989d\\u3001\\u8d5e\\u52a9\\u6536\\u5165\\u7b49\\u5747\\u662f\\u5bf9 Agreement.pdf \\u548c Records.pdf \\u5185\\u5bb9\\u7684\\u5f15\\u7528\\u548c\\u5206\\u6790\\uff0c\\u672a\\u7f16\\u9020\\u968f\\u5305\\u8f93\\u5165\\u4e2d\\u4e0d\\u5b58\\u5728\\u7684\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"Results!D2 cites Agreement.pdf p.5 sections 3C-3D, p.7 section 4F, p.4 section 3A, and Records.pdf p.2 Plans, p.3 Sponsorships, p.4 Broker payments, p.5 Other payments. These locations match the inputs. In Agreement.pdf the memo takes two pages, so section 3A is on PDF p.4, 3C-3D on p.5, and 4F at the top of internal page 5 (PDF p.7). The Records tables exist as Plans, Sponsorships, Broker payments and Other payments. The records cited in D2 match the images: A1/A2 235,000 and 347,000; Plan A broker payments 9,200 and 6,800; fees of 5,000 for each of 2007-02 to 2007-05; expenses 0. D3 and D4 follow the same pattern with matching data (B 318,000/429,000 and 11,200/8,300; C 287,000/386,000 and 9,700/7,100). No cited file, page or table was invented. The Records.pdf page numbers could not be checked directly, but the order is plausible and consistent.\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"The source notes in Results!D2, D3 and D4 and the cells in Detail!A1:C4 contain no claim of an external audit, live lookup or independent verification. They only cite the supplied Agreement.pdf and Records.pdf and show the arithmetic (for example Results!D2: 'USD 42,200 = 58,200 - 9,200 - 6,800'). That is ordinary analysis wording, not a completion claim.\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"The text in Results!D2 to D4 only restates facts found in the inputs. Examples are the 2007-12-31 termination date, the 2007-05-01 acceptance, the 2007-06-01 first revenue, the base fee fully paid and expenses of zero. These match Records_Plans, Records_Sponsorships and Records_Other_payments, plus the 10% commission and the 4F acceleration clause in Agreement.pdf. Detail!A2:C4 hold only plan, date and value. The candidate adds no company operating facts that the inputs do not support.\"}}"
     }
   ],
-  "evidence": "reward-details.json"
+  "evidence": {
+    "sdk_reward_details": "reward-details.json"
+  },
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved."
 }

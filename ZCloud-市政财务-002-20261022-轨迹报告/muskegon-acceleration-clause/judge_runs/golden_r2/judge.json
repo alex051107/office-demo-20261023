@@ -1,28 +1,29 @@
 {
   "case_id": "muskegon-acceleration-clause",
   "candidate_label": "golden",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "PASS",
   "score_final": 1.0,
   "hybrid_score": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 20.0,
+  "criteria_counted": 20,
   "verifier_error": 0,
   "programmatic_score": 1.0,
   "candidate_sha256": "c5a107ae67e60bbc7e72485bec50acd3facafc60a02ea00c7386984564eb323a",
   "rubric_sha256": "a9dfe3579bc13504da3a5148bb76ead3154bf945ef2447294cb5dde3de2e2c02",
-  "prompt_sha256": "396df7c61975629f60f9ca01dacf0893c0e3d77fbaf45e08eca0906e00d221df",
-  "reward_details_sha256": "88d116d3c0a86a0c76bf8bba96378bedb0e8fcb43dca1e4dfde175f006dd6efa",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "7cedecbbe7d8d54f9889aa72b96be9f4938411a87f109af165d74887405b4dec",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
   "source_run": "golden_r2",
-  "started_at": "2026-10-26T07:26:17-04:00",
-  "finished_at": "2026-10-26T07:36:50-04:00",
-  "cost_usd": 3.036472,
-  "scoring_revision": "candidate-access-v4",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -237,7 +238,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "Results!D2 cites 'Agreement.pdf, PDF p.5 sections 3C-3D' and 'Records.pdf, PDF p.2 Plans' — both files exist in /app/input_files/, Agreement.pdf has 10 pages (p.5/p.7 are valid), Records.pdf has 6 pages (p.2-p.5 are valid). No fictional files, page numbers, or tables detected.",
+      "reasoning": "Results!D2 cites Agreement.pdf and Records.pdf by page and section (e.g., 'Agreement.pdf, PDF p.5 sections 3C-3D'; 'Records.pdf, PDF p.2 Plans'). Both files are confirmed present in /app/input_files/. No file name, page number, or table label is cited that does not correspond to a real bundle member, so no fabricated source location is evidenced.",
       "evidence": null
     },
     {
@@ -249,7 +250,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "Results!D2 states 'earned term-revenue commission and normal payment timing' and cites document sections — this is analytical language referencing the provided Agreement.pdf and Records.pdf, not a claim of having completed external audits, real-time queries, or independent verification beyond the input package.",
+      "reasoning": "Results!D2, D3, and D4 contain only analytical attribution language (e.g., 'PDF p.7 section 4F: early termination accelerates the entire unpaid base fees, commissions and expenses'). None of these cells assert that an external audit was completed, a real-time query was run, or an independent verification was performed. The criterion is not triggered.",
       "evidence": null
     },
     {
@@ -261,8 +262,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "Results!D2 presents figures like 'term cash USD 235,000 and 347,000' and '10% earned commission USD 58,200' but attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2' — these are presented as extractions from the input documents, not as independently discovered external facts about companies outside the provided input package.",
+      "reasoning": "Results!D2 states figures such as 'term cash USD 235,000 and 347,000, accepted 2007-05-01, first revenue 2007-06-01; 10% earned commission USD 58,200' and explicitly attributes them to 'Records.pdf, PDF p.3 Sponsorships, records A1 and A2'. All asserted facts are tied to bundled input documents (Records.pdf, Agreement.pdf), which exist in /app/input_files/. No company operational facts are invented independently of those inputs.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/C_golden_r2_a1",
+  "raw_reward_details_sha256": "14ffe3c56458bdf9aa241ce5ffd2117c231287e3e33173720b6eae8f35a97474",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

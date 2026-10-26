@@ -1,0 +1,147 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "我用 openpyxl 打开候选工作簿，读取了 Results!D2 和 Working!F2。两格都引用 Powercor_RFM_inputs.xlsx 的 'RFM input'!F7、F60、F61、F115、F169、L7、F282、F284、F287，以及 Distribution_handbook.pdf 第 27 页第 2.4.1 节和脚注 19-20。我核对了输入：F7='Subtransmission'，F60=2020，F61=7.077，L7=3.4306，F282、F284、F287 均有数值。我解压 PDF 内容流，确认第 27 页确有 2.4.1 节，脚注 19 讲半年名义 WACC，脚注 20 讲名义 vanilla WACC。引用的文件、页码、章节和单元格都真实存在，没有虚构来源。",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "我读取了 Working!A18:A21 和 Results!D2:D4。这些单元格只描述计算方法（实际净资本支出 = 总资本支出 - 资产处置 - 资本贡献，再乘以年末因子）和资料来源。其中没有出现已完成外部审计、实时查询或独立核验的说法。Working!A21 只是对输出结构的说明。没有未经支持的完成性声称。",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "我读取了 Working!A17:A21 和 Working!F15。这些说明文字只涉及公式（Working!A19 的适用利率和年末因子）、范围说明（Working!A20：Land 的差额为 -1.0008，计入总额）和输出格式（Working!A21）。内容均来自输入工作簿数据和手册方法，没有出现无法从随包输入获得的公司经营事实，例如业务背景、事件原因或管理层动机。",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u6211\\u7528 openpyxl \\u6253\\u5f00\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\uff0c\\u8bfb\\u53d6\\u4e86 Results!D2 \\u548c Working!F2\\u3002\\u4e24\\u683c\\u90fd\\u5f15\\u7528 Powercor_RFM_inputs.xlsx \\u7684 'RFM input'!F7\\u3001F60\\u3001F61\\u3001F115\\u3001F169\\u3001L7\\u3001F282\\u3001F284\\u3001F287\\uff0c\\u4ee5\\u53ca Distribution_handbook.pdf \\u7b2c 27 \\u9875\\u7b2c 2.4.1 \\u8282\\u548c\\u811a\\u6ce8 19-20\\u3002\\u6211\\u6838\\u5bf9\\u4e86\\u8f93\\u5165\\uff1aF7='Subtransmission'\\uff0cF60=2020\\uff0cF61=7.077\\uff0cL7=3.4306\\uff0cF282\\u3001F284\\u3001F287 \\u5747\\u6709\\u6570\\u503c\\u3002\\u6211\\u89e3\\u538b PDF \\u5185\\u5bb9\\u6d41\\uff0c\\u786e\\u8ba4\\u7b2c 27 \\u9875\\u786e\\u6709 2.4.1 \\u8282\\uff0c\\u811a\\u6ce8 19 \\u8bb2\\u534a\\u5e74\\u540d\\u4e49 WACC\\uff0c\\u811a\\u6ce8 20 \\u8bb2\\u540d\\u4e49 vanilla WACC\\u3002\\u5f15\\u7528\\u7684\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u3001\\u7ae0\\u8282\\u548c\\u5355\\u5143\\u683c\\u90fd\\u771f\\u5b9e\\u5b58\\u5728\\uff0c\\u6ca1\\u6709\\u865a\\u6784\\u6765\\u6e90\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u6211\\u8bfb\\u53d6\\u4e86 Working!A18:A21 \\u548c Results!D2:D4\\u3002\\u8fd9\\u4e9b\\u5355\\u5143\\u683c\\u53ea\\u63cf\\u8ff0\\u8ba1\\u7b97\\u65b9\\u6cd5\\uff08\\u5b9e\\u9645\\u51c0\\u8d44\\u672c\\u652f\\u51fa = \\u603b\\u8d44\\u672c\\u652f\\u51fa - \\u8d44\\u4ea7\\u5904\\u7f6e - \\u8d44\\u672c\\u8d21\\u732e\\uff0c\\u518d\\u4e58\\u4ee5\\u5e74\\u672b\\u56e0\\u5b50\\uff09\\u548c\\u8d44\\u6599\\u6765\\u6e90\\u3002\\u5176\\u4e2d\\u6ca1\\u6709\\u51fa\\u73b0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u8bf4\\u6cd5\\u3002Working!A21 \\u53ea\\u662f\\u5bf9\\u8f93\\u51fa\\u7ed3\\u6784\\u7684\\u8bf4\\u660e\\u3002\\u6ca1\\u6709\\u672a\\u7ecf\\u652f\\u6301\\u7684\\u5b8c\\u6210\\u6027\\u58f0\\u79f0\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u6211\\u8bfb\\u53d6\\u4e86 Working!A17:A21 \\u548c Working!F15\\u3002\\u8fd9\\u4e9b\\u8bf4\\u660e\\u6587\\u5b57\\u53ea\\u6d89\\u53ca\\u516c\\u5f0f\\uff08Working!A19 \\u7684\\u9002\\u7528\\u5229\\u7387\\u548c\\u5e74\\u672b\\u56e0\\u5b50\\uff09\\u3001\\u8303\\u56f4\\u8bf4\\u660e\\uff08Working!A20\\uff1aLand \\u7684\\u5dee\\u989d\\u4e3a -1.0008\\uff0c\\u8ba1\\u5165\\u603b\\u989d\\uff09\\u548c\\u8f93\\u51fa\\u683c\\u5f0f\\uff08Working!A21\\uff09\\u3002\\u5185\\u5bb9\\u5747\\u6765\\u81ea\\u8f93\\u5165\\u5de5\\u4f5c\\u7c3f\\u6570\\u636e\\u548c\\u624b\\u518c\\u65b9\\u6cd5\\uff0c\\u6ca1\\u6709\\u51fa\\u73b0\\u65e0\\u6cd5\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\uff0c\\u4f8b\\u5982\\u4e1a\\u52a1\\u80cc\\u666f\\u3001\\u4e8b\\u4ef6\\u539f\\u56e0\\u6216\\u7ba1\\u7406\\u5c42\\u52a8\\u673a\\u3002\"}}"
+    }
+  ],
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "llm_evidence_errors": []
+}

@@ -1,0 +1,147 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "R03",
+          "value": 1.0,
+          "raw": 1,
+          "weight": 10.0,
+          "description": "R03: frozen atomic workbook check"
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P01",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "P01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S03",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S03: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S04",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S04: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S05",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S05: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S06",
+          "value": 1.0,
+          "raw": 0,
+          "weight": 3.0,
+          "description": "S06: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "Results!D2 cites 'Powercor_RFM_inputs.xlsx, RFM input!F61:F62, F64, F115:F116, F118, F169:F170, F172, L7:L8, L10 and F282:F287' and 'Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20'. All named spreadsheet cells were confirmed to exist (F7=Subtransmission, F61 and F115 and F169 and L7 return numeric values, F282/F284/F287 return numeric values). The PDF has 85 pages so p. 27 is within range. Section 2.4.1 is confirmed in the PDF bookmark structure as 'Nominal adjustments for difference between actual and forecast net capex in final year (year t−1)'. No cited file, sheet, page, or section was found to be fictitious; footnote 20 cannot be disproven without PDF text extraction and absence of contrary evidence means no fabrication can be found.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Working!A17–A21 contains only methodological statements such as 'Actual net capex = gross capex - asset disposals - capital contributions' and 'Applicable rate = (1 + F287) / (1 + F284) x (1 + F282) - 1'. Results!D2 through D4 are plain source citations. No cell in the candidate workbook asserts that an external audit was completed, a real-time query was executed, or an independent verification was performed. The language throughout is analytical and derivational, not a completeness claim about an external process.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Working!A20 states 'Land contributes -1.000822151768884' and Working!A18 defines the capex formula. These are numerical results derived directly from Working!E9 (Land year-end difference = -1.000822151768884) and from input cells L14=1.000822151768884 confirmed in Powercor_RFM_inputs.xlsx. No cell in the candidate introduces new company operational facts (e.g., business strategy, headcount, regulatory decisions, or corporate events) that are absent from the bundled inputs. All descriptive assertions in Working!A17–A21 are methodological observations about the calculation, not invented operational facts about Powercor.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"Results!D2 cites 'Powercor_RFM_inputs.xlsx, RFM input!F61:F62, F64, F115:F116, F118, F169:F170, F172, L7:L8, L10 and F282:F287' and 'Distribution_handbook.pdf, p. 27, section 2.4.1 and footnote 20'. All named spreadsheet cells were confirmed to exist (F7=Subtransmission, F61 and F115 and F169 and L7 return numeric values, F282/F284/F287 return numeric values). The PDF has 85 pages so p. 27 is within range. Section 2.4.1 is confirmed in the PDF bookmark structure as 'Nominal adjustments for difference between actual and forecast net capex in final year (year t\\u22121)'. No cited file, sheet, page, or section was found to be fictitious; footnote 20 cannot be disproven without PDF text extraction and absence of contrary evidence means no fabrication can be found.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Working!A17\\u2013A21 contains only methodological statements such as 'Actual net capex = gross capex - asset disposals - capital contributions' and 'Applicable rate = (1 + F287) / (1 + F284) x (1 + F282) - 1'. Results!D2 through D4 are plain source citations. No cell in the candidate workbook asserts that an external audit was completed, a real-time query was executed, or an independent verification was performed. The language throughout is analytical and derivational, not a completeness claim about an external process.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Working!A20 states 'Land contributes -1.000822151768884' and Working!A18 defines the capex formula. These are numerical results derived directly from Working!E9 (Land year-end difference = -1.000822151768884) and from input cells L14=1.000822151768884 confirmed in Powercor_RFM_inputs.xlsx. No cell in the candidate introduces new company operational facts (e.g., business strategy, headcount, regulatory decisions, or corporate events) that are absent from the bundled inputs. All descriptive assertions in Working!A17\\u2013A21 are methodological observations about the calculation, not invented operational facts about Powercor.\", \"score\": \"no\"}}"
+    }
+  ],
+  "score_policy": {
+    "required_sheet_gate": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.0
+    },
+    "must_clause_cap": {
+      "triggered": false,
+      "reasons": [],
+      "maximum_score": 0.69
+    }
+  },
+  "llm_evidence_errors": []
+}

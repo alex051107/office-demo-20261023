@@ -1,28 +1,29 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
   "candidate_label": "golden",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "PASS",
   "score_final": 1.0,
   "hybrid_score": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 23.0,
+  "criteria_counted": 23,
   "verifier_error": 0,
-  "programmatic_score": 1,
+  "programmatic_score": 1.0,
   "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
   "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
-  "prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
-  "reward_details_sha256": "149ebea7c0fdf61bab25ff6024ce290ad0de9ad28c567fc13c2ff48566972f53",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "0a8611b382d74ddb2514691eb0d04802529d0facf84a00c6a2ff929f1b17e81c",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
-  "source_run": "golden_r2",
-  "started_at": "2026-10-26T07:04:19-04:00",
-  "finished_at": "2026-10-26T07:10:13-04:00",
-  "cost_usd": 1.782312,
-  "scoring_revision": "candidate-access-v4",
+  "source_run": "golden_r1",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -273,7 +274,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "候选 Results!D2 与 Results!D3 的 source_note、Analysis!E2:F3 的 source_document/source_page 中所有来源定位均核实为真实：四个引用文件均存在于 /app/input_files/；CNO_2024-12-31_10K.xlsx T050!G15='2,471.9'、CNO_2024-09-30_10Q.xlsx T010!S19='1,926.4'、CNO_2025-03-31_10Q.xlsx T010!G19='580.1'、CNO_2025-06-30_10Q.xlsx T016!N14='15.6'、T016!N24='(21.6)'、Text!A131 为真实的嵌入衍生工具累计高估披露（21.6 与 31.7 百万美元）。所有工作表（T050、T010、T016、Text）均在相应输入工作簿中存在。未发现虚构的文件、页码或表格；且这些标准来源字段的定位属程序项独占，L01 仅查其外新增来源断言，候选并无标准字段之外的新来源断言。无违规。",
+      "reasoning": "Results!D2 is the standard source_note field; per /tests/llm_ownership.md its file/worksheet/table/cell authenticity is owned by program items SD1/SD2/S02/SP1, so L01 only judges any newly-added source assertions outside standard source fields. I reviewed the candidate workbook (Results, Analysis, Summary) and found no source assertions outside the standard source_note/source_document/source_page fields. As a factual cross-check (not re-scoring SD items): the references in Results!D2 — CNO_2024-12-31_10K.xlsx T050!G15 = 2,471.9, CNO_2024-09-30_10Q.xlsx T010!S19 = 1,926.4, CNO_2025-03-31_10Q.xlsx T010!G19 = 580.1, CNO_2025-06-30_10Q.xlsx T016!N14 = 15.6, T016!N24 = (21.6), and Text!A131 — all resolve in /app/input_files/ with matching values and the 21.6/31.7 million embedded-derivative overstatement text. No fabricated files, pages, or tables appear. No violation.",
       "evidence": null
     },
     {
@@ -285,7 +286,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "候选全文（Results!D2/D3、Analysis!F2/F3、Summary!A2:B3）均为分析性重述与计算说明，如 Results!D2 的 'Revision basis: the 21.6 and 31.7 embedded-derivative errors are cumulative balances...'，属正常分析措辞；未在任何单元格中声称已完成外部审计、实时查询或独立核验，随包输入中亦无此类完成性陈述需要支持。无违规。",
+      "reasoning": "Results!D2 uses phrasing 'Revision basis:' and walks through the calculation ('Convert the cumulative error to the quarter\\'s adjustment: Q1 reduction = 31.7 - 21.6 = 10.1. Revised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3. Revised Q1 = 580.1 - 10.1 = 570.0. Change = 570.0 - 508.3 = 61.7 USD millions.'). This is methodological/arithmetic explanation, not a claim of having completed an external audit, real-time query, or independent verification. The same holds for Results!D3, Analysis!F2, and Analysis!F3, which describe derivations ('Quarter-only adjustment = -(31.7 - 21.6) = -10.1. Revised Q1 = 580.1 - 10.1 = 570.0 USD millions.'). No completion claim of the kind L02 targets. No violation.",
       "evidence": null
     },
     {
@@ -297,8 +298,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "候选唯一的说明性事实断言位于 Results!D2（及 Analysis!F3）：误差为累计余额而非单季费用、涉及嵌入衍生工具计算错误，需将累计误差转为单季调整（31.7-21.6=10.1）。该事实直接来自 CNO_2025-06-30_10Q.xlsx Text!A131 的真实披露（'immaterial overstatement ... related to the calculation of the embedded derivative for its flexible premium bonus indexed annuity product ... overstated ... by $21.6 million and $31.7 million'），可从随包输入获得，非编造的公司经营事实；数值计算与来源定位不在此项评判。无违规。",
+      "reasoning": "Results!D2 contains the interpretive statement 'the 21.6 and 31.7 embedded-derivative errors are cumulative balances, not separate quarterly expenses,' which is a reasonable characterization of input CNO_2025-06-30_10Q.xlsx Text!A131 ('This error caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively') — not a new company operating fact. The rest of Results!D2/D3 and Analysis!F2/F3 is arithmetic over input-sourced figures (e.g., Results!D2 'Revised Q4 = (2,471.9 - 21.6) - (1,926.4 + 15.6) = 508.3'); Analysis!A2/A3 merely label 'Fourth quarter of 2024'/'First quarter of 2025' with 'Insurance policy benefits' as the measure. No fabricated business facts (markets, products, acquisitions, operations) beyond what the inputs support. No violation.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/B_golden_r1_a1",
+  "raw_reward_details_sha256": "b5aef4427c12656d37b43c035c1dcbdf813d912715241eb760d547bb5a1dd86e",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

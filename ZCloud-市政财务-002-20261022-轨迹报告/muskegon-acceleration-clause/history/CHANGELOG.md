@@ -94,3 +94,5 @@ Oracle 入口为 `bash /solution/solve.sh`，验收入口为 `bash /tests/test.s
 剩余项：修复真实裁判结构化输出兼容性并获准恢复费用后，补足五次有效金标裁判，再更新金标总分与一致性；本轮按费用停止规则不继续付费。instruction.md、8 份输入、3 个模型答卷及其保存的 LLM 判定不变；Sol 保存理由的“未找到交付文件”差异与 Opus 未完成状态均保留。第 1、2、4 类事项仍暂缓。
 
 - 2026-10-26 重判：`rejudge_v4_20261026/previous/`保留替换前记录；轨迹报告同组`invalid_attempts/`保留无效尝试；有效金标4/5，无效尝试2次，不计分；费用12.692242美元。
+
+- judge model changed from qwen3.7-plus to claude-sonnet-5-5 on 2026-10-26: qwen often answered without opening the workbook; Sonnet read it in 16/16 runs

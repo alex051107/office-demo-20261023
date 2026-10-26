@@ -1,0 +1,33 @@
+{
+  "format": "xlsx",
+  "checked_at": "2026-10-25",
+  "check_type": "offline_openpyxl_v2_inspection",
+  "candidate_sha256": "b2455fa0d9bc845ebc59a20a8ef3ed1cf8dc095f1f70c905f2bc42f416417162",
+  "opens": true,
+  "worksheets": [
+    {
+      "name": "Results",
+      "state": "visible",
+      "rows": 4,
+      "columns": 4,
+      "nonempty_cells": 16,
+      "formula_cells": [],
+      "error_cells": []
+    },
+    {
+      "name": "Working",
+      "state": "visible",
+      "rows": 21,
+      "columns": 6,
+      "nonempty_cells": 89,
+      "formula_cells": [],
+      "error_cells": []
+    }
+  ],
+  "worksheet_count": 2,
+  "historical_score": 1.0,
+  "not_a_new_judgement": true,
+  "programmatic_score": 1.0,
+  "scorer_version": "v2 (2026-10-26)",
+  "round2_note": "工作簿和渲染字节未变，重用第一轮检查；不是本轮新渲染。程序分1.0，首次新LLM合成分0.70；仅1/5次，LLM质量与一致性未建立。"
+}

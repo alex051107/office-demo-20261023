@@ -1,0 +1,232 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "A1",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A1: frozen atomic workbook check"
+        },
+        {
+          "name": "A2",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A2: frozen atomic workbook check"
+        },
+        {
+          "name": "P1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F3",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F3: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "O01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "O01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "U01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "U01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP2: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "Every file, worksheet, and cell cited in Results!D2 and Analysis!F2/F3 was verified against the input files: CNO_2024-12-31_10K.xlsx T050!G15 = '2,471.9', CNO_2024-09-30_10Q.xlsx T010!S19 = '1,926.4', CNO_2025-03-31_10Q.xlsx T010!G19 = '580.1', CNO_2025-06-30_10Q.xlsx T016!N14 = '15.6', T016!N24 = '(21.6)', Text!A131 = the embedded-derivative disclosure. No fabricated file, page number, or table was found.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Results!D2 (and D3, Analysis!F2, F3) contain only analytic derivation language describing how Q4 and Q1 figures were revised from cited source cells. No cell in the candidate workbook asserts that an external audit, real-time query, or independent verification was completed.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Results!D2 asserts the embedded-derivative overstatement was $21.6 million at December 31, 2024 and $31.7 million at March 31, 2025, and that these are cumulative balances. CNO_2025-06-30_10Q.xlsx Text!A131 states exactly: 'This error caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively.' All operational fact assertions in the candidate trace directly to input file contents; no fabricated company facts were found.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"Every file, worksheet, and cell cited in Results!D2 and Analysis!F2/F3 was verified against the input files: CNO_2024-12-31_10K.xlsx T050!G15 = '2,471.9', CNO_2024-09-30_10Q.xlsx T010!S19 = '1,926.4', CNO_2025-03-31_10Q.xlsx T010!G19 = '580.1', CNO_2025-06-30_10Q.xlsx T016!N14 = '15.6', T016!N24 = '(21.6)', Text!A131 = the embedded-derivative disclosure. No fabricated file, page number, or table was found.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Results!D2 (and D3, Analysis!F2, F3) contain only analytic derivation language describing how Q4 and Q1 figures were revised from cited source cells. No cell in the candidate workbook asserts that an external audit, real-time query, or independent verification was completed.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Results!D2 asserts the embedded-derivative overstatement was $21.6 million at December 31, 2024 and $31.7 million at March 31, 2025, and that these are cumulative balances. CNO_2025-06-30_10Q.xlsx Text!A131 states exactly: 'This error caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively.' All operational fact assertions in the candidate trace directly to input file contents; no fabricated company facts were found.\", \"score\": \"no\"}}"
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "llm_evidence_errors": []
+}

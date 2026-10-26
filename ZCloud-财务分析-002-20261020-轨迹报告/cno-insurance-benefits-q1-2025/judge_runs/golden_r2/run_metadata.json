@@ -1,11 +1,14 @@
 {
   "status": "PASS",
-  "accepted_reward": 1.0,
   "verifier_error": 0,
   "judge_completed": true,
-  "source_run": "golden_r3",
-  "scoring_revision": "candidate-access-v4",
-  "started_at": "2026-10-26T07:10:13-04:00",
-  "finished_at": "2026-10-26T07:12:54-04:00",
-  "cost_usd": 1.76594
+  "source_run": "golden_r2",
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
+  "judge_model": "claude-sonnet-5-5",
+  "cost_usd": null,
+  "raw_source_run": "v5_sonnet/B_golden_r2_a1",
+  "new_llm_calls": 0,
+  "accepted_reward": 1.0,
+  "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
+  "timing_note": "Batch ledger has unzoned completion times; no per-run start time or request cost is asserted."
 }

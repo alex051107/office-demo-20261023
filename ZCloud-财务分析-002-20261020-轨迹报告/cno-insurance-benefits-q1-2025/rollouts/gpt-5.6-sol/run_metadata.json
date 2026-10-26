@@ -45,14 +45,14 @@
   "evaluation": {
     "judge": "judge.json",
     "reward": 0.205882,
-    "judge_model": "qwen3.7-plus",
-    "criteria_counted": 23.0,
-    "status": "VALID_REJUDGED",
+    "judge_model": "claude-sonnet-5-5",
+    "criteria_counted": 23,
+    "status": "FAIL",
     "source_run": "gpt-5.6-sol_r1",
-    "scoring_revision": "candidate-access-v4"
+    "scoring_revision": "sonnet-saved-results-v5-20261026"
   },
   "candidate_label": "gpt-5.6-sol",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "current_export_rubric_sha256": "19b9c304101304f293a00ed1dff8962239772c49b08c7f253734e7664faa4433",
   "historical_judge_rubric_sha256": "e103106ec811010b1206f20052158170f6bb7e2a01f5039093f4a13935d23405",
   "score_preserved": false,
@@ -83,7 +83,7 @@
     1
   ],
   "judge_completed": true,
-  "current_judge_prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
+  "current_judge_prompt_sha256": null,
   "current_judge_rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
   "rejudge_v4": {
     "completed_valid": true,
@@ -93,5 +93,10 @@
     "accepted_reward": 0.205882,
     "retained_historical_reward": null,
     "invalid_attempts": "history/rejudge_v4_20261026/invalid_attempts"
-  }
+  },
+  "current_judge_model": "claude-sonnet-5-5",
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
+  "new_llm_calls": 0,
+  "imported_judge_runs": 1,
+  "current_judge_prompt_provenance": "Raw Sonnet result does not include the executed prompt; the historical Qwen prompt hash is not reused."
 }

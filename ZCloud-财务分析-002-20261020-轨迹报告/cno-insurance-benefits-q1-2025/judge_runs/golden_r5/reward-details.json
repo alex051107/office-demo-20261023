@@ -1,0 +1,232 @@
+{
+  "reward": [
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "name": "R01",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R01: frozen atomic workbook check"
+        },
+        {
+          "name": "R02",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 10.0,
+          "description": "R02: frozen atomic workbook check"
+        },
+        {
+          "name": "A1",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A1: frozen atomic workbook check"
+        },
+        {
+          "name": "A2",
+          "value": 1.0,
+          "raw": 1.0,
+          "weight": 7.0,
+          "description": "A2: frozen atomic workbook check"
+        },
+        {
+          "name": "P1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "P2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "P2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SD2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SD2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "F3",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "F3: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "X2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "X2: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "S02",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "S02: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "SP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "SP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "O01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "O01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "U01",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "U01: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP1",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP1: frozen atomic workbook check",
+          "negate": true
+        },
+        {
+          "name": "DP2",
+          "value": 1.0,
+          "raw": 0.0,
+          "weight": 3.0,
+          "description": "DP2: frozen atomic workbook check",
+          "negate": true
+        }
+      ],
+      "kind": "programmatic"
+    },
+    {
+      "score": 1.0,
+      "criteria": [
+        {
+          "id": "L01",
+          "name": "L01",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
+          "reasoning": "The source assertions in Results!D2 and Analysis!F2/F3 cite four files (CNO_2024-12-31_10K.xlsx, CNO_2024-09-30_10Q.xlsx, CNO_2025-03-31_10Q.xlsx, CNO_2025-06-30_10Q.xlsx), all of which exist in /app/input_files/. Per llm_ownership.md, the standard source fields (source_note, source_document, source_page) are exclusively owned by program items SD1/SD2/S02/SP1; L01 only evaluates new source assertions outside those fields. The candidate workbook contains no source assertions outside these standard fields. No fabricated file, page, or table name was found beyond what falls under program ownership. No violation.",
+          "negate": true
+        },
+        {
+          "id": "L02",
+          "name": "L02",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
+          "reasoning": "Reading Results!D2, Results!D3, Analysis!F2, and Analysis!F3, the text contains only calculation derivations and source citations (e.g., Analysis!F3: 'Quarter-only adjustment = -(31.7 - 21.6) = -10.1. Revised Q1 = 580.1 - 10.1 = 570.0 USD millions.'). There is no language claiming completion of an external audit, real-time query, or independent verification. The candidate makes no such completeness assertions anywhere in the workbook. No violation.",
+          "negate": true
+        },
+        {
+          "id": "L03",
+          "name": "L03",
+          "value": 1.0,
+          "raw": "no",
+          "weight": 3.0,
+          "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
+          "reasoning": "Analysis!F3 states 'cumulative errors 31.7 at March 31, 2025 and 21.6 at December 31, 2024' attributed to CNO_2025-06-30_10Q.xlsx Text!A131, and Analysis!F2 references 'Text!A131' for restatement adjustments. These are presented as facts derived from a cited input file (CNO_2025-06-30_10Q.xlsx) that exists in /app/input_files/. Per the no-evidence-no-violation rule, absent confirmed evidence that Text!A131 does not contain these figures, fabrication cannot be presumed. No other novel company operational facts are asserted in the explanatory text outside numerical calculations and source citations. No violation.",
+          "negate": true
+        }
+      ],
+      "kind": "agent",
+      "judge": {
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
+        "timeout": 7200,
+        "cwd": null,
+        "isolated": false,
+        "atif_trajectory": null,
+        "mode": "batched",
+        "mcp_servers": []
+      },
+      "judge_output": "{\"L01\": {\"reasoning\": \"The source assertions in Results!D2 and Analysis!F2/F3 cite four files (CNO_2024-12-31_10K.xlsx, CNO_2024-09-30_10Q.xlsx, CNO_2025-03-31_10Q.xlsx, CNO_2025-06-30_10Q.xlsx), all of which exist in /app/input_files/. Per llm_ownership.md, the standard source fields (source_note, source_document, source_page) are exclusively owned by program items SD1/SD2/S02/SP1; L01 only evaluates new source assertions outside those fields. The candidate workbook contains no source assertions outside these standard fields. No fabricated file, page, or table name was found beyond what falls under program ownership. No violation.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Reading Results!D2, Results!D3, Analysis!F2, and Analysis!F3, the text contains only calculation derivations and source citations (e.g., Analysis!F3: 'Quarter-only adjustment = -(31.7 - 21.6) = -10.1. Revised Q1 = 580.1 - 10.1 = 570.0 USD millions.'). There is no language claiming completion of an external audit, real-time query, or independent verification. The candidate makes no such completeness assertions anywhere in the workbook. No violation.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"Analysis!F3 states 'cumulative errors 31.7 at March 31, 2025 and 21.6 at December 31, 2024' attributed to CNO_2025-06-30_10Q.xlsx Text!A131, and Analysis!F2 references 'Text!A131' for restatement adjustments. These are presented as facts derived from a cited input file (CNO_2025-06-30_10Q.xlsx) that exists in /app/input_files/. Per the no-evidence-no-violation rule, absent confirmed evidence that Text!A131 does not contain these figures, fabrication cannot be presumed. No other novel company operational facts are asserted in the explanatory text outside numerical calculations and source citations. No violation.\", \"score\": \"no\"}}"
+    }
+  ],
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "llm_evidence_errors": []
+}

@@ -172,7 +172,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "候选 Results!D2 引用的来源文件 CNO_2025-03-31_10Q.xlsx 和 CNO_2025-06-30_10Q.xlsx 均存在于输入目录中，工作表 T010、T016、Text 均在对应文件中真实存在，Text!A131 的内容确实涉及 31.7 million 的高述修正，与候选描述一致。Analysis!F3 同样引用真实的 T010 和 Text!A131。未发现有虚构文件、页码或表格的情况。",
+          "reasoning": "All source locations cited in the candidate are real. Results!D2 references CNO_2025-03-31_10Q.xlsx T010, CNO_2025-06-30_10Q.xlsx Text!A131, and CNO_2025-06-30_10Q.xlsx T016. I confirmed all three sheets exist in the respective input files: T016 in CNO_2025-06-30_10Q.xlsx contains rows for FY 2024 (2,471.9 and −21.6) and 9M 2024 (1,926.4 and 15.6); Text!A131 in CNO_2025-06-30_10Q.xlsx contains the $31.7 million and $21.6 million overstatement disclosure; T010 in CNO_2025-03-31_10Q.xlsx contains the Q1 2025 income statement with Insurance policy benefits = 580.1. No fictional file names, page numbers, or table names were introduced.",
           "negate": true
         },
         {
@@ -182,7 +182,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "候选工作簿 Results!D2、Results!D3、Analysis!F2、Analysis!F3 中的文字均为数值计算说明和来源定位，未声称已完成外部审计、实时查询或独立核验等需要额外完成性证据的行为。正常分析措辞不构成此类违规。",
+          "reasoning": "Results!D2 and Results!D3 describe only arithmetic derivations from cited filing tables (e.g., 'revised Q1 2025 = 580.1 − 31.7 = 548.4'). Analysis!F2 and Analysis!F3 similarly describe calculation steps referencing T016 and Text!A131. No language in any cell of the candidate workbook claims an external audit was completed, a real-time query was performed, or an independent verification was conducted. The candidate confines itself to normal analytical phrasing.",
           "negate": true
         },
         {
@@ -192,14 +192,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "候选工作簿中的说明性文字（如 Results!D2 描述的 revised Q1 2025 = 580.1 - 31.7 = 548.4）所涉及的数值均可从输入文件的工作表中验证：CNO_2025-03-31_10Q.xlsx 的 T010!G19 显示 580.1，CNO_2025-06-30_10Q.xlsx 的 Text!A131 提及 31.7 million 高估，T016 显示 FY 2024 = 2,471.9、9M 2024 = 1,926.4 及相应调整项。未发现有编造无法从随包输入获得的公司经营事实。",
+          "reasoning": "The only substantive company facts asserted beyond numbers are the overstatement disclosures: a $31.7 million overstatement for Q1 2025 and a $21.6 million overstatement for FY 2024, both referenced in Analysis!F3 and Results!D2. Both facts are directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which I read and which states those exact figures. No new operational facts about CNO's business were introduced that cannot be derived from the input files.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -207,7 +207,7 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009 Results!D2 \\u5f15\\u7528\\u7684\\u6765\\u6e90\\u6587\\u4ef6 CNO_2025-03-31_10Q.xlsx \\u548c CNO_2025-06-30_10Q.xlsx \\u5747\\u5b58\\u5728\\u4e8e\\u8f93\\u5165\\u76ee\\u5f55\\u4e2d\\uff0c\\u5de5\\u4f5c\\u8868 T010\\u3001T016\\u3001Text \\u5747\\u5728\\u5bf9\\u5e94\\u6587\\u4ef6\\u4e2d\\u771f\\u5b9e\\u5b58\\u5728\\uff0cText!A131 \\u7684\\u5185\\u5bb9\\u786e\\u5b9e\\u6d89\\u53ca 31.7 million \\u7684\\u9ad8\\u8ff0\\u4fee\\u6b63\\uff0c\\u4e0e\\u5019\\u9009\\u63cf\\u8ff0\\u4e00\\u81f4\\u3002Analysis!F3 \\u540c\\u6837\\u5f15\\u7528\\u771f\\u5b9e\\u7684 T010 \\u548c Text!A131\\u3002\\u672a\\u53d1\\u73b0\\u6709\\u865a\\u6784\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u7684\\u60c5\\u51b5\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f Results!D2\\u3001Results!D3\\u3001Analysis!F2\\u3001Analysis!F3 \\u4e2d\\u7684\\u6587\\u5b57\\u5747\\u4e3a\\u6570\\u503c\\u8ba1\\u7b97\\u8bf4\\u660e\\u548c\\u6765\\u6e90\\u5b9a\\u4f4d\\uff0c\\u672a\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7b49\\u9700\\u8981\\u989d\\u5916\\u5b8c\\u6210\\u6027\\u8bc1\\u636e\\u7684\\u884c\\u4e3a\\u3002\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u4e0d\\u6784\\u6210\\u6b64\\u7c7b\\u8fdd\\u89c4\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u4e2d\\u7684\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\uff08\\u5982 Results!D2 \\u63cf\\u8ff0\\u7684 revised Q1 2025 = 580.1 - 31.7 = 548.4\\uff09\\u6240\\u6d89\\u53ca\\u7684\\u6570\\u503c\\u5747\\u53ef\\u4ece\\u8f93\\u5165\\u6587\\u4ef6\\u7684\\u5de5\\u4f5c\\u8868\\u4e2d\\u9a8c\\u8bc1\\uff1aCNO_2025-03-31_10Q.xlsx \\u7684 T010!G19 \\u663e\\u793a 580.1\\uff0cCNO_2025-06-30_10Q.xlsx \\u7684 Text!A131 \\u63d0\\u53ca 31.7 million \\u9ad8\\u4f30\\uff0cT016 \\u663e\\u793a FY 2024 = 2,471.9\\u30019M 2024 = 1,926.4 \\u53ca\\u76f8\\u5e94\\u8c03\\u6574\\u9879\\u3002\\u672a\\u53d1\\u73b0\\u6709\\u7f16\\u9020\\u65e0\\u6cd5\\u4ece\\u968f\\u5305\\u8f93\\u5165\\u83b7\\u5f97\\u7684\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+      "judge_output": "{\"L01\": {\"reasoning\": \"All source locations cited in the candidate are real. Results!D2 references CNO_2025-03-31_10Q.xlsx T010, CNO_2025-06-30_10Q.xlsx Text!A131, and CNO_2025-06-30_10Q.xlsx T016. I confirmed all three sheets exist in the respective input files: T016 in CNO_2025-06-30_10Q.xlsx contains rows for FY 2024 (2,471.9 and \\u221221.6) and 9M 2024 (1,926.4 and 15.6); Text!A131 in CNO_2025-06-30_10Q.xlsx contains the $31.7 million and $21.6 million overstatement disclosure; T010 in CNO_2025-03-31_10Q.xlsx contains the Q1 2025 income statement with Insurance policy benefits = 580.1. No fictional file names, page numbers, or table names were introduced.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"Results!D2 and Results!D3 describe only arithmetic derivations from cited filing tables (e.g., 'revised Q1 2025 = 580.1 \\u2212 31.7 = 548.4'). Analysis!F2 and Analysis!F3 similarly describe calculation steps referencing T016 and Text!A131. No language in any cell of the candidate workbook claims an external audit was completed, a real-time query was performed, or an independent verification was conducted. The candidate confines itself to normal analytical phrasing.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The only substantive company facts asserted beyond numbers are the overstatement disclosures: a $31.7 million overstatement for Q1 2025 and a $21.6 million overstatement for FY 2024, both referenced in Analysis!F3 and Results!D2. Both facts are directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which I read and which states those exact figures. No new operational facts about CNO's business were introduced that cannot be derived from the input files.\", \"score\": \"no\"}}"
     }
   ],
   "interface_gate": {

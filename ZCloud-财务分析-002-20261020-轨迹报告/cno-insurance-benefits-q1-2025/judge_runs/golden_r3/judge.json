@@ -1,28 +1,29 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
   "candidate_label": "golden",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "PASS",
   "score_final": 1.0,
   "hybrid_score": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 23.0,
+  "criteria_counted": 23,
   "verifier_error": 0,
-  "programmatic_score": 1,
+  "programmatic_score": 1.0,
   "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
   "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
-  "prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
-  "reward_details_sha256": "18f8d38e1046500bc3c18d6d35ffba5ace06c73c2f5923f4c027b649ec135640",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "2afec5d9a2add42de1f6075241d9fc2f3c10d1818269c3bf0c1b00a46aaf864f",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
-  "source_run": "golden_r4",
-  "started_at": "2026-10-26T07:12:55-04:00",
-  "finished_at": "2026-10-26T07:15:01-04:00",
-  "cost_usd": 1.569166,
-  "scoring_revision": "candidate-access-v4",
+  "source_run": "golden_r3",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -273,7 +274,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "无违规。候选工作簿 Results!D2 和 Results!D3 中引用的所有来源文件（CNO_2024-12-31_10K.xlsx、CNO_2024-09-30_10Q.xlsx、CNO_2025-03-31_10Q.xlsx、CNO_2025-06-30_10Q.xlsx）均存在于输入目录，引用的工作表和单元格（如 T050!G15=2,471.9、T010!S19=1,926.4、T010!G19=580.1、T016!N14=15.6、T016!N24=(21.6)、Text!A131 关于嵌入式衍生品高估的描述）均已验证与输入文件内容一致，未虚构任何不存在的文件、页码或表格。",
+      "reasoning": "Every source cited in the candidate's standard source fields is real. Results!D2 names CNO_2024-12-31_10K.xlsx T050!G15 (confirmed '2,471.9'), CNO_2024-09-30_10Q.xlsx T010!S19 (confirmed '1,926.4'), CNO_2025-03-31_10Q.xlsx T010!G19 (confirmed '580.1'), and CNO_2025-06-30_10Q.xlsx T016!N14 ('15.6'), T016!N24 ('(21.6)'), Text!A131 (embedded-derivative disclosure). All four files exist in the input, all referenced worksheets exist within those files, and all cell coordinates contain the values cited. No fabricated file, page, or table reference was found.",
       "evidence": null
     },
     {
@@ -285,7 +286,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "无违规。检查候选工作簿所有单元格（包括 Results!D2、Results!D3、Analysis!F2、Analysis!F3 等包含说明性文字的单元格），未发现任何声称已完成外部审计、实时查询或独立核验的陈述。候选仅引用数据来源并说明计算过程，属于正常分析措辞。",
+      "reasoning": "The explanatory text in Results!D2 and Results!D3 uses purely analytical language ('Revision basis:', 'Convert the cumulative error to the quarter's adjustment:', arithmetic equations). Analysis!F2 and F3 likewise only cite cell locations and show arithmetic. No sentence in the candidate workbook asserts that an external audit was completed, that a real-time query was performed, or that an independent verification was conducted. The absence of any such completion claim is confirmed by reading every non-empty cell in the three sheets.",
       "evidence": null
     },
     {
@@ -297,8 +298,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "无违规。候选工作簿中所有经营事实陈述均可从输入文件验证：Results!D2/D3 引用的数值来自 T050!G15、T010!S19、T010!G19 等已验证单元格；关于嵌入式衍生品高述21.6百万和31.7百万的描述来自 CNO_2025-06-30_10Q.xlsx 的 Text!A131，该内容已确认存在。未发现编造的额外公司经营事实。",
+      "reasoning": "The only substantive operational fact asserted beyond numbers in Results!D2 is that the 21.6 and 31.7 figures represent 'cumulative balances, not separate quarterly expenses.' This is directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which states the embedded derivative 'caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively' — point-in-time balance language. No company operational fact appears in the candidate (Results!D2, Analysis!F2, Analysis!F3) that cannot be derived from the four input files.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/B_golden_r3_a1",
+  "raw_reward_details_sha256": "018b48cb5dc956e8c0ef2004aa37d95aa6507de7486659b61c0adb7995d15961",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

@@ -21,19 +21,20 @@
     "programmatic_score": 1,
     "raw_hybrid_score": 1.0,
     "verifier_error": 0.0,
-    "judgment_status": "INSUFFICIENT_VALID_RUNS",
+    "judgment_status": "PASS",
     "provisional": false,
-    "score_basis": "candidate-access-v4 accepted runs only",
+    "score_basis": "five valid saved Sonnet golden judgments; golden_r1 representative",
     "invalid_judge_attempts_excluded": true,
-    "score_status": "INSUFFICIENT_VALID_RUNS",
-    "valid_runs": 3,
-    "score_revision": "candidate-access-v4",
-    "scoring_revision": "candidate-access-v4",
-    "new_llm_calls": 7,
+    "score_status": "PASS",
+    "valid_runs": 5,
+    "score_revision": "sonnet-saved-results-v5-20261026",
+    "scoring_revision": "sonnet-saved-results-v5-20261026",
+    "new_llm_calls": 0,
     "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
     "invalid_attempt_archive_path_base": "trajectory_case_root",
-    "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
-    "score_available": true
+    "score_note": "金标五次有效判定均来自 claude-sonnet-5-5；代表为 golden_r1；每条判据和总分样本标准差均为0，小于0.05。本次仅回写已保存结果，新增调用为0。",
+    "score_available": true,
+    "imported_judge_runs": 5
   },
   "rollout_summary": {
     "models": [
@@ -50,7 +51,10 @@
         "solver_prompt": "rollouts/gpt-5.6-sol/solver_prompt.md",
         "harness": "Codex CLI",
         "run_started": "2026-10-20T12:35:46+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "judge_model": "claude-sonnet-5-5",
+        "rejudged_with_sonnet": true,
+        "judgment_retention_reason": "Sonnet saved result imported"
       },
       {
         "model": "claude-opus-4-8",
@@ -65,7 +69,10 @@
         "solver_prompt": "rollouts/claude-opus-4-8/solver_prompt.md",
         "harness": "Claude Code",
         "run_started": "2026-10-20T12:51:43+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "judge_model": "qwen3.7-plus",
+        "rejudged_with_sonnet": false,
+        "judgment_retention_reason": "除B的gpt-5.6-sol外，所有模型答卷程序分均为0，LLM项全部为负项；池化后截断至[0,1]，因此任何裁判下最终分均为0。保留原判定，不将其标记为Sonnet重判。"
       },
       {
         "model": "qwen3.8-max",
@@ -80,7 +87,10 @@
         "solver_prompt": "rollouts/qwen3.8-max/solver_prompt.md",
         "harness": "Codex CLI",
         "run_started": "2026-10-22T19:29:08+00:00",
-        "source": "isolated_docker_run"
+        "source": "isolated_docker_run",
+        "judge_model": "qwen3.7-plus",
+        "rejudged_with_sonnet": false,
+        "judgment_retention_reason": "除B的gpt-5.6-sol外，所有模型答卷程序分均为0，LLM项全部为负项；池化后截断至[0,1]，因此任何裁判下最终分均为0。保留原判定，不将其标记为Sonnet重判。"
       }
     ],
     "average_score": 0.06862733333333333,
@@ -91,28 +101,35 @@
     "pass_at_8": null
   },
   "judge": {
-    "score_basis": "candidate-access-v4 accepted runs only",
-    "status": "INSUFFICIENT_VALID_RUNS",
-    "fresh_golden_runs": 3,
+    "score_basis": "five valid saved Sonnet judgments",
+    "judge_model": "claude-sonnet-5-5",
+    "status": "PASS",
+    "fresh_golden_runs": 5,
     "required_golden_runs": 5,
-    "cost_usd": 13.137896,
+    "imported_judge_runs": 5,
+    "new_llm_calls": 0,
+    "cost_usd": null,
+    "accounting": "judge_costs.json",
     "stop_reason": null
   },
   "consistency": {
     "path": "consistency.json",
-    "status": "INSUFFICIENT_VALID_RUNS",
+    "status": "PASS",
     "requirement": "五次有效评分；每条判据和总分样本标准差都严格小于0.05",
     "groups": [
       {
         "candidate": "golden",
-        "repeats": 3,
+        "repeats": 5,
+        "judge_model": "claude-sonnet-5-5",
         "total_scores": [
+          1.0,
+          1.0,
           1.0,
           1.0,
           1.0
         ],
         "total_stddev_sample": 0.0,
-        "pass_stddev_lt_0_05": false
+        "pass_stddev_lt_0_05": true
       }
     ]
   },
@@ -141,7 +158,7 @@
         "score": 0
       }
     ],
-    "note": "参考混合分仅使用本轮有效判定；无效裁判不计分。部分正确样例仅验证程序区分度；模型各只有一次独立求解，不构成pass@8。",
+    "note": "除B的gpt-5.6-sol外，所有模型答卷程序分均为0，LLM项全部为负项；池化后截断至[0,1]，因此任何裁判下最终分均为0。保留原判定，不将其标记为Sonnet重判。模型各仅一次独立求解，不构成pass@8；部分正确控制仅验证程序区分度。",
     "partial_credit_cases": {
       "path": "discrimination_cases.json",
       "totals": {
@@ -151,7 +168,8 @@
         "3_of_4_positive_results_correct": 0.794118,
         "4_of_4_positive_results_correct": 1
       }
-    }
+    },
+    "three_model_average_score": 0.06862733333333333
   },
   "model_evidence": {
     "gpt_and_opus": "答卷、原始事件流与请求回执均来自独立 Docker 容器中的正常完成运行；导出时只把非 JSON 诊断行另存，没有重新求解。",
@@ -166,10 +184,9 @@
     "模型运行时的题面与本包 instruction.md 有措辞差异，见 solver_prompt 字段；数值、判据和输出格式要求相同。",
     "Qwen 3.8 Max 答卷用公式给出结果；用 LibreOffice 重算公式后离线程序分仍为 0，失分来自数值本身。",
     "开发阶段的另一套评分规则含部分分，给 Qwen 3.8 Max 0.16 分；本包统一使用 Office 裁判分。",
-    "本轮有效金标3/5；有效次数或标准差要求未满足，不宣称一致性验收通过。",
-    "账户增量存在单次超过3.5美元的实测，未实现严格费用封顶；见judge_costs.json逐次读数及终止原因。"
+    "17.31美元为15份并发已保存结果及若干中止启动的共享账户增量，不分摊到单题；A金标r1为更早试跑，费用未知。"
   ],
-  "overall_delivery_compliance": "INCOMPLETE_JUDGE_REVALIDATION",
+  "overall_delivery_compliance": "JUDGE_REVALIDATION_COMPLETE_OTHER_LIMITATIONS_UNCHANGED",
   "interface_gate": {
     "failure_score": 0,
     "required_sheets": [
@@ -202,22 +219,27 @@
       ]
     }
   ],
-  "score_status": "INSUFFICIENT_VALID_RUNS",
-  "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
-  "score_basis": "candidate-access-v4 accepted runs only",
-  "score_revision": "candidate-access-v4",
-  "new_llm_calls": 8,
+  "score_status": "PASS",
+  "score_note": "金标五次有效判定均来自 claude-sonnet-5-5；代表为 golden_r1；每条判据和总分样本标准差均为0，小于0.05。本次仅回写已保存结果，新增调用为0。",
+  "score_basis": "five valid saved Sonnet golden judgments; golden_r1 representative",
+  "score_revision": "sonnet-saved-results-v5-20261026",
+  "new_llm_calls": 0,
   "judge_fix": {
-    "revision": "candidate-access-v4",
+    "revision": "sonnet-saved-results-v5-20261026",
     "task": "B",
-    "status": "INSUFFICIENT_VALID_RUNS",
+    "judge_model": "claude-sonnet-5-5",
+    "status": "PASS",
     "required_valid_runs": 5,
-    "valid_runs": 3,
-    "attempted_runs": 8,
-    "golden_attempted_runs": 7,
-    "representative": "golden_r2",
+    "valid_runs": 5,
+    "completed_runs": 6,
+    "attempted_runs": null,
+    "golden_attempted_runs": null,
+    "imported_golden_runs": 5,
+    "new_llm_calls": 0,
+    "representative": "golden_r1",
     "old_provisional_score": 1.0,
-    "previous_current_score": null,
+    "previous_current_score": 1.0,
+    "previous_valid_runs": 3,
     "new_score": 1.0,
     "programmatic_score": 1.0,
     "total_sigma_sample": 0.0,
@@ -247,9 +269,9 @@
       "DP1": 0.0,
       "DP2": 0.0
     },
-    "consistency_requirement_met": false,
-    "total_cost_usd": 13.137896,
-    "stop_reason": null,
+    "consistency_requirement_met": true,
+    "total_cost_usd": null,
+    "cost_measurement": "Shared concurrent account batch is not attributable to tasks or individual runs; earlier A trial cost is unavailable.",
     "old_model_scores": {
       "claude-opus-4-8": 0.0,
       "gpt-5.6-sol": 0.205882,
@@ -260,23 +282,25 @@
       "gpt-5.6-sol": 0.205882,
       "qwen3.8-max": 0.0
     },
+    "three_model_average_score": 0.06862733333333333,
     "model_rejudge_completed": true,
-    "history": "rejudge_v4_20261026",
-    "invalid_attempts_count": 4,
-    "accounting_final_pending": false,
-    "cost_limit_exceeded_runs": [
-      "golden_r1_retry1"
+    "model_rejudge_scope": [
+      "gpt-5.6-sol"
     ],
-    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
-    "limits": {
-      "single_run_usd": 3.5,
-      "account_usd": 1675,
-      "run_seconds": 1200
-    }
+    "preserved_model_judgments": [
+      "claude-opus-4-8",
+      "qwen3.8-max"
+    ],
+    "preserved_model_judgments_reason": "除B的gpt-5.6-sol外，所有模型答卷程序分均为0，LLM项全部为负项；池化后截断至[0,1]，因此任何裁判下最终分均为0。保留原判定，不将其标记为Sonnet重判。",
+    "history": "judge_sonnet_20261026",
+    "invalid_attempts_count": 0,
+    "aborted_starts_count": null,
+    "stop_reason": null
   },
-  "scoring_revision": "candidate-access-v4",
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "previous_correction": "golden-representative-correction-20261026",
   "previous_scorer_revision": "office-review-v2-round2-20261026",
   "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
-  "invalid_attempt_archive_path_base": "trajectory_case_root"
+  "invalid_attempt_archive_path_base": "trajectory_case_root",
+  "three_model_average_score": 0.06862733333333333
 }

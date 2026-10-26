@@ -2,7 +2,7 @@
   "schema_version": "office-demo-manifest-v1",
   "package_name": "ZCloud-电力监管-001-20261020",
   "path_base": "case_root",
-  "file_count": 144,
+  "file_count": 153,
   "manifest_excludes": [
     "manifest.json"
   ],
@@ -10,8 +10,8 @@
     {
       "path": "delivery_note.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/delivery_note.md",
-      "bytes": 3393,
-      "sha256": "c255537c7e810713a7096e7811302e59e30a3f44535e182fee9cb9db361e603a"
+      "bytes": 3462,
+      "sha256": "1dfc37ad68cca0405b91e1ef027d2ec0bf4c79daea60591c87478d182404376f"
     },
     {
       "path": "environment/Dockerfile",
@@ -40,8 +40,8 @@
     {
       "path": "history/CHANGELOG.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/CHANGELOG.md",
-      "bytes": 11631,
-      "sha256": "abcf686e70c3773ec8ab396ea1478be176ee5b72dd5a86f9cd06eb6fef0b64e5"
+      "bytes": 11787,
+      "sha256": "3784c36f2d9bd94b955545e2546866bbb91eebd79a04fb42a3afb1910e30ca65"
     },
     {
       "path": "history/README.md",
@@ -66,6 +66,54 @@
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/before_cleanup/validation/scoring_policy.md",
       "bytes": 3345,
       "sha256": "dabf49ddf13cf88e15b79b65eb332dc23463af50610bdd86ad3499e3955d4ceb"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/delivery_note.md",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/delivery_note.md",
+      "bytes": 3393,
+      "sha256": "c255537c7e810713a7096e7811302e59e30a3f44535e182fee9cb9db361e603a"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/metadata/task_metadata.json",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/metadata/task_metadata.json",
+      "bytes": 6229,
+      "sha256": "512d279a5dd7f42ce604e099c38f3689ce4bea5f9448679a8e3b07196c04d9cd"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/package_root/交付文档.md",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/package_root/交付文档.md",
+      "bytes": 616,
+      "sha256": "ba780a14972b697780761b546f794bcd11f17ca2589f3a253994ba3bba44e592"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/records.jsonl",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/records.jsonl",
+      "bytes": 3823,
+      "sha256": "c7806849836273ec172e89bd1876fbe6a42e8bed168a7aa4e1bb513bb3952955"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/records.v1.jsonl",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/records.v1.jsonl",
+      "bytes": 3823,
+      "sha256": "c7806849836273ec172e89bd1876fbe6a42e8bed168a7aa4e1bb513bb3952955"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/validation/rejudge_summary.json",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/validation/rejudge_summary.json",
+      "bytes": 1393,
+      "sha256": "e8372a1282556db01a334b36a5a00631a91905936141552ea7c3edd44282d29f"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/validation/run_regression.py",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/validation/run_regression.py",
+      "bytes": 28838,
+      "sha256": "9a160a96e35150f2328e74ab221f8c90d87186065cf8c2749b39a571627891f7"
+    },
+    {
+      "path": "history/judge_sonnet_20261026/previous/validation/scoring_policy.md",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/history/judge_sonnet_20261026/previous/validation/scoring_policy.md",
+      "bytes": 5862,
+      "sha256": "8facc506956e844c169dff19d8c2b346b7891a4107f63d0ac4efb945d302f6fb"
     },
     {
       "path": "history/manifests/outer_before_cleanup.json",
@@ -472,14 +520,14 @@
     {
       "path": "metadata/task_metadata.json",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/metadata/task_metadata.json",
-      "bytes": 6229,
-      "sha256": "512d279a5dd7f42ce604e099c38f3689ce4bea5f9448679a8e3b07196c04d9cd"
+      "bytes": 7127,
+      "sha256": "e241178b3e94ac3000d1ba61b4b6c91216b37231c2e7a1494b9456440c73a713"
     },
     {
       "path": "records.jsonl",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/records.jsonl",
-      "bytes": 3823,
-      "sha256": "c7806849836273ec172e89bd1876fbe6a42e8bed168a7aa4e1bb513bb3952955"
+      "bytes": 4918,
+      "sha256": "7716684b12a66f87b83d02bfb221096f8cad293adf27d2c5299425d438cf903c"
     },
     {
       "path": "rubrics.json",
@@ -514,8 +562,8 @@
     {
       "path": "task.toml",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/task.toml",
-      "bytes": 3210,
-      "sha256": "92d815a7405b9b6b49794904b865e18ad57f03fd01aa974b107c607e76503855"
+      "bytes": 3215,
+      "sha256": "936b66f4615f78bfc9a8ba1fdb8f917446edce527961b2e36085e725721e3001"
     },
     {
       "path": "tests/__golden_output/answer.xlsx",
@@ -844,20 +892,26 @@
     {
       "path": "validation/rejudge_summary.json",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/validation/rejudge_summary.json",
-      "bytes": 1393,
-      "sha256": "e8372a1282556db01a334b36a5a00631a91905936141552ea7c3edd44282d29f"
+      "bytes": 1768,
+      "sha256": "49bb2d586f93a9fd6f990b0ea2432bd1b4f7c6a82c9e592e3ee7ee668cfc5c92"
     },
     {
       "path": "validation/run_regression.py",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/validation/run_regression.py",
-      "bytes": 28838,
-      "sha256": "9a160a96e35150f2328e74ab221f8c90d87186065cf8c2749b39a571627891f7"
+      "bytes": 29510,
+      "sha256": "d68ea97dc70b0165ac3b98f4ce969c589e9262c2c468ed6638a5dabbdc4c9787"
     },
     {
       "path": "validation/scoring_policy.md",
       "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/validation/scoring_policy.md",
-      "bytes": 5862,
-      "sha256": "8facc506956e844c169dff19d8c2b346b7891a4107f63d0ac4efb945d302f6fb"
+      "bytes": 5622,
+      "sha256": "646f23d77cef52cb4f8e95779d2df3e5d4e16343b57d6b07183c52fdb2546b57"
+    },
+    {
+      "path": "validation/sonnet_events.log",
+      "zip_path": "ZCloud-电力监管-001-20261020/powercor-2020-capex-reconciliation/validation/sonnet_events.log",
+      "bytes": 860,
+      "sha256": "12d2ba7d03be433a3f811d9637b73c91b4252a0b0dd6ac154e1faf19fc595b90"
     },
     {
       "path": "validation/source_pair_audit.json",

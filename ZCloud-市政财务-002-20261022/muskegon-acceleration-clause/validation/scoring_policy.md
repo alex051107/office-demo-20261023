@@ -56,4 +56,4 @@
 
 ## 复现与证据边界
 
-运行 `python3 -B validation/run_regression.py` 检查正负例、池化规则、候选访问证据以及已保存报告。正负例分列于 `validation/negative_cases/cases.json` 和 `validation/positive_cases/cases.json`。回归中的本地控制判定仅用于程序测试，不是新裁判结果；所有临时输出写入临时目录。金标程序分1.0；本轮有效内容判定4/5，混合总分1.000000；旧暂定分和无效尝试不进入本轮统计。三题各按五个序号运行，访问证据错误只重试一次。仅B指定答卷尝试重新评分，所有模型答卷均未重新求解或修改。逐条判据及总分使用有效样本的样本标准差，五次且每项严格小于0.05才满足一致性要求。
+运行 `python3 -B validation/run_regression.py` 检查正负例、池化规则、候选访问证据与保存判定；不调用求解器或裁判。LLM 裁判为 claude-sonnet-5-5。参考答案的 5 次评分（`judge_runs/golden_r1` 到 `golden_r5`）都来自它，总分和每条判据的标准差都是 0。除 B 的 GPT-5.6-SOL 外，模型答卷没有重评：它们程序分为 0，LLM 判据只扣分，任何裁判下都是 0 分。旧的 qwen 判定保留在 `history/`，不参与统计。

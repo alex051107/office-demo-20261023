@@ -1,0 +1,29 @@
+{
+  "reward": 0.205882,
+  "llm_evidence_errors": [],
+  "graded_score": 0.205882,
+  "criteria_counted": 23.0,
+  "score_before_post_pool_rules": 0.20588235294117646,
+  "interface_gate": {
+    "failed": false,
+    "errors": []
+  },
+  "post_pool_rules": [
+    {
+      "name": "required_header_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    },
+    {
+      "name": "instruction_must_clause_cap",
+      "triggered": false,
+      "cap": 0.69,
+      "reasons": []
+    }
+  ],
+  "verifier_error": 0.0,
+  "score_available": true,
+  "scoring_revision": "candidate-access-v4",
+  "programmatic_score": 0.205882
+}

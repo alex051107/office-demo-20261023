@@ -346,6 +346,9 @@ def check_saved_report(task, track):
         assert reward['reward'] == judge['score_final'] == round(score, 6)
         assert {item['criterion_id'] for item in judge['criteria']} == expected_ids
         assert judge['reward_details_sha256'] == hashlib.sha256((folder / 'reward-details.json').read_bytes()).hexdigest()
+        assert judge['judge_model'] == summary['judge_model'] == 'claude-sonnet-5-5'
+        assert [block['judge']['model'] for block in details['reward'] if block.get('kind') == 'agent'] == [judge['judge_model']]
+        assert judge['source_run'] == identifier
         judges.append(judge)
     scores = [judge['score_final'] for judge in judges]
     sigma = statistics.stdev(scores) if len(scores) > 1 else None
@@ -387,7 +390,8 @@ def check_saved_report(task, track):
                     assert record[field]['reward'] == summary['new_score']
                     assert record[field]['status'] == summary['status']
                     assert record[field]['score_available'] == bool(scores)
-                    assert record[field]['new_llm_calls'] == summary['golden_attempted_runs']
+                    assert record[field]['new_llm_calls'] == summary['new_llm_calls'] == 0
+                    assert record[field]['imported_judge_runs'] == summary['valid_runs'] == 5
         metadata = read(root / 'metadata/task_metadata.json')
         assert metadata['reference_hybrid_score'] == summary['new_score']
         assert metadata['reference_fresh_valid_judge_runs'] == len(scores)
@@ -397,12 +401,16 @@ def check_saved_report(task, track):
     earlier = track / 'history' / previous['history'] / 'judge_runs'
     assert len(list(earlier.glob('golden_r[1-5]/reward-details.json'))) == 5
     costs = read(track / 'judge_costs.json')
-    assert round(sum(row['cost_usd'] for row in costs['runs']), 6) == summary['total_cost_usd']
-    assert len(costs['runs']) == summary['attempted_runs']
+    batch = costs['shared_account_batch']
+    assert round(batch['usage_after_usd'] - batch['usage_before_usd'], 6) == batch['account_delta_usd'] == 17.31
+    assert costs['total_cost_usd'] is summary['total_cost_usd'] is None
+    assert costs['allocation'] == 'unallocated_shared_batch'
+    assert len(costs['runs']) == summary['completed_runs']
+    assert summary['new_llm_calls'] == 0 and summary['attempted_runs'] is None
+    assert summary['representative'] == 'golden_r1' and group['run_ids'] == [f'golden_r{index}' for index in range(1, 6)]
     for row in costs['runs']:
-        assert round(row['usage_after_usd'] - row['usage_before_usd'], 6) == row['cost_usd']
-        if not row['valid']:
-            assert (archive / 'invalid_attempts' / row['run'] / 'cost_receipt.json').is_file()
+        assert row['cost_usd'] is None and row['valid']
+        assert (track / 'judge_runs' / row['run'] / 'reward-details.json').is_file()
     for folder in sorted((track / 'rollouts').iterdir()):
         candidate = folder / 'candidate.xlsx'
         result = engine.score(engine.extract(candidate, key), key)

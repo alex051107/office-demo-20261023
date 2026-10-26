@@ -1,0 +1,224 @@
+{
+  "method": "以参考答案为底，前 k 项计分结果保持正确，其余结果乘以 1.25，用题包自带的离线程序评分器打分；其他工作表不跟着改，所以跨表一致性扣分项会按实际情况触发；总分按 rubrics.json 的公式计算，LLM 扣分项按未违规处理（需要付费裁判）。没有调用模型或裁判。",
+  "s_max": 34,
+  "cases": [
+    {
+      "case": "0_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R01",
+          "cell": "Results!B2",
+          "reference": 61.7,
+          "set_to": 77.125
+        },
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 12.13850088530396,
+          "set_to": 15.173126
+        },
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 0.0,
+        "R02": 0.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1",
+        "P2"
+      ],
+      "programmatic_total": 0
+    },
+    {
+      "case": "1_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "R02",
+          "cell": "Results!B3",
+          "reference": 12.13850088530396,
+          "set_to": 15.173126
+        },
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 0.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1"
+      ],
+      "programmatic_total": 0.205882
+    },
+    {
+      "case": "2_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "A1",
+          "cell": "Analysis!C2",
+          "reference": 508.3,
+          "set_to": 635.375
+        },
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 0.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [
+        "P1"
+      ],
+      "programmatic_total": 0.5
+    },
+    {
+      "case": "3_of_4_positive_results_correct",
+      "changed_cells": [
+        {
+          "criterion": "A2",
+          "cell": "Analysis!C3",
+          "reference": 570,
+          "set_to": 712.5
+        }
+      ],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 1.0,
+        "A2": 0.0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 0.794118
+    },
+    {
+      "case": "4_of_4_positive_results_correct",
+      "changed_cells": [],
+      "positive_credit": {
+        "R01": 1.0,
+        "R02": 1.0,
+        "A1": 1.0,
+        "A2": 1.0
+      },
+      "penalties_triggered": [],
+      "programmatic_total": 1
+    }
+  ],
+  "model_answers": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.205882,
+    "qwen3.8-max": 0.0
+  },
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "text_judgment_scope": "partial-credit controls have no new text judgment; reported scores are programmatic only",
+  "reference_score": 1.0,
+  "reference_status": "INSUFFICIENT_VALID_RUNS",
+  "reference_score_basis": "candidate-access-v4 accepted runs only",
+  "invalid_judge_attempts_excluded": true,
+  "judge_fix": {
+    "revision": "candidate-access-v4",
+    "task": "B",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "required_valid_runs": 5,
+    "valid_runs": 3,
+    "attempted_runs": 8,
+    "golden_attempted_runs": 7,
+    "representative": "golden_r2",
+    "old_provisional_score": 1.0,
+    "previous_current_score": null,
+    "new_score": 1.0,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": 0.0,
+    "total_sigma_population": 0.0,
+    "criterion_sigma_sample": {
+      "R01": 0.0,
+      "R02": 0.0,
+      "A1": 0.0,
+      "A2": 0.0,
+      "P1": 0.0,
+      "P2": 0.0,
+      "SD1": 0.0,
+      "SD2": 0.0,
+      "F1": 0.0,
+      "F2": 0.0,
+      "F3": 0.0,
+      "X1": 0.0,
+      "X2": 0.0,
+      "L01": 0.0,
+      "L02": 0.0,
+      "L03": 0.0,
+      "S01": 0.0,
+      "S02": 0.0,
+      "SP1": 0.0,
+      "O01": 0.0,
+      "U01": 0.0,
+      "DP1": 0.0,
+      "DP2": 0.0
+    },
+    "consistency_requirement_met": false,
+    "total_cost_usd": 13.137896,
+    "stop_reason": null,
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": true,
+    "history": "rejudge_v4_20261026",
+    "invalid_attempts_count": 4,
+    "accounting_final_pending": false,
+    "cost_limit_exceeded_runs": [
+      "golden_r1_retry1"
+    ],
+    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+    "limits": {
+      "single_run_usd": 3.5,
+      "account_usd": 1675,
+      "run_seconds": 1200
+    }
+  },
+  "score_status": "INSUFFICIENT_VALID_RUNS",
+  "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
+  "score_revision": "candidate-access-v4",
+  "golden_hybrid_score_basis": "candidate-access-v4 accepted runs only",
+  "new_llm_calls": 8,
+  "score_basis": "candidate-access-v4 accepted runs only",
+  "scoring_revision": "candidate-access-v4",
+  "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
+  "invalid_attempt_archive_path_base": "trajectory_case_root"
+}

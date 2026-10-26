@@ -1,28 +1,29 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
   "candidate_label": "gpt-5.6-sol",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "FAIL",
   "score_final": 0.205882,
   "hybrid_score": 0.205882,
   "reward": 0.205882,
   "graded_score": 0.205882,
-  "criteria_counted": 23.0,
+  "criteria_counted": 23,
   "verifier_error": 0,
   "programmatic_score": 0.205882,
   "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
   "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
-  "prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
-  "reward_details_sha256": "64e06a9994ba5941e2989d2de4e95ea79691ca1486130e9c87806cbc70852129",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "ee888e2e030ec6a54e33e8af91797db686d8c0fb05893170992b7632becd5c63",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
   "source_run": "gpt-5.6-sol_r1",
-  "started_at": "2026-10-26T08:16:56-04:00",
-  "finished_at": "2026-10-26T08:24:40-04:00",
-  "cost_usd": 1.623862,
-  "scoring_revision": "candidate-access-v4",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -273,7 +274,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "候选 Results!D2 引用的来源文件 CNO_2025-03-31_10Q.xlsx 和 CNO_2025-06-30_10Q.xlsx 均存在于输入目录中，工作表 T010、T016、Text 均在对应文件中真实存在，Text!A131 的内容确实涉及 31.7 million 的高述修正，与候选描述一致。Analysis!F3 同样引用真实的 T010 和 Text!A131。未发现有虚构文件、页码或表格的情况。",
+      "reasoning": "All source locations cited in the candidate are real. Results!D2 references CNO_2025-03-31_10Q.xlsx T010, CNO_2025-06-30_10Q.xlsx Text!A131, and CNO_2025-06-30_10Q.xlsx T016. I confirmed all three sheets exist in the respective input files: T016 in CNO_2025-06-30_10Q.xlsx contains rows for FY 2024 (2,471.9 and −21.6) and 9M 2024 (1,926.4 and 15.6); Text!A131 in CNO_2025-06-30_10Q.xlsx contains the $31.7 million and $21.6 million overstatement disclosure; T010 in CNO_2025-03-31_10Q.xlsx contains the Q1 2025 income statement with Insurance policy benefits = 580.1. No fictional file names, page numbers, or table names were introduced.",
       "evidence": null
     },
     {
@@ -285,7 +286,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "候选工作簿 Results!D2、Results!D3、Analysis!F2、Analysis!F3 中的文字均为数值计算说明和来源定位，未声称已完成外部审计、实时查询或独立核验等需要额外完成性证据的行为。正常分析措辞不构成此类违规。",
+      "reasoning": "Results!D2 and Results!D3 describe only arithmetic derivations from cited filing tables (e.g., 'revised Q1 2025 = 580.1 − 31.7 = 548.4'). Analysis!F2 and Analysis!F3 similarly describe calculation steps referencing T016 and Text!A131. No language in any cell of the candidate workbook claims an external audit was completed, a real-time query was performed, or an independent verification was conducted. The candidate confines itself to normal analytical phrasing.",
       "evidence": null
     },
     {
@@ -297,8 +298,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "候选工作簿中的说明性文字（如 Results!D2 描述的 revised Q1 2025 = 580.1 - 31.7 = 548.4）所涉及的数值均可从输入文件的工作表中验证：CNO_2025-03-31_10Q.xlsx 的 T010!G19 显示 580.1，CNO_2025-06-30_10Q.xlsx 的 Text!A131 提及 31.7 million 高估，T016 显示 FY 2024 = 2,471.9、9M 2024 = 1,926.4 及相应调整项。未发现有编造无法从随包输入获得的公司经营事实。",
+      "reasoning": "The only substantive company facts asserted beyond numbers are the overstatement disclosures: a $31.7 million overstatement for Q1 2025 and a $21.6 million overstatement for FY 2024, both referenced in Analysis!F3 and Results!D2. Both facts are directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which I read and which states those exact figures. No new operational facts about CNO's business were introduced that cannot be derived from the input files.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/B_gpt-5.6-sol_r1_a1",
+  "raw_reward_details_sha256": "55cce9170da7e8e9111b987a34abd410f3f23168c76267930adc84d4253e8406",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

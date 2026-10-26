@@ -1,11 +1,14 @@
 {
   "status": "FAIL",
-  "accepted_reward": 0.205882,
   "verifier_error": 0,
   "judge_completed": true,
   "source_run": "gpt-5.6-sol_r1",
-  "scoring_revision": "candidate-access-v4",
-  "started_at": "2026-10-26T08:16:56-04:00",
-  "finished_at": "2026-10-26T08:24:40-04:00",
-  "cost_usd": 1.623862
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
+  "judge_model": "claude-sonnet-5-5",
+  "cost_usd": null,
+  "raw_source_run": "v5_sonnet/B_gpt-5.6-sol_r1_a1",
+  "new_llm_calls": 0,
+  "accepted_reward": 0.205882,
+  "candidate_sha256": "80a709ed28066322d458260d29a814833b22625c9e4557995905c54b22affce2",
+  "timing_note": "Batch ledger has unzoned completion times; no per-run start time or request cost is asserted."
 }

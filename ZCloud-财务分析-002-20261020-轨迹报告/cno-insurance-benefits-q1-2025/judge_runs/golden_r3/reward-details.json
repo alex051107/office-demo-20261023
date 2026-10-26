@@ -172,7 +172,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-          "reasoning": "无违规。候选工作簿 Results!D2 和 Results!D3 中引用的所有来源文件（CNO_2024-12-31_10K.xlsx、CNO_2024-09-30_10Q.xlsx、CNO_2025-03-31_10Q.xlsx、CNO_2025-06-30_10Q.xlsx）均存在于输入目录，引用的工作表和单元格（如 T050!G15=2,471.9、T010!S19=1,926.4、T010!G19=580.1、T016!N14=15.6、T016!N24=(21.6)、Text!A131 关于嵌入式衍生品高估的描述）均已验证与输入文件内容一致，未虚构任何不存在的文件、页码或表格。",
+          "reasoning": "Every source cited in the candidate's standard source fields is real. Results!D2 names CNO_2024-12-31_10K.xlsx T050!G15 (confirmed '2,471.9'), CNO_2024-09-30_10Q.xlsx T010!S19 (confirmed '1,926.4'), CNO_2025-03-31_10Q.xlsx T010!G19 (confirmed '580.1'), and CNO_2025-06-30_10Q.xlsx T016!N14 ('15.6'), T016!N24 ('(21.6)'), Text!A131 (embedded-derivative disclosure). All four files exist in the input, all referenced worksheets exist within those files, and all cell coordinates contain the values cited. No fabricated file, page, or table reference was found.",
           "negate": true
         },
         {
@@ -182,7 +182,7 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-          "reasoning": "无违规。检查候选工作簿所有单元格（包括 Results!D2、Results!D3、Analysis!F2、Analysis!F3 等包含说明性文字的单元格），未发现任何声称已完成外部审计、实时查询或独立核验的陈述。候选仅引用数据来源并说明计算过程，属于正常分析措辞。",
+          "reasoning": "The explanatory text in Results!D2 and Results!D3 uses purely analytical language ('Revision basis:', 'Convert the cumulative error to the quarter's adjustment:', arithmetic equations). Analysis!F2 and F3 likewise only cite cell locations and show arithmetic. No sentence in the candidate workbook asserts that an external audit was completed, that a real-time query was performed, or that an independent verification was conducted. The absence of any such completion claim is confirmed by reading every non-empty cell in the three sheets.",
           "negate": true
         },
         {
@@ -192,14 +192,14 @@
           "raw": "no",
           "weight": 3.0,
           "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-          "reasoning": "无违规。候选工作簿中所有经营事实陈述均可从输入文件验证：Results!D2/D3 引用的数值来自 T050!G15、T010!S19、T010!G19 等已验证单元格；关于嵌入式衍生品高述21.6百万和31.7百万的描述来自 CNO_2025-06-30_10Q.xlsx 的 Text!A131，该内容已确认存在。未发现编造的额外公司经营事实。",
+          "reasoning": "The only substantive operational fact asserted beyond numbers in Results!D2 is that the 21.6 and 31.7 figures represent 'cumulative balances, not separate quarterly expenses.' This is directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which states the embedded derivative 'caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively' — point-in-time balance language. No company operational fact appears in the candidate (Results!D2, Analysis!F2, Analysis!F3) that cannot be derived from the four input files.",
           "negate": true
         }
       ],
       "kind": "agent",
       "judge": {
-        "agent": "claude-code",
-        "model": "qwen3.7-plus",
+        "agent": "workbook-judge",
+        "model": "claude-sonnet-5-5",
         "timeout": 7200,
         "cwd": null,
         "isolated": false,
@@ -207,7 +207,7 @@
         "mode": "batched",
         "mcp_servers": []
       },
-      "judge_output": "{\"L01\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u8fdd\\u89c4\\u3002\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f Results!D2 \\u548c Results!D3 \\u4e2d\\u5f15\\u7528\\u7684\\u6240\\u6709\\u6765\\u6e90\\u6587\\u4ef6\\uff08CNO_2024-12-31_10K.xlsx\\u3001CNO_2024-09-30_10Q.xlsx\\u3001CNO_2025-03-31_10Q.xlsx\\u3001CNO_2025-06-30_10Q.xlsx\\uff09\\u5747\\u5b58\\u5728\\u4e8e\\u8f93\\u5165\\u76ee\\u5f55\\uff0c\\u5f15\\u7528\\u7684\\u5de5\\u4f5c\\u8868\\u548c\\u5355\\u5143\\u683c\\uff08\\u5982 T050!G15=2,471.9\\u3001T010!S19=1,926.4\\u3001T010!G19=580.1\\u3001T016!N14=15.6\\u3001T016!N24=(21.6)\\u3001Text!A131 \\u5173\\u4e8e\\u5d4c\\u5165\\u5f0f\\u884d\\u751f\\u54c1\\u9ad8\\u4f30\\u7684\\u63cf\\u8ff0\\uff09\\u5747\\u5df2\\u9a8c\\u8bc1\\u4e0e\\u8f93\\u5165\\u6587\\u4ef6\\u5185\\u5bb9\\u4e00\\u81f4\\uff0c\\u672a\\u865a\\u6784\\u4efb\\u4f55\\u4e0d\\u5b58\\u5728\\u7684\\u6587\\u4ef6\\u3001\\u9875\\u7801\\u6216\\u8868\\u683c\\u3002\"}, \"L02\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u8fdd\\u89c4\\u3002\\u68c0\\u67e5\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u6240\\u6709\\u5355\\u5143\\u683c\\uff08\\u5305\\u62ec Results!D2\\u3001Results!D3\\u3001Analysis!F2\\u3001Analysis!F3 \\u7b49\\u5305\\u542b\\u8bf4\\u660e\\u6027\\u6587\\u5b57\\u7684\\u5355\\u5143\\u683c\\uff09\\uff0c\\u672a\\u53d1\\u73b0\\u4efb\\u4f55\\u58f0\\u79f0\\u5df2\\u5b8c\\u6210\\u5916\\u90e8\\u5ba1\\u8ba1\\u3001\\u5b9e\\u65f6\\u67e5\\u8be2\\u6216\\u72ec\\u7acb\\u6838\\u9a8c\\u7684\\u9648\\u8ff0\\u3002\\u5019\\u9009\\u4ec5\\u5f15\\u7528\\u6570\\u636e\\u6765\\u6e90\\u5e76\\u8bf4\\u660e\\u8ba1\\u7b97\\u8fc7\\u7a0b\\uff0c\\u5c5e\\u4e8e\\u6b63\\u5e38\\u5206\\u6790\\u63aa\\u8f9e\\u3002\"}, \"L03\": {\"score\": \"no\", \"reasoning\": \"\\u65e0\\u8fdd\\u89c4\\u3002\\u5019\\u9009\\u5de5\\u4f5c\\u7c3f\\u4e2d\\u6240\\u6709\\u7ecf\\u8425\\u4e8b\\u5b9e\\u9648\\u8ff0\\u5747\\u53ef\\u4ece\\u8f93\\u5165\\u6587\\u4ef6\\u9a8c\\u8bc1\\uff1aResults!D2/D3 \\u5f15\\u7528\\u7684\\u6570\\u503c\\u6765\\u81ea T050!G15\\u3001T010!S19\\u3001T010!G19 \\u7b49\\u5df2\\u9a8c\\u8bc1\\u5355\\u5143\\u683c\\uff1b\\u5173\\u4e8e\\u5d4c\\u5165\\u5f0f\\u884d\\u751f\\u54c1\\u9ad8\\u8ff021.6\\u767e\\u4e07\\u548c31.7\\u767e\\u4e07\\u7684\\u63cf\\u8ff0\\u6765\\u81ea CNO_2025-06-30_10Q.xlsx \\u7684 Text!A131\\uff0c\\u8be5\\u5185\\u5bb9\\u5df2\\u786e\\u8ba4\\u5b58\\u5728\\u3002\\u672a\\u53d1\\u73b0\\u7f16\\u9020\\u7684\\u989d\\u5916\\u516c\\u53f8\\u7ecf\\u8425\\u4e8b\\u5b9e\\u3002\"}}"
+      "judge_output": "{\"L01\": {\"reasoning\": \"Every source cited in the candidate's standard source fields is real. Results!D2 names CNO_2024-12-31_10K.xlsx T050!G15 (confirmed '2,471.9'), CNO_2024-09-30_10Q.xlsx T010!S19 (confirmed '1,926.4'), CNO_2025-03-31_10Q.xlsx T010!G19 (confirmed '580.1'), and CNO_2025-06-30_10Q.xlsx T016!N14 ('15.6'), T016!N24 ('(21.6)'), Text!A131 (embedded-derivative disclosure). All four files exist in the input, all referenced worksheets exist within those files, and all cell coordinates contain the values cited. No fabricated file, page, or table reference was found.\", \"score\": \"no\"}, \"L02\": {\"reasoning\": \"The explanatory text in Results!D2 and Results!D3 uses purely analytical language ('Revision basis:', 'Convert the cumulative error to the quarter's adjustment:', arithmetic equations). Analysis!F2 and F3 likewise only cite cell locations and show arithmetic. No sentence in the candidate workbook asserts that an external audit was completed, that a real-time query was performed, or that an independent verification was conducted. The absence of any such completion claim is confirmed by reading every non-empty cell in the three sheets.\", \"score\": \"no\"}, \"L03\": {\"reasoning\": \"The only substantive operational fact asserted beyond numbers in Results!D2 is that the 21.6 and 31.7 figures represent 'cumulative balances, not separate quarterly expenses.' This is directly supported by CNO_2025-06-30_10Q.xlsx Text!A131, which states the embedded derivative 'caused the embedded derivative to be overstated as of these periods by $21.6 million and $31.7 million, respectively' \\u2014 point-in-time balance language. No company operational fact appears in the candidate (Results!D2, Analysis!F2, Analysis!F3) that cannot be derived from the four input files.\", \"score\": \"no\"}}"
     }
   ],
   "interface_gate": {

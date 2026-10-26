@@ -1,0 +1,183 @@
+{
+  "difficulty_tier": "not_certified_pass_at_8",
+  "name": "cno-insurance-benefits-q1-2025",
+  "domain": "财务分析",
+  "topic": "office-document",
+  "sector": "Finance and insurance",
+  "occupation": "Financial analyst",
+  "est_minutes": 90,
+  "multimodal": false,
+  "web_search_required": false,
+  "skills": [
+    "C5 multi-file table analysis",
+    "C8 financial calculation",
+    "Revision of prior periods",
+    "Cumulative to quarter conversion",
+    "Pivot or summary table"
+  ],
+  "task_id": "FINREP/cno-insurance-benefits-q1-2025",
+  "sample_id": "cno-insurance-benefits-q1-2025",
+  "difficulty": "not_certified_pass_at_8",
+  "pass_at_8": null,
+  "visibility": {
+    "solver": [
+      "instruction.md",
+      "environment/input_files/"
+    ],
+    "evaluator": [
+      "tests/",
+      "solution/",
+      "targets/",
+      "rubrics.json",
+      "metadata/"
+    ],
+    "runtime_solver_input_root": "/app/input_files/"
+  },
+  "judge_model": "qwen3.7-plus",
+  "reference_hybrid_score": 1.0,
+  "reference_judge_mean": 1.0,
+  "model_scores": {
+    "claude-opus-4-8": 0.0,
+    "gpt-5.6-sol": 0.205882,
+    "qwen3.8-max": 0.0
+  },
+  "three_model_mean": 0.06862733333333333,
+  "judge_timeout_seconds": 1200,
+  "abilities": [
+    "给定材料事实抽取",
+    "来源口径与跨文件核对",
+    "领域计算建模",
+    "可编辑Excel交付与自检"
+  ],
+  "domain_level_2": "财务分析",
+  "domain_level_3": "保险公司季度报表分析",
+  "domain_level_4": "跨期修订与季度赔付比较",
+  "difficulty_basis": "三模型仍各只有一次独立求解，无pass@8；仅B指定答卷重新评分。当前分数为{'claude-opus-4-8': 0.0, 'gpt-5.6-sol': 0.205882, 'qwen3.8-max': 0.0}。",
+  "environment_template": "environment/Dockerfile",
+  "environment_template_status": "custom_dockerfile_path_pending_platform_acceptance",
+  "task_complexity": "unclassified",
+  "task_complexity_status": "not_assessed",
+  "task_complexity_basis": "未取得甲方的任务复杂度分级表，本题暂不分级。",
+  "authenticity": {
+    "source_status": "public_source_business_adaptation",
+    "authorization_status": "public_sources_archived_no_additional_license_claim",
+    "synthetic_entities": false,
+    "real_or_authorized_input_required": true,
+    "authored_supporting_records": false
+  },
+  "task_description": {
+    "why_real": "保险公司季度报表分析是财务分析师的常规工作；题面依据公开材料改编。",
+    "how_authenticity_is_guaranteed": "输入为 CNO Financial Group 向美国证监会提交的四份季度和年度报告，按报告中的段落与表格转录为 Excel；2025 年第二季度报告为节选。不是客户原始委托。",
+    "real_deliverable": "answer.xlsx，包含题面要求的结果及工作底稿"
+  },
+  "required_tools": [
+    "PDF reader",
+    "Excel reader",
+    "Excel editor",
+    "Office headless renderer"
+  ],
+  "domain_knowledge_dependency": "跨期修订与季度赔付比较",
+  "visual_language_dependency": false,
+  "format_adapter": "rewardkit_with_optional_harbor_adapter",
+  "version": "office-demo-20261020-format-20261022",
+  "task_count": 1,
+  "three_model_average_score": 0.06862733333333333,
+  "rollout_models": [
+    "gpt-5.6-sol",
+    "claude-opus-4-8",
+    "qwen3.8-max"
+  ],
+  "task_complexity_note": "复杂度等级待甲方确认。",
+  "source_note": "输入为 CNO Financial Group 向美国证监会提交的四份季度和年度报告，按报告中的段落与表格转录为 Excel；2025 年第二季度报告为节选。不是客户原始委托。",
+  "score_basis": "candidate-access-v4 accepted runs only",
+  "reference_programmatic_score": 1.0,
+  "reference_judge_stddev_sample": 0.0,
+  "reference_status": "INSUFFICIENT_VALID_RUNS",
+  "reference_provisional": false,
+  "reference_saved_valid_runs": 3,
+  "reference_score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。",
+  "scorer_revision": "office-review-v2-round2-20261026",
+  "correction": "golden-representative-correction-20261026",
+  "invalid_judge_attempts_excluded": true,
+  "reference_judge_stddev": 0.0,
+  "reference_judge_runs_completed": 3,
+  "reference_fresh_valid_judge_runs": 3,
+  "reference_judge_status": "INSUFFICIENT_VALID_RUNS",
+  "reference_judge_runs_required": 5,
+  "score_status": "INSUFFICIENT_VALID_RUNS",
+  "judge_fix": {
+    "revision": "candidate-access-v4",
+    "task": "B",
+    "status": "INSUFFICIENT_VALID_RUNS",
+    "required_valid_runs": 5,
+    "valid_runs": 3,
+    "attempted_runs": 8,
+    "golden_attempted_runs": 7,
+    "representative": "golden_r2",
+    "old_provisional_score": 1.0,
+    "previous_current_score": null,
+    "new_score": 1.0,
+    "programmatic_score": 1.0,
+    "total_sigma_sample": 0.0,
+    "total_sigma_population": 0.0,
+    "criterion_sigma_sample": {
+      "R01": 0.0,
+      "R02": 0.0,
+      "A1": 0.0,
+      "A2": 0.0,
+      "P1": 0.0,
+      "P2": 0.0,
+      "SD1": 0.0,
+      "SD2": 0.0,
+      "F1": 0.0,
+      "F2": 0.0,
+      "F3": 0.0,
+      "X1": 0.0,
+      "X2": 0.0,
+      "L01": 0.0,
+      "L02": 0.0,
+      "L03": 0.0,
+      "S01": 0.0,
+      "S02": 0.0,
+      "SP1": 0.0,
+      "O01": 0.0,
+      "U01": 0.0,
+      "DP1": 0.0,
+      "DP2": 0.0
+    },
+    "consistency_requirement_met": false,
+    "total_cost_usd": 13.137896,
+    "stop_reason": null,
+    "old_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "new_model_scores": {
+      "claude-opus-4-8": 0.0,
+      "gpt-5.6-sol": 0.205882,
+      "qwen3.8-max": 0.0
+    },
+    "model_rejudge_completed": true,
+    "history": "rejudge_v4_20261026",
+    "invalid_attempts_count": 4,
+    "accounting_final_pending": false,
+    "cost_limit_exceeded_runs": [
+      "golden_r1_retry1"
+    ],
+    "cost_measurement": "Account cumulative usage difference before and after each run; not isolated request-level billing.",
+    "limits": {
+      "single_run_usd": 3.5,
+      "account_usd": 1675,
+      "run_seconds": 1200
+    }
+  },
+  "reference_invalid_judge_attempts": 4,
+  "reference_scoring_revision": "candidate-access-v4",
+  "score_revision": "candidate-access-v4",
+  "scoring_revision": "candidate-access-v4",
+  "new_llm_calls": 8,
+  "invalid_attempt_archive": "history/rejudge_v4_20261026/invalid_attempts",
+  "invalid_attempt_archive_path_base": "trajectory_case_root",
+  "score_note": "本轮有效金标3/5；仅有效判定计分和计算标准差。"
+}

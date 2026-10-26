@@ -1,28 +1,29 @@
 {
   "case_id": "cno-insurance-benefits-q1-2025",
   "candidate_label": "golden",
-  "judge_model": "qwen3.7-plus",
+  "judge_model": "claude-sonnet-5-5",
   "status": "PASS",
   "score_final": 1.0,
   "hybrid_score": 1.0,
   "reward": 1.0,
   "graded_score": 1.0,
-  "criteria_counted": 23.0,
+  "criteria_counted": 23,
   "verifier_error": 0,
-  "programmatic_score": 1,
+  "programmatic_score": 1.0,
   "candidate_sha256": "9f21755083504ad4defd72255b5062eb4d97a3bd1fc04be3517ac559f3163617",
   "rubric_sha256": "cfc28857c5c0b1e5ee03e8409c22ecbb5eef63b0b5ae4d9a921f31b190de52ad",
-  "prompt_sha256": "3402d091f98c2d480cd64298fdcc2bea07c3cf8edc31668fd95bfd66d8435ae4",
-  "reward_details_sha256": "b958324f92e71ef2d743896ba7247e345b49ace4e6d2429c15b9c849983af9cd",
+  "prompt_sha256": null,
+  "prompt_provenance": "Raw saved result does not include the executed prompt; package prompt is not asserted to be the executed prompt.",
+  "reward_details_sha256": "acad6f3430074b0d9a62491dfabef6e06033a830029e86ec3ccce025dd03ef07",
   "judge_completed": true,
   "llm_status": "VALID_WITH_CANDIDATE_CELL_EVIDENCE",
   "judgment_available": true,
   "provisional": false,
-  "source_run": "golden_r3",
-  "started_at": "2026-10-26T07:10:13-04:00",
-  "finished_at": "2026-10-26T07:12:54-04:00",
-  "cost_usd": 1.76594,
-  "scoring_revision": "candidate-access-v4",
+  "source_run": "golden_r2",
+  "started_at": null,
+  "finished_at": null,
+  "cost_usd": null,
+  "scoring_revision": "sonnet-saved-results-v5-20261026",
   "criteria": [
     {
       "criterion_id": "R01",
@@ -273,7 +274,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选的来源说明虚构了随包材料中不存在的文件、页码或表格。只评来源定位是否真实；数值错算、选错重述口径及已由程序判据计分的额外记录不在此项扣分。未提供来源在程序来源项失分，本项不重复扣分。",
-      "reasoning": "Results!D2 and Results!D3 cite only real files (CNO_2024-12-31_10K.xlsx T050!G15=2,471.9; CNO_2024-09-30_10Q.xlsx T010!S19=1,926.4; CNO_2025-03-31_10Q.xlsx T010!G19=580.1; CNO_2025-06-30_10Q.xlsx T016!N14=15.6, T016!N24=(21.6), Text!A131) all verified in input files. No fabricated file/worksheet/page references.",
+      "reasoning": "Results!D2 and Results!D3 cite CNO_2024-12-31_10K.xlsx T050!G15, CNO_2024-09-30_10Q.xlsx T010!S19, CNO_2025-03-31_10Q.xlsx T010!G19, and CNO_2025-06-30_10Q.xlsx T016!N14, T016!N24, Text!A131. I opened each input file and confirmed: T050!G15='2,471.9', T010!S19='1,926.4', T010!G19='580.1', T016!N14='15.6', T016!N24='(21.6)', Text!A131 contains the 21.6/31.7 overstatement language. All four files exist in /app/input_files/. No source assertion names a file, page, or table absent from the package.",
       "evidence": null
     },
     {
@@ -285,7 +286,7 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选声称已经完成外部审计、实时查询或独立核验，但随包输入及候选证据没有支持该完成性陈述。正常分析措辞和未作此类声称不扣分。",
-      "reasoning": "Results!D2/D3 describe revision basis using cumulative embedded-derivative error corrections from Text!A131. No claims of completed external audits, real-time queries, or independent verification beyond the provided inputs.",
+      "reasoning": "Analysis!F2 and Analysis!F3 describe arithmetic revisions derived from input cells (cumulative errors from Text!A131, adjustments from T016!N14 and T016!N24). Results!D2 and D3 do the same. None of the candidate sheets contain any statement claiming that an external audit was completed, a real-time query was run, or an independent third-party verification was performed. No such completion claim exists anywhere in the workbook.",
       "evidence": null
     },
     {
@@ -297,8 +298,12 @@
       "sdk_value": 1.0,
       "raw": "no",
       "description": "候选在说明性文字中编造无法从随包输入获得的公司经营事实。只评新增事实性断言，排除数值计算错误、来源定位和额外业务记录，以免与其他判据重复扣分。",
-      "reasoning": "Analysis!F2/F3 and Results!D2/D3 reference the $21.6M/$31.7M embedded-derivative overstatement figures directly from Text!A131 in CNO_2025-06-30_10Q.xlsx. No fabricated operational facts beyond what the input documents disclose.",
+      "reasoning": "The only company operating facts stated in the workbook—FY 2024 policy benefits 2,471.9 (Results!D2 citing T050!G15), 9M 2024 1,926.4 (citing T010!S19), Q1 2025 580.1 (citing T010!G19), and the 21.6/31.7 cumulative embedded-derivative overstatement (citing Text!A131)—are each directly verifiable from the input files I read. No additional qualitative or operational business facts appear in Results, Analysis, or Summary sheets beyond these input-supported figures.",
       "evidence": null
     }
-  ]
+  ],
+  "raw_source_run": "v5_sonnet/B_golden_r2_a1",
+  "raw_reward_details_sha256": "61be0d96de7e45ec7cde8344869699572f720ce101acf181230828bd9507cb6b",
+  "normalization": "Only judge.agent wrapper label changed to workbook-judge; criteria, reasoning, model and scores preserved.",
+  "new_llm_calls": 0
 }

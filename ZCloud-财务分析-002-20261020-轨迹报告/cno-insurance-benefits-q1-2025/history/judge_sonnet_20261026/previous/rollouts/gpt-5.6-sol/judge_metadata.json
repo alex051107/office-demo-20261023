@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "accepted_reward": 0.205882,
+  "verifier_error": 0,
+  "judge_completed": true,
+  "source_run": "gpt-5.6-sol_r1",
+  "scoring_revision": "candidate-access-v4",
+  "started_at": "2026-10-26T08:16:56-04:00",
+  "finished_at": "2026-10-26T08:24:40-04:00",
+  "cost_usd": 1.623862
+}
